@@ -8,34 +8,129 @@
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-        <Chapter
-          title_gr="Schaltkreise"
-          title_en="Boolean circuits"
+  <Chapter>
+    <ChapterTitle>
+      <h1>
+        Boolesche Schaltkreise
+      </h1>
+    </ChapterTitle>
+    <p>
+      Boolesche Schaltkreise sind ein idealisiertes 
+      Modell echter elektronischer Schaltkreise.
+      Als primitive Bausteine haben wir Boolesche 
+      Operatoren, auch _Gatter_ (englisch _gates_)
+      genannt, die mehrere (typischerweise ein oder zwei)
+      Signale zu einem Ausgabe-Signal kombinieren. 
+      Die Signale können nur zwei Werte annehmen:
+      wahr/falsch bzw. 1/0 bzw. `true/false`. Hier 
+      sehen Sie die drei üblichsten Gatter:
+    </p>
+    <p>
+      <figure>
+        <img
+          style="height:10em"
+          src="img/circuits/and-or-not-gates.svg"
         >
-          <WriterlyBlankLine>
-          </WriterlyBlankLine>
-          <ChapterTitle>Boolesche Schaltkreise
-          </ChapterTitle>
-          <WriterlyBlankLine>
-          </WriterlyBlankLine>
-          Hello. Maybe we will introduce circuits here.
-          <Subchapter
-            title_gr="Fanin, Tiefe, Größe"
-          >
-            Für
-            <WriterlyBlankLine>
-            </WriterlyBlankLine>
-            <Definition>Die _Grösse_ eines Schaltkreise ist
-            </Definition>
-            <WriterlyBlankLine>
-            </WriterlyBlankLine>
-            *Vorsicht.*
-          </Subchapter>
-        </Chapter>
-        <Chapter
-          title_gr="Mengen"
-          title_en="infinite sets"
+      </figure>
+    </p>
+    <p>
+      Von links nach rechts sind dies: das Und-Gatter
+      (_and-gate_), Oder-Gatter (_or-gate_) und das
+      Nicht-Gatter (_not-gate_). In C, C++ und Java
+      kennen Sie diese Booleschen Operatoren als
+      `&&`, `||` und `!`. Was diese Operatoren
+      _tun_, können wir als _Wahrheitstabelle_ darstellen.
+      Wir listen alle Kombinationen für $x,y$ auf
+      und schreiben in jede Zeile auch den Wert, den
+      der Operator ausgibt.
+    </p>
+    <p>
+      $$
+      \begin{array}{ll|l}
+      x&amp;y&amp;x \wedge y \\ \hline
+      0&amp;0&amp;0 \\
+      0&amp;1&amp;0 \\
+      1&amp;0&amp;0 \\
+      1&amp;1&amp;1
+      \end{array}
+      \qquad \qquad
+      \begin{array}{ll|l}
+      x&amp;y&amp;x \vee y \\ \hline
+      0&amp;0&amp;0 \\
+      0&amp;1&amp;1 \\
+      1&amp;0&amp;1 \\
+      1&amp;1&amp;1
+      \end{array}
+      \qquad \qquad
+      \begin{array}{l|l}
+      x&amp;\neg x \\ \hline
+      0&amp;1 \\
+      1&amp;0 \\
+      \end{array}
+      $$
+    </p>
+    <p>
+      Die dritte Zeile der mittleren Tabelle sagt
+      beispielsweise aus, dass $1 \vee 0 = 1$ gilt.
+    </p>
+    <p>
+      Vielleicht wünschen Sie sich noch mehr Gates,
+      zum Beispiel ein if-then-else-Gate mit drei
+      Inputs $x,y,z$, welches $y$ ausgibt, wenn
+      $x$ wahr ist und ansonsten $z$ ausgibt.
+      So ein Gate können Sie sich einfach aus And,
+      Or, Not bauen:
+    </p>
+    <p>
+      <figure>
+        <img
+          style="height:13em"
+          src="../img/circuits/if-then-else-gate.svg"
+          loading="lazy"
         >
-          Hallooooo
-        </Chapter>
+        <figcaption>
+          `if` $x$ `then` $y$ `else` $z$
+        </figcaption>
+      </figure>
+    </p>
+    <p>
+      Jeder Schaltkreis _berechnet_ eine Funktion
+      (formale Definition weiter unten). Informell 
+      gesprochen, wenn wir Wahrheitswerte (0/1) in
+      die Input-Gates reinstecken, dann fließen diese 
+      durch den Schaltkreis und werden von den 
+      AND/OR/NOT-Gates entsprechend ihrer Funktion 
+      kombiniert und werden schließlich an den 
+      Output-Gates ausgegeben:
+      <Sub
+        title_gr="Fanin, Tiefe, Größe"
+      >
+        Für
+        <Definition>
+          Die _Grösse_ eines Schaltkreise ist
+        </Definition>
+        *Vorsicht.*
+      </Sub>
+    </p>
+    <p>
+      <Sub
+        title_gr="Fanin, Tiefe, Größe"
+      >
+        Für
+        <Definition>
+          Die _Grösse_ eines Schaltkreise ist
+        </Definition>
+        *Vorsicht.*
+      </Sub>
+    </p>
+  </Chapter>
+  <Chapter
+    title_gr="Mengen"
+    title_en="infinite sets"
+  >
+    <p>
+      Hallooooo
+      $$x + x$$
+    </p>
+  </Chapter>
 </body>

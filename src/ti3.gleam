@@ -7,9 +7,8 @@ import infrastructure.{type Pipe}
 import vxml_renderer as vr
 import gleam/string.{inspect as ins}
 import infrastructure as infra
+import desugarer_names as dn
 import writerly_parser as wp
-import desugarers/fold_tag_contents_into_text.{fold_tag_contents_into_text}
-
 
 fn our_pipeline() -> List(Pipe) {
   [
@@ -21,8 +20,27 @@ fn our_pipeline() -> List(Pipe) {
       pp.SingleDollar,
     ),
     [
-      fold_tag_contents_into_text(["MathBlock", "Math", "MathDollar"]),
-    ]
+      dn.find_replace(#([#("\\$", "$")], ["Math", "MathBlock"])),
+      dn.fold_tag_contents_into_text(["MathBlock", "Math"]),
+      dn.group_consecutive_children_avoiding(
+        #(
+          "VerticalChunk",
+          [
+            "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
+            "Example", "Exercise", "Exercises", "Grid", "Image", "ImageLeft",
+            "ImageRight", "List", "MathBlock", "Note", "Pause", "Section",
+            "Solution", "SolutionNote", "StarDivider", "Table", "TextParent",
+            "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
+            "thead", "tbody", "tr", "td", "section",
+          ],
+          ["MathBlock", "VerticalChunk"],
+        ),
+      ),
+      dn.unwrap_tags(["WriterlyBlankLine"]),
+      dn.remove_empty_text_nodes(),
+      dn.rename_when_child_of([#("VerticalChunk", "h1", "ChapterTitle")]),
+      dn.rename_tag(#("VerticalChunk", "p")),
+    ],
   ]
   |> list.flatten
 }
