@@ -1,0 +1,9 @@
+|> Chapter
+    title_gr Schaltkreise
+    title_en Boolean circuits
+
+    |> ChapterTitle
+
+        Boolesche Schaltkreise
+
+    Hello. Maybe we will introduce circuits here.
