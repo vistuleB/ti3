@@ -40,6 +40,11 @@ fn our_pipeline() -> List(Pipe) {
       dn.remove_empty_text_nodes(),
       dn.rename_when_child_of([#("VerticalChunk", "h1", "ChapterTitle")]),
       dn.rename_tag(#("VerticalChunk", "p")),
+      dn.rename_with_attributes([
+        #("ChapterTitle", "div", [#("class", "chapter-title")]),
+        #("Chapter", "div", [#("class", "chapter")]),
+        #("Sub", "div", [#("class", "subchapter")]),
+      ]),
     ],
   ]
   |> list.flatten
