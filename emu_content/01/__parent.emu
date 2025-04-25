@@ -65,7 +65,7 @@
     |> figure
         |> img
             style height:13em
-            src ../img/circuits/if-then-else-gate.svg
+            src img/circuits/if-then-else-gate.svg
             loading lazy
         |> figcaption
 

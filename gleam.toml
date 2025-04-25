@@ -14,9 +14,9 @@ version = "1.0.0"
 
 [dependencies]
 blamedlines = { "path" = "../../vistuleB/blamedlines" }
-vxml_parser = { "path" = "../../vistuleB/vxml_parser" }
-writerly_parser = { "path" = "../../vistuleB/writerly_parser" }
-lbp_desugaring = { "path" = "../../MrChaker/lbp_desugaring" }
+vxml = { "path" = "../../vistuleB/vxml" }
+writerly = { "path" = "../../vistuleB/writerly" }
+vxml_desugaring = { "path" = "../../vistuleB/vxml_desugaring" }
 
 gleam_stdlib = ">= 0.34.0 and < 2.0.0"
 argv = ">= 1.0.2 and < 2.0.0"

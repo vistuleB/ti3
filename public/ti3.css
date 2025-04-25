@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(248, 244, 253, 1);
+    font-size: 20px;
+    line-height: 1.42;
+}
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+figure {
+    text-align: center;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.chapter-title {
+    display: grid;
+    grid-template-columns: minmax(50px, 1fr) auto minmax(50px, 1fr);
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+.chapter-title::before,
+.chapter-title::after {
+    content: '';
+    border-top: 6px double;
+}
+
+.text-parent, p {
+    margin: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: blueviolet;
+}

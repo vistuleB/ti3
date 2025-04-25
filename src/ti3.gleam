@@ -1,14 +1,15 @@
 import gleam/io
 import gleam/list
 import gleam/option.{Some}
-import argv
-import prefabricated_pipelines as pp
-import infrastructure.{type Pipe}
-import vxml_renderer as vr
 import gleam/string.{inspect as ins}
-import infrastructure as infra
+import argv
+import blamedlines.{type Blame, type BlamedLine, Blame, BlamedLine}
+import vxml.{type VXML}
+import vxml_renderer as vr
+import prefabricated_pipelines as pp
+import infrastructure.{type Pipe} as infra
 import desugarer_names as dn
-import writerly_parser as wp
+import writerly as wp
 
 fn our_pipeline() -> List(Pipe) {
   [
@@ -19,6 +20,9 @@ fn our_pipeline() -> List(Pipe) {
       pp.DoubleDollar,
       pp.SingleDollar,
     ),
+    pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
+    pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
+    pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     [
       dn.find_replace(#([#("\\$", "$")], ["Math", "MathBlock"])),
       dn.fold_tag_contents_into_text(["MathBlock", "Math"]),
@@ -36,10 +40,11 @@ fn our_pipeline() -> List(Pipe) {
           ["MathBlock", "VerticalChunk"],
         ),
       ),
-      dn.unwrap_tags(["WriterlyBlankLine"]),
+      dn.unwrap(["WriterlyBlankLine"]),
       dn.remove_empty_text_nodes(),
-      dn.rename_when_child_of([#("VerticalChunk", "h1", "ChapterTitle")]),
-      dn.rename_tag(#("VerticalChunk", "p")),
+      // dn.rename_when_child_of([#("VerticalChunk", "h1", "ChapterTitle")]),
+      dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle"])]),
+      dn.rename(#("VerticalChunk", "p")),
       dn.rename_with_attributes([
         #("ChapterTitle", "div", [#("class", "chapter-title")]),
         #("Chapter", "div", [#("class", "chapter")]),
@@ -48,6 +53,37 @@ fn our_pipeline() -> List(Pipe) {
     ],
   ]
   |> list.flatten
+}
+
+pub fn our_emitter(
+  tuple: #(String, VXML, a),
+) -> Result(#(String, List(BlamedLine), a), b) {
+  let #(path, fragment, fragment_type) = tuple
+  let blame_us = fn(msg: String) -> Blame { Blame(msg, 0, []) }
+  let lines =
+    list.flatten([
+      [
+        BlamedLine(blame_us("ti3_emitter"), 0, "<!DOCTYPE html>"),
+        BlamedLine(blame_us("ti3_emitter"), 0, "<html>"),
+        BlamedLine(blame_us("ti3_emitter"), 0, "<head>"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<meta charset=\"utf-8\">"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("ti3_emitter"), 0, "</head>"),
+        BlamedLine(blame_us("ti3_emitter"), 0, "<body>"),
+      ],
+      fragment
+        |> infra.get_children
+        |> list.map(fn(vxml) { vxml.vxml_to_html_blamed_lines(vxml, 2, 2) })
+        |> list.flatten,
+      [
+        BlamedLine(blame_us("ti3_emitter"), 0, "</body>"),
+        BlamedLine(blame_us("ti3_emitter"), 0, ""),
+      ],
+    ])
+  Ok(#(path, lines, fragment_type))
 }
 
 fn cli_usage_supplementary() {
@@ -75,7 +111,7 @@ pub fn main() {
       source_parser: vr.default_writerly_source_parser(_, amendments.spotlight_args),
       pipeline: our_pipeline(),
       splitter: vr.empty_splitter(_, ".html"),
-      emitter: vr.stub_html_emitter,
+      emitter: our_emitter,
       prettifier: vr.guarded_prettier_prettifier(amendments.user_args),
     )
 
