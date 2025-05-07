@@ -15,10 +15,8 @@ fn our_pipeline() -> List(Pipe) {
   [
     pp.normalize_begin_end_align(pp.DoubleDollar),
     pp.create_mathblock_and_math_elements(
-      [pp.DoubleDollar],
-      [pp.BackslashParenthesis],
-      pp.DoubleDollar,
-      pp.SingleDollar,
+      #([pp.DoubleDollar], pp.DoubleDollar),
+      #([pp.BackslashParenthesis], pp.SingleDollar),
     ),
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
@@ -35,6 +33,7 @@ fn our_pipeline() -> List(Pipe) {
             "ImageRight", "List", "MathBlock", "Note", "Pause", "Section",
             "Solution", "SolutionNote", "StarDivider", "Table", "TextParent",
             "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
+            "Sub", "Definition",
             "thead", "tbody", "tr", "td", "section",
           ],
           ["MathBlock", "VerticalChunk"],
@@ -42,13 +41,13 @@ fn our_pipeline() -> List(Pipe) {
       ),
       dn.unwrap(["WriterlyBlankLine"]),
       dn.remove_empty_text_nodes(),
-      // dn.rename_when_child_of([#("VerticalChunk", "h1", "ChapterTitle")]),
       dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle"])]),
       dn.rename(#("VerticalChunk", "p")),
       dn.rename_with_attributes([
         #("ChapterTitle", "div", [#("class", "chapter-title")]),
         #("Chapter", "div", [#("class", "chapter")]),
         #("Sub", "div", [#("class", "subchapter")]),
+        #("Definition", "div", [#("class", "definition")]),
       ]),
     ],
   ]
@@ -59,7 +58,7 @@ pub fn our_emitter(
   tuple: #(String, VXML, a),
 ) -> Result(#(String, List(BlamedLine), a), b) {
   let #(path, fragment, fragment_type) = tuple
-  let blame_us = fn(msg: String) -> Blame { Blame(msg, 0, []) }
+  let blame_us = fn(msg: String) -> Blame { Blame(msg, 0, 0, []) }
   let lines =
     list.flatten([
       [
