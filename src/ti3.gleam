@@ -13,10 +13,10 @@ import writerly as wp
 
 fn our_pipeline() -> List(Pipe) {
   [
-    pp.normalize_begin_end_align(pp.DoubleDollar),
+    pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
-      #([pp.DoubleDollar], pp.DoubleDollar),
-      #([pp.BackslashParenthesis], pp.SingleDollar),
+      #([infra.DoubleDollar], infra.DoubleDollar),
+      #([infra.BackslashParenthesis], infra.SingleDollar),
     ),
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
