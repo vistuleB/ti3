@@ -1,24 +1,28 @@
-const onLoad = () => {
-  window.scrollTo({
-    left: 1500,
-  });
-};
+const initialViewportWidth = window.innerWidth;
 
-const scroll_back_to_center = (e) => {
-  let theoretical_left = (document.body.scrollWidth - window.innerWidth) / 2;
-  if (
-    window.scrollX > theoretical_left - 200 &&
-    window.scrollX < theoretical_left + 200
-  ) {
-    window.scroll({
-      left: theoretical_left,
-      behavior: "smooth",
-    });
-    return;
+const getPageLeft = () => window.visualViewport.pageLeft;
+
+const scrollToCenter = () => {
+  // If page is scrolled by less than 18% (100-92) of viewport, scroll back to left = 0
+  const threshold = initialViewportWidth - initialViewportWidth * 0.92;
+  if(getPageLeft() < threshold) {
+    window.scrollTo({ left: 0, behavior: 'smooth' });
   }
-};
+}
 
-window.addEventListener("DOMContentLoaded", onLoad);
-window.addEventListener("scroll", scroll_back_to_center);
-document.addEventListener("scrollend", scroll_back_to_center);
-document.addEventListener("touchend", scroll_back_to_center);
+const setupScrollEndHandler = (callback) => {
+    if ('onscrollend' in window) {
+        // Modern browsers with scrollend support
+        window.addEventListener('scrollend', callback);
+    } else {
+        // Safari and older browsers fallback
+        let scrollTimer;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(callback, 120);
+            // passive: true mandatory for smooth scroll on Safari (iOS)
+        }, { passive: true });
+    }
+}
+
+setupScrollEndHandler(scrollToCenter);

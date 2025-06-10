@@ -33,14 +33,14 @@ h1 {
   font-weight: normal;
 }
 
-.chapter {
+/* .chapter {
   width: calc(3000px + 100vw);
 }
 
 .chapter > * {
   margin: auto;
   width: 100vw;
-}
+} */
 
 .chapter-title {
   display: grid;
