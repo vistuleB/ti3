@@ -3,7 +3,7 @@ const initialViewportWidth = window.innerWidth;
 const getPageLeft = () => window.visualViewport.pageLeft;
 
 const scrollToCenter = () => {
-  // If page is scrolled by less than 18% (100-92) of viewport, scroll back to left = 0
+  // If page is scrolled by less than 8% (100-92) of viewport, scroll back to left = 0
   const threshold = initialViewportWidth - initialViewportWidth * 0.92;
   if(getPageLeft() < threshold) {
     window.scrollTo({ left: 0, behavior: 'smooth' });
