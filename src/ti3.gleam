@@ -70,6 +70,7 @@ pub fn our_emitter(
         BlamedLine(blame_us("ti3_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
         BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "</head>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "<body>"),
       ],

@@ -1,120 +1,176 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="ti3.css" />
-    <script type="text/javascript" src="./mathjax_setup.js"></script>
-    <script src="./app.js"></script>
-    <script
-      type="text/javascript"
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-  </head>
-  <body>
-    <div class="chapter">
-      <div class="chapter-title">Boolesche Schaltkreise</div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="ti3.css" />
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+</head>
+<body>
+  <div
+    class="chapter"
+  >
+    <div
+      class="chapter-title"
+    >
+      Boolesche Schaltkreise
+    </div>
+    <p>
+      Boolesche Schaltkreise sind ein idealisiertes
+      Modell echter elektronischer Schaltkreise.
+      Als primitive Bausteine haben wir Boolesche
+      Operatoren, auch 
+      <i>Gatter</i>
+       (englisch 
+      <i>gates</i>)
+      genannt, die mehrere (typischerweise ein oder zwei)
+      Signale zu einem Ausgabe-Signal kombinieren.
+      Die Signale können nur zwei Werte annehmen:
+      wahr/falsch bzw. 1/0 bzw. 
+      <code>true/false</code>. Hier
+      sehen Sie die drei üblichsten Gatter:
+    </p>
+    <p>
+      <figure>
+        <img
+          style="height:10em"
+          src="img/circuits/and-or-not-gates.svg"
+        >
+      </figure>
+    </p>
+    <p>
+      Von links nach rechts sind dies: das Und-Gatter
+      (<i>and-gate</i>), Oder-Gatter (<i>or-gate</i>) und das
+      Nicht-Gatter (<i>not-gate</i>). In C, C++ und Java
+      kennen Sie diese Booleschen Operatoren als
+      <code>&&</code>, 
+      <code>||</code>
+       und 
+      <code>!</code>. Was diese Operatoren
+      <i>tun</i>, können wir als 
+      <i>Wahrheitstabelle</i>
+       darstellen.
+      Wir listen alle Kombinationen für $x,y$ auf
+      und schreiben in jede Zeile auch den Wert, den
+      der Operator ausgibt.
+    </p>
+    <p>
+      $$
+      \begin{array}{ll|l}
+      x&amp;y&amp;x \wedge y \\ \hline
+      0&amp;0&amp;0 \\
+      0&amp;1&amp;0 \\
+      1&amp;0&amp;0 \\
+      1&amp;1&amp;1
+      \end{array}
+      \qquad \qquad
+      \begin{array}{ll|l}
+      x&amp;y&amp;x \vee y \\ \hline
+      0&amp;0&amp;0 \\
+      0&amp;1&amp;1 \\
+      1&amp;0&amp;1 \\
+      1&amp;1&amp;1
+      \end{array}
+      \qquad \qquad
+      \begin{array}{l|l}
+      x&amp;\neg x \\ \hline
+      0&amp;1 \\
+      1&amp;0 \\
+      \end{array}
+      $$
+    </p>
+    <p>
+      Die dritte Zeile der mittleren Tabelle sagt
+      beispielsweise aus, dass $1 \vee 0 = 1$ gilt.
+    </p>
+    <p>
+      Vielleicht wünschen Sie sich noch mehr Gates,
+      zum Beispiel ein if-then-else-Gate mit drei
+      Inputs $x,y,z$, welches $y$ ausgibt, wenn
+      $x$ wahr ist und ansonsten $z$ ausgibt.
+      So ein Gate können Sie sich einfach aus And,
+      Or, Not bauen:
+    </p>
+    <p>
+      <figure>
+        <img
+          style="height:13em"
+          src="img/circuits/if-then-else-gate.svg"
+          loading="lazy"
+        >
+        <figcaption>
+          <code>if</code>
+           $x$ 
+          <code>then</code>
+           $y$ 
+          <code>else</code>
+           $z$
+        </figcaption>
+      </figure>
+    </p>
+    <p>
+      Jeder Schaltkreis 
+      <i>berechnet</i>
+       eine Funktion
+      (formale Definition weiter unten). Informell
+      gesprochen, wenn wir Wahrheitswerte (0/1) in
+      die Input-Gates reinstecken, dann fließen diese
+      durch den Schaltkreis und werden von den
+      AND/OR/NOT-Gates entsprechend ihrer Funktion
+      kombiniert und werden schließlich an den
+      Output-Gates ausgegeben:
+    </p>
+    <div
+      title_gr="Fanin, Tiefe, Größe"
+      class="subchapter"
+    >
       <p>
-        Boolesche Schaltkreise sind ein idealisiertes Modell echter
-        elektronischer Schaltkreise. Als primitive Bausteine haben wir Boolesche
-        Operatoren, auch
-        <i>Gatter</i>
-        (englisch
-        <i>gates</i>) genannt, die mehrere (typischerweise ein oder zwei)
-        Signale zu einem Ausgabe-Signal kombinieren. Die Signale können nur zwei
-        Werte annehmen: wahr/falsch bzw. 1/0 bzw. <code>true/false</code>. Hier
-        sehen Sie die drei üblichsten Gatter:
+        Für
       </p>
-      <p>
-        <figure>
-          <img style="height: 10em" src="img/circuits/and-or-not-gates.svg" />
-        </figure>
-      </p>
-      <p>
-        Von links nach rechts sind dies: das Und-Gatter (<i>and-gate</i>),
-        Oder-Gatter (<i>or-gate</i>) und das Nicht-Gatter (<i>not-gate</i>). In
-        C, C++ und Java kennen Sie diese Booleschen Operatoren als
-        <code>&&</code>,
-        <code>||</code>
-        und
-        <code>!</code>. Was diese Operatoren <i>tun</i>, können wir als
-        <i>Wahrheitstabelle</i>
-        darstellen. Wir listen alle Kombinationen für $x,y$ auf und schreiben in
-        jede Zeile auch den Wert, den der Operator ausgibt.
-      </p>
-      <p>
-        $$ \begin{array}{ll|l} x&amp;y&amp;x \wedge y \\ \hline 0&amp;0&amp;0 \\
-        0&amp;1&amp;0 \\ 1&amp;0&amp;0 \\ 1&amp;1&amp;1 \end{array} \qquad
-        \qquad \begin{array}{ll|l} x&amp;y&amp;x \vee y \\ \hline 0&amp;0&amp;0
-        \\ 0&amp;1&amp;1 \\ 1&amp;0&amp;1 \\ 1&amp;1&amp;1 \end{array} \qquad
-        \qquad \begin{array}{l|l} x&amp;\neg x \\ \hline 0&amp;1 \\ 1&amp;0 \\
-        \end{array} $$
-      </p>
-      <p>
-        Die dritte Zeile der mittleren Tabelle sagt beispielsweise aus, dass $1
-        \vee 0 = 1$ gilt.
-      </p>
-      <p>
-        Vielleicht wünschen Sie sich noch mehr Gates, zum Beispiel ein
-        if-then-else-Gate mit drei Inputs $x,y,z$, welches $y$ ausgibt, wenn $x$
-        wahr ist und ansonsten $z$ ausgibt. So ein Gate können Sie sich einfach
-        aus And, Or, Not bauen:
-      </p>
-      <p>
-        <figure>
-          <img
-            style="height: 13em"
-            src="img/circuits/if-then-else-gate.svg"
-            loading="lazy" />
-          <figcaption>
-            <code>if</code>
-            $x$
-            <code>then</code>
-            $y$
-            <code>else</code>
-            $z$
-          </figcaption>
-        </figure>
-      </p>
-      <p>
-        Jeder Schaltkreis
-        <i>berechnet</i>
-        eine Funktion (formale Definition weiter unten). Informell gesprochen,
-        wenn wir Wahrheitswerte (0/1) in die Input-Gates reinstecken, dann
-        fließen diese durch den Schaltkreis und werden von den AND/OR/NOT-Gates
-        entsprechend ihrer Funktion kombiniert und werden schließlich an den
-        Output-Gates ausgegeben:
-      </p>
-      <div title_gr="Fanin, Tiefe, Größe" class="subchapter">
-        <p>Für</p>
-        <div class="definition">
-          <p>
-            Die
-            <i>Grösse</i>
-            eines Schaltkreise ist
-          </p>
-        </div>
+      <div
+        class="definition"
+      >
         <p>
-          <b>Vorsicht.</b>
+          Die 
+          <i>Grösse</i>
+           eines Schaltkreise ist
         </p>
       </div>
-      <div title_gr="Fanin, Tiefe, Größe" class="subchapter">
-        <p>Für</p>
-        <div class="definition">
-          <p>
-            Die
-            <i>Grösse</i>
-            eines Schaltkreise ist
-          </p>
-        </div>
+      <p>
+        <b>Vorsicht.</b>
+      </p>
+    </div>
+    <div
+      title_gr="Fanin, Tiefe, Größe"
+      class="subchapter"
+    >
+      <p>
+        Für
+      </p>
+      <div
+        class="definition"
+      >
         <p>
-          <b>Vorsicht.</b>
+          Die 
+          <i>Grösse</i>
+           eines Schaltkreise ist
         </p>
       </div>
+      <p>
+        <b>Vorsicht.</b>
+      </p>
     </div>
-    <div title_gr="Mengen" title_en="infinite sets" class="chapter">
-      <p>Hallooooo $$x + x$$</p>
-    </div>
-  </body>
-</html>
+  </div>
+  <div
+    title_gr="Mengen"
+    title_en="infinite sets"
+    class="chapter"
+  >
+    <p>
+      Hallooooo
+      $$x + x$$
+    </p>
+  </div>
+</body>

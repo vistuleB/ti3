@@ -9,6 +9,8 @@ html {
 }
 
 body {
+  width: 100%;
+  min-height: '100vh';
   background-color: rgba(248, 244, 253, 1);
   font-size: 1.25rem;
   line-height: 1.42;
