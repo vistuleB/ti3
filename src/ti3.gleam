@@ -40,7 +40,7 @@ fn our_pipeline() -> List(Pipe) {
         ),
       ),
       dn.unwrap(["WriterlyBlankLine"]),
-      dn.remove_empty_text_nodes(),
+      dn.remove_text_nodes_with_singleton_empty_line(),
       dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle"])]),
       dn.rename(#("VerticalChunk", "p")),
       dn.rename_with_attributes([
