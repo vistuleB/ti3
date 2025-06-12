@@ -2,15 +2,26 @@ const initialViewportWidth = window.innerWidth;
 
 const getPageLeft = () => window.visualViewport.pageLeft;
 
-// Assuming the **entire** body content starts from leftmost margin where left is 0,
-// snap the viewport to leftmost margin
-const snapToLeftmostMargin = () =>
-  window.scrollTo({ left: 0, behavior: "smooth" });
+// Assuming the body content has `min-width: calc(500px + 100vw)` **set**, we scroll to
+// half of 500 i.e. 500/2 = 250 to the left
+// If you change hardcoded 500px in css, the new half should reflect here.
+const snapToCenter = () => {
+  window.scrollTo({ left: 250, behavior: "smooth" });
+};
 
-const scrollToLeftmostMargin = () => {
-  // If page is scrolled by less than 14% (100-86) of viewport, scroll back to left = 0
-  const threshold = initialViewportWidth - initialViewportWidth * 0.86;
-  if (getPageLeft() < threshold) snapToLeftmostMargin();
+const scrollToCenter = () => {
+  // `if` clause below provide enbales the page to scroll back to center
+  // if the page is scrolled up to certain extent.
+  // The **extent** is calculated by taking scrollable width excluding viewport and
+  // diving by two that represents equal empty space on both sides of the `body` content
+  const emptySpace = (document.body.scrollWidth - initialViewportWidth) / 2;
+  // threshold is 60% of the empty space
+  const threshold = emptySpace * 0.6;
+  if (
+    getPageLeft() > emptySpace - threshold &&
+    getPageLeft() < emptySpace + threshold
+  )
+    snapToCenter();
 };
 
 const setupScrollEndHandler = (callback) => {
@@ -32,12 +43,14 @@ const setupScrollEndHandler = (callback) => {
   }
 };
 
-setupScrollEndHandler(scrollToLeftmostMargin);
+setupScrollEndHandler(scrollToCenter);
 
 const onLoad = () => {
-  // registering click on document including empty spaces
   // mandatory false to prevent bubble phase capturing
-  document.addEventListener("click", (_) => snapToLeftmostMargin(), false);
+  snapToCenter();
+
+  // registering click on document that includes empty spaces
+  document.addEventListener("click", (_) => snapToCenter(), false);
 };
 
 document.addEventListener("DOMContentLoaded", onLoad);
