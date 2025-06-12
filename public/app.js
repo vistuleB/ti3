@@ -2,11 +2,14 @@ const initialViewportWidth = window.innerWidth;
 
 const getPageLeft = () => window.visualViewport.pageLeft;
 
-// Assuming the body content has `min-width: calc(500px + 100vw)` **set**, we scroll to
-// half of 500 i.e. 500/2 = 250 to the left
-// If you change hardcoded 500px in css, the new half should reflect here.
+// Assuming the body content is larger than vw (viewwidth), we scroll to the center of the content.
+// center is calculated by subracting innerWidfth from scrollWidth and whatever remains
+// is the accumulated spaces (equal measure) on both sides. Divice by two to get empty space
+// on one side.
+
 const snapToCenter = () => {
-  window.scrollTo({ left: 250, behavior: "smooth" });
+  const scrollLeft = (document.body.scrollWidth - window.innerWidth) / 2;
+  window.scrollTo({ left: scrollLeft, behavior: "smooth" });
 };
 
 const scrollToCenter = () => {
