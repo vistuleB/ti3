@@ -7,12 +7,12 @@ const getPageLeft = () => window.visualViewport.pageLeft;
 // is the accumulated spaces (equal measure) on both sides. Divice by two to get empty space
 // on one side.
 
-const snapToCenter = (behavior) => {
+const snapToCenter = () => {
   const scrollLeft = (document.body.scrollWidth - window.innerWidth) / 2;
   window.scrollTo({
     left: scrollLeft,
     top: window.scrollY,
-    behavior: behavior,
+    behavior: "smooth",
   });
 };
 
@@ -28,7 +28,7 @@ const scrollToCenter = () => {
     getPageLeft() > emptySpace - threshold &&
     getPageLeft() < emptySpace + threshold
   )
-    snapToCenter("smooth");
+    snapToCenter();
 };
 
 const setupScrollEndHandler = (callback) => {
@@ -53,7 +53,12 @@ const setupScrollEndHandler = (callback) => {
 setupScrollEndHandler(scrollToCenter);
 
 const onLoad = () => {
-  snapToCenter("instant");
+  const scrollLeft = (document.body.scrollWidth - window.innerWidth) / 2;
+  window.scrollTo({
+    left: scrollLeft,
+    top: window.scrollY,
+    behavior: "instant",
+  });
 
   // registering click on document that includes empty spaces
   // mandatory false to prevent bubble phase capturing
