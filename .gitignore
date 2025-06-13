@@ -3,3 +3,7 @@
 /build
 erl_crash.dump
 .zed/
+node_modules/
+.cache/
+.DS_Store
+npm-debug.log*
