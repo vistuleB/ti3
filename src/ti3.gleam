@@ -40,7 +40,7 @@ fn our_pipeline() -> List(Pipe) {
         ),
       ),
       dn.unwrap(["WriterlyBlankLine"]),
-      dn.remove_empty_text_nodes(),
+      dn.remove_text_nodes_with_singleton_empty_line(),
       dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle"])]),
       dn.rename(#("VerticalChunk", "p")),
       dn.rename_with_attributes([
@@ -48,6 +48,10 @@ fn our_pipeline() -> List(Pipe) {
         #("Chapter", "div", [#("class", "chapter")]),
         #("Sub", "div", [#("class", "subchapter")]),
         #("Definition", "div", [#("class", "definition")]),
+      ]),
+      dn.add_attributes([
+        #("img", "class", "constrained transition-all"),
+        #("img", "onClick", "onImgClick(event)"),
       ]),
     ],
   ]
@@ -66,10 +70,11 @@ pub fn our_emitter(
         BlamedLine(blame_us("ti3_emitter"), 0, "<html>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "<head>"),
         BlamedLine(blame_us("ti3_emitter"), 2, "<meta charset=\"utf-8\">"),
-        BlamedLine(blame_us("ti3_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
         BlamedLine(blame_us("ti3_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
         BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "</head>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "<body>"),
       ],
