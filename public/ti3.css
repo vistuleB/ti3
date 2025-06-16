@@ -9,16 +9,10 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: auto;
-    min-width: calc(500px + 100vw);
-    min-height: 100vh;
     background-color: rgba(248, 244, 253, 1);
     font-size: 1.25rem;
     line-height: 1.42;
-    /* border: 2px solid red; /* for debugging */ */
+    min-width: 2500px;
 }
 
 code {
@@ -30,9 +24,18 @@ code {
 }
 
 figure {
+    width: fit-content;
     text-align: center;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    overflow: visible;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+}
+
+.constrained {
+    max-width: calc(100vw - 20px);
 }
 
 h1 {
@@ -40,23 +43,29 @@ h1 {
     font-weight: normal;
 }
 
-.chapter {
-    width: 100vw;
+img {
+    margin: auto;
+    max-width: 100%;
 }
 
-.chapter > * {
-    width: inherit;
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
 }
 
 .chapter-title {
     display: grid;
-    grid-template-columns: minmax(50px, 1fr) auto minmax(50px, 1fr);
+    grid-template-columns: minmax(60px, 0fr) auto minmax(60px, 0fr);
     align-items: center;
     text-align: center;
-    gap: 30px;
+    gap: 0px;
     font-size: 2.25rem;
     margin-top: 20px;
     margin-bottom: 10px;
+    margin: auto;
+    width: 100vw;
+    padding: 0 16px;
 }
 
 .chapter-title::before,
@@ -67,8 +76,8 @@ h1 {
 
 .text-parent,
 p {
+    width: 100vw;
     margin: auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 16px;
     /* background-color: blueviolet; */
 }

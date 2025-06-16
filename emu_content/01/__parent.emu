@@ -15,7 +15,7 @@
 
     |> figure
         |> img
-            style=height:10em
+            style=width:20em
             src=img/circuits/and-or-not-gates.svg
 
     Von links nach rechts sind dies: das Und-Gatter

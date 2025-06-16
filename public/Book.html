@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="stylesheet" type="text/css" href="ti3.css" />
   <script type="text/javascript" src="./mathjax_setup.js"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
@@ -35,8 +35,10 @@
     <p>
       <figure>
         <img
-          style="height:10em"
+          style="width:20em"
           src="img/circuits/and-or-not-gates.svg"
+          onClick="onImgClick(event)"
+          class="constrained transition-all"
         >
       </figure>
     </p>
@@ -99,6 +101,8 @@
           style="height:13em"
           src="img/circuits/if-then-else-gate.svg"
           loading="lazy"
+          onClick="onImgClick(event)"
+          class="constrained transition-all"
         >
         <figcaption>
           <code>if</code>

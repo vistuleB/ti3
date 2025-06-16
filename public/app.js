@@ -1,68 +1,57 @@
-const initialViewportWidth = window.innerWidth;
+window.history.scrollRestoration = "manual";
 
-const getPageLeft = () => window.visualViewport.pageLeft;
+const marginWidth = () => {
+  return (document.body.scrollWidth - window.visualViewport.width) / 2;
+};
 
-// Assuming the body content is larger than vw (viewwidth), we scroll to the center of the content.
-// center is calculated by subracting innerWidfth from scrollWidth and whatever remains
-// is the accumulated spaces (equal measure) on both sides. Divice by two to get empty space
-// on one side.
-
-const snapToCenter = () => {
-  const scrollLeft = (document.body.scrollWidth - window.innerWidth) / 2;
-  window.scrollTo({
-    left: scrollLeft,
-    top: window.scrollY,
-    behavior: "smooth",
+const recenter = (behavior) => {
+  window.scroll({
+    left: marginWidth(),
+    behavior: behavior,
   });
 };
 
-const scrollToCenter = () => {
-  // `if` clause below provide enbales the page to scroll back to center
-  // if the page is scrolled up to certain extent.
-  // The **extent** is calculated by taking scrollable width excluding viewport and
-  // diving by two that represents equal empty space on both sides of the `body` content
-  const emptySpace = (document.body.scrollWidth - initialViewportWidth) / 2;
-  // threshold is 60% of the empty space
-  const threshold = emptySpace * 0.6;
-  if (
-    getPageLeft() > emptySpace - threshold &&
-    getPageLeft() < emptySpace + threshold
-  )
-    snapToCenter();
+const smoothRecenter = () => {
+  recenter("smooth");
 };
 
-const setupScrollEndHandler = (callback) => {
-  if ("onscrollend" in window) {
-    // Modern browsers with scrollend support
-    window.addEventListener("scrollend", callback);
-  } else {
-    // Safari and older browsers fallback
-    let scrollTimer;
-    window.addEventListener(
-      "scroll",
-      function () {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(callback, 120);
-        // passive: true mandatory for smooth scroll on Safari (iOS)
-      },
-      { passive: true },
-    );
+const instantRecenter = () => {
+  recenter("instant");
+};
+
+const onLoad = () => {
+  instantRecenter();
+};
+
+const smoothRecenterMaybe = (e) => {
+  let theoretical_left = marginWidth();
+  if (
+    window.scrollX > theoretical_left - 200 &&
+    window.scrollX < theoretical_left + 200
+  ) {
+    recenter("smooth");
   }
 };
 
-setupScrollEndHandler(scrollToCenter);
+const onScrollEnd = (e) => {
+  smoothRecenterMaybe();
+};
 
-const onLoad = () => {
-  const scrollLeft = (document.body.scrollWidth - window.innerWidth) / 2;
-  window.scrollTo({
-    left: scrollLeft,
-    top: window.scrollY,
-    behavior: "instant",
-  });
-
-  // registering click on document that includes empty spaces
-  // mandatory false to prevent bubble phase capturing
-  document.addEventListener("click", (_) => snapToCenter(), false);
+const onTouchEnd = (e) => {
+  smoothRecenterMaybe();
 };
 
 document.addEventListener("DOMContentLoaded", onLoad);
+document.addEventListener("resize", instantRecenter);
+document.addEventListener("click", smoothRecenter);
+document.addEventListener("scrollend", onScrollEnd);
+document.addEventListener("touchend", onTouchEnd);
+
+const onImgClick = (e) => {
+  const image = e.srcElement;
+  if (image.classList.contains("constrained")) {
+    image.classList.remove("constrained");
+  } else {
+    image.classList.add("constrained");
+  }
+};
