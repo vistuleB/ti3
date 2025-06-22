@@ -48,6 +48,7 @@ fn our_pipeline() -> List(Pipe) {
         #("ChapterTitle", "div", [#("class", "main-column-width chapter-title")]),
         #("Sub", "div", [#("class", "subchapter")]),
         #("Definition", "div", [#("class", "definition")]),
+        #("Exercise", "div", [#("class", "main-column-width exercise")]),
       ]),
       dn.add_attributes([
         #("p", "class", "main-column-width"),

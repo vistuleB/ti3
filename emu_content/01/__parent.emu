@@ -79,3 +79,18 @@
     AND/OR/NOT-Gates entsprechend ihrer Funktion
     kombiniert und werden schließlich an den
     Output-Gates ausgegeben:
+
+    |> figure
+        |> img
+            style=height:13em
+            src=img/circuits/if-then-else-gate-with-values.svg
+            loading=lazy
+        |> figcaption
+
+        Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
+
+    |> Exercise
+
+        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
+
+        Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
