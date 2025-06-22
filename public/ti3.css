@@ -1,3 +1,16 @@
+:root {
+    --content-width-mobile: 100vw;
+    --content-width-desktop: 1200px;
+    /* Default */
+    --main-column-width: var(--content-width-mobile);
+}
+
+@media (min-width: 1201px) {
+    :root {
+        --main-column-width: var(--content-width-desktop);
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -15,46 +28,15 @@ body {
     min-width: 2500px;
 }
 
-code {
-    padding: 2px 4px;
-    font-size: 0.9rem;
-    color: #c7254e;
-    background-color: #f9f2f4;
-    border-radius: 4px;
-}
-
-figure {
-    width: fit-content;
-    text-align: center;
-    overflow: visible;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    /* margin-inline-start: 0px;
-    margin-inline-end: 0px; */
-}
-
-.constrained {
-    max-width: calc(100vw - 20px);
-}
-
-h1 {
-    font-size: 2.25rem;
-    font-weight: normal;
-}
-
-img {
-    margin: auto;
-    max-width: 100%;
-}
-
-.transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 500ms;
+.main-column-width {
+    max-width: var(--main-column-width);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .chapter-title {
+    width: inherit;
     display: grid;
     grid-template-columns: minmax(60px, 0fr) auto minmax(60px, 0fr);
     align-items: center;
@@ -75,10 +57,45 @@ img {
     border-top: 6px double;
 }
 
-.text-parent,
-p {
-    width: 100vw;
+figure {
+    width: fit-content;
+    text-align: center;
+    overflow: visible;
     margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+}
+
+img {
+    margin: auto;
+    max-width: 100%;
+}
+
+.constrained {
+    max-width: calc(100vw - 20px);
+}
+
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: normal;
+}
+
+p {
     padding: 0 16px;
-    /* background-color: blueviolet; */
+}
+
+code {
+    padding: 2px 4px;
+    font-size: 0.9rem;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
 }

@@ -44,12 +44,14 @@ fn our_pipeline() -> List(Pipe) {
       dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle"])]),
       dn.rename(#("VerticalChunk", "p")),
       dn.rename_with_attributes([
-        #("ChapterTitle", "div", [#("class", "chapter-title")]),
-        #("Chapter", "div", [#("class", "chapter")]),
+        #("Chapter", "div", [#("class", "main-column-width chapter")]),
+        #("ChapterTitle", "div", [#("class", "main-column-width chapter-title")]),
         #("Sub", "div", [#("class", "subchapter")]),
         #("Definition", "div", [#("class", "definition")]),
       ]),
       dn.add_attributes([
+        #("p", "class", "main-column-width"),
+        #("figure", "class", "main-column-width"),
         #("img", "class", "constrained transition-all"),
         #("img", "onClick", "onImgClick(event)"),
       ]),
