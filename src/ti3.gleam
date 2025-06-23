@@ -48,8 +48,8 @@ fn our_pipeline() -> List(Pipe) {
       dn.rename(#("VerticalChunk", "p")),
 
       dn.rename_with_attributes([
-        #("Chapter", "div", [#("class", "main-column-width chapter")]),
-        #("ChapterTitle", "div", [#("class", "main-column-width chapter-title")]),
+        #("Chapter", "div", [#("class", "chapter")]),
+        #("ChapterTitle", "div", [#("class", "chapter-title")]),
         #("Sub", "div", [#("class", "subchapter")]),
         #("Definition", "div", [#("class", "definition")]),
         #("Exercise", "div", [#("class", "main-column-width exercise")]),
@@ -85,12 +85,14 @@ pub fn our_emitter(
         BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "</head>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "<body>"),
+        BlamedLine(blame_us("ti3_emitter"), 2, "<div class=\"main-column-width\">"),
       ],
       fragment
         |> infra.get_children
         |> list.map(fn(vxml) { vxml.vxml_to_html_blamed_lines(vxml, 2, 2) })
         |> list.flatten,
       [
+        BlamedLine(blame_us("ti3_emitter"), 2, "</div>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "</body>"),
         BlamedLine(blame_us("ti3_emitter"), 0, ""),
       ],

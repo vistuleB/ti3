@@ -5,6 +5,8 @@
     --main-column-width: var(--content-width-mobile);
 }
 
+/* 1201 is the threshold after which main column width is set to --content-width-destop */
+
 @media (min-width: 1201px) {
     :root {
         --main-column-width: var(--content-width-desktop);

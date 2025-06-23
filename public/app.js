@@ -42,7 +42,7 @@ const onTouchEnd = (e) => {
 };
 
 document.addEventListener("DOMContentLoaded", onLoad);
-document.addEventListener("resize", instantRecenter);
+window.addEventListener("resize", instantRecenter);
 document.addEventListener("click", smoothRecenter);
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd);
