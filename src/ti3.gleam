@@ -18,6 +18,9 @@ fn our_pipeline() -> List(Pipe) {
       #([infra.DoubleDollar], infra.DoubleDollar),
       #([infra.BackslashParenthesis], infra.SingleDollar),
     ),
+    [dn.prepend_text([
+      #("Exercise", "*Übungsaufgabe* "),
+    ])],
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
@@ -43,6 +46,7 @@ fn our_pipeline() -> List(Pipe) {
       dn.remove_text_nodes_with_singleton_empty_line(),
       dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle"])]),
       dn.rename(#("VerticalChunk", "p")),
+
       dn.rename_with_attributes([
         #("Chapter", "div", [#("class", "main-column-width chapter")]),
         #("ChapterTitle", "div", [#("class", "main-column-width chapter-title")]),
@@ -50,6 +54,7 @@ fn our_pipeline() -> List(Pipe) {
         #("Definition", "div", [#("class", "definition")]),
         #("Exercise", "div", [#("class", "main-column-width exercise")]),
       ]),
+
       dn.add_attributes([
         #("p", "class", "main-column-width"),
         #("figure", "class", "main-column-width"),
