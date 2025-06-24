@@ -49,15 +49,13 @@ fn our_pipeline() -> List(Pipe) {
 
       dn.rename_with_attributes([
         #("Chapter", "div", [#("class", "chapter")]),
-        #("ChapterTitle", "div", [#("class", "chapter-title")]),
+        #("ChapterTitle", "div", [#("class", "main-column-width chapter-title")]),
         #("Sub", "div", [#("class", "subchapter")]),
         #("Definition", "div", [#("class", "definition")]),
-        #("Exercise", "div", [#("class", "main-column-width exercise")]),
+        #("Exercise", "div", [#("class", "exercise")]),
       ]),
 
       dn.add_attributes([
-        #("p", "class", "main-column-width"),
-        #("figure", "class", "main-column-width"),
         #("img", "class", "constrained transition-all"),
         #("img", "onClick", "onImgClick(event)"),
       ]),
@@ -85,14 +83,12 @@ pub fn our_emitter(
         BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "</head>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "<body>"),
-        BlamedLine(blame_us("ti3_emitter"), 2, "<div class=\"main-column-width\">"),
       ],
       fragment
         |> infra.get_children
         |> list.map(fn(vxml) { vxml.vxml_to_html_blamed_lines(vxml, 2, 2) })
         |> list.flatten,
       [
-        BlamedLine(blame_us("ti3_emitter"), 2, "</div>"),
         BlamedLine(blame_us("ti3_emitter"), 0, "</body>"),
         BlamedLine(blame_us("ti3_emitter"), 0, ""),
       ],
