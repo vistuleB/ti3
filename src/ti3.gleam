@@ -20,11 +20,27 @@ fn our_pipeline() -> List(Pipe) {
     ),
     [
       dn.add_attributes([#("Book", "counter", "ChapterCounter")]),
-      dn.add_attributes([#("Book", "counter", "ExerciseCounter")]),
+      dn.add_attributes([#("Chapter", "counter", "OuterExerciseCounter")]),
+      dn.add_attributes([#("Sub", "counter", "ExerciseCounter")]),
+      dn.add_attributes([#("Chapter", "counter", "SubCounter")]),
       dn.associate_counter_by_prepending_incrementing_attribute([
         #("Chapter", "ChapterCounter")]),
+      dn.associate_counter_by_prepending_incrementing_attribute([#("OuterExercise", "OuterExerciseCounter")]),
       dn.associate_counter_by_prepending_incrementing_attribute([#("Exercise", "ExerciseCounter")]),
-      dn.prepend_text([#("Exercise", "*Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* ")]),
+      dn.associate_counter_by_prepending_incrementing_attribute([#("Sub", "SubCounter")]),
+      dn.prepend_text([
+        #("OuterExercise",
+          "*Übungsaufgabe ::øøChapterCounter.::øøOuterExerciseCounter* "
+      )]),
+      dn.prepend_text([
+        #("Exercise",
+          "*Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter* "
+        )]),
+      // dn.prepend_text_if_has_ancestor_else([
+      //   #("Exercise",
+      //     "Sub",
+      //     "*Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter* ",
+      //     "*Übungsaufgabe ::øøChapterCounter.::øøChapterExerciseCounter* ")]),
       dn.counters_substitute_and_assign_handles(),
     ],
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
@@ -38,7 +54,7 @@ fn our_pipeline() -> List(Pipe) {
           "VerticalChunk",
           [
             "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
-            "Example", "Exercise", "Exercises", "Grid", "Image", "ImageLeft",
+            "Example", "Exercise", "OuterExercise", "Exercises", "Grid", "Image", "ImageLeft",
             "ImageRight", "List", "MathBlock", "Note", "Pause", "Section",
             "Solution", "SolutionNote", "StarDivider", "Table", "TextParent",
             "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
@@ -59,6 +75,7 @@ fn our_pipeline() -> List(Pipe) {
         #("Sub", "div", [#("class", "subchapter")]),
         #("Definition", "div", [#("class", "definition")]),
         #("Exercise", "div", [#("class", "exercise")]),
+        #("OuterExercise", "div", [#("class", "exercise")]),
       ]),
 
       dn.add_attributes([
