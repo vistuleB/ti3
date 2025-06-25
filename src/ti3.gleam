@@ -56,6 +56,8 @@ fn our_pipeline() -> List(Pipe) {
       ]),
 
       dn.add_attributes([
+        #("p", "class", "main-column-width"),
+        #("figure", "class", "main-column-width"),
         #("img", "class", "constrained transition-all"),
         #("img", "onClick", "onImgClick(event)"),
       ]),
