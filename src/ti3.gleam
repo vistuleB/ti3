@@ -18,9 +18,15 @@ fn our_pipeline() -> List(Pipe) {
       #([infra.DoubleDollar], infra.DoubleDollar),
       #([infra.BackslashParenthesis], infra.SingleDollar),
     ),
-    [dn.prepend_text([
-      #("Exercise", "*Übungsaufgabe* "),
-    ])],
+    [
+      dn.add_attributes([#("Book", "counter", "ChapterCounter")]),
+      dn.add_attributes([#("Book", "counter", "ExerciseCounter")]),
+      dn.associate_counter_by_prepending_incrementing_attribute([
+        #("Chapter", "ChapterCounter")]),
+      dn.associate_counter_by_prepending_incrementing_attribute([#("Exercise", "ExerciseCounter")]),
+      dn.prepend_text([#("Exercise", "*Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* ")]),
+      dn.counters_substitute_and_assign_handles(),
+    ],
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),

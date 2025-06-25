@@ -1,7 +1,7 @@
 |> Chapter
     |> ChapterTitle
 
-        Boolesche Schaltkreise
+        Boolesche Schaltkreise ::øøChapterCounter
 
     Boolesche Schaltkreise sind ein idealisiertes
     Modell echter elektronischer Schaltkreise.
@@ -88,6 +88,12 @@
         |> figcaption
 
         Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
+
+    |> Exercise
+
+        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
+
+        Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
 
     |> Exercise
 
