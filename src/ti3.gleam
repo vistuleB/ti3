@@ -30,6 +30,26 @@ fn descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: St
   }
 }
 
+// Helper function to remove descendants with a specific attribute value
+fn remove_descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: String) -> VXML {
+  case vxml {
+    T(_, _) -> vxml
+    V(blame, tag, attributes, children) -> {
+      let filtered_children = 
+        children
+        |> list.filter(fn(child) {
+          case child {
+            T(_, _) -> True  // Keep text elements
+            _ -> !infra.v_has_key_value_attribute(child, attr_key, attr_value)
+          }
+        })
+        |> list.map(remove_descendants_with_attribute_value(_, attr_key, attr_value))
+      
+      V(blame, tag, attributes, filtered_children)
+    }
+  }
+}
+
 pub type FragmentType {
   Chapter(Int)
   Sub(Int, Int)  // Sub(chapter_number, sub_number)
@@ -73,10 +93,11 @@ fn ti3_splitter(
           // Since subs are also transformed to divs with class="subchapter"
           let sub_vxmls = descendants_with_attribute_value(chapter, "class", "subchapter")
           
-          // Create chapter fragment
+          // Create chapter fragment without sub-chapters
+          let chapter_without_subs = remove_descendants_with_attribute_value(chapter, "class", "subchapter")
           let chapter_fragment = #(
             "chapter" <> string.inspect(chapter_number) <> ".html", 
-            chapter, 
+            chapter_without_subs, 
             Chapter(chapter_number)
           )
           
