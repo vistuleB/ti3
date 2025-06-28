@@ -28,6 +28,7 @@ body {
     font-size: 1.25rem;
     line-height: 1.42;
     min-width: 2500px;
+    color: #333333;
 }
 
 .main-column-width {
@@ -35,6 +36,64 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.index__header {
+    width: 100%;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.index__header__title {
+    font-size: 2rem;
+}
+
+.index__header__subtitle {
+    font-size: 1.5rem;
+    display: block;
+    margin: auto;
+}
+
+/* Reset counters at the root level */
+.index__list {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+}
+
+.index__list a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+/* For top-level list items */
+.index__list__chapter {
+    counter-increment: item;
+    padding-left: 20px;
+    margin: 0.4rem 0;
+}
+
+.index__list__chapter::before {
+    content: counter(item) " - ";
+    margin-right: 0.4rem;
+}
+
+/* For nested lists */
+.index__list__subchapter {
+    counter-reset: subitem;
+    padding-left: 0.4rem; /* More indentation for visual hierarchy */
+    list-style: none;
+}
+
+.index__list__subchapter li {
+    counter-increment: subitem;
+    margin: 0.4rem 0;
+}
+
+.index__list__subchapter li::before {
+    content: counter(item) "." counter(subitem) " - ";
+    margin-right: 0.4rem;
 }
 
 .chapter-title {
