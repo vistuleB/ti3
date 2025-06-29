@@ -13,6 +13,8 @@ import writerly as wp
 
 fn our_pipeline() -> List(Pipe) {
   [
+    [ dn.generate_ti3_index_element()
+    ],
     pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
       #([infra.DoubleDollar], infra.DoubleDollar),
@@ -59,6 +61,7 @@ fn our_pipeline() -> List(Pipe) {
       dn.remove_text_nodes_with_singleton_empty_line(),
       dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle"])]),
       dn.rename(#("VerticalChunk", "p")),
+      dn.rename(#("Index", "section")),
 
       dn.rename_with_attributes([
         #("Chapter", "div", [#("class", "chapter")]),

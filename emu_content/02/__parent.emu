@@ -2,5 +2,8 @@
     title_gr=Mengen
     title_en=infinite sets
 
+    |> ChapterTitle
+        Mengen
+
     Hallooooo
     $$x + x$$
