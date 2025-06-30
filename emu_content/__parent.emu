@@ -1,1 +1,5 @@
-|> Book
+|> Document
+    title=Theoretische Informatik 2 - Vorlesungsskript
+    program=Bachelor-Studium Informatik
+    institution=TU Chemnitz
+    lecturer=Dominik Scheder

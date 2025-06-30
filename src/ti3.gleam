@@ -21,7 +21,7 @@ fn our_pipeline() -> List(Pipe) {
       #([infra.BackslashParenthesis], infra.SingleDollar),
     ),
     [
-      dn.add_attributes([#("Book", "counter", "ChapterCounter")]),
+      dn.add_attributes([#("Document", "counter", "ChapterCounter")]),
       dn.add_attributes([#("Chapter", "counter", "ExerciseCounter")]),
       dn.add_attributes([#("Sub", "counter", "ExerciseCounter")]),
       dn.add_attributes([#("Chapter", "counter", "SubCounter")]),
