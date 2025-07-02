@@ -72,7 +72,7 @@ fn index_splitter(
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Try to find section element (Index is transformed to section)
   let section_descendants = infra.descendants_with_tag(root, "section")
-  
+
   case section_descendants {
     [] -> Error(NoIndex)
     [single_section] -> Ok([#("index.html", single_section, Index)])
@@ -86,7 +86,7 @@ fn chapter_splitter(
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Since chapters are transformed to div with class="chapter" by the pipeline
   let chapter_vxmls = descendants_with_attribute_value(root, "class", "chapter")
-  
+
   case chapter_vxmls {
     [] -> Error(NoChapters)
     _ -> {
@@ -101,7 +101,7 @@ fn chapter_splitter(
             Chapter(chapter_number)
           )
         })
-      
+
       Ok(chapter_fragments)
     }
   }
@@ -113,7 +113,7 @@ fn sub_chapter_splitter(
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Since chapters are transformed to div with class="chapter" by the pipeline
   let chapter_vxmls = descendants_with_attribute_value(root, "class", "chapter")
-  
+
   case chapter_vxmls {
     [] -> Error(NoChapters)
     _ -> {
@@ -122,7 +122,7 @@ fn sub_chapter_splitter(
           let chapter_number = chapter_index + 1
           // Since subs are also transformed to divs with class="subchapter"
           let sub_vxmls = descendants_with_attribute_value(chapter, "class", "subchapter")
-          
+
           list.index_map(sub_vxmls, fn(sub, sub_index) {
             let sub_number = sub_index + 1
             #(
@@ -133,7 +133,7 @@ fn sub_chapter_splitter(
           })
         })
         |> list.flatten
-      
+
       Ok(sub_fragments)
     }
   }
@@ -162,12 +162,12 @@ fn ti3_splitter(
     index_splitter(book),
     with_on_error: fn(error) { Error(error) }
   )
-  
+
   use chapter_fragments <- infra.on_error_on_ok(
     chapter_splitter(book),
     with_on_error: fn(error) { Error(error) }
   )
-  
+
   use sub_fragments <- infra.on_error_on_ok(
     sub_chapter_splitter(book),
     with_on_error: fn(error) { Error(error) }
@@ -275,10 +275,7 @@ fn index_emitter(
         BlamedLine(blame_us("index_emitter"), 0, "</head>"),
         BlamedLine(blame_us("index_emitter"), 0, "<body>"),
       ],
-      fragment
-        |> infra.get_children
-        |> list.map(fn(vxml) { vxml.vxml_to_html_blamed_lines(vxml, 2, 2) })
-        |> list.flatten,
+      vxml.vxml_to_html_blamed_lines(fragment, 2, 2),
       [
         BlamedLine(blame_us("index_emitter"), 0, "</body>"),
         BlamedLine(blame_us("index_emitter"), 0, "</html>"),
