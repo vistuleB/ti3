@@ -52,7 +52,7 @@ fn index_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Try to find section element (Index is transformed to section)
-  let section_descendants = infra.descendants_with_tag(root, "section")
+  let section_descendants = infra.descendants_with_key_value(root, "class", "index")
 
   case section_descendants {
     [] -> Error(NoIndex)
@@ -212,9 +212,9 @@ fn our_pipeline() -> List(Pipe) {
       dn.remove_text_nodes_with_singleton_empty_line(),
       dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle"])]),
       dn.rename(#("VerticalChunk", "p")),
-      dn.rename(#("Index", "section")),
 
       dn.rename_with_attributes([
+        #("Index", "div", [#("class", "index")]),
         #("Chapter", "div", [#("class", "chapter")]),
         #("ChapterTitle", "div", [#("class", "main-column-width chapter-title")]),
         #("Sub", "div", [#("class", "subchapter")]),
