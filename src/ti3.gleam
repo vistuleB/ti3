@@ -11,7 +11,7 @@ import infrastructure.{type Pipe} as infra
 import desugarer_names as dn
 import writerly as wp
 
-// Helper function to find descendants with a specific attribute value
+// Helper function to find descendants with a specific attribute value (following infrastructure pattern)
 fn descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: String) -> List(VXML) {
   case vxml {
     T(_, _) -> []
@@ -29,6 +29,8 @@ fn descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: St
     }
   }
 }
+
+
 
 // Helper function to remove descendants with a specific attribute value
 fn remove_descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: String) -> VXML {
@@ -60,8 +62,6 @@ pub type TI3SplitterError {
   NoChapters
   MoreThanOneIndex
   NoIndex
-  NoDocument
-  MoreThanOneDocument
 }
 
 fn blame_us(message: String) -> Blame {
@@ -152,7 +152,7 @@ fn ti3_splitter(
       case infra.unique_child_with_tag(root, "Document") {
         Ok(document) -> Ok(document)
         Error(infra.LessThanOne) -> Ok(root)  // Use root as Document if no Document found
-        Error(infra.MoreThanOne) -> Error(MoreThanOneDocument)
+        Error(infra.MoreThanOne) -> Error(MoreThanOneIndex)
       }
     }
   }
