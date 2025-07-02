@@ -11,27 +11,6 @@ import infrastructure.{type Pipe} as infra
 import desugarer_names as dn
 import writerly as wp
 
-// Helper function to find descendants with a specific attribute value (following infrastructure pattern)
-fn descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: String) -> List(VXML) {
-  case vxml {
-    T(_, _) -> []
-    V(_, _, _, children) -> {
-      let current_matches = case infra.v_has_key_value_attribute(vxml, attr_key, attr_value) {
-        True -> [vxml]
-        False -> []
-      }
-
-      let child_matches =
-        list.map(children, descendants_with_attribute_value(_, attr_key, attr_value))
-        |> list.flatten
-
-      list.flatten([current_matches, child_matches])
-    }
-  }
-}
-
-
-
 // Helper function to remove descendants with a specific attribute value
 fn remove_descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: String) -> VXML {
   case vxml {
@@ -87,7 +66,7 @@ fn chapter_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Since chapters are transformed to div with class="chapter" by the pipeline
-  let chapter_vxmls = descendants_with_attribute_value(root, "class", "chapter")
+  let chapter_vxmls = infra.descendants_with_key_value(root, "class", "chapter")
 
   case chapter_vxmls {
     [] -> Error(NoChapters)
@@ -114,7 +93,7 @@ fn sub_chapter_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Since chapters are transformed to div with class="chapter" by the pipeline
-  let chapter_vxmls = descendants_with_attribute_value(root, "class", "chapter")
+  let chapter_vxmls = infra.descendants_with_key_value(root, "class", "chapter")
 
   case chapter_vxmls {
     [] -> Error(NoChapters)
@@ -123,7 +102,7 @@ fn sub_chapter_splitter(
         list.index_map(chapter_vxmls, fn(chapter, chapter_index) {
           let chapter_number = chapter_index + 1
           // Since subs are also transformed to divs with class="subchapter"
-          let sub_vxmls = descendants_with_attribute_value(chapter, "class", "subchapter")
+          let sub_vxmls = infra.descendants_with_key_value(chapter, "class", "subchapter")
 
           list.index_map(sub_vxmls, fn(sub, sub_index) {
             let sub_number = sub_index + 1
