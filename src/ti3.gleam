@@ -52,11 +52,11 @@ fn index_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Try to find section element (Index is transformed to section)
-  let section_descendants = infra.descendants_with_key_value(root, "class", "index")
+  let index_descendants = infra.descendants_with_key_value(root, "class", "index")
 
-  case section_descendants {
+  case index_descendants {
     [] -> Error(NoIndex)
-    [single_section] -> Ok([#("index.html", single_section, Index)])
+    [single_index] -> Ok([#("index.html", single_index, Index)])
     _ -> Error(MoreThanOneIndex)
   }
 }
