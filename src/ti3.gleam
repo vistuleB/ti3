@@ -20,11 +20,11 @@ fn descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: St
         True -> [vxml]
         False -> []
       }
-      
-      let child_matches = 
+
+      let child_matches =
         list.map(children, descendants_with_attribute_value(_, attr_key, attr_value))
         |> list.flatten
-      
+
       list.flatten([current_matches, child_matches])
     }
   }
@@ -35,7 +35,7 @@ fn remove_descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_va
   case vxml {
     T(_, _) -> vxml
     V(blame, tag, attributes, children) -> {
-      let filtered_children = 
+      let filtered_children =
         children
         |> list.filter(fn(child) {
           case child {
@@ -44,7 +44,7 @@ fn remove_descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_va
           }
         })
         |> list.map(remove_descendants_with_attribute_value(_, attr_key, attr_value))
-      
+
       V(blame, tag, attributes, filtered_children)
     }
   }
@@ -58,10 +58,88 @@ pub type FragmentType {
 
 pub type TI3SplitterError {
   NoChapters
-  MoreThanOneBook
-  NoBook
+  MoreThanOneIndex
+  NoIndex
 }
 
+fn blame_us(message: String) -> Blame {
+  Blame(message, 0, 0, [])
+}
+
+// Index splitter - handles Index fragments
+fn index_splitter(
+  root: VXML,
+) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
+  // Try to find section element (Index is transformed to section)
+  let section_descendants = infra.descendants_with_tag(root, "section")
+  
+  case section_descendants {
+    [] -> Error(NoIndex)
+    [single_section] -> Ok([#("index.html", single_section, Index)])
+    _ -> Error(MoreThanOneIndex)
+  }
+}
+
+// Chapter splitter - handles Chapter fragments without sub-chapters
+fn chapter_splitter(
+  root: VXML,
+) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
+  // Since chapters are transformed to div with class="chapter" by the pipeline
+  let chapter_vxmls = descendants_with_attribute_value(root, "class", "chapter")
+  
+  case chapter_vxmls {
+    [] -> Error(NoChapters)
+    _ -> {
+      let chapter_fragments =
+        list.index_map(chapter_vxmls, fn(chapter, chapter_index) {
+          let chapter_number = chapter_index + 1
+          // Create chapter fragment without sub-chapters
+          let chapter_without_subs = remove_descendants_with_attribute_value(chapter, "class", "subchapter")
+          #(
+            "chapter" <> string.inspect(chapter_number) <> ".html",
+            chapter_without_subs,
+            Chapter(chapter_number)
+          )
+        })
+      
+      Ok(chapter_fragments)
+    }
+  }
+}
+
+// Sub-chapter splitter - handles Sub fragments
+fn sub_chapter_splitter(
+  root: VXML,
+) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
+  // Since chapters are transformed to div with class="chapter" by the pipeline
+  let chapter_vxmls = descendants_with_attribute_value(root, "class", "chapter")
+  
+  case chapter_vxmls {
+    [] -> Error(NoChapters)
+    _ -> {
+      let sub_fragments =
+        list.index_map(chapter_vxmls, fn(chapter, chapter_index) {
+          let chapter_number = chapter_index + 1
+          // Since subs are also transformed to divs with class="subchapter"
+          let sub_vxmls = descendants_with_attribute_value(chapter, "class", "subchapter")
+          
+          list.index_map(sub_vxmls, fn(sub, sub_index) {
+            let sub_number = sub_index + 1
+            #(
+              "chapter" <> string.inspect(chapter_number) <> "-sub" <> string.inspect(sub_number) <> ".html",
+              sub,
+              Sub(chapter_number, sub_number)
+            )
+          })
+        })
+        |> list.flatten
+      
+      Ok(sub_fragments)
+    }
+  }
+}
+
+// Main splitter that combines all sub-splitters
 fn ti3_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
@@ -72,56 +150,35 @@ fn ti3_splitter(
       case infra.unique_child_with_tag(root, "Book") {
         Ok(book) -> Ok(book)
         Error(infra.LessThanOne) -> Ok(root)  // Use root as Book if no Book found
-        Error(infra.MoreThanOne) -> Error(MoreThanOneBook)
+        Error(infra.MoreThanOne) -> Error(MoreThanOneIndex)
       }
     }
   }
 
   use book <- infra.on_error_on_ok(book_vxml, with_on_error: fn(error) { Error(error) })
 
-  // Since chapters are transformed to div with class="chapter" by the pipeline
-  let chapter_vxmls = descendants_with_attribute_value(book, "class", "chapter")
+  // Get fragments from each splitter
+  use index_fragments <- infra.on_error_on_ok(
+    index_splitter(book),
+    with_on_error: fn(error) { Error(error) }
+  )
   
-  // Ensure we have at least one chapter
-  case chapter_vxmls {
-    [] -> Error(NoChapters)
-    _ -> {
-      // Create fragments for each chapter
-      let chapter_fragments = 
-        list.index_map(chapter_vxmls, fn(chapter, chapter_index) {
-          let chapter_number = chapter_index + 1
-          // Since subs are also transformed to divs with class="subchapter"
-          let sub_vxmls = descendants_with_attribute_value(chapter, "class", "subchapter")
-          
-          // Create chapter fragment without sub-chapters
-          let chapter_without_subs = remove_descendants_with_attribute_value(chapter, "class", "subchapter")
-          let chapter_fragment = #(
-            "chapter" <> string.inspect(chapter_number) <> ".html", 
-            chapter_without_subs, 
-            Chapter(chapter_number)
-          )
-          
-          // Create sub fragments if any exist
-          let sub_fragments = 
-            list.index_map(sub_vxmls, fn(sub, sub_index) {
-              let sub_number = sub_index + 1
-              #(
-                "chapter" <> string.inspect(chapter_number) <> "-sub" <> string.inspect(sub_number) <> ".html",
-                sub,
-                Sub(chapter_number, sub_number)
-              )
-            })
-          
-          [chapter_fragment, ..sub_fragments]
-        })
-        |> list.flatten
+  use chapter_fragments <- infra.on_error_on_ok(
+    chapter_splitter(book),
+    with_on_error: fn(error) { Error(error) }
+  )
+  
+  use sub_fragments <- infra.on_error_on_ok(
+    sub_chapter_splitter(book),
+    with_on_error: fn(error) { Error(error) }
+  )
 
-      // Create index fragment (table of contents)
-      let index_fragment = #("index.html", book, Index)
-      
-      Ok([index_fragment, ..chapter_fragments])
-    }
-  }
+  // Combine all fragments
+  Ok(list.flatten([
+    index_fragments,
+    chapter_fragments,
+    sub_fragments
+  ]))
 }
 
 fn our_pipeline() -> List(Pipe) {
@@ -196,44 +253,116 @@ fn our_pipeline() -> List(Pipe) {
   |> list.flatten
 }
 
-pub fn our_emitter(
-  tuple: #(String, VXML, FragmentType),
+// Index emitter - handles Index fragments
+fn index_emitter(
+  path: String,
+  fragment: VXML,
+  fragment_type: FragmentType,
 ) -> Result(#(String, List(BlamedLine), FragmentType), String) {
-  let #(path, fragment, fragment_type) = tuple
-  let blame_us = fn(msg: String) -> Blame { Blame(msg, 0, 0, []) }
   let lines =
     list.flatten([
       [
-        BlamedLine(blame_us("ti3_emitter"), 0, "<!DOCTYPE html>"),
-        BlamedLine(blame_us("ti3_emitter"), 0, "<html>"),
-        BlamedLine(blame_us("ti3_emitter"), 0, "<head>"),
-        BlamedLine(blame_us("ti3_emitter"), 2, "<meta charset=\"utf-8\">"),
-        BlamedLine(blame_us("ti3_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
-        BlamedLine(blame_us("ti3_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
-        BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
-        BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        BlamedLine(blame_us("ti3_emitter"), 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
-        BlamedLine(blame_us("ti3_emitter"), 2, get_navigation_html(fragment_type)),
-        BlamedLine(blame_us("ti3_emitter"), 0, "</head>"),
-        BlamedLine(blame_us("ti3_emitter"), 0, "<body>"),
+        BlamedLine(blame_us("index_emitter"), 0, "<!DOCTYPE html>"),
+        BlamedLine(blame_us("index_emitter"), 0, "<html>"),
+        BlamedLine(blame_us("index_emitter"), 0, "<head>"),
+        BlamedLine(blame_us("index_emitter"), 2, "<meta charset=\"utf-8\">"),
+        BlamedLine(blame_us("index_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
+        BlamedLine(blame_us("index_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        BlamedLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        BlamedLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
+        BlamedLine(blame_us("index_emitter"), 2, "<title>TI3 - Index</title>"),
+        BlamedLine(blame_us("index_emitter"), 0, "</head>"),
+        BlamedLine(blame_us("index_emitter"), 0, "<body>"),
       ],
       fragment
         |> infra.get_children
         |> list.map(fn(vxml) { vxml.vxml_to_html_blamed_lines(vxml, 2, 2) })
         |> list.flatten,
       [
-        BlamedLine(blame_us("ti3_emitter"), 0, "</body>"),
-        BlamedLine(blame_us("ti3_emitter"), 0, ""),
+        BlamedLine(blame_us("index_emitter"), 0, "</body>"),
+        BlamedLine(blame_us("index_emitter"), 0, "</html>"),
+        BlamedLine(blame_us("index_emitter"), 0, ""),
       ],
     ])
   Ok(#(path, lines, fragment_type))
 }
 
-fn get_navigation_html(fragment_type: FragmentType) -> String {
+// Chapter emitter - handles Chapter fragments
+fn chapter_emitter(
+  path: String,
+  fragment: VXML,
+  fragment_type: FragmentType,
+) -> Result(#(String, List(BlamedLine), FragmentType), String) {
+  let assert Chapter(n) = fragment_type
+  let lines =
+    list.flatten([
+      [
+        BlamedLine(blame_us("chapter_emitter"), 0, "<!DOCTYPE html>"),
+        BlamedLine(blame_us("chapter_emitter"), 0, "<html>"),
+        BlamedLine(blame_us("chapter_emitter"), 0, "<head>"),
+        BlamedLine(blame_us("chapter_emitter"), 2, "<meta charset=\"utf-8\">"),
+        BlamedLine(blame_us("chapter_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
+        BlamedLine(blame_us("chapter_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        BlamedLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        BlamedLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
+        BlamedLine(blame_us("chapter_emitter"), 2, "<title>TI3 - Chapter " <> string.inspect(n) <> "</title>"),
+        BlamedLine(blame_us("chapter_emitter"), 0, "</head>"),
+        BlamedLine(blame_us("chapter_emitter"), 0, "<body>"),
+      ],
+      vxml.vxml_to_html_blamed_lines(fragment, 2, 2),
+      [
+        BlamedLine(blame_us("chapter_emitter"), 0, "</body>"),
+        BlamedLine(blame_us("chapter_emitter"), 0, "</html>"),
+        BlamedLine(blame_us("chapter_emitter"), 0, ""),
+      ],
+    ])
+  Ok(#(path, lines, fragment_type))
+}
+
+// Sub-chapter emitter - handles Sub fragments
+fn sub_chapter_emitter(
+  path: String,
+  fragment: VXML,
+  fragment_type: FragmentType,
+) -> Result(#(String, List(BlamedLine), FragmentType), String) {
+  let assert Sub(chapter_n, sub_n) = fragment_type
+  let lines =
+    list.flatten([
+      [
+        BlamedLine(blame_us("sub_chapter_emitter"), 0, "<!DOCTYPE html>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 0, "<html>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 0, "<head>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<meta charset=\"utf-8\">"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<title>TI3 - Chapter " <> string.inspect(chapter_n) <> ", Section " <> string.inspect(sub_n) <> "</title>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 0, "</head>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 0, "<body>"),
+      ],
+      vxml.vxml_to_html_blamed_lines(fragment, 2, 2),
+      [
+        BlamedLine(blame_us("sub_chapter_emitter"), 0, "</body>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 0, "</html>"),
+        BlamedLine(blame_us("sub_chapter_emitter"), 0, ""),
+      ],
+    ])
+  Ok(#(path, lines, fragment_type))
+}
+
+// Main emitter that dispatches to appropriate sub-emitters
+pub fn our_emitter(
+  tuple: #(String, VXML, FragmentType),
+) -> Result(#(String, List(BlamedLine), FragmentType), String) {
+  let #(path, fragment, fragment_type) = tuple
   case fragment_type {
-    Index -> "<title>TI3 - Index</title>"
-    Chapter(n) -> "<title>TI3 - Chapter " <> string.inspect(n) <> "</title>"
-    Sub(chapter_n, sub_n) -> "<title>TI3 - Chapter " <> string.inspect(chapter_n) <> ", Section " <> string.inspect(sub_n) <> "</title>"
+    Index -> index_emitter(path, fragment, fragment_type)
+    Chapter(_) -> chapter_emitter(path, fragment, fragment_type)
+    Sub(_, _) -> sub_chapter_emitter(path, fragment, fragment_type)
   }
 }
 
