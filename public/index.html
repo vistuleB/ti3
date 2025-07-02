@@ -10,353 +10,59 @@
   <title>TI3 - Index</title>
 </head>
 <body>
-  <div
-    .="ChapterCounter 1"
-    counter="ExerciseCounter"
-    counter="SubCounter"
-    class="chapter"
+  <section
+    class="main-column-width"
   >
-    <div
-      class="main-column-width chapter-title"
+    <header
+      class="index__header"
     >
-      Boolesche Schaltkreise 1
-    </div>
-    <p
-      class="main-column-width"
-    >
-      Boolesche Schaltkreise sind ein idealisiertes
-      Modell echter elektronischer Schaltkreise.
-      Als primitive Bausteine haben wir Boolesche
-      Operatoren, auch 
-      <i>Gatter</i>
-       (englisch 
-      <i>gates</i>)
-      genannt, die mehrere (typischerweise ein oder zwei)
-      Signale zu einem Ausgabe-Signal kombinieren.
-      Die Signale können nur zwei Werte annehmen:
-      wahr/falsch bzw. 1/0 bzw. 
-      <code>true/false</code>. Hier
-      sehen Sie die drei üblichsten Gatter:
-    </p>
-    <p
-      class="main-column-width"
-    >
-      <figure
-        class="main-column-width"
+      <h1
+        class="index__header__title"
       >
-        <img
-          style="width:20em"
-          src="img/circuits/and-or-not-gates.svg"
-          onClick="onImgClick(event)"
-          class="constrained transition-all"
+        Theoretische Informatik 2 - Vorlesungsskript
+      </h1>
+      <span
+        class="index__header__subtitle"
+      >Bachelor-Studium Informatik</span><span
+        class="index__header__subtitle"
+      >Dominik Scheder, TU Chemnitz</span>
+    </header>
+    <ol
+      class="index__list"
+    >
+      <li
+        class="index__list__chapter"
+      >
+        1 - 
+        <a
+          href="#"
+        >Boolesche Schaltkreise</a>
+        <ol
+          class="index__list__subchapter"
         >
-      </figure>
-    </p>
-    <p
-      class="main-column-width"
-    >
-      Von links nach rechts sind dies: das Und-Gatter
-      (<i>and-gate</i>), Oder-Gatter (<i>or-gate</i>) und das
-      Nicht-Gatter (<i>not-gate</i>). In C, C++ und Java
-      kennen Sie diese Booleschen Operatoren als
-      <code>&&</code>, 
-      <code>||</code>
-       und 
-      <code>!</code>. Was diese Operatoren
-      <i>tun</i>, können wir als 
-      <i>Wahrheitstabelle</i>
-       darstellen.
-      Wir listen alle Kombinationen für $x,y$ auf
-      und schreiben in jede Zeile auch den Wert, den
-      der Operator ausgibt.
-    </p>
-    <p
-      class="main-column-width"
-    >
-      $$
-      \begin{array}{ll|l}
-      x&amp;y&amp;x \wedge y \\ \hline
-      0&amp;0&amp;0 \\
-      0&amp;1&amp;0 \\
-      1&amp;0&amp;0 \\
-      1&amp;1&amp;1
-      \end{array}
-      \qquad \qquad
-      \begin{array}{ll|l}
-      x&amp;y&amp;x \vee y \\ \hline
-      0&amp;0&amp;0 \\
-      0&amp;1&amp;1 \\
-      1&amp;0&amp;1 \\
-      1&amp;1&amp;1
-      \end{array}
-      \qquad \qquad
-      \begin{array}{l|l}
-      x&amp;\neg x \\ \hline
-      0&amp;1 \\
-      1&amp;0 \\
-      \end{array}
-      $$
-    </p>
-    <p
-      class="main-column-width"
-    >
-      Die dritte Zeile der mittleren Tabelle sagt
-      beispielsweise aus, dass $1 \vee 0 = 1$ gilt.
-    </p>
-    <p
-      class="main-column-width"
-    >
-      Vielleicht wünschen Sie sich noch mehr Gates,
-      zum Beispiel ein if-then-else-Gate mit drei
-      Inputs $x,y,z$, welches $y$ ausgibt, wenn
-      $x$ wahr ist und ansonsten $z$ ausgibt.
-      So ein Gate können Sie sich einfach aus And,
-      Or, Not bauen:
-    </p>
-    <p
-      class="main-column-width"
-    >
-      <figure
-        class="main-column-width"
+          <li>
+            1.1 - 
+            <a
+              href="#"
+            >Fanin, Tiefe, Größe</a>
+          </li>
+          <li>
+            1.2 - 
+            <a
+              href="#"
+            >Fanin, Tiefe, Größe</a>
+          </li>
+        </ol>
+      </li>
+      <li
+        class="index__list__chapter"
       >
-        <img
-          style="height:13em"
-          src="img/circuits/if-then-else-gate.svg"
-          loading="lazy"
-          onClick="onImgClick(event)"
-          class="constrained transition-all"
-        >
-        <figcaption>
-          <code>if</code>
-           $x$ 
-          <code>then</code>
-           $y$ 
-          <code>else</code>
-           $z$
-        </figcaption>
-      </figure>
-    </p>
-    <p
-      class="main-column-width"
-    >
-      Jeder Schaltkreis 
-      <i>berechnet</i>
-       eine Funktion
-      (formale Definition weiter unten). Informell
-      gesprochen, wenn wir Wahrheitswerte (0/1) in
-      die Input-Gates reinstecken, dann fließen diese
-      durch den Schaltkreis und werden von den
-      AND/OR/NOT-Gates entsprechend ihrer Funktion
-      kombiniert und werden schließlich an den
-      Output-Gates ausgegeben:
-    </p>
-    <p
-      class="main-column-width"
-    >
-      <figure
-        class="main-column-width"
-      >
-        <img
-          style="height:13em"
-          src="img/circuits/if-then-else-gate-with-values.svg"
-          loading="lazy"
-          onClick="onImgClick(event)"
-          class="constrained transition-all"
-        >
-        <figcaption>
-        </figcaption>
-        Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
-      </figure>
-    </p>
-    <div
-      .="ExerciseCounter 1"
-      class="exercise"
-    >
-      <p
-        class="main-column-width"
-      >
-        <b>Übungsaufgabe 1.1</b>
-         
-        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
-      </p>
-      <p
-        class="main-column-width"
-      >
-        Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
-      </p>
-    </div>
-    <div
-      .="ExerciseCounter 2"
-      class="exercise"
-    >
-      <p
-        class="main-column-width"
-      >
-        <b>Übungsaufgabe 1.2</b>
-         
-        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
-      </p>
-      <p
-        class="main-column-width"
-      >
-        Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
-      </p>
-    </div>
-    <div
-      .="ExerciseCounter 3"
-      class="exercise"
-    >
-      <p
-        class="main-column-width"
-      >
-        <b>Übungsaufgabe 1.3</b>
-         
-        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
-      </p>
-      <p
-        class="main-column-width"
-      >
-        Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
-      </p>
-    </div>
-    <div
-      .="SubCounter 1"
-      title_gr="Fanin, Tiefe, Größe"
-      counter="ExerciseCounter"
-      class="subchapter"
-    >
-      <p
-        class="main-column-width"
-      >
-        Für
-      </p>
-      <div
-        class="definition"
-      >
-        <p
-          class="main-column-width"
-        >
-          Die 
-          <i>Grösse</i>
-           eines Schaltkreise ist
-        </p>
-      </div>
-      <p
-        class="main-column-width"
-      >
-        <b>Vorsicht.</b>
-      </p>
-      <div
-        .="ExerciseCounter 1"
-        class="exercise"
-      >
-        <p
-          class="main-column-width"
-        >
-          <b>Übungsaufgabe 1.1.1</b>
-           
-          Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
-        </p>
-        <p
-          class="main-column-width"
-        >
-          Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
-        </p>
-      </div>
-      <div
-        .="ExerciseCounter 2"
-        class="exercise"
-      >
-        <p
-          class="main-column-width"
-        >
-          <b>Übungsaufgabe 1.1.2</b>
-           
-          Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
-        </p>
-        <p
-          class="main-column-width"
-        >
-          Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
-        </p>
-      </div>
-    </div>
-    <div
-      .="SubCounter 2"
-      title_gr="Fanin, Tiefe, Größe"
-      counter="ExerciseCounter"
-      class="subchapter"
-    >
-      <p
-        class="main-column-width"
-      >
-        Für
-      </p>
-      <div
-        class="definition"
-      >
-        <p
-          class="main-column-width"
-        >
-          Die 
-          <i>Grösse</i>
-           eines Schaltkreise ist
-        </p>
-      </div>
-      <p
-        class="main-column-width"
-      >
-        <b>Vorsicht.</b>
-      </p>
-      <div
-        .="ExerciseCounter 1"
-        class="exercise"
-      >
-        <p
-          class="main-column-width"
-        >
-          <b>Übungsaufgabe 1.2.1</b>
-           
-          Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
-        </p>
-        <p
-          class="main-column-width"
-        >
-          Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
-        </p>
-      </div>
-      <div
-        .="ExerciseCounter 2"
-        class="exercise"
-      >
-        <p
-          class="main-column-width"
-        >
-          <b>Übungsaufgabe 1.2.2</b>
-           
-          Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
-        </p>
-        <p
-          class="main-column-width"
-        >
-          Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    .="ChapterCounter 2"
-    title_gr="Mengen"
-    title_en="infinite sets"
-    counter="ExerciseCounter"
-    counter="SubCounter"
-    class="chapter"
-  >
-    <p
-      class="main-column-width"
-    >
-      Hallooooo
-      $$x + x$$
-    </p>
-  </div>
+        2 - 
+        <a
+          href="#"
+        >Mengen</a>
+      </li>
+    </ol>
+  </section>
 </body>
+</html>

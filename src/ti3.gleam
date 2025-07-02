@@ -60,6 +60,8 @@ pub type TI3SplitterError {
   NoChapters
   MoreThanOneIndex
   NoIndex
+  NoDocument
+  MoreThanOneDocument
 }
 
 fn blame_us(message: String) -> Blame {
@@ -143,33 +145,33 @@ fn sub_chapter_splitter(
 fn ti3_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  // Try to find Book - it might be the root itself or a child
-  let book_vxml = case root {
-    V(_, "Book", _, _) -> Ok(root)
+  // Try to find Document - it might be the root itself or a child
+  let document_vxml = case root {
+    V(_, "Document", _, _) -> Ok(root)
     _ -> {
-      case infra.unique_child_with_tag(root, "Book") {
-        Ok(book) -> Ok(book)
-        Error(infra.LessThanOne) -> Ok(root)  // Use root as Book if no Book found
-        Error(infra.MoreThanOne) -> Error(MoreThanOneIndex)
+      case infra.unique_child_with_tag(root, "Document") {
+        Ok(document) -> Ok(document)
+        Error(infra.LessThanOne) -> Ok(root)  // Use root as Document if no Document found
+        Error(infra.MoreThanOne) -> Error(MoreThanOneDocument)
       }
     }
   }
 
-  use book <- infra.on_error_on_ok(book_vxml, with_on_error: fn(error) { Error(error) })
+  use document <- infra.on_error_on_ok(document_vxml, with_on_error: fn(error) { Error(error) })
 
   // Get fragments from each splitter
   use index_fragments <- infra.on_error_on_ok(
-    index_splitter(book),
+    index_splitter(document),
     with_on_error: fn(error) { Error(error) }
   )
 
   use chapter_fragments <- infra.on_error_on_ok(
-    chapter_splitter(book),
+    chapter_splitter(document),
     with_on_error: fn(error) { Error(error) }
   )
 
   use sub_fragments <- infra.on_error_on_ok(
-    sub_chapter_splitter(book),
+    sub_chapter_splitter(document),
     with_on_error: fn(error) { Error(error) }
   )
 
