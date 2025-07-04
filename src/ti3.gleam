@@ -8,6 +8,7 @@ import vxml.{type VXML, V}
 import vxml_renderer as vr
 import prefabricated_pipelines as pp
 import infrastructure.{type Pipe} as infra
+import gleam/result
 import desugarer_names as dn
 import writerly as wp
 
@@ -27,77 +28,71 @@ fn blame_us(message: String) -> Blame {
   Blame(message, 0, 0, [])
 }
 
+fn index_error(e: infra.SingletonError) -> TI3SplitterError {
+  case e {
+    infra.MoreThanOne -> MoreThanOneIndex
+    infra.LessThanOne -> NoIndex
+  }
+}
+
+fn ensure_non_empty_chapters(chapters: List(VXML)) -> Result(List(VXML), TI3SplitterError) {
+  case chapters {
+    [] -> Error(NoChapters)
+    _ -> Ok(chapters)
+  }
+}
+
 // Index splitter - handles Index fragments
 fn index_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  // Try to find section element (Index is transformed to section)
-  let index_descendants = infra.descendants_with_class(root, "index")
-
-  case index_descendants {
-    [] -> Error(NoIndex)
-    [single_index] -> Ok([#("index.html", single_index, Index)])
-    _ -> Error(MoreThanOneIndex)
-  }
+  root
+  |> infra.descendants_with_class("index")
+  |> infra.read_singleton
+  |> result.map_error(index_error)
+  |> result.map(fn(index) { #("index.html", index, Index) })
+  |> result.map(fn(fragment) { [fragment] })
 }
 
 // Chapter splitter - handles Chapter fragments without sub-chapters
 fn chapter_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  // Since chapters are transformed to div with class="chapter" by the pipeline
-  let chapter_vxmls = infra.descendants_with_class(root, "chapter")
-
-  case chapter_vxmls {
-    [] -> Error(NoChapters)
-    _ -> {
-      let chapter_fragments =
-        list.index_map(chapter_vxmls, fn(chapter, chapter_index) {
-          let chapter_number = chapter_index + 1
-          // Create chapter fragment without sub-chapters
-          let #(chapter_without_subs,_) = infra.excise_children(chapter, infra.has_class(_,"subchapter"))
-          #(
-            "chapter" <> string.inspect(chapter_number) <> ".html",
-            chapter_without_subs,
-            Chapter(chapter_number)
-          )
-        })
-
-      Ok(chapter_fragments)
-    }
-  }
+  root
+  |> infra.descendants_with_class("chapter")
+  |> ensure_non_empty_chapters
+  |> result.map(list.index_map(_, fn(chapter, chapter_index) {
+    let chapter_number = chapter_index + 1
+    let #(chapter_without_subs, _) = infra.excise_children(chapter, infra.has_class(_, "subchapter"))
+    #(
+      "ch" <> string.inspect(chapter_number) <> ".html",
+      chapter_without_subs,
+      Chapter(chapter_number)
+    )
+  }))
 }
 
 // Sub-chapter splitter - handles Sub fragments
 fn sub_chapter_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  // Since chapters are transformed to div with class="chapter" by the pipeline
-  let chapter_vxmls = infra.descendants_with_class(root, "chapter")
-
-  case chapter_vxmls {
-    [] -> Error(NoChapters)
-    _ -> {
-      let sub_fragments =
-        list.index_map(chapter_vxmls, fn(chapter, chapter_index) {
-          let chapter_number = chapter_index + 1
-          // Since subs are also transformed to divs with class="subchapter"
-          let sub_vxmls = infra.descendants_with_class(chapter, "subchapter")
-
-          list.index_map(sub_vxmls, fn(sub, sub_index) {
-            let sub_number = sub_index + 1
-            #(
-              "chapter" <> string.inspect(chapter_number) <> "-sub" <> string.inspect(sub_number) <> ".html",
-              sub,
-              Sub(chapter_number, sub_number)
-            )
-          })
-        })
-        |> list.flatten
-
-      Ok(sub_fragments)
-    }
-  }
+  root
+  |> infra.descendants_with_class("chapter")
+  |> ensure_non_empty_chapters
+  |> result.map(list.index_map(_, fn(chapter, chapter_index) {
+    let chapter_number = chapter_index + 1
+    chapter
+    |> infra.descendants_with_class("subchapter")
+    |> list.index_map(fn(sub, sub_index) {
+      let sub_number = sub_index + 1
+      #(
+        "ch" <> string.inspect(chapter_number) <> "-" <> string.inspect(sub_number) <> ".html",
+        sub,
+        Sub(chapter_number, sub_number)
+      )
+    })
+  }))
+  |> result.map(list.flatten)
 }
 
 // Main splitter that combines all sub-splitters
