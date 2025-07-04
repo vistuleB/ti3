@@ -4,7 +4,7 @@ import gleam/option.{Some}
 import gleam/string.{inspect as ins}
 import argv
 import blamedlines.{type Blame, type BlamedLine, Blame, BlamedLine}
-import vxml.{type VXML, V, T}
+import vxml.{type VXML, V}
 import vxml_renderer as vr
 import prefabricated_pipelines as pp
 import infrastructure.{type Pipe} as infra
@@ -104,33 +104,21 @@ fn sub_chapter_splitter(
 fn ti3_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  // Try to find Document - it might be the root itself or a child
-  let document_vxml = case root {
-    V(_, "Document", _, _) -> Ok(root)
-    _ -> {
-      case infra.unique_child_with_tag(root, "Document") {
-        Ok(document) -> Ok(document)
-        Error(infra.LessThanOne) -> Ok(root)  // Use root as Document if no Document found
-        Error(infra.MoreThanOne) -> Error(MoreThanOneIndex)
-      }
-    }
-  }
-
-  use document <- infra.on_error_on_ok(document_vxml, with_on_error: fn(error) { Error(error) })
+  let assert V(_, "Document", _, _) = root
 
   // Get fragments from each splitter
   use index_fragments <- infra.on_error_on_ok(
-    index_splitter(document),
+    index_splitter(root),
     with_on_error: fn(error) { Error(error) }
   )
 
   use chapter_fragments <- infra.on_error_on_ok(
-    chapter_splitter(document),
+    chapter_splitter(root),
     with_on_error: fn(error) { Error(error) }
   )
 
   use sub_fragments <- infra.on_error_on_ok(
-    sub_chapter_splitter(document),
+    sub_chapter_splitter(root),
     with_on_error: fn(error) { Error(error) }
   )
 
