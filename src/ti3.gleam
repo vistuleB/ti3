@@ -42,7 +42,7 @@ fn ensure_non_empty_chapters(chapters: List(VXML)) -> Result(List(VXML), TI3Spli
   }
 }
 
-// Index splitter - handles Index fragments
+// index splitter - handles index fragments
 fn index_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
@@ -54,7 +54,7 @@ fn index_splitter(
   |> result.map(fn(fragment) { [fragment] })
 }
 
-// Chapter splitter - handles Chapter fragments without sub-chapters
+// chapter splitter - handles chapter fragments without sub-chapters
 fn chapter_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
@@ -72,7 +72,7 @@ fn chapter_splitter(
   }))
 }
 
-// Sub-chapter splitter - handles Sub fragments
+// sub-chapter splitter - handles sub fragments
 fn sub_chapter_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
@@ -95,13 +95,13 @@ fn sub_chapter_splitter(
   |> result.map(list.flatten)
 }
 
-// Main splitter that combines all sub-splitters
+// main splitter that combines all sub-splitters
 fn ti3_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   let assert V(_, "Document", _, _) = root
 
-  // Get fragments from each splitter
+  // get fragments from each splitter
   use index_fragments <- infra.on_error_on_ok(
     index_splitter(root),
     with_on_error: fn(error) { Error(error) }
@@ -117,7 +117,7 @@ fn ti3_splitter(
     with_on_error: fn(error) { Error(error) }
   )
 
-  // Combine all fragments
+  // combine all fragments
   Ok(list.flatten([
     index_fragments,
     chapter_fragments,
@@ -197,7 +197,7 @@ fn our_pipeline() -> List(Pipe) {
   |> list.flatten
 }
 
-// Index emitter - handles Index fragments
+// index emitter - handles index fragments
 fn index_emitter(
   path: String,
   fragment: VXML,
@@ -230,7 +230,7 @@ fn index_emitter(
   Ok(#(path, lines, fragment_type))
 }
 
-// Chapter emitter - handles Chapter fragments
+// chapter emitter - handles chapter fragments
 fn chapter_emitter(
   path: String,
   fragment: VXML,
@@ -264,7 +264,7 @@ fn chapter_emitter(
   Ok(#(path, lines, fragment_type))
 }
 
-// Sub-chapter emitter - handles Sub fragments
+// sub-chapter emitter - handles sub fragments
 fn sub_chapter_emitter(
   path: String,
   fragment: VXML,
@@ -298,7 +298,7 @@ fn sub_chapter_emitter(
   Ok(#(path, lines, fragment_type))
 }
 
-// Main emitter that dispatches to appropriate sub-emitters
+// main emitter that dispatches to appropriate sub-emitters
 pub fn our_emitter(
   tuple: #(String, VXML, FragmentType),
 ) -> Result(#(String, List(BlamedLine), FragmentType), String) {
