@@ -11,26 +11,6 @@ import infrastructure.{type Pipe} as infra
 import desugarer_names as dn
 import writerly as wp
 
-// Helper function to remove descendants with a specific attribute value
-fn remove_descendants_with_attribute_value(vxml: VXML, attr_key: String, attr_value: String) -> VXML {
-  case vxml {
-    T(_, _) -> vxml
-    V(blame, tag, attributes, children) -> {
-      let filtered_children =
-        children
-        |> list.filter(fn(child) {
-          case child {
-            T(_, _) -> True  // Keep text elements
-            _ -> !infra.v_has_key_value_attribute(child, attr_key, attr_value)
-          }
-        })
-        |> list.map(remove_descendants_with_attribute_value(_, attr_key, attr_value))
-
-      V(blame, tag, attributes, filtered_children)
-    }
-  }
-}
-
 pub type FragmentType {
   Chapter(Int)
   Sub(Int, Int)  // Sub(chapter_number, sub_number)
@@ -52,7 +32,7 @@ fn index_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Try to find section element (Index is transformed to section)
-  let index_descendants = infra.descendants_with_key_value(root, "class", "index")
+  let index_descendants = infra.descendants_with_class(root, "index")
 
   case index_descendants {
     [] -> Error(NoIndex)
@@ -66,7 +46,7 @@ fn chapter_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Since chapters are transformed to div with class="chapter" by the pipeline
-  let chapter_vxmls = infra.descendants_with_key_value(root, "class", "chapter")
+  let chapter_vxmls = infra.descendants_with_class(root, "chapter")
 
   case chapter_vxmls {
     [] -> Error(NoChapters)
@@ -75,7 +55,7 @@ fn chapter_splitter(
         list.index_map(chapter_vxmls, fn(chapter, chapter_index) {
           let chapter_number = chapter_index + 1
           // Create chapter fragment without sub-chapters
-          let chapter_without_subs = remove_descendants_with_attribute_value(chapter, "class", "subchapter")
+          let #(chapter_without_subs,_) = infra.excise_children(chapter, infra.has_class(_,"subchapter"))
           #(
             "chapter" <> string.inspect(chapter_number) <> ".html",
             chapter_without_subs,
@@ -93,7 +73,7 @@ fn sub_chapter_splitter(
   root: VXML,
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
   // Since chapters are transformed to div with class="chapter" by the pipeline
-  let chapter_vxmls = infra.descendants_with_key_value(root, "class", "chapter")
+  let chapter_vxmls = infra.descendants_with_class(root, "chapter")
 
   case chapter_vxmls {
     [] -> Error(NoChapters)
@@ -102,7 +82,7 @@ fn sub_chapter_splitter(
         list.index_map(chapter_vxmls, fn(chapter, chapter_index) {
           let chapter_number = chapter_index + 1
           // Since subs are also transformed to divs with class="subchapter"
-          let sub_vxmls = infra.descendants_with_key_value(chapter, "class", "subchapter")
+          let sub_vxmls = infra.descendants_with_class(chapter, "subchapter")
 
           list.index_map(sub_vxmls, fn(sub, sub_index) {
             let sub_number = sub_index + 1
