@@ -35,94 +35,66 @@ fn index_error(e: infra.SingletonError) -> TI3SplitterError {
   }
 }
 
-fn ensure_non_empty_chapters(chapters: List(VXML)) -> Result(List(VXML), TI3SplitterError) {
-  case chapters {
-    [] -> Error(NoChapters)
-    _ -> Ok(chapters)
-  }
-}
-
-// index splitter - handles index fragments
-fn index_splitter(
-  root: VXML,
-) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  root
-  |> infra.descendants_with_class("index")
-  |> infra.read_singleton
-  |> result.map_error(index_error)
-  |> result.map(fn(index) { #("index.html", index, Index) })
-  |> result.map(fn(fragment) { [fragment] })
-}
-
-// chapter splitter - handles chapter fragments without sub-chapters
-fn chapter_splitter(
-  root: VXML,
-) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  root
-  |> infra.descendants_with_class("chapter")
-  |> ensure_non_empty_chapters
-  |> result.map(list.index_map(_, fn(chapter, chapter_index) {
-    let chapter_number = chapter_index + 1
-    let #(chapter_without_subs, _) = infra.excise_children(chapter, infra.has_class(_, "subchapter"))
-    #(
-      "ch" <> string.inspect(chapter_number) <> ".html",
-      chapter_without_subs,
-      Chapter(chapter_number)
-    )
-  }))
-}
-
-// sub-chapter splitter - handles sub fragments
-fn sub_chapter_splitter(
-  root: VXML,
-) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  root
-  |> infra.descendants_with_class("chapter")
-  |> ensure_non_empty_chapters
-  |> result.map(list.index_map(_, fn(chapter, chapter_index) {
-    let chapter_number = chapter_index + 1
-    chapter
-    |> infra.descendants_with_class("subchapter")
-    |> list.index_map(fn(sub, sub_index) {
-      let sub_number = sub_index + 1
-      #(
-        "ch" <> string.inspect(chapter_number) <> "-" <> string.inspect(sub_number) <> ".html",
-        sub,
-        Sub(chapter_number, sub_number)
-      )
-    })
-  }))
-  |> result.map(list.flatten)
-}
-
-// main splitter that combines all sub-splitters
 fn ti3_splitter(
-  root: VXML,
+  root: VXML
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  let assert V(_, "Document", _, _) = root
-
-  // get fragments from each splitter
-  use index_fragments <- infra.on_error_on_ok(
-    index_splitter(root),
-    with_on_error: fn(error) { Error(error) }
+  use index <- result.then(
+    infra.descendants_with_class(root, "index")
+    |> infra.read_singleton
+    |> result.map_error(index_error)
   )
 
-  use chapter_fragments <- infra.on_error_on_ok(
-    chapter_splitter(root),
-    with_on_error: fn(error) { Error(error) }
+  use chapters <- result.then(
+    case infra.descendants_with_class(root, "chapter") {
+      [] -> Error(NoChapters)
+      [..chapters] -> Ok(chapters)
+    }
   )
 
-  use sub_fragments <- infra.on_error_on_ok(
-    sub_chapter_splitter(root),
-    with_on_error: fn(error) { Error(error) }
-  )
+  let #(chapters, list_list_subs) =
+    chapters
+    |> list.map(infra.excise_children(_, fn(child) {infra.has_class(child, "subchapter")}))
+    |> list.unzip
 
-  // combine all fragments
-  Ok(list.flatten([
-    index_fragments,
+  let chapter_fragments =
+    chapters
+    |> list.index_map(
+      fn(chapter, chapter_index) {
+        let chapter_number = chapter_index + 1
+        #(
+          "ch" <> string.inspect(chapter_number) <> ".html",
+          chapter,
+          Chapter(chapter_number)
+        )
+      }
+    )
+
+  let sub_fragments =
+    list_list_subs
+    |> list.index_map(
+      fn(chapter_subs, chapter_index) {
+        let chapter_number = chapter_index + 1
+        list.index_map(
+          chapter_subs,
+          fn(sub, sub_index) {
+            let sub_number = sub_index + 1
+            #(
+              "ch" <> string.inspect(chapter_number) <> "-" <> string.inspect(sub_number) <> ".html",
+              sub,
+              Sub(chapter_number, sub_number)
+            )
+          }
+        )
+      }
+    )
+    |> list.flatten
+
+  list.flatten([
+    [#("index.html", index, Index)],
     chapter_fragments,
-    sub_fragments
-  ]))
+    sub_fragments,
+  ])
+  |> Ok
 }
 
 fn our_pipeline() -> List(Pipe) {
@@ -167,6 +139,7 @@ fn our_pipeline() -> List(Pipe) {
             "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
             "Sub", "Definition",
             "thead", "tbody", "tr", "td", "section",
+            "header", "div", "Index"
           ],
           ["MathBlock", "VerticalChunk"],
         ),
