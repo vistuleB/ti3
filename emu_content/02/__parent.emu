@@ -5,5 +5,10 @@
     |> ChapterTitle
         Mengen
 
+
+    |> Definition
+
+        Die _Grösse_ eines Schaltkreise ist
+
     Hallooooo
     $$x + x$$

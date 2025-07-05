@@ -108,18 +108,26 @@ fn our_pipeline() -> List(Pipe) {
     ),
     [
       dn.add_attributes([#("Document", "counter", "ChapterCounter")]),
-      dn.add_attributes([#("Chapter", "counter", "ExerciseCounter")]),
-      dn.add_attributes([#("Sub", "counter", "ExerciseCounter")]),
       dn.add_attributes([#("Chapter", "counter", "SubCounter")]),
+      dn.add_attributes([#("Chapter", "counter", "ExerciseCounter")]),
+      dn.add_attributes([#("Chapter", "counter", "DefinitionCounter")]),
+      dn.add_attributes([#("Sub", "counter", "ExerciseCounter")]),
+      dn.add_attributes([#("Sub", "counter", "DefinitionCounter")]),
       dn.associate_counter_by_prepending_incrementing_attribute([
         #("Chapter", "ChapterCounter")]),
       dn.associate_counter_by_prepending_incrementing_attribute([#("Exercise", "ExerciseCounter")]),
       dn.associate_counter_by_prepending_incrementing_attribute([#("Sub", "SubCounter")]),
+      dn.associate_counter_by_prepending_incrementing_attribute([#("Definition", "DefinitionCounter")]),
       dn.prepend_text_if_has_ancestor_else([
         #("Exercise",
           "Sub",
           "*Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter* ",
           "*Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* ")]),
+      dn.prepend_text_if_has_ancestor_else([
+        #("Definition",
+          "Sub",
+          "*Definition ::øøChapterCounter.::øøSubCounter.::øøDefinitionCounter* ",
+          "*Definition ::øøChapterCounter.::øøDefinitionCounter* ")]),
       dn.counters_substitute_and_assign_handles(),
     ],
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
