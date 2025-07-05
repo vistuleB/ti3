@@ -139,6 +139,7 @@ fn our_pipeline() -> List(Pipe) {
             "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
             "Sub", "Definition",
             "thead", "tbody", "tr", "td", "section",
+            "Index",
           ],
           ["MathBlock", "VerticalChunk", "Index"]
         ),
