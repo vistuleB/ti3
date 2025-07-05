@@ -4,7 +4,7 @@ import gleam/option.{Some}
 import gleam/string.{inspect as ins}
 import argv
 import blamedlines.{type Blame, type BlamedLine, Blame, BlamedLine}
-import vxml.{type VXML, V}
+import vxml.{type VXML}
 import vxml_renderer as vr
 import prefabricated_pipelines as pp
 import infrastructure.{type Pipe} as infra
