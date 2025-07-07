@@ -148,6 +148,7 @@ fn our_pipeline() -> List(Pipe) {
             "Sub", "Definition",
             "thead", "tbody", "tr", "td", "section",
             "Index",
+            "Highlight"
           ],
           ["MathBlock", "VerticalChunk", "Index"]
         ),
@@ -164,6 +165,7 @@ fn our_pipeline() -> List(Pipe) {
         #("Sub", "div", [#("class", "subchapter")]),
         #("Definition", "div", [#("class", "definition")]),
         #("Exercise", "div", [#("class", "exercise")]),
+        #("Highlight", "div", [#("class", "highlight")]),
       ]),
 
       dn.add_attributes([

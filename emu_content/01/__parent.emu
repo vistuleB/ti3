@@ -1,109 +1,185 @@
 |> Chapter
     |> ChapterTitle
 
-        Boolesche Schaltkreise
+        Einleitung
 
-    Boolesche Schaltkreise sind ein idealisiertes
-    Modell echter elektronischer Schaltkreise.
-    Als primitive Bausteine haben wir Boolesche
-    Operatoren, auch _Gatter_ (englisch _gates_)
-    genannt, die mehrere (typischerweise ein oder zwei)
-    Signale zu einem Ausgabe-Signal kombinieren.
-    Die Signale können nur zwei Werte annehmen:
-    wahr/falsch bzw. 1/0 bzw. `true/false`. Hier
-    sehen Sie die drei üblichsten Gatter:
+    Im Kurs&nbsp;
+    |> a
+        href=./index.html
+        Theoretische Informatik I
+    \ haben Sie allerhand Problemstellungen und Algorithmen kennengelernt und können nun (hoffentlich) auch für manche Ihnen noch unbekannten Probleme neue Algorithmen entwickeln.
+
+    In diesem Kurs stellen wir uns abstrakter die Frage, was denn ein Algorithmus ist; was es denn heißt, etwas zu berechnen. Ein Algorithmus, beispielsweise ein Sortieralgorithmus, kann ja prinzipiell Arrays beliebiger Länge sorteren. Es gibt also unendlich viele potentielle Eingaben. Dennoch ist der Algorithmus selbst ein endliches Objekt - der Programmcode beispielsweise besteht aus endlich vielen Zeichen. Noch dazu kann ein Algorithmus nur beschränkt die ihm gegebenen Daten manipulieren; in jedem Schritt immer nur an einer bestimmten Stelle und nach festen Regeln.
+
+    |> h3
+        Emailadressen und Arithmetische Ausdrücke
+
+    Die Menge aller denkbaren Emailadressen ist unendlich - zumindest, solange wir für Nutzernamen und Domainnamen keine Längenbeschränkung haben. Nach welchen Regeln sind sie gebildet?
+
+    |> Exercise
+        Überlegen Sie sich, wie eine gültige Emailadresse auszusehen hat. Als konkrete Beispiele nehmen Sie bitte
+
+        |> Highlight
+
+            |> pre
+                thomas.schmitz@hszg.de
+                dominik@cs.sjtu.edu.cn
+                raffaela@mayer@gmail.com
+                lorenz.klein@greatest/company/in/the/world.com
+                .schlaumeier@gmail.com
+
+        Welches davon sind gültige Emailadressen? Können Sie genaue Regeln angeben, nach denen eine solche gebildet sein muss? Können Sie die Regeln formal aufschreiben?
+
+    |> Exercise
+
+        Sie alle kennen arithmetische Ausdrücke, wie wir sie zum Beispiel in Python eingeben und auswerten lassen können:
+
+        |> Highlight
+            |> pre
+
+                |> code
+                    class=pythonPrompt
+                    (6 + 8) * 3 &nbsp;
+
+                |> code
+                    class=terminalOutput
+                    42
+
+                |> code
+                    class=pythonPrompt
+                    (24 / 4 / 2) * (24 / ( 4 / 2)) + 1
+
+                |> code
+                    class=terminalOutput
+                    37
+
+                |> code
+                    class=pythonPrompt
+                    3 + 7 * 8
+
+                |> code
+                    class=terminalOutput
+                    59
+
+                |> code
+                    class=pythonPrompt
+                    (2 * 3))
+
+                |> span
+                    style=color:red
+                    File "<stdin>", line 1
+                    \    (2 * 3))
+                    \           ^
+                    SyntaxError: unmatched ')'
+
+                |> code
+                    class=pythonPrompt
+                    (* 3)
+
+                |> span
+                    style=color:red
+                    File "<stdin>", line 1
+                    \   (* 3)
+                    \    ^^^
+                    SyntaxError: cannot use starred expression here
+
+        Die letzten beiden waren in Pythons Augen offensichtlich nicht korrekt. Wie sind korrekte arithmetische Ausdrücke aufgebaut? Beschränken Sie sich gerne auf * und + und / und - und Zahlen und ignorieren Sie erst mal Variablen, Funktionsaufrufe und weitere Operatoren.
+
+        Versuchen Sie, eine Art formale Sprache zu entwickeln, die die korrekten arithmetischen Ausdrücke beschreibt.
+
+    |> h3
+        Endliche Regeln und unendliches Verhalten
+
+    Das klassische Beispiel, wie sehr einfache Regeln ein extrem komplexes Verhalten erzeugen können, ist Conways Game of Life. Hier ist der &nbsp;
+    |> a
+        href=https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens
+        Wikipedia-Artikel dazu.
+    \ Die Welt von Conways Game of Life ist ein unendliches Schachbrett, in jedem jedes Feld entweder leer ist oder von einem Einzeller bevölkert ist.
 
     |> figure
         |> img
             style=width:20em
-            src=img/circuits/and-or-not-gates.svg
+            src=img/game-of-life/game-of-life-01-01.svg
 
-    Von links nach rechts sind dies: das Und-Gatter
-    (_and-gate_), Oder-Gatter (_or-gate_) und das
-    Nicht-Gatter (_not-gate_). In C, C++ und Java
-    kennen Sie diese Booleschen Operatoren als
-    `&&`, `||` und `!`. Was diese Operatoren
-    _tun_, können wir als _Wahrheitstabelle_ darstellen.
-    Wir listen alle Kombinationen für \(x,y\) auf
-    und schreiben in jede Zeile auch den Wert, den
-    der Operator ausgibt.
+        |>figcaption
+            Eine Population in Conways Game of Life. Bildquelle: Icongeek26 on &nbsp;
+            |> a
+                href=https://www.flaticon.com/
+                flaticon.com
 
-    $$
-    \begin{array}{ll|l}
-    x&amp;y&amp;x \wedge y \\ \hline
-    0&amp;0&amp;0 \\
-    0&amp;1&amp;0 \\
-    1&amp;0&amp;0 \\
-    1&amp;1&amp;1
-    \end{array}
-    \qquad \qquad
-    \begin{array}{ll|l}
-    x&amp;y&amp;x \vee y \\ \hline
-    0&amp;0&amp;0 \\
-    0&amp;1&amp;1 \\
-    1&amp;0&amp;1 \\
-    1&amp;1&amp;1
-    \end{array}
-    \qquad \qquad
-    \begin{array}{l|l}
-    x&amp;\neg x \\ \hline
-    0&amp;1 \\
-    1&amp;0 \\
-    \end{array}
-    $$
+    In jedem Zeitschritt weicht die derzeitige Generation einer neuen. Wo neue Einzeller entstehen, das hängt davon ab, wie viele der benachbarten 8 Felder von Einzellern besetzt sind.
 
-    Die dritte Zeile der mittleren Tabelle sagt
-    beispielsweise aus, dass \(1 \vee 0 = 1\) gilt.
+    |> ol
+        style=list-style-type: decimal
 
-    Vielleicht wünschen Sie sich noch mehr Gates,
-    zum Beispiel ein if-then-else-Gate mit drei
-    Inputs \(x,y,z\), welches \(y\) ausgibt, wenn
-    \(x\) wahr ist und ansonsten \(z\) ausgibt.
-    So ein Gate können Sie sich einfach aus And,
-    Or, Not bauen:
+        |> li
+            *Einzeller bleibt:* wenn auf einem Feld ein Einzeller lebt und in seiner 8-Nachbarschaft zwei oder drei Einzeller leben, dann überlebt er; in der nächsten Generation wird dort wieder ein Einzeller leben.
+
+        |> li
+            *Einzeller entsteht: wenn auf einem Feld im Moment kein Einzeller lebt, in der 8-Nachbarschaft aber genau drei Einzeller leben, dann entseht hier in der nächsten Generation ein neuer Einzeller.*
+
+    Im Umkehrschluss: wenn ein Einzeller in seiner 8-Nachbarschaft vier oder mehr weitere Einzeller hat, dann stirbt er an Überbevölkerung; gibt es in der 8-Nachbarschaft keinen oder nur einen Einzeller, dann stirbt er an Vereinsamung. Wir müssen also für jedes Feld zählen, wieviele der benachbarten Felder bevölkert sind:
 
     |> figure
         |> img
-            style=height:13em
-            src=img/circuits/if-then-else-gate.svg
-            loading=lazy
+            style=width:20em
+            src=img/game-of-life/game-of-life-01-02.svg
+
         |> figcaption
-
-            `if` \(x\) `then` \(y\) `else` \(z\)
-
-    Jeder Schaltkreis _berechnet_ eine Funktion
-    (formale Definition weiter unten). Informell
-    gesprochen, wenn wir Wahrheitswerte (0/1) in
-    die Input-Gates reinstecken, dann fließen diese
-    durch den Schaltkreis und werden von den
-    AND/OR/NOT-Gates entsprechend ihrer Funktion
-    kombiniert und werden schließlich an den
-    Output-Gates ausgegeben:
+            Zu jedem Feld schreiben wir die Anzahl seiner Nachbarfelder, die bevölkert sind.
 
     |> figure
         |> img
-            style=height:13em
-            src=img/circuits/if-then-else-gate-with-values.svg
-            loading=lazy
+            style=width:20em
+            src=img/game-of-life/game-of-life-01-03.svg
+
         |> figcaption
+            Die nächste Generation.
 
-        Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
-
-    |> Exercise
-
-        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
-
-        Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
+    Was geschieht nun, wenn wir weitere Generationen betrachten? Stirbt die Population aus? Explodiert sie? Stabilisiert sie sich irgendwann?
 
     |> Exercise
 
-        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
+        Spiele Sie mit Conways Game of Life! Hier finden Sie einen Simulator:
+        |> a
+            href=https://playgameoflife.com/
+            playgameoflife.com
 
-        Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
+        |> ol
+            style=padding-left: 2rem;
+            |> li
+                Probieren Sie aus, was geschieht, wenn die Anfangspopulation ein "Pfad" ist, z.B.
+                |> figure
+                    |> img
+                        style=width:16em
+                        src=img/game-of-life/game-of-life-02-01.svg
 
+                Probieren Sie Pfade verschiedener Länge aus. Welche sterben aus? Welche überleben, und was geschieht mit ihnen?
 
-    |> Exercise
+            |> li
+                Probieren Sie das "f-Pentomino" als Startkonfiguration aus:
 
-        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
+                |> figure
+                    |> img
+                        style=width:12em
+                        src=img/game-of-life/game-of-life-03-01.svg
 
-        Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für
+            |> li
+                Probieren Sie meine obige Startkonfiguration aus.
+            |> li
+                Finden Sie weitere interessante Startkonfigurationen.
+
+    Was hat das Game of Life mit TI-2 zu tun? Nun, es illustriert, wie eine endliche, sogar sehr kleine Regelmenge sehr komplexe Phänomene erzeugen kann. In der Tat, das Game of Life ist Turing-vollständig; das heißt in etwa, sie können eine Anfangskonfiguration bauen, die dann einen ganzen Rechner simuliert. Klingt kaum vorstellbar. Wenn wir am Ende dieses Kurses angelangt sind, werden Sie aber verstehen, warum das sogar recht plausibel ist.
+
+    |> h3
+        Zusammenfassung
+
+    Es geht also in diesem Kurs vor Allem um folgende Fragen:
+
+    |> ul
+
+        |> li
+            Wie können wir endliche Beschreibungen von unendlichen Objekten angeben?
+
+        |> li
+            Was heißt es, etwas zu berechnen? Welche Modelle fürs Rechnen gibt es, die einerseits /umfassend/ sind, also die möglichst viel können, andererseits auch physikalisch realisierbar sind?
