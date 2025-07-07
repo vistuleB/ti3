@@ -141,7 +141,7 @@ fn our_pipeline() -> List(Pipe) {
           "VerticalChunk",
           [
             "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
-            "Example", "Exercise", "OuterExercise", "Exercises", "Grid", "Image", "ImageLeft",
+            "Example", "Exercise", "Exercises", "Grid", "Image", "ImageLeft",
             "ImageRight", "List", "MathBlock", "Note", "Pause", "Section",
             "Solution", "SolutionNote", "StarDivider", "Table", "TextParent",
             "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
@@ -164,7 +164,6 @@ fn our_pipeline() -> List(Pipe) {
         #("Sub", "div", [#("class", "subchapter")]),
         #("Definition", "div", [#("class", "definition")]),
         #("Exercise", "div", [#("class", "exercise")]),
-        #("OuterExercise", "div", [#("class", "exercise")]),
       ]),
 
       dn.add_attributes([
