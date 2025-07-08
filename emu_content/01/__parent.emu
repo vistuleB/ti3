@@ -109,11 +109,8 @@
     In jedem Zeitschritt weicht die derzeitige Generation einer neuen. Wo neue Einzeller entstehen, das hängt davon ab, wie viele der benachbarten 8 Felder von Einzellern besetzt sind.
 
     |> ol
-        style=list-style-type: decimal
-
         |> li
             *Einzeller bleibt:* wenn auf einem Feld ein Einzeller lebt und in seiner 8-Nachbarschaft zwei oder drei Einzeller leben, dann überlebt er; in der nächsten Generation wird dort wieder ein Einzeller leben.
-
         |> li
             *Einzeller entsteht: wenn auf einem Feld im Moment kein Einzeller lebt, in der 8-Nachbarschaft aber genau drei Einzeller leben, dann entseht hier in der nächsten Generation ein neuer Einzeller.*
 
@@ -152,17 +149,13 @@
                     |> img
                         style=width:16em
                         src=img/game-of-life/game-of-life-02-01.svg
-
                 Probieren Sie Pfade verschiedener Länge aus. Welche sterben aus? Welche überleben, und was geschieht mit ihnen?
-
             |> li
                 Probieren Sie das "f-Pentomino" als Startkonfiguration aus:
-
                 |> figure
                     |> img
                         style=width:12em
                         src=img/game-of-life/game-of-life-03-01.svg
-
             |> li
                 Probieren Sie meine obige Startkonfiguration aus.
             |> li

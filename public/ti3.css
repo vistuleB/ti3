@@ -218,3 +218,10 @@ code {
     background-color: #f9f2f4;
     border-radius: 4px;
 }
+
+ol, ul {
+    max-width: calc(var(--main-column-width) * 0.92);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
