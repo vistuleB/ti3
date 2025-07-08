@@ -36,46 +36,45 @@
 
         |> Highlight
             |> pre
-
                 |> code
                     class=pythonPrompt
                     (6 + 8) * 3 &nbsp;
-
+                |> br
                 |> code
                     class=terminalOutput
                     42
-
+                |> br
                 |> code
                     class=pythonPrompt
                     (24 / 4 / 2) * (24 / ( 4 / 2)) + 1
-
+                |> br
                 |> code
                     class=terminalOutput
                     37
-
+                |> br
                 |> code
                     class=pythonPrompt
                     3 + 7 * 8
-
+                |> br
                 |> code
                     class=terminalOutput
                     59
-
+                |> br
                 |> code
                     class=pythonPrompt
                     (2 * 3))
-
+                |> br
                 |> span
                     style=color:red
                     File "<stdin>", line 1
                     \    (2 * 3))
                     \           ^
                     SyntaxError: unmatched ')'
-
+                |> br
                 |> code
                     class=pythonPrompt
                     (* 3)
-
+                |> br
                 |> span
                     style=color:red
                     File "<stdin>", line 1

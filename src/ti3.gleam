@@ -148,9 +148,10 @@ fn our_pipeline() -> List(Pipe) {
             "Sub", "Definition",
             "thead", "tbody", "tr", "td", "section",
             "Index",
-            "Highlight"
+            "Highlight",
+            "pre"
           ],
-          ["MathBlock", "VerticalChunk", "Index"]
+          ["MathBlock", "VerticalChunk", "Index", "pre"]
         ),
       ),
       dn.unwrap(["WriterlyBlankLine"]),
