@@ -225,3 +225,8 @@ ol, ul {
     margin-left: auto;
     margin-right: auto;
 }
+
+.exercise ol,
+.exercise ul {
+    margin-left: 2rem;
+}

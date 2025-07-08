@@ -13,8 +13,6 @@
 <body class="page-chapter chapter-2">
   <div
     .="ChapterCounter 2"
-    title_gr="Mengen"
-    title_en="infinite sets"
     counter="SubCounter"
     counter="ExerciseCounter"
     counter="DefinitionCounter"
@@ -24,27 +22,243 @@
       class="main-column-width page-title"
     >
       2. 
-      Mengen
-    </div>
-    <div
-      .="DefinitionCounter 1"
-      class="definition"
-    >
-      <p
-        class="main-column-width"
-      >
-        <b>Definition 2.1</b>
-         
-        Die 
-        <i>Grösse</i>
-         eines Schaltkreise ist
-      </p>
+      Boolesche Schaltkreise (nicht im Sommersemester 2025)
     </div>
     <p
       class="main-column-width"
     >
-      Hallooooo
-      $$x + x$$
+      Boolesche Schaltkreise sind ein idealisiertes
+      Modell echter elektronischer Schaltkreise.
+      Als primitive Bausteine haben wir Boolesche
+      Operatoren, auch 
+      <i>Gatter</i>
+       (englisch 
+      <i>gates</i>)
+      genannt, die mehrere (typischerweise ein oder zwei)
+      Signale zu einem Ausgabe-Signal kombinieren.
+      Die Signale können nur zwei Werte annehmen:
+      wahr/falsch bzw. 1/0 bzw. 
+      <code>true/false</code>. Hier
+      sehen Sie die drei üblichsten Gatter:
+    </p>
+    <p
+      class="main-column-width"
+    >
+      <figure
+        class="main-column-width"
+      >
+        <img
+          style="width:20em"
+          src="img/circuits/and-or-not-gates.svg"
+          onClick="onImgClick(event)"
+          class="constrained transition-all"
+        >
+      </figure>
+    </p>
+    <p
+      class="main-column-width"
+    >
+      Von links nach rechts sind dies: das Und-Gatter
+      (<i>and-gate</i>), Oder-Gatter (<i>or-gate</i>) und das
+      Nicht-Gatter (<i>not-gate</i>). In C, C++ und Java
+      kennen Sie diese Booleschen Operatoren als
+      <code>&&</code>, 
+      <code>||</code>
+       und 
+      <code>!</code>. Was diese Operatoren
+      <i>tun</i>, können wir als 
+      <i>Wahrheitstabelle</i>
+       darstellen.
+      Wir listen alle Kombinationen für $x,y$ auf
+      und schreiben in jede Zeile auch den Wert, den
+      der Operator ausgibt.
+    </p>
+    <p
+      class="main-column-width"
+    >
+      $$
+      \begin{array}{ll|l}
+      x&amp;y&amp;x \wedge y \\ \hline
+      0&amp;0&amp;0 \\
+      0&amp;1&amp;0 \\
+      1&amp;0&amp;0 \\
+      1&amp;1&amp;1
+      \end{array}
+      \qquad \qquad
+      \begin{array}{ll|l}
+      x&amp;y&amp;x \vee y \\ \hline
+      0&amp;0&amp;0 \\
+      0&amp;1&amp;1 \\
+      1&amp;0&amp;1 \\
+      1&amp;1&amp;1
+      \end{array}
+      \qquad \qquad
+      \begin{array}{l|l}
+      x&amp;\neg x \\ \hline
+      0&amp;1 \\
+      1&amp;0 \\
+      \end{array}
+      $$
+    </p>
+    <p
+      class="main-column-width"
+    >
+      Die dritte Zeile der mittleren Tabelle sagt
+      beispielsweise aus, dass $1 \vee 0 = 1$ gilt.
+    </p>
+    <p
+      class="main-column-width"
+    >
+      Vielleicht wünschen Sie sich noch mehr Gates,
+      zum Beispiel ein if-then-else-Gate mit drei
+      Inputs $x,y,z$, welches $y$ ausgibt, wenn
+      $x$ wahr ist und ansonsten $z$ ausgibt.
+      So ein Gate können Sie sich einfach aus And,
+      Or, Not bauen:
+    </p>
+    <p
+      class="main-column-width"
+    >
+      <figure
+        class="main-column-width"
+      >
+        <img
+          style="height:13em"
+          src="img/circuits/if-then-else-gate.svg"
+          loading="lazy"
+          onClick="onImgClick(event)"
+          class="constrained transition-all"
+        >
+        <figcaption>
+          <code>if</code>
+           $x$ 
+          <code>then</code>
+           $y$ 
+          <code>else</code>
+           $z$
+        </figcaption>
+      </figure>
+    </p>
+    <p
+      class="main-column-width"
+    >
+      Jeder Schaltkreis 
+      <i>berechnet</i>
+       eine Funktion
+      (formale Definition weiter unten). Informell
+      gesprochen, wenn wir Wahrheitswerte (0/1) in
+      die Input-Gates reinstecken, dann fließen diese
+      durch den Schaltkreis und werden von den
+      AND/OR/NOT-Gates entsprechend ihrer Funktion
+      kombiniert und werden schließlich an den
+      Output-Gates ausgegeben:
+    </p>
+    <p
+      class="main-column-width"
+    >
+      <figure
+        class="main-column-width"
+      >
+        <img
+          style="height:13em"
+          src="img/circuits/if-then-else-gate-with-values.svg"
+          loading="lazy"
+          onClick="onImgClick(event)"
+          class="constrained transition-all"
+        >
+        <figcaption>
+        </figcaption>
+        Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
+      </figure>
+    </p>
+    <div
+      .="ExerciseCounter 1"
+      class="exercise"
+    >
+      <p
+        class="main-column-width"
+      >
+        <b>Übungsaufgabe 2.1</b>
+         
+        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
+      </p>
+      <ol>
+        <li>
+          <p
+            class="main-column-width"
+          >
+            Ein XOR-Gate $x \oplus y$. Es gibt 1 aus, wenn einer der beiden Inputs 1 ist und der andere 0.
+          </p>
+        </li>
+        <li>
+          <p
+            class="main-column-width"
+          >
+            Ein Majority-Gate $Maj(x,y,z)$. Es gibt 1 aus, wenn mindestens zwei seiner Inputs 1 ist.
+          </p>
+        </li>
+        <li>
+          <p
+            class="main-column-width"
+          >
+            Ein $n$-faches XOR-Gate
+          </p>
+          <p
+            class="main-column-width"
+          >
+            <figure
+              class="main-column-width"
+            >
+              <img
+                style="height:4em"
+                src="img/circuits/n-fold-xor.svg"
+                loading="lazy"
+                onClick="onImgClick(event)"
+                class="constrained transition-all"
+              >
+            </figure>
+          </p>
+          <p
+            class="main-column-width"
+          >
+            welches 1 ausgibt, wenn eine ungerade Anzahl seiner Inputs auf 1 stehen.
+          </p>
+        </li>
+        <li>
+          <p
+            class="main-column-width"
+          >
+            Ein $n$-faches Majority-Gate
+            $\mathrm{Maj}(x<i>1,\ldots,x</i>n)$,
+            welches 1 ausgibt, wenn mehr als $n/2$ der Inputs auf 1 stehen. Sie können annehmen, dass $n$ ungerade ist, wenn es Ihnen hilft.
+          </p>
+          <p
+            class="main-column-width"
+          >
+            Können Sie vermeiden, dass Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für einen Schaltkreis hin, den man realistischerweise herstellen kann?
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p
+      class="main-column-width"
+    >
+      Je nach Kontext kann es hilfreich sein, Gatter mit beliebig vielen Inputs zuzulassen, beispielsweise $x<i>1 \land x</i>2 \land \ldots \land x_n$ als ein Gate darzustellen:
+    </p>
+    <p
+      class="main-column-width"
+    >
+      <figure
+        class="main-column-width"
+      >
+        <img
+          style="height:10em"
+          src="img/circuits/and-fan-in-n.svg"
+          loading="lazy"
+          onClick="onImgClick(event)"
+          class="constrained transition-all"
+        >
+      </figure>
     </p>
   </div>
 </body>
