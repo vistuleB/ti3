@@ -128,6 +128,7 @@ fn our_pipeline() -> List(Pipe) {
           "Sub",
           "*Definition ::øøChapterCounter.::øøSubCounter.::øøDefinitionCounter* ",
           "*Definition ::øøChapterCounter.::øøDefinitionCounter* ")]),
+      dn.prepend_text([#("ChapterTitle","::øøChapterCounter. ")]),
       dn.counters_substitute_and_assign_handles(),
     ],
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
