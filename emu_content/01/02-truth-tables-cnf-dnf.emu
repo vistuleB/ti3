@@ -1,5 +1,7 @@
 |> Sub
-    title=Wahrheitstabellen, CNF, DNF
+    |> SubTitle
+
+        Wahrheitstabellen, CNF, DNF
 
     Für
 

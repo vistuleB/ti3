@@ -1,5 +1,7 @@
 |> Sub
-    title=Fanin, Tiefe, Größe
+    |> SubTitle
+
+        Fanin, Tiefe, Größe
 
     Für
 

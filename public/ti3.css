@@ -83,7 +83,7 @@ body {
     margin: 0.4rem 0;
 }
 
-.chapter-title {
+.page-title {
     width: inherit;
     display: grid;
     grid-template-columns: minmax(60px, 0fr) auto minmax(60px, 0fr);
@@ -99,8 +99,8 @@ body {
     padding-top: 40px;
 }
 
-.chapter-title::before,
-.chapter-title::after {
+.page-title::before,
+.page-title::after {
     content: "";
     border-top: 6px double;
 }
