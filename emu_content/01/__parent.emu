@@ -38,7 +38,7 @@
             |> pre
                 |> code
                     class=pythonPrompt
-                    (6 + 8) * 3 &nbsp;
+                    (6 + 8) * 3
                 |> br
                 |> code
                     class=terminalOutput
