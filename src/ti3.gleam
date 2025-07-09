@@ -7,7 +7,7 @@ import blamedlines.{type Blame, type BlamedLine, Blame, BlamedLine}
 import vxml.{type VXML}
 import vxml_renderer as vr
 import prefabricated_pipelines as pp
-import infrastructure.{type Pipe} as infra
+import infrastructure as infra
 import gleam/result
 import desugarer_names as dn
 import writerly as wp
@@ -97,7 +97,7 @@ fn ti3_splitter(
   |> Ok
 }
 
-fn our_pipeline() -> List(Pipe) {
+fn our_pipeline() -> List(infra.Desugarer) {
   [
     [ dn.generate_ti3_index_element()
     ],
