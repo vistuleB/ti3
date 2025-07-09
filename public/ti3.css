@@ -122,6 +122,8 @@ body {
     border-radius: 4px;
     padding: 1rem;
     margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .highlight {
@@ -227,6 +229,8 @@ ol, ul {
 }
 
 .exercise ol,
-.exercise ul {
+.exercise ul,
+.definition ol,
+.definition ul {
     margin-left: 2rem;
 }
