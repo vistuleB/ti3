@@ -104,7 +104,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
     pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
       #([infra.DoubleDollar], infra.DoubleDollar),
-      #([infra.BackslashParenthesis], infra.SingleDollar),
+      #([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar),
     ),
     [
       dn.add_attributes([#("Document", "counter", "ChapterCounter")]),
