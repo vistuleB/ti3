@@ -28,7 +28,27 @@
     
     Wir teilen die Tabelle in die obere Hälfte (wo $x = 0$ gilt) und die untere Hälfte:
     
-    {math missing}
+    $$
+    \begin{align*}
+    \color{red}{
+    \begin{array}{ccc|c}
+    x & y & z & f \\\hline
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 1 \\
+    0 & 1 & 0 & 1 \\
+    0 & 1 & 1 & 1
+    \end{array}
+    }\\
+    \color{blue}{
+    \begin{array}{ccc|c}
+    1 & 0 & 0 & 1 \\
+    1 & 0 & 1 & 1 \\
+    1 & 1 & 0 & 0 \\
+    1 & 1 & 1 & 1\\
+    \end{array}
+    }
+    \end{align*}
+    $$
     
     Die obere, roten Hälfte kommt Ihnen vielleicht bekannt vor: es ist genau die Wahrheitstabelle von $y \vee z$. Der Wert von $x$ ist im roten Teil ja immer $0$, also ist die obere Hälfte im Prinzip eine Funktion mit zwei Variablen: $y$ und $z$; wir sagen also mal, die obere Hälfte "ist" 
     |> span
@@ -65,8 +85,13 @@
     |> Definition
         
         Sei $f: \{0,1\}^n \rightarrow \{0,1\}$ eine Boolesche Funktion, $i \in \{1,\dots,n\}$ ein Index und $b \in \{0,1\}$ ein Wert. Dann ist $f|_{x_i=b}$ eine neue Funktion, und zwar
-       
-        {math missing} 
+        
+        $$
+        \begin{align*}
+        f|_{x_i=b} &amp;: \{0,1\}^{n-1} \rightarrow \{0,1\} \\
+        (x_1,\dots,x_{i-1}, x_{i+1}, \dots, x_n) &amp;\mapsto f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}).
+        \end{align*}
+        $$
        
         In Worten: wir fixieren den $i$-ten Input auf den Wert $b$ und erhalten eine Funktion in den restlichen $n-1$ Variablen.
        
@@ -75,8 +100,6 @@
     |> Exercise
         
         Führen Sie das rekursive Verfahren durch, um für die folgende Funktion auf 4 Variablen einen Schaltkreis zu bauen: 
-        
-        {math missing}
         
         $$
         \begin{array}{cccc|c}
