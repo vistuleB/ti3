@@ -259,8 +259,11 @@ h3 {
 }
 
 p {
-    margin-top: 10px;
     padding: 0px 0px;
+}
+
+p + p {
+    margin-top: 10px;
 }
 
 code {
@@ -407,5 +410,9 @@ mjx-container::-webkit-scrollbar-thumb:hover {
     
     .main-column-width  {
         padding: 0 2rem;
+    }
+    
+    p.main-column-width {
+        padding: 0;
     }
 }
