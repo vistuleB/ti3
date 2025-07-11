@@ -394,4 +394,8 @@ mjx-container::-webkit-scrollbar-thumb:hover {
     .highlight {
         max-width: var(--main-column-width);
     }
+    
+    .main-column-width  {
+        padding: 0 2rem;
+    }
 }
