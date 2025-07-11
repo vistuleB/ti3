@@ -2,7 +2,7 @@
     |> SubTitle
         
         Monotone Funktionen und monotone Schaltkreise
-        
+    
     Für zwei Tupel \(\mathbf{x}, \mathbf{y} \in \{0,1\}^n\) schreiben wir
     \( \mathbf{x} \leq \mathbf{y}\), falls \(x_1 \leq y_1, \dots, x_n \leq y_n\), also
     \(\mathbf{x}\) _in jeder Koordinate_ kleiner gleich \(\mathbf{y}\) ist.
@@ -271,8 +271,8 @@
                 |> Highlight
                 
                     |> pre
-                        style margin:2ch
-                        class listing
+                        style=margin:2ch
+                        class=listing
 
                         public boolean constantFalse() {
                         return false;
@@ -304,8 +304,8 @@
                 |> Highlight
                 
                     |> pre
-                        style margin:2ch
-                        class listing
+                        style=margin:2ch
+                        class=listing
 
                         public boolean constantFalse(boolean x) {
                         return false;
@@ -526,9 +526,7 @@
         |> Behauptung
         
             Für alle \(x_1,\dots,x_n\) gilt
-            $$
-            f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n) \ .
-            $$
+            \(f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n) \ .\)
             
         |> div
             class=subtheorem
@@ -705,8 +703,7 @@
         
         |> Behauptung
         
-            Für alle \(x_1,\dots,x_n\) gilt
-            \(T_{\mathbf{a}} \leq T'_{\mathbf{a}}\).
+            Für alle \(x_1,\dots,x_n\) gilt \(T_{\mathbf{a}} \leq T'_{\mathbf{a}}\).
         
         |> div
             class=subtheorem

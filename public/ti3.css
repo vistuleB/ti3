@@ -114,6 +114,8 @@ body {
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    line-height: 1rem;
+    vertical-align: baseline;
 }
 
 .highlight {
@@ -146,19 +148,20 @@ body {
 .alert-info {
     background-color: #D9EDF7;
     color: #31708f;
-    padding: 1rem;
+    padding: 1ch;
 }
 
 .alert-warning {
     background-color: #FCF8E3;
     color: #8a6d3b;
-    padding: 1rem;
+    padding: 1ch;
     
 }
 
 pre {
     font-size: 1rem;
     white-space: pre-wrap;
+    margin: 2ch;
 }
 
 pre code.pythonPrompt {
@@ -170,6 +173,32 @@ pre code.pythonPrompt::before {
     font-family: "courier";
     content: ">>> ";
     width: 8em;
+    /* doesn't work */
+    padding-left: auto;
+    /* doesn't work */
+    margin-left: auto;
+    /* doesn't work */
+    text-align: right;
+    /* doesn't work */
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+pre.listing:before {
+    counter-reset: listing;
+}
+
+pre.listing code {
+    counter-increment: listing;
+}
+
+pre.listing code::before {
+    color: gray;
+    content: counter(listing) ". ";
+    min-width: 4ch;
+    display: inline-block;
     /* doesn't work */
     padding-left: auto;
     /* doesn't work */
