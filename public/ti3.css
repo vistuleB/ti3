@@ -99,7 +99,7 @@ body {
     max-width: var(--smaller-block-width);
     background-color: #e8e4d6;
     border-radius: 4px;
-    padding: 1.5rem;
+    padding: 1.3rem 1.5rem;
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -110,7 +110,7 @@ body {
     background-color: #f5f5f5;
     border: 1px #e3e3e3 solid;
     border-radius: 4px;
-    padding: 1.5rem;
+    padding: 1.3rem 1.5rem;
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -124,7 +124,7 @@ body {
     color: var(--body-color);
     border: 1px #e3e3e3 solid;
     border-radius: 4px;
-    padding: 1.5rem;
+    padding: 1.3rem 1.5rem;
     margin: auto;
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -142,7 +142,7 @@ body {
 
 .subtheorem {
     background-color: #F0FFFF;
-    padding: 1.5rem;
+    padding: 1.3rem 1.5rem;
 }
 
 .alert-info {
