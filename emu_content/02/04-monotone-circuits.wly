@@ -275,10 +275,12 @@
                         class=listing
 
                         public boolean constantFalse() {
-                        return false;
+                        
+                        \   return false;
                         }
                         public boolean constantTrue() {
-                        return true;
+                        
+                        \   return true;
                         }
                         
                 und dies sind ja offensichtlich Boolesche Funktionen mit null Input-Variablen.
@@ -308,7 +310,8 @@
                         class=listing
 
                         public boolean constantFalse(boolean x) {
-                        return false;
+                        
+                        \   return false;
                         }
                         
                 haben. Ja in der Tat, Java toleriert es, dass Sie `constantFalse` zweimal
