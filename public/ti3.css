@@ -135,6 +135,12 @@ body {
     margin: auto;
 }
 
+.qed {
+   display: flex; 
+   justify-content: right;
+   align-items: center;
+}
+
 pre {
     font-size: 1rem;
     white-space: pre-wrap;

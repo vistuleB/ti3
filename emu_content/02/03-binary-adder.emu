@@ -295,9 +295,7 @@
         Seit \(n = 2^d-1\). Wie viele Binärintervalle gibt es in
         \(\{0,\dots,n-1\}\)?
     
-    |> Highlight
-        
-        {Lemma is missing}
+    |> Lemma
         
         Es gibt einen Schaltkreis mit Input-Gates \(x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}\) mit
         Größe \(6n - 4 \in O(n)\) und Tiefe \(2\, \ceil{\log_2 n} + 1 \ \in O(\log n)\) und
@@ -306,9 +304,7 @@
         
     |> Highlight
     
-        {Beweis is missing}
-        
-        *Beweis.*Ein Binärintervall, zum Beispiel \([32,47]\) können wir
+        *Beweis.* Ein Binärintervall, zum Beispiel \([32,47]\) können wir
         als Vereinigung von zwei kleineren Binärintervallen schreiben, hier
         \([32,47] = [32,39] \cup [40,47]\). In unserer Sternchen-Notation:
         $$
@@ -384,10 +380,8 @@
     besteht ausschließlich aus AND- und OR-Gates; er enthält
     keine NOT-Gates und ist somit ein _monotoner Schaltkreis._
     
-    |> Highlight
+    |> Lemma
     
-        {Lemma is missing}
-        
         Es gibt einen Schaltkreis der Größe \(2n\) und
         Tiefe \(2 \ceil{\log_2 n} - 2 = O(\log n)\), der die \(p_I, g_I\) für Binärintervalle
         als Inputs nimmt und daraus \(g_{[0,k]}\) berechnet für jedes
@@ -395,8 +389,6 @@
         
     |> Highlight
     
-        {Beweis is missing}
-        
         *Beweis.*Die Idee ist, dass wir jedes \([0,k]\) als Vereinigung
         von wenigen Binärintervallen schreiben können, zum Beispiel
         \begin{align*}
