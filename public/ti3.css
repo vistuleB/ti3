@@ -279,7 +279,13 @@ ol, ul {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    list-style-position: inside;
 }
+
+li > p:first-child {
+    display: inline;
+}
+
 
 a {
     color: #337ab7;
@@ -412,7 +418,13 @@ mjx-container::-webkit-scrollbar-thumb:hover {
         padding: 0 2rem;
     }
     
-    p.main-column-width {
+    p.main-column-width
+    ol.main-column-width,
+    ul.main-column-width {
+        padding: 0;
+    }
+    
+    li > .main-column-width {
         padding: 0;
     }
 }
