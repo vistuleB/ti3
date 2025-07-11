@@ -28,7 +28,10 @@
     >
       Wir haben gesehen, dass jeder Schaltkreis eine Boolesche Funktion berechnet. In diesem Abschnitt wollen wir zeigen, dass es umgekehrt auch gilt: zu jeder Booleschen Funktion gibt es einen Schaltkreis (ja: viele Schaltkreise), die sie berechnen. Wir werden insgesamt drei Konstruktionen sehen. Als erstes lassen Sie uns überlegen, wie man eine Boolesche Funktion im Allgemeinen aufschreibt/codiert. Beschränken wir uns erst einmal auf Boolesche Funktionen mit 
       <i>einem</i>
-       Ausgabewert, also $f : \{0,1\}^{n} \to \{0,1\}$.
+       Ausgabewert, also 
+      <span
+        class="nowrap"
+      >$f : \{0,1\}^{n} \to \{0,1\}$.</span>
     </p>
     <p
       class="main-column-width"
@@ -102,14 +105,30 @@
     <p
       class="main-column-width"
     >
-      Die obere, roten Hälfte kommt Ihnen vielleicht bekannt vor: es ist genau die Wahrheitstabelle von $y \vee z$. Der Wert von $x$ ist im roten Teil ja immer $0$, also ist die obere Hälfte im Prinzip eine Funktion mit zwei Variablen: $y$ und $z$; wir sagen also mal, die obere Hälfte "ist" 
+      Die obere, roten Hälfte kommt Ihnen vielleicht bekannt vor: es ist genau die Wahrheitstabelle von 
+      <span
+        class="nowrap"
+      >$y \vee z$.</span>
+       Der Wert von $x$ ist im roten Teil ja immer 
+      <span
+        class="nowrap"
+      >$0$,</span>
+       also ist die obere Hälfte im Prinzip eine Funktion mit zwei Variablen: $y$ und 
+      <span
+        class="nowrap"
+      >$z$;</span>
+       wir sagen also mal, die obere Hälfte "ist" 
       <span
         style="color:red"
       >$y \vee z$</span>. Die untere Hälfte besteht auch aus drei Einsen und einer Null, allerdings ist die Null mittendrin. Überprüfen Sie es, wenn ich Ihnen sage, dass die untere Hälfte 
       <span
         style="color:blue"
       >$\bar{y} \vee z$ 
-      </span>ist (ich schreibe im Fließtext übrigens gerne $\bar{y}$ statt $\neg y$, weil das mir lesbarer erscheint). Insgesamt also:
+      </span>ist (ich schreibe im Fließtext übrigens gerne $\bar{y}$ statt 
+      <span
+        class="nowrap"
+      >$\neg y$,</span>
+       weil das mir lesbarer erscheint). Insgesamt also:
     </p>
     <p
       class="main-column-width"
@@ -156,7 +175,10 @@
         <p
           class="main-column-width"
         >
-          Jede Hälfte kann als Boolesche Funktion mit $n-1$ Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise $C_0$ für die obere und $C_1$ für die untere Hälfte, beide mit Input-Variablen $x_2,\dots,x_n$.
+          Jede Hälfte kann als Boolesche Funktion mit $n-1$ Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise $C_0$ für die obere und $C_1$ für die untere Hälfte, beide mit Input-Variablen 
+          <span
+            class="nowrap"
+          >$x_2,\dots,x_n$.</span>
         </p>
       </li>
       <li>
@@ -169,7 +191,11 @@
           <code>then</code>
            $C_1$ 
           <code>else</code>
-           $C_0$, zu einem Schaltkreis für $f$ mit insgesamt $n$ Input-Variablen.
+           
+          <span
+            class="nowrap"
+          >$C_0$,</span>
+           zu einem Schaltkreis für $f$ mit insgesamt $n$ Input-Variablen.
         </p>
       </li>
     </ol>
@@ -202,7 +228,11 @@
       <p
         class="main-column-width"
       >
-        In Worten: wir fixieren den $i$-ten Input auf den Wert $b$ und erhalten eine Funktion in den restlichen $n-1$ Variablen.
+        In Worten: wir fixieren den 
+        <span
+          class="nowrap"
+        >$i$-ten</span>
+         Input auf den Wert $b$ und erhalten eine Funktion in den restlichen $n-1$ Variablen.
       </p>
     </div>
     <p
@@ -273,7 +303,11 @@
     <p
       class="main-column-width"
     >
-      Von den 8 möglichen Input-Tupeln gibt es nur eins, für das dieser Ausdruck eine 1 ausgibt, in diesem Falle $(1,0,1)$. Wir werden nun also für jede 1-Zeile unserer Wahrheitstabelle einen solchen Ausdruck hinschreiben und diese dann in einem großen OR zusammenführen. Einen Ausdruck, der aus einem AND von Variablen oder deren Negation besteht, nennt man auch einen Term.
+      Von den 8 möglichen Input-Tupeln gibt es nur eins, für das dieser Ausdruck eine 1 ausgibt, in diesem Falle 
+      <span
+        class="nowrap"
+      >$(1,0,1)$.</span>
+       Wir werden nun also für jede 1-Zeile unserer Wahrheitstabelle einen solchen Ausdruck hinschreiben und diese dann in einem großen OR zusammenführen. Einen Ausdruck, der aus einem AND von Variablen oder deren Negation besteht, nennt man auch einen Term.
     </p>
     <p
       class="main-column-width"
@@ -342,9 +376,17 @@
          
         Ein 
         <i>Literal</i>
-         ist eine Variable $x$ oder deren Negation $\bar{x}$. Ein 
+         ist eine Variable $x$ oder deren Negation 
+        <span
+          class="nowrap"
+        >$\bar{x}$.</span>
+         Ein 
         <i>Term</i>
-         ist ein AND (auch: Konjunktion) von Literalen (beispielsweise $\bar{x} \wedge \bar{y} \wedge z)$. Eine Formel in 
+         ist ein AND (auch: Konjunktion) von Literalen (beispielsweise 
+        <span
+          class="nowrap"
+        >$\bar{x} \wedge \bar{y} \wedge z)$.</span>
+         Eine Formel in 
         <i>disjunktiver Normalform</i>
          (DNF) ist ein OR von Termen.
       </p>
@@ -419,8 +461,16 @@
     <p
       class="main-column-width"
     >
-      Einen Ausdruck der Form $\bar{x} \vee \bar{y} \vee z$, also ein OR von Literaten, nennt man auch eine 
-      <i>Klausel</i>. Eine Klausel mit $n$ (hier: $n=3$) Literaten verbietet genau ein Tupel von Wahrheitswerten. Wenn wir also alle Verbote mit AND verknüpfen, erhalten wir
+      Einen Ausdruck der Form 
+      <span
+        class="nowrap"
+      >$\bar{x} \vee \bar{y} \vee z$,</span>
+       also ein OR von Literaten, nennt man auch eine 
+      <i>Klausel</i>. Eine Klausel mit $n$ (hier: 
+      <span
+        class="nowrap"
+      >$n=3$)</span>
+       Literaten verbietet genau ein Tupel von Wahrheitswerten. Wenn wir also alle Verbote mit AND verknüpfen, erhalten wir
     </p>
     <p
       class="main-column-width"
@@ -519,7 +569,11 @@
         >
           Wenn die Funktion (1) bereits als 
           <i>Boolesche Formel</i>
-           vorliegt (also Schaltkreise, in denen außer den Eingabe-Gates alle Gates nur eine ausgehende Kante haben), so ist das Minimierungsproblem $Sigma_2^{P}$-vollständig, siehe 
+           vorliegt (also Schaltkreise, in denen außer den Eingabe-Gates alle Gates nur eine ausgehende Kante haben), so ist das Minimierungsproblem 
+          <span
+            class="nowrap"
+          >$Sigma_2^{P}$-vollständig,</span>
+           siehe 
           <a
             href="http://users.cms.caltech.edu/~umans/papers/BU07.pdf"
           >Buchfuhrer, David; Umans, Christopher (January 2011), The complexity of Boolean formula minimization (JCSS 2011).</a>

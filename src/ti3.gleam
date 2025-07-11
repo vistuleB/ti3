@@ -160,6 +160,8 @@ fn our_pipeline() -> List(infra.Desugarer) {
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     [
       dl.find_replace(#([#("\\$", "$")], ["Math", "MathBlock"])),
+      dl.wrap_math_with_no_break(),
+      dl.unwrap_when_zero_or_one_children(["NoBreak"]),
       dl.fold_tag_contents_into_text(["MathBlock", "Math"]),
       dl.group_consecutive_children_avoiding(
         #(
@@ -197,6 +199,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("Lemma", "div", [#("class", "definition")]),
         #("Exercise", "div", [#("class", "exercise")]),
         #("Highlight", "div", [#("class", "highlight")]),
+        #("NoBreak", "span", [#("class", "nowrap")]),
       ]),
 
       dl.add_attributes([

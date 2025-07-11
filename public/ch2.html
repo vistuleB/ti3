@@ -111,7 +111,11 @@
     >
       Vielleicht wünschen Sie sich noch mehr Gates,
       zum Beispiel ein if-then-else-Gate mit drei
-      Inputs $x,y,z$, welches $y$ ausgibt, wenn
+      Inputs 
+      <span
+        class="nowrap"
+      >$x,y,z$,</span>
+       welches $y$ ausgibt, wenn
       $x$ wahr ist und ansonsten $z$ ausgibt.
       So ein Gate können Sie sich einfach aus And,
       Or, Not bauen:
@@ -187,21 +191,33 @@
           <p
             class="main-column-width"
           >
-            Ein XOR-Gate $x \oplus y$. Es gibt 1 aus, wenn einer der beiden Inputs 1 ist und der andere 0.
+            Ein XOR-Gate 
+            <span
+              class="nowrap"
+            >$x \oplus y$.</span>
+             Es gibt 1 aus, wenn einer der beiden Inputs 1 ist und der andere 0.
           </p>
         </li>
         <li>
           <p
             class="main-column-width"
           >
-            Ein Majority-Gate $Maj(x,y,z)$. Es gibt 1 aus, wenn mindestens zwei seiner Inputs 1 ist.
+            Ein Majority-Gate 
+            <span
+              class="nowrap"
+            >$Maj(x,y,z)$.</span>
+             Es gibt 1 aus, wenn mindestens zwei seiner Inputs 1 ist.
           </p>
         </li>
         <li>
           <p
             class="main-column-width"
           >
-            Ein $n$-faches XOR-Gate
+            Ein 
+            <span
+              class="nowrap"
+            >$n$-faches</span>
+             XOR-Gate
           </p>
           <p
             class="main-column-width"
@@ -228,8 +244,14 @@
           <p
             class="main-column-width"
           >
-            Ein $n$-faches Majority-Gate
-            $\mathrm{Maj}(x_1,\ldots,x_n)$,
+            Ein 
+            <span
+              class="nowrap"
+            >$n$-faches</span>
+             Majority-Gate
+            <span
+              class="nowrap"
+            >$\mathrm{Maj}(x_1,\ldots,x_n)$,</span>
             welches 1 ausgibt, wenn mehr als $n/2$ der Inputs auf 1 stehen. Sie können annehmen, dass $n$ ungerade ist, wenn es Ihnen hilft.
           </p>
           <p
@@ -263,7 +285,19 @@
     <p
       class="main-column-width"
     >
-      Man bezeichnet dies als AND-Gate mit einem Fan-in von $n$. Das "normale" AND-Gate hat einen Fan-in von 2. Mit $\lor$- und $\oplus$-Gates geht das ganz analog. Für andere Gates (wie zum Beispiel ein if-then-else-Gate) würde das keinen Sinn machen. Größerer Fan-in ist aber nicht wirklich etwas neues unter der Sonne: Sie können jederzeit großen Fan-in durch kleinen simulieren:
+      Man bezeichnet dies als AND-Gate mit einem Fan-in von 
+      <span
+        class="nowrap"
+      >$n$.</span>
+       Das "normale" AND-Gate hat einen Fan-in von 2. Mit 
+      <span
+        class="nowrap"
+      >$\lor$-</span>
+       und 
+      <span
+        class="nowrap"
+      >$\oplus$-Gates</span>
+       geht das ganz analog. Für andere Gates (wie zum Beispiel ein if-then-else-Gate) würde das keinen Sinn machen. Größerer Fan-in ist aber nicht wirklich etwas neues unter der Sonne: Sie können jederzeit großen Fan-in durch kleinen simulieren:
     </p>
     <p
       class="main-column-width"
@@ -323,7 +357,43 @@
     <p
       class="main-column-width"
     >
-      Das Flipflop zeigt ein interessantes Verhalten: wenn $\text{Reset} = 0$, $\text{Set} = 1$ ist, so ist der Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1, und somit ist $\bar{Q} = 0$; somit sind wiederum beide Input-Werte des oberen OR-Gates 0 und $Q = 1$. Wenn $\text{Reset} = 1$, $\text{Set} = 0$, dann ist analog $Q = 0$, $\bar{Q} = 1$. Wenn $\text{Reset} = \text{Set} = 0$, dann leiten beide OR-Gates einfach die Werte der anderen, von rechts kommenden Kabel durch, und somit gilt $Q = \neg{\bar{Q}}$ und $\bar{Q} = \neg{Q}$; das heißt, die Werte, die zuvor bestanden, bestehen weiter. Das Flipflop implementiert somit einen 1-Bit-Speicher (die Kombination $\text{Set} = \text{Reset} = 1$ würde $Q = \bar{Q} = 0$ erzeugen und gilt als illegale Eingabe). Ein Flipflop hat somit einen inneren Zustand. Die Schaltkreise in diesem Kapitel haben keinen inneren Zustand: die Werte der Ausgabe-Gates sind vollständig durch die Werte der Input-Gates determiniert. Wir sind nun bereit für eine formale Definition von Schaltkreisen.
+      Das Flipflop zeigt ein interessantes Verhalten: wenn 
+      <span
+        class="nowrap"
+      >$\text{Reset} = 0$,</span>
+       $\text{Set} = 1$ ist, so ist der Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1, und somit ist 
+      <span
+        class="nowrap"
+      >$\bar{Q} = 0$;</span>
+       somit sind wiederum beide Input-Werte des oberen OR-Gates 0 und 
+      <span
+        class="nowrap"
+      >$Q = 1$.</span>
+       Wenn 
+      <span
+        class="nowrap"
+      >$\text{Reset} = 1$,</span>
+       
+      <span
+        class="nowrap"
+      >$\text{Set} = 0$,</span>
+       dann ist analog 
+      <span
+        class="nowrap"
+      >$Q = 0$,</span>
+       
+      <span
+        class="nowrap"
+      >$\bar{Q} = 1$.</span>
+       Wenn 
+      <span
+        class="nowrap"
+      >$\text{Reset} = \text{Set} = 0$,</span>
+       dann leiten beide OR-Gates einfach die Werte der anderen, von rechts kommenden Kabel durch, und somit gilt $Q = \neg{\bar{Q}}$ und 
+      <span
+        class="nowrap"
+      >$\bar{Q} = \neg{Q}$;</span>
+       das heißt, die Werte, die zuvor bestanden, bestehen weiter. Das Flipflop implementiert somit einen 1-Bit-Speicher (die Kombination $\text{Set} = \text{Reset} = 1$ würde $Q = \bar{Q} = 0$ erzeugen und gilt als illegale Eingabe). Ein Flipflop hat somit einen inneren Zustand. Die Schaltkreise in diesem Kapitel haben keinen inneren Zustand: die Werte der Ausgabe-Gates sind vollständig durch die Werte der Input-Gates determiniert. Wir sind nun bereit für eine formale Definition von Schaltkreisen.
     </p>
     <div
       .="DefinitionCounter 1"
@@ -368,7 +438,10 @@
     >
       Oft haben wir es mit Schaltkreisen mit nur einem Output-Gate zu tun; in diesem Falle lassen wir die Beschriftung auch gerne weg, weil sie keine zusätzliche Information bringt. Wenn wir allen Input-Variablen eines Schaltkreises $C$ einen Wahrheitswert zugewiesen bekommen haben, dann können wir den Schaltkreis von "unten" (Input-Gates) nach "oben" (Output-Gates) auswerten, indem eben jeder mit OR/AND/NOT beschriftete Knoten den ihm zugeordnete Booleschen Operator auswertet. Es ist klar, dass der Schaltkreis $C$ eine 
       <i>Funktion</i>
-       $f_C : \{0,1\}^n \to \{0,1\}^m$ berechnet. Oft schreiben wir einfach $C : \{0,1\}^n \to \{0,1\}^m$.
+       $f_C : \{0,1\}^n \to \{0,1\}^m$ berechnet. Oft schreiben wir einfach 
+      <span
+        class="nowrap"
+      >$C : \{0,1\}^n \to \{0,1\}^m$.</span>
     </p>
     <div
       .="DefinitionCounter 2"
@@ -396,7 +469,14 @@
       >
         <b>Definition 2.3</b>
          
-        Zwei Boolesche Schaltkreise $C, C^{\prime}$ heißen äquivalent, wenn $f_C = f_{C^{\prime}}$, wenn sie also die gleiche Funktion berechnen. Wir schreiben $C \equiv C^{\prime}$.
+        Zwei Boolesche Schaltkreise $C, C^{\prime}$ heißen äquivalent, wenn 
+        <span
+          class="nowrap"
+        >$f_C = f_{C^{\prime}}$,</span>
+         wenn sie also die gleiche Funktion berechnen. Wir schreiben 
+        <span
+          class="nowrap"
+        >$C \equiv C^{\prime}$.</span>
       </p>
     </div>
   </div>

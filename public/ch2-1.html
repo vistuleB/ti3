@@ -84,7 +84,10 @@
     <p
       class="main-column-width"
     >
-      In beiden Fällen ersetzen wir ein AND-Gate von Fan-in $n$ durch $n - 1$ AND-Gates von je Fan-in 2. Wenn wir allerdings die Tiefe betrachten, so sehen wir, dass der linke Schaltkreis Tiefe $n - 1$ hat, der rechte jedoch nur $\ceil{\log_2(n)}$.
+      In beiden Fällen ersetzen wir ein AND-Gate von Fan-in $n$ durch $n - 1$ AND-Gates von je Fan-in 2. Wenn wir allerdings die Tiefe betrachten, so sehen wir, dass der linke Schaltkreis Tiefe $n - 1$ hat, der rechte jedoch nur 
+      <span
+        class="nowrap"
+      >$\ceil{\log_2(n)}$.</span>
     </p>
     <div
       .="DefinitionCounter 2"
@@ -95,7 +98,18 @@
       >
         <b>Theorem 2.1.2</b>
          
-        Sei $C$ ein Schaltkreis Maximum-Fan-in $k$ Größe $s$ und Tiefe $d$. Dann gibt es einen äquivalenten Schaltkreis $C^{\prime}$ mit Maximum-Fan-in $2$, Größe höchstens $s(k - 1)$ und Tiefe höchstens $d \ceil{\log_{2}k}$.
+        Sei $C$ ein Schaltkreis Maximum-Fan-in $k$ Größe $s$ und Tiefe 
+        <span
+          class="nowrap"
+        >$d$.</span>
+         Dann gibt es einen äquivalenten Schaltkreis $C^{\prime}$ mit Maximum-Fan-in 
+        <span
+          class="nowrap"
+        >$2$,</span>
+         Größe höchstens $s(k - 1)$ und Tiefe höchstens 
+        <span
+          class="nowrap"
+        >$d \ceil{\log_{2}k}$.</span>
       </p>
     </div>
   </div>

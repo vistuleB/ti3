@@ -27,11 +27,22 @@
       class="main-column-width"
     >
       Für zwei Tupel $\mathbf{x}, \mathbf{y} \in \{0,1\}^n$ schreiben wir
-      $ \mathbf{x} \leq \mathbf{y}$, falls $x_1 \leq y_1, \dots, x_n \leq y_n$, also
+      <span
+        class="nowrap"
+      >$ \mathbf{x} \leq \mathbf{y}$,</span>
+       falls 
+      <span
+        class="nowrap"
+      >$x_1 \leq y_1, \dots, x_n \leq y_n$,</span>
+       also
       $\mathbf{x}$ 
       <i>in jeder Koordinate</i>
        kleiner gleich $\mathbf{y}$ ist.
-      Beispielsweise gilt $ (0,0,1) \leq (1,0,1)$. Allerdings gilt weder
+      Beispielsweise gilt 
+      <span
+        class="nowrap"
+      >$ (0,0,1) \leq (1,0,1)$.</span>
+       Allerdings gilt weder
       $ (0,1,0) \leq (1,0,1)$ noch umgekehrt; die beiden Tupel sind 
       <i>unvergleichbar</i>;
       es handelt sich bei $\leq$ also um eine 
@@ -58,16 +69,28 @@
     >
       Diese Darstellung einer Partialordnung als gerichteter Graph bezeichnet man auch als<i>Hasse-Diagramm</i>
        (ich verzichte hier auf eine formale Definition).
-      Es gilt nun $\mathbf{x} \leq \mathbf{y}$, wenn Sie im Hasse-Diagramm einen
+      Es gilt nun 
+      <span
+        class="nowrap"
+      >$\mathbf{x} \leq \mathbf{y}$,</span>
+       wenn Sie im Hasse-Diagramm einen
       Pfad von $\mathbf{x}$ nach $\mathbf{y}$ finden.
     </p>
     <p
       class="main-column-width"
     >
       <b>Vorsicht.</b>
-       Im obigen Bild steht zwar $001$ unterhalb von $110$, allerdings
+       Im obigen Bild steht zwar $001$ unterhalb von 
+      <span
+        class="nowrap"
+      >$110$,</span>
+       allerdings
       werden Sie keinen Pfad von $001$ nach $110$ finden;
-      es gilt also $001 \not \leq 110$; die beiden Elemente sind 
+      es gilt also 
+      <span
+        class="nowrap"
+      >$001 \not \leq 110$;</span>
+       die beiden Elemente sind 
       <i>unvergleichbar</i>.
     </p>
     <div
@@ -131,7 +154,10 @@
       der oberhalb eines blauen Punktes liegt, im Bild von $\oplus$ allerdings
       schon. Der Grund: $\wedge$ ist monoton, $\xor$ ist es nicht.
       Formaler argumentiert: in der Partialordnung gilt $01 \leq 11$ aber
-      $\xor (0,1) \gt \xor (1,0)$, was der Definition einer monotonen Funktion
+      <span
+        class="nowrap"
+      >$\xor (0,1) \gt \xor (1,0)$,</span>
+       was der Definition einer monotonen Funktion
       widerspricht. (Ich habe hier absichtlich die Präfixschreibweise $\xor(0,1)$ verwendet,
       um hervorzuheben, dass es sich hierbei um eine Funktion in zwei Variablen handelt.)
       Beachten Sie, dass ich die Worte 
@@ -165,8 +191,16 @@
     <p
       class="main-column-width"
     >
-      ist nicht monoton (beachten Sie hinter der $\bar{y}$-Schreibweise versteckte NOT-Gate),
-      ist aber äquivalent zu der offensichtlich monotonen Funktion $x$. Allerdings können wir
+      ist nicht monoton (beachten Sie hinter der 
+      <span
+        class="nowrap"
+      >$\bar{y}$-Schreibweise</span>
+       versteckte NOT-Gate),
+      ist aber äquivalent zu der offensichtlich monotonen Funktion 
+      <span
+        class="nowrap"
+      >$x$.</span>
+       Allerdings können wir
       folgendes beweisen:
     </p>
     <div
@@ -218,7 +252,10 @@
         Am Besten betrachten Sie das 
         <i>Hasse-Diagramm</i>
          der
-        Partialordnungen auf Mengen $ \{0,1\}^2$ bzw. $ \{0,1\}^3$:
+        Partialordnungen auf Mengen $ \{0,1\}^2$ bzw. 
+        <span
+          class="nowrap"
+        >$ \{0,1\}^3$:</span>
       </p>
       <p
         class="main-column-width"
@@ -251,7 +288,11 @@
       >
         <b>Übungsaufgabe 2.4.4</b>
          
-        &ensp;<b>(Challenge).</b>Bauen Sie einen Schaltkreis mit drei Input-Variablen $x,y,z$, der drei
+        &ensp;<b>(Challenge).</b>Bauen Sie einen Schaltkreis mit drei Input-Variablen 
+        <span
+          class="nowrap"
+        >$x,y,z$,</span>
+         der drei
         Output-Gates hat, die $\bar{x}, \bar{y}, \bar{z}$ berechnen.
         Ihr Schaltkreis darf 
         <i>höchstens zwei NOT-Gates</i>
@@ -418,7 +459,11 @@
           <b>Theorem 2.4.4</b>
            
           Zu jeder Booleschen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es
-          einen Schaltkreis $C$, der $f$ berechnet.
+          einen Schaltkreis 
+          <span
+            class="nowrap"
+          >$C$,</span>
+           der $f$ berechnet.
         </p>
       </div>
       <p
@@ -448,7 +493,11 @@
           <b>Beweis.</b>
            Als 
           <i>Beweismethode</i>
-           verwenden wir Induktion über $n$, die Anzahl der Variablen.
+           verwenden wir Induktion über 
+          <span
+            class="nowrap"
+          >$n$,</span>
+           die Anzahl der Variablen.
         </p>
         <p
           class="main-column-width"
@@ -505,7 +554,11 @@
             class="main-column-width"
           >
             Für jede natürliche Zahl $n$ gilt: zu jeder Booleschen Funktion
-            $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen Schaltkreis $C$, der
+            $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen Schaltkreis 
+            <span
+              class="nowrap"
+            >$C$,</span>
+             der
             $f$ berechnet.
           </p>
         </div>
@@ -523,7 +576,11 @@
            Wenn $n=0$ ist, dann gibt es nur zwei mögliche
           Boolesche
           Funktionen,
-          nämlich die konstanten Funktionen $0$ und $1$. Für beide Funktionen
+          nämlich die konstanten Funktionen $0$ und 
+          <span
+            class="nowrap"
+          >$1$.</span>
+           Für beide Funktionen
           gibt es einen Schaltkreis, nämlich bestehend aus einem Input-Gate (mit
           der Konstant 0 bzw. 1 beschriftet), das gleichzeitig auch Output-Gate ist.
         </p>
@@ -561,7 +618,11 @@ public boolean constantTrue() {
             ist das unvermeidbar, weil manche Aussagen einfach z.B. erst ab $n \geq 2$ gelten.Wenn wir die Induktionsbasis bei $n=1$ ansetzen wollen, dann sehen wir, dass
             es 
             <i>vier</i>
-             Funktionen gibt: $0, 1, x, \neg x$; all diese haben natürlich
+             Funktionen gibt: 
+            <span
+              class="nowrap"
+            >$0, 1, x, \neg x$;</span>
+             all diese haben natürlich
             einen
             (sehr einfachen) Schaltkreis. Nur bei $\neg x$ braucht unser Schaltkreis überhaupt
             ein
@@ -658,8 +719,15 @@ public boolean constantFalse(boolean x) {
           class="main-column-width"
         >
           <b>Beweistechnik/-strategie</b>. Um den Induktionsschritt
-          vollziehen zu können, müssen wir irgendwie die $n$-stellige
-          Funktion $f$ auf sinnvolle Weise in $n-1$-stellige Funktionen
+          vollziehen zu können, müssen wir irgendwie die 
+          <span
+            class="nowrap"
+          >$n$-stellige</span>
+          Funktion $f$ auf sinnvolle Weise in 
+          <span
+            class="nowrap"
+          >$n-1$-stellige</span>
+           Funktionen
           "zerlegen". Hier ist im Allgemeinen Kreativität gefragt.
           Im vorliegenden Falle ist es aber recht klar, welche Zerlegung in Frage kommt.
           Wir definieren zwei neue, "kleinere" Funktionen
@@ -725,7 +793,11 @@ public boolean constantFalse(boolean x) {
             <p
               class="main-column-width"
             >
-              Der Fall $x_1 = 1$. Dann gibt der obige Schaltkreis
+              Der Fall 
+              <span
+                class="nowrap"
+              >$x_1 = 1$.</span>
+               Dann gibt der obige Schaltkreis
               den Wert $f_1(x_2,\dots,x_n$ aus, was per Definition von $f_1$
               gleich $f(1, x_2,\dots,x_n) = f(x_1,\dots,x_n)$ ist. Er gibt also den korrekten
               Wert aus.
@@ -735,7 +807,11 @@ public boolean constantFalse(boolean x) {
             <p
               class="main-column-width"
             >
-              Der Fall $x_1 = 0$. Dann gibt der obige Schaltkreis
+              Der Fall 
+              <span
+                class="nowrap"
+              >$x_1 = 0$.</span>
+               Dann gibt der obige Schaltkreis
               den Wert $f_0(x_2,\dots,x_n$ aus, was per Definition von $f_0$
               gleich $f(0, x_2,\dots,x_n) = f(x_1,\dots,x_n)$ ist. Er gibt also auch hier den
               korrekten
@@ -811,7 +887,11 @@ public boolean constantFalse(boolean x) {
         $$
         Diese Funktionen sind selbst wiederum monoton (versuchen Sie, dies formal zu zeigen,
         wenn Sie Lust haben; oder versuchen Sie, es sich intuitiv klar zu machen).
-        Per Induktionshypothese gibt es also monotone Schaltkreise für $f_0$ und $f_1$. Wir
+        Per Induktionshypothese gibt es also monotone Schaltkreise für $f_0$ und 
+        <span
+          class="nowrap"
+        >$f_1$.</span>
+         Wir
         kombinieren diese mit einem 
         <code>if-then-else</code>-Gate und erhalten:
       </p>
@@ -888,7 +968,11 @@ public boolean constantFalse(boolean x) {
         schreiben.
         Auch ein 
         <i>abuse of notation</i>. In der obigen Formel habe ich rechts
-        das $x$ ausgeklammert; die Formel beginnt nun mit $x \wedge ...$; falls
+        das $x$ ausgeklammert; die Formel beginnt nun mit 
+        <span
+          class="nowrap"
+        >$x \wedge ...$;</span>
+         falls
         $x=0$ ist, gibt sie also auf jeden Fall $0$ aus; das kann im Allgemeinen nicht
         korrekt (also äquivalent zu $f$ sein; warum sollte $f$ automatisch $0$ sein,
         nur weil $x_1=0$ ist? Wir schließen also: das NOT-Gate durch ein gate-loses Kabel
@@ -897,7 +981,11 @@ public boolean constantFalse(boolean x) {
       <p
         class="main-column-width"
       >
-        Schauen wir uns also den Schaltkreis im zweiten Bild an. Das rechte $\wedge$-Gate hat nur
+        Schauen wir uns also den Schaltkreis im zweiten Bild an. Das rechte 
+        <span
+          class="nowrap"
+        >$\wedge$-Gate</span>
+         hat nur
         einen Input, kann also weggelassen werden (d.h. durch ein Kabel ersetzt werden); wir
         erhalten den
         monotonen Schaltkreis
@@ -950,10 +1038,17 @@ public boolean constantFalse(boolean x) {
           class="subtheorem"
         >
           <b>Beweis.</b>
-           Wir machen eine Fallunterscheidung nach dem Wert von $x_1$.
+           Wir machen eine Fallunterscheidung nach dem Wert von 
+          <span
+            class="nowrap"
+          >$x_1$.</span>
           <ul>
             <li>
-              Der Fall $x_1 = 0$. Dann gilt
+              Der Fall 
+              <span
+                class="nowrap"
+              >$x_1 = 0$.</span>
+               Dann gilt
               $$
               \begin{align*}
               f(x_1,x_2,\dots,x_n)&amp;= f(0,x_2,\dots,x_n) \tag{da $x_1=0$} \\
@@ -965,7 +1060,11 @@ public boolean constantFalse(boolean x) {
               und die behauptete Gleichung gilt.
             </li>
             <li>
-              Der Fall $x_1 = 1$. Dann gilt
+              Der Fall 
+              <span
+                class="nowrap"
+              >$x_1 = 1$.</span>
+               Dann gilt
               $$
               \begin{align*}
               f(x_1,\dots,x_n)&amp;= f_1(x_2,\dots,x_n) \ .
@@ -978,7 +1077,15 @@ public boolean constantFalse(boolean x) {
               wegfällt}
               \end{align*}
               $$
-              Die linke Seite ist also $f_1$, die rechte ist $f_1 \vee f_0$. Schaut leider
+              Die linke Seite ist also 
+              <span
+                class="nowrap"
+              >$f_1$,</span>
+               die rechte ist 
+              <span
+                class="nowrap"
+              >$f_1 \vee f_0$.</span>
+               Schaut leider
               nicht
               gleich aus.
               Jetzt sollten bei Ihnen die Glocken klingeln: wir haben bisher an keiner Stelle
@@ -994,10 +1101,18 @@ public boolean constantFalse(boolean x) {
               \end{align*}
               $$
               Wir überprüfen nun also: wenn $f_0(x_2, \dots, x_n) = 0$ ist, dann
-              gilt $f_0 \vee f_1 = 0 \vee f_1 = f_1$. Wenn
+              gilt 
+              <span
+                class="nowrap"
+              >$f_0 \vee f_1 = 0 \vee f_1 = f_1$.</span>
+               Wenn
               $f_0 = 1$ ist, dann ist $f_1 = 1$ wegen Monotonität (größer als 1 geht ja
               nicht),
-              und daher $f_0 \vee f_1 = 1 \vee 1 = 1 = f_1$. In jedem Fall gilt also:
+              und daher 
+              <span
+                class="nowrap"
+              >$f_0 \vee f_1 = 1 \vee 1 = 1 = f_1$.</span>
+               In jedem Fall gilt also:
               $$
               (f_0 \vee f_1) = f_1 \ .
               $$
@@ -1035,7 +1150,10 @@ public boolean constantFalse(boolean x) {
             class="constrained transition-all"
           >
         </figure>
-        ein monotoner Schaltkreis für $f$.<span
+        ein monotoner Schaltkreis für 
+        <span
+          class="nowrap"
+        >$f$.</span><span
           class="qed"
         >$\square$</span>
       </p>
@@ -1053,8 +1171,18 @@ public boolean constantFalse(boolean x) {
         class="main-column-width"
       >
         <b>Das Bekannte.</b>Erinnern Sie sich an die Konstruktion einer DNF-Formel auf Basis der gegebenen
-        Wahrheitstabelle. Für jedes $n$-Tupel $\mathbf{a} := a_1,\dots,a_n) \in \{0,1\}^n$,
-        für welches $f$ den Wert 1 ausgibt, konstruieren wir einen DNF-Term $T_{\mathbf{a}}$,
+        Wahrheitstabelle. Für jedes 
+        <span
+          class="nowrap"
+        >$n$-Tupel</span>
+         
+        <span
+          class="nowrap"
+        >$\mathbf{a} := a_1,\dots,a_n) \in \{0,1\}^n$,</span>
+        für welches $f$ den Wert 1 ausgibt, konstruieren wir einen DNF-Term 
+        <span
+          class="nowrap"
+        >$T_{\mathbf{a}}$,</span>
         der auf $\mathbf{a}$ eine 1 ausgibt und sonst überall eine 0.
         Um den Term genau zu beschreiben, definieren wir
       </p>
@@ -1071,8 +1199,16 @@ public boolean constantFalse(boolean x) {
       <p
         class="main-column-width"
       >
-        Als Beispiel: wenn $n=5$ und $\mathbf{a} = (10010)$, dann ist
-        $I_{\mathbf{a}} = \{1,4\}$ und $I_{\mathbf{a}} = \{2,3,5\}$. Wir definieren
+        Als Beispiel: wenn $n=5$ und 
+        <span
+          class="nowrap"
+        >$\mathbf{a} = (10010)$,</span>
+         dann ist
+        $I_{\mathbf{a}} = \{1,4\}$ und 
+        <span
+          class="nowrap"
+        >$I_{\mathbf{a}} = \{2,3,5\}$.</span>
+         Wir definieren
       </p>
       <p
         class="main-column-width"
@@ -1087,8 +1223,11 @@ public boolean constantFalse(boolean x) {
       <p
         class="main-column-width"
       >
-        Für $\mathbf{a} = (10010)$ gibt das also $x_1 \wedge x_4 \wedge \bar{x}_2 \wedge
-        \bar{x}_3 \wedge \bar{x}_5$.
+        Für $\mathbf{a} = (10010)$ gibt das also 
+        <span
+          class="nowrap"
+        >$x_1 \wedge x_4 \wedge \bar{x}_2 \wedge
+          \bar{x}_3 \wedge \bar{x}_5$.</span>
         Noch kompakter kann man es hinschreiben, wenn man für eine Variable
         $x$ und einen Wert $b \in \{0,1\}$ folgendes definiert:
       </p>
@@ -1122,15 +1261,21 @@ public boolean constantFalse(boolean x) {
         class="main-column-width"
       >
         definieren, für $\mathbf{a} = (10010)$ also
-        $x_1^1 \wedge x_2^0 \wedge x_3^0 \wedge x_4^1 \wedge x_5^0 =
-        x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge \bar{x}_5$. Das gibt den gleichen
+        <span
+          class="nowrap"
+        >$x_1^1 \wedge x_2^0 \wedge x_3^0 \wedge x_4^1 \wedge x_5^0 =
+          x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge \bar{x}_5$.</span>
+         Das gibt den gleichen
         Term wie zuvor, nur mit den Literalen in anderer Reihenfolge aufgelistet (was keine
         Rolle spielt, da $\wedge$ kommutativ ist).
       </p>
       <p
         class="main-column-width"
       >
-        Gegen eine Boolesche Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$,
+        Gegen eine Boolesche Funktion 
+        <span
+          class="nowrap"
+        >$f: \{0,1\}^n \rightarrow \{0,1\}$,</span>
         definieren wir
         $$
         \sat(f) := \{\mathbf{a} \in \{0,1\}^n \ | \ f(\mathbf{a}) = 1 \} \ .
@@ -1138,7 +1283,10 @@ public boolean constantFalse(boolean x) {
         Die Abkürzung $\sat$ steht für 
         <i>satisfying assignments</i>, also
         diejenigen Belegungen der Variablen, die $f$ "erfüllen", also 1 werden lassen.
-        Wir bauen uns einen Schaltkreis $F$:
+        Wir bauen uns einen Schaltkreis 
+        <span
+          class="nowrap"
+        >$F$:</span>
       </p>
       <p
         class="main-column-width"
@@ -1175,7 +1323,11 @@ public boolean constantFalse(boolean x) {
         $$
         T'_{\mathbf{a}} := \bigwedge_{i \in I_{\mathbf{a}}} x_i \ .
         $$
-        Der Term $T'_{\mathbf{a}}$ ist "kürzer" als $T_{\mathbf{a}}$, stellt
+        Der Term $T'_{\mathbf{a}}$ ist "kürzer" als 
+        <span
+          class="nowrap"
+        >$T_{\mathbf{a}}$,</span>
+         stellt
         also weniger "Bedingungen". Formal gesprochen:
       </p>
       <div
@@ -1187,7 +1339,10 @@ public boolean constantFalse(boolean x) {
         >
           <b>Behauptung 2.4.7</b>
            
-          Für alle $x_1,\dots,x_n$ gilt $T_{\mathbf{a}} \leq T'_{\mathbf{a}}$.
+          Für alle $x_1,\dots,x_n$ gilt 
+          <span
+            class="nowrap"
+          >$T_{\mathbf{a}} \leq T'_{\mathbf{a}}$.</span>
         </p>
       </div>
       <p
@@ -1196,8 +1351,11 @@ public boolean constantFalse(boolean x) {
         <div
           class="subtheorem"
         >
-          <b>Beweis.</b>Definieren wir zusätzlich noch $T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
-          \bar{x}_i$,
+          <b>Beweis.</b>Definieren wir zusätzlich noch 
+          <span
+            class="nowrap"
+          >$T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
+            \bar{x}_i$,</span>
           dann können wir $T_{\mathbf{a}} = T'_{\mathbf{a}} \wedge T''_{\mathbf{a}}$ schreiben.
           Und jetzt ist $T'_{\mathbf{a}} \wedge T''_{\mathbf{a}} \leq T'_{\mathbf{a}}$
           offensichtlich,
@@ -1226,7 +1384,13 @@ public boolean constantFalse(boolean x) {
         >
           <b>Behauptung 2.4.8</b>
            
-          $F \equiv F'$, d.h. sie berechnen beide dieselbe Funktion, nämlich $f$.
+          <span
+            class="nowrap"
+          >$F \equiv F'$,</span>
+           d.h. sie berechnen beide dieselbe Funktion, nämlich 
+          <span
+            class="nowrap"
+          >$f$.</span>
         </p>
       </div>
       <p
@@ -1247,7 +1411,9 @@ public boolean constantFalse(boolean x) {
               $F(\mathbf{x}) \leq F'(\mathbf{x})$ und 
             </li>
             <li>
-              $F(\mathbf{x}) \geq F'(\mathbf{x})$.
+              <span
+                class="nowrap"
+              >$F(\mathbf{x}) \geq F'(\mathbf{x})$.</span>
             </li>
           </ol>
           Punkt 1 ist einfach: wir haben bereits gesehen, dass
@@ -1273,12 +1439,20 @@ public boolean constantFalse(boolean x) {
            Es ist immer gut, Dinge konkret "in der Hand zu haben". In diesem Falle?
           Wir wissen ja, dass
           $F' = \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} $ ist. Wenn nun
-          also die linke Seite, $F'$, den Wert 1 annimmt, dann muss es auf der rechten
+          also die linke Seite, 
+          <span
+            class="nowrap"
+          >$F'$,</span>
+           den Wert 1 annimmt, dann muss es auf der rechten
           Seite (mindestens) einen Term geben, der auch 1 annimmt:
           $$
           T'_{\mathbf{a}^*}(x_1,\dots,x_n) = 1 \ ,
           $$
-          für ein festes, bestimmtes $\mathbf{a}^*$, also
+          für ein festes, bestimmtes 
+          <span
+            class="nowrap"
+          >$\mathbf{a}^*$,</span>
+           also
           $$
           \bigwedge_{i \in I_{\mathbf{a}^*}} x_i = 1 \ .
           $$
@@ -1308,10 +1482,24 @@ public boolean constantFalse(boolean x) {
           $$
           T_{\mathbf{a}^*} (\mathbf{a}^*) = 1 \ .
           $$
-          Wenn wir Glück haben, gilt $\mathbf{a}^* = \mathbf{x}$. Ansonsten
-          gilt immerhin, dass $x_i=1$ für alle $i \in I(\mathbf{a}^*)$, also
-          $x_1 = 1$ wenn $a^*_i = 1$.
-          In anderen Worten, es gilt $\mathbf{x} \geq \mathbf{a}^*$!
+          Wenn wir Glück haben, gilt 
+          <span
+            class="nowrap"
+          >$\mathbf{a}^* = \mathbf{x}$.</span>
+           Ansonsten
+          gilt immerhin, dass $x_i=1$ für alle 
+          <span
+            class="nowrap"
+          >$i \in I(\mathbf{a}^*)$,</span>
+           also
+          $x_1 = 1$ wenn 
+          <span
+            class="nowrap"
+          >$a^*_i = 1$.</span>
+          In anderen Worten, es gilt 
+          <span
+            class="nowrap"
+          >$\mathbf{x} \geq \mathbf{a}^*$!</span>
           Wunderbar! Jetzt können wir Monotonie anwenden! Denn selbst
           wenn $T_{\mathbf{a}^*}$ nicht monoton ist, so wissen wir, dass
           $F$ eine monotone Funktion berechnet, und somit
@@ -1325,7 +1513,11 @@ public boolean constantFalse(boolean x) {
           >$\square$</span>
         </div>
         Wir haben nun gezeigt, dass die DNF-Formeln $F$ und $F'$ dieselbe Boolesche Funktion
-        berechnen, nämlich $f$. Die Formel $F'$ enthält keine negativen Literale und ist somit
+        berechnen, nämlich 
+        <span
+          class="nowrap"
+        >$f$.</span>
+         Die Formel $F'$ enthält keine negativen Literale und ist somit
         ein monotoner Schaltkreis von Tiefe 2.<span
           class="qed"
         >$\square$</span>

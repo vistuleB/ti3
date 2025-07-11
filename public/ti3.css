@@ -158,6 +158,10 @@ body {
     
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 pre {
     font-size: 1rem;
     white-space: pre-wrap;
