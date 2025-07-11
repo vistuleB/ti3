@@ -59,7 +59,7 @@
     |> figure
         |> img
             style=height:10em
-            src=../img/circuits/adder-ripple.svg
+            src=img/circuits/adder-ripple.svg
             loading=lazy
 
     Wir numerieren unsere Variablen von \(0, \dots,n-1\), damit wir die
@@ -85,7 +85,7 @@
         |> figure
             |> img
                 style=height:10em
-                src=../img/circuits/onebitadder.svg
+                src=img/circuits/onebitadder.svg
                 loading=lazy
                 
         Versuchen Sie, so wenig Gates wie möglich zu verwenden. Entscheiden Sie sich
@@ -134,7 +134,7 @@
     |> figure
         |> img
             style=height:6em
-            src=../img/circuits/adder-ripple-only-carry.svg
+            src=img/circuits/adder-ripple-only-carry.svg
             loading=lazy
 
     Betrachten Sie \((x_i,y_i)\). Wenn dies \((1,1)\) ist, so ist
@@ -231,12 +231,12 @@
     |> figure
         |> img
             style=height:11em
-            src=../img/circuits/carry-generate-interval.svg
+            src=img/circuits/carry-generate-interval.svg
             loading=lazy
         |> br
         |> img
             style=height:11em
-            src=../img/circuits/carry-propagate-interval.svg
+            src=img/circuits/carry-propagate-interval.svg
             loading=lazy
 
     Im Extremfall \(a=b\) gilt \(g_{[a,a]} = g_a, p_{[a,a]} = p_a\), also wie
@@ -324,7 +324,7 @@
         |> figure
             |> img
                 style=height:10em
-                src=../img/circuits/pg-gate.svg
+                src=img/circuits/pg-gate.svg
                 loading=lazy
                 
         Mit Hilfe dieses Gates können wir
@@ -337,7 +337,7 @@
         |> figure
             |> img
                 style=height:18em
-                src=../img/circuits/pg-all-gates.svg
+                src=img/circuits/pg-all-gates.svg
                 loading=lazy
                 
         Jede Kante steht hier für zwei gebündelte Kanten, nämlich
@@ -428,7 +428,7 @@
         |> figure
             |> img
                 style=height:5em
-                src=../img/circuits/pg0k.svg
+                src=img/circuits/pg0k.svg
                 loading=lazy
                 
         Der Wert \(pg_{[l+1,k]}\) ist bereits ein Binärintervall, kann also
@@ -458,7 +458,7 @@
         |> figure
             |> img
                 style=height:18em
-                src=../img/circuits/pg-0-30.svg
+                src=img/circuits/pg-0-30.svg
                 loading=lazy
 
         *Tiefe.* Jedes \(pg\)-Gate hat Tiefe 2,
@@ -494,7 +494,7 @@
         |> figure
             |> img
                 style=height:20em
-                src=../img/circuits/pg-prefices-16.svg
+                src=img/circuits/pg-prefices-16.svg
                 loading=lazy
 
         Wir benötigen also (weniger als) \(n\) viele \(pg\)-Gates; jedes davon
@@ -508,7 +508,7 @@
         |> figure
             |> img
                 style=height:15em
-                src=../img/circuits/pg-gadget-no-need-p.svg
+                src=img/circuits/pg-gadget-no-need-p.svg
                 loading=lazy
                 
         Es reichen also in der Tat \(2n\) Basis-Gates aus. 

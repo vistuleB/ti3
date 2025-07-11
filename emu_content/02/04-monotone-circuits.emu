@@ -14,7 +14,7 @@
     |> figure
         |> img
             style=height:10em
-            src=../img/circuits/hasse-diagram.svg
+            src=img/circuits/hasse-diagram.svg
             loading=lazy
             
     Diese Darstellung einer Partialordnung als gerichteter Graph bezeichnet man auch als_Hasse-Diagramm_ (ich verzichte hier auf eine formale Definition).
@@ -48,7 +48,7 @@
     |> figure
         |> img
             style=height:10em
-            src=../img/circuits/hasse-clouds.svg
+            src=img/circuits/hasse-clouds.svg
             loading=lazy
 
     Wir sehen nun, dass es im Bild von \(\wedge\) keinen roten Punkt gibt,
@@ -69,7 +69,7 @@
     |> figure
         |> img
             style=height:10em
-            src=../img/circuits/monotone-or-not.svg
+            src=img/circuits/monotone-or-not.svg
             loading=lazy
             
     ist nicht monoton (beachten Sie hinter der \(\bar{y}\)-Schreibweise versteckte NOT-Gate),
@@ -98,7 +98,7 @@
         |> figure
             |> img
                 style=height:10em
-                src=../img/circuits/hasse-diagram.svg
+                src=img/circuits/hasse-diagram.svg
                 loading=lazy
                 
         und überlegen sich, wie Sie die vier bzw. acht Knoten auf monotone Weise in einen
@@ -114,7 +114,7 @@
         |> figure
             |> img
                 style=height:10em
-                src=../img/circuits/triple-negator.svg
+                src=img/circuits/triple-negator.svg
                 loading=lazy
                 
     |> h1
@@ -391,7 +391,7 @@
             |> figure
                 |> img
                     style=height:15em
-                    src=../img/circuits/top-down-if-then-else.svg
+                    src=img/circuits/top-down-if-then-else.svg
                     loading=lazy
 
             Ich behaupte, dass obiger Schaltkreis tatsächlich \(f\) berechnet. Falls dies noch nicht
@@ -465,7 +465,7 @@
         |> figure
             |> img
                 style=height:15em
-                src=../img/circuits/top-down-if-then-else-2.svg
+                src=img/circuits/top-down-if-then-else-2.svg
                 loading=lazy
                 
         Die "durchgetrichenen" Kabel bedeuten, dass hier mehrere Kabel parallel laufen (also hier
@@ -478,7 +478,7 @@
         |> figure
             |> img
                 style=height:18em
-                src=../img/circuits/top-down-if-then-else-3.svg
+                src=img/circuits/top-down-if-then-else-3.svg
                 loading=lazy
         und enthält ein NOT-Gate. Aber klar: wir können natürlich nicht die Konstruktion aus dem
         vorherigen Beweis wiederholen und hoffen, dass alles klappt. Die Beweistechnik heißt ja auch_Bekanntes abwandeln_, nicht _Bekanntes kritiklos wiederholen_. Wie
@@ -489,7 +489,7 @@
         |> figure
             |> img
                 style=height:18em
-                src=../img/circuits/top-down-if-then-else-4.svg
+                src=img/circuits/top-down-if-then-else-4.svg
                 loading=lazy
                 
         Der linke Schaltkreis gibt uns, als Formel geschrieben,
@@ -513,7 +513,7 @@
         |> figure
             |> img
                 style=height:18em
-                src=../img/circuits/top-down-if-then-else-monotone.svg
+                src=img/circuits/top-down-if-then-else-monotone.svg
                 loading=lazy
                 
         bzw. als Formel:
@@ -603,7 +603,7 @@
         |> figure
             |> img
                 style=height:18em
-                src=../img/circuits/top-down-if-then-else-monotone-finished.svg
+                src=img/circuits/top-down-if-then-else-monotone-finished.svg
                 loading=lazy
         ein monotoner Schaltkreis für \(f\).
         |> span
