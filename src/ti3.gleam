@@ -201,6 +201,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
 
       dl.add_attributes([
         #("p", "class", "main-column-width"),
+        #("h3", "class", "main-column-width"),
         #("figure", "class", "main-column-width"),
         #("img", "class", "constrained transition-all"),
         #("img", "onClick", "onImgClick(event)"),

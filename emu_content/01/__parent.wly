@@ -142,7 +142,6 @@
             playgameoflife.com
 
         |> ol
-            style=padding-left: 2rem;
             |> li
                 Probieren Sie aus, was geschieht, wenn die Anfangspopulation ein "Pfad" ist, z.B.
                 |> figure
