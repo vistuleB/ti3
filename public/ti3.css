@@ -382,13 +382,13 @@ mjx-container::-webkit-scrollbar-thumb:hover {
 
 /* 1201 is the threshold after which main column width is set to --content-width-destop */
 
-@media (min-width: 1201px) {
+@media (min-width: 1401px) {
     :root {
         --main-column-width: var(--content-width-desktop);
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .exercise,
     .definition,
     .highlight {
