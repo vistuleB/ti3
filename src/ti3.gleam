@@ -9,7 +9,7 @@ import vxml_renderer as vr
 import prefabricated_pipelines as pp
 import infrastructure as infra
 import gleam/result
-import desugarer_names as dn
+import desugarer_library as dl
 import writerly as wp
 
 pub type FragmentType {
@@ -99,7 +99,7 @@ fn ti3_splitter(
 
 fn our_pipeline() -> List(infra.Desugarer) {
   [
-    [ dn.generate_ti3_index_element()
+    [ dl.generate_ti3_index_element()
     ],
     // pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
@@ -107,30 +107,30 @@ fn our_pipeline() -> List(infra.Desugarer) {
       #([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar),
     ),
     [
-      dn.add_attributes([#("Document", "counter", "ChapterCounter")]),
-      dn.add_attributes([#("Chapter", "counter", "SubCounter")]),
-      dn.add_attributes([#("Chapter", "counter", "ExerciseCounter")]),
-      dn.add_attributes([#("Chapter", "counter", "DefinitionCounter")]),
-      dn.add_attributes([#("Sub", "counter", "ExerciseCounter")]),
-      dn.add_attributes([#("Sub", "counter", "DefinitionCounter")]),
-      dn.associate_counter_by_prepending_incrementing_attribute([
+      dl.add_attributes([#("Document", "counter", "ChapterCounter")]),
+      dl.add_attributes([#("Chapter", "counter", "SubCounter")]),
+      dl.add_attributes([#("Chapter", "counter", "ExerciseCounter")]),
+      dl.add_attributes([#("Chapter", "counter", "DefinitionCounter")]),
+      dl.add_attributes([#("Sub", "counter", "ExerciseCounter")]),
+      dl.add_attributes([#("Sub", "counter", "DefinitionCounter")]),
+      dl.associate_counter_by_prepending_incrementing_attribute([
         #("Chapter", "ChapterCounter")]),
-      dn.associate_counter_by_prepending_incrementing_attribute([#("Exercise", "ExerciseCounter")]),
-      dn.associate_counter_by_prepending_incrementing_attribute([#("Sub", "SubCounter")]),
+      dl.associate_counter_by_prepending_incrementing_attribute([#("Exercise", "ExerciseCounter")]),
+      dl.associate_counter_by_prepending_incrementing_attribute([#("Sub", "SubCounter")]),
       // Beobachtung and (future) others that all has the same counter and will use `DefinitionCounter` as well `definition` class
-      dn.associate_counter_by_prepending_incrementing_attribute([
+      dl.associate_counter_by_prepending_incrementing_attribute([
         #("Definition", "DefinitionCounter"), 
         #("Beobachtung", "DefinitionCounter"),
         #("Behauptung", "DefinitionCounter"),
         #("Theorem", "DefinitionCounter"),
         #("Lemma", "DefinitionCounter"),
       ]),
-      dn.prepend_text_if_has_ancestor_else([
+      dl.prepend_text_if_has_ancestor_else([
         #("Exercise",
           "Sub",
           "*Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter* ",
           "*Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* ")]),
-      dn.prepend_text_if_has_ancestor_else([
+      dl.prepend_text_if_has_ancestor_else([
         #("Definition",
           "Sub",
           "*Definition ::øøChapterCounter.::øøSubCounter.::øøDefinitionCounter* ",
@@ -152,16 +152,16 @@ fn our_pipeline() -> List(infra.Desugarer) {
           "*Lemma ::øøChapterCounter.::øøSubCounter.::øøDefinitionCounter* ",
           "*Lemma ::øøChapterCounter.::øøDefinitionCounter* "),
       ]),
-      dn.prepend_text([#("ChapterTitle","::øøChapterCounter. "), #("SubTitle", "::øøChapterCounter.::øøSubCounter ")]),
-      dn.counters_substitute_and_assign_handles(),
+      dl.prepend_text([#("ChapterTitle","::øøChapterCounter. "), #("SubTitle", "::øøChapterCounter.::øøSubCounter ")]),
+      dl.counters_substitute_and_assign_handles(),
     ],
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     [
-      dn.find_replace(#([#("\\$", "$")], ["Math", "MathBlock"])),
-      dn.fold_tag_contents_into_text(["MathBlock", "Math"]),
-      dn.group_consecutive_children_avoiding(
+      dl.find_replace(#([#("\\$", "$")], ["Math", "MathBlock"])),
+      dl.fold_tag_contents_into_text(["MathBlock", "Math"]),
+      dl.group_consecutive_children_avoiding(
         #(
           "VerticalChunk",
           [
@@ -179,12 +179,12 @@ fn our_pipeline() -> List(infra.Desugarer) {
           ["MathBlock", "VerticalChunk", "Index", "pre"]
         ),
       ),
-      dn.unwrap(["WriterlyBlankLine"]),
-      dn.remove_text_nodes_with_singleton_empty_line(),
-      dn.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle", "SubTitle"])]),
-      dn.rename(#("VerticalChunk", "p")),
+      dl.unwrap(["WriterlyBlankLine"]),
+      dl.remove_text_nodes_with_singleton_empty_line(),
+      dl.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle", "SubTitle"])]),
+      dl.rename(#("VerticalChunk", "p")),
 
-      dn.rename_with_attributes([
+      dl.rename_with_attributes([
         #("Index", "div", [#("class", "index")]),
         #("Chapter", "div", [#("class", "chapter")]),
         #("ChapterTitle", "div", [#("class", "main-column-width page-title")]),
@@ -199,7 +199,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("Highlight", "div", [#("class", "highlight")]),
       ]),
 
-      dn.add_attributes([
+      dl.add_attributes([
         #("p", "class", "main-column-width"),
         #("figure", "class", "main-column-width"),
         #("img", "class", "constrained transition-all"),
