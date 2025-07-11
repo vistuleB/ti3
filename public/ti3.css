@@ -1,17 +1,10 @@
 :root {
     --content-width-mobile: 100vw;
-    --content-width-desktop: 1200px;
+    --content-width-desktop: 1400px;
     --body-color: #333333;
+    --smaller-block-width: calc(var(--main-column-width) * 0.9);
     /* Default */
     --main-column-width: var(--content-width-mobile);
-}
-
-/* 1201 is the threshold after which main column width is set to --content-width-destop */
-
-@media (min-width: 1201px) {
-    :root {
-        --main-column-width: var(--content-width-desktop);
-    }
 }
 
 * {
@@ -103,7 +96,7 @@ body {
 }
 
 .exercise {
-    max-width: calc(var(--main-column-width) * 0.8);
+    max-width: var(--smaller-block-width);
     background-color: #e8e4d6;
     border-radius: 4px;
     padding: 1rem;
@@ -113,7 +106,7 @@ body {
 }
 
 .definition {
-    max-width: calc(var(--main-column-width) * 0.8);
+    max-width: var(--smaller-block-width);
     background-color: #f5f5f5;
     border: 1px #e3e3e3 solid;
     border-radius: 4px;
@@ -124,7 +117,7 @@ body {
 }
 
 .highlight {
-    max-width: calc(var(--main-column-width) * 0.8);
+    max-width: var(--smaller-block-width);
     background-color: #f5f5f5;
     color: var(--body-color);
     border: 1px #e3e3e3 solid;
@@ -355,5 +348,21 @@ mjx-container::-webkit-scrollbar-thumb:hover {
 @media (max-width: 480px) {
     mjx-container[style*="min-width"] {
         transform: scale(0.8);
+    }
+}
+
+/* 1201 is the threshold after which main column width is set to --content-width-destop */
+
+@media (min-width: 1201px) {
+    :root {
+        --main-column-width: var(--content-width-desktop);
+    }
+}
+
+@media (max-width: 1200px) {
+    .exercise,
+    .definition,
+    .highlight {
+        max-width: var(--main-column-width);
     }
 }
