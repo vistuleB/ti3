@@ -11,6 +11,9 @@ import infrastructure as infra
 import gleam/result
 import desugarer_library as dl
 import writerly as wp
+import gleam/regexp
+import desugarers/split_with_group_by_group_replacement_instructions.{type RegexpMatchedGroupReplacementInstructions, type RegexpWithGroupReplacementInstructions, RegexpWithGroupReplacementInstructions, Keep,Trash}
+
 
 pub type FragmentType {
   Chapter(Int)
@@ -98,8 +101,15 @@ fn ti3_splitter(
 }
 
 fn our_pipeline() -> List(infra.Desugarer) {
+  let assert Ok(span_regex) = regexp.from_string("\"^(.+) - (.+)$\"
+")
+  let instruction = RegexpWithGroupReplacementInstructions(
+    re: span_regex,
+    instructions: [Trash]
+  )
   [
-    [ dl.generate_ti3_index_element()
+    [ dl.generate_ti3_index_element(),
+      dl.split_with_group_by_group_replacement_instructions(instruction)
     ],
     // pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
