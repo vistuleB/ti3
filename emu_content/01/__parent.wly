@@ -64,7 +64,7 @@
                 |> br
                 |> span
                     style=color:red
-                    File "<stdin>", line 1
+                    File "&lt;stdin&gt", line 1
                     \    (2 * 3))
                     \           ^
                     SyntaxError: unmatched ')'
@@ -75,7 +75,7 @@
                 |> br
                 |> span
                     style=color:red
-                    File "<stdin>", line 1
+                    File "&lt;stdin&gt", line 1
                     \   (* 3)
                     \    ^^^
                     SyntaxError: cannot use starred expression here

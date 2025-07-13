@@ -184,9 +184,9 @@ fn our_pipeline() -> List(infra.Desugarer) {
             "thead", "tbody", "tr", "td", "section",
             "Index",
             "Highlight",
-            "pre"
+            "h1", "h3", "pre", "div", "code", "br"
           ],
-          ["MathBlock", "VerticalChunk", "Index", "pre"]
+          ["MathBlock", "VerticalChunk", "Index", "code", "pre"]
         ),
       ),
       dl.unwrap(["WriterlyBlankLine"]),
