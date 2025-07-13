@@ -574,7 +574,12 @@
          
         Ein Binärintervall ist eine Menge natürlicher Zahlen der Form
         $$
-        \{ c \cdot 2^d, c \cdot 2^d + 1, \dots, c \cdot 2^{d} + 2^{d} - 1\}
+        
+        \{ c \cdot 2^d, c \cdot 2^d + 1, \dots, c \cdot 2^{d} + 2^{d}
+        <title>
+          1\}
+        </title>
+        
         $$
         Es wird eventuell klarer, wenn wir uns die Binärdarstellung anschauen: $[a,b]$ ist ein
         Binärintervall, wenn $a$ und $b$ folgende Binärdarstellung haben:
@@ -631,7 +636,12 @@
         <b>Lemma 2.3.4</b>
          
         Es gibt einen Schaltkreis mit Input-Gates $x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}$ mit
-        Größe $6n - 4 \in O(n)$ und Tiefe $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und
+        
+        Größe $6n
+        <title>
+          4 \in O(n)$ und Tiefe $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und
+        </title>
+        
         Output-Gates
         $p_{I}, g_I$ für jedes Binärinterval 
         <span
@@ -794,7 +804,12 @@
         >$p_i$.</span>
          Insgesamt also
         $$
-        4 (n-1) + 2n = 6n - 4 \ ,
+        
+        4 (n-1) + 2n = 6n
+        <title>
+          4 \ ,
+        </title>
+        
         $$
         wie behauptet.<span
           class="qed"
@@ -821,7 +836,12 @@
         Tiefe 
         <span
           class="nowrap"
-        >$2 \ceil{\log_2 n} - 2 = O(\log n)$,</span>
+        >
+          $2 \ceil{\log_2 n}
+          <title>
+            2 = O(\log n)$,
+          </title>
+          </span>
          der die $p_I, g_I$ für Binärintervalle
         als Inputs nimmt und daraus $g_{[0,k]}$ berechnet für jedes
         <span
@@ -1005,7 +1025,12 @@
         zusammen eine Tiefe von 
         <span
           class="nowrap"
-        >$2 (d-1) = 2 \ceil{\log_2 n} - 2$.</span>
+        >
+          $2 (d-1) = 2 \ceil{\log_2 n}
+          <title>
+            2$.
+          </title>
+          </span>
          
       </p>
       <p
@@ -1132,11 +1157,21 @@
     >
       Wir kombinieren wir nun die beiden Lemmas und erhalten einen Schaltkreis der Tiefe $ 4
       \ceil {
-      \log_2 n } - 1$ und
+      
+      \log_2 n }
+      <title>
+        1$ und
+      </title>
+      
       Größe 
       <span
         class="nowrap"
-      >$8n - 4$,</span>
+      >
+        $8n
+        <title>
+          4$,
+        </title>
+        </span>
        mit $x_0, y_0, \dots, x_{n-1}, y_{n-1} $ als Inputvariablen und Carrys
       $c_1, \dots, c_n$ als Output-Variablen. Jetzt können wir schließlich
       $$
@@ -1148,7 +1183,12 @@
       hat 12 Gates (davon 3 NOT-Gates) und Tiefe 4 (wenn wir die NOT-Gates nicht mitzählen.)
       Insgesamt gibt das also
       $$
-      12 n + 8n - 4 = 20n - 4
+      
+      12 n + 8n - 4 = 20n
+      <title>
+        4
+      </title>
+      
       $$
       Gates
       und Tiefe

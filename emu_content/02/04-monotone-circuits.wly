@@ -1,6 +1,6 @@
 |> Sub
     title=Monotone Funktionen und monotone Schaltkreise
-    
+
     Für zwei Tupel \(\mathbf{x}, \mathbf{y} \in \{0,1\}^n\) schreiben wir
     \( \mathbf{x} \leq \mathbf{y}\), falls \(x_1 \leq y_1, \dots, x_n \leq y_n\), also
     \(\mathbf{x}\) _in jeder Koordinate_ kleiner gleich \(\mathbf{y}\) ist.
@@ -24,6 +24,9 @@
     es gilt also \(001 \not \leq 110\); die beiden Elemente sind _unvergleichbar_.
     
     |> Definition
+        test=test
+        
+        "To create a list in Python, use `list()` or square brackets like `[1, 2, 3]`. For debugging, try `print(variable)` to see values. Remember that `len(my_list)` returns the length."
     
         Eine Boolesche Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) heißt _monoton_, wenn
         $$

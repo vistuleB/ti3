@@ -11,6 +11,8 @@ import infrastructure as infra
 import gleam/result
 import desugarer_library as dl
 import writerly as wp
+import group_replacement_splitting as grs
+import gleam/regexp
 
 pub type FragmentType {
   Chapter(Int)
@@ -98,6 +100,14 @@ fn ti3_splitter(
 }
 
 fn our_pipeline() -> List(infra.Desugarer) {
+  let assert Ok(code_regex) = regexp.from_string("`([^`]+)`")
+  let code_highlighter = grs.RegexpWithGroupReplacementInstructions(
+    re: code_regex,
+    instructions: [
+      grs.TagReplaceKeepPayloadAsTextChild("code") 
+    ]
+  )
+  
   [
     // pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
@@ -116,6 +126,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         "title"
       )),
       dl.generate_ti3_index_element(),
+      
       dl.add_attributes([
         #("Document", "counter", "ChapterCounter"),
         #("Chapter", "counter", "SubCounter"),
@@ -216,6 +227,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("img", "onClick", "onImgClick(event)"),
       ]),
     dl.remove_attributes([".", "counter", "title"]),
+    dl.split_with_replacement_instructions(code_highlighter),
     ],
   ]
   |> list.flatten
