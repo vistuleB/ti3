@@ -9,6 +9,10 @@
     es handelt sich bei \(\leq\) also um eine _Partialordnung_.
     Am Besten stellen Sie sich eine solche Partialordnung als gerichteten Graphen vor:
     
+    |> span
+        test=test
+        Theoretische Informatik 2 - Vorlesungsskript 
+    
     |> figure
         |> img
             style=height:10em

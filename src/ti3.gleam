@@ -108,6 +108,17 @@ fn our_pipeline() -> List(infra.Desugarer) {
     ]
   )
   
+  let assert Ok(title_regex) = regexp.from_string("^(.+) - (.+)$")
+  let assert Ok(multi_dash_regex) = regexp.from_string("^(.+) - (.+) - (.+)$")
+  let title_splitter = grs.RegexpWithGroupReplacementInstructions(
+    // re: title_regex,
+    re: multi_dash_regex,
+    instructions: [
+      grs.Keep, // Keep the main title
+      grs.TagReplaceKeepPayloadAsTextChild("subtitle") // Wrap subtitle in <subtitle> tag
+    ]
+  )
+  
   [
     // pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
@@ -228,6 +239,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
       ]),
     dl.remove_attributes([".", "counter", "title"]),
     dl.split_with_replacement_instructions(code_highlighter),
+    dl.split_with_replacement_instructions(title_splitter),
     ],
   ]
   |> list.flatten
