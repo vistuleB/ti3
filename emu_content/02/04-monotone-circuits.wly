@@ -275,11 +275,9 @@
                         class=listing
 
                         public boolean constantFalse() {
-                        
                         \   return false;
                         }
                         public boolean constantTrue() {
-                        
                         \   return true;
                         }
                         
@@ -310,7 +308,6 @@
                         class=listing
 
                         public boolean constantFalse(boolean x) {
-                        
                         \   return false;
                         }
                         
