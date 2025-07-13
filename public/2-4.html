@@ -666,11 +666,7 @@ public boolean constantFalse(boolean x) {
             class="main-column-width"
           >
             haben. Ja in der Tat, Java toleriert es, dass Sie 
-          </p>
-          <code>constantFalse</code>
-          <p
-            class="main-column-width"
-          >
+            <code>constantFalse</code>
              zweimal
             deklariert haben, einmal als Funktion mit 0 Input-Variablen, einmal als
             Funktion mit einer Input-Variablen. Um hundertprozentig korrekt zu sein, müssten wir
@@ -789,12 +785,7 @@ public boolean constantFalse(boolean x) {
           die Teilergebnisse wieder 
           <i>sinnvoll zusammenfügen</i>. Dies
           tun wir in diesem Falle mit einem 
-        </p>
-        <code>if-then-else</code>
-        <p
-          class="main-column-width"
-        >
-          -Gate:
+          <code>if-then-else</code>-Gate:
         </p>
         <p
           class="main-column-width"
@@ -859,10 +850,10 @@ public boolean constantFalse(boolean x) {
           $f: \{0,1\}^n \rightarrow \{0,1\}$ konstruiert. Unser Induktionsbeweis von Theorem 2
           ist nun
           abgeschlossen. 
+          <span
+            class="qed"
+          >$\square$</span>
         </p>
-        <span
-          class="qed"
-        >$\square$</span>
       </div>
     </div>
     <p
@@ -922,12 +913,7 @@ public boolean constantFalse(boolean x) {
         >$f_1$.</span>
          Wir
         kombinieren diese mit einem 
-      </p>
-      <code>if-then-else</code>
-      <p
-        class="main-column-width"
-      >
-        -Gate und erhalten:
+        <code>if-then-else</code>-Gate und erhalten:
       </p>
       <p
         class="main-column-width"
@@ -951,12 +937,7 @@ public boolean constantFalse(boolean x) {
         $n-1$
         viele).
         Erkennen Sie das Problem mit der Konstruktion? Klar: das 
-      </p>
-      <code>if-then-else</code>
-      <p
-        class="main-column-width"
-      >
-        -Gate ist
+        <code>if-then-else</code>-Gate ist
         nicht
         monoton. Unser Schaltkreis schaut also in Wirklichkeit so aus:
       </p>
@@ -1163,13 +1144,12 @@ public boolean constantFalse(boolean x) {
               $$
               (f_0 \vee f_1) = f_1 \ .
               $$
-              Und somit sind linke und rechte Seite gleich, wie behauptet.
+              Und somit sind linke und rechte Seite gleich, wie behauptet.<span
+                class="qed"
+              >$\square$</span>
             </p>
           </li>
         </ul>
-        <span
-          class="qed"
-        >$\square$</span>
       </div>
       <p
         class="main-column-width"
@@ -1200,11 +1180,10 @@ public boolean constantFalse(boolean x) {
         ein monotoner Schaltkreis für 
         <span
           class="nowrap"
-        >$f$.</span>
+        >$f$.</span><span
+          class="qed"
+        >$\square$</span>
       </p>
-      <span
-        class="qed"
-      >$\square$</span>
     </div>
     <div
       class="highlight"
@@ -1395,12 +1374,12 @@ public boolean constantFalse(boolean x) {
       </div>
       <div
         class="subtheorem"
-        test="test"
       >
         <p
           class="main-column-width"
         >
-          <b>Beweis.</b>Definieren wir zusätzlich noch 
+          <b>Beweis.</b>
+           Definieren wir zusätzlich noch 
           <span
             class="nowrap"
           >$T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
@@ -1408,11 +1387,10 @@ public boolean constantFalse(boolean x) {
           dann können wir $T_{\mathbf{a}} = T'_{\mathbf{a}} \wedge T''_{\mathbf{a}}$ schreiben.
           Und jetzt ist $T'_{\mathbf{a}} \wedge T''_{\mathbf{a}} \leq T'_{\mathbf{a}}$
           offensichtlich,
-          weil $g \wedge h \leq g$ ganz allgemein gilt (überzeugen Sie sich davon).
+          weil $g \wedge h \leq g$ ganz allgemein gilt (überzeugen Sie sich davon).<span
+            class="qed"
+          >$\square$</span>
         </p>
-        <span
-          class="qed"
-        >$\square$</span>
       </div>
       <p
         class="main-column-width"
@@ -1448,7 +1426,8 @@ public boolean constantFalse(boolean x) {
         <p
           class="main-column-width"
         >
-          <b>Beweis.</b>Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
+          <b>Beweis.</b>
+           Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
           wir zeigen, dass
           $$
           F(\mathbf{x}) = F'(\mathbf{x}) \textnormal{ für alle $\mathbf{x} \in \{0,1\}^n$. }
@@ -1593,11 +1572,10 @@ public boolean constantFalse(boolean x) {
           $$
           Wir können zwar nicht genau mit dem Finger auf einen Term von $F$ zeigen,
           der 1 wird, wissen aber 
-          <i>per Monotonie</i>, dass es so einen geben muss.
+          <i>per Monotonie</i>, dass es so einen geben muss.<span
+            class="qed"
+          >$\square$</span>
         </p>
-        <span
-          class="qed"
-        >$\square$</span>
       </div>
       <p
         class="main-column-width"
@@ -1608,11 +1586,10 @@ public boolean constantFalse(boolean x) {
           class="nowrap"
         >$f$.</span>
          Die Formel $F'$ enthält keine negativen Literale und ist somit
-        ein monotoner Schaltkreis von Tiefe 2.
+        ein monotoner Schaltkreis von Tiefe 2.<span
+          class="qed"
+        >$\square$</span>
       </p>
-      <span
-        class="qed"
-      >$\square$</span>
     </div>
     <p
       class="main-column-width"

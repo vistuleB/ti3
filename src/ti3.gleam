@@ -173,7 +173,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
       dl.fold_tag_contents_into_text(["MathBlock", "Math"]),
       dl.group_consecutive_children_avoiding(
         #(
-          "VerticalChunk",
+          "p",
           [
             "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
             "Example", "Exercise", "Exercises", "Grid", "Image", "ImageLeft",
@@ -184,15 +184,13 @@ fn our_pipeline() -> List(infra.Desugarer) {
             "thead", "tbody", "tr", "td", "section",
             "Index",
             "Highlight",
-            "h1", "h2", "h3", "pre", "div", "code", "br", "span",
+            "h1", "h2", "h3", "pre", "div", "br",
           ],
-          ["MathBlock", "VerticalChunk", "Index", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math"]
+          ["MathBlock", "p", "Index", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle"]
         ),
       ),
       dl.unwrap(["WriterlyBlankLine"]),
       dl.remove_text_nodes_with_singleton_empty_line(),
-      dl.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle", "SubTitle"])]),
-      dl.rename(#("VerticalChunk", "p")),
       // dl.unwrap_tag_when_parent_of_tag([#("p","NoWrap")]),
       dl.rename_with_attributes([
         #("Index", "div", [#("class", "index")]),

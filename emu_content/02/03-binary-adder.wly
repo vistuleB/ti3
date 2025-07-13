@@ -372,7 +372,6 @@
         wie behauptet.
         |> span
             class=qed
-
             \(\square\)
 
     Eine anschließende Bemerkung: der Schaltkreis
@@ -388,7 +387,7 @@
         
     |> Highlight
     
-        *Beweis.*Die Idee ist, dass wir jedes \([0,k]\) als Vereinigung
+        *Beweis.* Die Idee ist, dass wir jedes \([0,k]\) als Vereinigung
         von wenigen Binärintervallen schreiben können, zum Beispiel
         \begin{align*}
         [0,9]&amp;= [0,7] \cup [8,9] \ , \\
@@ -513,7 +512,6 @@
         Es reichen also in der Tat \(2n\) Basis-Gates aus. 
         |> span
             class=qed
-
             \(\square\)
 
     Wir kombinieren wir nun die beiden Lemmas und erhalten einen Schaltkreis der Tiefe \( 4
