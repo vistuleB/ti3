@@ -268,13 +268,13 @@ p {
 }
 
 p + p {
-    margin-top: 1.6rem;
+    margin-top: 0.8rem;
 }
 
 h1 + p,
 h2 + p,
 h3 + p{
-  margin-top: 1.6rem;
+  margin-top: 0.8rem;
 }
 
 code {
