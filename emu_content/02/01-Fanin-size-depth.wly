@@ -1,7 +1,5 @@
 |> Sub
-    |> SubTitle
-
-        Fanin, Tiefe, Größe
+    title=Fanin, Tiefe, Größe
     
     Für Boolesche Schaltkreise gibt es drei Komplexitätsparameter, die uns interessieren.
 

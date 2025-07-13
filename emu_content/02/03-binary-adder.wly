@@ -1,7 +1,6 @@
 |> Sub
-    |> SubTitle
+    title=Binär-Addierer
     
-        Binär-Addierer
     |> h3
 
         Ein Schaltkreis für binäre Addition

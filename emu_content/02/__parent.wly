@@ -1,7 +1,5 @@
 |> Chapter
-    |> ChapterTitle
-
-        Boolesche Schaltkreise (nicht im Sommersemester 2025)
+    title=Boolesche Schaltkreise (nicht im Sommersemester 2025)
 
     Boolesche Schaltkreise sind ein idealisiertes
     Modell echter elektronischer Schaltkreise.

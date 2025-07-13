@@ -1,7 +1,5 @@
 |> Sub
-    |> SubTitle
-        
-        Monotone Funktionen und monotone Schaltkreise
+    title=Monotone Funktionen und monotone Schaltkreise
     
     Für zwei Tupel \(\mathbf{x}, \mathbf{y} \in \{0,1\}^n\) schreiben wir
     \( \mathbf{x} \leq \mathbf{y}\), falls \(x_1 \leq y_1, \dots, x_n \leq y_n\), also

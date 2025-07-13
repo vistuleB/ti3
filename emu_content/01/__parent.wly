@@ -1,8 +1,6 @@
 |> Chapter
-    |> ChapterTitle
-
-        Einleitung
-
+    title=Einleitung
+    
     Im Kurs 
     |> a
         href=./index.html

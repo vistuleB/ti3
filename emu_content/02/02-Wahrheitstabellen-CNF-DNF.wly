@@ -1,7 +1,5 @@
 |> Sub
-    |> SubTitle
-
-        Wahrheitstabellen, CNF, DNF
+    title=Wahrheitstabellen, CNF, DNF
 
     Wir haben gesehen, dass jeder Schaltkreis eine Boolesche Funktion berechnet. In diesem Abschnitt wollen wir zeigen, dass es umgekehrt auch gilt: zu jeder Booleschen Funktion gibt es einen Schaltkreis (ja: viele Schaltkreise), die sie berechnen. Wir werden insgesamt drei Konstruktionen sehen. Als erstes lassen Sie uns überlegen, wie man eine Boolesche Funktion im Allgemeinen aufschreibt/codiert. Beschränken wir uns erst einmal auf Boolesche Funktionen mit _einem_ Ausgabewert, also $f : \{0,1\}^{n} \to \{0,1\}$.
     

@@ -99,26 +99,36 @@ fn ti3_splitter(
 
 fn our_pipeline() -> List(infra.Desugarer) {
   [
-    [ dl.generate_ti3_index_element()
-    ],
     // pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
       #([infra.DoubleDollar], infra.DoubleDollar),
       #([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar),
     ),
     [
-      dl.add_attributes([#("Document", "counter", "ChapterCounter")]),
-      dl.add_attributes([#("Chapter", "counter", "SubCounter")]),
-      dl.add_attributes([#("Chapter", "counter", "ExerciseCounter")]),
-      dl.add_attributes([#("Chapter", "counter", "DefinitionCounter")]),
-      dl.add_attributes([#("Sub", "counter", "ExerciseCounter")]),
-      dl.add_attributes([#("Sub", "counter", "DefinitionCounter")]),
+      dl.auto_generate_child_if_missing_from_attribute(#(
+        "Chapter",        // parent tag
+        "ChapterTitle",   // new child tag
+        "title"           // attribute to extract from
+      )),
+      dl.auto_generate_child_if_missing_from_attribute(#(
+        "Sub",
+        "SubTitle",
+        "title"
+      )),
+      dl.generate_ti3_index_element(),
+      dl.add_attributes([
+        #("Document", "counter", "ChapterCounter"),
+        #("Chapter", "counter", "SubCounter"),
+        #("Chapter", "counter", "ExerciseCounter"),
+        #("Chapter", "counter", "DefinitionCounter"),
+        #("Sub", "counter", "ExerciseCounter"),
+        #("Sub", "counter", "DefinitionCounter")
+      ]),
       dl.associate_counter_by_prepending_incrementing_attribute([
-        #("Chapter", "ChapterCounter")]),
-      dl.associate_counter_by_prepending_incrementing_attribute([#("Exercise", "ExerciseCounter")]),
-      dl.associate_counter_by_prepending_incrementing_attribute([#("Sub", "SubCounter")]),
-      // Beobachtung and (future) others that all has the same counter and will use `DefinitionCounter` as well `definition` class
-      dl.associate_counter_by_prepending_incrementing_attribute([
+        #("Chapter", "ChapterCounter"),
+        #("Exercise", "ExerciseCounter"),
+        #("Sub", "SubCounter"),
+        // Beobachtung and (future) others that all has the same counter and will use `DefinitionCounter` as well `definition` class
         #("Definition", "DefinitionCounter"), 
         #("Beobachtung", "DefinitionCounter"),
         #("Behauptung", "DefinitionCounter"),
@@ -129,8 +139,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("Exercise",
           "Sub",
           "*Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter* ",
-          "*Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* ")]),
-      dl.prepend_text_if_has_ancestor_else([
+          "*Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* "),
         #("Definition",
           "Sub",
           "*Definition ::øøChapterCounter.::øøSubCounter.::øøDefinitionCounter* ",
@@ -184,7 +193,6 @@ fn our_pipeline() -> List(infra.Desugarer) {
       dl.remove_text_nodes_with_singleton_empty_line(),
       dl.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle", "SubTitle"])]),
       dl.rename(#("VerticalChunk", "p")),
-
       dl.rename_with_attributes([
         #("Index", "div", [#("class", "index")]),
         #("Chapter", "div", [#("class", "chapter")]),
@@ -200,7 +208,6 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("Highlight", "div", [#("class", "highlight")]),
         #("NoWrap", "span", [#("class", "nowrap")]),
       ]),
-
       dl.add_attributes([
         #("p", "class", "main-column-width"),
         #("h3", "class", "main-column-width"),
@@ -208,8 +215,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("img", "class", "constrained transition-all"),
         #("img", "onClick", "onImgClick(event)"),
       ]),
-      
-      dl.remove_attributes([".", "counter"])
+    dl.remove_attributes([".", "counter", "title"]),
     ],
   ]
   |> list.flatten
