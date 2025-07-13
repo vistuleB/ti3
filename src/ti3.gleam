@@ -62,7 +62,7 @@ fn ti3_splitter(
       fn(chapter, chapter_index) {
         let chapter_number = chapter_index + 1
         #(
-          "ch" <> string.inspect(chapter_number) <> ".html",
+          string.inspect(chapter_number) <> "-0" <> ".html",
           chapter,
           Chapter(chapter_number)
         )
@@ -79,7 +79,7 @@ fn ti3_splitter(
           fn(sub, sub_index) {
             let sub_number = sub_index + 1
             #(
-              "ch" <> string.inspect(chapter_number) <> "-" <> string.inspect(sub_number) <> ".html",
+              string.inspect(chapter_number) <> "-" <> string.inspect(sub_number) <> ".html",
               sub,
               Sub(chapter_number, sub_number)
             )
