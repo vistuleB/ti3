@@ -38,13 +38,13 @@ fn index_error(e: infra.SingletonError) -> TI3SplitterError {
 fn ti3_splitter(
   root: VXML
 ) -> Result(List(#(String, VXML, FragmentType)), TI3SplitterError) {
-  use index <- result.then(
+  use index <- result.try(
     infra.descendants_with_class(root, "index")
     |> infra.read_singleton
     |> result.map_error(index_error)
   )
 
-  use chapters <- result.then(
+  use chapters <- result.try(
     case infra.descendants_with_class(root, "chapter") {
       [] -> Error(NoChapters)
       [..chapters] -> Ok(chapters)
@@ -160,8 +160,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     [
       dl.find_replace(#([#("\\$", "$")], ["Math", "MathBlock"])),
-      dl.wrap_math_with_no_break(),
-      dl.unwrap_when_zero_or_one_children(["NoBreak"]),
+      dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
       dl.fold_tag_contents_into_text(["MathBlock", "Math"]),
       dl.group_consecutive_children_avoiding(
         #(
@@ -199,7 +198,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("Lemma", "div", [#("class", "definition")]),
         #("Exercise", "div", [#("class", "exercise")]),
         #("Highlight", "div", [#("class", "highlight")]),
-        #("NoBreak", "span", [#("class", "nowrap")]),
+        #("NoWrap", "span", [#("class", "nowrap")]),
       ]),
 
       dl.add_attributes([
