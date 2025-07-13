@@ -191,7 +191,6 @@ fn our_pipeline() -> List(infra.Desugarer) {
       ),
       dl.unwrap(["WriterlyBlankLine"]),
       dl.remove_text_nodes_with_singleton_empty_line(),
-      // dl.unwrap_tag_when_parent_of_tag([#("p","NoWrap")]),
       dl.rename_with_attributes([
         #("Index", "div", [#("class", "index")]),
         #("Chapter", "div", [#("class", "chapter")]),
