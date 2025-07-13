@@ -133,10 +133,13 @@ body {
     background-color: #F0FFFF;
 }
 
+.highlight > .highlight:last-child {
+    margin-bottom: 0;
+}
+
 .qed {
-   display: flex; 
-   justify-content: right;
-   align-items: center;
+    display: inline-block;
+    float: right;
 }
 
 .subtheorem {

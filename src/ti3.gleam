@@ -184,15 +184,16 @@ fn our_pipeline() -> List(infra.Desugarer) {
             "thead", "tbody", "tr", "td", "section",
             "Index",
             "Highlight",
-            "h1", "h2", "h3", "pre", "div", "code", "br"
+            "h1", "h2", "h3", "pre", "div", "code", "br", "span",
           ],
-          ["MathBlock", "VerticalChunk", "Index", "code", "pre", "h1", "h2", "h3"]
+          ["MathBlock", "VerticalChunk", "Index", "code", "pre", "h1", "h2", "h3", "span"]
         ),
       ),
       dl.unwrap(["WriterlyBlankLine"]),
       dl.remove_text_nodes_with_singleton_empty_line(),
       dl.unwrap_when_child_of([#("VerticalChunk", ["ChapterTitle", "SubTitle"])]),
       dl.rename(#("VerticalChunk", "p")),
+      // dl.unwrap_tag_when_parent_of_tag([#("p","NoWrap")]),
       dl.rename_with_attributes([
         #("Index", "div", [#("class", "index")]),
         #("Chapter", "div", [#("class", "chapter")]),

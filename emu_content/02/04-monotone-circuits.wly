@@ -705,6 +705,7 @@
         
         |> div
             class=subtheorem
+            test=test
 
             *Beweis.*Definieren wir zusätzlich noch \(T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
             \bar{x}_i\),
