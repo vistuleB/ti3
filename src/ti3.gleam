@@ -186,7 +186,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
             "Highlight",
             "h1", "h2", "h3", "pre", "div", "code", "br", "span",
           ],
-          ["MathBlock", "VerticalChunk", "Index", "code", "pre", "h1", "h2", "h3", "span"]
+          ["MathBlock", "VerticalChunk", "Index", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math"]
         ),
       ),
       dl.unwrap(["WriterlyBlankLine"]),
