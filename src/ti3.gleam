@@ -238,8 +238,8 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("img", "onClick", "onImgClick(event)"),
       ]),
     dl.remove_attributes([".", "counter", "title"]),
-    dl.split_with_replacement_instructions(code_highlighter),
-    dl.split_with_replacement_instructions(title_splitter),
+    dl.split_with_replacement_instructions(#(code_highlighter, [])),
+    dl.split_with_replacement_instructions(#(title_splitter, [""])),
     ],
   ]
   |> list.flatten
