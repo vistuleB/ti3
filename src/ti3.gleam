@@ -208,6 +208,8 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("img", "class", "constrained transition-all"),
         #("img", "onClick", "onImgClick(event)"),
       ]),
+      
+      dl.remove_attributes([".", "counter"])
     ],
   ]
   |> list.flatten
