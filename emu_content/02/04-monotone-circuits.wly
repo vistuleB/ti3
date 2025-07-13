@@ -15,7 +15,7 @@
             src=img/circuits/hasse-diagram.svg
             loading=lazy
             
-    Diese Darstellung einer Partialordnung als gerichteter Graph bezeichnet man auch als_Hasse-Diagramm_ (ich verzichte hier auf eine formale Definition).
+    Diese Darstellung einer Partialordnung als gerichteter Graph bezeichnet man auch als _Hasse-Diagramm_ (ich verzichte hier auf eine formale Definition).
     Es gilt nun \(\mathbf{x} \leq \mathbf{y}\), wenn Sie im Hasse-Diagramm einen
     Pfad von \(\mathbf{x}\) nach \(\mathbf{y}\) finden.
 
@@ -25,7 +25,7 @@
     
     |> Definition
     
-        Eine Boolesche Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) heißt_monoton_, wenn
+        Eine Boolesche Funktion \(f: \{0,1\}^n \rightarrow \{0,1\}\) heißt _monoton_, wenn
         $$
         \forall \mathbf{x} \leq \mathbf{y} \in \{0,1\}^n \ : \
         f(\mathbf{x}) \leq f(\mathbf{y}) \ .
@@ -104,7 +104,7 @@
        
     |> Exercise 
     
-        &ensp;*(Challenge).*Bauen Sie einen Schaltkreis mit drei Input-Variablen \(x,y,z\), der drei
+        *(Challenge).* Bauen Sie einen Schaltkreis mit drei Input-Variablen \(x,y,z\), der drei
         Output-Gates hat, die \(\bar{x}, \bar{y}, \bar{z}\) berechnen.
         Ihr Schaltkreis darf _höchstens zwei NOT-Gates_ einhalten,
         aber beliebig viele AND- und OR-Gates.
@@ -479,7 +479,7 @@
                 src=img/circuits/top-down-if-then-else-3.svg
                 loading=lazy
         und enthält ein NOT-Gate. Aber klar: wir können natürlich nicht die Konstruktion aus dem
-        vorherigen Beweis wiederholen und hoffen, dass alles klappt. Die Beweistechnik heißt ja auch_Bekanntes abwandeln_, nicht _Bekanntes kritiklos wiederholen_. Wie
+        vorherigen Beweis wiederholen und hoffen, dass alles klappt. Die Beweistechnik heißt ja auch _Bekanntes abwandeln_, nicht _Bekanntes kritiklos wiederholen_. Wie
         können wir den obigen Schaltkreis abwandeln, dass er monoton wird, also das eine NOT-Gate
         entfernen? Spontan fallen mir zwei Wege ein: wir können das NOT-Gate einfach
         durch ein gate-loses Kabel ersetzen oder das Kabel einfach ganz weglassen, also:
@@ -611,7 +611,7 @@
     
         *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*Als Beweisstrategie verwende ich wieder _Bekanntes abwandeln._
 
-        *Das Bekannte.*Erinnern Sie sich an die Konstruktion einer DNF-Formel auf Basis der gegebenen
+        *Das Bekannte.* Erinnern Sie sich an die Konstruktion einer DNF-Formel auf Basis der gegebenen
         Wahrheitstabelle. Für jedes \(n\)-Tupel \(\mathbf{a} := a_1,\dots,a_n) \in \{0,1\}^n\),
         für welches \(f\) den Wert 1 ausgibt, konstruieren wir einen DNF-Term \(T_{\mathbf{a}}\),
         der auf \(\mathbf{a}\) eine 1 ausgibt und sonst überall eine 0.

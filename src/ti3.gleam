@@ -184,9 +184,9 @@ fn our_pipeline() -> List(infra.Desugarer) {
             "thead", "tbody", "tr", "td", "section",
             "Index",
             "Highlight",
-            "h1", "h3", "pre", "div", "code", "br"
+            "h1", "h2", "h3", "pre", "div", "code", "br"
           ],
-          ["MathBlock", "VerticalChunk", "Index", "code", "pre"]
+          ["MathBlock", "VerticalChunk", "Index", "code", "pre", "h1", "h2", "h3"]
         ),
       ),
       dl.unwrap(["WriterlyBlankLine"]),
@@ -210,6 +210,8 @@ fn our_pipeline() -> List(infra.Desugarer) {
       ]),
       dl.add_attributes([
         #("p", "class", "main-column-width"),
+        #("h1", "class", "main-column-width"),
+        #("h2", "class", "main-column-width"),
         #("h3", "class", "main-column-width"),
         #("figure", "class", "main-column-width"),
         #("img", "class", "constrained transition-all"),

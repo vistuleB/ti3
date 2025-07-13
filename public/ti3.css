@@ -20,7 +20,6 @@ html {
 body {
     background-color: rgba(248, 244, 253, 1);
     font-size: 1.25rem;
-    line-height: 1.42;
     min-width: 2500px;
     color: var(--body-color);
     padding-bottom: 2rem;
@@ -95,14 +94,20 @@ body {
     border-top: 6px double;
 }
 
+.definition,
+.exercise,
+.highlight,
+.subtheorem,
+.alert-info,
+.alert-warning {
+    margin: 2ch auto;
+}
+
 .exercise {
     max-width: var(--smaller-block-width);
     background-color: #e8e4d6;
     border-radius: 4px;
     padding: 1.3rem 1.5rem;
-    margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 .definition {
@@ -111,9 +116,6 @@ body {
     border: 1px #e3e3e3 solid;
     border-radius: 4px;
     padding: 1.3rem 1.5rem;
-    margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     line-height: 1rem;
     vertical-align: baseline;
 }
@@ -125,9 +127,6 @@ body {
     border: 1px #e3e3e3 solid;
     border-radius: 4px;
     padding: 1.3rem 1.5rem;
-    margin: auto;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
 }
 
 .highlight .definition {
@@ -262,11 +261,17 @@ h3 {
 }
 
 p {
-    padding: 0px 0px;
+    padding: 0 0;
 }
 
 p + p {
-    margin-top: 10px;
+    margin-top: 1.6rem;
+}
+
+h1 + p,
+h2 + p,
+h3 + p{
+  margin-top: 1.6rem;
 }
 
 code {
@@ -298,21 +303,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
-/* .exercise ol,
-.exercise ul,
-.definition ol,
-.definition ul,
-.highlight ol,
-.highlight ul,
-.subtheorem ol,
-.subtheorem ul,
-.alert-info ol,
-.alert-info ul,
-.alert-warning ol,
-.alert-warning ul {
-    margin-left: 2rem;
-} */
 
 .exercise,
 .definition,
