@@ -212,7 +212,7 @@
             *Beweis.* Als _Beweismethode_ verwenden wir Induktion über \(n\), die Anzahl der Variablen.
             
             |> div
-                class=alert-info
+                class=well well alert-info
 
                 Zur Erinnerung: bei einem Beweis per Induktion wollen wir eine Aussage
                 der Form _Für alle natürlichen Zahlen \(n \in \N\) gilt \(P(n)\)_ beweisen,
@@ -259,7 +259,7 @@
             der Konstant 0 bzw. 1 beschriftet), das gleichzeitig auch Output-Gate ist.
             
             |> div
-                class=alert-warning
+                class=well alert-warning
 
                 Vielleicht fühlen Sie sich unwohl bei der Idee, es mit Funktionen
                 mit
@@ -269,7 +269,6 @@
                 |> Highlight
                 
                     |> pre
-                        style=margin:2ch
                         class=listing
 
                         public boolean constantFalse() {
@@ -302,7 +301,6 @@
                 |> Highlight
                 
                     |> pre
-                        style=margin:2ch
                         class=listing
 
                         public boolean constantFalse(boolean x) {
@@ -346,7 +344,7 @@
             also die _Induktionshypothese_ \(P(n-1)\) als gegeben annehmen:
             
             |> div
-                class=subtheorem
+                class=well subtheorem
 
                 *Induktionshypothese.* Zu jeder Booleschen Funktion in \(n-1\) Variablen
                 gibt es einen äquivalenten Schaltkreis.
@@ -354,7 +352,7 @@
             und wollen den Induktionsschritt vollziehen, also \(P(n)\) zeigen:
             
             |> div
-                class=subtheorem
+                class=well subtheorem
 
                 *Ziel des Induktionsschritts.* Zu jeder Booleschen Funktion in \(n\) Variablen
                 gibt es einen äquivalenten Schaltkreis.
@@ -525,7 +523,7 @@
             \(f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n) \ .\)
             
         |> div
-            class=subtheorem
+            class=well subtheorem
 
             *Beweis.* Wir machen eine Fallunterscheidung nach dem Wert von \(x_1\).
             |> ul
@@ -700,7 +698,7 @@
             Für alle \(x_1,\dots,x_n\) gilt \(T_{\mathbf{a}} \leq T'_{\mathbf{a}}\).
         
         |> div
-            class=subtheorem
+            class=well subtheorem
 
             *Beweis.* Definieren wir zusätzlich noch \(T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
             \bar{x}_i\),
@@ -725,7 +723,7 @@
             \(F \equiv F'\), d.h. sie berechnen beide dieselbe Funktion, nämlich \(f\).
             
         |> div
-            class=subtheorem
+            class=well subtheorem
 
             *Beweis.* Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
             wir zeigen, dass

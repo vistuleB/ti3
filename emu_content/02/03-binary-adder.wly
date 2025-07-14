@@ -540,6 +540,7 @@
     
         Bauen Sie einen Schaltkreis für die Boolesche Funktion
         "less-than":
+        $$
         \begin{align*}
         LT : \{0,1\}^{n} \times \{0,1\}^n \rightarrow \{0,1\} \\
         LT(\mathbf{x}, \mathbf{y}) =
@@ -548,6 +549,7 @@
         0&amp;\textnormal{ sonst.}
         \end{cases}
         \end{align*}
+        $$
         der also \(\mathbf{x}, \mathbf{y}\) als \(n\)-stellige
         Binärzahlen interpretiert und ausgibt, ob
         die erste kleiner ist als die zweite.

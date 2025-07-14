@@ -15,13 +15,13 @@
     class="chapter"
   >
     <div
-      class="main-column-width page-title"
+      class="main-column page-title"
     >
       1. 
       Einleitung
     </div>
     <p
-      class="main-column-width"
+      class="main-column"
     >
       Im Kurs 
       <a
@@ -30,32 +30,30 @@
        haben Sie allerhand Problemstellungen und Algorithmen kennengelernt und können nun (hoffentlich) auch für manche Ihnen noch unbekannten Probleme neue Algorithmen entwickeln.
     </p>
     <p
-      class="main-column-width"
+      class="main-column"
     >
       In diesem Kurs stellen wir uns abstrakter die Frage, was denn ein Algorithmus ist; was es denn heißt, etwas zu berechnen. Ein Algorithmus, beispielsweise ein Sortieralgorithmus, kann ja prinzipiell Arrays beliebiger Länge sorteren. Es gibt also unendlich viele potentielle Eingaben. Dennoch ist der Algorithmus selbst ein endliches Objekt - der Programmcode beispielsweise besteht aus endlich vielen Zeichen. Noch dazu kann ein Algorithmus nur beschränkt die ihm gegebenen Daten manipulieren; in jedem Schritt immer nur an einer bestimmten Stelle und nach festen Regeln.
     </p>
     <h3
-      class="main-column-width"
+      class="main-column"
     >
       Emailadressen und Arithmetische Ausdrücke
     </h3>
     <p
-      class="main-column-width"
+      class="main-column"
     >
       Die Menge aller denkbaren Emailadressen ist unendlich - zumindest, solange wir für Nutzernamen und Domainnamen keine Längenbeschränkung haben. Nach welchen Regeln sind sie gebildet?
     </p>
     <div
-      class="exercise"
+      class="out exercise well"
     >
-      <p
-        class="main-column-width"
-      >
+      <p>
         <b>Übungsaufgabe 1.1</b>
          
         Überlegen Sie sich, wie eine gültige Emailadresse auszusehen hat. Als konkrete Beispiele nehmen Sie bitte
       </p>
       <div
-        class="highlight"
+        class="well highlight"
       >
 <pre>
 thomas.schmitz@hszg.de
@@ -65,24 +63,20 @@ lorenz.klein@greatest/company/in/the/world.com
 .schlaumeier@gmail.com
 </pre>
       </div>
-      <p
-        class="main-column-width"
-      >
+      <p>
         Welches davon sind gültige Emailadressen? Können Sie genaue Regeln angeben, nach denen eine solche gebildet sein muss? Können Sie die Regeln formal aufschreiben?
       </p>
     </div>
     <div
-      class="exercise"
+      class="out exercise well"
     >
-      <p
-        class="main-column-width"
-      >
+      <p>
         <b>Übungsaufgabe 1.2</b>
          
         Sie alle kennen arithmetische Ausdrücke, wie wir sie zum Beispiel in Python eingeben und auswerten lassen können:
       </p>
       <div
-        class="highlight"
+        class="well highlight"
       >
 <pre>
 <code
@@ -114,24 +108,20 @@ SyntaxError: unmatched ')'</span><br><code
 SyntaxError: cannot use starred expression here</span>
 </pre>
       </div>
-      <p
-        class="main-column-width"
-      >
+      <p>
         Die letzten beiden waren in Pythons Augen offensichtlich nicht korrekt. Wie sind korrekte arithmetische Ausdrücke aufgebaut? Beschränken Sie sich gerne auf * und + und / und - und Zahlen und ignorieren Sie erst mal Variablen, Funktionsaufrufe und weitere Operatoren.
       </p>
-      <p
-        class="main-column-width"
-      >
+      <p>
         Versuchen Sie, eine Art formale Sprache zu entwickeln, die die korrekten arithmetischen Ausdrücke beschreibt.
       </p>
     </div>
     <h3
-      class="main-column-width"
+      class="main-column"
     >
       Endliche Regeln und unendliches Verhalten
     </h3>
     <p
-      class="main-column-width"
+      class="main-column"
     >
       Das klassische Beispiel, wie sehr einfache Regeln ein extrem komplexes Verhalten erzeugen können, ist Conways Game of Life. Hier ist der 
       <a
@@ -140,11 +130,9 @@ SyntaxError: cannot use starred expression here</span>
        Die Welt von Conways Game of Life ist ein unendliches Schachbrett, in jedem jedes Feld entweder leer ist oder von einem Einzeller bevölkert ist.
     </p>
     <p
-      class="main-column-width"
+      class="main-column"
     >
-      <figure
-        class="main-column-width"
-      >
+      <figure>
         <img
           style="width:20em"
           src="img/game-of-life/game-of-life-01-01.svg"
@@ -160,38 +148,34 @@ SyntaxError: cannot use starred expression here</span>
       </figure>
     </p>
     <p
-      class="main-column-width"
+      class="main-column"
     >
        In jedem Zeitschritt weicht die derzeitige Generation einer neuen. Wo neue Einzeller entstehen, das hängt davon ab, wie viele der benachbarten 8 Felder von Einzellern besetzt sind.
     </p>
-    <ol>
+    <ol
+      class="main-column"
+    >
       <li>
-        <p
-          class="main-column-width"
-        >
+        <p>
           <b>Einzeller bleibt:</b>
            wenn auf einem Feld ein Einzeller lebt und in seiner 8-Nachbarschaft zwei oder drei Einzeller leben, dann überlebt er; in der nächsten Generation wird dort wieder ein Einzeller leben.
         </p>
       </li>
       <li>
-        <p
-          class="main-column-width"
-        >
+        <p>
           <b>Einzeller entsteht: wenn auf einem Feld im Moment kein Einzeller lebt, in der 8-Nachbarschaft aber genau drei Einzeller leben, dann entseht hier in der nächsten Generation ein neuer Einzeller.</b>
         </p>
       </li>
     </ol>
     <p
-      class="main-column-width"
+      class="main-column"
     >
       Im Umkehrschluss: wenn ein Einzeller in seiner 8-Nachbarschaft vier oder mehr weitere Einzeller hat, dann stirbt er an Überbevölkerung; gibt es in der 8-Nachbarschaft keinen oder nur einen Einzeller, dann stirbt er an Vereinsamung. Wir müssen also für jedes Feld zählen, wieviele der benachbarten Felder bevölkert sind:
     </p>
     <p
-      class="main-column-width"
+      class="main-column"
     >
-      <figure
-        class="main-column-width"
-      >
+      <figure>
         <img
           style="width:20em"
           src="img/game-of-life/game-of-life-01-02.svg"
@@ -204,11 +188,9 @@ SyntaxError: cannot use starred expression here</span>
       </figure>
     </p>
     <p
-      class="main-column-width"
+      class="main-column"
     >
-      <figure
-        class="main-column-width"
-      >
+      <figure>
         <img
           style="width:20em"
           src="img/game-of-life/game-of-life-01-03.svg"
@@ -221,16 +203,14 @@ SyntaxError: cannot use starred expression here</span>
       </figure>
     </p>
     <p
-      class="main-column-width"
+      class="main-column"
     >
       Was geschieht nun, wenn wir weitere Generationen betrachten? Stirbt die Population aus? Explodiert sie? Stabilisiert sie sich irgendwann?
     </p>
     <div
-      class="exercise"
+      class="out exercise well"
     >
-      <p
-        class="main-column-width"
-      >
+      <p>
         <b>Übungsaufgabe 1.3</b>
          
         Spiele Sie mit Conways Game of Life! Hier finden Sie einen Simulator:<a
@@ -239,13 +219,9 @@ SyntaxError: cannot use starred expression here</span>
       </p>
       <ol>
         <li>
-          <p
-            class="main-column-width"
-          >
+          <p>
             Probieren Sie aus, was geschieht, wenn die Anfangspopulation ein "Pfad" ist, z.B.
-            <figure
-              class="main-column-width"
-            >
+            <figure>
               <img
                 style="width:16em"
                 src="img/game-of-life/game-of-life-02-01.svg"
@@ -257,13 +233,9 @@ SyntaxError: cannot use starred expression here</span>
           </p>
         </li>
         <li>
-          <p
-            class="main-column-width"
-          >
+          <p>
             Probieren Sie das "f-Pentomino" als Startkonfiguration aus:
-            <figure
-              class="main-column-width"
-            >
+            <figure>
               <img
                 style="width:12em"
                 src="img/game-of-life/game-of-life-03-01.svg"
@@ -274,48 +246,42 @@ SyntaxError: cannot use starred expression here</span>
           </p>
         </li>
         <li>
-          <p
-            class="main-column-width"
-          >
+          <p>
             Probieren Sie meine obige Startkonfiguration aus.
           </p>
         </li>
         <li>
-          <p
-            class="main-column-width"
-          >
+          <p>
             Finden Sie weitere interessante Startkonfigurationen.
           </p>
         </li>
       </ol>
     </div>
     <p
-      class="main-column-width"
+      class="main-column"
     >
       Was hat das Game of Life mit TI-2 zu tun? Nun, es illustriert, wie eine endliche, sogar sehr kleine Regelmenge sehr komplexe Phänomene erzeugen kann. In der Tat, das Game of Life ist Turing-vollständig; das heißt in etwa, sie können eine Anfangskonfiguration bauen, die dann einen ganzen Rechner simuliert. Klingt kaum vorstellbar. Wenn wir am Ende dieses Kurses angelangt sind, werden Sie aber verstehen, warum das sogar recht plausibel ist.
     </p>
     <h3
-      class="main-column-width"
+      class="main-column"
     >
       Zusammenfassung
     </h3>
     <p
-      class="main-column-width"
+      class="main-column"
     >
       Es geht also in diesem Kurs vor Allem um folgende Fragen:
     </p>
-    <ul>
+    <ul
+      class="main-column"
+    >
       <li>
-        <p
-          class="main-column-width"
-        >
+        <p>
           Wie können wir endliche Beschreibungen von unendlichen Objekten angeben?
         </p>
       </li>
       <li>
-        <p
-          class="main-column-width"
-        >
+        <p>
           Was heißt es, etwas zu berechnen? Welche Modelle fürs Rechnen gibt es, die einerseits 
           <i>umfassend</i>
            sind, also die möglichst viel können, andererseits auch 

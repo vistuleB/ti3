@@ -191,32 +191,77 @@ fn our_pipeline() -> List(infra.Desugarer) {
       ),
       dl.unwrap(["WriterlyBlankLine"]),
       dl.remove_text_nodes_with_singleton_empty_line(),
-      dl.rename_with_attributes([
-        #("Index", "div", [#("class", "index")]),
-        #("Chapter", "div", [#("class", "chapter")]),
-        #("ChapterTitle", "div", [#("class", "main-column-width page-title")]),
-        #("SubTitle", "div", [#("class", "main-column-width page-title")]),
-        #("Sub", "div", [#("class", "subchapter")]),
-        #("Definition", "div", [#("class", "definition")]),
-        #("Beobachtung", "div", [#("class", "definition")]),
-        #("Behauptung", "div", [#("class", "definition")]),
-        #("Theorem", "div", [#("class", "definition")]),
-        #("Lemma", "div", [#("class", "definition")]),
-        #("Exercise", "div", [#("class", "exercise")]),
-        #("Highlight", "div", [#("class", "highlight")]),
-        #("NoWrap", "span", [#("class", "nowrap")]),
-      ]),
+    
       dl.add_attributes([
-        #("p", "class", "main-column-width"),
-        #("h1", "class", "main-column-width"),
-        #("h2", "class", "main-column-width"),
-        #("h3", "class", "main-column-width"),
-        #("figure", "class", "main-column-width"),
+        #("Index", "class", "index"),
+        #("Chapter", "class", "chapter"),
+        #("ChapterTitle","class", "main-column page-title"),
+        #("Sub", "class", "subchapter"),
+        #("SubTitle", "class", "main-column page-title"),
+        #("Definition", "class", "well definition"),
+        #("Beobachtung", "class", "well beobachtung"),
+        #("Behauptung", "class", "well behauptung "),
+        #("Theorem", "class", "well theorem"),
+        #("Lemma", "class", "well lemma"), 
+        #("Exercise", "class", "well exercise"),
+        #("Highlight", "class", "well highlight"),
+        #("NoWrap", "class", "nowrap"),
+      ]),
+      
+      dl.append_class_to_children_with_class([
+        #("Chapter",[#("well","out")]),
+        #("Sub",[#("well","out")]),
+      ]),
+      
+      dl.append_class_to_children_with_tag([
+        #("Chapter", [
+          #("h1", "main-column"),
+          #("h2", "main-column"),
+          #("h3", "main-column"),
+          #("p", "main-column"),
+          #("ol", "main-column"),
+          #("ul", "main-column"),
+          #("figure", "main-column"),
+          #("pre", "main-column"),
+          #("code", "main-column"),
+        ]),
+        #("Sub", [
+          #("h1", "main-column"),
+          #("h2", "main-column"),
+          #("h3", "main-column"),
+          #("p", "main-column"),
+          #("ol", "main-column"),
+          #("ul", "main-column"),
+          #("figure", "main-column"),
+          #("pre", "main-column"),
+          #("code", "main-column"),
+        ])
+      ])
+    ],
+    
+    [
+        dl.rename(#("Index", "div")),
+        dl.rename(#("Chapter", "div")),
+        dl.rename(#("ChapterTitle", "div")),
+        dl.rename(#("Sub", "div")),
+        dl.rename(#("SubTitle", "div")),
+        dl.rename(#("Definition", "div")),
+        dl.rename(#("Beobachtung", "div")),
+        dl.rename(#("Behauptung", "div")),
+        dl.rename(#("Theorem", "div")),
+        dl.rename(#("Lemma", "div")),
+        dl.rename(#("Exercise", "div")),
+        dl.rename(#("Highlight", "div")),
+        dl.rename(#("NoWrap", "span")),
+    ],
+
+    [
+      dl.add_attributes([
         #("img", "class", "constrained transition-all"),
         #("img", "onClick", "onImgClick(event)"),
       ]),
-    dl.remove_attributes([".", "counter", "title"]),
-    ],
+      dl.remove_attributes([".", "counter", "title"]),
+    ]
   ]
   |> list.flatten
 }
