@@ -240,7 +240,7 @@ pub fn main() {
 
   let parameters =
     vr.RendererParameters(
-      input_dir: "./emu_content",
+      input_dir: "./wly",
       output_dir: Some("./public"),
     )
     |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
