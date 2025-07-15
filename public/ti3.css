@@ -92,6 +92,10 @@ body {
     padding: 1rem;
 }
 
+.menu-right {
+    text-align: right;
+}
+
 /* Chapters and Subchapters
 */
 
