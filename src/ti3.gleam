@@ -210,35 +210,16 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("NoWrap", "class", "nowrap"),
       ]),
       
-      dl.append_class_to_children_with_class([
-        #("Chapter",[#("well","out")]),
-        #("Sub",[#("well","out")]),
+      dl.append_class_to_child_if([
+        #("Chapter", "out", infra.has_class(_, "well")),
+        #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
+          "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
+        ])),
+        #("Sub", "out", infra.has_class(_, "well")),
+        #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
+          "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
+        ])),
       ]),
-      
-      dl.append_class_to_children_with_tag([
-        #("Chapter", [
-          #("h1", "main-column"),
-          #("h2", "main-column"),
-          #("h3", "main-column"),
-          #("p", "main-column"),
-          #("ol", "main-column"),
-          #("ul", "main-column"),
-          #("figure", "main-column"),
-          #("pre", "main-column"),
-          #("code", "main-column"),
-        ]),
-        #("Sub", [
-          #("h1", "main-column"),
-          #("h2", "main-column"),
-          #("h3", "main-column"),
-          #("p", "main-column"),
-          #("ol", "main-column"),
-          #("ul", "main-column"),
-          #("figure", "main-column"),
-          #("pre", "main-column"),
-          #("code", "main-column"),
-        ])
-      ])
     ],
     
     [
