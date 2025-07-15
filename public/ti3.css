@@ -1,7 +1,6 @@
 :root {
     --body-color: #333333;
     --main-column-width: 100vw;
-    --main-column-padding: 0 0rem;
     --outer-well-width: 100vw;
 }
 
@@ -120,7 +119,7 @@ body {
 
 .main-column {
     max-width: var(--main-column-width);
-    padding: var(--main-column-padding);
+    padding: 0 2rem;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
