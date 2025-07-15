@@ -50,7 +50,7 @@ const computeOuterWellWidth = () => {
     widthValue = window.innerWidth;
   } else {
     // desktop
-    widthValue = Math.round(window.innerWidth * 0.9);
+    widthValue = Math.round(DESKTOP_MAIN_COLUMMN_WIDTH * 0.9);
   }
   
   return widthValue;
