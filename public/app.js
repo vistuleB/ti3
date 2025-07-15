@@ -3,8 +3,6 @@ const MOBILE_MAIN_COLUMMN_WIDTH = '100vw';
 const MOBILE_MAIN_COLUMMN_PADDING = '0 2rem';
 const DESKTOP_MAIN_COLUMMN_WIDTH = 1200;
 const DESKTOP_MAIN_COLUMMN_PADDING = '0 0';
-const MOBILE_OUTER_WELL_WIDTH = window.innerWidth;
-const DESKTOP_OUTER_WELL_WIDTH = Math.round(DESKTOP_MAIN_COLUMMN_WIDTH * 0.9);
 
 window.history.scrollRestoration = "manual";
 
@@ -29,7 +27,6 @@ const instantRecenter = () => {
 
 const computeMainColumnWidth = () => {
   const screenWidth = window.innerWidth;
-  const root = document.documentElement;
   
   let widthValue;
   
@@ -45,16 +42,15 @@ const computeMainColumnWidth = () => {
 
 const computeOuterWellWidth = () => {
   const screenWidth = window.innerWidth;
-  const root = document.documentElement;
 
   let widthValue;
 
   if (screenWidth <= MOBILE_MAX_WIDTH) {
     // mobile
-    widthValue = MOBILE_OUTER_WELL_WIDTH;
+    widthValue = window.innerWidth;
   } else {
     // desktop
-    widthValue = DESKTOP_OUTER_WELL_WIDTH;
+    widthValue = Math.round(window.innerWidth * 0.9);
   }
   
   return widthValue;
@@ -73,12 +69,11 @@ const setOuterWellWidth = (value) => {
 };
 
 const onLoad = () => {
-  instantRecenter();
-  setMainColumnWidth(computeMainColumnWidth());
-  setOuterWellWidth(computeOuterWellWidth());
+  handleResize();
 };
 
 const handleResize = () => {
+  console.log("Handle Resize");
   instantRecenter();
   setMainColumnWidth(computeMainColumnWidth());
   setOuterWellWidth(computeOuterWellWidth());

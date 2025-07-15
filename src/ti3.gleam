@@ -99,7 +99,6 @@ fn ti3_splitter(
 
 fn our_pipeline() -> List(infra.Desugarer) {
   [
-    // pp.normalize_begin_end_align(infra.DoubleDollar),
     pp.create_mathblock_and_math_elements(
       #([infra.DoubleDollar], infra.DoubleDollar),
       #([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar),
@@ -129,7 +128,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("Chapter", "ChapterCounter"),
         #("Exercise", "ExerciseCounter"),
         #("Sub", "SubCounter"),
-        // Beobachtung and (future) others that all has the same counter and will use `DefinitionCounter` as well `definition` class
+        // Beobachtung and (future) others that all has the same counter and will use `DefinitionCounter`
         #("Definition", "DefinitionCounter"), 
         #("Beobachtung", "DefinitionCounter"),
         #("Behauptung", "DefinitionCounter"),
@@ -192,7 +191,6 @@ fn our_pipeline() -> List(infra.Desugarer) {
       ),
       dl.unwrap(["WriterlyBlankLine"]),
       dl.remove_text_nodes_with_singleton_empty_line(),
-    
       dl.add_attributes([
         #("Index", "class", "index"),
         #("Menu", "class", "menu"),
@@ -209,7 +207,6 @@ fn our_pipeline() -> List(infra.Desugarer) {
         #("Highlight", "class", "well highlight"),
         #("NoWrap", "class", "nowrap"),
       ]),
-      
       dl.append_class_to_child_if([
         #("Chapter", "out", infra.has_class(_, "well")),
         #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
@@ -220,27 +217,23 @@ fn our_pipeline() -> List(infra.Desugarer) {
           "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
         ])),
       ]),
+      dl.rename(#("Index", "div")),
+      dl.rename(#("Menu", "div")),
+      dl.rename(#("LeftMenu", "div")),
+      dl.rename(#("RightMenu", "div")),
+      dl.rename(#("Chapter", "div")),
+      dl.rename(#("ChapterTitle", "div")),
+      dl.rename(#("Sub", "div")),
+      dl.rename(#("SubTitle", "div")),
+      dl.rename(#("Definition", "div")),
+      dl.rename(#("Beobachtung", "div")),
+      dl.rename(#("Behauptung", "div")),
+      dl.rename(#("Theorem", "div")),
+      dl.rename(#("Lemma", "div")),
+      dl.rename(#("Exercise", "div")),
+      dl.rename(#("Highlight", "div")),
+      dl.rename(#("NoWrap", "span")),
     ],
-    
-    [
-        dl.rename(#("Index", "div")),
-        dl.rename(#("Menu", "div")),
-        dl.rename(#("LeftMenu", "div")),
-        dl.rename(#("RightMenu", "div")),
-        dl.rename(#("Chapter", "div")),
-        dl.rename(#("ChapterTitle", "div")),
-        dl.rename(#("Sub", "div")),
-        dl.rename(#("SubTitle", "div")),
-        dl.rename(#("Definition", "div")),
-        dl.rename(#("Beobachtung", "div")),
-        dl.rename(#("Behauptung", "div")),
-        dl.rename(#("Theorem", "div")),
-        dl.rename(#("Lemma", "div")),
-        dl.rename(#("Exercise", "div")),
-        dl.rename(#("Highlight", "div")),
-        dl.rename(#("NoWrap", "span")),
-    ],
-
     [
       dl.add_attributes([
         #("img", "class", "constrained transition-all"),
