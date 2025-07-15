@@ -71,6 +71,28 @@ body {
     margin: 0.4rem 0;
 }
 
+/* Menu
+*/
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-right, .menu-left {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background-color: #F8F4FD;
+    padding: 1rem;
+}
+
 /* Chapters and Subchapters
 */
 

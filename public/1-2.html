@@ -3,47 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <meta name="description" content="Section 2.2 of TI3 - Theoretische Informatik 2">
+  <meta name="description" content="Section 1.2 of TI3 - Theoretische Informatik 2">
   <link rel="stylesheet" type="text/css" href="ti3.css" />
   <script type="text/javascript" src="./mathjax_setup.js"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <script type="text/javascript" src="./app.js"></script>
-  <title>TI3 - Chapter 2, Section 2</title>
+  <title>TI3 - Chapter 1, Section 2</title>
 </head>
-<body class="page-sub chapter-2 sub-2">
+<body class="page-sub chapter-1 sub-2">
   <div
     class="subchapter"
   >
-    <p
-      class="main-column"
-    >
-      <div
-        class="menu"
+    <Menu>
+      <LeftMenu
+        class="menu-left"
       >
-        <div
-          class="menu-left"
-        >
-          <a
-            href="./index.html"
-          >Inhaltsverzeichnis</a><a
-            href="./2-1.html"
-          ><< Kapitel 2.1</a>
-        </div>
-        <div
-          class="menu-right"
-        >
-          <a
-            href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
-          >zur Kursübersicht</a><a
-            href="./2-3.html"
-          >Kapitel 2.3 >></a>
-        </div>
-      </div>
-    </p>
+        <a
+          href="./1-1.html"
+        >Previous</a><a
+          href="./index.html"
+        >Index</a>
+      </LeftMenu>
+      <RightMenu
+        class="menu-right"
+      >
+        <a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+        >Course</a><a
+          href="./1-3.html"
+        >Next</a>
+      </RightMenu>
+    </Menu>
     <div
       class="main-column page-title"
     >
-      2.2 
+      1.2 
       Wahrheitstabellen, CNF, DNF
     </div>
     <p
@@ -169,7 +163,7 @@
       class="out exercise well"
     >
       <p>
-        <b>Übungsaufgabe 2.2.1</b>
+        <b>Übungsaufgabe 1.2.1</b>
          
         Führen Sie die Konstruktion zu Ende, indem Sie $\bar{y} \vee z$ und $y \vee z$ mit dem if-then-else-Schaltkreis kombinieren.
       </p>
@@ -220,7 +214,7 @@
       class="out definition well"
     >
       <p>
-        <b>Definition 2.2.1</b>
+        <b>Definition 1.2.1</b>
          
         Sei $f: \{0,1\}^n \rightarrow \{0,1\}$ eine Boolesche Funktion, $i \in \{1,\dots,n\}$ ein Index und $b \in \{0,1\}$ ein Wert. Dann ist $f|_{x_i=b}$ eine neue Funktion, und zwar
       </p>
@@ -249,7 +243,7 @@
       class="out exercise well"
     >
       <p>
-        <b>Übungsaufgabe 2.2.2</b>
+        <b>Übungsaufgabe 1.2.2</b>
          
         Führen Sie das rekursive Verfahren durch, um für die folgende Funktion auf 4 Variablen einen Schaltkreis zu bauen: 
       </p>
@@ -363,7 +357,7 @@
       class="out definition well"
     >
       <p>
-        <b>Definition 2.2.2</b>
+        <b>Definition 1.2.2</b>
          
         Ein 
         <i>Literal</i>
@@ -389,7 +383,7 @@
       class="out exercise well"
     >
       <p>
-        <b>Übungsaufgabe 2.2.3</b>
+        <b>Übungsaufgabe 1.2.3</b>
          
         Was, wenn einige der "mittleren" Gates (auf Tiefe 1) keine AND-Gates sind, sondern auch OR-Gates? Dann wäre dies nach der ersten Definition 
         <i>keine</i>
@@ -467,7 +461,7 @@
       class="out definition well"
     >
       <p>
-        <b>Definition 2.2.3</b>
+        <b>Definition 1.2.3</b>
          
         Eine Formel in 
         <i>konjunktiver Normalform</i>
@@ -493,7 +487,7 @@
       class="out exercise well"
     >
       <p>
-        <b>Übungsaufgabe 2.2.4</b>
+        <b>Übungsaufgabe 1.2.4</b>
          
         Minimieren Sie die obige DNF (die mit den 6 Termen), indem Sie gewisse Paare von Termen zu einem kürzeren zusammenfassen.
       </p>
@@ -502,7 +496,7 @@
       class="out exercise well"
     >
       <p>
-        <b>Übungsaufgabe 2.2.5</b>
+        <b>Übungsaufgabe 1.2.5</b>
          
         Zeigen Sie, dass es zu jeder Booleschen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ eine äquivalente DNF-Formel mit höchstens $2^{n-1}$ Termen gibt.
       </p>
@@ -511,7 +505,7 @@
       class="out exercise well"
     >
       <p>
-        <b>Übungsaufgabe 2.2.6</b>
+        <b>Übungsaufgabe 1.2.6</b>
          
         Zeigen Sie, dass jede DNF-Formel für die Boolesche Funktion $x_1 \oplus \dots \oplus x_n$ genau $2^{n-1}$ Terme besitzen muss.
       </p>

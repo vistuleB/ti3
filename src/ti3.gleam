@@ -116,6 +116,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
         "title"
       )),
       dl.generate_ti3_index_element(),
+      dl.generate_ti3_menu(),
       dl.add_attributes([
         #("Document", "counter", "ChapterCounter"),
         #("Chapter", "counter", "SubCounter"),
@@ -194,6 +195,7 @@ fn our_pipeline() -> List(infra.Desugarer) {
     
       dl.add_attributes([
         #("Index", "class", "index"),
+        #("Menu", "class", "menu"),
         #("Chapter", "class", "chapter"),
         #("ChapterTitle","class", "main-column page-title"),
         #("Sub", "class", "subchapter"),
@@ -241,6 +243,9 @@ fn our_pipeline() -> List(infra.Desugarer) {
     
     [
         dl.rename(#("Index", "div")),
+        dl.rename(#("Menu", "div")),
+        dl.rename(#("LeftMenu", "div")),
+        dl.rename(#("RightMenu", "div")),
         dl.rename(#("Chapter", "div")),
         dl.rename(#("ChapterTitle", "div")),
         dl.rename(#("Sub", "div")),
