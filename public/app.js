@@ -1,4 +1,5 @@
 const MOBILE_MAX_WIDTH = 900;
+const TABLET_MAX_WIDTH = 1200;
 const MOBILE_MAIN_COLUMMN_WIDTH = '100vw';
 const MOBILE_MAIN_COLUMMN_PADDING = '0 2rem';
 const DESKTOP_MAIN_COLUMMN_WIDTH = 1200;
@@ -33,6 +34,8 @@ const computeMainColumnWidth = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) {
     // mobile
     widthValue = MOBILE_MAIN_COLUMMN_WIDTH;
+  } else if (screenWidth <= TABLET_MAX_WIDTH) {
+    widthValue = screenWidth;
   } else {
     // desktop
     widthValue = DESKTOP_MAIN_COLUMMN_WIDTH;
@@ -48,6 +51,8 @@ const computeOuterWellWidth = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) {
     // mobile
     widthValue = window.innerWidth;
+  } else if (screenWidth <= TABLET_MAX_WIDTH) {
+    widthValue = Math.round(screenWidth * 0.9);
   } else {
     // desktop
     widthValue = Math.round(DESKTOP_MAIN_COLUMMN_WIDTH * 0.9);
