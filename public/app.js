@@ -51,12 +51,23 @@ const setOuterWellWidth = (value) => {
   root.style.setProperty('--outer-well-width', cssValue);
 };
 
+const body = () => {
+  console.log("body triggered");
+  document.querySelectorAll('pre.numbered-pre').forEach(pre => {
+    const lines = pre.textContent.split('\n');
+    pre.innerHTML = lines
+      .map((line, i) => `${i + 1}. ${line}`)
+      .slice(0, -1)
+      .join('\n');
+  });
+}
+
 const onLoad = () => {
   handleResize();
+  body();
 };
 
 const handleResize = () => {
-  console.log("Handle Resize");
   instantRecenter();
   setMainColumnWidth(computeMainColumnWidth());
   setOuterWellWidth(computeOuterWellWidth());

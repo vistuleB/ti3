@@ -247,6 +247,7 @@ pre.listing:before {
 
 pre.listing code {
     counter-increment: listing;
+    color: var(--body-color);
 }
 
 pre.listing code::before {
@@ -340,6 +341,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+hr {
+    color: #EEEEEE40;
 }
 
 
