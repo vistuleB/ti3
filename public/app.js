@@ -1,6 +1,9 @@
-const MOBILE_MAX_WIDTH = 900;
-const TABLET_MAX_WIDTH = 1200;
-const DESKTOP_MAIN_COLUMMN_WIDTH = 1200;
+const WELL_100VW_MAX_WIDTH = 550;
+const WELL_100VW_MINUS_PADDING_MAX_WIDTH = 700;
+const MAIN_COLUMN_100VW_MAX_WIDTH = 1400;
+const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1100;
+const TOTAL_X_PADDING_IN_PX = 64;
+const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 100;
 
 window.history.scrollRestoration = "manual";
 
@@ -25,34 +28,15 @@ const instantRecenter = () => {
 
 const computeMainColumnWidth = () => {
   const screenWidth = window.innerWidth;
-  
-  let widthValue;
-  
-  if (screenWidth <= TABLET_MAX_WIDTH) {
-    widthValue = screenWidth;
-  } else {
-    widthValue = DESKTOP_MAIN_COLUMMN_WIDTH;
-  }
-  
-  return widthValue;
+  if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return screenWidth;
+  return WIDE_SCREEN_MAIN_COLUMN_WIDTH;
 };
 
 const computeOuterWellWidth = () => {
   const screenWidth = window.innerWidth;
-
-  let widthValue;
-
-  if (screenWidth <= MOBILE_MAX_WIDTH) {
-    widthValue = screenWidth;
-  } else if (screenWidth <= TABLET_MAX_WIDTH) {
-    // occupies 90% of screenWidth
-    widthValue = Math.round(screenWidth * 0.9);
-  } else {
-    // occupies 90% of DESKTOP_MAIN_COLUMMN_WIDTH
-    widthValue = Math.round(DESKTOP_MAIN_COLUMMN_WIDTH * 0.9);
-  }
-  
-  return widthValue;
+  if (screenWidth <= WELL_100VW_MAX_WIDTH) return screenWidth;
+  if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return screenWidth - TOTAL_X_PADDING_IN_PX;
+  return computeMainColumnWidth() - 2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET;
 }
 
 const setMainColumnWidth = (value) => {
