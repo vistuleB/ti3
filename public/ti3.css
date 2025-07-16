@@ -25,11 +25,20 @@ body {
 /* Index page
 */
 
+.index {
+    margin-top: 2rem;
+}
+
 .index__header {
     width: 100%;
     text-align: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    line-height: 2.8rem;
+}
+
+.index__header + section {
+    margin-top: 6rem;
 }
 
 .index__header__title {
@@ -47,6 +56,7 @@ body {
     width: fit-content;
     list-style: none;
     padding-left: 0;
+    line-height: 2rem;
 }
 
 .index__list a {

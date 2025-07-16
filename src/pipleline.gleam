@@ -122,6 +122,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
         #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
           "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
         ])),
+        #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}),
       ]),
       dl.rename(#("Index", "div")),
       dl.rename(#("Menu", "div")),
