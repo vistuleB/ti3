@@ -1,9 +1,6 @@
 const MOBILE_MAX_WIDTH = 900;
 const TABLET_MAX_WIDTH = 1200;
-const MOBILE_MAIN_COLUMMN_WIDTH = '100vw';
-const MOBILE_MAIN_COLUMMN_PADDING = '0 2rem';
 const DESKTOP_MAIN_COLUMMN_WIDTH = 1200;
-const DESKTOP_MAIN_COLUMMN_PADDING = '0 0';
 
 window.history.scrollRestoration = "manual";
 
@@ -31,15 +28,12 @@ const computeMainColumnWidth = () => {
   
   let widthValue;
   
-  if (screenWidth <= MOBILE_MAX_WIDTH) {
-    // mobile
-    widthValue = MOBILE_MAIN_COLUMMN_WIDTH;
-  } else if (screenWidth <= TABLET_MAX_WIDTH) {
+  if (screenWidth <= TABLET_MAX_WIDTH) {
     widthValue = screenWidth;
   } else {
-    // desktop
     widthValue = DESKTOP_MAIN_COLUMMN_WIDTH;
   }
+  
   return widthValue;
 };
 
@@ -49,12 +43,12 @@ const computeOuterWellWidth = () => {
   let widthValue;
 
   if (screenWidth <= MOBILE_MAX_WIDTH) {
-    // mobile
-    widthValue = window.innerWidth;
+    widthValue = screenWidth;
   } else if (screenWidth <= TABLET_MAX_WIDTH) {
+    // occupies 90% of screenWidth
     widthValue = Math.round(screenWidth * 0.9);
   } else {
-    // desktop
+    // occupies 90% of DESKTOP_MAIN_COLUMMN_WIDTH
     widthValue = Math.round(DESKTOP_MAIN_COLUMMN_WIDTH * 0.9);
   }
   
@@ -63,13 +57,13 @@ const computeOuterWellWidth = () => {
 
 const setMainColumnWidth = (value) => {
     const root = document.documentElement;
-    const cssValue = typeof value === "number" ? `${value}px` : value;
+    const cssValue = `${value}px`;
     root.style.setProperty('--main-column-width', cssValue);
 };
 
 const setOuterWellWidth = (value) => {
   const root = document.documentElement;
-  const cssValue = typeof value === "number" ? `${value}px` : value;
+  const cssValue = `${value}px`;
   root.style.setProperty('--outer-well-width', cssValue);
 };
 
