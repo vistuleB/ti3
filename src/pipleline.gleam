@@ -89,11 +89,12 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
             "Sub", "SubTitle", "Definition", "Beobachtung", "Behauptung", "Theorem", "Lemma",
             "thead", "tbody", "tr", "td", "section",
-            "Index",
+            "Index", "Menu",
             "Highlight",
-            "h1", "h2", "h3", "pre", "div", "br",
+            "h1", "h2", "h3", "pre", "div", "br", "hr",
+            "figure", "img"
           ],
-          ["MathBlock", "p", "Index", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle"]
+          ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle"]
         ),
       ),
       dl.unwrap(["WriterlyBlankLine"]),
