@@ -28,25 +28,25 @@
 
     $$
     \begin{array}{ll|l}
-    x&amp;y&amp;x \wedge y \\ \hline
-    0&amp;0&amp;0 \\
-    0&amp;1&amp;0 \\
-    1&amp;0&amp;0 \\
-    1&amp;1&amp;1
+    x&y&x \wedge y \\ \hline
+    0&0&0 \\
+    0&1&0 \\
+    1&0&0 \\
+    1&1&1
     \end{array}
     \qquad \qquad
     \begin{array}{ll|l}
-    x&amp;y&amp;x \vee y \\ \hline
-    0&amp;0&amp;0 \\
-    0&amp;1&amp;1 \\
-    1&amp;0&amp;1 \\
-    1&amp;1&amp;1
+    x&y&x \vee y \\ \hline
+    0&0&0 \\
+    0&1&1 \\
+    1&0&1 \\
+    1&1&1
     \end{array}
     \qquad \qquad
     \begin{array}{l|l}
-    x&amp;\neg x \\ \hline
-    0&amp;1 \\
-    1&amp;0 \\
+    x&\neg x \\ \hline
+    0&1 \\
+    1&0 \\
     \end{array}
     $$
 

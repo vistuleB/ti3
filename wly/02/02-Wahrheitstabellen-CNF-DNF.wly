@@ -86,8 +86,8 @@
         
         $$
         \begin{align*}
-        f|_{x_i=b} &amp;: \{0,1\}^{n-1} \rightarrow \{0,1\} \\
-        (x_1,\dots,x_{i-1}, x_{i+1}, \dots, x_n) &amp;\mapsto f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}).
+        f|_{x_i=b} &: \{0,1\}^{n-1} \rightarrow \{0,1\} \\
+        (x_1,\dots,x_{i-1}, x_{i+1}, \dots, x_n) &\mapsto f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}).
         \end{align*}
         $$
        

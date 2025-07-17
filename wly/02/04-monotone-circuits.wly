@@ -313,8 +313,8 @@
                 Funktionen \(\textnormal{zero}_n\) definieren als
                 $$
                 \begin{align*}
-                \textnormal{zero}_n&amp;: \{0,1\}^n \rightarrow \{0,1\} \\
-                (x_1,\dots,x_n)&amp;\mapsto 0 \ .
+                \textnormal{zero}_n&: \{0,1\}^n \rightarrow \{0,1\} \\
+                (x_1,\dots,x_n)&\mapsto 0 \ .
                 \end{align*}
                 $$
 
@@ -367,8 +367,8 @@
             
             $$
             \begin{align*}
-            f_0 (x_2, \dots, x_n)&amp;:= f(0, x_2, \dots, x_n) \\
-            f_1 (x_2, \dots, x_n)&amp;:= f(1, x_2, \dots, x_n) \ .
+            f_0 (x_2, \dots, x_n)&:= f(0, x_2, \dots, x_n) \\
+            f_1 (x_2, \dots, x_n)&:= f(1, x_2, \dots, x_n) \ .
             \end{align*}
             $$
             
@@ -445,8 +445,8 @@
         \(f_0, f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}\) per
         $$
         \begin{align*}
-        f_0 (x_2, \dots, x_n)&amp;:= f(0, x_2, \dots, x_n) \\
-        f_1 (x_2, \dots, x_n)&amp;:= f(1, x_2, \dots, x_n) \ .
+        f_0 (x_2, \dots, x_n)&:= f(0, x_2, \dots, x_n) \\
+        f_1 (x_2, \dots, x_n)&:= f(1, x_2, \dots, x_n) \ .
         \end{align*}
         $$
         Diese Funktionen sind selbst wiederum monoton (versuchen Sie, dies formal zu zeigen,
@@ -530,10 +530,10 @@
                     Der Fall \(x_1 = 0\). Dann gilt
                     $$
                     \begin{align*}
-                    f(x_1,x_2,\dots,x_n)&amp;= f(0,x_2,\dots,x_n) \tag{da $x_1=0$} \\
-                    &amp;= f_0 (x_2, \dots,x_n) \tag{Definition von $f_2$} \\
-                    &amp;= (0 \wedge f_1) \vee f_0 \tag{die 0 tötet den ersten Term eh}\\
-                    &amp;= (x_1 \wedge f_1) \vee f_0 \tag{weil $x_1 = 0$} \ ,
+                    f(x_1,x_2,\dots,x_n)&= f(0,x_2,\dots,x_n) \tag{da $x_1=0$} \\
+                    &= f_0 (x_2, \dots,x_n) \tag{Definition von $f_2$} \\
+                    &= (0 \wedge f_1) \vee f_0 \tag{die 0 tötet den ersten Term eh}\\
+                    &= (x_1 \wedge f_1) \vee f_0 \tag{weil $x_1 = 0$} \ ,
                     \end{align*}
                     $$
                     und die behauptete Gleichung gilt.
@@ -542,13 +542,13 @@
                     Der Fall \(x_1 = 1\). Dann gilt
                     $$
                     \begin{align*}
-                    f(x_1,\dots,x_n)&amp;= f_1(x_2,\dots,x_n) \ .
+                    f(x_1,\dots,x_n)&= f_1(x_2,\dots,x_n) \ .
                     \end{align*}
                     $$
                     Was ist aber mit der rechten Seite der behaupteten Gleichung?
                     $$
                     \begin{align*}
-                    (x_1 \wedge f_1) \vee f_0&amp;= f_1 \vee f_0 \tag{da $x_1=1$ ist und somit im $\wedge$
+                    (x_1 \wedge f_1) \vee f_0&= f_1 \vee f_0 \tag{da $x_1=1$ ist und somit im $\wedge$
                     wegfällt}
                     \end{align*}
                     $$
@@ -561,10 +561,10 @@
                     haben, kann der Beweis ja gar nicht funktionieren. Also: verwenden wir Monotonität:
                     $$
                     \begin{align*}
-                    (0, x_2, \dots,x_n)&amp;\leq (1, x_2, \dots,x_n) \tag{Definition unser Partialordnung,
+                    (0, x_2, \dots,x_n)&\leq (1, x_2, \dots,x_n) \tag{Definition unser Partialordnung,
                     } \\
-                    f(0, x_2, \dots,x_n)&amp;\leq f(1, x_2, \dots,x_n) \tag{weil $f$ monoton ist.} \\
-                    f_0&amp;\leq f_1 \ .
+                    f(0, x_2, \dots,x_n)&\leq f(1, x_2, \dots,x_n) \tag{weil $f$ monoton ist.} \\
+                    f_0&\leq f_1 \ .
                     \end{align*}
                     $$
                     Wir überprüfen nun also: wenn \(f_0(x_2, \dots, x_n) = 0\) ist, dann
@@ -607,8 +607,8 @@
        
         $$ 
         \begin{align*}
-        I_{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \ a_i = 1 \} \\
-        O_{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \ a_i = 0 \} \ .
+        I_{\mathbf{a}}&:= \{ i \in \{1,\dots, n\} \ | \ a_i = 1 \} \\
+        O_{\mathbf{a}}&:= \{ i \in \{1,\dots, n\} \ | \ a_i = 0 \} \ .
         \end{align*}
         $$
         
@@ -617,7 +617,7 @@
         
         $$
         \begin{align*}
-        T_{\mathbf{a}}&amp;:= \bigwedge_{i \in I_{\mathbf{a}}} x_i \wedge
+        T_{\mathbf{a}}&:= \bigwedge_{i \in I_{\mathbf{a}}} x_i \wedge
         \bigwedge_{i \in O_{\mathbf{a}}} \bar{x}_i \ .
         \end{align*}
         $$
@@ -629,9 +629,9 @@
         
         $$ 
         \begin{align*}
-        x^{b}&amp;:= \begin{cases}
-        x&amp;\textnormal{ if $b=1$,}\\
-        \bar{x}&amp;\textnormal{ if $b=0$.}
+        x^{b}&:= \begin{cases}
+        x&\textnormal{ if $b=1$,}\\
+        \bar{x}&\textnormal{ if $b=0$.}
         \end{cases}
         \end{align*}
         $$
@@ -774,9 +774,9 @@
            
             $$ 
             \begin{align*}
-            T_{\mathbf{a}^*}(\mathbf{x})&amp;= T'_{\mathbf{a}^*}(\mathbf{x}) \wedge
+            T_{\mathbf{a}^*}(\mathbf{x})&= T'_{\mathbf{a}^*}(\mathbf{x}) \wedge
             T''_{\mathbf{a}^*}(\mathbf{x}) \\
-            &amp;= 1 \wedge \bigwedge_{i \in O(\mathbf{a}^*)} \bar{x}_i \ .
+            &= 1 \wedge \bigwedge_{i \in O(\mathbf{a}^*)} \bar{x}_i \ .
             \end{align*}
             $$
             
