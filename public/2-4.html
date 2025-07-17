@@ -449,9 +449,9 @@ public boolean constantFalse(boolean x) {
               zweimal deklariert haben, einmal als Funktion mit 0
               Input-Variablen, einmal als Funktion mit einer Input-Variablen. Um
               hundertprozentig korrekt zu sein, müssten wir Funktionen
-              $\textnormal{zero}_n$ definieren als $$ $$\begin{align*}
-              \textnormal{zero}<i>n&amp;: \{0,1\}^n \rightarrow \{0,1\} \\ (x</i
-              >1,\dots,x_n)&amp;\mapsto 0 \ . \end{align*}$$ $$
+              $\textnormal{zero}_n$ definieren als $$ \begin{align*}
+              \textnormal{zero}_n&amp;: \{0,1\}^n \rightarrow \{0,1\} \\
+              (x_1,\dots,x_n)&amp;\mapsto 0 \ . \end{align*} $$
             </p>
             <p>
               In der Praxis gehen wir in der Mathematik deutlich laxer mit
@@ -510,10 +510,9 @@ public boolean constantFalse(boolean x) {
             f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
           </p>
           <p>
-            $$ $$\begin{align*} f<i>0 (x</i>2, \dots, x<i>n)&amp;:= f(0, x</i>2,
-            \dots, x<i>n) \\ f</i>1 (x<i>2, \dots, x</i>n)&amp;:= f(1, x<i
-              >2, \dots, x</i
-            >n) \ . \end{align*}$$ $$
+            $$ \begin{align*} f_0 (x_2, \dots, x_n)&amp;:= f(0, x_2, \dots, x_n)
+            \\ f_1 (x_2, \dots, x_n)&amp;:= f(1, x_2, \dots, x_n) \ .
+            \end{align*} $$
           </p>
           <p>
             In anderen Worten, wir fixieren das erste Input-Bit auf einen
@@ -600,13 +599,12 @@ public boolean constantFalse(boolean x) {
           ich jetzt weniger formal und weise Sie nicht mehr ständig auf die
           Bestandteile eines Induktionsbeweises hin) und zerlegen $f: \{0,1\}^n
           \rightarrow \{0,1\}$ in zwei neue, "kleinere" Funktionen $f_0, f_1:
-          \{0,1\}^{n-1} \rightarrow \{0,1\}$ per $$ $$\begin{align*} f<i>0 (x</i
-          >2, \dots, x<i>n)&amp;:= f(0, x</i>2, \dots, x<i>n) \\ f</i>1 (x<i
-            >2, \dots, x</i
-          >n)&amp;:= f(1, x<i>2, \dots, x</i>n) \ . \end{align*}$$ $$ Diese
-          Funktionen sind selbst wiederum monoton (versuchen Sie, dies formal zu
-          zeigen, wenn Sie Lust haben; oder versuchen Sie, es sich intuitiv klar
-          zu machen). Per Induktionshypothese gibt es also monotone Schaltkreise
+          \{0,1\}^{n-1} \rightarrow \{0,1\}$ per $$ \begin{align*} f_0 (x_2,
+          \dots, x_n)&amp;:= f(0, x_2, \dots, x_n) \\ f_1 (x_2, \dots,
+          x_n)&amp;:= f(1, x_2, \dots, x_n) \ . \end{align*} $$ Diese Funktionen
+          sind selbst wiederum monoton (versuchen Sie, dies formal zu zeigen,
+          wenn Sie Lust haben; oder versuchen Sie, es sich intuitiv klar zu
+          machen). Per Induktionshypothese gibt es also monotone Schaltkreise
           für $f_0$ und
           <span class="nowrap">$f_1$.</span>
           Wir kombinieren diese mit einem
@@ -709,32 +707,24 @@ public boolean constantFalse(boolean x) {
               <p>
                 Der Fall
                 <span class="nowrap">$x_1 = 0$.</span>
-                Dann gilt $$ $$\begin{align*} f(x<i>1,x</i>2,\dots,x<i
-                  >n)&amp;= f(0,x</i
-                >2,\dots,x<i
-                  >n) \tag{da
-                  <span class="nowrap">$x_1=0$}</span>
-                  \\ &amp;= f</i
-                >0 (x<i>2, \dots,x</i>n) \tag{Definition von
-                <span class="nowrap">$f_2$}</span>
-                \\ &amp;= (0 \wedge f<i>1) \vee f</i>0 \tag{die 0 tötet den
-                ersten Term eh}\\ &amp;= (x<i>1 \wedge f</i>1) \vee f_0
-                \tag{weil
-                <span class="nowrap">$x_1 = 0$}</span>
-                \ , \end{align*}$$ $$ und die behauptete Gleichung gilt.
+                Dann gilt $$ \begin{align*} f(x_1,x_2,\dots,x_n)&amp;=
+                f(0,x_2,\dots,x_n) \tag{da $x_1=0$} \\ &amp;= f_0 (x_2,
+                \dots,x_n) \tag{Definition von $f_2$} \\ &amp;= (0 \wedge f_1)
+                \vee f_0 \tag{die 0 tötet den ersten Term eh}\\ &amp;= (x_1
+                \wedge f_1) \vee f_0 \tag{weil $x_1 = 0$} \ , \end{align*} $$
+                und die behauptete Gleichung gilt.
               </p>
             </li>
             <li>
               <p>
                 Der Fall
                 <span class="nowrap">$x_1 = 1$.</span>
-                Dann gilt $$ $$\begin{align*} f(x<i>1,\dots,x</i>n)&amp;=
-                f<i>1(x</i>2,\dots,x<i
-                  >n) \ . \end{align*}$$ $$ Was ist aber mit der rechten Seite
-                  der behaupteten Gleichung? $$ $$\begin{align*} (x</i
-                >1 \wedge f<i>1) \vee f</i>0&amp;= f<i>1 \vee f</i>0 \tag{da
-                $x_1=1$ ist und somit im $\wedge$ wegfällt} \end{align*}$$ $$
-                Die linke Seite ist also
+                Dann gilt $$ \begin{align*} f(x_1,\dots,x_n)&amp;=
+                f_1(x_2,\dots,x_n) \ . \end{align*} $$ Was ist aber mit der
+                rechten Seite der behaupteten Gleichung? $$ \begin{align*} (x_1
+                \wedge f_1) \vee f_0&amp;= f_1 \vee f_0 \tag{da $x_1=1$ ist und
+                somit im $\wedge$ wegfällt} \end{align*} $$ Die linke Seite ist
+                also
                 <span class="nowrap">$f_1$,</span>
                 die rechte ist
                 <span class="nowrap">$f_1 \vee f_0$.</span>
@@ -743,14 +733,11 @@ public boolean constantFalse(boolean x) {
                 verwendet, dass $f$ eine monotone Funktion ist! Und wenn wir das
                 nicht verwendet haben, kann der Beweis ja gar nicht
                 funktionieren. Also: verwenden wir Monotonität: $$
-                $$\begin{align*} (0, x<i>2, \dots,x</i>n)&amp;\leq (1, x<i
-                  >2, \dots,x</i
-                >n) \tag{Definition unser Partialordnung, } \\ f(0, x<i
-                  >2, \dots,x</i
-                >n)&amp;\leq f(1, x<i>2, \dots,x</i>n) \tag{weil $f$ monoton
-                ist.} \\ f<i>0&amp;\leq f</i>1 \ . \end{align*}$$ $$ Wir
-                überprüfen nun also: wenn $f_0(x_2, \dots, x_n) = 0$ ist, dann
-                gilt
+                \begin{align*} (0, x_2, \dots,x_n)&amp;\leq (1, x_2, \dots,x_n)
+                \tag{Definition unser Partialordnung, } \\ f(0, x_2,
+                \dots,x_n)&amp;\leq f(1, x_2, \dots,x_n) \tag{weil $f$ monoton
+                ist.} \\ f_0&amp;\leq f_1 \ . \end{align*} $$ Wir überprüfen nun
+                also: wenn $f_0(x_2, \dots, x_n) = 0$ ist, dann gilt
                 <span class="nowrap">$f_0 \vee f_1 = 0 \vee f_1 = f_1$.</span>
                 Wenn $f_0 = 1$ ist, dann ist $f_1 = 1$ wegen Monotonität (größer
                 als 1 geht ja nicht), und daher
@@ -764,10 +751,10 @@ public boolean constantFalse(boolean x) {
         </div>
         <p>
           Wir haben nun also gezeigt, dass für jeden Input $x_1,\dots,x_n$ gilt:
-          $$ $$\begin{align*} f = (x<i>1 \wedge f</i>1) \vee f_0 \ ,
-          \end{align*}$$ $$ (wobei wir aus Gründen der Lesbarkeit statt
-          $f(x_1,\dots,x_n)$ einfach $f$ schreiben); per Induktion können wir
-          für $f_1, f_0$ monotone Schaltkreise finden, und somit ist
+          $$ \begin{align*} f = (x_1 \wedge f_1) \vee f_0 \ , \end{align*} $$
+          (wobei wir aus Gründen der Lesbarkeit statt $f(x_1,\dots,x_n)$ einfach
+          $f$ schreiben); per Induktion können wir für $f_1, f_0$ monotone
+          Schaltkreise finden, und somit ist
         </p>
         <figure>
           <img
@@ -804,11 +791,9 @@ public boolean constantFalse(boolean x) {
           Term genau zu beschreiben, definieren wir
         </p>
         <p>
-          $$ $$\begin{align*} I<i
-            >{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \ a</i
-          >i = 1 \} \\ O<i
-            >{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \ a</i
-          >i = 0 \} \ . \end{align*}$$ $$
+          $$ \begin{align*} I_{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \
+          a_i = 1 \} \\ O_{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \ a_i
+          = 0 \} \ . \end{align*} $$
         </p>
         <p>
           Als Beispiel: wenn $n=5$ und
@@ -818,23 +803,28 @@ public boolean constantFalse(boolean x) {
           Wir definieren
         </p>
         <p>
-          $$ $$\begin{align*} T<i>{\mathbf{a}}&amp;:= \bigwedge</i>{i \in I<i
-            >{\mathbf{a}}} x</i
-          >i \wedge \bigwedge<i>{i \in O</i>{\mathbf{a}}} \bar{x}<i
-            >i \ . \end{align*}$$ $$Für $\mathbf{a} = (10010)$ gibt das also
-            <span class="nowrap"
-              >$x_1 \wedge x_4 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge
-              \bar{x}_5$.</span
-            >
-            Noch kompakter kann man es hinschreiben, wenn man für eine Variable
-            $x$ und einen Wert $b \in \{0,1\}$ folgendes definiert:$$
-            $$\begin{align*} x^{b}&amp;:= \begin{cases} x&amp;\textnormal{ if
-            <span class="nowrap">$b=1$,}\\</span>
-            \bar{x}&amp;\textnormal{ if
-            <span class="nowrap">$b=0$.}</span>
-            \end{cases} \end{align*}$$ $$Dann können wir $T_{\mathbf{a}}$
-            einfach als$$ $$\begin{align*} T</i
-          >{\mathbf{a}} = \bigwedge<i>{i=1}^n x</i>i^{a_i} \end{align*}$$ $$
+          $$ \begin{align*} T_{\mathbf{a}}&amp;:= \bigwedge_{i \in
+          I_{\mathbf{a}}} x_i \wedge \bigwedge_{i \in O_{\mathbf{a}}} \bar{x}_i
+          \ . \end{align*} $$
+        </p>
+        <p>
+          Für $\mathbf{a} = (10010)$ gibt das also
+          <span class="nowrap"
+            >$x_1 \wedge x_4 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge
+            \bar{x}_5$.</span
+          >
+          Noch kompakter kann man es hinschreiben, wenn man für eine Variable
+          $x$ und einen Wert $b \in \{0,1\}$ folgendes definiert:
+        </p>
+        <p>
+          $$ \begin{align*} x^{b}&amp;:= \begin{cases} x&amp;\textnormal{ if
+          $b=1$,}\\ \bar{x}&amp;\textnormal{ if $b=0$.} \end{cases} \end{align*}
+          $$
+        </p>
+        <p>Dann können wir $T_{\mathbf{a}}$ einfach als</p>
+        <p>
+          $$ \begin{align*} T_{\mathbf{a}} = \bigwedge_{i=1}^n x_i^{a_i}
+          \end{align*} $$
         </p>
         <p>
           definieren, für $\mathbf{a} = (10010)$ also
@@ -858,8 +848,8 @@ public boolean constantFalse(boolean x) {
           <span class="nowrap">$F$:</span>
         </p>
         <p>
-          $$ $$\begin{align*} F := \bigvee<i>{\mathbf{a} \in \sat(f)} T</i
-          >{\mathbf{a}} \end{align*}$$ $$
+          $$ \begin{align*} F := \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}}
+          \end{align*} $$
         </p>
         <p>
           Dies ist eine DNF-Formel, also insbesondere ein Schaltkreis der Tiefe
@@ -974,10 +964,10 @@ public boolean constantFalse(boolean x) {
             1 ausgibt. Das Problem ist leider, dass
           </p>
           <p>
-            $$ $$\begin{align*} T<i>{\mathbf{a}^*}(\mathbf{x})&amp;= T'</i
-            >{\mathbf{a}^*}(\mathbf{x}) \wedge T''<i
-              >{\mathbf{a}^*}(\mathbf{x}) \\ &amp;= 1 \wedge \bigwedge</i
-            >{i \in O(\mathbf{a}^*)} \bar{x}_i \ . \end{align*}$$ $$
+            $$ \begin{align*} T_{\mathbf{a}^*}(\mathbf{x})&amp;=
+            T'_{\mathbf{a}^*}(\mathbf{x}) \wedge T''_{\mathbf{a}^*}(\mathbf{x})
+            \\ &amp;= 1 \wedge \bigwedge_{i \in O(\mathbf{a}^*)} \bar{x}_i \ .
+            \end{align*} $$
           </p>
           <p>
             Wir wissen also, dass $x_i=1$ für alle $i \in I(\mathbf{a}^*)$ gilt;

@@ -175,9 +175,8 @@
         also $c_0 = 0$ und
       </p>
       <p class="main-column">
-        $$ $$\begin{align*} s<i>i&amp;= x</i>i \oplus y<i>i \oplus c</i>i \\ c<i
-          >{i+1}&amp;= M(x</i
-        >i, y<i>i, c</i>i) \ , \end{align*}$$ $$
+        $$ \begin{align*} s_i&amp;= x_i \oplus y_i \oplus c_i \\ c_{i+1}&amp;=
+        M(x_i, y_i, c_i) \ , \end{align*} $$
       </p>
       <p class="main-column">
         und das Ergebnis ist dann
@@ -208,9 +207,9 @@
         keine Rolle. Wenn nun $x_i \ne y_i$ ist, dann schaltet das
         <span class="nowrap">$M$-Gate</span>
         einfach $c_i$ unverändert durch. Dies motiviert die folgenden
-        Definitionen: $$ $$\begin{align*} g<i>i&amp;:= x</i>i \wedge y<i
-          >i \tag{carry-generate} \\ p</i
-        >i&amp;:= x<i>i \vee y</i>i \tag{carry-propagate} \end{align*}$$ $$
+        Definitionen: $$ \begin{align*} g_i&amp;:= x_i \wedge y_i
+        \tag{carry-generate} \\ p_i&amp;:= x_i \vee y_i \tag{carry-propagate}
+        \end{align*} $$
       </p>
       <p class="main-column">
         Jetzt können wir $c_{k+1}$ wie folgt berechnen: an Stelle $k$ wird ein
@@ -307,63 +306,63 @@
       <p class="main-column">
         Hier sind Boolesche Formeln (in DNF) für $p_{[a,b]}$ und
         <span class="nowrap">$g_{[a,b]}$:</span>
-        $$ $$\begin{align*} g<i>{[a,b]}&amp;:= g</i>b \vee (g<i
-          >{b-1} \wedge p</i
-        >b) \vee (g<i>{b-2} \wedge p</i>{b-1} \wedge p<i
-          >b) \vee \dots \vee (g</i
-        >a \wedge p<i>{a+1} \wedge \dots \wedge p</i>b) \ , \\ p<i
-          >{[a,b]}&amp;:= g</i
-        >b \vee (g<i>{b-1} \wedge p</i>b) \vee (g<i>{b-2} \wedge p</i>{b-1}
-        \wedge p<i>b) \vee \dots \vee (g</i>{a+1} \wedge p<i
-          >{a+2} \wedge \dots \wedge p</i
-        >b) \vee (p<i>a \wedge p</i>{a+1} \wedge \dots \wedge p<i
-          >b) \ , \end{align*}$$ $$und hier ein Bild zur Illustration:
-          <figure>
-            <img
-              style="height: 11em"
-              src="img/circuits/carry-generate-interval.svg"
-              loading="lazy"
-              onClick="onImgClick(event)"
-              class="constrained transition-all"
-            />
-            <br />
-            <img
-              style="height: 11em"
-              src="img/circuits/carry-propagate-interval.svg"
-              loading="lazy"
-              onClick="onImgClick(event)"
-              class="constrained transition-all"
-            />
-          </figure>
-          Im Extremfall $a=b$ gilt
-          <span class="nowrap">$g_{[a,a]} = g_a, p_{[a,a]} = p_a$,</span>
-          also wie die "alten" individuellen
-          <span class="nowrap">$p_a, g_a$.</span>
-          Diese Definition $g_{[a,b]}$ ist nützlich, da erstens $$ c_{k+1} =
-          g_{[0, k]} $$ gilt, wir also die Carrys direkt ablesen, zweitens wir
-          die $g_{[a,b]}$ bequem rekursiv berechnen können:
-          <div class="well beobachtung">
-            <b>Beobachtung 2.3.2</b>
-            Wenn wir $[a,b] = [a,i] \cup [i+1,b] $ schreiben für
-            <span class="nowrap">$a \lt i \lt b$,</span>
-            dann gilt $$ $$\begin{align*} p<i>{[a,b]}&amp;= g</i>{[i+1,b]} \vee
-            (p<i>{[a,i]} \wedge p</i>{[i+1,b]}) \ , \\ g<i>{[a,b]}&amp;= g</i
-            >{[i+1,b]} \vee (g<i>{[a,i]} \wedge p</i>{[i+1,b]}) \ . \\
-            \end{align*}$$ $$
-          </div>
-          Überzeugen Sie sich von der Richtigkeit entweder durch Nachdenken
-          (z.B. "damit im Interval $[a,b]$ ein Carry erzeugt wird, muss es
-          entweder im höheren Interval erzeugt werden, oder im niedrigeren, und
-          dann im höheren weitergegeben werden") oder indem Sie explizit die
-          Definitionsformel von $g_{[a,b]}$ nehmen und in der unteren Hälfte
-          "ausklammern". Die Idee ist jetzt, dass wir mit Hilfe dieser Formel
-          die Funktionen $p_I, g_I$ für alle Intervalle $I \subseteq
-          [0,\dots,n-1]$ berechnen und dann mittels $s_i = x_i \oplus y_i \oplus
-          c_i$ unmittelbar die Binärdarstellung der Summe $x+y$ ausgeben können.
-          Das Problem: es gibt zu viele Intervalle, nämlich $1 + 2 + \dots + n =
-          {n+1 \choose 2} = \Theta(n^2)$ viele. Der Trick: wir beschränken uns
-          auf besonders schöne Intervalle, nämlich</i
-        >Binärintervalle_.
+        $$ \begin{align*} g_{[a,b]}&amp;:= g_b \vee (g_{b-1} \wedge p_b) \vee
+        (g_{b-2} \wedge p_{b-1} \wedge p_b) \vee \dots \vee (g_a \wedge p_{a+1}
+        \wedge \dots \wedge p_b) \ , \\ p_{[a,b]}&amp;:= g_b \vee (g_{b-1}
+        \wedge p_b) \vee (g_{b-2} \wedge p_{b-1} \wedge p_b) \vee \dots \vee
+        (g_{a+1} \wedge p_{a+2} \wedge \dots \wedge p_b) \vee (p_a \wedge
+        p_{a+1} \wedge \dots \wedge p_b) \ , \end{align*} $$
+      </p>
+      <p class="main-column">und hier ein Bild zur Illustration:</p>
+      <figure class="main-column">
+        <img
+          style="height: 11em"
+          src="img/circuits/carry-generate-interval.svg"
+          loading="lazy"
+          onClick="onImgClick(event)"
+          class="constrained transition-all"
+        />
+        <br />
+        <img
+          style="height: 11em"
+          src="img/circuits/carry-propagate-interval.svg"
+          loading="lazy"
+          onClick="onImgClick(event)"
+          class="constrained transition-all"
+        />
+      </figure>
+      <p class="main-column">
+        Im Extremfall $a=b$ gilt
+        <span class="nowrap">$g_{[a,a]} = g_a, p_{[a,a]} = p_a$,</span>
+        also wie die "alten" individuellen
+        <span class="nowrap">$p_a, g_a$.</span>
+        Diese Definition $g_{[a,b]}$ ist nützlich, da erstens $$ c_{k+1} =
+        g_{[0, k]} $$ gilt, wir also die Carrys direkt ablesen, zweitens wir die
+        $g_{[a,b]}$ bequem rekursiv berechnen können:
+      </p>
+      <div class="well beobachtung out">
+        <p>
+          <b>Beobachtung 2.3.2</b>
+          Wenn wir $[a,b] = [a,i] \cup [i+1,b] $ schreiben für
+          <span class="nowrap">$a \lt i \lt b$,</span>
+          dann gilt $$ \begin{align*} p_{[a,b]}&amp;= g_{[i+1,b]} \vee
+          (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\ g_{[a,b]}&amp;= g_{[i+1,b]} \vee
+          (g_{[a,i]} \wedge p_{[i+1,b]}) \ . \\ \end{align*} $$
+        </p>
+      </div>
+      <p class="main-column">
+        Überzeugen Sie sich von der Richtigkeit entweder durch Nachdenken (z.B.
+        "damit im Interval $[a,b]$ ein Carry erzeugt wird, muss es entweder im
+        höheren Interval erzeugt werden, oder im niedrigeren, und dann im
+        höheren weitergegeben werden") oder indem Sie explizit die
+        Definitionsformel von $g_{[a,b]}$ nehmen und in der unteren Hälfte
+        "ausklammern". Die Idee ist jetzt, dass wir mit Hilfe dieser Formel die
+        Funktionen $p_I, g_I$ für alle Intervalle $I \subseteq [0,\dots,n-1]$
+        berechnen und dann mittels $s_i = x_i \oplus y_i \oplus c_i$ unmittelbar
+        die Binärdarstellung der Summe $x+y$ ausgeben können. Das Problem: es
+        gibt zu viele Intervalle, nämlich $1 + 2 + \dots + n = {n+1 \choose 2} =
+        \Theta(n^2)$ viele. Der Trick: wir beschränken uns auf besonders schöne
+        Intervalle, nämlich<i>Binärintervalle</i>.
       </p>
       <div class="well definition out">
         <p>
@@ -413,12 +412,9 @@
           <span class="nowrap">$[32,47] = [32,39] \cup [40,47]$.</span>
           In unserer Sternchen-Notation: $$ [10****] = [100***] \cup [101***] $$
           Ganz allgemein gilt $[c*^{k+1}] = [c0*^k] \cup [c1*^k]$ und somit, mit
-          Hilfe von Beobachtung 1.10: $$ $$\begin{align*} p<i
-            >{[c*^{k+1}]}&amp;= g</i
-          >{[c1<b>^k]} \vee (p<i>{c0*^k} \wedge p</i>{c1</b>^k})\\ g<i
-            >{[c*^{k+1}]}&amp;= g</i
-          >{[c1<b>^k]} \vee (g<i>{c0*^k} \wedge p</i>{c1</b>^k}) \ .
-          \end{align*}$$ $$
+          Hilfe von Beobachtung 1.10: $$ \begin{align*} p_{[c*^{k+1}]}&amp;=
+          g_{[c1*^k]} \vee (p_{c0*^k} \wedge p_{c1*^k})\\ g_{[c*^{k+1}]}&amp;=
+          g_{[c1*^k]} \vee (g_{c0*^k} \wedge p_{c1*^k}) \ . \end{align*} $$
         </p>
         <p>
           Wir basteln uns also am Besten ein
@@ -537,9 +533,8 @@
           <span class="nowrap">$l := (\alpha 0 1^a 1^b)_2 $.</span>
           Dann gilt
           <span class="nowrap">$l+1 = (\alpha 1 0^a 0^b)_2$.</span>
-          Es gilt also $$ $$\begin{align*} [l+1, k] = [(\alpha 1 0^a 0^b)<i
-            >2, (\alpha 1 0^a 1^b)</i
-          >2] = [\alpha 1 0^a <b>^b] \ , \end{align</b>}$$ $$
+          Es gilt also $$ \begin{align*} [l+1, k] = [(\alpha 1 0^a 0^b)_2,
+          (\alpha 1 0^a 1^b)_2] = [\alpha 1 0^a *^b] \ , \end{align*} $$
         </p>
         <p>
           es handelt sich bei $[l+1,k]$ also um ein Binärintervall. Eine
@@ -694,11 +689,10 @@
         <p>
           <b>Übungsaufgabe 2.3.3</b>
           Bauen Sie einen Schaltkreis für die Boolesche Funktion "less-than": $$
-          $$\begin{align*} LT : \{0,1\}^{n} \times \{0,1\}^n \rightarrow \{0,1\}
+          \begin{align*} LT : \{0,1\}^{n} \times \{0,1\}^n \rightarrow \{0,1\}
           \\ LT(\mathbf{x}, \mathbf{y}) = \begin{cases} 1&amp;\textnormal{ wenn
-          <span class="nowrap">$(\mathbf{x})_2 \lt (\mathbf{y})_2$,</span>
-          } \\ 0&amp;\textnormal{ sonst.} \end{cases} \end{align*}$$ $$ der also
-          $\mathbf{x}, \mathbf{y}$ als
+          $(\mathbf{x})_2 \lt (\mathbf{y})_2$, } \\ 0&amp;\textnormal{ sonst.}
+          \end{cases} \end{align*} $$ der also $\mathbf{x}, \mathbf{y}$ als
           <span class="nowrap">$n$-stellige</span>
           Binärzahlen interpretiert und ausgibt, ob die erste kleiner ist als
           die zweite.
