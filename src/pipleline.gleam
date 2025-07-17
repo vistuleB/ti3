@@ -126,7 +126,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
         ])),
         #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}),
       ]),
-      dl.rename_with_attributes_and_text([#("QED", "span", "\\(\\square\\)", [#("class", "qed")])]),
+      dl.rename_with_appended_attributes_and_prepended_text([#("QED", "span", "\\(\\square\\)", [#("class", "qed")])]),
       dl.rename(#("Index", "div")),
       dl.rename(#("Menu", "div")),
       dl.rename(#("LeftMenu", "div")),
