@@ -245,9 +245,14 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
 
 pub fn main() {
   let args = argv.load().arguments
+  // automatically add --prettier flag if not already present
+  let args_with_prettier = case list.contains(args, "--prettier") {
+    True -> args
+    False -> list.append(args, ["--prettier"])
+  }
 
   use amendments <- infra.on_error_on_ok(
-    vr.process_command_line_arguments(args, ["--prettier"]),
+    vr.process_command_line_arguments(args_with_prettier, ["--prettier"]),
     fn(error) {
       io.println("")
       io.println("command line error: " <> ins(error))
