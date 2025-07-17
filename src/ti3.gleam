@@ -7,6 +7,7 @@ import gleam/result
 import gleam/string.{inspect as ins}
 import infrastructure as infra
 import pipleline.{pipeline}
+import simplifile
 import vxml.{type VXML}
 import vxml_renderer as vr
 import writerly as wp
@@ -214,6 +215,34 @@ fn cli_usage_supplementary() {
   io.println("         -> run npm prettier on emitted content")
 }
 
+fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
+  case simplifile.read_directory(output_dir) {
+    Ok(files) -> {
+      files
+      |> list.filter(fn(file) { string.ends_with(file, ".html") })
+      |> list.map(fn(file) { 
+        let file_path = output_dir <> "/" <> file
+        case simplifile.delete(file_path) {
+          Ok(_) -> {
+            io.println("Deleted: " <> file_path)
+            Ok(Nil)
+          }
+          Error(error) -> {
+            io.println("Warning: Could not delete " <> file_path <> ": " <> string.inspect(error))
+            Ok(Nil)  // continue even if some files can't be deleted
+          }
+        }
+      })
+      |> result.all
+      |> result.map(fn(_) { Nil })
+    }
+    Error(error) -> {
+      io.println("Warning: Could not read output directory " <> output_dir <> ": " <> string.inspect(error))
+      Ok(Nil)  // continue even if directory can't be read
+    }
+  }
+}
+
 pub fn main() {
   let args = argv.load().arguments
 
@@ -248,6 +277,17 @@ pub fn main() {
   let debug_options =
     vr.empty_renderer_debug_options("../renderer_artifacts")
     |> vr.amend_renderer_debug_options_by_command_line_amendment(amendments, pipeline())
+
+  // clean up HTML files before rendering
+  case parameters.output_dir {
+    Some(output_dir) -> {
+      case cleanup_html_files(output_dir) {
+        Ok(_) -> io.println("HTML cleanup completed")
+        Error(error) -> io.println("HTML cleanup failed: " <> error)
+      }
+    }
+    _ -> Nil
+  }
 
   case vr.run_renderer(renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
