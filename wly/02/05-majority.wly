@@ -133,10 +133,7 @@
         {n \choose \ceil{\frac{n}{2}}} \geq \frac{2^n} {n+1} \ ,
         $$
         wie behauptet.
-        |> span
-            class=qed
-
-            \(\square\)
+        |> QED
 
     Unsere neue, bessere Konstruktion benötigt also immer noch mindestens \(\frac{2^n}{n+1}\)
     Terme,
@@ -267,7 +264,6 @@
     einfach wie genial.
     
     |> Lemma
-        test=test
         *(2-for-3 Adder)* 
         Es gibt einen Schaltkreis mit \(O(n)\) Gates,
         Tiefe 2 und Fan-In 2, der als Input drei
@@ -300,9 +296,7 @@
                 loading=lazy
         Dieser Schaltkreis hat insgesamt \(O(n)\) Gates und Tiefe 2 (wobei wir
         die NOT-Gates im $\oplus$-Gate nicht mitzählen).
-        |> span
-            class=qed
-            \(\square\)
+        |> QED
 
     Wir interpretieren nun die \(n\) Inputs
     \(x_1,\dots,x_n\) von Majoroty als einstellige Binärzahlen, sortieren sie in
@@ -484,10 +478,7 @@
             Wenn nun \(\maj_n(\x) = 0\) ist, dann gibt es mindestens \(k+1\) Stellen \(i\) mit
             \(x_i = 0\), und somit ist \(C(\x)\) auch wieder mit Wahrscheinlichkeit mindestens
             \(\frac{k+1}{n+1}\) korrekt.
-            |> span
-                class=qed
-
-                \(\square\)
+            |> QED
 
         Um eine Analogie aus dem Alltag zu bemühen: wenn Sie für eine
         Wahlprognose _einen_ zufällig ausgewählten Bürger befragen, so
@@ -549,10 +540,7 @@
 
             Die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist also mindestens
             $\frac{3}{2} \delta - \frac{1}{2} \delta^3$.
-            |> span
-                class=qed
-
-                \(\square\)
+            |> QED
 
         Wir beginnen nun mit der Verteilung $\mathcal{C}_0$ über Schaltkreise der
         Größe 1 und definieren 
@@ -606,10 +594,7 @@
             \end{align*}
 
             Somit hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit $3 \epsilon^2$.
-            |> span
-                class=qed
-
-                \(\square\)
+            |> QED
 
         Für $i^* := \log_{5/4} n$ hat $\mathcal{C}_{i^*}$ eine Fehlerwahrscheinlichkeit von
         höchstens $1/4$. Für $i^* + 1$ wird das zu $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und
@@ -715,9 +700,7 @@
 
         Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe $c \log_2 n$ hat also
         insgesamt höchstens $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$ Gates.
-        |> span
-            class=qed
-            \(\square\)
+        |> QED
 
     |> Exercise
         Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen

@@ -89,12 +89,12 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
             "Sub", "SubTitle", "Definition", "Beobachtung", "Behauptung", "Theorem", "Lemma",
             "thead", "tbody", "tr", "td", "section",
-            "Index", "Menu",
+            "Index", "Menu", "QED",
             "Highlight",
             "h1", "h2", "h3", "pre", "div", "br", "hr",
             "figure", "img"
           ],
-          ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle"]
+          ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED"]
         ),
       ),
       dl.unwrap(["WriterlyBlankLine"]),
@@ -126,6 +126,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
         ])),
         #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}),
       ]),
+      dl.rename_with_attributes_and_text([#("QED", "span", "\\(\\square\\)", [#("class", "qed")])]),
       dl.rename(#("Index", "div")),
       dl.rename(#("Menu", "div")),
       dl.rename(#("LeftMenu", "div")),

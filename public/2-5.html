@@ -163,11 +163,9 @@
           des Gesamtbetrages sein. Formal: $$ 2^n = \sum_{k=0}^n {n \choose k}
           \leq \sum_{k=0}^n {n \choose \ceil{\frac{n}{2}}} = (n+1) \cdot {n
           \choose \ceil{\frac{n}{2}}} $$ und somit $$ {n \choose
-          \ceil{\frac{n}{2}}} \geq \frac{2^n} {n+1} \ , $$ wie behauptet.<span
-            class="qed"
-            >$\square$</span
-          >
+          \ceil{\frac{n}{2}}} \geq \frac{2^n} {n+1} \ , $$ wie behauptet.
         </p>
+        <span class="qed">\(\square\)</span>
       </div>
       <p class="main-column">
         Unsere neue, bessere Konstruktion benötigt also immer noch mindestens
@@ -331,7 +329,7 @@ def binomial(n,k):
         wieder verfehlt, wenn auch knapp. Die Idee, die eine Tiefe von $O (\log
         n)$ erreichen wird, ist ebenso einfach wie genial.
       </p>
-      <div test="test" class="well lemma out">
+      <div class="well lemma out">
         <p>
           <b>Lemma 2.5.3</b>
           <b>(2-for-3 Adder)</b>
@@ -380,8 +378,9 @@ def binomial(n,k):
           Dieser Schaltkreis hat insgesamt $O(n)$ Gates und Tiefe 2 (wobei wir
           die NOT-Gates im
           <span class="nowrap">$\oplus$-Gate</span>
-          nicht mitzählen).<span class="qed">$\square$</span>
+          nicht mitzählen).
         </p>
+        <span class="qed">\(\square\)</span>
       </div>
       <p class="main-column">
         Wir interpretieren nun die $n$ Inputs $x_1,\dots,x_n$ von Majoroty als
@@ -592,8 +591,9 @@ def binomial(n,k):
             $\maj_n(\x) = 0$ ist, dann gibt es mindestens $k+1$ Stellen $i$ mit
             <span class="nowrap">$x_i = 0$,</span>
             und somit ist $C(\x)$ auch wieder mit Wahrscheinlichkeit mindestens
-            $\frac{k+1}{n+1}$ korrekt.<span class="qed">$\square$</span>
+            $\frac{k+1}{n+1}$ korrekt.
           </p>
+          <span class="qed">\(\square\)</span>
         </div>
         <p>
           Um eine Analogie aus dem Alltag zu bemühen: wenn Sie für eine
@@ -683,8 +683,9 @@ def binomial(n,k):
             Die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist also mindestens
             <span class="nowrap"
               >$\frac{3}{2} \delta - \frac{1}{2} \delta^3$.</span
-            ><span class="qed">$\square$</span>
+            >
           </p>
+          <span class="qed">\(\square\)</span>
         </div>
         <p>
           Wir beginnen nun mit der Verteilung $\mathcal{C}_0$ über Schaltkreise
@@ -751,9 +752,9 @@ def binomial(n,k):
           </p>
           <p>
             Somit hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit
-            <span class="nowrap">$3 \epsilon^2$.</span
-            ><span class="qed">$\square$</span>
+            <span class="nowrap">$3 \epsilon^2$.</span>
           </p>
+          <span class="qed">\(\square\)</span>
         </div>
         <p>
           Für $i^* := \log_{5/4} n$ hat $\mathcal{C}_{i^*}$ eine
@@ -897,8 +898,9 @@ def binomial(n,k):
         <p>
           Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe $c \log_2 n$ hat also
           insgesamt höchstens $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$
-          Gates.<span class="qed">$\square$</span>
+          Gates.
         </p>
+        <span class="qed">\(\square\)</span>
       </div>
       <div class="well exercise out">
         <p>

@@ -370,9 +370,7 @@
         4 (n-1) + 2n = 6n - 4 \ ,
         $$
         wie behauptet.
-        |> span
-            class=qed
-            \(\square\)
+        |> QED
 
     Eine anschließende Bemerkung: der Schaltkreis
     besteht ausschließlich aus AND- und OR-Gates; er enthält
@@ -510,9 +508,7 @@
                 loading=lazy
                 
         Es reichen also in der Tat \(2n\) Basis-Gates aus. 
-        |> span
-            class=qed
-            \(\square\)
+        |> QED
 
     Wir kombinieren wir nun die beiden Lemmas und erhalten einen Schaltkreis der Tiefe \( 4
     \ceil {
