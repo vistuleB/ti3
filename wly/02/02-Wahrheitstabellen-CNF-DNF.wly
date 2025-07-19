@@ -96,6 +96,7 @@
     Das Ergebnis ist im Allgemeinen sehr groß, aber was erwarten Sie bei einer Tabelle mit $2^n$ Zeilen?
     
     |> Exercise
+        test=test
         
         Führen Sie das rekursive Verfahren durch, um für die folgende Funktion auf 4 Variablen einen Schaltkreis zu bauen: 
         
