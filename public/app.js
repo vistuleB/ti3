@@ -91,12 +91,6 @@ const onTouchEnd = (e) => {
   smoothRecenterMaybe();
 };
 
-document.addEventListener("DOMContentLoaded", onLoad);
-window.addEventListener("resize", handleResize);
-document.addEventListener("click", smoothRecenter);
-document.addEventListener("scrollend", onScrollEnd);
-document.addEventListener("touchend", onTouchEnd);
-
 const onImgClick = (e) => {
   const image = e.srcElement;
   if (image.classList.contains("constrained")) {
@@ -105,3 +99,42 @@ const onImgClick = (e) => {
     image.classList.add("constrained");
   }
 };
+
+// chapter navigation functions
+const navigateToChapter = (elementId) => {
+  const element = document.getElementById(elementId);
+  if (element && element.tagName === 'A' && element.href) {
+    window.location.href = element.href;
+  }
+};
+
+const onKeyDown = (e) => {
+  // check if any input fields are focused to avoid interfering with typing
+  const activeElement = document.activeElement;
+  const isInputFocused = activeElement && (
+    activeElement.tagName === 'INPUT' || 
+    activeElement.tagName === 'TEXTAREA' || 
+    activeElement.isContentEditable
+  );
+  
+  if (isInputFocused) return;
+  
+  switch(e.key) {
+    case 'ArrowLeft':
+      e.preventDefault();
+      navigateToChapter('prev-chapter');
+      break;
+    case 'ArrowRight':
+      e.preventDefault();
+      navigateToChapter('next-chapter');
+      break;
+  }
+};
+
+// event listeners
+document.addEventListener("DOMContentLoaded", onLoad);
+window.addEventListener("resize", handleResize);
+document.addEventListener("click", smoothRecenter);
+document.addEventListener("scrollend", onScrollEnd);
+document.addEventListener("touchend", onTouchEnd);
+document.addEventListener('keydown', onKeyDown);
