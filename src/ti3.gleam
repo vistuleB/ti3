@@ -17,6 +17,9 @@ pub type FragmentType {
   Index
 }
 
+type TI3Fragment(z) = vr.OutputFragment(FragmentType, z)
+type BL = List(BlamedLine)
+
 pub type TI3SplitterError {
   NoChapters
   MoreThanOneIndex
@@ -36,7 +39,7 @@ fn index_error(e: infra.SingletonError) -> TI3SplitterError {
 
 fn ti3_splitter(
   root: VXML
-) -> Result(List(vr.OutputFragment(FragmentType, VXML)), TI3SplitterError) {
+) -> Result(List(TI3Fragment(VXML)), TI3SplitterError) {
   use index <- result.try(
     infra.descendants_with_class(root, "index")
     |> infra.read_singleton
@@ -98,8 +101,8 @@ fn ti3_splitter(
 
 // index emitter - handles index fragments
 fn index_emitter(
-  fragment: vr.OutputFragment(FragmentType, VXML),
-) -> Result(vr.OutputFragment(FragmentType, List(BlamedLine)), String) {
+  fragment: TI3Fragment(VXML),
+) -> Result(TI3Fragment(BL), String) {
   let lines =
     list.flatten([
       [
@@ -129,8 +132,8 @@ fn index_emitter(
 
 // chapter emitter - handles chapter fragments
 fn chapter_emitter(
-  fragment: vr.OutputFragment(FragmentType, VXML),
-) -> Result(vr.OutputFragment(FragmentType, List(BlamedLine)), String) {
+  fragment: TI3Fragment(VXML),
+) -> Result(TI3Fragment(BL), String) {
   let assert Chapter(n) = fragment.classifier
   let lines =
     list.flatten([
@@ -161,8 +164,8 @@ fn chapter_emitter(
 
 // sub-chapter emitter - handles sub fragments
 fn sub_chapter_emitter(
-  fragment: vr.OutputFragment(FragmentType, VXML),
-) -> Result(vr.OutputFragment(FragmentType, List(BlamedLine)), String) {
+  fragment: TI3Fragment(VXML),
+) -> Result(TI3Fragment(BL), String) {
   let assert Sub(chapter_n, sub_n) = fragment.classifier
   let lines =
     list.flatten([
@@ -193,8 +196,8 @@ fn sub_chapter_emitter(
 
 // main emitter that dispatches to appropriate sub-emitters
 pub fn our_emitter(
-  fragment: vr.OutputFragment(FragmentType, VXML),
-) -> Result(vr.OutputFragment(FragmentType, List(BlamedLine)), String) {
+  fragment: TI3Fragment(VXML),
+) -> Result(TI3Fragment(BL), String) {
   case fragment.classifier {
     Index -> index_emitter(fragment)
     Chapter(_) -> chapter_emitter(fragment)
