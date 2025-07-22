@@ -6,10 +6,10 @@ import prefabricated_pipelines as pp
 pub fn pipeline() -> List(infra.Desugarer) {
   [
     [ dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])) ],
-    pp.create_mathblock_and_math_elements(
-      #([infra.DoubleDollar], infra.DoubleDollar),
-      #([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar),
-    ),
+    pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
+    pp.create_math_elements([infra.SingleDollar], infra.SingleDollar),
+    pp.create_math_elements([infra.BackslashParenthesis], infra.SingleDollar),
+    pp.create_math_elements([infra.BackslashSquareBracket], infra.SingleDollar),
     [
       dl.auto_generate_child_if_missing_from_attribute(#(
         "Chapter",        // parent tag
