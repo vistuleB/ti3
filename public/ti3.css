@@ -425,3 +425,29 @@ mjx-container::-webkit-scrollbar-thumb:hover {
         transform: scale(0.8);
     }
 }
+
+/* Add this to override your existing MathJax fixes */
+.well p, .main-column p {
+    overflow-x: scroll; /* Changed from 'auto' to 'scroll' for always visible */
+    overflow-y: visible;
+    scrollbar-width: thin; /* Firefox */
+}
+
+.well p mjx-container, .main-column p mjx-container {
+    max-width: none !important;
+}
+
+/* Webkit scrollbar styling to ensure visibility */
+.well p::-webkit-scrollbar, .main-column p::-webkit-scrollbar {
+    height: 8px;
+    background: #f1f1f1; /* Always visible track */
+}
+
+.well p::-webkit-scrollbar-thumb, .main-column p::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.well p::-webkit-scrollbar-thumb:hover, .main-column p::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
