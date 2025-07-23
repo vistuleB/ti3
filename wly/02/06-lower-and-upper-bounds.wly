@@ -119,7 +119,7 @@
     haben einfach niedrige Komplexität. Das liegt wohl in der Natur der Sache: wir addieren, multiplizieren, bauen Brücken, Häuser, Flugzeuge, Computer, weil wir es _können_, weil also die dafür benötigten Berechnungen effizient durchführbar sind.
     
     |> div
-        class=well container subtheorem
+        class=well subtheorem
                         
         *Forschungsprojekt.*
         \ Finde eine konkret
@@ -132,7 +132,7 @@
     ist, einen Kandidaten. Also zum Beispiel Graphenfärbbarkeit.
     
     |> div
-        class=well container subtheorem
+        class=well subtheorem
         
         *Entscheidungsproblem 3-Färbbarkeit.*
         \ Gegeben
