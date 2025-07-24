@@ -446,8 +446,7 @@
             \Pr_{C \sim \mathcal{C}_0} [C(\x) = \maj_n(\x)] = \frac{1}{2} + \frac{1}{2n} \ .
             $$
             
-        |> div
-            class=well subtheorem
+        |> SubTheorem
 
             *Beweis.*
             Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist extrem einfach.

@@ -36,8 +36,7 @@
         mit $n$ Variablen. Warum? Die Wahrheitstabelle hat $2^n$ Zeilen. Sie könnne sich
         also $2^n$ mal für $0$ oder $1$ entscheiden.
         
-        |> div
-            class=well subtheorem
+        |> SubTheorem
             
             \ Sei $s \geq n \geq 1$. Dann gibt es
             höchstens
@@ -118,8 +117,7 @@
     $\frac{2^n}{2n}$ Gates auskommen, ist verschwindend klein. Fast _alle_ Funktionen brauchen also riesige Schaltkreise. In einem Gewissen Sinne haben wir also einfach Glück: die Funktionen, die uns interessieren, wie $n$-Bit-Addition, Majority, Parity und so weiter,
     haben einfach niedrige Komplexität. Das liegt wohl in der Natur der Sache: wir addieren, multiplizieren, bauen Brücken, Häuser, Flugzeuge, Computer, weil wir es _können_, weil also die dafür benötigten Berechnungen effizient durchführbar sind.
     
-    |> div
-        class=well subtheorem
+    |> SubTheorem
                         
         *Forschungsprojekt.*
         \ Finde eine konkret
@@ -131,8 +129,7 @@
     Entscheidungsproblem, dass für eine "schwierige" Komplexitätsklasse vollständig
     ist, einen Kandidaten. Also zum Beispiel Graphenfärbbarkeit.
     
-    |> div
-        class=well subtheorem
+    |> SubTheorem
         
         *Entscheidungsproblem 3-Färbbarkeit.*
         \ Gegeben
@@ -355,8 +352,7 @@
         auftreten, und wir können sparen. Dafür berechnen wir
         vorsorglich _alle_ Funktionen in $z_1,\dots,z_k$.
         
-        |> div
-            class=well subtheorem
+        |> SubTheorem
             
             *Lemma*
             \ Es gibt einen

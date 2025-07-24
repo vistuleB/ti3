@@ -343,16 +343,14 @@
             Falle ist es mir angenehmer, \(P(n-1) \Rightarrow P(n)\) zu zeigen. Wir dürfen
             also die _Induktionshypothese_ \(P(n-1)\) als gegeben annehmen:
             
-            |> div
-                class=well subtheorem
+            |> SubTheorem
 
                 *Induktionshypothese.* Zu jeder Booleschen Funktion in \(n-1\) Variablen
                 gibt es einen äquivalenten Schaltkreis.
                 
             und wollen den Induktionsschritt vollziehen, also \(P(n)\) zeigen:
             
-            |> div
-                class=well subtheorem
+            |> SubTheorem
 
                 *Ziel des Induktionsschritts.* Zu jeder Booleschen Funktion in \(n\) Variablen
                 gibt es einen äquivalenten Schaltkreis.
@@ -520,8 +518,7 @@
             Für alle \(x_1,\dots,x_n\) gilt
             \(f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n) \ .\)
             
-        |> div
-            class=well subtheorem
+        |> SubTheorem
 
             *Beweis.* Wir machen eine Fallunterscheidung nach dem Wert von \(x_1\).
             |> ul
@@ -691,8 +688,7 @@
         
             Für alle \(x_1,\dots,x_n\) gilt \(T_{\mathbf{a}} \leq T'_{\mathbf{a}}\).
         
-        |> div
-            class=well subtheorem
+        |> SubTheorem
 
             *Beweis.* Definieren wir zusätzlich noch \(T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
             \bar{x}_i\),
@@ -714,8 +710,7 @@
         
             \(F \equiv F'\), d.h. sie berechnen beide dieselbe Funktion, nämlich \(f\).
             
-        |> div
-            class=well subtheorem
+        |> SubTheorem
 
             *Beweis.* Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
             wir zeigen, dass
