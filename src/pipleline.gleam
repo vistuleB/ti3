@@ -7,9 +7,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
   [
     [ dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])) ],
     pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
-    pp.create_math_elements([infra.SingleDollar], infra.SingleDollar),
-    pp.create_math_elements([infra.BackslashParenthesis], infra.SingleDollar),
-    pp.create_math_elements([infra.BackslashSquareBracket], infra.SingleDollar),
+    pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar),
     [
       dl.auto_generate_child_if_missing_from_attribute(#(
         "Chapter",        // parent tag
@@ -76,7 +74,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
     [
       dl.find_replace__outside(#("\\$", "$"), ["Math", "MathBlock"]),
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
-      dl.fold_contents_into_text__batch(["MathBlock", "Math"]),
+      dl.fold_contents_into_text("Math"),
       dl.group_consecutive_children__outside(
         #(
           "p",
@@ -127,6 +125,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
         #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}, ""),
       ]),
       dl.rename_with_appended_attributes_and_prepended_text([#("QED", "span", "\\(\\square\\)", [#("class", "qed")])]),
+      dl.rename(#("MathBlock", "div")),
       dl.rename(#("Index", "div")),
       dl.rename(#("Menu", "div")),
       dl.rename(#("LeftMenu", "div")),
