@@ -71,13 +71,6 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.prepend_text_node(#("ChapterTitle","::øøChapterCounter. ")), 
       dl.prepend_text_node(#("SubTitle", "::øøChapterCounter.::øøSubCounter ")),
       dl.counters_substitute_and_assign_handles(),
-    ],
-    pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
-    pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
-    pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
-    [
-      dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
-      dl.fold_contents_into_text("Math"),
       dl.group_consecutive_children__outside(
         #(
           "p",
@@ -98,7 +91,17 @@ pub fn pipeline() -> List(infra.Desugarer) {
         ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED"]
       ),
       dl.unwrap("WriterlyBlankLine"),
+      dl.concatenate_text_nodes(),
       dl.delete_text_nodes_with_singleton_empty_line(),
+      dl.trim("p"),
+      dl.delete_if_empty("p"),
+    ],
+    pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
+    pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
+    pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
+    [
+      dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
+      dl.fold_contents_into_text("Math"),
       dl.append_attribute__batch([
         #("Index", "class", "index"),
         #("Menu", "class", "menu"),
