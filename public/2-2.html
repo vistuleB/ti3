@@ -26,13 +26,13 @@
       <div class="menu">
         <div class="menu-left">
           <a href="./index.html">Inhaltsverzeichnis</a
-          ><a id="prev-chapter" href="./2-1.html">&lt;&lt; Kapitel 2.1</a>
+          ><a id="prev-page" href="./2-1.html">&lt;&lt; Kapitel 2.1</a>
         </div>
         <div class="menu-right">
           <a
             href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
             >zür Kursübersicht</a
-          ><a id="next-chapter" href="./2-3.html">Kapitel 2.3 &gt;&gt;</a>
+          ><a id="next-page" href="./2-3.html">Kapitel 2.3 &gt;&gt;</a>
         </div>
       </div>
       <div class="main-column page-title">2.2 Wahrheitstabellen, CNF, DNF</div>
@@ -56,13 +56,13 @@
         (englisch
         <i>truth table</i>). Hier sehen Sie ein Beispiel:
       </p>
-      <p class="main-column">
+      <div class="math-block">
         $$ \begin{array}{ccc|c} x &amp; y &amp; z &amp; f \\ \hline 0 &amp; 0
         &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp;
         1 \\ 0 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 0 &amp; 0 &amp; 1 \\ 1 &amp; 0
         &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp;
         1 \\ \end{array} $$
-      </p>
+      </div>
       <p class="main-column">
         Wie können wir von so einer Tabelle ausgehend einen Schaltkreis bauen,
         der diese Funktion berechnet? Ich stelle Ihnen drei Herangehensweisen
@@ -73,14 +73,14 @@
         Wir teilen die Tabelle in die obere Hälfte (wo $x = 0$ gilt) und die
         untere Hälfte:
       </p>
-      <p class="main-column">
+      <div class="math-block">
         $$ \begin{align*} \color{red}{ \begin{array}{ccc|c} x &amp; y &amp; z
         &amp; f \\\hline 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 1
         \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 1 \end{array}
         }\\ \color{blue}{ \begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 1 \\ 1
         &amp; 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp;
         1 &amp; 1\\ \end{array} } \end{align*} $$
-      </p>
+      </div>
       <p class="main-column">
         Die obere, roten Hälfte kommt Ihnen vielleicht bekannt vor: es ist genau
         die Wahrheitstabelle von
@@ -160,11 +160,11 @@
           \{1,\dots,n\}$ ein Index und $b \in \{0,1\}$ ein Wert. Dann ist
           $f|_{x_i=b}$ eine neue Funktion, und zwar
         </p>
-        <p>
+        <div class="math-block">
           $$ \begin{align*} f|_{x_i=b} &amp;: \{0,1\}^{n-1} \rightarrow \{0,1\}
           \\ (x_1,\dots,x_{i-1}, x_{i+1}, \dots, x_n) &amp;\mapsto
           f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}). \end{align*} $$
-        </p>
+        </div>
         <p>
           In Worten: wir fixieren den
           <span class="nowrap">$i$-ten</span>
@@ -182,7 +182,7 @@
           Führen Sie das rekursive Verfahren durch, um für die folgende Funktion
           auf 4 Variablen einen Schaltkreis zu bauen:
         </p>
-        <p>
+        <div class="math-block">
           $$ \begin{array}{cccc|c} u &amp; x &amp; y &amp; z &amp; f \\ \hline 0
           &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
           \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 1
@@ -193,7 +193,7 @@
           \\ 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 0 &amp; 0
           &amp; 1 \\ 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1
           &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\ \end{array} $$
-        </p>
+        </div>
       </div>
       <h3 class="main-column">Bottom-Up, als DNF</h3>
       <p class="main-column">
@@ -205,7 +205,7 @@
         haben drei Variable $x,y,z$ und einen AND-Ausdruck, der jede Variable
         oder deren Negation enthält, also zum Beispiel
       </p>
-      <p class="main-column">$$ x \wedge \bar{y} \wedge z \ . $$</p>
+      <div class="math-block">$$ x \wedge \bar{y} \wedge z \ . $$</div>
       <p class="main-column">
         Von den 8 möglichen Input-Tupeln gibt es nur eins, für das dieser
         Ausdruck eine 1 ausgibt, in diesem Falle
@@ -215,7 +215,7 @@
         zusammenführen. Einen Ausdruck, der aus einem AND von Variablen oder
         deren Negation besteht, nennt man auch einen Term.
       </p>
-      <p class="main-column">
+      <div class="math-block">
         $$ \begin{array}{ccc|c|c} x &amp; y &amp; z &amp; f &amp; \text{Term} \\
         \hline 0 &amp; 0 &amp; 0 &amp; 0 &amp; \\ 0 &amp; 0 &amp; 1 &amp; 1
         &amp; \bar{x} \wedge \bar{y} \wedge z \\ 0 &amp; 1 &amp; 0 &amp; 1 &amp;
@@ -224,7 +224,7 @@
         \bar{y} \wedge \bar{z} \\ 1 &amp; 0 &amp; 1 &amp; 1 &amp; x \wedge
         \bar{y} \wedge z \\ 1 &amp; 1 &amp; 0 &amp; 0 &amp; \\ 1 &amp; 1 &amp; 1
         &amp; 1 &amp; x \wedge y \wedge z \\ \end{array} $$
-      </p>
+      </div>
       <p class="main-column">
         Mit einem großen OR zusammengeführt ergibt das dann
       </p>
@@ -246,11 +246,11 @@
         ausgehende Kante hat. Konkret bedeutet dies, dass man diesen Schaltkreis
         als logische Formel hinschreiben kann:
       </p>
-      <p class="main-column">
+      <div class="math-block">
         $$ (\bar{x} \wedge \bar{y} \wedge z) \vee (\bar{x} \wedge y \wedge
         \bar{z}) \vee (\bar{x} \wedge y \wedge z) \vee (x \wedge \bar{y} \wedge
         \bar{z}) \vee (x \wedge \bar{y} \wedge z) \vee (x \wedge y \wedge z) $$
-      </p>
+      </div>
       <div class="well definition out">
         <p>
           <b>Definition 2.2.2</b>
@@ -303,14 +303,14 @@
         $(\bar{x} \vee \bar{y} \vee z)$ verstehen als " $(x,y,z)$ darf nicht
         $(1,1,0)$ sein." An dem obigen Beispiel ergibt dies:
       </p>
-      <p class="main-column">
+      <div class="math-block">
         $$ \begin{array}{ccc|c|c} x &amp; y &amp; z &amp; f &amp; \text{Term} \\
         \hline 0 &amp; 0 &amp; 0 &amp; 0 &amp; x \vee y \vee z \\ 0 &amp; 0
         &amp; 1 &amp; 1 &amp; \\ 0 &amp; 1 &amp; 0 &amp; 1 &amp; \\ 0 &amp; 1
         &amp; 1 &amp; 1 &amp; \\ 1 &amp; 0 &amp; 0 &amp; 1 &amp; \\ 1 &amp; 0
         &amp; 1 &amp; 1 &amp; \\ 1 &amp; 1 &amp; 0 &amp; 0 &amp; \bar{x} \vee
         \bar{y} \vee z \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; \\ \end{array} $$
-      </p>
+      </div>
       <p class="main-column">
         Einen Ausdruck der Form
         <span class="nowrap">$\bar{x} \vee \bar{y} \vee z$,</span>
@@ -348,10 +348,10 @@
         noch nachträglich bearbeiten und kleiner machen. Zum Beispiel können wir
         "nebeneinanderstehende" Terme zu einem einzigen zusammenziehen, z.B. :
       </p>
-      <p class="main-column">
+      <div class="math-block">
         $$ (\bar{x} \wedge y \wedge \bar{z}) \vee (\bar{x} \wedge y \wedge z)
         \equiv \bar{x} \wedge y \ . $$
-      </p>
+      </div>
       <div class="well exercise out">
         <p>
           <b>Übungsaufgabe 2.2.4</b>

@@ -26,13 +26,13 @@
       <div class="menu">
         <div class="menu-left">
           <a href="./index.html">Inhaltsverzeichnis</a
-          ><a id="prev-chapter" href="./2-3.html">&lt;&lt; Kapitel 2.3</a>
+          ><a id="prev-page" href="./2-3.html">&lt;&lt; Kapitel 2.3</a>
         </div>
         <div class="menu-right">
           <a
             href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
             >zür Kursübersicht</a
-          ><a id="next-chapter" href="./2-5.html">Kapitel 2.5 &gt;&gt;</a>
+          ><a id="next-page" href="./2-5.html">Kapitel 2.5 &gt;&gt;</a>
         </div>
       </div>
       <div class="main-column page-title">
@@ -85,10 +85,15 @@
         <p>
           <b>Definition 2.4.1</b>
           Eine Boolesche Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ heißt
-          <i>monoton</i>, wenn $$ \forall \mathbf{x} \leq \mathbf{y} \in
-          \{0,1\}^n \ : \ f(\mathbf{x}) \leq f(\mathbf{y}) \ . $$ In anderen
-          Worten: wenn wir ein Input-Bit von 0 auf 1 ändern, kann das Output-Bit
-          nicht von 1 auf 0 umkippen.
+          <i>monoton</i>, wenn
+        </p>
+        <div class="math-block">
+          $$ \forall \mathbf{x} \leq \mathbf{y} \in \{0,1\}^n \ : \
+          f(\mathbf{x}) \leq f(\mathbf{y}) \ . $$
+        </div>
+        <p>
+          In anderen Worten: wenn wir ein Input-Bit von 0 auf 1 ändern, kann das
+          Output-Bit nicht von 1 auf 0 umkippen.
         </p>
       </div>
       <div class="well exercise out">
@@ -449,10 +454,12 @@ public boolean constantFalse(boolean x) {
               zweimal deklariert haben, einmal als Funktion mit 0
               Input-Variablen, einmal als Funktion mit einer Input-Variablen. Um
               hundertprozentig korrekt zu sein, müssten wir Funktionen
-              $\textnormal{zero}_n$ definieren als $$ \begin{align*}
-              \textnormal{zero}_n&amp;: \{0,1\}^n \rightarrow \{0,1\} \\
-              (x_1,\dots,x_n)&amp;\mapsto 0 \ . \end{align*} $$
+              $\textnormal{zero}_n$ definieren als
             </p>
+            <div class="math-block">
+              $$ \begin{align*} \textnormal{zero}_n&amp;: \{0,1\}^n \rightarrow
+              \{0,1\} \\ (x_1,\dots,x_n)&amp;\mapsto 0 \ . \end{align*} $$
+            </div>
             <p>
               In der Praxis gehen wir in der Mathematik deutlich laxer mit
               Notation um und hoffen, dass der Leser aus dem Kontext die
@@ -509,11 +516,11 @@ public boolean constantFalse(boolean x) {
             Frage kommt. Wir definieren zwei neue, "kleinere" Funktionen $f_0,
             f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
           </p>
-          <p>
+          <div class="math-block">
             $$ \begin{align*} f_0 (x_2, \dots, x_n)&amp;:= f(0, x_2, \dots, x_n)
             \\ f_1 (x_2, \dots, x_n)&amp;:= f(1, x_2, \dots, x_n) \ .
             \end{align*} $$
-          </p>
+          </div>
           <p>
             In anderen Worten, wir fixieren das erste Input-Bit auf einen
             konstanten Wert und erhalten so eine Funktion in $n-1$ Variablen.
@@ -599,13 +606,18 @@ public boolean constantFalse(boolean x) {
           ich jetzt weniger formal und weise Sie nicht mehr ständig auf die
           Bestandteile eines Induktionsbeweises hin) und zerlegen $f: \{0,1\}^n
           \rightarrow \{0,1\}$ in zwei neue, "kleinere" Funktionen $f_0, f_1:
-          \{0,1\}^{n-1} \rightarrow \{0,1\}$ per $$ \begin{align*} f_0 (x_2,
-          \dots, x_n)&amp;:= f(0, x_2, \dots, x_n) \\ f_1 (x_2, \dots,
-          x_n)&amp;:= f(1, x_2, \dots, x_n) \ . \end{align*} $$ Diese Funktionen
-          sind selbst wiederum monoton (versuchen Sie, dies formal zu zeigen,
-          wenn Sie Lust haben; oder versuchen Sie, es sich intuitiv klar zu
-          machen). Per Induktionshypothese gibt es also monotone Schaltkreise
-          für $f_0$ und
+          \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
+        </p>
+        <div class="math-block">
+          $$ \begin{align*} f_0 (x_2, \dots, x_n)&amp;:= f(0, x_2, \dots, x_n)
+          \\ f_1 (x_2, \dots, x_n)&amp;:= f(1, x_2, \dots, x_n) \ . \end{align*}
+          $$
+        </div>
+        <p>
+          Diese Funktionen sind selbst wiederum monoton (versuchen Sie, dies
+          formal zu zeigen, wenn Sie Lust haben; oder versuchen Sie, es sich
+          intuitiv klar zu machen). Per Induktionshypothese gibt es also
+          monotone Schaltkreise für $f_0$ und
           <span class="nowrap">$f_1$.</span>
           Wir kombinieren diese mit einem
           <code>if-then-else</code>-Gate und erhalten:
@@ -655,10 +667,13 @@ public boolean constantFalse(boolean x) {
             class="constrained transition-all"
           />
         </figure>
+        <p>Der linke Schaltkreis gibt uns, als Formel geschrieben,</p>
+        <div class="math-block">
+          $$ (x \wedge f_1) \vee (x \wedge f_0) \equiv x \wedge (f_1 \vee f_0) \
+          . $$
+        </div>
         <p>
-          Der linke Schaltkreis gibt uns, als Formel geschrieben, $$ (x \wedge
-          f_1) \vee (x \wedge f_0) \equiv x \wedge (f_1 \vee f_0) \ . $$ Ich
-          erlaube mir hier, aus Bequemlichkeit einfach $f_1$ statt
+          Ich erlaube mir hier, aus Bequemlichkeit einfach $f_1$ statt
           $f_1(x_2,\dots,x_n)$ zu schreiben. Auch ein
           <i>abuse of notation</i>. In der obigen Formel habe ich rechts das $x$
           ausgeklammert; die Formel beginnt nun mit
@@ -685,10 +700,8 @@ public boolean constantFalse(boolean x) {
           />
         </figure>
         <p>bzw. als Formel:</p>
-        <p>
-          $$ (x_1 \wedge f_1) \vee f_0 \ . $$ Wir müssen nun zeigen, dass dies
-          wirklich $f$ berechnet, also
-        </p>
+        <div class="math-block">$$ (x_1 \wedge f_1) \vee f_0 \ . $$</div>
+        <p>Wir müssen nun zeigen, dass dies wirklich $f$ berechnet, also</p>
         <div class="well behauptung">
           <p>
             <b>Behauptung 2.4.6</b>
@@ -707,24 +720,37 @@ public boolean constantFalse(boolean x) {
               <p>
                 Der Fall
                 <span class="nowrap">$x_1 = 0$.</span>
-                Dann gilt $$ \begin{align*} f(x_1,x_2,\dots,x_n)&amp;=
-                f(0,x_2,\dots,x_n) \tag{da $x_1=0$} \\ &amp;= f_0 (x_2,
-                \dots,x_n) \tag{Definition von $f_2$} \\ &amp;= (0 \wedge f_1)
-                \vee f_0 \tag{die 0 tötet den ersten Term eh}\\ &amp;= (x_1
-                \wedge f_1) \vee f_0 \tag{weil $x_1 = 0$} \ , \end{align*} $$
-                und die behauptete Gleichung gilt.
+                Dann gilt
               </p>
+              <div class="math-block">
+                $$ \begin{align*} f(x_1,x_2,\dots,x_n)&amp;= f(0,x_2,\dots,x_n)
+                \tag{da $x_1=0$} \\ &amp;= f_0 (x_2, \dots,x_n) \tag{Definition
+                von $f_2$} \\ &amp;= (0 \wedge f_1) \vee f_0 \tag{die 0 tötet
+                den ersten Term eh}\\ &amp;= (x_1 \wedge f_1) \vee f_0 \tag{weil
+                $x_1 = 0$} \ , \end{align*} $$
+              </div>
+              <p>und die behauptete Gleichung gilt.</p>
             </li>
             <li>
               <p>
                 Der Fall
                 <span class="nowrap">$x_1 = 1$.</span>
-                Dann gilt $$ \begin{align*} f(x_1,\dots,x_n)&amp;=
-                f_1(x_2,\dots,x_n) \ . \end{align*} $$ Was ist aber mit der
-                rechten Seite der behaupteten Gleichung? $$ \begin{align*} (x_1
-                \wedge f_1) \vee f_0&amp;= f_1 \vee f_0 \tag{da $x_1=1$ ist und
-                somit im $\wedge$ wegfällt} \end{align*} $$ Die linke Seite ist
-                also
+                Dann gilt
+              </p>
+              <div class="math-block">
+                $$ \begin{align*} f(x_1,\dots,x_n)&amp;= f_1(x_2,\dots,x_n) \ .
+                \end{align*} $$
+              </div>
+              <p>
+                Was ist aber mit der rechten Seite der behaupteten Gleichung?
+              </p>
+              <div class="math-block">
+                $$ \begin{align*} (x_1 \wedge f_1) \vee f_0&amp;= f_1 \vee f_0
+                \tag{da $x_1=1$ ist und somit im $\wedge$ wegfällt} \end{align*}
+                $$
+              </div>
+              <p>
+                Die linke Seite ist also
                 <span class="nowrap">$f_1$,</span>
                 die rechte ist
                 <span class="nowrap">$f_1 \vee f_0$.</span>
@@ -732,28 +758,38 @@ public boolean constantFalse(boolean x) {
                 Glocken klingeln: wir haben bisher an keiner Stelle im Beweis
                 verwendet, dass $f$ eine monotone Funktion ist! Und wenn wir das
                 nicht verwendet haben, kann der Beweis ja gar nicht
-                funktionieren. Also: verwenden wir Monotonität: $$
-                \begin{align*} (0, x_2, \dots,x_n)&amp;\leq (1, x_2, \dots,x_n)
-                \tag{Definition unser Partialordnung, } \\ f(0, x_2,
+                funktionieren. Also: verwenden wir Monotonität:
+              </p>
+              <div class="math-block">
+                $$ \begin{align*} (0, x_2, \dots,x_n)&amp;\leq (1, x_2,
+                \dots,x_n) \tag{Definition unser Partialordnung, } \\ f(0, x_2,
                 \dots,x_n)&amp;\leq f(1, x_2, \dots,x_n) \tag{weil $f$ monoton
-                ist.} \\ f_0&amp;\leq f_1 \ . \end{align*} $$ Wir überprüfen nun
-                also: wenn $f_0(x_2, \dots, x_n) = 0$ ist, dann gilt
+                ist.} \\ f_0&amp;\leq f_1 \ . \end{align*} $$
+              </div>
+              <p>
+                Wir überprüfen nun also: wenn $f_0(x_2, \dots, x_n) = 0$ ist,
+                dann gilt
                 <span class="nowrap">$f_0 \vee f_1 = 0 \vee f_1 = f_1$.</span>
                 Wenn $f_0 = 1$ ist, dann ist $f_1 = 1$ wegen Monotonität (größer
                 als 1 geht ja nicht), und daher
                 <span class="nowrap">$f_0 \vee f_1 = 1 \vee 1 = 1 = f_1$.</span>
-                In jedem Fall gilt also: $$ (f_0 \vee f_1) = f_1 \ . $$ Und
-                somit sind linke und rechte Seite gleich, wie behauptet.<span
-                  class="qed"
-                  >\(\square\)</span
-                >
+                In jedem Fall gilt also:
+              </p>
+              <div class="math-block">$$ (f_0 \vee f_1) = f_1 \ . $$</div>
+              <p>
+                Und somit sind linke und rechte Seite gleich, wie
+                behauptet.<span class="qed">\(\square\)</span>
               </p>
             </li>
           </ul>
         </div>
         <p>
           Wir haben nun also gezeigt, dass für jeden Input $x_1,\dots,x_n$ gilt:
+        </p>
+        <div class="math-block">
           $$ \begin{align*} f = (x_1 \wedge f_1) \vee f_0 \ , \end{align*} $$
+        </div>
+        <p>
           (wobei wir aus Gründen der Lesbarkeit statt $f(x_1,\dots,x_n)$ einfach
           $f$ schreiben); per Induktion können wir für $f_1, f_0$ monotone
           Schaltkreise finden, und somit ist
@@ -769,7 +805,8 @@ public boolean constantFalse(boolean x) {
         </figure>
         <p>
           ein monotoner Schaltkreis für
-          <span class="nowrap">$f$.</span><span class="qed">\(\square\)</span>
+          <span class="nowrap">$f$.</span>
+          <span class="qed">\(\square\)</span>
         </p>
       </div>
       <div class="well highlight out">
@@ -791,11 +828,11 @@ public boolean constantFalse(boolean x) {
           der auf $\mathbf{a}$ eine 1 ausgibt und sonst überall eine 0. Um den
           Term genau zu beschreiben, definieren wir
         </p>
-        <p>
+        <div class="math-block">
           $$ \begin{align*} I_{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \
           a_i = 1 \} \\ O_{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \ a_i
           = 0 \} \ . \end{align*} $$
-        </p>
+        </div>
         <p>
           Als Beispiel: wenn $n=5$ und
           <span class="nowrap">$\mathbf{a} = (10010)$,</span>
@@ -803,11 +840,11 @@ public boolean constantFalse(boolean x) {
           <span class="nowrap">$I_{\mathbf{a}} = \{2,3,5\}$.</span>
           Wir definieren
         </p>
-        <p>
+        <div class="math-block">
           $$ \begin{align*} T_{\mathbf{a}}&amp;:= \bigwedge_{i \in
           I_{\mathbf{a}}} x_i \wedge \bigwedge_{i \in O_{\mathbf{a}}} \bar{x}_i
           \ . \end{align*} $$
-        </p>
+        </div>
         <p>
           Für $\mathbf{a} = (10010)$ gibt das also
           <span class="nowrap"
@@ -817,16 +854,16 @@ public boolean constantFalse(boolean x) {
           Noch kompakter kann man es hinschreiben, wenn man für eine Variable
           $x$ und einen Wert $b \in \{0,1\}$ folgendes definiert:
         </p>
-        <p>
+        <div class="math-block">
           $$ \begin{align*} x^{b}&amp;:= \begin{cases} x&amp;\textnormal{ if
           $b=1$,}\\ \bar{x}&amp;\textnormal{ if $b=0$.} \end{cases} \end{align*}
           $$
-        </p>
+        </div>
         <p>Dann können wir $T_{\mathbf{a}}$ einfach als</p>
-        <p>
+        <div class="math-block">
           $$ \begin{align*} T_{\mathbf{a}} = \bigwedge_{i=1}^n x_i^{a_i}
           \end{align*} $$
-        </p>
+        </div>
         <p>
           definieren, für $\mathbf{a} = (10010)$ also
           <span class="nowrap"
@@ -841,17 +878,23 @@ public boolean constantFalse(boolean x) {
         <p>
           Gegen eine Boolesche Funktion
           <span class="nowrap">$f: \{0,1\}^n \rightarrow \{0,1\}$,</span>
-          definieren wir $$ \sat(f) := \{\mathbf{a} \in \{0,1\}^n \ | \
-          f(\mathbf{a}) = 1 \} \ . $$ Die Abkürzung $\sat$ steht für
+          definieren wir
+        </p>
+        <div class="math-block">
+          $$ \sat(f) := \{\mathbf{a} \in \{0,1\}^n \ | \ f(\mathbf{a}) = 1 \} \
+          . $$
+        </div>
+        <p>
+          Die Abkürzung $\sat$ steht für
           <i>satisfying assignments</i>, also diejenigen Belegungen der
           Variablen, die $f$ "erfüllen", also 1 werden lassen. Wir bauen uns
           einen Schaltkreis
           <span class="nowrap">$F$:</span>
         </p>
-        <p>
+        <div class="math-block">
           $$ \begin{align*} F := \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}}
           \end{align*} $$
-        </p>
+        </div>
         <p>
           Dies ist eine DNF-Formel, also insbesondere ein Schaltkreis der Tiefe
           2; wir sehen, dass $F \equiv f$ ist, dieser Schaltkreis (diese Formel)
@@ -868,8 +911,13 @@ public boolean constantFalse(boolean x) {
           weglassen und die ausgehenden Kabel ersatzlos streichen. Hier hieße
           das nun, aus dem Term $x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge
           x_4 \wedge \bar{x}_5$ den Term $x_1 \wedge x_4 $ zu machen. Wir
-          definieren also: $$ T'_{\mathbf{a}} := \bigwedge_{i \in
-          I_{\mathbf{a}}} x_i \ . $$ Der Term $T'_{\mathbf{a}}$ ist "kürzer" als
+          definieren also:
+        </p>
+        <div class="math-block">
+          $$ T'_{\mathbf{a}} := \bigwedge_{i \in I_{\mathbf{a}}} x_i \ . $$
+        </div>
+        <p>
+          Der Term $T'_{\mathbf{a}}$ ist "kürzer" als
           <span class="nowrap">$T_{\mathbf{a}}$,</span>
           stellt also weniger "Bedingungen". Formal gesprochen:
         </p>
@@ -895,12 +943,14 @@ public boolean constantFalse(boolean x) {
             davon).<span class="qed">\(\square\)</span>
           </p>
         </div>
+        <p>Wir definieren nun analog zu $F$ eine DNF-Formel</p>
+        <div class="math-block">
+          $$ F' := \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} \ . $$
+        </div>
         <p>
-          Wir definieren nun analog zu $F$ eine DNF-Formel $$ F' :=
-          \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} \ . $$ Sie können
-          sich vorstellen, dass wir $F$ nehmen und alle negativen Literale
-          ersatzlos streichen. Wir behaupten nun, dass $F'$ und $F$ dieselbe
-          Funktion darstellen:
+          Sie können sich vorstellen, dass wir $F$ nehmen und alle negativen
+          Literale ersatzlos streichen. Wir behaupten nun, dass $F'$ und $F$
+          dieselbe Funktion darstellen:
         </p>
         <div class="well behauptung">
           <p>
@@ -914,10 +964,15 @@ public boolean constantFalse(boolean x) {
           <p>
             <b>Beweis.</b>
             Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen wir
-            zeigen, dass $$ F(\mathbf{x}) = F'(\mathbf{x}) \textnormal{ für alle
-            $\mathbf{x} \in \{0,1\}^n$. } $$ Eine Möglichkeit, eine Gleichheit
-            $=$ zu zeigen, ist, beide Ungleichungen $\leq$ und $\geq$ zu zeigen,
-            also:
+            zeigen, dass
+          </p>
+          <div class="math-block">
+            $$ F(\mathbf{x}) = F'(\mathbf{x}) \textnormal{ für alle $\mathbf{x}
+            \in \{0,1\}^n$. } $$
+          </div>
+          <p>
+            Eine Möglichkeit, eine Gleichheit $=$ zu zeigen, ist, beide
+            Ungleichungen $\leq$ und $\geq$ zu zeigen, also:
           </p>
           <ol>
             <li>
@@ -931,11 +986,16 @@ public boolean constantFalse(boolean x) {
           </ol>
           <p>
             Punkt 1 ist einfach: wir haben bereits gesehen, dass $T_{\mathbf{a}}
-            \leq T'_{\mathbf{a}}$ gilt, und somit auch $$ \bigvee_{\mathbf{a}
-            \in \sat(f)} T_{\mathbf{a}} \leq \bigvee_{\mathbf{a} \in \sat(f)}
-            T'_{\mathbf{a}} $$ Hier haben wir angewendet, dass $\bigvee$ eine
-            monotone Funktion ist und wir somit vom $\leq$ ihrer Inputs auf das
-            $\leq$ ihres Outputs schließen können.
+            \leq T'_{\mathbf{a}}$ gilt, und somit auch
+          </p>
+          <div class="math-block">
+            $$ \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}} \leq
+            \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} $$
+          </div>
+          <p>
+            Hier haben wir angewendet, dass $\bigvee$ eine monotone Funktion ist
+            und wir somit vom $\leq$ ihrer Inputs auf das $\leq$ ihres Outputs
+            schließen können.
           </p>
           <p>
             Punkt 2 ist schwieriger. Um $F'(\mathbf{x}) \leq F(\mathbf{x})$ zu
@@ -954,22 +1014,31 @@ public boolean constantFalse(boolean x) {
             T'_{\mathbf{a}} $ ist. Wenn nun also die linke Seite,
             <span class="nowrap">$F'$,</span>
             den Wert 1 annimmt, dann muss es auf der rechten Seite (mindestens)
-            einen Term geben, der auch 1 annimmt: $$
-            T'_{\mathbf{a}^*}(x_1,\dots,x_n) = 1 \ , $$ für ein festes,
-            bestimmtes
+            einen Term geben, der auch 1 annimmt:
+          </p>
+          <div class="math-block">
+            $$ T'_{\mathbf{a}^*}(x_1,\dots,x_n) = 1 \ , $$
+          </div>
+          <p>
+            für ein festes, bestimmtes
             <span class="nowrap">$\mathbf{a}^*$,</span>
-            also $$ \bigwedge_{i \in I_{\mathbf{a}^*}} x_i = 1 \ . $$ Wir wollen
-            zeigen, dass $F(x_1,\dots,x_n) = 1$ gilt. Da $F =
+            also
+          </p>
+          <div class="math-block">
+            $$ \bigwedge_{i \in I_{\mathbf{a}^*}} x_i = 1 \ . $$
+          </div>
+          <p>
+            Wir wollen zeigen, dass $F(x_1,\dots,x_n) = 1$ gilt. Da $F =
             \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}} $ gilt, liegt der
             Verdacht nahe, dass der entsprechende Term $ T_{\mathbf{a}^*}$ auch
             1 ausgibt. Das Problem ist leider, dass
           </p>
-          <p>
+          <div class="math-block">
             $$ \begin{align*} T_{\mathbf{a}^*}(\mathbf{x})&amp;=
             T'_{\mathbf{a}^*}(\mathbf{x}) \wedge T''_{\mathbf{a}^*}(\mathbf{x})
             \\ &amp;= 1 \wedge \bigwedge_{i \in O(\mathbf{a}^*)} \bar{x}_i \ .
             \end{align*} $$
-          </p>
+          </div>
           <p>
             Wir wissen also, dass $x_i=1$ für alle $i \in I(\mathbf{a}^*)$ gilt;
             über die $i \in O(\mathbf{a}^*)$ wissen wir leider nichts. Was
@@ -985,8 +1054,13 @@ public boolean constantFalse(boolean x) {
             und 0 sein, wo $\mathbf{a}^*$ auch 0 ist. Aha! Es müsste
             $\mathbf{a}^*$ selbst sein! Na klar, wir erinnern uns: wir haben den
             Term $T_{\mathbf{a}}$ so definiert, dass er auf $\mathbf{a}$ und nur
-            dort 1 wird. Wir wissen also: $$ T_{\mathbf{a}^*} (\mathbf{a}^*) = 1
-            \ . $$ Wenn wir Glück haben, gilt
+            dort 1 wird. Wir wissen also:
+          </p>
+          <div class="math-block">
+            $$ T_{\mathbf{a}^*} (\mathbf{a}^*) = 1 \ . $$
+          </div>
+          <p>
+            Wenn wir Glück haben, gilt
             <span class="nowrap">$\mathbf{a}^* = \mathbf{x}$.</span>
             Ansonsten gilt immerhin, dass $x_i=1$ für alle
             <span class="nowrap">$i \in I(\mathbf{a}^*)$,</span>
@@ -996,9 +1070,14 @@ public boolean constantFalse(boolean x) {
             <span class="nowrap">$\mathbf{x} \geq \mathbf{a}^*$!</span>
             Wunderbar! Jetzt können wir Monotonie anwenden! Denn selbst wenn
             $T_{\mathbf{a}^*}$ nicht monoton ist, so wissen wir, dass $F$ eine
-            monotone Funktion berechnet, und somit $$ F(\mathbf{x}) \geq
-            F(\mathbf{a}^*) = 1 \ . $$ Wir können zwar nicht genau mit dem
-            Finger auf einen Term von $F$ zeigen, der 1 wird, wissen aber
+            monotone Funktion berechnet, und somit
+          </p>
+          <div class="math-block">
+            $$ F(\mathbf{x}) \geq F(\mathbf{a}^*) = 1 \ . $$
+          </div>
+          <p>
+            Wir können zwar nicht genau mit dem Finger auf einen Term von $F$
+            zeigen, der 1 wird, wissen aber
             <i>per Monotonie</i>, dass es so einen geben muss.<span class="qed"
               >\(\square\)</span
             >
