@@ -11,9 +11,14 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar]))
     ],
     pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
+    pp.splitting_empty_lines_cleanup(),
     pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar),
+    pp.splitting_empty_lines_cleanup(),
     [
       dl.regex_split_and_replace__outside(escape_dollar, ["Math", "MathBlock"]),
+    ],
+    pp.splitting_empty_lines_cleanup(),
+    [
       dl.auto_generate_child_if_missing_from_attribute(#(
         "Chapter",        // parent tag
         "ChapterTitle",   // new child tag
@@ -91,14 +96,15 @@ pub fn pipeline() -> List(infra.Desugarer) {
         ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED"]
       ),
       dl.unwrap("WriterlyBlankLine"),
-      dl.concatenate_text_nodes(),
-      dl.delete_text_nodes_with_singleton_empty_line(),
       dl.trim("p"),
       dl.delete_if_empty("p"),
     ],
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
+    pp.splitting_empty_lines_cleanup(),
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
+    pp.splitting_empty_lines_cleanup(),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
+    pp.splitting_empty_lines_cleanup(),
     [
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
       dl.fold_contents_into_text("Math"),
@@ -109,6 +115,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
         #("ChapterTitle","class", "main-column page-title"),
         #("Sub", "class", "subchapter"),
         #("SubTitle", "class", "main-column page-title"),
+        #("MathBlock", "class", "math-block"),
         #("Definition", "class", "well definition"),
         #("Beobachtung", "class", "well beobachtung"),
         #("Behauptung", "class", "well behauptung "),
@@ -122,7 +129,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.append_class_to_child_if__batch([
         #("Chapter", "out", infra.has_class(_, "well"), ""),
         #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
-            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
+            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock"
           ]), ""),
         #("Sub", "out", infra.has_class(_, "well"), ""),
         #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
