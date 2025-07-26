@@ -76,7 +76,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
     [
       dl.find_replace__outside(#("\\$", "$"), ["Math", "MathBlock"]),
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
-      dl.fold_tag_contents_into_text(["MathBlock", "Math"]),
+      dl.fold_contents_into_text__batch(["MathBlock", "Math"]),
       dl.group_consecutive_children__outside(
         #(
           "p",
