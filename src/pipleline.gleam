@@ -92,8 +92,9 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "Highlight",
             "h1", "h2", "h3", "pre", "div", "br", "hr",
             "figure", "img"
-          ]),
-          ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED"]
+          ]
+        ),
+        ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED"]
       ),
       dl.unwrap("WriterlyBlankLine"),
       dl.delete_text_nodes_with_singleton_empty_line(),
