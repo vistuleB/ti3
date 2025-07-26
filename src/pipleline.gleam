@@ -29,7 +29,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
         "SubTitle",
         "title"
       )),
-      dl.generate_ti3_index_element(),
+      dl.generate_ti3_index(),
       dl.generate_ti3_menu(),
       dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
