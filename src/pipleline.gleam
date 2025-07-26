@@ -7,7 +7,9 @@ import group_replacement_splitting as grs
 pub fn pipeline() -> List(infra.Desugarer) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
   [
-    [ dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])) ],
+    [
+      dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar]))
+    ],
     pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
     pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar),
     [
@@ -35,7 +37,6 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.associate_counter_by_prepending_incrementing_attribute(#("Chapter", "ChapterCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Exercise", "ExerciseCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Sub", "SubCounter")),
-        // Beobachtung and (future) others that all has the same counter and will use `DefinitionCounter`
       dl.associate_counter_by_prepending_incrementing_attribute(#("Definition", "DefinitionCounter")), 
       dl.associate_counter_by_prepending_incrementing_attribute(#("Beobachtung", "DefinitionCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Behauptung", "DefinitionCounter")),
