@@ -88,7 +88,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
             "Sub", "SubTitle", "Definition", "Beobachtung", "Behauptung", "Theorem", "Lemma", "SubTheorem",
             "thead", "tbody", "tr", "td", "section",
-            "Index", "Menu", "QED",
+            "Index", "Menu",
             "Highlight",
             "h1", "h2", "h3", "pre", "div", "br", "hr",
             "figure", "img"
