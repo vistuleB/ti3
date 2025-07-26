@@ -72,7 +72,7 @@ body {
 
 /* for nested lists */
 .index__list__subchapter {
-    padding-left: 0.4rem; /* more indentation for visual hierarchy */
+    padding-left: 1.6rem; /* more indentation for visual hierarchy */
     list-style: none;
 }
 
