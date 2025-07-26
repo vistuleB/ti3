@@ -23,7 +23,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
       )),
       dl.generate_ti3_index_element(),
       dl.generate_ti3_menu(),
-      dl.append_attributes([
+      dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
         #("Chapter", "counter", "SubCounter"),
         #("Chapter", "counter", "ExerciseCounter"),
@@ -40,7 +40,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.associate_counter_by_prepending_incrementing_attribute(#("Behauptung", "DefinitionCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Theorem", "DefinitionCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Lemma", "DefinitionCounter")),
-      dl.prepend_text_node_if_has_ancestor_else_plural([
+      dl.prepend_text_node_if_has_ancestor_else__batch([
         #("Exercise",
           "Sub",
           "*Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter* ",
@@ -74,10 +74,10 @@ pub fn pipeline() -> List(infra.Desugarer) {
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     [
-      dl.find_replace_outside(#("\\$", "$", ["Math", "MathBlock"])),
+      dl.find_replace__outside(#("\\$", "$"), ["Math", "MathBlock"]),
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
       dl.fold_tag_contents_into_text(["MathBlock", "Math"]),
-      dl.group_consecutive_children_avoiding(
+      dl.group_consecutive_children__outside(
         #(
           "p",
           [
@@ -92,13 +92,12 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "Highlight",
             "h1", "h2", "h3", "pre", "div", "br", "hr",
             "figure", "img"
-          ],
+          ]),
           ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED"]
-        )
       ),
       dl.unwrap("WriterlyBlankLine"),
-      dl.remove_text_nodes_with_singleton_empty_line(),
-      dl.append_attributes([
+      dl.delete_text_nodes_with_singleton_empty_line(),
+      dl.append_attribute__batch([
         #("Index", "class", "index"),
         #("Menu", "class", "menu"),
         #("Chapter", "class", "chapter"),
@@ -115,15 +114,17 @@ pub fn pipeline() -> List(infra.Desugarer) {
         #("SubTheorem", "class", "well subtheorem"),
         #("NoWrap", "class", "nowrap"),
       ]),
-      dl.append_class_to_child_if(#("Chapter", "out", infra.has_class(_, "well"))),
-      dl.append_class_to_child_if(#("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
-          "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
-        ]))),
-      dl.append_class_to_child_if(#("Sub", "out", infra.has_class(_, "well"))),
-      dl.append_class_to_child_if(#("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
-          "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
-        ]))),
-      dl.append_class_to_child_if(#("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")})),
+      dl.append_class_to_child_if__batch([
+        #("Chapter", "out", infra.has_class(_, "well"), ""),
+        #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
+            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
+          ]), ""),
+        #("Sub", "out", infra.has_class(_, "well"), ""),
+        #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
+            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code"
+          ]), ""),
+        #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}, ""),
+      ]),
       dl.rename_with_appended_attributes_and_prepended_text([#("QED", "span", "\\(\\square\\)", [#("class", "qed")])]),
       dl.rename(#("Index", "div")),
       dl.rename(#("Menu", "div")),
@@ -142,11 +143,11 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.rename(#("Highlight", "div")),
       dl.rename(#("SubTheorem", "div")),
       dl.rename(#("NoWrap", "span")),
-      dl.append_attributes([
+      dl.append_attribute__batch([
         #("img", "class", "constrained transition-all"),
         #("img", "onClick", "onImgClick(event)"),
       ]),
-      dl.remove_attributes([".", "counter", "title"]),
+      dl.delete_attribute__batch([".", "counter", "title"]),
     ]
   ]
   |> list.flatten
