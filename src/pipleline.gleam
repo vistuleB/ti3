@@ -2,13 +2,16 @@ import desugarer_library as dl
 import infrastructure as infra
 import gleam/list
 import prefabricated_pipelines as pp
+import group_replacement_splitting as grs
 
 pub fn pipeline() -> List(infra.Desugarer) {
+  let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
   [
     [ dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])) ],
     pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
     pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar),
     [
+      dl.regex_split_and_replace__outside(escape_dollar, ["Math", "MathBlock"]),
       dl.auto_generate_child_if_missing_from_attribute(#(
         "Chapter",        // parent tag
         "ChapterTitle",   // new child tag
@@ -72,7 +75,6 @@ pub fn pipeline() -> List(infra.Desugarer) {
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     [
-      dl.find_replace__outside(#("\\$", "$"), ["Math", "MathBlock"]),
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
       dl.fold_contents_into_text("Math"),
       dl.group_consecutive_children__outside(
