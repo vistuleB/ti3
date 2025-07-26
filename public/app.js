@@ -52,7 +52,6 @@ const setOuterWellWidth = (value) => {
 };
 
 const body = () => {
-  console.log("body triggered");
   document.querySelectorAll('pre.numbered-pre').forEach(pre => {
     const lines = pre.textContent.split('\n');
     pre.innerHTML = lines
@@ -62,15 +61,52 @@ const body = () => {
   });
 }
 
+const adjustMathAlignment = () => {
+  document.querySelectorAll('.math-block mjx-container[display="true"][jax="SVG"]').forEach((container) => {
+    const svg = container.querySelector('svg');
+    const parent = container.closest('.math-block');
+
+    if (svg && parent) {
+      // get the SVG width in ex units from the width attribute
+      const widthAttr = svg.getAttribute('width');
+      if (!widthAttr || !widthAttr.endsWith('ex')) {
+        return;
+      }
+      
+      const svgWidthInEx = parseFloat(widthAttr.replace('ex', ''));
+      
+      // convert ex to px using computed font size
+      const computedStyle = window.getComputedStyle(parent);
+      const fontSizeInPx = parseFloat(computedStyle.fontSize);
+      const exToPxRatio = fontSizeInPx * 0.5; // 1ex ≈ 0.5em
+      
+      const svgWidthInPx = svgWidthInEx * exToPxRatio;
+      const parentWidthInPx = parent.getBoundingClientRect().width;
+
+      if (svgWidthInPx > parentWidthInPx) {
+        // left align: set margin to 0 and justify to left
+        svg.style.setProperty('margin', '0', 'important');
+        container.setAttribute('justify', 'left');
+      } else {
+        // center align: set margin to auto and justify to center
+        svg.style.setProperty('margin', '0 auto', 'important');
+        container.setAttribute('justify', 'center');
+      }
+    }
+  });
+}
+
 const onLoad = () => {
   handleResize();
   body();
+  setTimeout(adjustMathAlignment, 60);
 };
 
 const handleResize = () => {
   instantRecenter();
   setMainColumnWidth(computeMainColumnWidth());
   setOuterWellWidth(computeOuterWellWidth());
+  setTimeout(adjustMathAlignment, 60);
 }
 
 const smoothRecenterMaybe = (e) => {
@@ -85,10 +121,13 @@ const smoothRecenterMaybe = (e) => {
 
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();
+  setTimeout(adjustMathAlignment, 60);
+  
 };
 
 const onTouchEnd = (e) => {
   smoothRecenterMaybe();
+  setTimeout(adjustMathAlignment, 60);
 };
 
 const onImgClick = (e) => {

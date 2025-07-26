@@ -4,10 +4,7 @@ window.MathJax = {
   },
   startup: {
     ready() {
-      //
-      // Adjust the lazy observer to have a margin of 500px so expressions
-      //   will be typeset a little when they are still a little bit away from being seen.
-      //
+      // extend lazy observer margin
       MathJax.startup.extendHandler((handler) => {
         handler.documentClass = class extends handler.documentClass {
           constructor(...args) {
@@ -20,12 +17,19 @@ window.MathJax = {
         };
         return handler;
       }, 100);
-      //
-      // Do the regular startup.
-      //
+
+      // run default startup
       MathJax.startup.defaultReady();
     },
   },
+
+  // Renderer settings (SVG)
+  svg: {
+    displayAlign: "left",
+    displayIndent: "0em",
+  },
+
+  // Input settings (TeX)
   tex: {
     tags: "ams",
     inlineMath: [
@@ -81,7 +85,6 @@ window.MathJax = {
       First: "\\textnormal{FIRST}",
       Pets: ["\\stackrel{#1}{\\Longleftarrow}", 1],
       rstep: ["\\stackrel{#1}{\\rightarrowtail}", 1],
-      Pets: ["\\stackrel{#1}{\\Longleftarrow}", 1],
       Steps: ["\\stackrel{#1}{\\Longrightarrow^*}", 1],
       steps: ["\\stackrel{#1}{\\rightarrow^*}", 1],
       front: "\\textnormal{front}",
@@ -104,7 +107,6 @@ window.MathJax = {
       bottom: "\\textnormal{bottom}",
       TIME: "\\textnormal{TIME}",
       bnegdiag: "\\textnormal{TimedNegDiag}",
-      halt: "{\\rm H{\\small ALT}}",
       bhalt: "{\\rm T{\\small IMED}H{\\small ALT}}",
       rls: "\\{\\texttt{L}, \\texttt{S}, \\texttt{R}\\}",
     },
