@@ -122,11 +122,11 @@ const onKeyDown = (e) => {
   switch(e.key) {
     case 'ArrowLeft':
       e.preventDefault();
-      navigateToChapter('prev-chapter');
+      navigateToChapter('prev-page');
       break;
     case 'ArrowRight':
       e.preventDefault();
-      navigateToChapter('next-chapter');
+      navigateToChapter('next-page');
       break;
   }
 };
