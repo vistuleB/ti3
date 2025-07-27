@@ -125,7 +125,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
         #("Lemma", "class", "well lemma"), 
         #("Exercise", "class", "well exercise"),
         #("Highlight", "class", "well highlight"),
-        #("Carousel", "class", "well carousel-container"),
+        #("Carousel", "class", "carousel-container"),
         // `Slide` represents middle column
         // (< prevBtn) --- Slide --- (nextBtn >)
         #("Slide", "class", "carousel"),

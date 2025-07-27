@@ -4,6 +4,8 @@ const MAIN_COLUMN_100VW_MAX_WIDTH = 1400;
 const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1100;
 const TOTAL_X_PADDING_IN_PX = 64;
 const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 100;
+const CAROUSEL_ARROW_DESKTOP_SIZE = 40;
+const CAROUSEL_ARROW_MOBILE_SIZE = 28;
 
 window.history.scrollRestoration = "manual";
 
@@ -39,6 +41,12 @@ const computeOuterWellWidth = () => {
   return computeMainColumnWidth() - 2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET;
 }
 
+const computeCarouselArrowSize = () => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= WELL_100VW_MAX_WIDTH) return CAROUSEL_ARROW_MOBILE_SIZE;
+  return CAROUSEL_ARROW_DESKTOP_SIZE;
+};
+
 const setMainColumnWidth = (value) => {
     const root = document.documentElement;
     const cssValue = `${value}px`;
@@ -49,6 +57,12 @@ const setOuterWellWidth = (value) => {
   const root = document.documentElement;
   const cssValue = `${value}px`;
   root.style.setProperty('--outer-well-width', cssValue);
+};
+
+const setCarouselArrowSize = (value) => {
+  const root = document.documentElement;
+  const cssValue = `${value}px`;
+  root.style.setProperty('--carousel-arrow-size', cssValue);
 };
 
 const body = () => {
@@ -82,13 +96,13 @@ class Carousel {
     // prev button
     const prevBtn = document.createElement('button');
     prevBtn.className = 'carousel__nav-button carousel__nav-item--prev';
-    prevBtn.innerHTML = '<';
+    prevBtn.innerHTML = '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
     prevBtn.setAttribute('aria-label', "Previous slide");
     
     // next button
     const nextBtn = document.createElement('button');
     nextBtn.className = 'carousel__nav-button carousel__nav-item--next';
-    nextBtn.innerHTML = '>';
+    nextBtn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
     nextBtn.setAttribute('aria-label', "Next slide");
     
     this.container.prepend(prevBtn);
@@ -149,6 +163,8 @@ const setupCarousels = () => {
   carousels.forEach(container => {
     new Carousel(container);
   })
+  
+  setCarouselArrowSize(computeCarouselArrowSize());
 };
 
 const onLoad = () => {
@@ -161,6 +177,7 @@ const handleResize = () => {
   instantRecenter();
   setMainColumnWidth(computeMainColumnWidth());
   setOuterWellWidth(computeOuterWellWidth());
+  setCarouselArrowSize(computeCarouselArrowSize());
 }
 
 const smoothRecenterMaybe = (e) => {

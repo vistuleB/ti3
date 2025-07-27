@@ -2,6 +2,7 @@
     --body-color: #333333;
     --main-column-width: 100vw;
     --outer-well-width: 100vw;
+    --carousel-arrow-size: 40px;
 }
 
 * {
@@ -326,11 +327,10 @@ img {
 
 .carousel__nav-button {
     flex-shrink: 0; 
-    width: 40px;
-    height: 40px; 
+    width: var(--carousel-arrow-size);
+    height: var(--carousel-arrow-size); 
     border: none;
-    border-radius: 50%;
-    background-color: #f0f0f0;
+    background-color: transparent;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -341,27 +341,10 @@ img {
     z-index: 100;
 }
 
-.carousel__nav-button:hover {
-    background-color: #e0e0e0;
-}
-
-.carousel__nav-button:active {
-    background-color: #d0d0d0;
-}
-
 .carousel__nav-button:disabled {
     opacity: 0.4;
     cursor: default;
-    background-color: #f5f5f5;
     color: #999;
-}
-
-.carousel__nav-button:disabled:hover {
-    background-color: #f5f5f5; 
-}
-
-.carousel__nav-button:disabled:active {
-    background-color: #f5f5f5; 
 }
 
 h1 {
