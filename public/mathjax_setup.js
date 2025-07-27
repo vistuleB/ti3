@@ -24,10 +24,10 @@ window.MathJax = {
   },
 
   // Renderer settings (SVG)
-  svg: {
-    displayAlign: "left",
-    displayIndent: "0em",
-  },
+  // svg: {
+  //   displayAlign: "left",
+  //   displayIndent: "0em",
+  // },
 
   // Input settings (TeX)
   tex: {
