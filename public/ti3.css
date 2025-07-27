@@ -420,17 +420,9 @@ hr {
 }
 
 .math-block {
+  position: relative;
   display: block;
   width: 100%;
-  overflow-x: auto;
-}
-
-.math-block mjx-container[display="true"] {
-  display: block;
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
-}
-
-.math-block mjx-container[display="true"] > svg {
-  margin: 0 !important;
 }
