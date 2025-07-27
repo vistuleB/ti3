@@ -96,9 +96,100 @@ const adjustMathAlignment = () => {
   });
 }
 
+class Carousel {
+  constructor(container) {
+    this.container = container;
+    this.carousel = container.querySelector('.carousel__item-container');
+    this.carouselItems = container.querySelectorAll('.carousel__item');
+    this.totalCarouselItems = this.carouselItems.length - 1;
+    this.currentCarouselItem = 0;
+    
+    this.init();
+  }
+  
+  init() {
+    this.createNavigationButtons();
+    this.attachEventListeners();
+    this.updateCarousel();
+  }
+  
+  createNavigationButtons() {
+    // prev button
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel__nav-button carousel__nav-item--prev';
+    prevBtn.innerHTML = '<';
+    prevBtn.setAttribute('aria-label', "Previous slide");
+    
+    // next button
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel__nav-button carousel__nav-item--next';
+    nextBtn.innerHTML = '>';
+    nextBtn.setAttribute('aria-label', "Next slide");
+    
+    this.container.prepend(prevBtn);
+    this.container.append(nextBtn);
+  }
+  
+  updateCarousel() {
+    const translateX = -this.currentCarouselItem * 100;
+    this.carousel.style.transform = `translateX(${translateX}%)`;
+    
+    this.updateButtonStates();
+  }
+  
+  changeCarouselItem(direction) {
+    this.currentCarouselItem += direction;
+    
+    if (this.currentCarouselItem >= this.totalCarouselItems) {
+      this.currentCarouselItem = this.totalCarouselItems;
+    } else if (this.currentCarouselItem < 0) {
+      this.currentCarouselItem = 0;
+    }
+    
+    this.updateCarousel();
+  }
+  
+  goToCarouselItem(carouselItemIndex) {
+    this.currentCarouselItem = carouselItemIndex;
+    this.updateCarousel();
+  }
+  
+  updateButtonStates() {
+      const prevBtn = this.container.querySelector('.carousel__nav-item--prev');
+      const nextBtn = this.container.querySelector('.carousel__nav-item--next');
+      
+      // disable prev button if at first item
+      prevBtn.disabled = this.currentCarouselItem === 0;
+      
+      // disable next button if at last item
+      nextBtn.disabled = this.currentCarouselItem === this.totalCarouselItems;
+  }
+  
+  attachEventListeners() {
+    const prevBtn = this.container.querySelector('.carousel__nav-item--prev');
+    const nextBtn = this.container.querySelector('.carousel__nav-item--next');
+    
+    prevBtn.addEventListener('click', () => {
+      this.changeCarouselItem(-1);
+    })
+    
+    nextBtn.addEventListener('click', () => {
+      this.changeCarouselItem(1);
+    })
+  }
+}
+
+const setupCarousels = () => {
+  const carousels = document.querySelectorAll('.carousel-container');
+  carousels.forEach(container => {
+    new Carousel(container);
+  })
+};
+
 const onLoad = () => {
   handleResize();
   body();
+  setupCarousels();
   setTimeout(adjustMathAlignment, 60);
 };
 

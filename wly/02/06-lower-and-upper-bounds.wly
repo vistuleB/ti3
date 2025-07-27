@@ -280,51 +280,20 @@
             der alle $2^{n-1}$ Monome $x^{I}$ für $I \subseteq [n-1]$ berechnet.
             Um $C_n$ zu bauen, schaffen wir für jedes $I \subseteq [n-1]$
             ein AND-Gate, das $\x^{I} \wedge x_n$ berechnet.
-            |> figure
-                class=centered-figure well container-fluid
-                |> a
-                    data-slide=prev
-                    href=#all-monomials
-                    class=left carousel-control-prev-icon
+            
+            |> Carousel
+                |> CarouselItem
                     |> div
-                        class=carousel-nav-icon
                         |> img
-                            src=./img/carousel-prev-icon.svg
-                |> a
-                    data-slide=next
-                    href=#all-monomials
-                    class=right carousel-control-next-icon
+                            style=width:100%
+                            src=./img/circuits/all-monomials-1.svg
+                
+                |> CarouselItem
                     |> div
-                        class=carousel-nav-icon
                         |> img
-                            src=./img/carousel-next-icon.svg
-                        |> div
-                            style=display:inline-block
-                            data-interval=false
-                            class=carousel
-                            id=all-monomials
-                            |> ol
-                                class=carousel-indicators
-                                |> li
-                                    class=active
-                                    data-slide-to=1
-                                    data-target=#all-monomials
-                                |> li
-                                    data-slide-to=2
-                                    data-target=#all-monomials
-                            |> div
-                                style=display:inline-block
-                                class=carousel-inner
-                                |> div
-                                    class=item active
-                                    |> img
-                                        style=width:100%
-                                        src=./img/circuits/all-monomials-1.svg
-                                |> div
-                                    class=item
-                                    |> img
-                                        style=width:100%
-                                        src=./img/circuits/all-monomials-2.svg
+                            style=width:100%
+                            src=./img/circuits/all-monomials-2.svg
+            
             Insgesamt erhalten wir $2^n$ Gates, von denen jedes gleichzeitig ein
             Ouptut-Gate ist.
             |> span

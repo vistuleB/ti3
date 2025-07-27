@@ -88,12 +88,12 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "Sub", "SubTitle", "Definition", "Beobachtung", "Behauptung", "Theorem", "Lemma", "SubTheorem",
             "thead", "tbody", "tr", "td", "section",
             "Index", "Menu",
-            "Highlight",
+            "Highlight", "Carousel", "CarouselItem",
             "h1", "h2", "h3", "pre", "div", "br", "hr",
             "figure", "img"
           ]
         ),
-        ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED"]
+        ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED", "Carousel"]
       ),
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
@@ -108,6 +108,8 @@ pub fn pipeline() -> List(infra.Desugarer) {
     [
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
       dl.fold_contents_into_text("Math"),
+      dl.wrap_children_in(#("Carousel","Slide")),
+      dl.wrap_children_in(#("Slide","CarouselItemContainer")),
       dl.append_attribute__batch([
         #("Index", "class", "index"),
         #("Menu", "class", "menu"),
@@ -123,6 +125,12 @@ pub fn pipeline() -> List(infra.Desugarer) {
         #("Lemma", "class", "well lemma"), 
         #("Exercise", "class", "well exercise"),
         #("Highlight", "class", "well highlight"),
+        #("Carousel", "class", "well carousel-container"),
+        // `Slide` represents middle column
+        // (< prevBtn) --- Slide --- (nextBtn >)
+        #("Slide", "class", "carousel"),
+        #("CarouselItemContainer", "class", "carousel__item-container"),
+        #("CarouselItem", "class", "carousel__item"),
         #("SubTheorem", "class", "well subtheorem"),
         #("NoWrap", "class", "nowrap"),
       ]),
@@ -154,6 +162,10 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.rename(#("Lemma", "div")),
       dl.rename(#("Exercise", "div")),
       dl.rename(#("Highlight", "div")),
+      dl.rename(#("Carousel", "div")),
+      dl.rename(#("Slide", "div")),
+      dl.rename(#("CarouselItemContainer", "div")),
+      dl.rename(#("CarouselItem", "div")),
       dl.rename(#("SubTheorem", "div")),
       dl.rename(#("NoWrap", "span")),
       dl.append_attribute__batch([
