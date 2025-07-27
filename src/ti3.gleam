@@ -262,7 +262,7 @@ pub fn main() {
     vr.RendererParameters(
       input_dir: "./wly",
       output_dir: "./public",
-      prettifier_on_by_default: True,
+      prettifier_on_by_default: False,
     )
     |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
 
