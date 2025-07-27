@@ -261,7 +261,7 @@
             |> figure
                 |> img
                     style=height:10em
-                    src=../img/circuits/all-monomials.svg
+                    src=./img/circuits/all-monomials.svg
         
         |> Highlight
         
@@ -289,7 +289,7 @@
                     |> div
                         class=carousel-nav-icon
                         |> img
-                            src=../img/carousel-prev-icon.svg
+                            src=./img/carousel-prev-icon.svg
                 |> a
                     data-slide=next
                     href=#all-monomials
@@ -297,7 +297,7 @@
                     |> div
                         class=carousel-nav-icon
                         |> img
-                            src=../img/carousel-next-icon.svg
+                            src=./img/carousel-next-icon.svg
                         |> div
                             style=display:inline-block
                             data-interval=false
@@ -319,12 +319,12 @@
                                     class=item active
                                     |> img
                                         style=width:100%
-                                        src=../img/circuits/all-monomials-1.svg
+                                        src=./img/circuits/all-monomials-1.svg
                                 |> div
                                     class=item
                                     |> img
                                         style=width:100%
-                                        src=../img/circuits/all-monomials-2.svg
+                                        src=./img/circuits/all-monomials-2.svg
             Insgesamt erhalten wir $2^n$ Gates, von denen jedes gleichzeitig ein
             Ouptut-Gate ist.
             |> span
