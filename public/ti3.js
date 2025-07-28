@@ -174,10 +174,32 @@ const setupCarousels = () => {
   setCarouselArrowSize(computeCarouselArrowSize());
 };
 
+const adjustMathAlignment = () => {
+  document.querySelectorAll('.math-block').forEach((math_block) => {
+    const svg = math_block.querySelector('svg');
+    if (!svg) {
+      // this happens throughout---it seems the mjx_container
+      // momentarily only contains assistive content
+      return;
+    }
+    const minWidth = window.getComputedStyle(svg).minWidth;
+    if (!minWidth || !minWidth.endsWith('px')) {
+      console.log("failed to get minWidth ending with 'px':", minWidth);
+      return;
+    }
+    const minWidthInPx = parseFloat(minWidth);
+    const mathBlockWidthInPx = math_block.getBoundingClientRect().width;
+    if (minWidthInPx > mathBlockWidthInPx) {
+      math_block.scroll({left: 1000});
+    }
+  });
+}
+
 const onLoad = () => {
   handleResize();
   body();
   setupCarousels();
+  setTimeout(adjustMathAlignment, 60);
 };
 
 const handleResize = () => {
@@ -185,6 +207,7 @@ const handleResize = () => {
   setMainColumnWidth(computeMainColumnWidth());
   setOuterWellWidth(computeOuterWellWidth());
   setCarouselArrowSize(computeCarouselArrowSize());
+  setTimeout(adjustMathAlignment, 60);
 }
 
 const smoothRecenterMaybe = (e) => {
@@ -199,11 +222,12 @@ const smoothRecenterMaybe = (e) => {
 
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();
-  
+  setTimeout(adjustMathAlignment, 60);
 };
 
 const onTouchEnd = (e) => {
   smoothRecenterMaybe();
+  setTimeout(adjustMathAlignment, 60);
 };
 
 const onImgClick = (e) => {
