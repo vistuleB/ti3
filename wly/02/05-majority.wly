@@ -77,7 +77,8 @@
     besteht.
     Ist das nun gut oder schlecht?
     
-    |> Lemma 
+    |> Statement
+        title=*Lemma*
     
         Es gilt
         $$
@@ -85,8 +86,8 @@
         $$
     
     |> Highlight
+        title=*Beweis.*
         
-        *Beweis.*
         Sei \(k \in \{1,\dots,n\}\). Vergleichen wir \({n \choose k}\) mit \({n \choose k-1}\):
         \begin{align*}
         \frac{{n \choose k}}{{n \choose k-1}} & =
@@ -226,7 +227,9 @@
     zu dem nächsttieferen der Wert von \(m\) abnimmt. Insgesamt also haben wir
     gezeigt:
     
-    |> Theorem 
+    |> Statement
+        title=*Theorem*
+        
         Die Funktion
         \(\maj_n (x_1,\dots,x_n)\) kann mit einem Schaltkreis der Größe \(O(n^2)\),
         Tiefe \(O(n)\) und Fan-in 2 berechnet werden.
@@ -263,8 +266,9 @@
     knapp. Die Idee, die eine Tiefe von \(O (\log n)\) erreichen wird, ist ebenso
     einfach wie genial.
     
-    |> Lemma
-        *(2-for-3 Adder)* 
+    |> Statement
+        title=*Lemma (2-for-3 Adder)* 
+        
         Es gibt einen Schaltkreis mit \(O(n)\) Gates,
         Tiefe 2 und Fan-In 2, der als Input drei
         \(n\)-stellige Binärzahlen \(x,y,z\) nimmt
@@ -276,7 +280,8 @@
         gilt.
     
     |> Highlight
-        *Beweis.*
+        title=*Beweis.*
+        
         Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen in Basis 10:
         |> figure
             |> img
@@ -326,7 +331,9 @@
     \(O(\log n)\) viele Gates, da wir ja (\(\log n\))-stellige Zahlen addieren müssen;
     wir haben insgesamt also \(O (n \log n)\) viele Gates.
 
-    |> Theorem 
+    |> Statement 
+        title=*Theorem*
+        
         Die Konstruktion mit 2-for-3-Addierern gibt uns einen Schaltkreis
         für Majority mit Fan-in 2, Tiefe \(O(\log n)\) und
         Größe \(O (n \log n)\)
@@ -390,12 +397,15 @@
     |> h3
         Monoton und logarithmische Tiefe: Valiants probabilitische Konstruktion
 
-    |> Theorem 
+    |> Statement
+        title=*Theorem*
+        
         Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe \(O(\log n)\) und Größe
         \(\poly(n)\), der \(\maj_n\) berechnet.
     
     |> Highlight
-        *Beweis.*
+        title=*Beweis.*
+        
         Die Beweismethode, die wir verwenden, ist womöglich neu für Sie. Wir verwenden
         bei der Konstruktion des Schaltkreises _Zufall_; am Ende werden
         wir zeigen, dass dieser zufällige Schaltkreis mit hoher Wahrscheinlichkeit
@@ -415,7 +425,8 @@
         von über Inputs. Zuerst definieren wir
         die _Signalstärke_ von Verteilungen über Schaltkreise.
         
-        |> Definition 
+        |> Statement 
+            title=*Definition (Signalstärke)*
         
             Sei \(\mathcal{C}\) eine Verteilung über Schaltkreise mit Input-Variablen
             \(x_1,\dots,x_n\). Wir sagen, dass \(\mathcal{C}\) _Signalstärke mindestens $\delta$_
@@ -431,7 +442,8 @@
         Wir können einen ganz einfachen (zufälligen Schaltkreis)
         bauen, der ein schwache aber positive Signalstärke hat.
         
-        |> Lemma 
+        |> Statement
+            title=*Lemma*
         
             Es gibt eine Wahrscheinlichkeitsverteilung \(\mathcal{C}_0\) über
             monotone Schaltkreise der Größe 1,
@@ -446,9 +458,9 @@
             \Pr_{C \sim \mathcal{C}_0} [C(\x) = \maj_n(\x)] = \frac{1}{2} + \frac{1}{2n} \ .
             $$
             
-        |> SubTheorem
-
-            *Beweis.*
+        |> Remark
+            title=*Beweis.*
+            
             Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist extrem einfach.
             Wir wählen zufällig einen Index \(I \in \{1,\dots,n\}\) und
             geben \(x_I\) als unseren Schaltkreis \(C\) (bestehend aus einem einzigen Input-Gate,
@@ -498,7 +510,8 @@
         uns wiederum eine Verteilung über Schaltkreise, die wir
         \(\mathcal{C}^{\otimes 3}\) nennen. Diese hat eine höhere Signalstärke:
         
-        |> Lemma 
+        |> Statement
+            title=*Lemma*
         
             Falls \(\mathcal{C}\) eine Verteilung über Schaltkreise der Tiefe
             \(d\) und Größe \(s\) ist und \(\mathcal{C}\) Signalstärke \(\delta\) hat, dann gilt:
@@ -517,8 +530,8 @@
                     $\frac{3}{2} \delta - \frac{1}{2}\delta^3$.
                     
         |> Highlight
-
-            *Beweis.*
+            title=*Beweis.*
+            
             Wir betrachten ein festes $\x \in \cube^n$ mit $\maj_n(\x) = 1$; der
             Fall $\maj_n(\x) = 0$ ist analog. Wir definieren
             nun $U := C_1(\x)$, $V := C_2(\x)$ und $W := C_3(\x)$. Da
@@ -576,7 +589,8 @@
         Fehlerwahrscheinlichkeit,
         liest sich so:
         
-        |> Behauptung 
+        |> Remark
+            title=*Behauptung*
             
             Wenn $\mathcal{C}$
             Fehlerwahrscheinlichkeit
@@ -584,8 +598,9 @@
             $3 \epsilon^2$
         
         |> Highlight
+            title=*Beweis.*
 
-            *Beweis.* Wie im Beweis vom Lemma setzen wir
+            Wie im Beweis vom Lemma setzen wir
             $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
             \begin{align*}
             \Pr[\maj_3(U,V,W) = 1]&= p^3 + 3 p^2 (1-p) =

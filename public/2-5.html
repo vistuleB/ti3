@@ -68,7 +68,7 @@
       kann man das so schreiben:
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       \maj_3(x,y,z) = (x \wedge y) \vee (x \wedge z) \vee (y \wedge z)
@@ -125,7 +125,7 @@
       eine DNF konstruieren, erhalten wir ja unter Anderem den Term
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       T := x_1 \bar{x}_2 x_3 x_4 \bar{x}_5 x_6 x_7 \ ,
@@ -138,7 +138,7 @@
       $T'$ an, den wir erhalten, wenn wir alle negativen Literale aus $T$ löschen:
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       T' := x_1 x_3 x_4 x_6 x_7 \ .
@@ -154,7 +154,7 @@
       Schauen Sie sich nun den Term
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       x_1 \bar{x}_2 \bar{x}_3 x_4 \bar{x}_5 x_6 x_7
@@ -178,7 +178,7 @@
       Dann gilt
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       \begin{align}
@@ -196,10 +196,11 @@
       Ist das nun gut oder schlecht?
     </p>
     <div
-      class="well lemma out"
+      class="well statement out"
     >
       <p>
-        <b>Lemma 2.5.1</b>
+        <b>Lemma</b>
+        <b>2.5.1</b>
         Es gilt
       </p>
       <div
@@ -344,7 +345,7 @@
       Insbesondere definieren wir Verallgemeinerungen von $\maj_n$ wie folgt:
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       \begin{align*}
@@ -366,7 +367,7 @@
       Wir können $\theta^n_k$ rekursiv zerlegen wie folgt:
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       \theta^n_k (x_1,\dots,x_n) =
@@ -410,7 +411,7 @@
       Baum zählt, dann sieht man, dass
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       \begin{align*}
@@ -510,10 +511,11 @@ def binomial(n,k):
       gezeigt:
     </p>
     <div
-      class="well theorem out"
+      class="well statement out"
     >
       <p>
-        <b>Theorem 2.5.2</b>
+        <b>Theorem</b>
+        <b>2.5.2</b>
         Die Funktion
         $\maj_n (x_1,\dots,x_n)$ kann mit einem Schaltkreis der Größe
         <span
@@ -597,11 +599,11 @@ def binomial(n,k):
       einfach wie genial.
     </p>
     <div
-      class="well lemma out"
+      class="well statement out"
     >
       <p>
-        <b>Lemma 2.5.3</b>
-        <b>(2-for-3 Adder)</b>
+        <b>Lemma (2-for-3 Adder)</b>
+        <b>2.5.3</b>
         Es gibt einen Schaltkreis mit $O(n)$ Gates,
         Tiefe 2 und Fan-In 2, der als Input drei
         <span
@@ -710,7 +712,7 @@ def binomial(n,k):
       Tiefe des Gesamtschaltkreises? Es ist
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       \begin{align*}
@@ -737,10 +739,11 @@ def binomial(n,k):
       wir haben insgesamt also $O (n \log n)$ viele Gates.
     </p>
     <div
-      class="well theorem out"
+      class="well statement out"
     >
       <p>
-        <b>Theorem 2.5.4</b>
+        <b>Theorem</b>
+        <b>2.5.4</b>
         Die Konstruktion mit 2-for-3-Addierern gibt uns einen Schaltkreis
         für Majority mit Fan-in 2, Tiefe $O(\log n)$ und
         Größe $O (n \log n)$
@@ -813,7 +816,7 @@ def binomial(n,k):
       $\mathbf{z} = (x_{n/2+1}, \dots, x_n)$ und sehen, dass
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       \begin{align*}
@@ -829,7 +832,7 @@ def binomial(n,k):
       und somit
     </p>
     <div
-      class="math-block"
+      class="math-block main-column"
     >
       $$
       \begin{align*}
@@ -892,10 +895,11 @@ def binomial(n,k):
       Monoton und logarithmische Tiefe: Valiants probabilitische Konstruktion
     </h3>
     <div
-      class="well theorem out"
+      class="well statement out"
     >
       <p>
-        <b>Theorem 2.5.5</b>
+        <b>Theorem</b>
+        <b>2.5.5</b>
         Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe $O(\log n)$ und Größe
         <span
           class="nowrap"
@@ -939,10 +943,11 @@ def binomial(n,k):
         von Verteilungen über Schaltkreise.
       </p>
       <div
-        class="well definition"
+        class="well statement"
       >
         <p>
-          <b>Definition 2.5.6</b>
+          <b>Definition (Signalstärke)</b>
+          <b>2.5.6</b>
           Sei $\mathcal{C}$ eine Verteilung über Schaltkreise mit Input-Variablen
           <span
             class="nowrap"
@@ -970,10 +975,11 @@ def binomial(n,k):
         bauen, der ein schwache aber positive Signalstärke hat.
       </p>
       <div
-        class="well lemma"
+        class="well statement"
       >
         <p>
-          <b>Lemma 2.5.7</b>
+          <b>Lemma</b>
+          <b>2.5.7</b>
           Es gibt eine Wahrscheinlichkeitsverteilung $\mathcal{C}_0$ über
           monotone Schaltkreise der Größe 1,
           die Signalstärke $\frac{1}{n}$ hat.
@@ -996,7 +1002,7 @@ def binomial(n,k):
         </div>
       </div>
       <div
-        class="well subtheorem"
+        class="well remark"
       >
         <p>
           <b>Beweis.</b>
@@ -1104,10 +1110,11 @@ def binomial(n,k):
         $\mathcal{C}^{\otimes 3}$ nennen. Diese hat eine höhere Signalstärke:
       </p>
       <div
-        class="well lemma"
+        class="well statement"
       >
         <p>
-          <b>Lemma 2.5.8</b>
+          <b>Lemma</b>
+          <b>2.5.8</b>
           Falls $\mathcal{C}$ eine Verteilung über Schaltkreise der Tiefe
           $d$ und Größe $s$ ist und $\mathcal{C}$ Signalstärke $\delta$ hat, dann gilt:
         </p>
@@ -1281,10 +1288,10 @@ def binomial(n,k):
         liest sich so:
       </p>
       <div
-        class="well behauptung "
+        class="well remark"
       >
         <p>
-          <b>Behauptung 2.5.9</b>
+          <b>Behauptung</b>
           Wenn $\mathcal{C}$
           Fehlerwahrscheinlichkeit
           $\epsilon$ hat, dann hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit

@@ -9,15 +9,16 @@
     zuerst eine CNF oder DNF bauen und dann auf Fan-in 2 bestehen). Die offensichtliche
     Frage: geht es besser? Die Antwort: Ja, aber nicht viel besser.
     
-    |> Theorem
+    |> Statement
+        title=*Theorem*
     
         \ *(Shannon).* Es gibt
         Boolesche Funktionen $f$, die keine Schaltkreise kleiner
         als $\Omega(2^n / n)$ haben.
     
     |> Highlight
-    
-        *Beweis.*
+        title=*Beweis.*
+        
         Die Beweismethode ist vielleicht neu für Sie, aber in der Komplexitätstheorie und
         Kombinatorik
         sehr wichtig. Wir stellen uns zwei _Zählaufgaben_: (1) wie viele Boolesche
@@ -36,15 +37,16 @@
         mit $n$ Variablen. Warum? Die Wahrheitstabelle hat $2^n$ Zeilen. Sie könnne sich
         also $2^n$ mal für $0$ oder $1$ entscheiden.
         
-        |> SubTheorem
+        |> Remark
+            title=*Behauptung*
             
             \ Sei $s \geq n \geq 1$. Dann gibt es
             höchstens
             $s^{2s+1}$ Schaltkreise mit $n$ Input-Variablen, Fan-in 2 und $s$ Gates. 
         
-        |> Highlight 
-        
-            *Beweis.*
+        |> Highlight
+            title=*Beweis.*
+            
             Wir bauen den Schaltkreis, indem wir erst einmal $s$ Gates unbeschriftet "hinmalen".
             Um nun zu entscheiden, was für ein Schaltkreis das sein soll, müssen wir Entscheidungen
             treffen:
@@ -117,9 +119,9 @@
     $\frac{2^n}{2n}$ Gates auskommen, ist verschwindend klein. Fast _alle_ Funktionen brauchen also riesige Schaltkreise. In einem Gewissen Sinne haben wir also einfach Glück: die Funktionen, die uns interessieren, wie $n$-Bit-Addition, Majority, Parity und so weiter,
     haben einfach niedrige Komplexität. Das liegt wohl in der Natur der Sache: wir addieren, multiplizieren, bauen Brücken, Häuser, Flugzeuge, Computer, weil wir es _können_, weil also die dafür benötigten Berechnungen effizient durchführbar sind.
     
-    |> SubTheorem
-                        
-        *Forschungsprojekt.*
+    |> Remark
+        title=*Forschungsprojekt.*
+        
         \ Finde eine konkret
         beschreibbare Funktion $f: \fcube$, die exponentiell viele (oder zumindest superpolynomiell
         viele)
@@ -129,9 +131,9 @@
     Entscheidungsproblem, dass für eine "schwierige" Komplexitätsklasse vollständig
     ist, einen Kandidaten. Also zum Beispiel Graphenfärbbarkeit.
     
-    |> SubTheorem
+    |> Remark
+        title=*Entscheidungsproblem 3-Färbbarkeit.*
         
-        *Entscheidungsproblem 3-Färbbarkeit.*
         \ Gegeben
         ein Graph $G = (V,E)$, gibt es eine Funktion 
         \begin{align*}
@@ -162,14 +164,15 @@
     als $\frac{2^{n}}{2n}$ Gates nicht geht. Diese beiden Schranken lassen
     aber immer noch eine Lücke der Größenordnung $n$. Können wir sie schließen?
     
-    |> Theorem
+    |> Statement
+        title=*Theorem*
     
         \ *(Lupanov)*. Für jede Boolesche
         Funktion in $n$ Variablen gibt es einen Schaltkreis mit Fan-in 2 und $O(2^n / n)$ Gates.
     
     |> Highlight
+        title=*Beweis.*
         
-        *Beweis.*
         Der Beweis fußt auf zwei Kernideen: erstens bauen wir den Schaltkreis nicht
         mit AND- und OR- und NOT-Gates, sondern mit AND- und XOR-Gates. Da wir
         nach vollendeter Konstruktion jedes XOR-Gates durch einen kleinen Schaltkreis
@@ -252,7 +255,8 @@
         AND-Gates und $2^n-1$ XOR-Gates berechnet. Wir zeigen in der Tat
         etwas mehr:
         
-        |> Lemma
+        |> Statement
+            title=*Lemma*
         
             \ Es gibt einen
             Schaltkreis $C_n$ mit $n$ Input-Gates $x_1, \dots, x_n$ und
@@ -264,8 +268,8 @@
                     src=./img/circuits/all-monomials.svg
         
         |> Highlight
-        
-            *Beweis.*
+            title=*Beweis.*
+            
             Die Idee ist: wenn wir $x_1 x_2 x_3 x_4$ berechnen wollen,
             brauchen wir drei AND-Gates. Allerdings müssen wir
             $x_1 x_2 x_3$ eh berechnen, da wir ja _alle_ Monome
@@ -317,9 +321,9 @@
         auftreten, und wir können sparen. Dafür berechnen wir
         vorsorglich _alle_ Funktionen in $z_1,\dots,z_k$.
         
-        |> SubTheorem
+        |> Remark
+            title=*Lemma.*
             
-            *Lemma*
             \ Es gibt einen
             Schaltkreis mit Input-Gates $z_1,\dots,z_k$ und $2^{2^k}$ Output-Gates, einen
             für jede Funktion $g: \{0,1\}^k \rightarrow \{0,1\}$. Der Schaltkreis hat

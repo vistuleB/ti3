@@ -159,13 +159,8 @@ p {
     line-height: 1.8rem;
 }
 
-.definition,
-.beobachtung,
-.behauptung,
-.theorem,
-.subtheorem,
-.behauptung,
-.lemma {
+.statement,
+.remark {
     background-color: #f5f5f5;
     border: 1px #e3e3e3 solid;
     border-radius: 4px;
@@ -180,9 +175,7 @@ p {
     border-radius: 4px;
 }
 
-.highlight .definition,
-.highlight .theorem,
-.highlight .behauptung {
+.highlight .statement {
     background-color: #F0FFFF;
 }
 
@@ -191,7 +184,7 @@ p {
     border-radius: 4px;
 }
 
-.subtheorem {
+.remark {
     background-color: #F0FFFF;
 }
 

@@ -147,7 +147,9 @@
     
     Das Flipflop zeigt ein interessantes Verhalten: wenn $\text{Reset} = 0$, $\text{Set} = 1$ ist, so ist der Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1, und somit ist $\bar{Q} = 0$; somit sind wiederum beide Input-Werte des oberen OR-Gates 0 und $Q = 1$. Wenn $\text{Reset} = 1$, $\text{Set} = 0$, dann ist analog $Q = 0$, $\bar{Q} = 1$. Wenn $\text{Reset} = \text{Set} = 0$, dann leiten beide OR-Gates einfach die Werte der anderen, von rechts kommenden Kabel durch, und somit gilt $Q = \neg{\bar{Q}}$ und $\bar{Q} = \neg{Q}$; das heißt, die Werte, die zuvor bestanden, bestehen weiter. Das Flipflop implementiert somit einen 1-Bit-Speicher (die Kombination $\text{Set} = \text{Reset} = 1$ würde $Q = \bar{Q} = 0$ erzeugen und gilt als illegale Eingabe). Ein Flipflop hat somit einen inneren Zustand. Die Schaltkreise in diesem Kapitel haben keinen inneren Zustand: die Werte der Ausgabe-Gates sind vollständig durch die Werte der Input-Gates determiniert. Wir sind nun bereit für eine formale Definition von Schaltkreisen.
     
-    |> Definition
+    |> Statement
+        title=*Definition*
+        
         *(Boolesche Schaltkreise)*
         
         Ein Boolescher Schaltkreis ist ein gerichteter, azyklischer Graph (englisch directed acyclic graph, kurz DAG), in welchem jeder Knoten entweder
@@ -162,12 +164,14 @@
     
     Oft haben wir es mit Schaltkreisen mit nur einem Output-Gate zu tun; in diesem Falle lassen wir die Beschriftung auch gerne weg, weil sie keine zusätzliche Information bringt. Wenn wir allen Input-Variablen eines Schaltkreises $C$ einen Wahrheitswert zugewiesen bekommen haben, dann können wir den Schaltkreis von "unten" (Input-Gates) nach "oben" (Output-Gates) auswerten, indem eben jeder mit OR/AND/NOT beschriftete Knoten den ihm zugeordnete Booleschen Operator auswertet. Es ist klar, dass der Schaltkreis $C$ eine _Funktion_ $f_C : \{0,1\}^n \to \{0,1\}^m$ berechnet. Oft schreiben wir einfach $C : \{0,1\}^n \to \{0,1\}^m$.
     
-    |> Beobachtung
+    |> Statement
+        title=*Beobachtung*
         
         Ein Schaltkreis $C$ mit $n$ Input-Gates und $m$ Output-Gates berechnet eine Funktion $f_C : \{0,1\}^n \to \{0,1\}^m$
     
     Es ist auch nicht weiter überraschend, dass es Schaltkreise für die gleiche Funktion geben kann (sie haben für die Funktion $x_1 \land \ldots \land x_n$ auch bereits drei verschiedene Schaltkreise gesehen, und im Rahmen der obigen Übungsaufgabe wohl auch mehrere Schaltkreise, die das gleiche tun, entwickelt.
     
-    |> Definition
+    |> Statement
+        title=*Definition*
     
         Zwei Boolesche Schaltkreise $C, C^{\prime}$ heißen äquivalent, wenn $f_C = f_{C^{\prime}}$, wenn sie also die gleiche Funktion berechnen. Wir schreiben $C \equiv C^{\prime}$.

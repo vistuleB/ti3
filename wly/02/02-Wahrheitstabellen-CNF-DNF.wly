@@ -80,7 +80,8 @@
     
     An dieser Stelle zahlt es sich aus, eine formale Notation einzuführen: 
      
-    |> Definition
+    |> Statement
+        title=*Definition*
         
         Sei $f: \{0,1\}^n \rightarrow \{0,1\}$ eine Boolesche Funktion, $i \in \{1,\dots,n\}$ ein Index und $b \in \{0,1\}$ ein Wert. Dann ist $f|_{x_i=b}$ eine neue Funktion, und zwar
         
@@ -165,7 +166,8 @@
     \vee (x \wedge y \wedge z)
     $$
     
-    |> Definition
+    |> Statement
+        title=*Definition*
     
         Ein _Literal_ ist eine Variable $x$ oder deren Negation $\bar{x}$. Ein _Term_ ist ein AND (auch: Konjunktion) von Literalen (beispielsweise $\bar{x} \wedge \bar{y} \wedge z)$. Eine Formel in _disjunktiver Normalform_ (DNF) ist ein OR von Termen.
         
@@ -208,7 +210,8 @@
             src=img/circuits/cnf-example.svg
             loading=lazy
     
-    |> Definition
+    |> Statement
+        title=*Definition*
         
         Eine Formel in _konjunktiver Normalform_ (CNF) ist ein AND von Klauseln.
         
