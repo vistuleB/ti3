@@ -270,20 +270,29 @@ pre.listing code::before {
 }
 
 figure {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+figure.main-column {
     width: fit-content;
     text-align: center;
     overflow: visible;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 
-img {
+figure.main-column img {
     margin: auto;
     max-width: 100%;
 }
 
-.constrained {
+figure.main-column .constrained {
     max-width: calc(100vw - 20px);
 }
 
