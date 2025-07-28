@@ -135,7 +135,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.append_class_to_child_if__batch([
         #("Chapter", "out", infra.has_class(_, "well"), ""),
         #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
-            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock"
+            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "Carousel"
           ]), ""),
         #("Sub", "out", infra.has_class(_, "well"), ""),
         #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [

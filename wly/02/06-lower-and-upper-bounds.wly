@@ -283,14 +283,12 @@
             
             |> Carousel
                 |> CarouselItem
-                    |> div
-                        |> img
-                            src=./img/circuits/all-monomials-1.svg
+                    |> img
+                        src=./img/circuits/all-monomials-1.svg
                 
                 |> CarouselItem
-                    |> div
-                        |> img
-                            src=./img/circuits/all-monomials-2.svg
+                    |> img
+                        src=./img/circuits/all-monomials-2.svg
             
             Insgesamt erhalten wir $2^n$ Gates, von denen jedes gleichzeitig ein
             Ouptut-Gate ist.
