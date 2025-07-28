@@ -4,7 +4,7 @@ const MAIN_COLUMN_100VW_MAX_WIDTH = 1400;
 const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1100;
 const TOTAL_X_PADDING_IN_PX = 64;
 const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 100;
-const CAROUSEL_ARROW_DESKTOP_SIZE = 40;
+const CAROUSEL_ARROW_DESKTOP_SIZE = 48;
 const CAROUSEL_ARROW_MOBILE_SIZE = 28;
 
 window.history.scrollRestoration = "manual";
@@ -78,7 +78,7 @@ const body = () => {
 class Carousel {
   constructor(container) {
     this.container = container;
-    this.carousel = container.querySelector('.carousel__item-container');
+    this.carousel = container.querySelector('.carousel__items');
     this.carouselItems = container.querySelectorAll('.carousel__item');
     this.totalCarouselItems = this.carouselItems.length - 1;
     this.currentCarouselItem = 0;
@@ -88,8 +88,8 @@ class Carousel {
   
   init() {
     this.createNavigationButtons();
+    this.showCurrentItem();
     this.attachEventListeners();
-    this.updateCarousel();
   }
   
   createNavigationButtons() {
@@ -109,9 +109,14 @@ class Carousel {
     this.container.append(nextBtn);
   }
   
-  updateCarousel() {
-    const translateX = -this.currentCarouselItem * 100;
-    this.carousel.style.transform = `translateX(${translateX}%)`;
+  showCurrentItem() {
+    // hide all items and show only the current one
+    this.carouselItems.forEach((item, index) => {
+      item.classList.remove('active');
+      if (index === this.currentCarouselItem) {
+        item.classList.add('active');
+      }
+    });
     
     this.updateButtonStates();
   }
@@ -119,18 +124,20 @@ class Carousel {
   changeCarouselItem(direction) {
     this.currentCarouselItem += direction;
     
-    if (this.currentCarouselItem >= this.totalCarouselItems) {
-      this.currentCarouselItem = this.totalCarouselItems;
+    if (this.currentCarouselItem >= this.carouselItems.length) {
+      this.currentCarouselItem = this.carouselItems.length - 1;
     } else if (this.currentCarouselItem < 0) {
       this.currentCarouselItem = 0;
     }
     
-    this.updateCarousel();
+    this.showCurrentItem();
   }
   
   goToCarouselItem(carouselItemIndex) {
-    this.currentCarouselItem = carouselItemIndex;
-    this.updateCarousel();
+    if (carouselItemIndex >= 0 && carouselItemIndex <= this.totalCarouselItems) {
+      this.currentCarouselItem = carouselItemIndex;
+      this.showCurrentItem();
+    }
   }
   
   updateButtonStates() {
@@ -141,7 +148,7 @@ class Carousel {
       prevBtn.disabled = this.currentCarouselItem === 0;
       
       // disable next button if at last item
-      nextBtn.disabled = this.currentCarouselItem === this.totalCarouselItems;
+      nextBtn.disabled = this.currentCarouselItem === this.carouselItems.length - 1;
   }
   
   attachEventListeners() {
@@ -159,7 +166,7 @@ class Carousel {
 }
 
 const setupCarousels = () => {
-  const carousels = document.querySelectorAll('.carousel-container');
+  const carousels = document.querySelectorAll('.carousel');
   carousels.forEach(container => {
     new Carousel(container);
   })
