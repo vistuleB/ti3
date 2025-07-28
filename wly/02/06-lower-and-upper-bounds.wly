@@ -285,13 +285,11 @@
                 |> CarouselItem
                     |> div
                         |> img
-                            style=width:100%
                             src=./img/circuits/all-monomials-1.svg
                 
                 |> CarouselItem
                     |> div
                         |> img
-                            style=width:100%
                             src=./img/circuits/all-monomials-2.svg
             
             Insgesamt erhalten wir $2^n$ Gates, von denen jedes gleichzeitig ein
