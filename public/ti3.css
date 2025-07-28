@@ -339,12 +339,14 @@ figure.main-column .constrained {
     height: auto;
     flex: 1 0 0%;
     display: flex;
+    text-align: center;
 }
 
 .carousel__items > .carousel__item {
     position: relative;
     display: none;
     flex: 1 0 100%;
+    
 }
 
 .carousel__items > .carousel__item.active {
