@@ -173,6 +173,11 @@ p {
     line-height: 1.8rem;
 }
 
+p:has(> mjx-container) {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
 .statement,
 .remark {
     background-color: #f5f5f5;
