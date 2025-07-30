@@ -3,6 +3,7 @@
     --main-column-width: 100vw;
     --outer-well-width: 100vw;
     --carousel-arrow-size: 48px;
+    --body-top-margin: 80px;
 }
 
 * {
@@ -16,6 +17,7 @@ html {
 }
 
 body {
+    margin-top: var(--body-top-margin);
     background-color: rgba(248, 244, 253, 1);
     font-size: 1.25rem;
     min-width: 2500px;
@@ -92,6 +94,12 @@ body {
     width: 100vw;
     display: flex;
     justify-content: space-between;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu--hidden {
+    transform: translateY(-100%);
 }
 
 .menu-right, .menu-left {
@@ -99,8 +107,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    background-color: #F8F4FD;
     padding: 1rem;
+}
+
+.menu a {
+    padding: 0 1rem;
+    background-color: #F8F4FD;
+    border-radius: 6px;
 }
 
 .menu-right {

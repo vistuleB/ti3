@@ -6,8 +6,14 @@ const TOTAL_X_PADDING_IN_PX = 64;
 const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 100;
 const CAROUSEL_ARROW_DESKTOP_SIZE = 48;
 const CAROUSEL_ARROW_MOBILE_SIZE = 28;
+const BODY_TOP_MARGIN_MOBILE = 140;
+const BODY_TOP_MARGIN_DESKTOP = 80;
 
 window.history.scrollRestoration = "manual";
+// menu scroll behavior 
+let lastScrollY = 0;
+let menuElement = null;
+
 
 const marginWidth = () => {
   return (document.body.scrollWidth - window.visualViewport.width) / 2;
@@ -28,6 +34,12 @@ const instantRecenter = () => {
   recenter("instant");
 };
 
+const computeBodyTopMargin = () => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= WELL_100VW_MAX_WIDTH) return BODY_TOP_MARGIN_MOBILE;
+  return BODY_TOP_MARGIN_DESKTOP;
+};
+
 const computeMainColumnWidth = () => {
   const screenWidth = window.innerWidth;
   if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return screenWidth;
@@ -45,6 +57,12 @@ const computeCarouselArrowSize = () => {
   const screenWidth = window.innerWidth;
   if (screenWidth <= WELL_100VW_MAX_WIDTH) return CAROUSEL_ARROW_MOBILE_SIZE;
   return CAROUSEL_ARROW_DESKTOP_SIZE;
+};
+
+const setBodyTopMargin = (value) => {
+  const root = document.documentElement;
+  const cssValue = `${value}px`;
+  root.style.setProperty('--body-top-margin', cssValue);
 };
 
 const setMainColumnWidth = (value) => {
@@ -204,6 +222,26 @@ const onImgClick = (e) => {
   }
 };
 
+const handleMenuOnScroll = () => {
+  if (!menuElement) {
+    menuElement = document.querySelector('.menu');
+    if (!menuElement) return;
+  }
+
+  const currentScrollY = window.scrollY;
+  
+  // show menu when scrolling up or at the top
+  if (currentScrollY < lastScrollY || currentScrollY <= 10) {
+    menuElement.classList.remove('menu--hidden');
+  } 
+  // hide menu when scrolling down (but not at the very top)
+  else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    menuElement.classList.add('menu--hidden');
+  }
+  
+  lastScrollY = currentScrollY;
+};
+
 const onLoad = () => {
   setupCarousels();
   add_line_number_to_numbered_pre();
@@ -212,6 +250,7 @@ const onLoad = () => {
 
 const onResize = () => {
   instantRecenter();
+  setBodyTopMargin(computeBodyTopMargin());
   setMainColumnWidth(computeMainColumnWidth());
   setOuterWellWidth(computeOuterWellWidth());
   setCarouselArrowSize(computeCarouselArrowSize());
@@ -226,6 +265,11 @@ const smoothRecenterMaybe = (e) => {
   ) {
     recenter("smooth");
   }
+};
+
+
+const onScroll = (e) => {
+  handleMenuOnScroll();
 };
 
 const onScrollEnd = (e) => {
@@ -274,6 +318,7 @@ const onKeyDown = (e) => {
 document.addEventListener("DOMContentLoaded", onLoad);
 window.addEventListener("resize", onResize);
 document.addEventListener("click", smoothRecenter);
+document.addEventListener("scroll", onScroll);
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd);
 document.addEventListener('keydown', onKeyDown);
