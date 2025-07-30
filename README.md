@@ -43,3 +43,7 @@ Available on:
 Hit CTRL-C to stop the server
 Open: http://127.0.0.1:8080/Book.html
 ```
+
+## Web version
+
+https://ti3.netlify.app/
