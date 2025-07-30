@@ -262,31 +262,22 @@ pre.listing code::before {
     color: blue;
 }
 
-figure {
-    display: block;
+figure.main-column,
+.well figure {
     width: fit-content;
     margin: 20px auto;
-    text-align: center;
-}
-
-figure img {
-    max-width: 100%;
-}
-
-figure.main-column {
-    width: fit-content;
     text-align: center;
     overflow: visible;
-    margin: 20px auto;
 }
 
-figure.main-column img {
-    margin: auto;
+figure.main-column img,
+.well figure img {
+    max-width: var(--main-column-width);
+}
+
+figure.main-column img.constrained,
+.well img.constrained {
     max-width: 100%;
-}
-
-figure.main-column .constrained {
-    max-width: calc(100vw - 20px);
 }
 
 .transition-all {
