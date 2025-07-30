@@ -65,7 +65,7 @@ const setCarouselArrowSize = (value) => {
   root.style.setProperty('--carousel-arrow-size', cssValue);
 };
 
-const body = () => {
+const add_line_number_to_numbered_pre = () => {
   document.querySelectorAll('pre.numbered-pre').forEach(pre => {
     const lines = pre.textContent.split('\n');
     pre.innerHTML = lines
@@ -195,14 +195,22 @@ const adjustMathAlignment = () => {
   });
 }
 
-const onLoad = () => {
-  handleResize();
-  body();
-  setupCarousels();
-  setTimeout(adjustMathAlignment, 60);
+const onImgClick = (e) => {
+  const image = e.srcElement;
+  if (image.classList.contains("constrained")) {
+    image.classList.remove("constrained");
+  } else {
+    image.classList.add("constrained");
+  }
 };
 
-const handleResize = () => {
+const onLoad = () => {
+  setupCarousels();
+  add_line_number_to_numbered_pre();
+  onResize();
+};
+
+const onResize = () => {
   instantRecenter();
   setMainColumnWidth(computeMainColumnWidth());
   setOuterWellWidth(computeOuterWellWidth());
@@ -230,14 +238,6 @@ const onTouchEnd = (e) => {
   setTimeout(adjustMathAlignment, 60);
 };
 
-const onImgClick = (e) => {
-  const image = e.srcElement;
-  if (image.classList.contains("constrained")) {
-    image.classList.remove("constrained");
-  } else {
-    image.classList.add("constrained");
-  }
-};
 
 // chapter navigation functions
 const navigateToChapter = (elementId) => {
@@ -272,7 +272,7 @@ const onKeyDown = (e) => {
 
 // event listeners
 document.addEventListener("DOMContentLoaded", onLoad);
-window.addEventListener("resize", handleResize);
+window.addEventListener("resize", onResize);
 document.addEventListener("click", smoothRecenter);
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd);
