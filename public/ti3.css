@@ -222,13 +222,6 @@ pre code.pythonPrompt::before {
     font-family: "courier";
     content: ">>> ";
     width: 8em;
-    /* doesn't work */
-    padding-left: auto;
-    /* doesn't work */
-    margin-left: auto;
-    /* doesn't work */
-    text-align: right;
-    /* doesn't work */
 }
 
 pre {
@@ -249,13 +242,6 @@ pre.listing code::before {
     content: counter(listing) ". ";
     min-width: 4ch;
     display: inline-block;
-    /* doesn't work */
-    padding-left: auto;
-    /* doesn't work */
-    margin-left: auto;
-    /* doesn't work */
-    text-align: right;
-    /* doesn't work */
 }
 
 .terminalOutput {
