@@ -108,6 +108,7 @@ body {
     flex-direction: column;
     gap: 0.4rem;
     padding: 1rem;
+    justify-content: end;
 }
 
 .menu a {
