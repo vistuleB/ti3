@@ -300,8 +300,6 @@ figure.main-column img.constrained,
 
 .carousel__nav-button {
     flex-shrink: 0; 
-    width: var(--carousel-arrow-size);
-    height: var(--carousel-arrow-size); 
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -312,6 +310,11 @@ figure.main-column img.constrained,
     color: #333;
     transition: background-color 0.3s ease;
     z-index: 100;
+}
+
+.carousel__nav-button > img {
+    width: var(--carousel-arrow-size);
+    height: var(--carousel-arrow-size); 
 }
 
 .carousel__nav-button:disabled {

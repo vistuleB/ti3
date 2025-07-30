@@ -53,6 +53,7 @@ const computeOuterWellWidth = () => {
   return computeMainColumnWidth() - 2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET;
 }
 
+
 const computeCarouselArrowSize = () => {
   const screenWidth = window.innerWidth;
   if (screenWidth <= WELL_100VW_MAX_WIDTH) return CAROUSEL_ARROW_MOBILE_SIZE;
@@ -208,7 +209,7 @@ const adjustMathAlignment = () => {
     const minWidthInPx = parseFloat(minWidth);
     const mathBlockWidthInPx = math_block.getBoundingClientRect().width;
     if (minWidthInPx > mathBlockWidthInPx) {
-      math_block.scroll({left: 1000});
+      math_block.scroll({left: minWidthInPx * (1/3)});
     }
   });
 }
@@ -242,21 +243,6 @@ const handleMenuOnScroll = () => {
   lastScrollY = currentScrollY;
 };
 
-const onLoad = () => {
-  setupCarousels();
-  add_line_number_to_numbered_pre();
-  onResize();
-};
-
-const onResize = () => {
-  instantRecenter();
-  setBodyTopMargin(computeBodyTopMargin());
-  setMainColumnWidth(computeMainColumnWidth());
-  setOuterWellWidth(computeOuterWellWidth());
-  setCarouselArrowSize(computeCarouselArrowSize());
-  setTimeout(adjustMathAlignment, 60);
-}
-
 const smoothRecenterMaybe = (e) => {
   let theoretical_left = marginWidth();
   if (
@@ -267,6 +253,28 @@ const smoothRecenterMaybe = (e) => {
   }
 };
 
+// helpers
+const onWideScreen = (callback) => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= WELL_100VW_MAX_WIDTH) return;
+  return callback();
+}
+
+const onLoad = () => {
+  setupCarousels();
+  add_line_number_to_numbered_pre();
+  onResize();
+};
+
+// event listeners
+const onResize = () => {
+  instantRecenter();
+  setBodyTopMargin(computeBodyTopMargin());
+  setMainColumnWidth(computeMainColumnWidth());
+  setOuterWellWidth(computeOuterWellWidth());
+  setCarouselArrowSize(computeCarouselArrowSize());
+  setTimeout(adjustMathAlignment, 60);
+}
 
 const onScroll = (e) => {
   handleMenuOnScroll();
@@ -274,14 +282,12 @@ const onScroll = (e) => {
 
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();
-  setTimeout(adjustMathAlignment, 60);
+  onWideScreen(() => setTimeout(adjustMathAlignment, 60))
 };
 
 const onTouchEnd = (e) => {
   smoothRecenterMaybe();
-  setTimeout(adjustMathAlignment, 60);
 };
-
 
 // chapter navigation functions
 const navigateToChapter = (elementId) => {
@@ -320,5 +326,5 @@ window.addEventListener("resize", onResize);
 document.addEventListener("click", smoothRecenter);
 document.addEventListener("scroll", onScroll);
 document.addEventListener("scrollend", onScrollEnd);
-document.addEventListener("touchend", onTouchEnd);
+document.addEventListener("touchend", onTouchEnd, {passive: true});
 document.addEventListener('keydown', onKeyDown);
