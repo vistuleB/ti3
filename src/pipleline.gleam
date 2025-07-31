@@ -76,7 +76,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "figure", "img"
           ]
         ),
-        ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED", "Carousel"]
+        ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "QED", "Carousel"]
       ),
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
