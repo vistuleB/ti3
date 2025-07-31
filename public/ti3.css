@@ -222,6 +222,10 @@ p:has(> mjx-container) {
     float: right;
 }
 
+p:has(> span.qed:only-child):last-child {
+  padding-bottom: 2rem;
+}
+
 .nowrap {
   white-space: nowrap;
 }
