@@ -109,12 +109,12 @@ body {
     gap: 0.4rem;
     padding: 1rem;
     justify-content: end;
+    background-color: #F8F4FD;
+    border-radius: 6px;
 }
 
 .menu a {
     padding: 0 1rem;
-    background-color: #F8F4FD;
-    border-radius: 6px;
 }
 
 .menu-right {
