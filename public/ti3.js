@@ -194,6 +194,10 @@ const setupCarousels = () => {
 };
 
 const adjustMathAlignment = () => {
+  // we do not apply alignment, unless it is wide screen
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= WELL_100VW_MAX_WIDTH) return;
+  
   document.querySelectorAll('.math-block').forEach((math_block) => {
     const svg = math_block.querySelector('svg');
     if (!svg) {
@@ -209,7 +213,7 @@ const adjustMathAlignment = () => {
     const minWidthInPx = parseFloat(minWidth);
     const mathBlockWidthInPx = math_block.getBoundingClientRect().width;
     if (minWidthInPx > mathBlockWidthInPx) {
-      math_block.scroll({left: minWidthInPx * (1/3)});
+      math_block.scroll({left: 1000});
     }
   });
 }
@@ -282,9 +286,7 @@ const onScroll = (e) => {
 
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();
-  console.log("here's your event:", e);
   setTimeout(adjustMathAlignment, 60);
-  // onWideScreen(() => setTimeout(adjustMathAlignment, 60));
 };
 
 const onTouchEnd = (e) => {
