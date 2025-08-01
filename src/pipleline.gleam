@@ -39,6 +39,8 @@ pub fn pipeline() -> List(infra.Desugarer) {
         #("Sub", "counter", "ExerciseCounter"),
         #("Sub", "counter", "StatementCounter")
       ]),
+      dl.append_value_to_handle_attribute_if_has_ancestor_else(#("Statement", "Sub", "::øøChapterCounter.::øøSubCounter.::øøStatementCounter", "::øøChapterCounter.::øøStatementCounter")),
+      dl.append_value_to_handle_attribute_if_has_ancestor_else(#("Exercise", "Sub", "::øøChapterCounter.::øøSubCounter.::øøExerciseCounter", "::øøChapterCounter.::øøExerciseCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Chapter", "ChapterCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Exercise", "ExerciseCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Sub", "SubCounter")),
@@ -58,7 +60,14 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.prepend_attribute_as_text(#("Statement","title")),
       dl.prepend_attribute_as_text(#("Highlight","title")),
       dl.prepend_attribute_as_text(#("Remark","title")),
+      dl.append_attribute__outside(#("Chapter", "path", "/::øøChapterCounter-0.html"), []),
+      dl.append_attribute__outside(#("Sub", "path", "/::øøChapterCounter-::øøSubCounter.html"), []),
       dl.counters_substitute_and_assign_handles(),
+      dl.handles_generate_ids(),
+      dl.handles_generate_dictionary("path"),
+      dl.handles_substitute(#("path", "a", "a", [], [])),
+      dl.rearrange_links(#("Theorem <a href='1'>_1_</a>", "<a href='1'>Theorem _1_</a>")),
+      dl.rearrange_links(#("Übungsaufgabe <a href='1'>_1_</a>", "<a href='1'>Übungsaufgabe _1_</a>")),
       dl.group_consecutive_children__outside(
         #(
           "p",
