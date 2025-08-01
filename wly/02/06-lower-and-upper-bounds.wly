@@ -46,7 +46,7 @@
         
         |> Highlight
             title=*Beweis.*
-            
+
             Wir bauen den Schaltkreis, indem wir erst einmal $s$ Gates unbeschriftet "hinmalen".
             Um nun zu entscheiden, was für ein Schaltkreis das sein soll, müssen wir Entscheidungen
             treffen:
