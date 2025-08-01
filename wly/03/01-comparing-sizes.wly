@@ -39,9 +39,9 @@
     unumstritten.
     
     |> Statement
-        title=*Beispiel*
+        title=*Beispiel* 
     
-        Beginnen wir mit einem
+        Beginnen wir mit einem 
         einfachen Beispiel und betrachten die zwei Mengen $\N =
         \{0,1,2,3,4,\dots\}$ und $\N^+ = \{1,2,3,4,\dots\}$. Beide sind
         unendlich, und $\N^+ \subsetneq \N$. Dennoch sind sie in gewisser
@@ -49,7 +49,6 @@
         paarweise zuordnen:
         |> figure
             |> img
-                style=width: 70%
                 src=./img/infinite-sets/N-N-plus.svg
                 
         Wir können diese Zuordnung auch mit einer einfachen Formel

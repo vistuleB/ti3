@@ -51,6 +51,7 @@
         verschwinden lassen".
     
     |> Exercise
+        handle=exercise333
     
         Zeigen Sie, dass $[0,1]$, $[0,1)$, $(0,1]$ und $(0,1)$ alle
         gleichmächtig sind.
@@ -67,6 +68,7 @@
     
     |> Statement
         title=*Theorem*
+        handle=Req01N
         
         \ $\R \approx \{0,1\}^{\N}$.
     
@@ -74,7 +76,7 @@
         title=*Beweis.*
         
         Die Beweisidee ist einfach, allerdings gehen erst einmal ein paar
-        Dinge schief, die man wieder flicken muss. Da laut
+        Dinge schief, die man wieder flicken muss. Da laut Übungsaufgabe >>exercise333
         $\R \approx [0,1)$ gilt, reicht es, eine Bijektion $f : [0,1)
         \rightarrow \{0,1\}^{\N}$ zu konstruieren. So geht's:
         
@@ -133,14 +135,14 @@
     
     |> Statement
         title=*Theorem*
+        handle=squareInterval
         
         Es gilt $\R^2 \approx \R$.
         
     |> Highlight
-        title=*Beweis.*
+        title=*Beweis.* 
     
-        Mithilfe von
-        \ geht
+        Mithilfe von Theorem >>Req01N geht
         das ganz einfach. Da $\R \approx \{0,1\}^\N$ gilt, reicht es
         nämlich, eine Bijektion $\{0,1\}^\N \times \{0,1\}^\N \rightarrow
         \{0,1\}^\N$ zu konstruieren. Ein Element von $\{0,1\}^\N \times
@@ -156,7 +158,7 @@
         |> QED
         
     Aus der Funktion $f: \{0,1\}^{\N} \times \{0,1\}^{\N} \mapsto
-    \{0,1\}^{\N}$ aus
+    \{0,1\}^{\N}$ aus Theorem >>squareInterval
     können wir eine (fast) bijektive Funktion $[0,1) \times [0,1)
     \rightarrow [0,1)$ bauen. Wir nehmen zwei Zahlen $0 \leq x,y \lt 1$,
     schreiben sie in Binärdarstellung und vereinigen sie dann per
@@ -346,6 +348,7 @@
     
     |> Statement
         title=*Theorem*
+        handle=calculatingWithCardinal
     
         *(mit Kardinalzahlen rechnen)*. Es gelten die
         üblichen Rechenregeln:
@@ -365,6 +368,7 @@
     
     |> Statement
         title=*Theorem*
+        handle=replacingEquipotentCardinals
         
         Seien $A, A', B$ Mengen und $A \approx A'$. Dann gilt
         |> ol
@@ -384,10 +388,11 @@
     Punkt 3 sondern erfordert einen separaten Beweis.
     
     |> Exercise
+        
     
         Beweisen Sie so
-        viele Punkte von
-        und
+        viele Punkte von Theorem >>calculatingWithCardinal
+        und Theorem >>replacingEquipotentCardinals, wie Sie wollen.
                             
         *Hinweis.* Die Beweise sind alle nicht wirklich
         schwierig. Sie müssen nur aufpassen, dass Sie sich nicht in der

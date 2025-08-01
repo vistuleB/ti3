@@ -13,6 +13,7 @@
     
     |> Statement
         title=*Theorem*
+        handle=theoremNN
     
         Die Mengen $\N$ und $\N^2$ sind gleichmächtig. Mit $\N^2$ (oder auch
         $\N \times \N$) bezeichnen wir hier das cartesische Produkt von $\N$
@@ -60,6 +61,7 @@
         Aufdröselung finden, jetzt aber mit negativen Zahlen.
     
     |> Exercise
+        handle=exerciseCartesianProduct
         
         Zeigen Sie ganz allgemein: wenn $A \approx A'$ und $B \approx B'$,
         dann gilt auch $A \times B \approx A' \times B'$.
@@ -107,14 +109,8 @@
         somit gilt auch $f_1(q) \ne f_1(q')$.
         
         Wir haben nun also eine Injektion $f_1 : \Q \rightarrow \Z \times
-        \N$. Mit
-        |> span
-            data-ref=exercise-cartesian-product
-            class=reference
-        und 
-        |> span
-            data-ref=theorem-N-N^2
-            class=reference
+        \N$. Mit Übungsaufgabe >>exerciseCartesianProduct
+        \ und Theorem >>theoremNN
         gilt $\Z \times \N \approx \N \times \N \approx \N$, und somit gibt
         es eine Bijektion $f_2 : \Z \times \N \rightarrow \N$. Die
         Verknüpfung $f := f_2 \circ f_1 : \Q \rightarrow \N$ ist nun die
