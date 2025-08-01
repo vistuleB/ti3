@@ -120,7 +120,9 @@
           treffen:
         </p>
         <ol>
-          <li>
+          <li
+            test="test"
+          >
             <p>
               Für jedes der $s$ Gates, was es sein soll.
             </p>
@@ -785,10 +787,7 @@
             \end{align*}
             $$
           </div>
-        </span>
-      </p>
-      <p>
-        und wir können gleich aufhören, da der erste Term bereits $2^n$ ergibt.
+        </span>und wir können gleich aufhören, da der erste Term bereits $2^n$ ergibt.
         Das ist zu groß.
         Wir müssen $k$ also kleiner wählen. Nächster Versuch:
         <span
@@ -802,12 +801,9 @@
         $$
         \begin{align*}
         (\ref{size-lupanov})&amp;= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
-        &amp;=
-        2^{2^{\log n - 1}} + 3 \cdot 2^{n - \log n + 1} + 2^{\log n - 1} - 1 \\
-        &amp;=
-        2^{n/2} + \frac{6 \cdot 2^n}{n} + n/2 - 1 \\
-        &amp;=
-        O\pfrac{2^n}{n} \ .
+        &amp;= 2^{2^{\log n - 1}} + 3 \cdot 2^{n - \log n + 1} + 2^{\log n - 1} - 1 \\
+        &amp;= 2^{n/2} + \frac{6 \cdot 2^n}{n} + n/2 - 1 \\
+        &amp;= O\pfrac{2^n}{n} \ .
         \end{align*}
         $$
       </div>

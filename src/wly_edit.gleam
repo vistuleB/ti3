@@ -8,6 +8,24 @@ import vxml.{type VXML, V}
 import desugarer_library as dl
 import prefabricated_pipelines as pp
 
+const p_cannot_contain = [
+  "CentralDisplay", "CentralDisplayItalic", "Chapter", 
+  "ChapterTitle", "Example", "Exercise", "Grid", "Image", 
+  "List", "MathBlock", "Note", "Pause", "Section",
+  "Solution", "SolutionNote", "StarDivider", "Table", "TextParent",
+  "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
+  "Sub", "SubTitle", "Statement", "Remark",
+  "thead", "tbody", "tr", "td", "section",
+  "Index", "Menu",
+  "Highlight", "Carousel", "CarouselItems", "CarouselItem",
+  "h1", "h2", "h3", "pre", "div", "br", "hr",
+  "figure", "img"
+]
+
+const p_cannot_be_contained_in = [
+  "MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED", "Carousel"
+]
+
 type FragmentType {
   Root
   Chapter
@@ -58,18 +76,35 @@ fn splitter(
 }
 
 fn our_pipeline() -> List(Desugarer) {
-  let #(opening, closing) = 
-    infra.latex_display_delimiter_pairs_list()
-    |> list.map(infra.opening_and_closing_string_for_pair)
-    |> list.unzip
-
   [
     [
       dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
+      dl.find_replace__outside(#("&amp;", "&"), []),
     ],
-    pp.create_mathblock_elements([infra.DoubleDollar], infra.DoubleDollar),
+    pp.create_mathblock_elements([infra.DoubleDollar, infra.BackslashSquareBracket], infra.DoubleDollar),
+    pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar),
     [
-      dl.strip_delimiters_inside(#("MathBlock", opening, closing)),
+      dl.strip_delimiters_inside_if(#("MathBlock", infra.latex_display_delimiter_pairs_list(), infra.descendant_text_contains(_, "\\begin{align"))),
+      dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
+      dl.concatenate_text_nodes(),
+      dl.line_rewrap_no1__outside(#(50, infra.is_v_and_tag_equals(_, "Math")), ["MathBlock", "Math"]),
+      dl.concatenate_text_nodes(),
+      dl.fold_contents_into_text("Math"),
+      dl.delete_empty_lines(),
+      dl.unwrap("WriterlyBlankLine"),
+      dl.add_between(#("Exercise", "p", "WriterlyBlankLine", [])),
+      dl.add_between(#("Remark", "p", "WriterlyBlankLine", [])),
+      dl.add_between(#("Statement", "p", "WriterlyBlankLine", [])),
+      dl.add_between(#("Highlight", "p", "WriterlyBlankLine", [])),
+      dl.add_between(#("h3", "p", "WriterlyBlankLine", [])),
+      dl.add_between(#("ol", "p", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("Exercise", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("Remark", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("Statement", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("Highlight", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("h3", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("ol", "WriterlyBlankLine", [])),
+      dl.unwrap("p"),
       dl.unwrap("MathBlock"),
     ]
   ]
@@ -81,8 +116,8 @@ pub fn entrypoint(amendments: vr.CommandLineAmendments) {
 
   let renderer =
     vr.Renderer(
-      assembler: vr.default_blamed_lines_assembler([]),
-      source_parser: vr.default_writerly_source_parser([]),
+      assembler: vr.default_blamed_lines_assembler(amendments.spotlight_paths),
+      source_parser: vr.default_writerly_source_parser(amendments.spotlight_key_values),
       pipeline: pipeline,
       splitter: splitter,
       emitter: vr.stub_writerly_emitter,
