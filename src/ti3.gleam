@@ -2,7 +2,7 @@ import argv
 import blamedlines.{type Blame, type BlamedLine, Blame, BlamedLine}
 import gleam/io
 import gleam/list
-
+import gleam/dict
 import gleam/result
 import gleam/string.{inspect as ins}
 import infrastructure as infra
@@ -10,6 +10,7 @@ import pipleline.{pipeline}
 import simplifile
 import vxml.{type VXML}
 import vxml_renderer as vr
+import wly_edit
 
 pub type FragmentType {
   Chapter(Int)
@@ -96,6 +97,7 @@ fn ti3_splitter(
     chapter_fragments,
     sub_fragments,
   ])
+
   |> Ok
 }
 
@@ -239,13 +241,18 @@ pub fn main() {
   let args = argv.load().arguments
 
   use amendments <- infra.on_error_on_ok(
-    vr.process_command_line_arguments(args, []),
+    vr.process_command_line_arguments(args, ["--wly-edit"]),
     fn(error) {
       io.println("")
       io.println("command line error: " <> ins(error))
       io.println("")
       vr.cli_usage()
-    },
+    }
+  )
+
+  use _ <- infra.on_ok_on_error(
+    dict.get(amendments.user_args, "--wly-edit"),
+    fn(_) {wly_edit.entrypoint(amendments)},
   )
 
   let renderer =
@@ -271,10 +278,10 @@ pub fn main() {
     |> vr.amend_renderer_debug_options_by_command_line_amendment(amendments, pipeline())
 
   // clean up HTML files before rendering
-    case cleanup_html_files(parameters.output_dir) {
-      Ok(_) -> io.println("HTML cleanup completed")
-      Error(error) -> io.println("HTML cleanup failed: " <> error)
-    }
+  case cleanup_html_files(parameters.output_dir) {
+    Ok(_) -> io.println("HTML cleanup completed")
+    Error(error) -> io.println("HTML cleanup failed: " <> error)
+  }
 
   case vr.run_renderer(renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")

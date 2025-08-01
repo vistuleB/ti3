@@ -282,11 +282,15 @@ const onScroll = (e) => {
 
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();
-  onWideScreen(() => setTimeout(adjustMathAlignment, 60))
+  console.log("here's your event:", e);
+  setTimeout(adjustMathAlignment, 60);
+  // onWideScreen(() => setTimeout(adjustMathAlignment, 60));
 };
 
 const onTouchEnd = (e) => {
+  console.log("here's your event:", e);
   smoothRecenterMaybe();
+  setTimeout(adjustMathAlignment, 60);
 };
 
 // chapter navigation functions
