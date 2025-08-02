@@ -366,7 +366,7 @@ figure.main-column img.constrained,
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 4px;
   padding: 0;
 }
 
