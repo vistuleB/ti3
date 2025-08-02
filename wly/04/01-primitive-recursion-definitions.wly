@@ -111,7 +111,7 @@
     "schleifenhaftes" tut.
     
     |> Statement
-        title=*Demo*
+        title=*Demo* 
     
         \ Speichern Sie die Datei 
         |> a
