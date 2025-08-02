@@ -13,7 +13,7 @@
     
     |> Statement
         title=*Theorem*
-        handle=theoremNN
+        handle=theorem-N-N^2
     
         Die Mengen $\N$ und $\N^2$ sind gleichmächtig. Mit $\N^2$ (oder auch
         $\N \times \N$) bezeichnen wir hier das cartesische Produkt von $\N$
@@ -61,7 +61,7 @@
         Aufdröselung finden, jetzt aber mit negativen Zahlen.
     
     |> Exercise
-        handle=exerciseCartesianProduct
+        handle=exercise-cartesian-product
         
         Zeigen Sie ganz allgemein: wenn $A \approx A'$ und $B \approx B'$,
         dann gilt auch $A \times B \approx A' \times B'$.
@@ -109,8 +109,8 @@
         somit gilt auch $f_1(q) \ne f_1(q')$.
         
         Wir haben nun also eine Injektion $f_1 : \Q \rightarrow \Z \times
-        \N$. Mit Übungsaufgabe >>exerciseCartesianProduct
-        \ und Theorem >>theoremNN
+        \N$. Mit Übungsaufgabe >>exercise-cartesian-product
+        \ und Theorem >>theorem-N-N^2
         gilt $\Z \times \N \approx \N \times \N \approx \N$, und somit gibt
         es eine Bijektion $f_2 : \Z \times \N \rightarrow \N$. Die
         Verknüpfung $f := f_2 \circ f_1 : \Q \rightarrow \N$ ist nun die
@@ -166,9 +166,6 @@
         
         Wir definieren eine Bijektion $f: \N \rightarrow \Q$, indem wir die
         Beweisidee von
-        |> span
-            data-ref=theorem-N-N^2
-            class=reference
         wiederholen. Wir zeichnen $\Z \times \N^+$ schematisch, löschen aber
         die Paare $(a,b)$, die nicht einem gekürzten Bruch entsprechen.
         |> figure
