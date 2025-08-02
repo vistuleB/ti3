@@ -295,6 +295,11 @@ figure.main-column img.constrained,
     transition-duration: 500ms;
 }
 
+.carousel__container {
+    width: inherit;
+    padding: 1rem 0;
+}
+
 .carousel {
     width: inherit;
     height: auto;
@@ -353,6 +358,35 @@ figure.main-column img.constrained,
 
 .carousel__items > .carousel__item.active {
     display: block;
+}
+
+.carousel__indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.carousel__indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel__indicator:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.carousel__indicator.active {
+  background-color: #333;
+  transform: scale(1.2);
 }
 
 h1 {

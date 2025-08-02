@@ -96,8 +96,8 @@ const add_line_number_to_numbered_pre = () => {
 
 class Carousel {
   constructor(container) {
-    this.container = container;
-    this.carousel = container.querySelector('.carousel__items');
+    this.container = container; 
+    this.carousel = container.querySelector('.carousel');
     this.carouselItems = container.querySelectorAll('.carousel__item');
     this.totalCarouselItems = this.carouselItems.length - 1;
     this.currentCarouselItem = 0;
@@ -107,6 +107,7 @@ class Carousel {
   
   init() {
     this.createNavigationButtons();
+    this.createIndicators();
     this.showCurrentItem();
     this.attachEventListeners();
   }
@@ -124,8 +125,24 @@ class Carousel {
     nextBtn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
     nextBtn.setAttribute('aria-label', "Next slide");
     
-    this.container.prepend(prevBtn);
-    this.container.append(nextBtn);
+    this.carousel.prepend(prevBtn);
+    this.carousel.append(nextBtn);
+  }
+  
+  createIndicators() {
+    const indicatorsContainer = document.createElement('div');
+    indicatorsContainer.className = 'carousel__indicators';
+    
+    for (let i = 0; i <= this.totalCarouselItems; i++) {
+      const indicator = document.createElement('button');
+      indicator.className = 'carousel__indicator';
+      if (i === 0) indicator.classList.add('active');
+      indicator.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      indicator.addEventListener('click', () => this.goToCarouselItem(i));
+      indicatorsContainer.appendChild(indicator);
+    }
+    
+    this.container.appendChild(indicatorsContainer);
   }
   
   showCurrentItem() {
@@ -137,16 +154,24 @@ class Carousel {
       }
     });
     
-    this.updateButtonStates();
+    this.updateIndicators();
+  }
+  
+  updateIndicators() {
+    const indicators = this.container.querySelectorAll('.carousel__indicator');
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === this.currentCarouselItem);
+    });
   }
   
   changeCarouselItem(direction) {
     this.currentCarouselItem += direction;
     
-    if (this.currentCarouselItem >= this.carouselItems.length) {
-      this.currentCarouselItem = this.carouselItems.length - 1;
+    // cyclic rotation
+    if (this.currentCarouselItem > this.totalCarouselItems) {
+      this.currentCarouselItem = 0; // go to first slide
     } else if (this.currentCarouselItem < 0) {
-      this.currentCarouselItem = 0;
+      this.currentCarouselItem = this.totalCarouselItems; // go to last slide
     }
     
     this.showCurrentItem();
@@ -157,17 +182,6 @@ class Carousel {
       this.currentCarouselItem = carouselItemIndex;
       this.showCurrentItem();
     }
-  }
-  
-  updateButtonStates() {
-      const prevBtn = this.container.querySelector('.carousel__nav-item--prev');
-      const nextBtn = this.container.querySelector('.carousel__nav-item--next');
-      
-      // disable prev button if at first item
-      prevBtn.disabled = this.currentCarouselItem === 0;
-      
-      // disable next button if at last item
-      nextBtn.disabled = this.currentCarouselItem === this.carouselItems.length - 1;
   }
   
   attachEventListeners() {
@@ -185,7 +199,7 @@ class Carousel {
 }
 
 const setupCarousels = () => {
-  const carousels = document.querySelectorAll('.carousel');
+  const carousels = document.querySelectorAll('.carousel__container');
   carousels.forEach(container => {
     new Carousel(container);
   })

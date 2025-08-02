@@ -80,12 +80,12 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "Sub", "SubTitle", "Statement", "Remark",
             "thead", "tbody", "tr", "td", "section",
             "Index", "Menu",
-            "Highlight", "Carousel", "CarouselItems", "CarouselItem",
+            "Highlight", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
             "h1", "h2", "h3", "pre", "div", "br", "hr",
             "figure", "img"
           ]
         ),
-        ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "QED", "Carousel"]
+        ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "QED", "CarouselContainer"]
       ),
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
@@ -101,6 +101,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
       dl.fold_contents_into_text("Math"),
       dl.wrap_children_in(#("Carousel","CarouselItems")),
+      dl.wrap_tag_in(#("Carousel", "CarouselContainer")),
       dl.append_attribute__batch([
         #("Index", "class", "index"),
         #("Menu", "class", "menu"),
@@ -113,6 +114,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
         #("Statement", "class", "well statement"), 
         #("Remark", "class", "well remark"),
         #("Exercise", "class", "well exercise"),
+        #("CarouselContainer", "class", "carousel__container"),
         #("Carousel", "class", "carousel"),
         // `CarouselItems` represents middle column
         // (< prevBtn) --- CarouselItems --- (nextBtn >)
@@ -123,11 +125,11 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.append_class_to_child_if__batch([
         #("Chapter", "out", infra.has_class(_, "well"), ""),
         #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
-            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "Carousel"
+            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
           ]), ""),
         #("Sub", "out", infra.has_class(_, "well"), ""),
         #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
-            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "Carousel"
+            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
           ]), ""),
         #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}, ""),
       ]),
@@ -145,6 +147,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.rename(#("Statement", "div")),
       dl.rename(#("Highlight", "div")),
       dl.rename(#("Remark", "div")),
+      dl.rename(#("CarouselContainer", "div")),
       dl.rename(#("Carousel", "div")),
       dl.rename(#("CarouselItems", "div")),
       dl.rename(#("CarouselItem", "div")),
