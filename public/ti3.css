@@ -296,11 +296,13 @@ figure.main-column img.constrained,
 }
 
 .carousel__container {
+    max-width: 100%;
     width: inherit;
     padding: 1rem 0;
 }
 
 .carousel {
+    max-width: inherit;
     width: inherit;
     height: auto;
     display: flex;

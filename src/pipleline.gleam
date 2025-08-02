@@ -133,6 +133,8 @@ pub fn pipeline() -> List(infra.Desugarer) {
           ]), ""),
         #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}, ""),
       ]),
+      dl.append_attribute__outside(#("img", "class", "constrained transition-all"), ["CarouselContainer"]),
+      dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), ["CarouselContainer"]),
       dl.rename_with_appended_attributes_and_prepended_text([#("QED", "span", "\\(\\square\\)", [#("class", "qed")])]),
       dl.rename(#("MathBlock", "div")),
       dl.rename(#("Index", "div")),
@@ -153,10 +155,10 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.rename(#("CarouselItem", "div")),
       dl.rename(#("SubTheorem", "div")),
       dl.rename(#("NoWrap", "span")),
-      dl.append_attribute__batch([
-        #("img", "class", "constrained transition-all"),
-        #("img", "onClick", "onImgClick(event)"),
-      ]),
+      // dl.append_attribute__batch([
+      //   #("img", "class", "constrained transition-all"),
+      //   #("img", "onClick", "onImgClick(event)"),
+      // ]),
       dl.delete_attribute__batch([".", "counter", "title"]),
     ]
   ]
