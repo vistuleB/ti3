@@ -87,9 +87,8 @@
             $$
             Möglichkeiten. Es gibt also höchstens $s^{2s+1}$ verschiedene Schaltkreise mit $s$ Gates,
             Fan-in 2 und $n$ Variablen.
-            |> span
-                class=qed
-                \(\square\)
+            |> QED
+
                 
         Wählen wir nun $s := 2^{n} / (2n)$. Wieviele Schaltkreise mit $n$ Variablen, Fan-in 2 und
         $s$ Gates gibt es? Die Schranke in der obigen Behauptung sagt, dies seien höchstens
@@ -102,9 +101,8 @@
         Also: es gibt mehr Boolesche Funktionen in $n$ Variablen, als es Boolesche Schaltkreise
         mit $\frac{2^n}{2n}$ Gates gibt. Somit benötigen manche Boolesche Funktionen
         mehr als $\frac{2^n}{2n}$ Gates.
-        |> span
-            class=qed
-            \(\square\)
+        |> QED
+
             
     |> Exercise
     
@@ -296,9 +294,8 @@
             
             Insgesamt erhalten wir $2^n$ Gates, von denen jedes gleichzeitig ein
             Ouptut-Gate ist.
-            |> span
-                class=qed
-                \(\square\)
+            |> QED
+
                 
         Die zweite Kernidee ist, dass Synergien auftreten, dass
         wir die Variablen $x_1, \dots, x_n$ in einen vorderen
@@ -406,6 +403,4 @@
         \end{align*}
         
         Das ist die behauptete Schranke.
-        |> span
-            class=qed
-            \(\square\)
+        |> QED
