@@ -44,15 +44,16 @@
     |> Statement
         title=*Beispiel*
         Beginnen wir mit einem  einfachen Beispiel und betrachten
-        die zwei Mengen $\N =
-        \{0,1,2,3,4,\dots\}$ und 
+        die zwei Mengen $\N = \{0,1,2,3,4,\dots\}$ und 
         $\N^+ = \{1,2,3,4,\dots\}$. Beide sind unendlich,
         und $\N^+ \subsetneq \N$. Dennoch sind sie in gewisser
         Weise gleich groß. Ihre Elemente lassen sich nämlich
         einander paarweise zuordnen:
+
         |> figure
             |> img
                 src=./img/infinite-sets/N-N-plus.svg
+
         Wir können diese Zuordnung auch mit einer einfachen
         Formel beschreiben. Die Funktion
 
@@ -76,22 +77,25 @@
         title=*Beispiel*
         Ermutigt von unserem Erfolg gerade eben betrachten
         wir zwei unendliche Mengen, die sich stärker unterscheiden: 
-        $\N$ und $\Z = \{\dots, -2, -1, 0, 1, 2,
-        \dots\}$.
+        $\N$ und $\Z = \{\dots, -2, -1, 0, 1, 2, \dots\}$.
         Wir können diese beiden nicht so schön nebeneinander
         legen wie $\N$ und $\N^+$ in der obigen Abbildung.
         Um die Elemente paarweise zuzuordnen, müssen wir hin-
         und herspringen:
+
         |> figure
             |> img
                 style=width: 70%
                 src=./img/infinite-sets/N-to-Z.svg
+
         Dies ist etwas unübersichtlich. Besser geht es, wenn
         wir $\Z$ umstellen:
+
         |> figure
             |> img
                 style=width: 70%
                 src=./img/infinite-sets/N-to-Z-nicer.svg
+
         Wir können also unsere Bijektion 
         $f : \N \rightarrow \Z$ wie folgt definieren:
 
@@ -100,9 +104,9 @@
         \textnormal{ wenn $n$ ungerade ist.} \end{cases} \end{align*}
 
     |> Exercise
+        test=test
         Finden Sie eine "geschlossene" Form für die Bijektion 
-        $f : \N
-        \rightarrow \Z$. Mit "geschlossen" meine ich,
+        $f : \N \rightarrow \Z$. Mit "geschlossen" meine ich,
         dass Sie sie mit den üblichen Operatoren (mal, plus,
         hoch, minus, geteilt durch) ohne Fallunterscheidung
         schreiben können.
@@ -121,9 +125,8 @@
     |> Statement
         title=*Definition*
         Zwei Mengen $A$ und $B$ heißen _gleichmächtig_, wenn
-        es eine Bijektion $f : A
-        \rightarrow B$ gibt. Wir schreiben
-        in diesem Falle $A \approx B$.
+        es eine Bijektion $f : A \rightarrow B$ gibt. Wir
+        schreiben in diesem Falle $A \approx B$.
 
         Es gilt trivialerweise immer $A \approx A$, da wir
         ja die Identitätsfunktion $x \mapsto x$ als Bijektion
@@ -131,15 +134,13 @@
         $f : A \rightarrow B$ gibt, dann natürlich auch eine
         Umkehrfunktion $f^{-1} : B \rightarrow A$. Wenn 
         $f : A \rightarrow B$ und $g : B \rightarrow C$ Bijektionen
-        sind, dann ist $g \circ f : A
-        \rightarrow C$ auch eine.
-        Wir sehen: Die Relation $\approx$ ist reflexiv, symmetrisch
-        und transitiv und ist somit eine _Äquivalenzrelation_.
+        sind, dann ist $g \circ f : A \rightarrow C$ auch
+        eine. Wir sehen: Die Relation $\approx$ ist reflexiv,
+        symmetrisch und transitiv und ist somit eine _Äquivalenzrelation_.
 
     |> Statement
         title=*Definition*
-        Eine Menge $A$ mit $A
-        \approx \N$, die also gleichmächtig
+        Eine Menge $A$ mit $A \approx \N$, die also gleichmächtig
         zu den natürlichen Zahlen ist, nennt man _abzählbar
         unendlich_, auf Englisch _countably infinite_ oder
         einfach _countable_.
@@ -148,8 +149,10 @@
     Mengen, die _nicht_ gleichmächtig mit $\N$ sind, weil
     sie "viel viel größer" sind. Wir nennen sie _überabzählbare_
     Mengen, auf Englisch _uncountably infinite_.
+
     |> h2
         Was ist unendlich?
+
     Der Begriff der Gleichmächtigkeit liefert uns nun
     eine wunderbar einfache und rigorose Definition von
     Unendlichkeit.
@@ -167,8 +170,7 @@
     |> Exercise
         Zeigen Sie: wenn eine Menge $A$ unendlich ist (im
         Sinne der obigen Definition), dann gibt es eine Teilmenge 
-        $X \subseteq A$ mit $X
-        \approx \N$. *Hinweis:* Tappen
+        $X \subseteq A$ mit $X \approx \N$. *Hinweis:* Tappen
         Sie nicht in die "Das ist doch offensichtlich"-Falle:
         die Menge $A$ könnte ja viel größer sein als $\N$
         und keine für Sie "greifbare" Struktur haben. Ihre

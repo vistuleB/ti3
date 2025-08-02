@@ -12,11 +12,13 @@
     $\leq$ also um eine _Partialordnung_. Am Besten stellen
     Sie sich eine solche Partialordnung als gerichteten
     Graphen vor:
+
     |> figure
         |> img
             style=height:10em
             src=img/circuits/hasse-diagram.svg
             loading=lazy
+
     Diese Darstellung einer Partialordnung als gerichteter
     Graph bezeichnet man auch als _Hasse-Diagramm_ (ich
     verzichte hier auf eine formale Definition). Es gilt
@@ -32,14 +34,14 @@
         title=*Definition*
         Eine Boolesche Funktion 
         $f: \{0,1\}^n \rightarrow \{0,1\}$ heißt _monoton_,
-        wenn 
+        wenn
 
         $$
         \forall \mathbf{x} \leq \mathbf{y} \in \{0,1\}^n \ : \
         f(\mathbf{x}) \leq f(\mathbf{y}) \ .
         $$
 
-        \ In anderen Worten: wenn wir ein Input-Bit von 0 auf
+        In anderen Worten: wenn wir ein Input-Bit von 0 auf
         1 ändern, kann das Output-Bit nicht von 1 auf 0 umkippen.
 
     |> Exercise
@@ -53,11 +55,13 @@
     im Hasse-Diagramm von $\{0,1\}^2$ diejenigen Elemente
     blau, auf denen $f(x,y) = 1$ ist, und die anderen
     rot.
+
     |> figure
         |> img
             style=height:10em
             src=img/circuits/hasse-clouds.svg
             loading=lazy
+
     Wir sehen nun, dass es im Bild von $\wedge$ keinen
     roten Punkt gibt, der oberhalb eines blauen Punktes
     liegt, im Bild von $\oplus$ allerdings schon. Der
@@ -77,11 +81,13 @@
     Es sollte also klar sein, dass ein Schaltkreis ohne
     Negation immer eine monotone Funktion berechnet. Allerdings
     stimmt der Umkehrschluss nicht. Der Schaltkreis
+
     |> figure
         |> img
             style=height:10em
             src=img/circuits/monotone-or-not.svg
             loading=lazy
+
     ist nicht monoton (beachten Sie hinter der 
     $\bar{y}$-Schreibweise versteckte NOT-Gate), ist aber
     äquivalent zu der offensichtlich monotonen Funktion 
@@ -107,11 +113,13 @@
         Am Besten betrachten Sie das _Hasse-Diagramm_ der
         Partialordnungen auf Mengen $ \{0,1\}^2$ bzw. 
         $ \{0,1\}^3$:
+
         |> figure
             |> img
                 style=height:10em
                 src=img/circuits/hasse-diagram.svg
                 loading=lazy
+
         und überlegen sich, wie Sie die vier bzw. acht Knoten
         auf monotone Weise in einen 1-Bereich und einen 0-Bereich
         aufteilen können.
@@ -122,6 +130,7 @@
         die $\bar{x}, \bar{y}, \bar{z}$ berechnen. Ihr Schaltkreis
         darf _höchstens zwei NOT-Gates_ einhalten, aber beliebig
         viele AND- und OR-Gates.
+
         |> figure
             |> img
                 style=height:10em
@@ -145,6 +154,7 @@
     Dies dient auch dazu, gängige _Beweistechniken_ und
     _Beweismethoden_ zu illustrieren. Unter Beweismethoden
     verstehe ich hier formale Methoden wie
+
     |> ul
         |> li
             Beweis durch Induktion,
@@ -154,6 +164,7 @@
             Beweis durch vollständige Fallunterscheidung,
         |> li
             ...
+
     wie sie zum Beispiel auf
     |> a
         href=https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden
@@ -162,6 +173,7 @@
     nicht wirklich formalisierbaren Beweistechniken oder
     Beweisstrategien, die sich oft aus persönlicher Erfahrung
     speisen, wie zum Beispiel
+
     |> ul
         |> li
             kleine Beispiele untersuchen und dann verallgemeinern,
@@ -170,6 +182,7 @@
         |> li
             local change: ein Objekt schrittweise in die gewünschte
             Richtung verändern;
+
     da bei den Beweistechniken Erfahrung, Intuition und
     Kreativität mit ins Spiel kommen, ist es unmöglich,
     eine vollständige Liste anzugeben; ich habe die drei
@@ -268,8 +281,12 @@
                 |> Highlight
                     |> pre
                         class=listing
-                        public boolean constantFalse() {    return false;
-                        } public boolean constantTrue() {    return true; }
+                        public boolean constantFalse() {
+                        \   return false;
+                        }
+                        public boolean constantTrue() {
+                        \   return true;
+                        }
 
                 und dies sind ja offensichtlich Boolesche Funktionen
                 mit null Input-Variablen. Ich nehme Ihre Ängste aber
@@ -297,15 +314,16 @@
                 |> Highlight
                     |> pre
                         class=listing
-                        public boolean constantFalse(boolean x) {    return
-                        false; }
+                        public boolean constantFalse(boolean x) {
+                        \   return false;
+                        }
 
                 haben. Ja in der Tat, Java toleriert es, dass Sie
                 `constantFalse` zweimal deklariert haben, einmal als
                 Funktion mit 0 Input-Variablen, einmal als Funktion
                 mit einer Input-Variablen. Um hundertprozentig korrekt
                 zu sein, müssten wir Funktionen 
-                $\textnormal{zero}_n$ definieren als 
+                $\textnormal{zero}_n$ definieren als
 
                 \begin{align*}
                 \textnormal{zero}_n&: \{0,1\}^n \rightarrow \{0,1\} \\
@@ -353,12 +371,12 @@
                 es einen äquivalenten Schaltkreis.
 
             *Beweistechnik/-strategie*. Um den Induktionsschritt
-            vollziehen zu können, müssen wir irgendwie die $n$-stellige
-            Funktion $f$ auf sinnvolle Weise in $n-1$-stellige
-            Funktionen "zerlegen". Hier ist im Allgemeinen Kreativität
-            gefragt. Im vorliegenden Falle ist es aber recht klar,
-            welche Zerlegung in Frage kommt. Wir definieren zwei
-            neue, "kleinere" Funktionen 
+            vollziehen zu können, müssen wir irgendwie die $n$
+            -stellige Funktion $f$ auf sinnvolle Weise in 
+            $n-1$-stellige Funktionen "zerlegen". Hier ist im
+            Allgemeinen Kreativität gefragt. Im vorliegenden Falle
+            ist es aber recht klar, welche Zerlegung in Frage kommt.
+            Wir definieren zwei neue, "kleinere" Funktionen 
             $f_0, f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
 
             \begin{align*}
@@ -377,16 +395,19 @@
             der Induktionshypothese_ müssen wir nun die Teilergebnisse
             wieder _sinnvoll zusammenfügen_. Dies tun wir in diesem
             Falle mit einem `if-then-else`-Gate:
+
             |> figure
                 |> img
                     style=height:15em
                     src=img/circuits/top-down-if-then-else.svg
                     loading=lazy
+
             Ich behaupte, dass obiger Schaltkreis tatsächlich 
             $f$ berechnet. Falls dies noch nicht klar sein sollte,
             können wir auch dies formal beweisen, und zwar durch
             die Methode _vollständige Fallunterscheidung._ Sei
             nun also ein konkreter Input $x_1,\dots,x_n$ gegeben.
+
             |> ul
                 |> li
                     Der Fall $x_1 = 1$. Dann gibt der obige Schaltkreis
@@ -400,6 +421,7 @@
                     von $f_0$ gleich 
                     $f(0, x_2,\dots,x_n) = f(x_1,\dots,x_n)$ ist. Er gibt
                     also auch hier den korrekten Wert aus.
+
             Wir haben also erfolgreich einen Schaltkreis für 
             $f: \{0,1\}^n \rightarrow \{0,1\}$ konstruiert. Unser
             Induktionsbeweis von Theorem 2 ist nun abgeschlossen. 
@@ -413,7 +435,7 @@
     |> a
         href=#theorem-1
         Theorem 1.4.3
-    \ zu. 
+    \ zu.
 
     |> Highlight
         title=*Theorem 1.4.3, nochmals.*
@@ -432,34 +454,38 @@
         die Bestandteile eines Induktionsbeweises hin) und
         zerlegen $f: \{0,1\}^n \rightarrow \{0,1\}$ in zwei
         neue, "kleinere" Funktionen 
-        $f_0, f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per 
+        $f_0, f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
 
         \begin{align*}
         f_0 (x_2, \dots, x_n)&:= f(0, x_2, \dots, x_n) \\
         f_1 (x_2, \dots, x_n)&:= f(1, x_2, \dots, x_n) \ .
         \end{align*}
 
-        \ Diese Funktionen sind selbst wiederum monoton (versuchen
+        Diese Funktionen sind selbst wiederum monoton (versuchen
         Sie, dies formal zu zeigen, wenn Sie Lust haben; oder
         versuchen Sie, es sich intuitiv klar zu machen). Per
         Induktionshypothese gibt es also monotone Schaltkreise
         für $f_0$ und $f_1$. Wir kombinieren diese mit einem
         `if-then-else`-Gate und erhalten:
+
         |> figure
             |> img
                 style=height:15em
                 src=img/circuits/top-down-if-then-else-2.svg
                 loading=lazy
+
         Die "durchgetrichenen" Kabel bedeuten, dass hier mehrere
         Kabel parallel laufen (also hier $n-1$ viele). Erkennen
         Sie das Problem mit der Konstruktion? Klar: das `if-then-else`-Gate
         ist nicht monoton. Unser Schaltkreis schaut also in
         Wirklichkeit so aus:
+
         |> figure
             |> img
                 style=height:18em
                 src=img/circuits/top-down-if-then-else-3.svg
                 loading=lazy
+
         und enthält ein NOT-Gate. Aber klar: wir können natürlich
         nicht die Konstruktion aus dem vorherigen Beweis wiederholen
         und hoffen, dass alles klappt. Die Beweistechnik heißt
@@ -469,18 +495,20 @@
         entfernen? Spontan fallen mir zwei Wege ein: wir können
         das NOT-Gate einfach durch ein gate-loses Kabel ersetzen
         oder das Kabel einfach ganz weglassen, also:
+
         |> figure
             |> img
                 style=height:18em
                 src=img/circuits/top-down-if-then-else-4.svg
                 loading=lazy
-        Der linke Schaltkreis gibt uns, als Formel geschrieben, 
+
+        Der linke Schaltkreis gibt uns, als Formel geschrieben,
 
         $$
         (x \wedge f_1) \vee (x \wedge f_0) \equiv x \wedge (f_1 \vee f_0) \ .
         $$
 
-        \ Ich erlaube mir hier, aus Bequemlichkeit einfach 
+        Ich erlaube mir hier, aus Bequemlichkeit einfach 
         $f_1$ statt $f_1(x_2,\dots,x_n)$ zu schreiben. Auch
         ein _abuse of notation_. In der obigen Formel habe
         ich rechts das $x$ ausgeklammert; die Formel beginnt
@@ -495,32 +523,36 @@
         an. Das rechte $\wedge$-Gate hat nur einen Input,
         kann also weggelassen werden (d.h. durch ein Kabel
         ersetzt werden); wir erhalten den monotonen Schaltkreis
+
         |> figure
             |> img
                 style=height:18em
                 src=img/circuits/top-down-if-then-else-monotone.svg
                 loading=lazy
+
         bzw. als Formel:
 
         $$
         (x_1 \wedge f_1) \vee f_0 \ .
         $$
 
-        \ Wir müssen nun zeigen, dass dies wirklich $f$ berechnet,
+        Wir müssen nun zeigen, dass dies wirklich $f$ berechnet,
         also
 
         |> Statement
             title=*Behauptung*
             Für alle $x_1,\dots,x_n$ gilt 
-            $f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n) \ .$
+            $f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n))
+            \vee f_0(x_2,\dots,x_n) \ .$
 
         |> Remark
             title=*Beweis.*
             Wir machen eine Fallunterscheidung nach dem Wert von 
             $x_1$.
+
             |> ul
                 |> li
-                    Der Fall $x_1 = 0$. Dann gilt 
+                    Der Fall $x_1 = 0$. Dann gilt
 
                     \begin{align*}
                     f(x_1,x_2,\dots,x_n)&= f(0,x_2,\dots,x_n) \tag{da $x_1=0$} \\
@@ -529,29 +561,29 @@
                     &= (x_1 \wedge f_1) \vee f_0 \tag{weil $x_1 = 0$} \ ,
                     \end{align*}
 
-                    \ und die behauptete Gleichung gilt.
+                    und die behauptete Gleichung gilt.
                 |> li
-                    Der Fall $x_1 = 1$. Dann gilt 
+                    Der Fall $x_1 = 1$. Dann gilt
 
                     \begin{align*}
                     f(x_1,\dots,x_n)&= f_1(x_2,\dots,x_n) \ .
                     \end{align*}
 
-                    \ Was ist aber mit der rechten Seite der behaupteten
-                    Gleichung? 
+                    Was ist aber mit der rechten Seite der behaupteten
+                    Gleichung?
 
                     \begin{align*}
                     (x_1 \wedge f_1) \vee f_0&= f_1 \vee f_0 \tag{da $x_1=1$ ist und somit im $\wedge$
                     wegfällt}
                     \end{align*}
 
-                    \ Die linke Seite ist also $f_1$, die rechte ist 
+                    Die linke Seite ist also $f_1$, die rechte ist 
                     $f_1 \vee f_0$. Schaut leider nicht gleich aus. Jetzt
                     sollten bei Ihnen die Glocken klingeln: wir haben bisher
                     an keiner Stelle im Beweis verwendet, dass $f$ eine
                     monotone Funktion ist! Und wenn wir das nicht verwendet
                     haben, kann der Beweis ja gar nicht funktionieren.
-                    Also: verwenden wir Monotonität: 
+                    Also: verwenden wir Monotonität:
 
                     \begin{align*}
                     (0, x_2, \dots,x_n)&\leq (1, x_2, \dots,x_n) \tag{Definition unser Partialordnung,
@@ -560,38 +592,40 @@
                     f_0&\leq f_1 \ .
                     \end{align*}
 
-                    \ Wir überprüfen nun also: wenn 
+                    Wir überprüfen nun also: wenn 
                     $f_0(x_2, \dots, x_n) = 0$ ist, dann gilt 
                     $f_0 \vee f_1 = 0 \vee f_1 = f_1$. Wenn $f_0 = 1$
                     ist, dann ist $f_1 = 1$ wegen Monotonität (größer
                     als 1 geht ja nicht), und daher 
                     $f_0 \vee f_1 = 1 \vee 1 = 1 = f_1$. In jedem Fall
-                    gilt also: 
+                    gilt also:
 
                     $$
                     (f_0 \vee f_1) = f_1 \ .
                     $$
 
-                    \ Und somit sind linke und rechte Seite gleich, wie
+                    Und somit sind linke und rechte Seite gleich, wie
                     behauptet.
                     |> QED
 
         Wir haben nun also gezeigt, dass für jeden Input 
-        $x_1,\dots,x_n$ gilt: 
+        $x_1,\dots,x_n$ gilt:
 
         \begin{align*}
         f = (x_1 \wedge f_1) \vee f_0 \ ,
         \end{align*}
 
-        \ (wobei wir aus Gründen der Lesbarkeit statt 
+        (wobei wir aus Gründen der Lesbarkeit statt 
         $f(x_1,\dots,x_n)$ einfach $f$ schreiben); per Induktion
         können wir für $f_1, f_0$ monotone Schaltkreise finden,
         und somit ist
+
         |> figure
             |> img
                 style=height:18em
                 src=img/circuits/top-down-if-then-else-monotone-finished.svg
                 loading=lazy
+
         ein monotoner Schaltkreis für $f$.
         |> QED
 
@@ -608,6 +642,7 @@
         1 ausgibt und sonst überall eine 0. Um den Term genau
         zu beschreiben, definieren wir
 
+        \ 
         \begin{align*}
         I_{\mathbf{a}}&:= \{ i \in \{1,\dots, n\} \ | \ a_i = 1 \} \\
         O_{\mathbf{a}}&:= \{ i \in \{1,\dots, n\} \ | \ a_i = 0 \} \ .
@@ -624,12 +659,13 @@
         \end{align*}
 
         Für $\mathbf{a} = (10010)$ gibt das also 
-        $x_1 \wedge x_4 \wedge \bar{x}_2 \wedge
-        \bar{x}_3 \wedge \bar{x}_5$.
-        Noch kompakter kann man es hinschreiben, wenn man für
-        eine Variable $x$ und einen Wert $b \in \{0,1\}$ folgendes
-        definiert:
+        $x_1 \wedge x_4 \wedge \bar{x}_2 \wedge \bar{x}_3
+        \wedge \bar{x}_5$
+        . Noch kompakter kann man es hinschreiben, wenn man
+        für eine Variable $x$ und einen Wert 
+        $b \in \{0,1\}$ folgendes definiert:
 
+        \ 
         \begin{align*}
         x^{b}&:= \begin{cases}
         x&\textnormal{ if $b=1$,}\\
@@ -639,29 +675,32 @@
 
         Dann können wir $T_{\mathbf{a}}$ einfach als
 
+        \ 
         \begin{align*}
         T_{\mathbf{a}} = \bigwedge_{i=1}^n x_i^{a_i}
         \end{align*}
 
         definieren, für $\mathbf{a} = (10010)$ also 
-        $x_1^1 \wedge x_2^0 \wedge x_3^0 \wedge x_4^1 \wedge x_5^0 =
-        x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge \bar{x}_5$.
-        Das gibt den gleichen Term wie zuvor, nur mit den Literalen
-        in anderer Reihenfolge aufgelistet (was keine Rolle
-        spielt, da $\wedge$ kommutativ ist).
+        $x_1^1 \wedge x_2^0 \wedge x_3^0 \wedge x_4^1 \wedge
+        x_5^0 = x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge
+        x_4 \wedge \bar{x}_5$
+        . Das gibt den gleichen Term wie zuvor, nur mit den
+        Literalen in anderer Reihenfolge aufgelistet (was keine
+        Rolle spielt, da $\wedge$ kommutativ ist).
 
         Gegen eine Boolesche Funktion 
-        $f: \{0,1\}^n \rightarrow \{0,1\}$, definieren wir 
+        $f: \{0,1\}^n \rightarrow \{0,1\}$, definieren wir
 
         $$
         \sat(f) := \{\mathbf{a} \in \{0,1\}^n \ | \ f(\mathbf{a}) = 1 \} \ .
         $$
 
-        \ Die Abkürzung $\sat$ steht für _satisfying assignments_,
+        Die Abkürzung $\sat$ steht für _satisfying assignments_,
         also diejenigen Belegungen der Variablen, die $f$
         "erfüllen", also 1 werden lassen. Wir bauen uns einen
         Schaltkreis $F$:
 
+        \ 
         \begin{align*}
         F := \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}}
         \end{align*}
@@ -681,15 +720,16 @@
         sich, was wir im letzten Beweis getan haben: die NOT-Gates
         einfach weglassen und die ausgehenden Kabel ersatzlos
         streichen. Hier hieße das nun, aus dem Term 
-        $x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge \bar{x}_5$
+        $x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4
+        \wedge \bar{x}_5$
         den Term $x_1 \wedge x_4 $ zu machen. Wir definieren
-        also: 
+        also:
 
         $$
         T'_{\mathbf{a}} := \bigwedge_{i \in I_{\mathbf{a}}} x_i \ .
         $$
 
-        \ Der Term $T'_{\mathbf{a}}$ ist "kürzer" als 
+        Der Term $T'_{\mathbf{a}}$ ist "kürzer" als 
         $T_{\mathbf{a}}$, stellt also weniger "Bedingungen".
         Formal gesprochen:
 
@@ -702,8 +742,8 @@
             title=*Beweis.*
             Definieren wir zusätzlich noch 
             $T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
-            \bar{x}_i$,
-            dann können wir 
+            \bar{x}_i$
+            , dann können wir 
             $T_{\mathbf{a}} = T'_{\mathbf{a}} \wedge T''_{\mathbf{a}}$
             schreiben. Und jetzt ist 
             $T'_{\mathbf{a}} \wedge T''_{\mathbf{a}} \leq T'_{\mathbf{a}}$
@@ -711,13 +751,13 @@
             gilt (überzeugen Sie sich davon).
             |> QED
 
-        Wir definieren nun analog zu $F$ eine DNF-Formel 
+        Wir definieren nun analog zu $F$ eine DNF-Formel
 
         $$
         F' := \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} \ .
         $$
 
-        \ Sie können sich vorstellen, dass wir $F$ nehmen und
+        Sie können sich vorstellen, dass wir $F$ nehmen und
         alle negativen Literale ersatzlos streichen. Wir behaupten
         nun, dass $F'$ und $F$ dieselbe Funktion darstellen:
 
@@ -729,32 +769,32 @@
         |> Remark
             title=*Beweis.*
             Um zu zeigen, dass beide dieselbe Funktion berechnen,
-            müssen wir zeigen, dass 
+            müssen wir zeigen, dass
 
             $$
             F(\mathbf{x}) = F'(\mathbf{x}) \textnormal{ für alle $\mathbf{x} \in \{0,1\}^n$. }
             $$
 
-            \ Eine Möglichkeit, eine Gleichheit $=$ zu zeigen,
+            Eine Möglichkeit, eine Gleichheit $=$ zu zeigen,
             ist, beide Ungleichungen $\leq$ und $\geq$ zu zeigen,
             also:
 
             |> ol
                 |> li
-                    $F(\mathbf{x}) \leq F'(\mathbf{x})$ und 
+                    $F(\mathbf{x}) \leq F'(\mathbf{x})$ und
                 |> li
                     $F(\mathbf{x}) \geq F'(\mathbf{x})$.
 
             Punkt 1 ist einfach: wir haben bereits gesehen, dass 
             $T_{\mathbf{a}} \leq T'_{\mathbf{a}}$ gilt, und somit
-            auch 
+            auch
 
             $$
             \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}} \leq \bigvee_{\mathbf{a} \in \sat(f)}
             T'_{\mathbf{a}}
             $$
 
-            \ Hier haben wir angewendet, dass $\bigvee$ eine monotone
+            Hier haben wir angewendet, dass $\bigvee$ eine monotone
             Funktion ist und wir somit vom $\leq$ ihrer Inputs
             auf das $\leq$ ihres Outputs schließen können.
 
@@ -771,31 +811,34 @@
             ist. Nehmen wir also an, dass $F'(\mathbf{x}) = 1$
             ist.
 
-            \ *Strategie: was haben wir?* Es ist immer gut, Dinge
+            *Strategie: was haben wir?* Es ist immer gut, Dinge
             konkret "in der Hand zu haben". In diesem Falle? Wir
             wissen ja, dass 
-            $F' = \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} $
+            $F' = \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}}
+            $
             ist. Wenn nun also die linke Seite, $F'$, den Wert
             1 annimmt, dann muss es auf der rechten Seite (mindestens)
-            einen Term geben, der auch 1 annimmt: 
+            einen Term geben, der auch 1 annimmt:
 
             $$
             T'_{\mathbf{a}^*}(x_1,\dots,x_n) = 1 \ ,
             $$
 
-            \ für ein festes, bestimmtes $\mathbf{a}^*$, also 
+            für ein festes, bestimmtes $\mathbf{a}^*$, also
 
             $$
             \bigwedge_{i \in I_{\mathbf{a}^*}} x_i = 1 \ .
             $$
 
-            \ Wir wollen zeigen, dass $F(x_1,\dots,x_n) = 1$ gilt.
+            Wir wollen zeigen, dass $F(x_1,\dots,x_n) = 1$ gilt.
             Da 
-            $F = \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}} $
+            $F = \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}}
+            $
             gilt, liegt der Verdacht nahe, dass der entsprechende
             Term $ T_{\mathbf{a}^*}$ auch 1 ausgibt. Das Problem
             ist leider, dass
 
+            \ 
             \begin{align*}
             T_{\mathbf{a}^*}(\mathbf{x})&= T'_{\mathbf{a}^*}(\mathbf{x}) \wedge
             T''_{\mathbf{a}^*}(\mathbf{x}) \\
@@ -819,26 +862,26 @@
             $\mathbf{a}^*$ selbst sein! Na klar, wir erinnern
             uns: wir haben den Term $T_{\mathbf{a}}$ so definiert,
             dass er auf $\mathbf{a}$ und nur dort 1 wird. Wir
-            wissen also: 
+            wissen also:
 
             $$
             T_{\mathbf{a}^*} (\mathbf{a}^*) = 1 \ .
             $$
 
-            \ Wenn wir Glück haben, gilt 
+            Wenn wir Glück haben, gilt 
             $\mathbf{a}^* = \mathbf{x}$. Ansonsten gilt immerhin,
             dass $x_i=1$ für alle $i \in I(\mathbf{a}^*)$, also 
             $x_1 = 1$ wenn $a^*_i = 1$. In anderen Worten, es
             gilt $\mathbf{x} \geq \mathbf{a}^*$! Wunderbar! Jetzt
             können wir Monotonie anwenden! Denn selbst wenn 
             $T_{\mathbf{a}^*}$ nicht monoton ist, so wissen wir,
-            dass $F$ eine monotone Funktion berechnet, und somit 
+            dass $F$ eine monotone Funktion berechnet, und somit
 
             $$
             F(\mathbf{x}) \geq F(\mathbf{a}^*) = 1 \ .
             $$
 
-            \ Wir können zwar nicht genau mit dem Finger auf einen
+            Wir können zwar nicht genau mit dem Finger auf einen
             Term von $F$ zeigen, der 1 wird, wissen aber _per
             Monotonie_, dass es so einen geben muss.
             |> QED

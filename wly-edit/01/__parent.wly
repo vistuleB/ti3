@@ -35,8 +35,11 @@
 
         |> Highlight
             |> pre
-                thomas.schmitz@hszg.de dominik@cs.sjtu.edu.cn raffaela@mayer@gmail.com
-                lorenz.klein@greatest/company/in/the/world.com .schlaumeier@gmail.com
+                thomas.schmitz@hszg.de
+                dominik@cs.sjtu.edu.cn
+                raffaela@mayer@gmail.com
+                lorenz.klein@greatest/company/in/the/world.com
+                .schlaumeier@gmail.com
 
         Welches davon sind gültige Emailadressen? Können Sie
         genaue Regeln angeben, nach denen eine solche gebildet
@@ -79,8 +82,10 @@
                 |> br
                 |> span
                     style=color:red
-                    File "<stdin>", line 1     (2 * 3))            ^ SyntaxError:
-                    unmatched ')'
+                    File "<stdin>", line 1
+                    \    (2 * 3))
+                    \           ^
+                    SyntaxError: unmatched ')'
                 |> br
                 |> code
                     class=pythonPrompt
@@ -88,8 +93,10 @@
                 |> br
                 |> span
                     style=color:red
-                    File "<stdin>", line 1    (* 3)     ^^^ SyntaxError:
-                    cannot use starred expression here
+                    File "<stdin>", line 1
+                    \   (* 3)
+                    \    ^^^
+                    SyntaxError: cannot use starred expression here
 
         Die letzten beiden waren in Pythons Augen offensichtlich
         nicht korrekt. Wie sind korrekte arithmetische Ausdrücke
@@ -112,6 +119,7 @@
     \ Die Welt von Conways Game of Life ist ein unendliches
     Schachbrett, in jedem jedes Feld entweder leer ist
     oder von einem Einzeller bevölkert ist.
+
     |> figure
         |> img
             style=width:20em
@@ -122,7 +130,8 @@
             |> a
                 href=https://www.flaticon.com/
                 flaticon.com
-    \ In jedem Zeitschritt weicht die derzeitige Generation
+
+    In jedem Zeitschritt weicht die derzeitige Generation
     einer neuen. Wo neue Einzeller entstehen, das hängt
     davon ab, wie viele der benachbarten 8 Felder von Einzellern
     besetzt sind.
@@ -145,6 +154,7 @@
     keinen oder nur einen Einzeller, dann stirbt er an
     Vereinsamung. Wir müssen also für jedes Feld zählen,
     wieviele der benachbarten Felder bevölkert sind:
+
     |> figure
         |> img
             style=width:20em
@@ -152,12 +162,14 @@
         |> figcaption
             Zu jedem Feld schreiben wir die Anzahl seiner Nachbarfelder,
             die bevölkert sind.
+
     |> figure
         |> img
             style=width:20em
             src=img/game-of-life/game-of-life-01-03.svg
         |> figcaption
             Die nächste Generation.
+
     Was geschieht nun, wenn wir weitere Generationen betrachten?
     Stirbt die Population aus? Explodiert sie? Stabilisiert
     sie sich irgendwann?
@@ -173,16 +185,19 @@
             |> li
                 Probieren Sie aus, was geschieht, wenn die Anfangspopulation
                 ein "Pfad" ist, z.B.
+
                 |> figure
                     |> img
                         style=width:16em
                         src=img/game-of-life/game-of-life-02-01.svg
+
                 Probieren Sie Pfade verschiedener Länge aus. Welche
                 sterben aus? Welche überleben, und was geschieht mit
                 ihnen?
             |> li
                 Probieren Sie das "f-Pentomino" als Startkonfiguration
                 aus:
+
                 |> figure
                     |> img
                         style=width:12em
@@ -207,6 +222,7 @@
 
     Es geht also in diesem Kurs vor Allem um folgende
     Fragen:
+
     |> ul
         |> li
             Wie können wir endliche Beschreibungen von unendlichen

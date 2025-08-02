@@ -14,8 +14,7 @@
 
     |> Statement
         title=*Beobachtung*
-        Es gilt $\R \approx
-        (0,1)$, wobei $(0,1)$ das offene
+        Es gilt $\R \approx (0,1)$, wobei $(0,1)$ das offene
         Einheitsintervall ist.
 
     |> Highlight
@@ -26,6 +25,7 @@
         \frac{e^x}{e^x + 1} \end{align*}
 
         Mit etwas reeller Analysis kann man nun zeigen:
+
         |> ul
             |> li
                 $f$ ist stetig.
@@ -33,8 +33,8 @@
                 $f$ ist streng monoton (z.B. weil $f'(x) \gt 0$ gilt).
             |> li
                 $\lim_{x \rightarrow -\infty} f(x) = 0$ und 
-                $\lim_{x \rightarrow
-                \infty} f(x) = 1$.
+                $\lim_{x \rightarrow \infty} f(x) = 1$.
+
         Und somit ist $f$ eine Bijektion von $\R$ auf den
         Wertebereich von $f$, also $(0,1)$.
         |> QED
@@ -61,14 +61,13 @@
     genau den unendlichen $0/1$-Folgen, nämlich 
     $\phi(0)\phi(1)\phi(2)\phi(3)\dots$. Der Unterschied
     ist rein syntaktisch. Es ist allerdings bequemer, sich
-    ein $\phi \in
-    \{0,1\}^{\N}$ als unendliche $0/1$-Folge
+    ein $\phi \in \{0,1\}^{\N}$ als unendliche $0/1$-Folge
     vorzustellen.
 
     |> Statement
         title=*Theorem*
         handle=theorem-R-bitstrings
-        \ $\R \approx \{0,1\}^{\N}$.
+        $\R \approx \{0,1\}^{\N}$.
 
     |> Highlight
         title=*Beweis.*
@@ -76,8 +75,7 @@
         einmal ein paar Dinge schief, die man wieder flicken
         muss. Da laut Übungsaufgabe >>exercise-open-closed-half-open 
         $\R \approx [0,1)$ gilt, reicht es, eine Bijektion 
-        $f : [0,1)
-        \rightarrow \{0,1\}^{\N}$ zu konstruieren.
+        $f : [0,1) \rightarrow \{0,1\}^{\N}$ zu konstruieren.
         So geht's:
 
         Jede Zahl $0 \leq x \lt 1$ lässt sich als (unendliche)
@@ -89,12 +87,10 @@
         wir die führende Null und den Punkt abschneiden: 
         $f(1/3) = 010101\dots$. Das geht für jede Zahl in 
         $[0,1)$: $f(1/2) = 100000\dots$, 
-        $f(1/4) =
-        010000\dots$.
+        $f(1/4) = 010000\dots$.
 
         Die konstruierte Funktion $f$ ist injektiv: zwei verschiedene 
-        $0
-        \leq x \lt y \lt 1$ haben verschiedene Binärdarstellung
+        $0 \leq x \lt y \lt 1$ haben verschiedene Binärdarstellung
         und werden somit zu zwie verschiedenen $0/1$-Folgen.
         Leider ist sie nicht surjektiv: die Binärdarstellung
         einer reellen Zahl hört nie mit $11111\dots$ auf.
@@ -113,18 +109,16 @@
 
         Unsere Funktion $f$ ist eine Bijektion von $[0,1)$
         nach $\{0,1\}^{\N} \setminus X$. Um daraus eine Bijektion 
-        $g : [0,1)
-        \rightarrow \{0,1\}^{\N}$ zu bauen, müssen
+        $g : [0,1) \rightarrow \{0,1\}^{\N}$ zu bauen, müssen
         wir die Lücken füllen, die $f$ lässt - also $X$.
 
         |> Exercise
             Sei 
-            $Y := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \ \exists\ n
-            \geq 1: a_i = 0 \ \forall i \geq n\}$
+            $Y := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \
+            \exists\ n \geq 1: a_i = 0 \ \forall i \geq n\}$
             die Menge aller $0/1$-Folgen mit einem unendlichen
             Schweif von Nullen. Offensichtlich gilt 
-            $X
-            \approx Y$.
+            $X \approx Y$.
 
             Zeigen Sie, dass $Y \approx X \cup Y$ gilt.
 
@@ -133,6 +127,7 @@
             zu verdoppeln und somit eine Bijektion von 
             $[0,1) \rightarrow \{0,1\}^{\N}$ zu konstruieren.
             Vielleicht hilft Ihnen folgendes Bild:
+
             |> figure
                 |> img
                     src=./img/infinite-sets/interval-sequences-fill-the-gaps.svg
@@ -154,37 +149,33 @@
         Mithilfe von Theorem >>theorem-R-bitstrings geht das
         ganz einfach. Da $\R \approx \{0,1\}^\N$ gilt, reicht
         es nämlich, eine Bijektion 
-        $\{0,1\}^\N \times \{0,1\}^\N \rightarrow
-        \{0,1\}^\N$
+        $\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N$
         zu konstruieren. Ein Element von 
-        $\{0,1\}^\N \times
-        \{0,1\}^\N$ besteht aus zwei unendlichen 
-        $0/1$-Folgen: 
+        $\{0,1\}^\N \times \{0,1\}^\N$ besteht aus zwei unendlichen 
+        $0/1$-Folgen:
 
         \begin{align*} (a,b) = (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \ .
         \end{align*}
 
         Wir müssen dieses Folgenpaar nun in _eine_ Folge codieren.
-        Ganz klar: 
+        Ganz klar:
 
         \begin{align*} (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \mapsto (a_1 b_1
         a_2 b_2 a_3 b_3 \dots) \end{align*}
 
-        \ Dies ist die gewünschte Bijektion 
+        Dies ist die gewünschte Bijektion 
         $\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N$
         .
         |> QED
 
     Aus der Funktion 
-    $f: \{0,1\}^{\N} \times \{0,1\}^{\N} \mapsto
-    \{0,1\}^{\N}$
+    $f: \{0,1\}^{\N} \times \{0,1\}^{\N} \mapsto \{0,1\}^{\N}$
     aus Theorem >>theorem-square-interval können wir eine
     (fast) bijektive Funktion 
-    $[0,1) \times [0,1)
-    \rightarrow [0,1)$ bauen. Wir nehmen
-    zwei Zahlen $0 \leq x,y \lt 1$, schreiben sie in Binärdarstellung
-    und vereinigen sie dann per Reißverschlussverfahren
-    zu einer Zahl, z.B. 
+    $[0,1) \times [0,1) \rightarrow [0,1)$ bauen. Wir
+    nehmen zwei Zahlen $0 \leq x,y \lt 1$, schreiben sie
+    in Binärdarstellung und vereinigen sie dann per Reißverschlussverfahren
+    zu einer Zahl, z.B.
 
     \begin{align*} \left(\frac{1}{3}, \frac{1}{2}\right) =
     (0.010\overline{10}\dots, 0.1)_2 \mapsto (010101\dots, 100000\dots)
@@ -192,30 +183,29 @@
     \end{align*}
 
     Um herauszufinden, um welche Zahl es sich bei $z$
-    handelt, multiplizieren wir sie mit 64: 
+    handelt, multiplizieren wir sie mit 64:
 
     \begin{align*} \end{align*}
 
     Sie erreicht alle Zahlen bis auf diejenigen mit einem
     unendlichen Schweif von Einsen. Sie ist hochgradig
     nichtstetig. Dennoch können wir versuchen, sie zu plotten:
+
     |> figure
         |> img
             style=height: 20em
             src=./img/infinite-sets/bijection-square-interval.png
         Plot der (Fast-) Bijektion 
-        $f : [0,1) \times [0,1) \rightarrow
-        [0,1)$. Ausgabewerte
+        $f : [0,1) \times [0,1) \rightarrow [0,1)$. Ausgabewerte
         sind mit Farbwerten / Helligkeitswerten codiert. Grün/blass
         steht für niedrige Werte (nahe der 0), rot/kräftig
         für hohe (nahe der 1).
+
     Als nächstes versuche ich, die Umkehrfunktion 
-    $f^{-1} : [0,1) \mapsto
-    [0,1) \times [0,1)$ zu skizzieren.
+    $f^{-1} : [0,1) \mapsto [0,1) \times [0,1)$ zu skizzieren.
     Das ist etwas schwierig, weil $f^{-1}$ nicht stetig
     ist. Was macht $f^{-1}(z)$? Sie betrachtet 
-    $z
-    \in [0,1)$ in Binärdarstellung und dröselt dann
+    $z \in [0,1)$ in Binärdarstellung und dröselt dann
     die unendlich vielen Nachkommastellen auf. Die ungeraden
     bilden $x$, die geraden bilden $y$. Beispielsweise
     für $z = 1/7$ gilt
@@ -230,35 +220,35 @@
     |> Statement
         title=*Beobachtung*
         Die Funktion $f^{-1}$ bildet
+
         |> ul
             |> li
                 $\left[0,\frac{1}{4}\right)$ auf 
-                $\left[0,\frac{1}{2}\right)
-                \times \left[0,\frac{1}{2}\right)$
+                $\left[0,\frac{1}{2}\right) \times \left[0,\frac{1}{2}\right)$
                 ab,
             |> li
                 $\left[\frac{1}{4},\frac{1}{2}\right)$ auf 
-                $\left[0,\frac{1}{2}\right) \times \left[\frac{1}{2},1\right)$,
+                $\left[0,\frac{1}{2}\right) \times \left[\frac{1}{2},1\right)$
+                ,
             |> li
                 $\left[\frac{1}{2},\frac{3}{4}\right)$ auf 
                 $\left[\frac{1}{2},1\right) \times \left[0,\frac{1}{2}\right)$
                 und
             |> li
                 $\left[\frac{3}{4},1\right)$ auf 
-                $\left[\frac{1}{2},1\right)
-                \times \left[\frac{1}{2},1\right)$.
+                $\left[\frac{1}{2},1\right) \times \left[\frac{1}{2},1\right)$
+                .
 
     |> Highlight
         title=*Beweis.*
         Wir zeigen den ersten Punkt. Sei 
-        $0 \leq z \lt 1/2$ und $(x,y) =
-        f^{-1}(z)$. Dann hat 
-        $z$ die Binärdarstellung $z =
-        (0.00z_3z_4z_5\dots)$.
-        Die ersten beiden Bits nach dem Komma sind $0$, und
-        somit sind die jeweils ersten Bits von $x$ und $y$
-        auch 0, was $x,y \lt 1/2$ bedeutet. Punkt 2 bis 4
-        folgen aus ähnlichen Überlegungen.
+        $0 \leq z \lt 1/2$ und $(x,y) = f^{-1}(z)$. Dann hat 
+        $z$ die Binärdarstellung 
+        $z = (0.00z_3z_4z_5\dots)$. Die ersten beiden Bits
+        nach dem Komma sind $0$, und somit sind die jeweils
+        ersten Bits von $x$ und $y$ auch 0, was 
+        $x,y \lt 1/2$ bedeutet. Punkt 2 bis 4 folgen aus ähnlichen
+        Überlegungen.
         |> QED
 
     Wenn wir also $z$ von $0$ nach $1$ wandern lassen,
@@ -266,16 +256,17 @@
     links oben, springt dann nach rechts unten und bewegt
     sich nach rechts oben. Grafisch stelle ich das wie
     folgt (und etwas unbeholfen) dar:
+
     |> figure
         |> img
             style=height: 10em
             src=./img/infinite-sets/interval-to-square.svg
+
     Beachten Sie, dass die Verbindungslinien zwischen
     den Kreisen Sprünge sind, also Unstetigkeitsstellen
     von $f^{-1}$. Innerhalb der Viertelintervalle (also
     z.B. innerhalb von 
-    $\left[\frac{1}{4},
-    \frac{1}{2}\right)$) sieht der
+    $\left[\frac{1}{4}, \frac{1}{2}\right)$) sieht der
     Graph wieder ganz ähnlich aus. Hier sehen Sie die ersten
     paar Schritte dieser "Verfeinerung".
     |> Carousel
@@ -296,12 +287,10 @@
                 style=height: 15em
                 src=./img/infinite-sets/interval-to-square-animation/figures-01-04.svg
     Wir wissen nun, dass $\R \approx \R^2$ gilt. Ebenso
-    können wir $\R
-    \approx \R^{k}$ für jedes 
+    können wir $\R \approx \R^{k}$ für jedes 
     $k \in \N^+$ zeigen. Wie sieht es aber mit 
     $\R^{\N}$ aus? Das ist die Menge aller Funktionen 
-    $\phi: \N
-    \rightarrow \R$ oder, etwas freundlicher
+    $\phi: \N \rightarrow \R$ oder, etwas freundlicher
     formuliert, die Menge aller unendlichen Folgen reeller
     Zahlen: $r_1, r_2, r_3, \dots$.
 
@@ -312,7 +301,7 @@
     |> Highlight
         title=*Beweis.*
         Da $\R \approx \cuben$ gilt, reicht es, zu zeigen,
-        dass 
+        dass
 
         \begin{align*} \cuben \approx \left(\cuben\right)^{\N} \end{align*}
 
@@ -324,24 +313,28 @@
         Tabelle. Wenn also $r_i$ eine unendliche $0/1$-Folge
         ist und und $r_{i,j}$ das $j$-te Bit der $i$-ten Folge,
         dann sieht unsere Tabelle so aus:
+
         |> figure
             |> img
                 src=./img/infinite-sets/table-infinite-sequences.svg
+
         Wir wollen jetzt eine Bijektion 
-        $f : \cuben \times \cuben
-        \rightarrow \cuben$ definieren.
+        $f : \cuben \times \cuben \rightarrow \cuben$ definieren.
         Dafür wenden wir den gleichen Trick an wie in dem Beweis,
         dass $\N \approx \N \times \N$ ist: wir zerlegen die
         Tabelle in Diagonalen und arbeiten jede separat ab:
+
         |> figure
             |> img
                 src=./img/infinite-sets/table-infinite-sequences-with-blue.svg
+
         Schließlich definieren wir unsere Folge 
-        $s_1 s_2 s_3 \dots \in
-        \cuben$:
+        $s_1 s_2 s_3 \dots \in \cuben$:
+
         |> figure
             |> img
                 src=./img/infinite-sets/table-infinite-sequences-with-s.svg
+
         |> QED
 
     Wir haben also die Beweisidee von 
@@ -351,7 +344,7 @@
     |> Highlight
         title=*Zweiter Beweis.*
         Um zu zeigen, dass $\R^\N \approx \R$ gilt, rechnen
-        wir: 
+        wir:
 
         \begin{align} \R^\N&\approx \left(\cuben\right)^{\N} \\&\approx
         \cube^{\N \times \N} \\&\approx \cube^{\N} \\&\approx \R \ .
@@ -359,12 +352,11 @@
         |> QED
 
     Dürfen wir das? Dürfen wir Rechenregeln wie 
-    $\left(x^{b}\right)^c =
-    x^{b \cdot c}$ so einfach anwenden?
-    Noch grundlegender, und das ist auch ein Punkt im ersten
-    Beweis, den ich unter den Teppich gekehrt habe: Zwar
-    wissen wir bereits, dass $\R \approx \cuben$. Folgt
-    aber daraus bereits, dass 
+    $\left(x^{b}\right)^c = x^{b \cdot c}$ so einfach
+    anwenden? Noch grundlegender, und das ist auch ein
+    Punkt im ersten Beweis, den ich unter den Teppich gekehrt
+    habe: Zwar wissen wir bereits, dass 
+    $\R \approx \cuben$. Folgt aber daraus bereits, dass 
     $\R^\N \approx \left(\cuben\right)^\N$? Erstens also:
     dürfen wir mit Plus, Mal und Hoch wie gewohnt rechnen?
     Und dürfen wir in den resultierenden Ausdrücken equipotente
@@ -377,22 +369,17 @@
     Analog das Cartesische Produkt $A \times B$, die Menge
     aller Paare $(x,y)$ mit $x \in A, y \in B$. Die Exponentiation 
     $a^b$ hat als Analog $A^B$, die Menge aller _Funktionen_ 
-    $\phi:
-    B \rightarrow A$. Was ist das Analog zur Addition?
-    Die Vereinigung $A
-    \cup B$ wäre zu kurz gegriffen,
-    weil ja zum Beispiel $\{1,2,3\} \cup
-    \{4,5\}$ fünf
+    $\phi: B \rightarrow A$. Was ist das Analog zur Addition?
+    Die Vereinigung $A \cup B$ wäre zu kurz gegriffen,
+    weil ja zum Beispiel $\{1,2,3\} \cup \{4,5\}$ fünf
     Elemente hat, $\{1,2,3\} \cup \{1,2\}$ aber nur drei.
     Das "richtige" Analog ist die _disjunkte Vereinigung_ 
-    $A \uplus
-    B$, die die Elemente von $B$ erst einmal
+    $A \uplus B$, die die Elemente von $B$ erst einmal
     "markiert", um sie von denen von $A$ unterscheidbar
     zu machen. Somit wäre also 
-    $\{1,2,3\} \uplus
-    \{1,2\} = \{1,2,3,1',2'\}$ eine Menge
-    der Kardinalität 5. Formal kann man $A \uplus B$ so
-    definieren; 
+    $\{1,2,3\} \uplus \{1,2\} = \{1,2,3,1',2'\}$ eine
+    Menge der Kardinalität 5. Formal kann man 
+    $A \uplus B$ so definieren;
 
     \begin{align*} A \uplus B := \{ (a,0) \ | \ a \in A\} \cup \{ (b,1) \ |
     \ b \in B\} \ . \end{align*}
@@ -405,7 +392,9 @@
 
         |> ol
             |> li
-                $A \times (B \uplus C) \approx (A \times B) \uplus (A \times C)$,
+                $A \times (B \uplus C) \approx (A \times B) \uplus
+                (A \times C)$
+                ,
             |> li
                 $A^{B} \times A^{C} \approx A^{B \uplus C}$,
             |> li
@@ -426,12 +415,10 @@
         |> ol
             |> li
                 $A \uplus B \approx A' \uplus B$ (und natürlich auch 
-                $B \uplus A
-                \approx B \uplus A'$).
+                $B \uplus A \approx B \uplus A'$).
             |> li
                 $A \times B \approx A' \times B$ (und natürlich auch 
-                $B \times A
-                \approx B \times A'$).
+                $B \times A \approx B \times A'$).
             |> li
                 $A^B \approx \left(A'\right)^{B}$.
             |> li
@@ -463,8 +450,7 @@
     Die Elemente von $2^\N$, also Teilmengen 
     $A \subseteq \N$, sind nach Inklusion geordnet: 
     $A \subseteq B$. Somit ist 
-    $\left(2^{\N},
-    \subseteq\right)$ eine Partialordnung.
+    $\left(2^{\N}, \subseteq\right)$ eine Partialordnung.
     Eine _Kette_ in einer Partialordnung 
     $(X, \preceq)$ ist eine Menge $Z$, in der alle Elemente
     paarweise vergleichbar sind. In diesem konkreten Beispiel
@@ -476,10 +462,8 @@
     einer Partialordnung $(X,\preceq)$ ist eine Teilmenge 
     $Z \subseteq X$, in der je zwei Elemente _unvergleichbar_
     sind. In diesem Beispiel heißt das: 
-    $Z
-    \subseteq 2^N$, und für alle $A, B \in Z$ mit 
-    $A \ne B$ gilt $A \not
-    \subseteq B$ und 
+    $Z \subseteq 2^N$, und für alle $A, B \in Z$ mit 
+    $A \ne B$ gilt $A \not \subseteq B$ und 
     $B \not \subseteq A$. Hier ist ein Beispiel für eine
     unendliche Kette:
 
@@ -487,16 +471,14 @@
     \{1,2,\dots,k\}, \dots \} \end{align*}
 
     Diese Kette hat zufälligerweise die Form 
-    $A_0 \subseteq A_1 \subseteq
-    A_2 \subseteq \dots$,
+    $A_0 \subseteq A_1 \subseteq A_2 \subseteq \dots$,
     d.h., die Elemente der Kette sind schön sortiert, von
     klein nach groß. Dies muss nicht so sein: sei 
-    $k \N :=
-    \{ k\cdot i \ | \ i \in \N\}$ die Menge der
+    $k \N := \{ k\cdot i \ | \ i \in \N\}$ die Menge der
     Vielfachen von $k$. Dann gilt 
     $1 \N \supseteq 2 \N \supseteq 4\N \supseteq 8\N \supseteq
-    \dots$,
-    die Elemente sind also in "absteigender" Reihenfolge
+    \dots$
+    , die Elemente sind also in "absteigender" Reihenfolge
     sortiert. Beide Beispiele haben einen "Anfangspunkt".
     Das muss aber nicht so sein: sei 
     $[k] := \{1,2,\dots,k\}$.
@@ -512,8 +494,7 @@
     $\{0\}$ in der Kette hat keinen eindeutigen _Nachfolger_.
     Egal, welches $A$ mit $\{0\} \subsetneq A$ Sie wählen,
     sie finden immer noch ein $B$ dazwischen: 
-    $\{0\} \subsetneq B
-    \subsetneq A$.
+    $\{0\} \subsetneq B \subsetneq A$.
 
     |> Statement
         title=*Definition*
@@ -533,12 +514,9 @@
 
     |> Exercise
         Finden Sie in $(2^\N, \subseteq)$ eine Kette $X$,
-        so dass $(X,
-        \subseteq)$ dicht ist. Also: eine Menge 
-        $X$, so dass für alle $A,C
-        \in X$ mit $A \ne C$ entweder 
+        so dass $(X, \subseteq)$ dicht ist. Also: eine Menge 
+        $X$, so dass für alle $A,C \in X$ mit $A \ne C$ entweder 
         $A \subsetneq C$ oder $C \subsetneq A$ gilt (d.h. 
         $X$ soll eine Kette sein) und zusätzlich ein 
         $B \in X$ mit $A \subsetneq B \subsetneq C$ (oder 
-        $C \subseteq B \subsetneq
-        A$).
+        $C \subseteq B \subsetneq A$).

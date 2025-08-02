@@ -267,7 +267,7 @@ pub fn main() {
 
   let parameters =
     vr.RendererParameters(
-      input_dir: "./wly",
+      input_dir: "./wly-edit",
       output_dir: "./public",
       prettifier_on_by_default: False,
     )

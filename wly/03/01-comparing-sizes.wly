@@ -97,6 +97,7 @@
         \textnormal{ wenn $n$ ungerade ist.} \end{cases} \end{align*}
         
     |> Exercise
+        test=test
         
         Finden Sie eine "geschlossene" Form für die Bijektion $f : \N
         \rightarrow \Z$. Mit "geschlossen" meine ich, dass Sie sie mit den

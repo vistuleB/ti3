@@ -4,9 +4,8 @@
     der Gleichmächtigkeit definiert haben, haben wir zwei
     Beispiele gesehen: $\N^+ \approx \N \approx \Z$. Alle
     Mengen sind gleichmächtig. In diesem Teilkapitel werden
-    wir unintuitivere Beispiele sehen: $\N
-    \approx \Q$.
-    Dies scheint absurd! $\N$ und $\Z$ liegen ja schön
+    wir unintuitivere Beispiele sehen: $\N \approx \Q$
+    . Dies scheint absurd! $\N$ und $\Z$ liegen ja schön
     der Reihe nach sortiert, sodass sich eine Bijektion
     durch eine einfach Umordnung erreichen ließ. Die Elemente
     der Menge $\Q$ aber liegen ja nicht säuberlich getrennt,
@@ -20,12 +19,14 @@
         $\N^2$ (oder auch $\N \times \N$) bezeichnen wir hier
         das cartesische Produkt von $\N$ mit sich selbst:
         die Menge aller _Paare_ $(a,b)$ von natürlichen Zahlen.
+
         |> figure
             |> img
                 src=./img/infinite-sets/N.svg
             |> br
                 Die Menge $\N$ bzw. ein Teil davon.
         |> br
+
         |> figure
             |> img
                 src=./img/infinite-sets/N-times-N.svg
@@ -37,9 +38,11 @@
         $f : \N \times \N \rightarrow \N$, indem wir für jeden
         Punkt $(x,y) \in \N \times \N$ angeben, auf welche
         natürliche Zahl er abgebildet werden soll:
+
         |> figure
             |> img
                 src=./img/infinite-sets/N-times-N-to-N.svg
+
         Wir zerlegen $\N \times \N$ also in fallende Diagonale
         und gehen jede Diagonale von rechts unten nach links
         oben durch. Dadurch können wir die zweidimensionale
@@ -75,15 +78,17 @@
 
     |> Exercise
         Sei $\N^*$ die Menge aller endlichen Folgen natürlicher
-        Zahlen, also 
+        Zahlen, also
 
         \begin{align*} \N^* := \{\epsilon\} \cup \N \cup \N^2 \cup \N^3 \cup
         \dots \ , \end{align*}
 
-        \ wobei $\epsilon$ die leere Folge (mit 0 Gliedern)
+        wobei $\epsilon$ die leere Folge (mit 0 Gliedern)
         bezeichnet. Zeigen Sie $\N^* \approx \N$.
+
     |> h2
         Rationale Zahlen
+
     Ich will Sie nun davon überzeugen, dass 
     $\Q \approx \N$ ist, dass es also "gleich viele rationale
     wie natürliche Zahlen" gibt. Ich beginne mit etwas
@@ -98,12 +103,11 @@
         title=*Beweis*
         Falls Sie es vergessen haben: eine Funktion 
         $f: A \rightarrow B$ heißt injektiv, wenn für alle
-        verschiedenen $a, a' \in A$ auch $f(a)
-        \ne f(a')$ gilt.
-        Wenn $f$ also "kollisionsfrei" ist.
+        verschiedenen $a, a' \in A$ auch $f(a) \ne f(a')$
+        gilt. Wenn $f$ also "kollisionsfrei" ist.
 
         Sei $q \in \Q$ eine rationale Zahl. Wir können $q$
-        als gekürzten Bruch schreiben, also 
+        als gekürzten Bruch schreiben, also
 
         \begin{align*} q = \frac{a}{b} \end{align*}
 
@@ -111,15 +115,13 @@
         $\gcd(a,b) = 1$. Mit $\gcd(a,b)$ bezeichnen wir den
         größten gemeinsamen Teiler (_greatest common divisor_)
         von $a$ und $b$. Wir definieren nun also 
-        $f_1(q) := (a,b) \in \Z
-        \times \N$. Dies ist injektiv:
+        $f_1(q) := (a,b) \in \Z \times \N$. Dies ist injektiv:
         zwei verschiedene rationale Zahlen $q$ und $q'$ haben
         verschiedene Darstellung als gekürzter Bruch, und somit
         gilt auch $f_1(q) \ne f_1(q')$.
 
         Wir haben nun also eine Injektion 
-        $f_1 : \Q \rightarrow \Z \times
-        \N$. Mit Übungsaufgabe
+        $f_1 : \Q \rightarrow \Z \times \N$. Mit Übungsaufgabe
         >>exercise-cartesian-product  und Theorem >>theorem-N-N^2
         gilt 
         $\Z \times \N \approx \N \times \N \approx \N$, und
@@ -142,7 +144,7 @@
     |> Highlight
         title=*Beweis*
         Dies ist ganz einach: da $\N \subseteq \Q$ gilt, können
-        wir jedes $n$ einfach bei sich belassen. Die Funktion 
+        wir jedes $n$ einfach bei sich belassen. Die Funktion
 
         \begin{align*} g : \N&\rightarrow \Q \\ n&\mapsto n \end{align*}
 
@@ -181,9 +183,11 @@
         wiederholen. Wir zeichnen $\Z \times \N^+$ schematisch,
         löschen aber die Paare $(a,b)$, die nicht einem gekürzten
         Bruch entsprechen.
+
         |> figure
             |> img
                 src=./img/infinite-sets/Z-times-N-removed.svg
+
         Die Punkte sind die Elemente von $\Z \times \N^+$.
         Die schwarzen Punkte sind jene Punkte $(x,y)$ mit 
         $\gcd(x,y)=1$. Diese stehen nun in Bijektion mit den
@@ -194,9 +198,11 @@
         Wir müssen nun eine Aufzählung der schwarzen Punkte
         finden, also eine Bijektion von $\N$ in die Menge
         der schwarzen Punkte:
+
         |> figure
             |> img
                 src=./img/infinite-sets/N-to-Q.svg
+
         Das funktioniert natürlich: wir überspringen einfach
         die gelöschten Punkte. Wir können allerdings nicht
         bequem eine geschlossene Formel dafür angeben. Auf
@@ -211,23 +217,23 @@
         $\frac{x}{1}$ entsprechen, und das ist ja ein gekürzter
         Bruch.
         |> QED
+
     |> h2
         Endliche Strings
+
     Erinnern wir uns an $\{0,1\}^*$, die Menge aller endlichen
     Bitstrings. Die Menge ist ganz klar unendlich, weil
-    sie zum Beispiel $1, 11, 111,
-    1111, \dots$ enthält.
+    sie zum Beispiel $1, 11, 111, 1111, \dots$ enthält.
     Ist sie _abzählbar_ unendlich?
 
     |> Statement
         title=*Theorem*
-        Es gilt $\{0,1\}^*
-        \approx \N$.
+        Es gilt $\{0,1\}^* \approx \N$.
 
     |> Highlight
         title=*Beweis.*
         Hier ist eine Idee: wir interpretieren den Bitstring 
-        $a_1 a_2 \dots a_n$ als $n$-stellige Binärzahl, also 
+        $a_1 a_2 \dots a_n$ als $n$-stellige Binärzahl, also
 
         \begin{align*} f(a_1 a_2 \dots a_n) := \sum_{i=1}^n a_i 2^{n-i} \ .
         \end{align*}
@@ -240,7 +246,7 @@
         \begin{align*} 0011 \mapsto 10011 \mapsto (10011)_2 = 16 + 2 + 1 = 19
         \ . \end{align*}
 
-        Formal also 
+        Formal also
 
         \begin{align*} f : \{0,1\}^*&\rightarrow \N \\ a_1 a_2 \dots a_n&
         \mapsto 2^n + \sum_{i=1}^n a_i 2^{n-i} \ . \end{align*}
@@ -260,7 +266,7 @@
         Das haut nicht ganz hin, weil die $0$ nie drankommt.
         In der Tat stellt die obige Tabelle eine Bijektion 
         $\{0,1\}^* \rightarrow \N^+$ dar. Dies ist leicht
-        korrigiert, indem wir 1 abziehen: die Funktion 
+        korrigiert, indem wir 1 abziehen: die Funktion
 
         \begin{align*} g : \{0,1\}^*&\rightarrow \N \\ a_1 a_2 \dots a_n&
         \mapsto 2^n - 1 + \sum_{i=1}^n a_i 2^{n-i} \ . \end{align*}

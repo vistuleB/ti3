@@ -8,10 +8,12 @@
     Die Signale können nur zwei Werte annehmen: wahr/falsch
     bzw. 1/0 bzw. `true/false`. Hier sehen Sie die drei
     üblichsten Gatter:
+
     |> figure
         |> img
             style=width:20em
             src=img/circuits/and-or-not-gates.svg
+
     Von links nach rechts sind dies: das Und-Gatter (_and-gate_),
     Oder-Gatter (_or-gate_) und das Nicht-Gatter (_not-gate_).
     In C, C++ und Java kennen Sie diese Booleschen Operatoren
@@ -52,6 +54,7 @@
     $x,y,z$, welches $y$ ausgibt, wenn $x$ wahr ist und
     ansonsten $z$ ausgibt. So ein Gate können Sie sich
     einfach aus And, Or, Not bauen:
+
     |> figure
         |> img
             style=height:13em
@@ -59,6 +62,7 @@
             loading=lazy
         |> figcaption
             `if` $x$ `then` $y$ `else` $z$
+
     Jeder Schaltkreis _berechnet_ eine Funktion (formale
     Definition weiter unten). Informell gesprochen, wenn
     wir Wahrheitswerte (0/1) in die Input-Gates reinstecken,
@@ -66,6 +70,7 @@
     von den AND/OR/NOT-Gates entsprechend ihrer Funktion
     kombiniert und werden schließlich an den Output-Gates
     ausgegeben:
+
     |> figure
         |> img
             style=height:13em
@@ -88,11 +93,13 @@
                 mindestens zwei seiner Inputs 1 ist.
             |> li
                 Ein $n$-faches XOR-Gate
+
                 |> figure
                     |> img
                         style=height:4em
                         src=img/circuits/n-fold-xor.svg
                         loading=lazy
+
                 welches 1 ausgibt, wenn eine ungerade Anzahl seiner
                 Inputs auf 1 stehen.
             |> li
@@ -109,11 +116,13 @@
     beliebig vielen Inputs zuzulassen, beispielsweise 
     $x_1 \land x_2 \land \ldots \land x_n$ als ein Gate
     darzustellen:
+
     |> figure
         |> img
             style=height:10em
             src=img/circuits/and-fan-in-n.svg
             loading=lazy
+
     Man bezeichnet dies als AND-Gate mit einem Fan-in
     von $n$. Das "normale" AND-Gate hat einen Fan-in von
     2. Mit $\lor$- und $\oplus$-Gates geht das ganz analog.
@@ -121,27 +130,33 @@
     würde das keinen Sinn machen. Größerer Fan-in ist aber
     nicht wirklich etwas neues unter der Sonne: Sie können
     jederzeit großen Fan-in durch kleinen simulieren:
+
     |> figure
         |> img
             style=height:10em
             src=img/circuits/and-n-fold-linear-depth.svg
             loading=lazy
+
     Also als geschachteltes AND, oder aber in Form eines
     Binärbaums:
+
     |> figure
         |> img
             style=height:10em
             src=img/circuits/and-n-fold-log-depth.svg
             loading=lazy
+
     Schaltkreise, wie wir sie in diesem Kapitel betrachten,
     sind immer azyklisch. Das heißt insbesondere, das Dinge
     mit "Feedback-Schleifen" wie Flipflops eben keine Schaltkreis
     in unserem Sinn sind:
+
     |> figure
         |> img
             style=height:10em
             src=img/circuits/flipflop.svg
             loading=lazy
+
     Das Flipflop zeigt ein interessantes Verhalten: wenn 
     $\text{Reset} = 0$, $\text{Set} = 1$ ist, so ist der
     Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1,
@@ -170,13 +185,15 @@
         Ein Boolescher Schaltkreis ist ein gerichteter, azyklischer
         Graph (englisch directed acyclic graph, kurz DAG),
         in welchem jeder Knoten entweder
+
         |> ul
             |> li
                 ein Input-Gate ist und mit einer Input-Variable oder
                 eine Booleschen Konstant (0 oder 1) beschriftet ist
                 und keine eingehenden Kanten hat (in-degree 0), oder
             |> li
-                mit AND-, OR- oder NOT beschriftet ist, 
+                mit AND-, OR- oder NOT beschriftet ist,
+
         wobei die mit NOT beschrifteten Knoten genau eine
         eingehende Kante haben und die mit AND oder OR beschrifteten
         Knoten mindestens zwei eingehende Kanten haben. Mindestens

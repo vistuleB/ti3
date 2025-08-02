@@ -8,7 +8,7 @@
     Funktionen neue bauen können. Die primitiv-rekursiven Funktionen sind dann all jene, die
     mittels der Kombinatoren von den Basisfunktionen ausgehend konstruiert werden können.
     Die Basisfunktionen sind:
-    
+
     \begin{align*}
     \zero:&\N^* \rightarrow \N \\
     \vec{x}&amp;\mapsto 0
@@ -33,11 +33,13 @@
     
     Eine weitere Klasse von "offensichtlich" berechenbaren Funktionen sind die sogenannten
     Projektionen
+
     \(\pi^n_k\), definiert als
     \begin{align*}
     \pi^n_k : \N^n&amp;\rightarrow \N \\
     \vec{x}&amp;\mapsto x_k \ .
     \end{align*}
+
     Irgendwie sollte auch hier klar sein, dass die Vorschrift "gib von den 3 Argumenten, die Du
     erhältst, das erste zurück" ohne Zweifel "berechenbar" ist.
     Weil wir bald alles in einem Python-Framework implementieren werden, sei angemerkt,
@@ -47,7 +49,7 @@
     \pi^3_1: (x,y,z) \mapsto y \ .
     \end{align*}
     Auch die Stelligkeit \(n\) lasse ich oft weg und schreibe einfach \(\pi_k\) statt \(\pi^n_k\).
-    
+
     *Kombinatoren.*
     Die primitive Rekursion stellt zwei Kombinatoren zur Verfügung: Komposition (Verknüpfung) und
     primitive Rekursion.

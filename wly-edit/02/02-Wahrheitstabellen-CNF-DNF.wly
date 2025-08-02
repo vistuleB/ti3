@@ -33,7 +33,7 @@
 
     Wie können wir von so einer Tabelle ausgehend einen
     Schaltkreis bauen, der diese Funktion berechnet? Ich
-    stelle Ihnen drei Herangehensweisen vor. 
+    stelle Ihnen drei Herangehensweisen vor.
 
     |> h3
         Rekursiv, top-down
@@ -110,7 +110,7 @@
             $n$ Input-Variablen.
 
     An dieser Stelle zahlt es sich aus, eine formale Notation
-    einzuführen: 
+    einzuführen:
 
     |> Statement
         title=*Definition*
@@ -134,7 +134,7 @@
     |> Exercise
         Führen Sie das rekursive Verfahren durch, um für die
         folgende Funktion auf 4 Variablen einen Schaltkreis
-        zu bauen: 
+        zu bauen:
 
         $$
         \begin{array}{cccc|c}
@@ -197,11 +197,13 @@
     $$
 
     Mit einem großen OR zusammengeführt ergibt das dann
+
     |> figure
         |> img
             style=height:10em
             src=img/circuits/dnf-example.svg
             loading=lazy
+
     In diesem Schaltkreis habe ich die Input-Knoten mehrfach
     aufgeführt und die NOT-Gates nicht explizit aufgeführt,
     damit kein "Kabelsalat" entsteht. Beachten Sie auch,
@@ -237,6 +239,7 @@
         wäre dies nach der ersten Definition _keine_ DNF-Formel,
         nach der zweiten aber schon. Zeigen Sie, wie man OR-Gates
         auf Ebene 1 entfernen kann! Als konkretes Beispiel:
+
         |> figure
             |> img
                 style=height:10em
@@ -279,6 +282,7 @@
     $n$ (hier: $n=3$) Literaten verbietet genau ein Tupel
     von Wahrheitswerten. Wenn wir also alle Verbote mit
     AND verknüpfen, erhalten wir
+
     |> figure
         |> img
             style=height:10em
@@ -292,7 +296,7 @@
 
         Alternativ: eine CNF-Formel ist ein Schaltkreis der
         Tiefe 2 (wobei NOT-Gates nicht mitzählen), dessen Output-Gate
-        ein AND-Gate ist. 
+        ein AND-Gate ist.
 
     In diesem konkreten Beispiel ist die CNF viel kürzer
     als die DNF (das ist Zufall; ich habe meine Tabelle
@@ -300,7 +304,7 @@
     ausgehend von der "rohen" DNF (oder CNF), diese noch
     nachträglich bearbeiten und kleiner machen. Zum Beispiel
     können wir "nebeneinanderstehende" Terme zu einem einzigen
-    zusammenziehen, z.B. : 
+    zusammenziehen, z.B. :
 
     $$
     (\bar{x} \wedge y \wedge \bar{z}) \vee (\bar{x} \wedge y \wedge z) \equiv \bar{x} \wedge y \ .
