@@ -296,9 +296,15 @@ figure.main-column img.constrained,
 }
 
 .carousel__container {
-    max-width: 100%;
-    width: inherit;
+    /*max-width: 100%;*/
+    /*width: inherit;*/
+    width: 100%;
     padding: 1rem 0;
+}
+
+.carousel__container.main-column {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .carousel {
