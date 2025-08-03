@@ -249,9 +249,9 @@
         \ an, in der ich diese Funktionen zum Großteil implementiert
         habe (basierend auf den Übungen, die wir direkt in
         der Vorlesung gemacht haben).
-        |> p
-            Experimentieren Sie weiter und implementieren Sie
-            "Boolesche" Prädikate und Funktionen wie
+
+        Experimentieren Sie weiter und implementieren Sie
+        "Boolesche" Prädikate und Funktionen wie
 
         |> ul
             |> li
