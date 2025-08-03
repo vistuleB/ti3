@@ -249,6 +249,11 @@ pre code.pythonPrompt::before {
 
 pre {
     white-space: pre-wrap;
+    /*text-align: left;
+    display: block;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: auto;*/
 }
 
 pre.listing:before {
@@ -269,6 +274,12 @@ pre.listing code::before {
 
 .terminalOutput {
     color: blue;
+}
+
+.comment {
+    color:darkorange;
+    font-style: italic;
+    display: inline;
 }
 
 figure.main-column,
