@@ -140,6 +140,10 @@ body {
     margin-bottom: 2rem;
 }
 
+.page-title p {
+    line-height: 2.6rem;
+}
+
 .page-title::before,
 .page-title::after {
     content: "";
