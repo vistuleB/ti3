@@ -76,13 +76,13 @@
     >
 <pre>
 def mult(t,x):
-   temp = 0<span
+   temp = 0 <span
   class="comment"
->= zero(x)</span>
+>= zero(x) </span> 
    for i in range(t):
-       temp = add(temp,x)<span
+       temp = add(temp,x) <span
   class="comment"
->= Comp(add, p_0, p2) (temp,i,x)</span>
+>= Comp(add, p_0, p2) (temp,i,x) </span> 
    return temp
 </pre>
     </div>
@@ -144,13 +144,13 @@ def mult(t,x):
     >
 <pre>
 def factorial(t):
-   temp = 1<span
+   temp = 1 <span
   class="comment"
->= one() 
-</span>for i in range(t):
-   temp = mult(temp,i+1)<span
+>= one() </span> 
+for i in range(t):
+   temp = mult(temp,i+1) <span
   class="comment"
->= Comp(mult, p<i>0, Comp(succ, p</i>1)) (temp,i)</span>
+>= Comp(mult, p<i>0, Comp(succ, p</i>1)) (temp,i) </span> 
    return temp
 </pre>
     </div>
@@ -182,13 +182,13 @@ def factorial(t):
     >
 <pre>
 def pred(t):
-   temp = 0<span
+   temp = 0 <span
   class="comment"
->= zero()</span>
+>= zero() </span> 
    for i in range(t):
-       temp = i<span
+       temp = i <span
   class="comment"
->= p1 (temp,i)</span>
+>= p1 (temp,i) </span> 
    return temp
 </pre>
     </div>
@@ -263,13 +263,13 @@ def pred(t):
   class="listing"
 >
 def pred(t):
-   temp = 0<span
+   temp = 0 <span
   class="comment"
->= zero()</span>
+>= zero() </span> 
    for i in range(t):
-   temp = 1<span
+   temp = 1 <span
   class="comment"
->= one</span>
+>= one </span> 
    return temp
 </pre>
     </div>
@@ -366,13 +366,13 @@ def pred(t):
     >
 <pre>
 def largestIbelowTwithISquareLessEqualX(t,x):
-   temp = 0<span
+   temp = 0 <span
   class="comment"
->= zero(x)</span>
+>= zero(x) </span> 
    for i in range(t):
-       temp = ifThenElse(iSquareLessEqualX(i,x), i, temp)<span
+       temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span
   class="comment"
->= Comp(ifThenElse, Comp(iSquareLessEqual, p<i>1, p</i>2), p<i>1, p</i>0) (temp,i,x)</span>
+>= Comp(ifThenElse, Comp(iSquareLessEqual, p<i>1, p</i>2), p<i>1, p</i>0) (temp,i,x) </span> 
    return temp
 </pre>
     </div>
@@ -550,16 +550,13 @@ a = b-a
     <div
       class="well highlight out"
     >
-<pre
-  class="listing"
->
+<pre>
 def choose2(t):
-   temp = 0 
-<span
+   temp = 0 <span
   class="comment"
->= zero()</span>for i in range(t):
-   temp = add(temp,i) 
-<span
+>= zero() </span> 
+for i in range(t):
+   temp = add(temp,i) <span
   class="comment"
 >= Comp(add, p0, p1)</span>
 </pre>
