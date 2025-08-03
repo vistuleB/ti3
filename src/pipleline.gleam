@@ -98,7 +98,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
       dl.fold_contents_into_text("Math"),
       dl.wrap_children_in(#("Carousel","CarouselItems")),
-      dl.wrap_tag_in(#("Carousel", "CarouselContainer")),
+      dl.wrap(#("Carousel", "CarouselContainer")),
       dl.append_attribute__batch([
         #("Index", "class", "index"),
         #("Menu", "class", "menu"),
@@ -152,10 +152,6 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.rename(#("CarouselItem", "div")),
       dl.rename(#("SubTheorem", "div")),
       dl.rename(#("NoWrap", "span")),
-      // dl.append_attribute__batch([
-      //   #("img", "class", "constrained transition-all"),
-      //   #("img", "onClick", "onImgClick(event)"),
-      // ]),
       dl.delete_attribute__batch([".", "counter", "title"]),
     ]
   ]
