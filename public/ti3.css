@@ -236,11 +236,11 @@ pre {
     margin: 0 2ch;
 }
 
-pre code.pythonPrompt {
+pre span.pythonPrompt {
     color: #000;
 }
 
-pre code.pythonPrompt::before {
+pre span.pythonPrompt::before {
     color: purple;
     font-family: "courier";
     content: ">>> ";
@@ -248,24 +248,22 @@ pre code.pythonPrompt::before {
 }
 
 pre {
+    color: var(--body-color);
+    font-size: 0.9rem;
     white-space: pre-wrap;
-    /*text-align: left;
-    display: block;
-    word-break: break-all;
-    word-wrap: break-word;
-    overflow: auto;*/
+    margin: 0 2ch;
 }
 
 pre.listing:before {
     counter-reset: listing;
 }
 
-pre.listing code {
+pre.listing span {
     counter-increment: listing;
     color: var(--body-color);
 }
 
-pre.listing code::before {
+pre.listing span::before {
     color: gray;
     content: counter(listing) ". ";
     min-width: 4ch;
@@ -432,10 +430,6 @@ code {
     font-size: 0.9rem;
     color: #c7254e;
     border-radius: 4px;
-}
-
-pre code {
-    color: var(--body-color);
 }
 
 ol, ul {

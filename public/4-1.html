@@ -246,8 +246,8 @@
   class="listing numbered-pre"
 >
 def PrimRec(g, h):
-   def f(t,<b>x):
-       temp = g(</b>x)
+   def f(t,*x):
+       temp = g(*x)
        for i in range(t):
          temp = h(temp, i, *x)
        return temp

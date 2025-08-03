@@ -81,12 +81,10 @@
 def mult(t,x):
    temp = 0 <span
   class="comment"
->= zero(x) </span> 
-   for i in range(t):
+>= zero(x) </span><br>   for i in range(t):
        temp = add(temp,x) <span
   class="comment"
->= Comp(add, p_0, p2) (temp,i,x) </span> 
-   return temp
+>= Comp(add, p_0, p2) (temp,i,x) </span><br>   return temp
 </pre>
     </div>
     <p
@@ -149,12 +147,10 @@ def mult(t,x):
 def factorial(t):
    temp = 1 <span
   class="comment"
->= one() </span> 
-for i in range(t):
+>= one() </span><br>for i in range(t):
    temp = mult(temp,i+1) <span
   class="comment"
->= Comp(mult, p<i>0, Comp(succ, p</i>1)) (temp,i) </span> 
-   return temp
+>= Comp(mult, p_0, Comp(succ, p_1)) (temp,i) </span><br>   return temp
 </pre>
     </div>
     <p
@@ -187,12 +183,10 @@ for i in range(t):
 def pred(t):
    temp = 0 <span
   class="comment"
->= zero() </span> 
-   for i in range(t):
+>= zero() </span><br>   for i in range(t):
        temp = i <span
   class="comment"
->= p1 (temp,i) </span> 
-   return temp
+>= p1 (temp,i) </span><br>   return temp
 </pre>
     </div>
     <p
@@ -268,12 +262,10 @@ def pred(t):
 def pred(t):
    temp = 0 <span
   class="comment"
->= zero() </span> 
-   for i in range(t):
+>= zero() </span><br>   for i in range(t):
    temp = 1 <span
   class="comment"
->= one </span> 
-   return temp
+>= one </span><br>   return temp
 </pre>
     </div>
     <p
@@ -371,12 +363,10 @@ def pred(t):
 def largestIbelowTwithISquareLessEqualX(t,x):
    temp = 0 <span
   class="comment"
->= zero(x) </span> 
-   for i in range(t):
+>= zero(x) </span><br>   for i in range(t):
        temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span
   class="comment"
->= Comp(ifThenElse, Comp(iSquareLessEqual, p<i>1, p</i>2), p<i>1, p</i>0) (temp,i,x) </span> 
-   return temp
+>= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x) </span><br>   return temp
 </pre>
     </div>
     <p
@@ -428,14 +418,14 @@ def largestIbelowTwithISquareLessEqualX(t,x):
       class="well highlight out"
     >
 <pre>
-<code>def LargestLessThan(upperBound, predicate):</code>
-       <code>def new_function(*x):</code>
-               <code>temp = 0</code>
-               <code>for i in range(upperBound(*x)):</code>
-                       <code>if (predicate(i,*x)):</code>
-                               <code>temp = i</code>
-               <code>return temp</code>
-       <code>return new_function</code>
+def LargestLessThan(upperBound, predicate):
+       def new_function(*x):
+               temp = 0
+               for i in range(upperBound(*x)):
+                       if (predicate(i,*x)):
+                               temp = i
+               return temp
+       return new_function
 </pre>
     </div>
     <p
@@ -472,14 +462,14 @@ def largestIbelowTwithISquareLessEqualX(t,x):
       class="well highlight out"
     >
 <pre>
-<code>def fibIterative(t):</code>
-   <code>a = 0</code>
-   <code>b = 1</code>
-   <code>for i in range(t):</code>
-       <code>c = a+b</code>
-       <code>a = b</code>
-       <code>b = c</code>
-   <code>return a</code>
+def fibIterative(t):
+   a = 0
+   b = 1
+   for i in range(t):
+       c = a+b
+       a = b
+       b = c
+   return a
 </pre>
     </div>
     <p
@@ -627,19 +617,19 @@ for i in range(t):
       class="well highlight out"
     >
 <pre>
-<code
+<span
   class="pythonPrompt"
->pair(5,pair(7,9))</code><br><code
+>pair(5,pair(7,9))</span><br><span
   class="terminalOutput"
->11031</code><br><code
+>11031</span><br><span
   class="pythonPrompt"
->pair(7,9)</code><br><code
+>pair(7,9)</span><br><span
   class="terminalOutput"
->143</code><br><code
+>143</span><br><span
   class="pythonPrompt"
->pair(5,143)</code><br><code
+>pair(5,143)</span><br><span
   class="terminalOutput"
->11031</code>
+>11031</span>
 </pre>
     </div>
     <p
@@ -667,23 +657,23 @@ for i in range(t):
       class="well highlight out"
     >
 <pre>
-<code
+<span
   class="pythonPrompt"
->push(11, push(7, push(5, 0)))</code><br><code
+>push(11, push(7, push(5, 0)))</span><br><span
   class="terminalOutput"
->90537</code><br><code
+>90537</span><br><span
   class="pythonPrompt"
->head(90537)</code><br><code
+>head(90537)</span><br><span
   class="terminalOutput"
->11</code><br><code
+>11</span><br><span
   class="pythonPrompt"
->head(tail(90537))</code><br><code
+>head(tail(90537))</span><br><span
   class="terminalOutput"
->7</code><br><code
+>7</span><br><span
   class="pythonPrompt"
->head(tail(tail(90537)))</code><br><code
+>head(tail(tail(90537)))</span><br><span
   class="terminalOutput"
->5</code>
+>5</span>
 </pre>
     </div>
     <p
@@ -712,9 +702,9 @@ for i in range(t):
 <pre
   class="listing"
 >
-<code
+<span
   style="counter-set: listing 63;"
->def pair(x,y):</code><br><code>return int(((x+y+1) * (x+y)) / 2 + x )</code>
+>def pair(x,y):</span><br><span>    return int(((x+y+1) * (x+y)) / 2 + x )</span>
 </pre>
     </div>
   </div>
