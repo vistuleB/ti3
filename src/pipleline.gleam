@@ -88,11 +88,12 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.trim("p"),
       dl.delete_if_empty("p"),
     ],
-    pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math"]),
-    pp.splitting_empty_lines_cleanup(),
-    pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math"]),
-    pp.splitting_empty_lines_cleanup(),
+    // code "`" delimiter has to preceede bold/italic
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
+    pp.splitting_empty_lines_cleanup(),
+    pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math", "code"]),
+    pp.splitting_empty_lines_cleanup(),
+    pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "code"]),
     pp.splitting_empty_lines_cleanup(),
     [
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),

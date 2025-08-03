@@ -434,6 +434,10 @@ code {
     border-radius: 4px;
 }
 
+pre code {
+    color: var(--body-color);
+}
+
 ol, ul {
     list-style-position: inside;
     padding-left: 1rem;

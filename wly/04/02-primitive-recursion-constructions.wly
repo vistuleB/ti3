@@ -219,14 +219,14 @@
     |> Highlight
     
         |> pre
-            def LargestLessThan(upperBound, predicate):
-            \       def new_function(*x):
-            \               temp = 0
-            \               for i in range(upperBound(*x)):
-            \                       if (predicate(i,*x)):
-            \                               temp = i
-            \               return temp
-            \       return new_function
+            `def LargestLessThan(upperBound, predicate):`
+            \       `def new_function(*x):`
+            \               `temp = 0`
+            \               `for i in range(upperBound(*x)):`
+            \                       `if (predicate(i,*x)):`
+            \                               `temp = i`
+            \               `return temp`
+            \       `return new_function`
             
     und somit können wir sqrt schreiben als
     \begin{align*}
@@ -245,15 +245,14 @@
     |> Highlight
     
         |> pre
-            class=listing
-            def fibIterative(t):
-            \   a = 0
-            \   b = 1
-            \   for i in range(t):
-            \       c = a+b
-            \       a = b
-            \       b = c
-            \   return a
+            `def fibIterative(t):`
+            \   `a = 0`
+            \   `b = 1`
+            \   `for i in range(t):`
+            \       `c = a+b`
+            \       `a = b`
+            \       `b = c`
+            \   `return a`
             
     Wir führen hier zwei lokale Variable, \(a\) und \(b\). Das \(c\) könnten
     wir mit diesem schönen Trick eliminieren:
@@ -261,7 +260,6 @@
     |> Highlight
     
         |> pre
-            class=listing
 
             b = a+b
             a = b-a 
