@@ -57,6 +57,48 @@
             |> br
             |> span
                 \       <p>\(502 x + 121\)</p><img loading="lazy" src='../img/hash/hashfunction_502_121.svg'>
+            |> br
+            |> span
+                \    </div>
+            |> br
+            |> span
+                \   <div class='item'>
+            |> br
+            |> span
+                \       <p>\(617 x + 5\)</p><img loading="lazy" src='../img/hash/hashfunction_617_5.svg'>
+            |> br
+            |> span
+                \   </div>
+            |> br
+            |> span
+                \   <div class='item'>
+            |> br
+            |> span
+                \       <p>\(815 x + 562\)</p><img loading="lazy" src='../img/hash/hashfunction_851_562.svg'>
+            |> br
+            |> span
+                \   </div>
+            |> br
+            |> span
+                \   <div class='item'>
+            |> br
+            |> span
+                \       <p>\(868 x + 858\)</p><img loading="lazy" src='../img/hash/hashfunction_868_858.svg'>
+            |> br
+            |> span
+                \   </div>
+            |> br
+            |> span
+                \   <div class='item'>
+            |> br
+            |> span
+                \       <p>\(915 x + 320\)</p><img loading="lazy" src='../img/hash/hashfunction_915_320.svg'>
+            |> br
+            |> span
+                \   </div>
+            |> br
+            |> span
+                </div class='carousel-inner'> 
 
                 
     Hier sehen Sie einen Ausschnitt aus einem Elm-Programm (auch diesen müssen Sie nicht im
@@ -189,7 +231,7 @@
     
     |> Highlight
         |> pre
-            &lt;EmailAdress&gt; *-&gt;*&lt;User&gt; @&lt;Domain&gt;
+            <EmailAdress> -> <User> @ <Domain>
             
     Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln für `&lt;Domain&gt;`
     erstellen? Eine `&lt;Domain&gt;` soll
@@ -204,8 +246,8 @@
     
     |> Highlight
         |> pre
-            &lt;Domain&gt; *-&gt;*&lt;Label&gt; .&lt;Label&gt;
-            &lt;Domain&gt; *-&gt;*&lt;Label&gt; .&lt;Domain&gt;
+            <Domain> -> <Label> . <Label>
+            <Domain> -> <Label> . <Domain>
             
     Wir geben also _zwei_ Möglichkeiten an, wie mit einem `&lt;Domain&gt;` zu
     verfahren ist.
@@ -229,10 +271,10 @@
     
     |> Highlight
         |> pre
-            &lt;Label&gt; *-&gt;*&lt;AlphaNumOrDash&gt;
-            &lt;Label&gt; *-&gt;*&lt;AlphaNumOrDash&gt;&lt;Label&gt;
-            &lt;AlphaNumOrDash&gt; *-&gt;*&lt;AlphaNum&gt;
-            &lt;AlphaNumOrDash&gt; *-&gt;* - 
+            <Label> -> <AlphaNumOrDash>
+            <Label> -> <AlphaNumOrDash> <Label>
+            <AlphaNumOrDash> -> <AlphaNum>
+            <AlphaNumOrDash> -> -
             
     Nun müssen wir noch Regeln für `&lt;AlphaNum&gt;` angeben. Hier führen wir eine
     weitere
@@ -241,9 +283,9 @@
     
     |> Highlight
         |> pre
-            &lt;AlphaNum&gt; *-&gt;* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z
-            &lt;AlphaNum&gt; *-&gt;* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z
-            &lt;AlphaNum&gt; *-&gt;* 0 *|* 1 *|* 2 *|* 3 *|* 4 *|* 5 *|* 6 *|* 7 *|* 8 *|* 9
+            <AlphaNum> -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+            <AlphaNum> -> A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+            <AlphaNum> -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
             
     Beachten Sie: ich habe hier absichtlich nicht
     `&lt;AlphaNum&gt; *-&gt;* a *|* ... *|* z`
@@ -260,8 +302,8 @@
     
     |> Highlight
         |> pre
-            &lt;User&gt; *-&gt;*&lt;NameBlock&gt; *|*&lt;NameBlock&gt; .&lt;User&gt;
-            &lt;NameBlock&gt; *-&gt;*&lt;AlphaNum&gt; *|*&lt;AlphaNum&gt;&lt;NameBlock&gt;
+            <User> -> <NameBlock> | <NameBlock> . <User>
+            <NameBlock> -> <AlphaNum> | <AlphaNum> <NameBlock>
             
     Nun haben wir unser Emailformat vollständig beschrieben. Das gesamte Regelwerk sehen Sie hier
     noch
@@ -269,18 +311,30 @@
     
     |> Highlight
         |> pre
-            class=listing numbered-pre
-            id=email-context-free-grammar
-            class=container listing
-            `&lt;EmailAddress&gt;    *-&gt;* &lt;User&gt; @&lt;Domain&gt;`
-            `&lt;Domain&gt;          *-&gt;* &lt;Label&gt; .&lt;Label&gt; *|*&lt;Label&gt; .&lt;Domain&gt;`
-            `&lt;User&gt;            *-&gt;* &lt;NameBlock&gt; *|*&lt;NameBlock&gt; .&lt;User&gt;`
-            `&lt;NameBlock&gt;       *-&gt;* &lt;AlphaNum&gt; *|*&lt;AlphaNum&gt;&lt;NameBlock&gt;`
-            `&lt;Label&gt;           *-&gt;* &lt;AlphaNumOrDash&gt; *|*&lt;AlphaNumOrDash&gt;&lt;Label&gt;`
-            `&lt;AlphaNumOrDash&gt;  *-&gt;* &lt;AlphaNum&gt; *|* -` 
-
-            `&lt;AlphaNum&gt;        *-&gt;* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z`
-            `&lt;AlphaNum&gt;        *-&gt;* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z`
+            class=listing
+            |> span
+                <EmailAddress>    ->    <User> @ <Domain>
+            |> br
+            |> span
+                <Domain>          ->    <Label> . <Label> | <Label> . <Domain>
+            |> br
+            |> span
+                <User>            ->    <NameBlock> | <NameBlock> . <User>
+            |> br
+            |> span
+                <NameBlock>       ->    <AlphaNum> | <AlphaNum> <NameBlock>
+            |> br
+            |> span
+                <Label>           ->    <AlphaNumOrDash> | <AlphaNumOrDash> <Label>
+            |> br
+            |> span
+                <AlphaNumOrDash>  ->    <AlphaNum> | - 
+            |> br
+            |> span
+                <AlphaNum>        ->    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+            |> br
+            |> span
+                <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
             
     |> h2
         Ein Beispiel einer formalen Grammatik und einer Ableitung
@@ -325,39 +379,57 @@
     
     |> Highlight
         |> pre
-            `&lt;EmailAddress&gt;  *-&gt;*&lt;User&gt;@&lt;Domain&gt;`
-
-            \ `*-&gt;*&lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;` 
-
-            \ `*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;` 
-
-            \ `*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;` 
-
-            \ `*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
-
-            \ `*-&gt;*&lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
-
-            \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;` 
-
-            \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;` 
-
-            \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;` 
-
-            \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;` 
-
-            \ `*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;` 
-
-            \ `*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;` 
-
-            \ `*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e`
-
-            \ `*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de`
-
-            \ `*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de`
-
-            \ `*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.b.de`
-
-            \ `*-&gt;* d.s@a.b.de` 
+            |> span
+                <EmailAddress> -> <User>@<Domain>
+            |> br
+            |> span
+                \               -> <NameBlock>.<User>@<Domain>
+            |> br
+            |> span
+                \               -> <NameBlock>.<NameBlock>@<Domain>
+            |> br
+            |> span
+                \               -> <NameBlock>.<NameBlock>@<Label>.<Domain>
+            |> br
+            |> span
+                \               -> <NameBlock>.<NameBlock>@<Label>.<Label>.<Label>
+            |> br
+            |> span
+                \               -> <AlphaNum>.<NameBlock>@<Label>.<Label>.<Label>
+            |> br
+            |> span
+                \               -> <AlphaNum>.<AlphaNum>@<Label>.<Label>.<Label>
+            |> br
+            |> span
+                \               -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<Label>.<Label>
+            |> br
+            |> span
+                \               -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<Label>
+            |> br
+            |> span
+                \               -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><Label>
+            |> br
+            |> span
+                \               -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>
+            |> br
+            |> span
+                \               -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>
+            |> br
+            |> span
+                \               -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash>e
+            |> br
+            |> span
+                \               -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.de
+            |> br
+            |> span
+                \               -> d.s@<AlphaNumOrDash>.<AlphaNumOrDash>.de
+            |> br
+            |> span
+                \               -> d.s@<AlphaNumOrDash>.b.de
+            |> br
+            |> span
+                \               -> d.s@a.b.de
+         
             
     Nach dem gleichen Schema könnten wir `d.s.@-.-.--` ableiten, was
     darauf schließen lässt, dass unsere Grammatik nicht wirklich das

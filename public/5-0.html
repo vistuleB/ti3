@@ -87,7 +87,15 @@ thomas.schmitz@hszg.de                              <span
   class="nowrap"
 >&lt;p&gt;$110 x + 794$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_110_794.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span
   class="nowrap"
->&lt;p&gt;$502 x + 121$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_502_121.svg'&gt;</span>
+>&lt;p&gt;$502 x + 121$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_502_121.svg'&gt;</span><br><span>    &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span
+  class="nowrap"
+>&lt;p&gt;$617 x + 5$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_617_5.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span
+  class="nowrap"
+>&lt;p&gt;$815 x + 562$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_851_562.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span
+  class="nowrap"
+>&lt;p&gt;$868 x + 858$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_868_858.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span
+  class="nowrap"
+>&lt;p&gt;$915 x + 320$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_915_320.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>&lt;/div class='carousel-inner'&gt; </span>
 </pre>
     </div>
     <p
@@ -236,7 +244,7 @@ find tree key =
       class="well highlight out"
     >
 <pre>
-&lt;EmailAdress&gt; *-&gt;*&lt;User&gt; @&lt;Domain&gt;
+&lt;EmailAdress&gt; -&gt; &lt;User&gt; @ &lt;Domain&gt;
 </pre>
     </div>
     <p
@@ -264,8 +272,8 @@ find tree key =
       class="well highlight out"
     >
 <pre>
-&lt;Domain&gt; *-&gt;*&lt;Label&gt; .&lt;Label&gt;
-&lt;Domain&gt; *-&gt;*&lt;Label&gt; .&lt;Domain&gt;
+&lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Label&gt;
+&lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Domain&gt;
 </pre>
     </div>
     <p
@@ -304,10 +312,10 @@ find tree key =
       class="well highlight out"
     >
 <pre>
-&lt;Label&gt; *-&gt;*&lt;AlphaNumOrDash&gt;
-&lt;Label&gt; *-&gt;*&lt;AlphaNumOrDash&gt;&lt;Label&gt;
-&lt;AlphaNumOrDash&gt; *-&gt;*&lt;AlphaNum&gt;
-&lt;AlphaNumOrDash&gt; *-&gt;* - 
+&lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt;
+&lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt; &lt;Label&gt;
+&lt;AlphaNumOrDash&gt; -&gt; &lt;AlphaNum&gt;
+&lt;AlphaNumOrDash&gt; -&gt; -
 </pre>
     </div>
     <p
@@ -324,9 +332,9 @@ find tree key =
       class="well highlight out"
     >
 <pre>
-&lt;AlphaNum&gt; *-&gt;* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z
-&lt;AlphaNum&gt; *-&gt;* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z
-&lt;AlphaNum&gt; *-&gt;* 0 *|* 1 *|* 2 *|* 3 *|* 4 *|* 5 *|* 6 *|* 7 *|* 8 *|* 9
+&lt;AlphaNum&gt; -&gt; a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+&lt;AlphaNum&gt; -&gt; A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+&lt;AlphaNum&gt; -&gt; 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 </pre>
     </div>
     <p
@@ -356,8 +364,8 @@ find tree key =
       class="well highlight out"
     >
 <pre>
-&lt;User&gt; *-&gt;*&lt;NameBlock&gt; *|*&lt;NameBlock&gt; .&lt;User&gt;
-&lt;NameBlock&gt; *-&gt;*&lt;AlphaNum&gt; *|*&lt;AlphaNum&gt;&lt;NameBlock&gt;
+&lt;User&gt; -&gt; &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;
+&lt;NameBlock&gt; -&gt; &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;
 </pre>
     </div>
     <p
@@ -371,18 +379,9 @@ find tree key =
       class="well highlight out"
     >
 <pre
-  class="listing numbered-pre"
-  id="email-context-free-grammar"
-  class="container listing"
+  class="listing"
 >
-<code>&lt;EmailAddress&gt;    *-&gt;* &lt;User&gt; @&lt;Domain&gt;</code>
-<code>&lt;Domain&gt;          *-&gt;* &lt;Label&gt; .&lt;Label&gt; *|*&lt;Label&gt; .&lt;Domain&gt;</code>
-<code>&lt;User&gt;            *-&gt;* &lt;NameBlock&gt; *|*&lt;NameBlock&gt; .&lt;User&gt;</code>
-<code>&lt;NameBlock&gt;       *-&gt;* &lt;AlphaNum&gt; *|*&lt;AlphaNum&gt;&lt;NameBlock&gt;</code>
-<code>&lt;Label&gt;           *-&gt;* &lt;AlphaNumOrDash&gt; *|*&lt;AlphaNumOrDash&gt;&lt;Label&gt;</code>
-<code>&lt;AlphaNumOrDash&gt;  *-&gt;* &lt;AlphaNum&gt; *|* -</code> 
-<code>&lt;AlphaNum&gt;        *-&gt;* a *|* b *|* c *|* d *|* e *|* f *|* g *|* h *|* i *|* j *|* k *|* l *|* m *|* n *|* o *|* p *|* q *|* r *|* s *|* t *|* u *|* v *|* w *|* x *|* y *|* z</code>
-<code>&lt;AlphaNum&gt;        *-&gt;* A *|* B *|* C *|* D *|* E *|* F *|* G *|* H *|* I *|* J *|* K *|* L *|* M *|* N *|* O *|* P *|* Q *|* R *|* S *|* T *|* U *|* V *|* W *|* X *|* Y *|* Z</code>
+<span>&lt;EmailAddress&gt;    -&gt;    &lt;User&gt; @ &lt;Domain&gt;</span><br><span>&lt;Domain&gt;          -&gt;    &lt;Label&gt; . &lt;Label&gt; | &lt;Label&gt; . &lt;Domain&gt;</span><br><span>&lt;User&gt;            -&gt;    &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;</span><br><span>&lt;NameBlock&gt;       -&gt;    &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;</span><br><span>&lt;Label&gt;           -&gt;    &lt;AlphaNumOrDash&gt; | &lt;AlphaNumOrDash&gt; &lt;Label&gt;</span><br><span>&lt;AlphaNumOrDash&gt;  -&gt;    &lt;AlphaNum&gt; | - </span><br><span>&lt;AlphaNum&gt;        -&gt;    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z</span><br><span>&lt;AlphaNum&gt;        -&gt;    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z</span>
 </pre>
     </div>
     <h2
@@ -475,23 +474,7 @@ find tree key =
       class="well highlight out"
     >
 <pre>
-<code>&lt;EmailAddress&gt;  *-&gt;*&lt;User&gt;@&lt;Domain&gt;</code>
- <code>*-&gt;*&lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;</code> 
- <code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;</code> 
- <code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;</code> 
- <code>*-&gt;*&lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</code> 
- <code>*-&gt;*&lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</code> 
- <code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</code> 
- <code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;</code> 
- <code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;</code> 
- <code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;</code> 
- <code>*-&gt;*&lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;</code> 
- <code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;</code> 
- <code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e</code>
- <code>*-&gt;* d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</code>
- <code>*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</code>
- <code>*-&gt;* d.s@&lt;AlphaNumOrDash&gt;.b.de</code>
- <code>*-&gt;* d.s@a.b.de</code> 
+<span>&lt;EmailAddress&gt; -&gt; &lt;User&gt;@&lt;Domain&gt;</span><br><span>               -&gt; &lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;</span><br><span>               -&gt; &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;</span><br><span>               -&gt; &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;</span><br><span>               -&gt; &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;</span><br><span>               -&gt; d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;</span><br><span>               -&gt; d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e</span><br><span>               -&gt; d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</span><br><span>               -&gt; d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</span><br><span>               -&gt; d.s@&lt;AlphaNumOrDash&gt;.b.de</span><br><span>               -&gt; d.s@a.b.de</span>
 </pre>
     </div>
     <p

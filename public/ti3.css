@@ -262,12 +262,12 @@ pre.listing:before {
     counter-reset: listing;
 }
 
-pre.listing span {
+pre.listing > span {
     counter-increment: listing;
     color: var(--body-color);
 }
 
-pre.listing span::before {
+pre.listing > span::before {
     color: gray;
     content: counter(listing) ". ";
     min-width: 4ch;
