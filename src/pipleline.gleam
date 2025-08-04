@@ -65,6 +65,7 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.handles_substitute(#("path", "a", "a", [], [])),
       dl.rearrange_links(#("Theorem <a href='1'>_1_</a>", "<a href='1'>Theorem _1_</a>")),
       dl.rearrange_links(#("Übungsaufgabe <a href='1'>_1_</a>", "<a href='1'>Übungsaufgabe _1_</a>")),
+      dl.rearrange_links(#("Definition <a href='1'>_1_</a>", "<a href='1'>Definition _1_</a>")),
       dl.group_consecutive_children__outside(
         #(
           "p",
