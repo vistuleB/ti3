@@ -292,6 +292,7 @@
     Dies geht ganz allgemein:
     
     |> Statement
+        handle=theorem-fsm-regular
         title=*Theorem*
         
         Sei \(M = (\Sigma, Q, \qstart, F, \delta)\) ein endlicher Automat. Dann gibt es eine reguläre

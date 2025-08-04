@@ -187,6 +187,7 @@
     verzichten kann.
     
     |> Statement
+        handle=theorem-regular-simplified
         title=*Theorem*
         
         Sei \(G = (\Sigma, N, P, S)\) eine reguläre Grammatik. Dann gibt es
@@ -258,6 +259,7 @@
     und man könnte abkürzen.
     
     |> Exercise
+        handle=exercise-no-a-or-no-b
     
         Sei \(\Sigma = \{a,b,c\}\). Die Grammatik mit den Regeln \(A
         \rightarrow \epsilon \ | \ b A \ | \ c A\) erzeugt die Sprache aller
