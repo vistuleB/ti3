@@ -493,12 +493,8 @@
     |> Statement
         title=*Beispiel*
         
-        Betrachten wir die 
-        |> a
-            href=./04-01-regular-grammars.html#example-aaabb
-            reguläre Grammatik aus
-            dem vorherigen Kapitel 4.1
-        :
+        Betrachten wir die reguläre Grammatik aus dem vorherigen Kapitel >>example-aaabb 
+        
         \begin{align*}
         S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\
         T&amp;\rightarrow \epsilon \ | \ b T \ .
@@ -539,12 +535,9 @@
         title=*Beispiel*
         
         Betrachten wir die 
-        |> a
-            href=./04-01-regular-grammars.html#example-xxx1yyy
-            reguläre Grammatik
-            aus
-            dem vorherigen Kapitel 4.1
-        :
+        reguläre Grammatik
+        aus
+        dem vorherigen Kapitel >>example-xxx1yyy:
         \begin{align*}
         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\
         B&amp;\rightarrow 0 C \ | 1 C \\

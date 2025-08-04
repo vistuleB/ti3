@@ -9,6 +9,7 @@
     Grammatiken immer in linearer Zeit möglich.
     
     |> Statement
+        handle=def-regular
         title=*Definition*
         
         Eine kontextfreie Sprache \(G = (\Sigma, N, P, S)\) heißt
@@ -28,6 +29,7 @@
         | \ n \textnormal{ ist gerade}\}\).
     
     |> Statement
+        handle=example-aaabb
         title=*Beispiel*
         
         Die folgende Grammatik haben wir bereits im letzten Abschnitt
@@ -73,6 +75,7 @@
         \(11010\) ab. Beschreiben Sie in eigenen Worten die erzeugte Sprache.
     
     |> Exercise
+        handle=example-xxx1yyy
     
         Betrachten Sie die Grammatik über \(\Sigma = \{0,1\}\): \begin{align*}
         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\ B&amp;\rightarrow 0 C \ | 1 C \\
@@ -174,10 +177,7 @@
     Das letzte Theorem erlaubt uns, eine Definition von regulären
     Grammatiken zu verwenden, die uns mehr erlaubt. Im Folgenden zeigen
     wir, wie man die Form der Grammatiken noch stärker einschränken kann,
-    ohne dass Sie an Mächtigkeit einbüßen. Per 
-    |> a
-        href=#def-regular
-        Definition 4.1
+    ohne dass Sie an Mächtigkeit einbüßen. Per Definition >>def-regular 
     \ hat jede Produktion in einer
     regulären Grammatik eine der folgenden vier Formen: \begin{align*} 1.
     \quad X&amp;\rightarrow aY \\ 2. \quad X&amp;\rightarrow a \\ 3. \quad X&
