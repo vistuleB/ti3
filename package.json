@@ -1,8 +1,11 @@
 {
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "nodemon": "^3.0.2",
+    "vite": "^7.0.6"
   },
   "scripts": {
-    "dev": "http-server ./public -o Book.html"
+    "server": "vite public --host 0.0.0.0 --port 8080",
+    "gleam": "nodemon --watch wly --ext wly --exec \"gleam run\"",
+    "open": "open http://127.0.0.1:8080"
   }
 }
