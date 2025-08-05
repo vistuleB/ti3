@@ -222,7 +222,6 @@ p:has(> mjx-container) {
 }
 
 .qed {
-    display: inline-block;
     float: right;
 }
 
