@@ -960,20 +960,24 @@ find tree key =
     >
       und sehen, dass die Menge aller Paare $\alpha \Rightarrow \beta$ unendlich ist.
     </p>
-    <p
-      class="main-column"
+    <div
+      class="well statement out"
     >
-      <Statatement>
+      <p>
+        <b>Definition</b>
+        <b>5.4</b>
         <b>(Die von einer Grammatik erzeugte Sprache).</b>
         Sei $G = (\Sigma, N, P, S) $ eine kontextfreie Grammatik. Die von $G$ erzeugte Sprache
         $L(G)$ ist die Menge aller Wörter, die vom Startsymbol $S$ abgeleitet werden können, also
-        <div
-          class="math-block"
-        >
-          $$\begin{align*}
-          L(G) := \{x \in \Sigma^* \ | \ S \Rightarrow^* x\} \ .
-          \end{align*}$$
-        </div>
+      </p>
+      <div
+        class="math-block"
+      >
+        $$\begin{align*}
+        L(G) := \{x \in \Sigma^* \ | \ S \Rightarrow^* x\} \ .
+        \end{align*}$$
+      </div>
+      <p>
         Wenn es zu einer Sprache $L \subseteq \Sigma^*$ eine kontextfreie Grammatik $G$ mit
         $L(G) = L$ gibt, so nennen wir $L$ eine
         <i>kontextfreie Sprache</i>.
@@ -986,14 +990,14 @@ find tree key =
           class="nowrap"
         >$aaAB \not \in L(G)$.</span>
         Oft können wir $L(G)$ kompakt mit natürlicher Sprache beschreiben:
-      </Statatement>
-    </p>
+      </p>
+    </div>
     <div
       class="well statement out"
     >
       <p>
         <b>Beispiel</b>
-        <b>5.4</b>
+        <b>5.5</b>
         Sei $G$ die zuletzt betrachtete Grammatik. Dann ist $L(G)$ die
         Menge aller Wörter der Form
         <span
@@ -1020,7 +1024,7 @@ find tree key =
     >
       <p>
         <b>Beispiel</b>
-        <b>5.5</b>
+        <b>5.6</b>
         Wir betrachten die Grammatik $G_2 = (\{a,b\}, \{S\}, P, S)$ mit den Produktionsregeln
       </p>
       <div
@@ -1139,7 +1143,7 @@ find tree key =
     >
       <p>
         <b>Algorithmisches Problem: Parsing</b>
-        <b>5.6</b>
+        <b>5.7</b>
         Gegeben eine (kontextfreie) Grammatik $G$ und ein Zielwort
         <span
           class="nowrap"
