@@ -34,31 +34,31 @@
 
         |> Highlight
             |> pre
-                |> code
+                |> span
                     class=pythonPrompt
                     (6 + 8) * 3
                 |> br
-                |> code
+                |> span
                     class=terminalOutput
                     42
                 |> br
-                |> code
+                |> span
                     class=pythonPrompt
                     (24 / 4 / 2) * (24 / ( 4 / 2)) + 1
                 |> br
-                |> code
+                |> span
                     class=terminalOutput
                     37
                 |> br
-                |> code
+                |> span
                     class=pythonPrompt
                     3 + 7 * 8
                 |> br
-                |> code
+                |> span
                     class=terminalOutput
                     59
                 |> br
-                |> code
+                |> span
                     class=pythonPrompt
                     (2 * 3))
                 |> br
@@ -69,7 +69,7 @@
                     \           ^
                     SyntaxError: unmatched ')'
                 |> br
-                |> code
+                |> span
                     class=pythonPrompt
                     (* 3)
                 |> br
