@@ -78,12 +78,13 @@ pub fn pipeline() -> List(infra.Desugarer) {
             "Sub", "SubTitle", "Statement", "Remark",
             "thead", "tbody", "tr", "td", "section",
             "Index", "Menu",
+            "Topic", "SubTopic",
             "Highlight", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
-            "h1", "h2", "h3", "pre", "div", "br", "hr",
+            "pre", "div", "br", "hr",
             "figure", "img"
           ]
         ),
-        ["MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "QED", "CarouselContainer"]
+        ["MathBlock", "p", "Index", "Menu", "Topic", "SubTopic", "code", "pre", "span", "NoWrap", "Math", "QED", "CarouselContainer"]
       ),
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
@@ -123,11 +124,11 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.append_class_to_child_if__batch([
         #("Chapter", "out", infra.has_class(_, "well"), ""),
         #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
-            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
+          "Topic", "SubTopic", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
           ]), ""),
         #("Sub", "out", infra.has_class(_, "well"), ""),
         #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
-            "h1", "h2", "h3", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
+            "Topic", "SubTopic", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
           ]), ""),
         #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}, ""),
       ]),
@@ -143,6 +144,8 @@ pub fn pipeline() -> List(infra.Desugarer) {
       dl.rename(#("ChapterTitle", "div")),
       dl.rename(#("Sub", "div")),
       dl.rename(#("SubTitle", "div")),
+      dl.rename(#("Topic", "h1")),
+      dl.rename(#("SubTopic", "h2")),
       dl.rename(#("Exercise", "div")),
       dl.rename(#("Statement", "div")),
       dl.rename(#("Highlight", "div")),

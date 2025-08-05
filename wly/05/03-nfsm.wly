@@ -176,7 +176,7 @@
         Zeichnen Sie nun einen nichtdeterministischen endlichen Automaten
         für \(L_5 \cup L_7\).
         
-    |> h2
+    |> Topic
         Nichtdeterministische endliche Automaten deterministisch machen
         
     Wir werden nun zeigen, dass man zu jedem nichtdeterministischen

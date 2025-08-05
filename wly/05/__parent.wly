@@ -188,7 +188,7 @@
     Daten, die in einem bestimmten Format vorliegen, zu verarbeiten; ja auch erst einmal überhaupt
     Begriffe festlegen, wie man solche Formate definiert.
     
-    |> h2
+    |> Topic
         Korrekte Email-Adressen
         
     Kommen wir auf unser erstes, einfachstes Beispiel zurück: die Email-Adressen. Können Sie
@@ -336,7 +336,7 @@
             |> span
                 <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
             
-    |> h2
+    |> Topic
         Ein Beispiel einer formalen Grammatik und einer Ableitung
         
     Was Sie hier sehen, nennt man eine _formale Grammatik_. Ihre Bestandteile sind:
@@ -441,14 +441,14 @@
         Formulieren Sie weitere Regeln, um unsinnige Domainnamen wie `-.-.--`
         zu verbieten. Wie müssen Sie die obige Grammatik ändern?
         
-    |> h1
+    |> Topic
         Terminologie, formale Definitionen und Beispiele
         
     Im letzten Abschnitt haben wir die Regeln für die Bildung syntaktisch korrekter
     Emailadressen formalisiert. Zwar unvollständig, doch hoffe ich, dass das allgemeine
     Schema klar geworden ist. Wir werden nun alles formaler und abstrakter definieren.
     
-    |> h2
+    |> SubTopic
         Alphabet
         
     Wenn wir über formale Sprachen reden, so liegt immer eine (endliche) Menge von
@@ -476,7 +476,7 @@
     Mit \(\Sigma^+\) bezeichnen wir die Menge aller nichtleeren Strings, also
     \(\Sigma^+ = \Sigma^* \setminus \{\epsilon\}\).
     
-    |> h2
+    |> SubTopic
         Sprachen
         
     Eine Teilmenge \(L \subseteq \Sigma\) bezeichnen wir in diesem Kontext als _Sprache_ und
@@ -516,7 +516,7 @@
         |> li
             Ja, können wir.
             
-    |> h2
+    |> SubTopic
         Grammatiken
         
     |> Statement
@@ -703,7 +703,7 @@
         die ersten beiden Ableitungen mit
         Wort \(S \Rightarrow^* (ab)(ab)\) bezeichnen und die dritte mit Wort \(S \Rightarrow^* a(ba)b\).
         
-    |> h2
+    |> Topic
         Ziele der Theorie der formalen Sprachen
         
     Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen formal beschreiben können;

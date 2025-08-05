@@ -268,7 +268,7 @@
         Zeichnen Sie einen Automaten für die Sprache aller Wörter über \(\{a,b,c,d\}\), die
         genau vier \(a\) enthalten.
     
-    |> h2
+    |> Topic
         Endliche Automaten zu regulären Grammatiken
         
     Wenn wir einen endlichen Automaten gegeben haben, dann können wir leicht eine entsprechende reguläre
@@ -481,7 +481,7 @@
                 loading=lazy
         und beschreiben Sie die Sprache in eigenen Worten.
         
-    |> h2
+    |> Topic
         Reguläre Grammatiken zu endlichen Automaten?
         
     Im letzten Abschnitt haben wir gesehen, wie wir zu einem gegebenen endlichen Automaten recht

@@ -14,7 +14,7 @@
     immer, wie oft wir eine Tätigkeit wiederholen müssen, bis wir fertig sind,
     und ob wir überhaupt jemals fertig werden. Sie kennen vielleicht die Collatz-Vermutung.
     
-    |> h2
+    |> Topic
         Die Collatz-Vermutung
     
     Wir definieren eine Funktion $f: \N_+ \rightarrow \N_+$ wie folgt:
@@ -61,7 +61,7 @@
     die Collatz-Vermutung zahlreichen Lösungsversuchung widersetzt und demonstriert eindrucksvoll,
     dass auch mathematische Probleme mit sehr einfacher Formulierung extrem schwierig sein können.
     
-    |> h3
+    |> Topic
         While-Schleifen
         
     Eine Einschränkung primitiv-rekursiver Funktionen ist also, dass wir immer vor der Schleife

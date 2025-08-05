@@ -111,7 +111,7 @@
     $A_3(n) = 2^{n+3} - 3$ und diese dann per Indution
     zu beweisen.
 
-    |> h2
+    |> Topic
         Die Péter-Ackermann-Funktion ist berechenbar
 
     |> Statement
@@ -178,7 +178,7 @@
     ist; so wie wir ja auch leicht eine Funktion implementieren
     könnten, die $A(m,n)$ berechnet.
 
-    |> h2
+    |> Topic
         Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv
 
     |> Statement

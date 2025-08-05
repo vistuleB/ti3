@@ -86,7 +86,7 @@
         wobei $\epsilon$ die leere Folge (mit 0 Gliedern)
         bezeichnet. Zeigen Sie $\N^* \approx \N$.
 
-    |> h2
+    |> Topic
         Rationale Zahlen
 
     Ich will Sie nun davon überzeugen, dass 
@@ -218,7 +218,7 @@
         Bruch.
         |> QED
 
-    |> h2
+    |> Topic
         Endliche Strings
 
     Erinnern wir uns an $\{0,1\}^*$, die Menge aller endlichen

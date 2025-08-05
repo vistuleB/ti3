@@ -119,7 +119,7 @@
         \{a,b,.,-,@\}\). Sie dürfen natürlich noch weitere Buchstaben
         zulassen, dann schreiben Sie sich aber schnell zu Tode.
         
-    |> h2
+    |> Topic
         Erweitert reguläre Grammatiken
         
     In einer Übungsaufgabe oben wurden Sie aufgefordert, eine reguläre
@@ -171,7 +171,7 @@
     Grammatiken beschränken, da wir wissen, dass beide Definition eh
     gleich mächtig sind.
     
-    |> h2
+    |> Topic
         Reguläre Grammatiken vereinfachen
         
     Das letzte Theorem erlaubt uns, eine Definition von regulären
@@ -293,7 +293,7 @@
         Form \(X \rightarrow Y\). Wieviele Produktion hat Ihre neue
         Grammatik?
         
-    |> h2
+    |> Topic
         Reguläre Sprachen nach Baukastenprinzip bauen
         
     Eine schöne Eigenschaft von regulären Grammatiken ist, dass sie

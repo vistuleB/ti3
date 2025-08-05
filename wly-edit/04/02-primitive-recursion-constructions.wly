@@ -8,7 +8,7 @@
     \ zu erklären und werde dann weitere, weniger offensichtliche
     Konstruktionen diskutieren.
 
-    |> h2
+    |> Topic
         Arithmetische Operationen
 
     Wir haben bereits gesehen, dass wir die Addition per 
@@ -128,7 +128,7 @@
     {\rm minus}&= \comp({\rm subtractFrom}, \pi_1, \pi_0)
     \end{align*}
 
-    |> h2
+    |> Topic
         Boolesche Werte
 
     Die primitive Rekursion stellt uns als "Datentyp"
@@ -165,7 +165,7 @@
     Auf ähnliche Weise können wir uns nun lessThan, lessEqual,
     and, or, not, ifThenElse konstruieren.
 
-    |> h2
+    |> Topic
         Wurzel und Suchen im Allgemeinen
 
     Eine größere Herausforderung stellt die ganzzahlige
@@ -257,7 +257,7 @@
     {\rm sqrt} = {\rm LargestLessThan} (\pi_0, {\rm iSquareLessEqual})
     \end{align*}
 
-    |> h2
+    |> Topic
         Paare und Listen
 
     Eine recht stark anmutende Beschränkung primitiv rekursiver

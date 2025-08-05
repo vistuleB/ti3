@@ -117,7 +117,7 @@
                 src=img/circuits/triple-negator.svg
                 loading=lazy
                 
-    |> h1
+    |> Topic
 
         Lösungen zu den Übungsaufgaben
         

@@ -136,7 +136,7 @@
                 style=height:10em
                 src=img/circuits/triple-negator.svg
                 loading=lazy
-    |> h1
+    |> Topic
         Lösungen zu den Übungsaufgaben
     Ich lege Ihnen sehr ans Herz, die obigen Übungsaufgaben
     selbständig zu bearbeiten. Falls Sie dennoch die Geduld
