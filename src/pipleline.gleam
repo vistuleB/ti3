@@ -7,7 +7,14 @@ import selector_library as sl
 
 pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
+  let document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "Topic", "SubTopic", "Statement", "Exercise", "Highlight", "Remark", "QED", "Carousel", "CarouselItem"]
+  let document_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
+  let html_tags_post_transformation = ["header", "nav", "section", "h1", "h2", "p", "b", "i", "code"]
+  let document_tags_post_transformation = ["Document"]
+  let pre_transformation_approved_tags = list.append(document_tags, document_html_tags)
+  let post_transformation_approved_tags = list.flatten([document_html_tags, html_tags_post_transformation, document_tags_post_transformation])
   [
+    [ dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")) ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
     pp.splitting_empty_lines_cleanup(),
     pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar),
@@ -158,6 +165,7 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
       dl.rename(#("SubTheorem", "div")),
       dl.rename(#("NoWrap", "span")),
       dl.delete_attribute__batch([".", "counter", "title"]),
+      dl.check_tags(#(post_transformation_approved_tags,"post-transformation"))
     ]
   ]
   |> list.flatten
