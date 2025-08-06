@@ -309,6 +309,7 @@ figure.main-column img.constrained,
 
 .carousel__container.main-column {
     max-width: var(--main-column-width);
+    padding: 0 0.1rem;
 }
 
 .carousel__container {

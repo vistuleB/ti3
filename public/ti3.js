@@ -4,8 +4,8 @@ const MAIN_COLUMN_100VW_MAX_WIDTH = 1400;
 const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1100;
 const TOTAL_X_PADDING_IN_PX = 64;
 const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 100;
-const CAROUSEL_ARROW_DESKTOP_SIZE = 48;
-const CAROUSEL_ARROW_MOBILE_SIZE = 28;
+const CAROUSEL_ARROW_MAX_SIZE = 48;
+const CAROUSEL_ARROW_MIN_SIZE = 28;
 const BODY_TOP_MARGIN_MOBILE = 140;
 const BODY_TOP_MARGIN_DESKTOP = 80;
 
@@ -56,8 +56,9 @@ const computeOuterWellWidth = () => {
 
 const computeCarouselArrowSize = () => {
   const screenWidth = window.innerWidth;
-  if (screenWidth <= WELL_100VW_MAX_WIDTH) return CAROUSEL_ARROW_MOBILE_SIZE;
-  return CAROUSEL_ARROW_DESKTOP_SIZE;
+  const size = (6 / 100) * window.innerWidth; // 6vw
+  const clampedSize = Math.min(CAROUSEL_ARROW_MAX_SIZE, Math.max(CAROUSEL_ARROW_MIN_SIZE, size));
+    return clampedSize;
 };
 
 const setBodyTopMargin = (value) => {
