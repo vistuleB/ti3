@@ -438,7 +438,7 @@
         Sie müssen nur aufpassen, dass Sie sich nicht in der
         Notation verlieren.
 
-    |> h3
+    |> Topic
         Die Partialordnung $2^{\N}$.
 
     Wir betrachten $2^{\N}$, die Potenzmenge von $\N$,

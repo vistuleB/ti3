@@ -153,7 +153,7 @@
         $L \subseteq \Sigma^*$ über einem Alphabet $\Sigma$, dass uns
         erlaubt, Graphen zu codieren. Wie können wir $L$ als Boolesche Funktion darstellen?
         
-    |> h3
+    |> Topic
         Obere Schranken: Die Lupanov-Schranke
         
     Wir haben nun eine Konstruktion, die uns für jede beliebige

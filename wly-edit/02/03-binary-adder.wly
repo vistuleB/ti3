@@ -1,6 +1,6 @@
 |> Sub
     title=Binär-Addierer
-    |> h3
+    |> Topic
         Ein Schaltkreis für binäre Addition
 
     Schaltkreise, der zwei Binärzahlen addieren können,
@@ -115,7 +115,7 @@
     und beliebig großen Fan-in zulassen, sogar konstante
     Tiefe $O(1)$).
 
-    |> h3
+    |> Topic
         Carry Look-Ahead
 
     Tiefenmässig hat uns der obige Addierer nicht befriedigt.
@@ -197,7 +197,7 @@
     dies 41664. Das ist nicht unerträglich groß, aber auch
     nicht besonders handlich.
 
-    |> h3
+    |> Topic
         Carry-Lookahead mit $O(n)$ Gates und $O(\log n)$ Tiefe
 
     Effizientere Lösungen beginnen oft mit einer guten

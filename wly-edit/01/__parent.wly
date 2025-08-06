@@ -21,7 +21,7 @@
     jedem Schritt immer nur an einer bestimmten Stelle
     und nach festen Regeln.
 
-    |> h3
+    |> Topic
         Emailadressen und Arithmetische Ausdrücke
 
     Die Menge aller denkbaren Emailadressen ist unendlich
@@ -107,7 +107,7 @@
         Versuchen Sie, eine Art formale Sprache zu entwickeln,
         die die korrekten arithmetischen Ausdrücke beschreibt.
 
-    |> h3
+    |> Topic
         Endliche Regeln und unendliches Verhalten
 
     Das klassische Beispiel, wie sehr einfache Regeln
@@ -217,7 +217,7 @@
     sind, werden Sie aber verstehen, warum das sogar recht
     plausibel ist.
 
-    |> h3
+    |> Topic
         Zusammenfassung
 
     Es geht also in diesem Kurs vor Allem um folgende

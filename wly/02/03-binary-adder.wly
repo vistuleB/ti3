@@ -1,7 +1,7 @@
 |> Sub
     title=Binär-Addierer
     
-    |> h3
+    |> Topic
 
         Ein Schaltkreis für binäre Addition
 
@@ -101,7 +101,7 @@
     wir eine Tiefe von \(\log n\) an (oder wenn wir besonders ambitionert sind und
     beliebig großen Fan-in zulassen, sogar konstante Tiefe \(O(1)\)).
     
-    |> h3
+    |> Topic
 
         Carry Look-Ahead
         
@@ -172,7 +172,7 @@
     recht verschwenderisch. Für \(n=64\) wie bei zeitgenössischen Rechnern
     ergibt dies 41664. Das ist nicht unerträglich groß, aber auch nicht besonders handlich.
     
-    |> h3
+    |> Topic
 
         Carry-Lookahead mit \(O(n)\) Gates und \(O(\log n)\) Tiefe
         

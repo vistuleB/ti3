@@ -169,7 +169,7 @@
     noch mindestens $\frac{2^n}{n+1}$ Terme, was bereits
     für moderate Werte wie $n=30$ nicht vertretbar ist.
 
-    |> h3
+    |> Topic
         Majority Top-Down mit `if-then-else`-Gates
 
     Wenden wir nun statt Wahrheitstabelle die Top-Down-Methode
@@ -276,7 +276,7 @@
         Schaltkreis der Größe $O(n^2)$, Tiefe $O(n)$ und Fan-in
         2 berechnet werden.
 
-    |> h3
+    |> Topic
         Majority durch Zählen
 
     $\maj_n(x_1,\dots,x_n)$ zu bestimmen sollte doch einfach
@@ -304,7 +304,7 @@
         müssen und erst die weniger obersten Gadgets Zahlen
         mit $\Theta(\log n)$ Bits als Input bekommen.
 
-    |> h3
+    |> Topic
         $O(\log n)$ Tiefe mit 2-for-3-Addierern.
 
     Die vorherige Konstruktion mit den Addierern war schon
@@ -417,7 +417,7 @@
     ist monoton, hat allerdings leider Tiefe 
     $\Omega(n)$.
 
-    |> h3
+    |> Topic
         Monoton und polylogarithmische Tiefe durch Halbierung
         und Aufzählung.
 
@@ -465,7 +465,7 @@
         viele) Gates ausreichen. Zeigen Sie, wie die gerade
         skizzierte Konstruktion so ausgeführt werden kann,
 
-    |> h3
+    |> Topic
         Monoton und logarithmische Tiefe: Valiants probabilitische
         Konstruktion
 

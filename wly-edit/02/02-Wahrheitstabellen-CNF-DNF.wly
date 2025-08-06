@@ -35,7 +35,7 @@
     Schaltkreis bauen, der diese Funktion berechnet? Ich
     stelle Ihnen drei Herangehensweisen vor.
 
-    |> h3
+    |> Topic
         Rekursiv, top-down
 
     Wir teilen die Tabelle in die obere Hälfte (wo 
@@ -158,7 +158,7 @@
         \end{array}
         $$
 
-    |> h3
+    |> Topic
         Bottom-Up, als DNF
 
     Wenn Sie Rekursionshasser sind und generell lieber
@@ -246,7 +246,7 @@
                 src=img/circuits/dnf-dirty.svg
                 loading=lazy
 
-    |> h3
+    |> Topic
         Bottom-Up, als CNF
 
     Zu der eben demonstrierten Konstruktion gibt es noch
