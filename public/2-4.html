@@ -15,57 +15,37 @@
     path="/2-4.html"
     class="subchapter"
   >
-    <div
-      class="menu"
-    >
-      <div
-        class="menu-left"
-      >
-        <a
-          href="./index.html"
-        >Inhaltsverzeichnis</a><a
+    <div class="menu">
+      <div class="menu-left">
+        <a href="./index.html">Inhaltsverzeichnis</a><a
           id="prev-page"
           href="./2-3.html"
         >&lt;&lt; Kapitel 2.3</a>
       </div>
-      <div
-        class="menu-right"
-      >
-        <a
-          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
-        >zür Kursübersicht</a><a
+      <div class="menu-right">
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./2-5.html"
         >Kapitel 2.5  &gt;&gt;</a>
       </div>
     </div>
-    <div
-      class="main-column page-title"
-    >
+    <div class="main-column page-title">
       <p>
         2.4 
         Monotone Funktionen und monotone Schaltkreise
       </p>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Für zwei Tupel $\mathbf{x}, \mathbf{y} \in \{0,1\}^n$ schreiben wir
-      <span
-        class="nowrap"
-      >$ \mathbf{x} \leq \mathbf{y}$,</span>
+      <span class="nowrap">$ \mathbf{x} \leq \mathbf{y}$,</span>
       falls
-      <span
-        class="nowrap"
-      >$x_1 \leq y_1, \dots, x_n \leq y_n$,</span>
+      <span class="nowrap">$x_1 \leq y_1, \dots, x_n \leq y_n$,</span>
       also
       $\mathbf{x}$
       <i>in jeder Koordinate</i>
       kleiner gleich $\mathbf{y}$ ist.
       Beispielsweise gilt
-      <span
-        class="nowrap"
-      >$ (0,0,1) \leq (1,0,1)$.</span>
+      <span class="nowrap">$ (0,0,1) \leq (1,0,1)$.</span>
       Allerdings gilt weder
       $ (0,1,0) \leq (1,0,1)$ noch umgekehrt; die beiden Tupel sind
       <i>unvergleichbar</i>;
@@ -73,9 +53,7 @@
       <i>Partialordnung</i>.
       Am Besten stellen Sie sich eine solche Partialordnung als gerichteten Graphen vor:
     </p>
-    <figure
-      class="main-column"
-    >
+    <figure class="main-column">
       <img
         style="height:10em"
         src="img/circuits/hasse-diagram.svg"
@@ -84,48 +62,34 @@
         onClick="onImgClick(event)"
       >
     </figure>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Diese Darstellung einer Partialordnung als gerichteter Graph bezeichnet man auch als
       <i>Hasse-Diagramm</i>
       (ich verzichte hier auf eine formale Definition).
       Es gilt nun
-      <span
-        class="nowrap"
-      >$\mathbf{x} \leq \mathbf{y}$,</span>
+      <span class="nowrap">$\mathbf{x} \leq \mathbf{y}$,</span>
       wenn Sie im Hasse-Diagramm einen
       Pfad von $\mathbf{x}$ nach $\mathbf{y}$ finden.
     </p>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       <b>Vorsicht.</b>
       Im obigen Bild steht zwar $001$ unterhalb von
-      <span
-        class="nowrap"
-      >$110$,</span>
+      <span class="nowrap">$110$,</span>
       allerdings
       werden Sie keinen Pfad von $001$ nach $110$ finden;
       es gilt also
-      <span
-        class="nowrap"
-      >$001 \not \leq 110$;</span>
+      <span class="nowrap">$001 \not \leq 110$;</span>
       die beiden Elemente sind
       <i>unvergleichbar</i>.
     </p>
-    <div
-      class="well statement out"
-    >
+    <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>2.4.1</b>
         Eine Boolesche Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ heißt
         <i>monoton</i>, wenn
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         \forall \mathbf{x} \leq \mathbf{y} \in \{0,1\}^n \ : \
         f(\mathbf{x}) \leq f(\mathbf{y}) \ .
@@ -136,26 +100,20 @@
         nicht von 1 auf 0 umkippen.
       </p>
     </div>
-    <div
-      class="well exercise out"
-    >
+    <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.4.1</b>
         Welche der Booleschen Funktionen $\wedge, \vee, \neg, \oplus, \maj$ sind monoton?
       </p>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Funktionen auf wenigen Variablen können wir graphisch darstellen und somit
       erkennen, ob sie monoton sind oder nicht. Für eine Funktion
       $ f: \{0,1\}^2 \rightarrow \{0,1\}$ markieren
       wir im Hasse-Diagramm von $\{0,1\}^2$ diejenigen Elemente blau,
       auf denen $f(x,y) = 1$ ist, und die anderen rot.
     </p>
-    <figure
-      class="main-column"
-    >
+    <figure class="main-column">
       <img
         style="height:10em"
         src="img/circuits/hasse-clouds.svg"
@@ -164,16 +122,12 @@
         onClick="onImgClick(event)"
       >
     </figure>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Wir sehen nun, dass es im Bild von $\wedge$ keinen roten Punkt gibt,
       der oberhalb eines blauen Punktes liegt, im Bild von $\oplus$ allerdings
       schon. Der Grund: $\wedge$ ist monoton, $\xor$ ist es nicht.
       Formaler argumentiert: in der Partialordnung gilt $01 \leq 11$ aber
-      <span
-        class="nowrap"
-      >$\xor (0,1) \gt \xor (1,0)$,</span>
+      <span class="nowrap">$\xor (0,1) \gt \xor (1,0)$,</span>
       was der Definition einer monotonen Funktion
       widerspricht. (Ich habe hier absichtlich die Präfixschreibweise $\xor(0,1)$ verwendet,
       um hervorzuheben, dass es sich hierbei um eine Funktion in zwei Variablen handelt.)
@@ -182,17 +136,13 @@
       im Sinne der Partialordnung
       meine, nicht wirklich im geometrischen Sinne in der Abbildung.
     </p>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Von den Basis-Gates $\wedge, \vee, \neg$ sind $\wedge$ und $\vee$ monoton,
       $\neg$ ist es nicht.
       Es sollte also klar sein, dass ein Schaltkreis ohne Negation immer eine monotone Funktion
       berechnet. Allerdings stimmt der Umkehrschluss nicht. Der Schaltkreis
     </p>
-    <figure
-      class="main-column"
-    >
+    <figure class="main-column">
       <img
         style="height:10em"
         src="img/circuits/monotone-or-not.svg"
@@ -201,24 +151,16 @@
         onClick="onImgClick(event)"
       >
     </figure>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       ist nicht monoton (beachten Sie hinter der
-      <span
-        class="nowrap"
-      >$\bar{y}$-Schreibweise</span>
+      <span class="nowrap">$\bar{y}$-Schreibweise</span>
       versteckte NOT-Gate),
       ist aber äquivalent zu der offensichtlich monotonen Funktion
-      <span
-        class="nowrap"
-      >$x$.</span>
+      <span class="nowrap">$x$.</span>
       Allerdings können wir
       folgendes beweisen:
     </p>
-    <div
-      class="well statement out"
-    >
+    <div class="well statement out">
       <p>
         <b>Theorem</b>
         <b>2.4.2</b>
@@ -226,9 +168,7 @@
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
       </p>
     </div>
-    <div
-      class="well exercise out"
-    >
+    <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.4.2</b>
         Beweisen Sie das Theorem.
@@ -238,9 +178,7 @@
         dass Sie alle NOT-Gates loswerden.
       </p>
     </div>
-    <div
-      class="well exercise out"
-    >
+    <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.4.3</b>
         Finden Sie alle monotonen Funktionen in zwei Variablen.
@@ -253,9 +191,7 @@
         <i>Hasse-Diagramm</i>
         der
         Partialordnungen auf Mengen $ \{0,1\}^2$ bzw.
-        <span
-          class="nowrap"
-        >$ \{0,1\}^3$:</span>
+        <span class="nowrap">$ \{0,1\}^3$:</span>
         
       </p>
       <figure>
@@ -272,16 +208,12 @@
         1-Bereich und einen 0-Bereich aufteilen können.
       </p>
     </div>
-    <div
-      class="well exercise out"
-    >
+    <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.4.4</b>
         <b>(Challenge).</b>
         Bauen Sie einen Schaltkreis mit drei Input-Variablen
-        <span
-          class="nowrap"
-        >$x,y,z$,</span>
+        <span class="nowrap">$x,y,z$,</span>
         der drei
         Output-Gates hat, die $\bar{x}, \bar{y}, \bar{z}$ berechnen.
         Ihr Schaltkreis darf
@@ -299,14 +231,10 @@
         >
       </figure>
     </div>
-    <h1
-      class="main-column"
-    >
+    <h1 class="main-column">
       Lösungen zu den Übungsaufgaben
     </h1>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Ich lege Ihnen sehr ans Herz, die obigen Übungsaufgaben selbständig
       zu bearbeiten. Falls Sie dennoch die Geduld verlieren,
       so habe ich hier Lösungen ausgearbeitet. Auch mit dem Zweck, an dieser
@@ -315,9 +243,7 @@
       und verschiedene
       Beweisstrategien einzugehen.
     </p>
-    <div
-      class="well statement out"
-    >
+    <div class="well statement out">
       <p>
         <b>Theorem</b>
         <b>2.4.3</b>
@@ -325,9 +251,7 @@
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
       </p>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Ich werde zweieinhalb Beweise für dieses Theorem vorstellen. Dies dient auch dazu,
       gängige
       <i>Beweistechniken</i>
@@ -337,9 +261,7 @@
       Beweismethoden
       verstehe ich hier formale Methoden wie
     </p>
-    <ul
-      class="main-column"
-    >
+    <ul class="main-column">
       <li>
         <p>
           Beweis durch Induktion,
@@ -361,20 +283,14 @@
         </p>
       </li>
     </ul>
-    <p
-      class="main-column"
-    >
-      wie sie zum Beispiel auf<a
-        href="https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden"
-      >&ensp;Wikipedia
+    <p class="main-column">
+      wie sie zum Beispiel auf<a href="https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden">&ensp;Wikipedia
       </a>&ensp;aufgeführt
       sind.
       Diesen zur Seite stehen die nicht wirklich formalisierbaren Beweistechniken oder Beweisstrategien,
       die sich oft aus persönlicher Erfahrung speisen, wie zum Beispiel
     </p>
-    <ul
-      class="main-column"
-    >
+    <ul class="main-column">
       <li>
         <p>
           kleine Beispiele untersuchen und dann verallgemeinern,
@@ -391,16 +307,12 @@
         </p>
       </li>
     </ul>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       da bei den Beweistechniken Erfahrung, Intuition und Kreativität mit ins Spiel kommen,
       ist es unmöglich, eine vollständige Liste anzugeben; ich habe die drei obigen Punkte gewählt, weil
       sie in der Tat das repräsentieren, was wir in den Beweisen jetzt verwenden werden.
     </p>
-    <div
-      class="well highlight out"
-    >
+    <div class="well highlight out">
       <p>
         <b>Erster Beweis. Top-Down mit
           <code>if-then-else</code>.</b>
@@ -409,22 +321,16 @@
         In diesem Beweis verwende ich die zweite oben erwähnte Technik: bereits bekanntes
         abwandeln. Was kennen wir denn bereits? Wir kennen
         die
-        <a
-          href="../index.html#truth-table-top-down"
-        >Top-Down-Methode</a>, wie wir
+        <a href="../index.html#truth-table-top-down">Top-Down-Methode</a>, wie wir
         aus einer Wahrheitstabelle einen Schaltkreis bauen:
       </p>
-      <div
-        class="well statement"
-      >
+      <div class="well statement">
         <p>
           <b>Theorem</b>
           <b>2.4.4</b>
           Zu jeder Booleschen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es
           einen Schaltkreis
-          <span
-            class="nowrap"
-          >$C$,</span>
+          <span class="nowrap">$C$,</span>
           der $f$ berechnet.
         </p>
       </div>
@@ -439,27 +345,19 @@
         reden. Falls Sie sich noch gut an unseren Beweis von Theorem 2 in der Vorlesung
         erinnern können und eher an Theorem 1 als an allgemeinen Beweismethoden interessiert sind,
         dürfen Sie gerne
-        <a
-          href="#after-sub-proof"
-        >runterspringen.
+        <a href="#after-sub-proof">runterspringen.
         </a>
       </p>
-      <div
-        class="well highlight"
-      >
+      <div class="well highlight">
         <p>
           <b>Beweis.</b>
           Als
           <i>Beweismethode</i>
           verwenden wir Induktion über
-          <span
-            class="nowrap"
-          >$n$,</span>
+          <span class="nowrap">$n$,</span>
           die Anzahl der Variablen.
         </p>
-        <div
-          class="well alert-info"
-        >
+        <div class="well alert-info">
           <p>
             Zur Erinnerung: bei einem Beweis per Induktion wollen wir eine Aussage
             der Form
@@ -499,17 +397,13 @@
           Dies ist einfach, da die Zahl $n$ bereits im Theorem vorkommt. Wir formulieren sie
           also nun so um:
         </p>
-        <div
-          class="well statement"
-        >
+        <div class="well statement">
           <p>
             <b>(Theorem 1.4.4, alternative Formulierung)</b>
             <b>2.4.5</b>
             Für jede natürliche Zahl $n$ gilt: zu jeder Booleschen Funktion
             $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen Schaltkreis
-            <span
-              class="nowrap"
-            >$C$,</span>
+            <span class="nowrap">$C$,</span>
             der
             $f$ berechnet.
           </p>
@@ -525,28 +419,20 @@
           Boolesche
           Funktionen,
           nämlich die konstanten Funktionen $0$ und
-          <span
-            class="nowrap"
-          >$1$.</span>
+          <span class="nowrap">$1$.</span>
           Für beide Funktionen
           gibt es einen Schaltkreis, nämlich bestehend aus einem Input-Gate (mit
           der Konstant 0 bzw. 1 beschriftet), das gleichzeitig auch Output-Gate ist.
         </p>
-        <div
-          class="well alert-warning"
-        >
+        <div class="well alert-warning">
           <p>
             Vielleicht fühlen Sie sich unwohl bei der Idee, es mit Funktionen
             mit
             null Variablen tun zu haben. Allerdings: warum? In Java hätten Sie bestimmt kein Problem
             mit
           </p>
-          <div
-            class="well highlight"
-          >
-<pre
-  class="listing"
->
+          <div class="well highlight">
+<pre class="listing">
 public boolean constantFalse() {
    return false;
 }
@@ -569,9 +455,7 @@ public boolean constantTrue() {
             es
             <i>vier</i>
             Funktionen gibt:
-            <span
-              class="nowrap"
-            >$0, 1, x, \neg x$;</span>
+            <span class="nowrap">$0, 1, x, \neg x$;</span>
             all diese haben natürlich
             einen
             (sehr einfachen) Schaltkreis. Nur bei $\neg x$ braucht unser Schaltkreis überhaupt
@@ -588,12 +472,8 @@ public boolean constantTrue() {
             Und auch hier appelliere ich an Ihre Programmiererfahrung: weder Sie
             noch der Java-Compiler werden Probleme mit der Funktion
           </p>
-          <div
-            class="well highlight"
-          >
-<pre
-  class="listing"
->
+          <div class="well highlight">
+<pre class="listing">
 public boolean constantFalse(boolean x) {
    return false;
 }
@@ -607,9 +487,7 @@ public boolean constantFalse(boolean x) {
             Funktion mit einer Input-Variablen. Um hundertprozentig korrekt zu sein, müssten wir
             Funktionen $\textnormal{zero}_n$ definieren als
           </p>
-          <div
-            class="math-block"
-          >
+          <div class="math-block">
             $$
             \begin{align*}
             \textnormal{zero}_n&amp;: \{0,1\}^n \rightarrow \{0,1\} \\
@@ -623,9 +501,7 @@ public boolean constantFalse(boolean x) {
             ob $0$ nun eine Konstante ist, eine Funktion mit einer Input-Variablen, mit zwei
             Input-Variablen etc. In mathematischen Papern lesen Sie
             in diesem Kontext manchmal
-            <a
-              href="https://en.wikipedia.org/wiki/Abuse_of_notation"
-            ><i>with abuse of
+            <a href="https://en.wikipedia.org/wiki/Abuse_of_notation"><i>with abuse of
                 notation</i>
               </a>,
             womit die Autoren andeuten, dass sie ihre Notation nicht ganz korrekt anwenden, aber
@@ -646,9 +522,7 @@ public boolean constantFalse(boolean x) {
           <i>Induktionshypothese</i>
           $P(n-1)$ als gegeben annehmen:
         </p>
-        <div
-          class="well remark"
-        >
+        <div class="well remark">
           <p>
             <b>Induktionshypothese.</b>
             Zu jeder Booleschen Funktion in $n-1$ Variablen
@@ -658,9 +532,7 @@ public boolean constantFalse(boolean x) {
         <p>
           und wollen den Induktionsschritt vollziehen, also $P(n)$ zeigen:
         </p>
-        <div
-          class="well remark"
-        >
+        <div class="well remark">
           <p>
             <b>Ziel des Induktionsschritts.</b>
             Zu jeder Booleschen Funktion in $n$ Variablen
@@ -670,22 +542,16 @@ public boolean constantFalse(boolean x) {
         <p>
           <b>Beweistechnik/-strategie</b>. Um den Induktionsschritt
           vollziehen zu können, müssen wir irgendwie die
-          <span
-            class="nowrap"
-          >$n$-stellige</span>
+          <span class="nowrap">$n$-stellige</span>
           Funktion $f$ auf sinnvolle Weise in
-          <span
-            class="nowrap"
-          >$n-1$-stellige</span>
+          <span class="nowrap">$n-1$-stellige</span>
           Funktionen
           "zerlegen". Hier ist im Allgemeinen Kreativität gefragt.
           Im vorliegenden Falle ist es aber recht klar, welche Zerlegung in Frage kommt.
           Wir definieren zwei neue, "kleinere" Funktionen
           $f_0, f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
         </p>
-        <div
-          class="math-block"
-        >
+        <div class="math-block">
           $$
           \begin{align*}
           f_0 (x_2, \dots, x_n)&amp;:= f(0, x_2, \dots, x_n) \\
@@ -732,9 +598,7 @@ public boolean constantFalse(boolean x) {
           <li>
             <p>
               Der Fall
-              <span
-                class="nowrap"
-              >$x_1 = 1$.</span>
+              <span class="nowrap">$x_1 = 1$.</span>
               Dann gibt der obige Schaltkreis
               den Wert $f_1(x_2,\dots,x_n$ aus, was per Definition von $f_1$
               gleich $f(1, x_2,\dots,x_n) = f(x_1,\dots,x_n)$ ist. Er gibt also den korrekten
@@ -744,9 +608,7 @@ public boolean constantFalse(boolean x) {
           <li>
             <p>
               Der Fall
-              <span
-                class="nowrap"
-              >$x_1 = 0$.</span>
+              <span class="nowrap">$x_1 = 0$.</span>
               Dann gibt der obige Schaltkreis
               den Wert $f_0(x_2,\dots,x_n$ aus, was per Definition von $f_0$
               gleich $f(0, x_2,\dots,x_n) = f(x_1,\dots,x_n)$ ist. Er gibt also auch hier den
@@ -760,36 +622,26 @@ public boolean constantFalse(boolean x) {
           $f: \{0,1\}^n \rightarrow \{0,1\}$ konstruiert. Unser Induktionsbeweis von Theorem 2
           ist nun
           abgeschlossen.
-          <span
-            class="qed"
-          >\(\square\)</span>
+          <span class="qed">\(\square\)</span>
         </p>
       </div>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Diesen "hellblauen" Beweis haben wir ja bereits in der Vorlesung
       geführt. Ich habe ihn hier wiederholt und in größerem Detail besprochen, um
       auf verschiedene formale Aspekte der Beweisführung einzugehen. Wenden wir uns
       jetzt dem Beweis von
-      <a
-        href="#theorem-1"
-      >Theorem 1.4.3</a>
+      <a href="#theorem-1">Theorem 1.4.3</a>
       zu.
     </p>
-    <div
-      class="well highlight out"
-    >
+    <div class="well highlight out">
       <p>
         <b>Theorem 1.4.3, nochmals.</b>
         Zu jeder monotonen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
       </p>
     </div>
-    <div
-      class="well highlight out"
-    >
+    <div class="well highlight out">
       <p>
         <b>Erster Beweis. Top-Down mit
           <code>if-then-else</code>.</b>
@@ -804,9 +656,7 @@ public boolean constantFalse(boolean x) {
         zwei neue, "kleinere" Funktionen
         $f_0, f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         \begin{align*}
         f_0 (x_2, \dots, x_n)&amp;:= f(0, x_2, \dots, x_n) \\
@@ -818,9 +668,7 @@ public boolean constantFalse(boolean x) {
         Diese Funktionen sind selbst wiederum monoton (versuchen Sie, dies formal zu zeigen,
         wenn Sie Lust haben; oder versuchen Sie, es sich intuitiv klar zu machen).
         Per Induktionshypothese gibt es also monotone Schaltkreise für $f_0$ und
-        <span
-          class="nowrap"
-        >$f_1$.</span>
+        <span class="nowrap">$f_1$.</span>
         Wir
         kombinieren diese mit einem
         <code>if-then-else</code>-Gate und erhalten:
@@ -873,9 +721,7 @@ public boolean constantFalse(boolean x) {
       <p>
         Der linke Schaltkreis gibt uns, als Formel geschrieben,
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         (x \wedge f_1) \vee (x \wedge f_0) \equiv x \wedge (f_1 \vee f_0) \ .
         $$
@@ -886,9 +732,7 @@ public boolean constantFalse(boolean x) {
         Auch ein
         <i>abuse of notation</i>. In der obigen Formel habe ich rechts
         das $x$ ausgeklammert; die Formel beginnt nun mit
-        <span
-          class="nowrap"
-        >$x \wedge ...$;</span>
+        <span class="nowrap">$x \wedge ...$;</span>
         falls
         $x=0$ ist, gibt sie also auf jeden Fall $0$ aus; das kann im Allgemeinen nicht
         korrekt (also äquivalent zu $f$ sein; warum sollte $f$ automatisch $0$ sein,
@@ -897,9 +741,7 @@ public boolean constantFalse(boolean x) {
       </p>
       <p>
         Schauen wir uns also den Schaltkreis im zweiten Bild an. Das rechte
-        <span
-          class="nowrap"
-        >$\wedge$-Gate</span>
+        <span class="nowrap">$\wedge$-Gate</span>
         hat nur
         einen Input, kann also weggelassen werden (d.h. durch ein Kabel ersetzt werden); wir
         erhalten den
@@ -917,9 +759,7 @@ public boolean constantFalse(boolean x) {
       <p>
         bzw. als Formel:
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         (x_1 \wedge f_1) \vee f_0 \ .
         $$
@@ -927,9 +767,7 @@ public boolean constantFalse(boolean x) {
       <p>
         Wir müssen nun zeigen, dass dies wirklich $f$ berechnet, also
       </p>
-      <div
-        class="well statement"
-      >
+      <div class="well statement">
         <p>
           <b>Behauptung</b>
           <b>2.4.6</b>
@@ -937,29 +775,21 @@ public boolean constantFalse(boolean x) {
           $f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n) \ .$
         </p>
       </div>
-      <div
-        class="well remark"
-      >
+      <div class="well remark">
         <p>
           <b>Beweis.</b>
           Wir machen eine Fallunterscheidung nach dem Wert von
-          <span
-            class="nowrap"
-          >$x_1$.</span>
+          <span class="nowrap">$x_1$.</span>
           
         </p>
         <ul>
           <li>
             <p>
               Der Fall
-              <span
-                class="nowrap"
-              >$x_1 = 0$.</span>
+              <span class="nowrap">$x_1 = 0$.</span>
               Dann gilt
             </p>
-            <div
-              class="math-block"
-            >
+            <div class="math-block">
               $$
               \begin{align*}
               f(x_1,x_2,\dots,x_n)&amp;= f(0,x_2,\dots,x_n) \tag{da $x_1=0$} \\
@@ -976,14 +806,10 @@ public boolean constantFalse(boolean x) {
           <li>
             <p>
               Der Fall
-              <span
-                class="nowrap"
-              >$x_1 = 1$.</span>
+              <span class="nowrap">$x_1 = 1$.</span>
               Dann gilt
             </p>
-            <div
-              class="math-block"
-            >
+            <div class="math-block">
               $$
               \begin{align*}
               f(x_1,\dots,x_n)&amp;= f_1(x_2,\dots,x_n) \ .
@@ -993,9 +819,7 @@ public boolean constantFalse(boolean x) {
             <p>
               Was ist aber mit der rechten Seite der behaupteten Gleichung?
             </p>
-            <div
-              class="math-block"
-            >
+            <div class="math-block">
               $$
               \begin{align*}
               (x_1 \wedge f_1) \vee f_0&amp;= f_1 \vee f_0 \tag{da $x_1=1$ ist und somit im $\wedge$
@@ -1005,13 +829,9 @@ public boolean constantFalse(boolean x) {
             </div>
             <p>
               Die linke Seite ist also
-              <span
-                class="nowrap"
-              >$f_1$,</span>
+              <span class="nowrap">$f_1$,</span>
               die rechte ist
-              <span
-                class="nowrap"
-              >$f_1 \vee f_0$.</span>
+              <span class="nowrap">$f_1 \vee f_0$.</span>
               Schaut leider
               nicht
               gleich aus.
@@ -1020,9 +840,7 @@ public boolean constantFalse(boolean x) {
               verwendet
               haben, kann der Beweis ja gar nicht funktionieren. Also: verwenden wir Monotonität:
             </p>
-            <div
-              class="math-block"
-            >
+            <div class="math-block">
               $$
               \begin{align*}
               (0, x_2, \dots,x_n)&amp;\leq (1, x_2, \dots,x_n) \tag{Definition unser Partialordnung,
@@ -1035,29 +853,21 @@ public boolean constantFalse(boolean x) {
             <p>
               Wir überprüfen nun also: wenn $f_0(x_2, \dots, x_n) = 0$ ist, dann
               gilt
-              <span
-                class="nowrap"
-              >$f_0 \vee f_1 = 0 \vee f_1 = f_1$.</span>
+              <span class="nowrap">$f_0 \vee f_1 = 0 \vee f_1 = f_1$.</span>
               Wenn
               $f_0 = 1$ ist, dann ist $f_1 = 1$ wegen Monotonität (größer als 1 geht ja
               nicht),
               und daher
-              <span
-                class="nowrap"
-              >$f_0 \vee f_1 = 1 \vee 1 = 1 = f_1$.</span>
+              <span class="nowrap">$f_0 \vee f_1 = 1 \vee 1 = 1 = f_1$.</span>
               In jedem Fall gilt also:
             </p>
-            <div
-              class="math-block"
-            >
+            <div class="math-block">
               $$
               (f_0 \vee f_1) = f_1 \ .
               $$
             </div>
             <p>
-              Und somit sind linke und rechte Seite gleich, wie behauptet.<span
-                class="qed"
-              >\(\square\)</span>
+              Und somit sind linke und rechte Seite gleich, wie behauptet.<span class="qed">\(\square\)</span>
             </p>
           </li>
         </ul>
@@ -1065,9 +875,7 @@ public boolean constantFalse(boolean x) {
       <p>
         Wir haben nun also gezeigt, dass für jeden Input $x_1,\dots,x_n$ gilt:
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         \begin{align*}
         f = (x_1 \wedge f_1) \vee f_0 \ ,
@@ -1089,17 +897,11 @@ public boolean constantFalse(boolean x) {
       </figure>
       <p>
         ein monotoner Schaltkreis für
-        <span
-          class="nowrap"
-        >$f$.</span>
-        <span
-          class="qed"
-        >\(\square\)</span>
+        <span class="nowrap">$f$.</span>
+        <span class="qed">\(\square\)</span>
       </p>
     </div>
-    <div
-      class="well highlight out"
-    >
+    <div class="well highlight out">
       <p>
         <b>Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.</b>Als Beweisstrategie verwende ich wieder
         <i>Bekanntes abwandeln.</i>
@@ -1108,22 +910,14 @@ public boolean constantFalse(boolean x) {
         <b>Das Bekannte.</b>
         Erinnern Sie sich an die Konstruktion einer DNF-Formel auf Basis der gegebenen
         Wahrheitstabelle. Für jedes
-        <span
-          class="nowrap"
-        >$n$-Tupel</span>
-        <span
-          class="nowrap"
-        >$\mathbf{a} := a_1,\dots,a_n) \in \{0,1\}^n$,</span>
+        <span class="nowrap">$n$-Tupel</span>
+        <span class="nowrap">$\mathbf{a} := a_1,\dots,a_n) \in \{0,1\}^n$,</span>
         für welches $f$ den Wert 1 ausgibt, konstruieren wir einen DNF-Term
-        <span
-          class="nowrap"
-        >$T_{\mathbf{a}}$,</span>
+        <span class="nowrap">$T_{\mathbf{a}}$,</span>
         der auf $\mathbf{a}$ eine 1 ausgibt und sonst überall eine 0.
         Um den Term genau zu beschreiben, definieren wir
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$ 
         \begin{align*}
         I_{\mathbf{a}}&amp;:= \{ i \in \{1,\dots, n\} \ | \ a_i = 1 \} \\
@@ -1133,19 +927,13 @@ public boolean constantFalse(boolean x) {
       </div>
       <p>
         Als Beispiel: wenn $n=5$ und
-        <span
-          class="nowrap"
-        >$\mathbf{a} = (10010)$,</span>
+        <span class="nowrap">$\mathbf{a} = (10010)$,</span>
         dann ist
         $I_{\mathbf{a}} = \{1,4\}$ und
-        <span
-          class="nowrap"
-        >$I_{\mathbf{a}} = \{2,3,5\}$.</span>
+        <span class="nowrap">$I_{\mathbf{a}} = \{2,3,5\}$.</span>
         Wir definieren
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         \begin{align*}
         T_{\mathbf{a}}&amp;:= \bigwedge_{i \in I_{\mathbf{a}}} x_i \wedge
@@ -1155,16 +943,12 @@ public boolean constantFalse(boolean x) {
       </div>
       <p>
         Für $\mathbf{a} = (10010)$ gibt das also
-        <span
-          class="nowrap"
-        >$x_1 \wedge x_4 \wedge \bar{x}_2 \wedge
+        <span class="nowrap">$x_1 \wedge x_4 \wedge \bar{x}_2 \wedge
           \bar{x}_3 \wedge \bar{x}_5$.</span>
         Noch kompakter kann man es hinschreiben, wenn man für eine Variable
         $x$ und einen Wert $b \in \{0,1\}$ folgendes definiert:
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$ 
         \begin{align*}
         x^{b}&amp;:= \begin{cases}
@@ -1177,9 +961,7 @@ public boolean constantFalse(boolean x) {
       <p>
         Dann können wir $T_{\mathbf{a}}$ einfach als
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$ 
         \begin{align*}
         T_{\mathbf{a}} = \bigwedge_{i=1}^n x_i^{a_i}
@@ -1188,9 +970,7 @@ public boolean constantFalse(boolean x) {
       </div>
       <p>
         definieren, für $\mathbf{a} = (10010)$ also
-        <span
-          class="nowrap"
-        >$x_1^1 \wedge x_2^0 \wedge x_3^0 \wedge x_4^1 \wedge x_5^0 =
+        <span class="nowrap">$x_1^1 \wedge x_2^0 \wedge x_3^0 \wedge x_4^1 \wedge x_5^0 =
           x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge \bar{x}_5$.</span>
         Das gibt den gleichen
         Term wie zuvor, nur mit den Literalen in anderer Reihenfolge aufgelistet (was keine
@@ -1198,14 +978,10 @@ public boolean constantFalse(boolean x) {
       </p>
       <p>
         Gegen eine Boolesche Funktion
-        <span
-          class="nowrap"
-        >$f: \{0,1\}^n \rightarrow \{0,1\}$,</span>
+        <span class="nowrap">$f: \{0,1\}^n \rightarrow \{0,1\}$,</span>
         definieren wir
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         \sat(f) := \{\mathbf{a} \in \{0,1\}^n \ | \ f(\mathbf{a}) = 1 \} \ .
         $$
@@ -1215,14 +991,10 @@ public boolean constantFalse(boolean x) {
         <i>satisfying assignments</i>, also
         diejenigen Belegungen der Variablen, die $f$ "erfüllen", also 1 werden lassen.
         Wir bauen uns einen Schaltkreis
-        <span
-          class="nowrap"
-        >$F$:</span>
+        <span class="nowrap">$F$:</span>
         
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$ 
         \begin{align*}
         F := \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}}
@@ -1249,58 +1021,42 @@ public boolean constantFalse(boolean x) {
         $x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge \bar{x}_5$ den Term
         $x_1 \wedge x_4 $ zu machen. Wir definieren also:
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         T'_{\mathbf{a}} := \bigwedge_{i \in I_{\mathbf{a}}} x_i \ .
         $$
       </div>
       <p>
         Der Term $T'_{\mathbf{a}}$ ist "kürzer" als
-        <span
-          class="nowrap"
-        >$T_{\mathbf{a}}$,</span>
+        <span class="nowrap">$T_{\mathbf{a}}$,</span>
         stellt
         also weniger "Bedingungen". Formal gesprochen:
       </p>
-      <div
-        class="well statement"
-      >
+      <div class="well statement">
         <p>
           <b>Behauptung</b>
           <b>2.4.7</b>
           Für alle $x_1,\dots,x_n$ gilt
-          <span
-            class="nowrap"
-          >$T_{\mathbf{a}} \leq T'_{\mathbf{a}}$.</span>
+          <span class="nowrap">$T_{\mathbf{a}} \leq T'_{\mathbf{a}}$.</span>
           
         </p>
       </div>
-      <div
-        class="well remark"
-      >
+      <div class="well remark">
         <p>
           <b>Beweis.</b>
           Definieren wir zusätzlich noch
-          <span
-            class="nowrap"
-          >$T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
+          <span class="nowrap">$T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
             \bar{x}_i$,</span>
           dann können wir $T_{\mathbf{a}} = T'_{\mathbf{a}} \wedge T''_{\mathbf{a}}$ schreiben.
           Und jetzt ist $T'_{\mathbf{a}} \wedge T''_{\mathbf{a}} \leq T'_{\mathbf{a}}$
           offensichtlich,
-          weil $g \wedge h \leq g$ ganz allgemein gilt (überzeugen Sie sich davon).<span
-            class="qed"
-          >\(\square\)</span>
+          weil $g \wedge h \leq g$ ganz allgemein gilt (überzeugen Sie sich davon).<span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
         Wir definieren nun analog zu $F$ eine DNF-Formel
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$
         F' := \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} \ .
         $$
@@ -1310,35 +1066,25 @@ public boolean constantFalse(boolean x) {
         ersatzlos streichen. Wir behaupten nun, dass $F'$ und $F$ dieselbe
         Funktion darstellen:
       </p>
-      <div
-        class="well statement"
-      >
+      <div class="well statement">
         <p>
           <b>Behauptung</b>
           <b>2.4.8</b>
         </p>
         <p>
-          <span
-            class="nowrap"
-          >$F \equiv F'$,</span>
+          <span class="nowrap">$F \equiv F'$,</span>
           d.h. sie berechnen beide dieselbe Funktion, nämlich
-          <span
-            class="nowrap"
-          >$f$.</span>
+          <span class="nowrap">$f$.</span>
           
         </p>
       </div>
-      <div
-        class="well remark"
-      >
+      <div class="well remark">
         <p>
           <b>Beweis.</b>
           Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
           wir zeigen, dass
         </p>
-        <div
-          class="math-block"
-        >
+        <div class="math-block">
           $$
           F(\mathbf{x}) = F'(\mathbf{x}) \textnormal{ für alle $\mathbf{x} \in \{0,1\}^n$. }
           $$
@@ -1355,9 +1101,7 @@ public boolean constantFalse(boolean x) {
           </li>
           <li>
             <p>
-              <span
-                class="nowrap"
-              >$F(\mathbf{x}) \geq F'(\mathbf{x})$.</span>
+              <span class="nowrap">$F(\mathbf{x}) \geq F'(\mathbf{x})$.</span>
               
             </p>
           </li>
@@ -1367,9 +1111,7 @@ public boolean constantFalse(boolean x) {
           $T_{\mathbf{a}} \leq T'_{\mathbf{a}}$ gilt, und somit
           auch
         </p>
-        <div
-          class="math-block"
-        >
+        <div class="math-block">
           $$
           \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}} \leq \bigvee_{\mathbf{a} \in \sat(f)}
           T'_{\mathbf{a}}
@@ -1397,29 +1139,21 @@ public boolean constantFalse(boolean x) {
           Wir wissen ja, dass
           $F' = \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}} $ ist. Wenn nun
           also die linke Seite,
-          <span
-            class="nowrap"
-          >$F'$,</span>
+          <span class="nowrap">$F'$,</span>
           den Wert 1 annimmt, dann muss es auf der rechten
           Seite (mindestens) einen Term geben, der auch 1 annimmt:
         </p>
-        <div
-          class="math-block"
-        >
+        <div class="math-block">
           $$
           T'_{\mathbf{a}^*}(x_1,\dots,x_n) = 1 \ ,
           $$
         </div>
         <p>
           für ein festes, bestimmtes
-          <span
-            class="nowrap"
-          >$\mathbf{a}^*$,</span>
+          <span class="nowrap">$\mathbf{a}^*$,</span>
           also
         </p>
-        <div
-          class="math-block"
-        >
+        <div class="math-block">
           $$
           \bigwedge_{i \in I_{\mathbf{a}^*}} x_i = 1 \ .
           $$
@@ -1431,9 +1165,7 @@ public boolean constantFalse(boolean x) {
           Verdacht nahe, dass der entsprechende Term
           $ T_{\mathbf{a}^*}$ auch 1 ausgibt. Das Problem ist leider, dass
         </p>
-        <div
-          class="math-block"
-        >
+        <div class="math-block">
           $$ 
           \begin{align*}
           T_{\mathbf{a}^*}(\mathbf{x})&amp;= T'_{\mathbf{a}^*}(\mathbf{x}) \wedge
@@ -1460,39 +1192,27 @@ public boolean constantFalse(boolean x) {
           Na klar, wir erinnern uns: wir haben den Term $T_{\mathbf{a}}$ so definiert,
           dass er auf $\mathbf{a}$ und nur dort 1 wird. Wir wissen also:
         </p>
-        <div
-          class="math-block"
-        >
+        <div class="math-block">
           $$
           T_{\mathbf{a}^*} (\mathbf{a}^*) = 1 \ .
           $$
         </div>
         <p>
           Wenn wir Glück haben, gilt
-          <span
-            class="nowrap"
-          >$\mathbf{a}^* = \mathbf{x}$.</span>
+          <span class="nowrap">$\mathbf{a}^* = \mathbf{x}$.</span>
           Ansonsten
           gilt immerhin, dass $x_i=1$ für alle
-          <span
-            class="nowrap"
-          >$i \in I(\mathbf{a}^*)$,</span>
+          <span class="nowrap">$i \in I(\mathbf{a}^*)$,</span>
           also
           $x_1 = 1$ wenn
-          <span
-            class="nowrap"
-          >$a^*_i = 1$.</span>
+          <span class="nowrap">$a^*_i = 1$.</span>
           In anderen Worten, es gilt
-          <span
-            class="nowrap"
-          >$\mathbf{x} \geq \mathbf{a}^*$!</span>
+          <span class="nowrap">$\mathbf{x} \geq \mathbf{a}^*$!</span>
           Wunderbar! Jetzt können wir Monotonie anwenden! Denn selbst
           wenn $T_{\mathbf{a}^*}$ nicht monoton ist, so wissen wir, dass
           $F$ eine monotone Funktion berechnet, und somit
         </p>
-        <div
-          class="math-block"
-        >
+        <div class="math-block">
           $$
           F(\mathbf{x}) \geq F(\mathbf{a}^*) = 1 \ .
           $$
@@ -1500,26 +1220,18 @@ public boolean constantFalse(boolean x) {
         <p>
           Wir können zwar nicht genau mit dem Finger auf einen Term von $F$ zeigen,
           der 1 wird, wissen aber
-          <i>per Monotonie</i>, dass es so einen geben muss.<span
-            class="qed"
-          >\(\square\)</span>
+          <i>per Monotonie</i>, dass es so einen geben muss.<span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
         Wir haben nun gezeigt, dass die DNF-Formeln $F$ und $F'$ dieselbe Boolesche Funktion
         berechnen, nämlich
-        <span
-          class="nowrap"
-        >$f$.</span>
+        <span class="nowrap">$f$.</span>
         Die Formel $F'$ enthält keine negativen Literale und ist somit
-        ein monotoner Schaltkreis von Tiefe 2.<span
-          class="qed"
-        >\(\square\)</span>
+        ein monotoner Schaltkreis von Tiefe 2.<span class="qed">\(\square\)</span>
       </p>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Ich habe Ihnen zweieinhalb Beweise versprochen. Der zweieinhalbte Beweis
       geht nun genau so wie der zweite, nur dass er eine CNF-Formel $G$ statt einer DNF-Formel $F$
       konstruiert und aus dieser dann alle negativen Literale entfernt, womit wir

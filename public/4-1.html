@@ -15,41 +15,27 @@
     path="/4-1.html"
     class="subchapter"
   >
-    <div
-      class="menu"
-    >
-      <div
-        class="menu-left"
-      >
-        <a
-          href="./index.html"
-        >Inhaltsverzeichnis</a><a
+    <div class="menu">
+      <div class="menu-left">
+        <a href="./index.html">Inhaltsverzeichnis</a><a
           id="prev-page"
           href="./4-0.html"
         >&lt;&lt; Kapitel 4</a>
       </div>
-      <div
-        class="menu-right"
-      >
-        <a
-          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
-        >zür Kursübersicht</a><a
+      <div class="menu-right">
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./4-2.html"
         >Kapitel 4.2  &gt;&gt;</a>
       </div>
     </div>
-    <div
-      class="main-column page-title"
-    >
+    <div class="main-column page-title">
       <p>
         4.1 
         Primitive Rekursion: Motivation und Definitionen
       </p>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Primitive Rekursion ist ein Versuch, Berechbarkeit von Funktionen $f: \N^k \rightarrow \N$
       anhand
       eines "Baukastenprinzips" zu modellieren. Man stellt gewisse Basisfunktionen als "offensichtlich
@@ -59,25 +45,19 @@
       mittels der Kombinatoren von den Basisfunktionen ausgehend konstruiert werden können.
       Die Basisfunktionen sind:
     </p>
-    <div
-      class="math-block main-column"
-    >
+    <div class="math-block main-column">
       $$\begin{align*}
       \zero:&amp;\N^* \rightarrow \N \\
       \vec{x}&amp;\mapsto 0
       \end{align*}$$
     </div>
-    <div
-      class="math-block main-column"
-    >
+    <div class="math-block main-column">
       $$\begin{align*}
       \succ: \N&amp;\rightarrow \N \\
       x&amp;\mapsto x+1
       \end{align*}$$
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Sind diese Funktionen "offensichtlich berechenbar"? Ich würde sagen, die fundamentale Eigenschaft
       der natürlichen Zahlen ist, dass jede Zahl einen Nachfolger (successor) hat; daher ist irgendwie
       klar, dass $\succ$ berechen bar ist. Aber seien wir vorsichtig: wenn wir für natürliche Zahlen
@@ -89,91 +69,61 @@
       <i>unärer Schreibweise</i>
       (auhc Steinzeitnotation genannt)
       darstellen, also vier
-      <span
-        class="nowrap"
-      >$ = 1111$,</span>
+      <span class="nowrap">$ = 1111$,</span>
       sieben =
-      <span
-        class="nowrap"
-      >$= 1111111$.</span>
+      <span class="nowrap">$= 1111111$.</span>
       Jezt
       brauchen wir für succ kein if-then-else und keine Schleifen, denn
-      <span
-        class="nowrap"
-      >$\succ(x) = 1x$.</span>
+      <span class="nowrap">$\succ(x) = 1x$.</span>
       
     </p>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Eine weitere Klasse von "offensichtlich" berechenbaren Funktionen sind die sogenannten
       Projektionen
     </p>
-    <p
-      class="main-column"
-    >
-      <span
-        class="nowrap"
-      >$\pi^n_k$,</span>
+    <p class="main-column">
+      <span class="nowrap">$\pi^n_k$,</span>
       definiert als
     </p>
-    <div
-      class="math-block main-column"
-    >
+    <div class="math-block main-column">
       $$\begin{align*}
       \pi^n_k : \N^n&amp;\rightarrow \N \\
       \vec{x}&amp;\mapsto x_k \ .
       \end{align*}$$
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Irgendwie sollte auch hier klar sein, dass die Vorschrift "gib von den 3 Argumenten, die Du
       erhältst, das erste zurück" ohne Zweifel "berechenbar" ist.
       Weil wir bald alles in einem Python-Framework implementieren werden, sei angemerkt,
       dass ich die Zählung der Indizes bei 0 beginnen lasse, also zum Beispiel
     </p>
-    <div
-      class="math-block main-column"
-    >
+    <div class="math-block main-column">
       $$\begin{align*}
       \pi^3_0: (x,y,z) \mapsto x \\
       \pi^3_1: (x,y,z) \mapsto y \ .
       \end{align*}$$
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Auch die Stelligkeit $n$ lasse ich oft weg und schreibe einfach $\pi_k$ statt
-      <span
-        class="nowrap"
-      >$\pi^n_k$.</span>
+      <span class="nowrap">$\pi^n_k$.</span>
       
     </p>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       <b>Kombinatoren.</b>
       Die primitive Rekursion stellt zwei Kombinatoren zur Verfügung: Komposition (Verknüpfung) und
       primitive Rekursion.
     </p>
-    <div
-      class="well statement out"
-    >
+    <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>4.1.1</b>
         <b>(Komposition)</b>
         Sei $f: \N^k \rightarrow \N$ und
-        <span
-          class="nowrap"
-        >$g_1, \dots, g_k: \N^l \rightarrow \N$.</span>
+        <span class="nowrap">$g_1, \dots, g_k: \N^l \rightarrow \N$.</span>
         Dann ist
         $\comp(f, g_1, \dots, g_k)$ die Funktion
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$\begin{align*}
         \N^l&amp;\rightarrow \N \\
         \vec{x}&amp;\mapsto f(g_1(\vec{x}), \dots, g_k(\vec{x}))
@@ -192,30 +142,22 @@
         >
       </figure>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Um aber komplexere Operationen implementieren zu können, brauchen wir eine Art von Schleife.
       Was ist die einfachste Art von Schleife oder Rekursion. Wir dürfen nur eine sehr beschränkte
       Form der Rekursion verwenden:
     </p>
-    <div
-      class="well statement out"
-    >
+    <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>4.1.2</b>
         <b>Primitive Rekursion</b>
         Seien $g: \N^k \rightarrow \N$ und
-        <span
-          class="nowrap"
-        >$h: \N^{k+2} \rightarrow \N$.</span>
+        <span class="nowrap">$h: \N^{k+2} \rightarrow \N$.</span>
         Wir
         definieren eine neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$\begin{align*}
         f : \N^{k+1}&amp;\rightarrow \N \\
         (t, \vec{x})&amp;\rightarrow \begin{cases}
@@ -226,25 +168,17 @@
       </div>
       <p>
         Für diese Konstruktion schreiben wir kompakt
-        <span
-          class="nowrap"
-        >$f := \primrec(g,h)$.</span>
+        <span class="nowrap">$f := \primrec(g,h)$.</span>
         
       </p>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Wenn Sie Rekursionshasser sind, dann können Sie sich es als Funktion mit einer
       <code>for</code>-Schleife
       vorstellen, in der nur eine lokale Variable erlaubt ist:
     </p>
-    <div
-      class="well highlight out"
-    >
-<pre
-  class="listing numbered-pre"
->
+    <div class="well highlight out">
+<pre class="listing numbered-pre">
 def PrimRec(g, h):
    def f(t,*x):
        temp = g(*x)
@@ -254,38 +188,28 @@ def PrimRec(g, h):
    return f
 </pre>
     </div>
-    <p
-      class="main-column"
-    >
+    <p class="main-column">
       Die Forderung, dass man nur
       <i>eine</i>
       lokale Variable durch die Schleife führen darf, scheint
       sehr restriktiv; es ist aber wohl die einfachste Form einer Schleife, die wirklich etwas
       "schleifenhaftes" tut.
     </p>
-    <div
-      class="well statement out"
-    >
+    <div class="well statement out">
       <p>
         <b>Demo</b>
         <b>4.1.3</b>
         Speichern Sie die Datei
-        <a
-          href="../code/primitive-recursion/primrec.py"
-        >primrec.py</a>
+        <a href="../code/primitive-recursion/primrec.py">primrec.py</a>
         auf
         Ihrem Rechner.
         Diese Datei stellt ein Framework für die Implementierung primitiv rekursiver Funktionen zur
         Verfügung.
         Insbesondere implementiert sie die folgenden Funktion
-        <span
-          class="nowrap"
-        >$\N^k \rightarrow \N$:</span>
+        <span class="nowrap">$\N^k \rightarrow \N$:</span>
         
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$\begin{align*}
         {\rm zero}:&amp;\vec{x} \mapsto 0 \\
         {\rm succ}:&amp;x \mapsto x+1
@@ -301,9 +225,7 @@ def PrimRec(g, h):
           <p>
             <code>Proj(k)</code>: erzeugt die Funktion
           </p>
-          <div
-            class="math-block"
-          >
+          <div class="math-block">
             $$\begin{align*}
             \pi_k : \N^*&amp;\rightarrow \N \\
             \vec{x}&amp;\mapsto x_k \ .
@@ -314,9 +236,7 @@ def PrimRec(g, h):
           <p>
             <code>Comp(f, g0, g1, ...)</code>: erzeugt die Funktion
           </p>
-          <div
-            class="math-block"
-          >
+          <div class="math-block">
             $$\begin{align*}
             \vec{x} \mapsto f(g0(x), g1(x), ...)
             \end{align*}$$
@@ -331,9 +251,7 @@ def PrimRec(g, h):
           <p>
             <code>PrimRec(g,h)</code>: erzeugt die Funktion
           </p>
-          <div
-            class="math-block"
-          >
+          <div class="math-block">
             $$\begin{align*}
             (t, \vec{x}) \mapsto \begin{cases}
             g(\vec{x})&amp;\textnormal{ if $t=0$,} \\
@@ -370,15 +288,11 @@ def add(x,y):
         <code>add</code>
         aus den Kombinatoren zusammenbasteln. Ich schreibe
         nun ${\rm add}(t,x)$ statt
-        <span
-          class="nowrap"
-        >${\rm add}(x,y)$,</span>
+        <span class="nowrap">${\rm add}(x,y)$,</span>
         um den Rekursionsparameter $t$ deutlich
         zu machen.
       </p>
-      <div
-        class="math-block"
-      >
+      <div class="math-block">
         $$\begin{align*}
         {\rm add}(t,x)&amp;= \begin{cases}
         x&amp;\textnormal{ if $t=0$} \\
@@ -393,25 +307,17 @@ def add(x,y):
       <p>
         Wir sehen also, dass dies eine Anwendung der primitiven Rekursion ist mit
         $g = \pi_0$ und
-        <span
-          class="nowrap"
-        >$h = {\comp}(\succ, \pi_0)$,</span>
+        <span class="nowrap">$h = {\comp}(\succ, \pi_0)$,</span>
         also
       </p>
-      <div
-        class="well highlight"
-      >
-<pre
-  class="listing numbered-pre"
->
+      <div class="well highlight">
+<pre class="listing numbered-pre">
 p0 = Proj(0)
 add = PrimRec (p0, Comp(succ,p0))
 </pre>
       </div>
     </div>
-    <div
-      class="well exercise out"
-    >
+    <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 4.1.1</b>
         Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv sind, und implementieren Sie sie
@@ -446,22 +352,16 @@ add = PrimRec (p0, Comp(succ,p0))
         Für exp und minus ist es einfacher, die Argumente "umgedreht" zu
         betrachten,
         also $(a,b) \mapsto b^a$ und
-        <span
-          class="nowrap"
-        >$(x,y) \mapsto y-x$.</span>
+        <span class="nowrap">$(x,y) \mapsto y-x$.</span>
         
       </p>
     </div>
-    <div
-      class="well exercise out"
-    >
+    <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 4.1.2</b>
         Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber aufgegeben) haben,
         sehen Sie sich die Datei
-        <a
-          href="../code/primitive-recursion/stockpile.py"
-        >stockpile.py</a>
+        <a href="../code/primitive-recursion/stockpile.py">stockpile.py</a>
         an,
         in der ich diese Funktionen zum Großteil implementiert habe (basierend auf
         den Übungen, die wir direkt in der Vorlesung gemacht haben).
