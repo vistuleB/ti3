@@ -3,10 +3,11 @@ import gleam/io
 import gleam/list
 import gleam/string.{inspect as ins}
 import vxml_renderer as vr
-import infrastructure.{type Desugarer} as infra
+import infrastructure.{type Pipe} as infra
 import vxml.{type VXML, V}
 import desugarer_library as dl
 import prefabricated_pipelines as pp
+import selector_library as sl
 
 const p_cannot_contain = [
   "CentralDisplay", "CentralDisplayItalic", "Chapter", 
@@ -75,7 +76,7 @@ fn splitter(
   |> Ok
 }
 
-fn our_pipeline() -> List(Desugarer) {
+fn our_pipeline() -> List(Pipe) {
   [
     [
       // dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
@@ -121,6 +122,10 @@ fn our_pipeline() -> List(Desugarer) {
     ]
   ]
   |> list.flatten
+  |> infra.wrap_desugarers(
+    infra.Off,                                                   // set to infra.OnChange for general debugging
+    sl.within_x_lines_below_tag(_, "marker", 10),                // see new file 'selector_library.gleam' in vxml_desugaring for other options
+  )
 }
 
 pub fn entrypoint(amendments: vr.CommandLineAmendments) {

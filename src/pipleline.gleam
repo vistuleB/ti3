@@ -1,10 +1,11 @@
 import desugarer_library as dl
-import infrastructure as infra
+import infrastructure.{type Pipe} as infra
 import gleam/list
 import prefabricated_pipelines as pp
 import group_replacement_splitting as grs
+import selector_library as sl
 
-pub fn pipeline() -> List(infra.Desugarer) {
+pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
   [
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
@@ -160,4 +161,8 @@ pub fn pipeline() -> List(infra.Desugarer) {
     ]
   ]
   |> list.flatten
+  |> infra.wrap_desugarers(
+    infra.Off,                                                   // set to infra.OnChange for general debugging
+    sl.within_x_lines_below_tag(_, "marker", 10),                // see new file 'selector_library.gleam' in vxml_desugaring for other options
+  )
 }
