@@ -307,16 +307,16 @@ figure.main-column img.constrained,
     transition-duration: 500ms;
 }
 
-.carousel__container {
-    /*max-width: 100%;*/
-    /*width: inherit;*/
-    width: 100%;
-    padding: 1rem 0;
+.carousel__container.main-column {
+    max-width: var(--main-column-width);
 }
 
-.carousel__container.main-column {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.carousel__container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: fit-content;
+    width: fit-content;
+    padding: 0 0;
 }
 
 .carousel {
@@ -325,6 +325,7 @@ figure.main-column img.constrained,
     height: auto;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .carousel__nav-button {
@@ -333,8 +334,6 @@ figure.main-column img.constrained,
     background-color: transparent;
     cursor: pointer;
     display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 18px;
     color: #333;
     transition: background-color 0.3s ease;
@@ -373,7 +372,6 @@ figure.main-column img.constrained,
     max-width: 100%;
     display: none;
     flex: 1 0 100%;
-    
 }
 
 .carousel__items > .carousel__item.active {
@@ -381,11 +379,14 @@ figure.main-column img.constrained,
 }
 
 .carousel__indicators {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 4px;
-  padding: 0;
+    max-width: calc(100% - (var(--carousel-arrow-size) * 2));
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    justify-content: center;
+    margin-top: 4px;
+    padding: 0;
+    margin: 1rem auto;
 }
 
 .carousel__indicator {
