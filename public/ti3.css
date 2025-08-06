@@ -313,11 +313,10 @@ figure.main-column img.constrained,
 }
 
 .carousel__container {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     max-width: fit-content;
     width: fit-content;
     padding: 0 0;
+    margin: 1rem auto;
 }
 
 .carousel {
