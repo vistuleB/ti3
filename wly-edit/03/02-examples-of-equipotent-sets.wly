@@ -4,8 +4,8 @@
     der Gleichmächtigkeit definiert haben, haben wir zwei
     Beispiele gesehen: $\N^+ \approx \N \approx \Z$. Alle
     Mengen sind gleichmächtig. In diesem Teilkapitel werden
-    wir unintuitivere Beispiele sehen: $\N \approx \Q$
-    . Dies scheint absurd! $\N$ und $\Z$ liegen ja schön
+    wir unintuitivere Beispiele sehen: $\N \approx \Q$.
+    Dies scheint absurd! $\N$ und $\Z$ liegen ja schön
     der Reihe nach sortiert, sodass sich eine Bijektion
     durch eine einfach Umordnung erreichen ließ. Die Elemente
     der Menge $\Q$ aber liegen ja nicht säuberlich getrennt,
@@ -79,16 +79,13 @@
     |> Exercise
         Sei $\N^*$ die Menge aller endlichen Folgen natürlicher
         Zahlen, also
-
         \begin{align*} \N^* := \{\epsilon\} \cup \N \cup \N^2 \cup \N^3 \cup
         \dots \ , \end{align*}
-
         wobei $\epsilon$ die leere Folge (mit 0 Gliedern)
         bezeichnet. Zeigen Sie $\N^* \approx \N$.
 
     |> Topic
         Rationale Zahlen
-
     Ich will Sie nun davon überzeugen, dass 
     $\Q \approx \N$ ist, dass es also "gleich viele rationale
     wie natürliche Zahlen" gibt. Ich beginne mit etwas
@@ -105,12 +102,9 @@
         $f: A \rightarrow B$ heißt injektiv, wenn für alle
         verschiedenen $a, a' \in A$ auch $f(a) \ne f(a')$
         gilt. Wenn $f$ also "kollisionsfrei" ist.
-
         Sei $q \in \Q$ eine rationale Zahl. Wir können $q$
         als gekürzten Bruch schreiben, also
-
         \begin{align*} q = \frac{a}{b} \end{align*}
-
         mit $a \in \Z$ und $b \in \N^+$ und 
         $\gcd(a,b) = 1$. Mit $\gcd(a,b)$ bezeichnen wir den
         größten gemeinsamen Teiler (_greatest common divisor_)
@@ -119,7 +113,6 @@
         zwei verschiedene rationale Zahlen $q$ und $q'$ haben
         verschiedene Darstellung als gekürzter Bruch, und somit
         gilt auch $f_1(q) \ne f_1(q')$.
-
         Wir haben nun also eine Injektion 
         $f_1 : \Q \rightarrow \Z \times \N$. Mit Übungsaufgabe
         >>exercise-cartesian-product  und Theorem >>theorem-N-N^2
@@ -145,9 +138,7 @@
         title=*Beweis*
         Dies ist ganz einach: da $\N \subseteq \Q$ gilt, können
         wir jedes $n$ einfach bei sich belassen. Die Funktion
-
         \begin{align*} g : \N&\rightarrow \Q \\ n&\mapsto n \end{align*}
-
         ist die gewünschte Injektion. Man nennt so eine Funktion
         auch die _Einbettung_ von $\N$ in $\Q$.
         |> QED
@@ -220,7 +211,6 @@
 
     |> Topic
         Endliche Strings
-
     Erinnern wir uns an $\{0,1\}^*$, die Menge aller endlichen
     Bitstrings. Die Menge ist ganz klar unendlich, weil
     sie zum Beispiel $1, 11, 111, 1111, \dots$ enthält.
@@ -234,43 +224,33 @@
         title=*Beweis.*
         Hier ist eine Idee: wir interpretieren den Bitstring 
         $a_1 a_2 \dots a_n$ als $n$-stellige Binärzahl, also
-
         \begin{align*} f(a_1 a_2 \dots a_n) := \sum_{i=1}^n a_i 2^{n-i} \ .
         \end{align*}
-
         Leider geht das schief, weil $0$, $00$, $000$ etc.
         alle auf $0$ abgebildet werden. Ebenso $1$, $01$, 
         $001$ und so weiter. Wir könnten uns behelfen und
         dem String eine 1 voranstellen, also beispielsweise
-
         \begin{align*} 0011 \mapsto 10011 \mapsto (10011)_2 = 16 + 2 + 1 = 19
         \ . \end{align*}
-
         Formal also
-
         \begin{align*} f : \{0,1\}^*&\rightarrow \N \\ a_1 a_2 \dots a_n&
         \mapsto 2^n + \sum_{i=1}^n a_i 2^{n-i} \ . \end{align*}
-
         Eine äquivalente Interpretation: wir sortieren erst
         einmal die Bitstrings nach ihrer Länge. Dann gehen
         wir $\{0,1\}^n$ lexicographisch durch, also von 
         $00\dots0$ bis $11\dots$. Diese Reihenfolge durchläuft
         ganz $\{0,1\}^*$ und ordnet jedem Bitstring eine natürliche
         Zahl zu. Also:
-
         \begin{align*} \begin{array}{c|c} \epsilon&0&1&00&01&10&11
         &000&001&010&011&100&101&110&111 \\ \hline 1&2&3&
         4&5&6&7&8&9&10&11&12&13&14&15 \end{array}
         \end{align*}
-
         Das haut nicht ganz hin, weil die $0$ nie drankommt.
         In der Tat stellt die obige Tabelle eine Bijektion 
         $\{0,1\}^* \rightarrow \N^+$ dar. Dies ist leicht
         korrigiert, indem wir 1 abziehen: die Funktion
-
         \begin{align*} g : \{0,1\}^*&\rightarrow \N \\ a_1 a_2 \dots a_n&
         \mapsto 2^n - 1 + \sum_{i=1}^n a_i 2^{n-i} \ . \end{align*}
-
         ist eine Bijektion von $\{0,1\}^*$ nach $\N$.
         |> QED
 
@@ -279,11 +259,9 @@
     |> Exercise
         Definieren Sie eine Bijektion von $\{0,1,2,3\}$^*
         nach $\N$.
-
         Weil das "Alphabet" $\{0,1,2,3\}$ die Größe 
         $4 = 2^2$ hat, können Sie sich mit einem kleinen Taschenspielertrick
         behelfen. Schwieriger wird es mit $\{0,1,2\}^*$. Zeigen
         Sie, dass $\{0,1,2\}^* \approx \N$ gilt.
-
         Zeigen Sie ganz allgemein: wenn $\Sigma$ eine endliche
         Menge ist, dann gilt $\Sigma^* \approx \N$.

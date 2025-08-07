@@ -25,13 +25,11 @@
     |> Statement
         title=*Beispiel*
         Die Menge
-
         \begin{align*}
         \{0,1\}^* := \{\epsilon\} \cup \{0,1\} \cup \{00, 01, 10, 11\} \cup \dots \cup \{0,1\}^n
         \cup
         \dots \ ,
         \end{align*}
-
         also die Menge aller endlichen Bit-Strings ist unendlich.
         Mit $\epsilon$ bezeichnen wir hier den leeren String.
         Ganz generell: wenn $\Sigma$ eine nichtleere Menge

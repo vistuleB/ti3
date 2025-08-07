@@ -76,8 +76,8 @@
             |> CarouselItem
                 |> img
                     src=../img/infinite-sets/schroeder-bernstein-digraph-4.svg
-        Wenn wir die Menge $A \cup B$ zusammen mit den $f$
-        - und $g$-Pfeilen als Graphen auf einer unendlichen
+        Wenn wir die Menge $A \cup B$ zusammen mit den $f$-
+        und $g$-Pfeilen als Graphen auf einer unendlichen
         Menge betrachten, dann sehen wir, dass es vier Arten
         von Komponenten: (1) unendliche Pfade, die mit einem
         roten kreisförmigen Punkt $a \in A$ beginnen; (2)
@@ -102,11 +102,9 @@
         eine Folge $X_0, X_1, \dots$, sodass 
         $X_{2i} \subseteq B$ und $X_{2i+1} \subseteq A$ für
         alle $i \geq 0$ gilt:
-
         \begin{align*} X_0&:= B \setminus {\rm img} (f) \\ X_{2i+1}&:=
         g(X_{2i}) \\ X_{2i+2}&:= f(X_{2i+1})\\ A'&:= X_1 \cup X_ 3 \cup
         X_5 \cup X_7 \cup \dots \ . \end{align*}
-
         In Worten: $X_0$ sind die $B$-Punkte, die keine eingehende 
         $f$-Kante haben. $X_i$ sind dann diejenigen Knoten,
         die auf einem Pfad vom Typ (2) liegen und von dem (blauen,
@@ -114,11 +112,9 @@
         $A'$ sind also die $A$-Knoten, die auf einer Typ-(2)-Komponente
         liegen. Wir können nun unsere Bijektion 
         $h : A \rightarrow B$ definieren:
-
         \begin{align*} h : A&\rightarrow A\\ a&\mapsto \begin{cases} f(a)
         &\textnormal{ if $a \in A \setminus A'$} \\ g^{-1}(a)&\textnormal{
         if $a \in A'$.} \end{cases} \end{align*}
-
         Wir müssen nun zeigen, dass $h$ bijektiv ist (falls
         das noch nicht klar sein sollte).
 
@@ -182,7 +178,6 @@
             gilt $a \in X_{2i+1}$ und daher 
             $h(a) = g^{-1}(a) = b$. Das Element $b$ hat also ein
             Urbild, nämlich $a$.
-
             (2) Wenn $b \not \in B'$, dann gilt insbesondere 
             $b \not \in X_0 = B \setminus {\rm img}(f)$; also 
             $b \in {\rm img} (f)$. Es gibt also ein $a \in A$

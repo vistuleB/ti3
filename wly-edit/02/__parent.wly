@@ -21,7 +21,6 @@
     können wir als _Wahrheitstabelle_ darstellen. Wir listen
     alle Kombinationen für $x,y$ auf und schreiben in
     jede Zeile auch den Wert, den der Operator ausgibt.
-
     $$
     \begin{array}{ll|l}
     x&y&x \wedge y \\ \hline
@@ -45,10 +44,8 @@
     1&0 \\
     \end{array}
     $$
-
     Die dritte Zeile der mittleren Tabelle sagt beispielsweise
     aus, dass $1 \vee 0 = 1$ gilt.
-
     Vielleicht wünschen Sie sich noch mehr Gates, zum
     Beispiel ein if-then-else-Gate mit drei Inputs 
     $x,y,z$, welches $y$ ausgibt, wenn $x$ wahr ist und
@@ -107,7 +104,6 @@
                 $\mathrm{Maj}(x_1,\ldots,x_n)$, welches 1 ausgibt,
                 wenn mehr als $n/2$ der Inputs auf 1 stehen. Sie können
                 annehmen, dass $n$ ungerade ist, wenn es Ihnen hilft.
-
                 Können Sie vermeiden, dass Ihr Schaltkreis riesengroß
                 wird? Kriegen Sie beispielsweise für einen Schaltkreis
                 hin, den man realistischerweise herstellen kann?
@@ -181,7 +177,6 @@
     |> Statement
         title=*Definition*
         *(Boolesche Schaltkreise)*
-
         Ein Boolescher Schaltkreis ist ein gerichteter, azyklischer
         Graph (englisch directed acyclic graph, kurz DAG),
         in welchem jeder Knoten entweder

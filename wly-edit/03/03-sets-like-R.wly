@@ -20,10 +20,8 @@
     |> Highlight
         title=*Beweis.*
         Wir können eine Bijektion explizit hinschreiben:
-
         \begin{align*} f : \R&\rightarrow (0,1) \\ x&\mapsto
         \frac{e^x}{e^x + 1} \end{align*}
-
         Mit etwas reeller Analysis kann man nun zeigen:
 
         |> ul
@@ -77,18 +75,14 @@
         $\R \approx [0,1)$ gilt, reicht es, eine Bijektion 
         $f : [0,1) \rightarrow \{0,1\}^{\N}$ zu konstruieren.
         So geht's:
-
         Jede Zahl $0 \leq x \lt 1$ lässt sich als (unendliche)
         Binärzahl $(x)_2$ schreiben, beispielsweise
-
         \begin{align*} \pfrac{1}{3}_2 = 0.01010101\dots \end{align*}
-
         Wir erhalten nun unsere unendliche $0/1$-Folge, indem
         wir die führende Null und den Punkt abschneiden: 
         $f(1/3) = 010101\dots$. Das geht für jede Zahl in 
         $[0,1)$: $f(1/2) = 100000\dots$, 
         $f(1/4) = 010000\dots$.
-
         Die konstruierte Funktion $f$ ist injektiv: zwei verschiedene 
         $0 \leq x \lt y \lt 1$ haben verschiedene Binärdarstellung
         und werden somit zu zwie verschiedenen $0/1$-Folgen.
@@ -103,10 +97,8 @@
         Neunen (oder in Binär: Einsen). Definieren wir also 
         $X$, die Menge aller $0/1$-Folgen mit einem unendlichen
         Schweif an Einsen:
-
         \begin{align*} X := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \
         \exists\ n \geq 1: a_i = 1 \ \forall i \geq n\} \end{align*}
-
         Unsere Funktion $f$ ist eine Bijektion von $[0,1)$
         nach $\{0,1\}^{\N} \setminus X$. Um daraus eine Bijektion 
         $g : [0,1) \rightarrow \{0,1\}^{\N}$ zu bauen, müssen
@@ -119,7 +111,6 @@
             die Menge aller $0/1$-Folgen mit einem unendlichen
             Schweif von Nullen. Offensichtlich gilt 
             $X \approx Y$.
-
             Zeigen Sie, dass $Y \approx X \cup Y$ gilt.
 
         |> Exercise
@@ -153,16 +144,12 @@
         zu konstruieren. Ein Element von 
         $\{0,1\}^\N \times \{0,1\}^\N$ besteht aus zwei unendlichen 
         $0/1$-Folgen:
-
         \begin{align*} (a,b) = (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \ .
         \end{align*}
-
         Wir müssen dieses Folgenpaar nun in _eine_ Folge codieren.
         Ganz klar:
-
         \begin{align*} (a_1 a_2 a_3 \dots, b_1 b_2 b_3 \dots) \mapsto (a_1 b_1
         a_2 b_2 a_3 b_3 \dots) \end{align*}
-
         Dies ist die gewünschte Bijektion 
         $\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N$
         .
@@ -176,17 +163,13 @@
     nehmen zwei Zahlen $0 \leq x,y \lt 1$, schreiben sie
     in Binärdarstellung und vereinigen sie dann per Reißverschlussverfahren
     zu einer Zahl, z.B.
-
     \begin{align*} \left(\frac{1}{3}, \frac{1}{2}\right) =
     (0.010\overline{10}\dots, 0.1)_2 \mapsto (010101\dots, 100000\dots)
     \mapsto (01100010001000\dots) \mapsto (0.01\overline{1000})_2 =: z\ .
     \end{align*}
-
     Um herauszufinden, um welche Zahl es sich bei $z$
     handelt, multiplizieren wir sie mit 64:
-
     \begin{align*} \end{align*}
-
     Sie erreicht alle Zahlen bis auf diejenigen mit einem
     unendlichen Schweif von Einsen. Sie ist hochgradig
     nichtstetig. Dennoch können wir versuchen, sie zu plotten:
@@ -209,12 +192,10 @@
     die unendlich vielen Nachkommastellen auf. Die ungeraden
     bilden $x$, die geraden bilden $y$. Beispielsweise
     für $z = 1/7$ gilt
-
     \begin{align*} \frac{1}{7} = (0.001001\overline{001})_2 \mapsto
     001001001001\dots \mapsto (010010\dots, 001001\dots) \mapsto (
     (0.\overline{010})_2, (0.\overline{001})) = \left(\frac{2}{7},
     \frac{1}{7}\right) \ , \end{align*}
-
     also $f^{-1}(1/7) = (2/7, 1/7)$.
 
     |> Statement
@@ -228,16 +209,14 @@
                 ab,
             |> li
                 $\left[\frac{1}{4},\frac{1}{2}\right)$ auf 
-                $\left[0,\frac{1}{2}\right) \times \left[\frac{1}{2},1\right)$
-                ,
+                $\left[0,\frac{1}{2}\right) \times \left[\frac{1}{2},1\right)$,
             |> li
                 $\left[\frac{1}{2},\frac{3}{4}\right)$ auf 
                 $\left[\frac{1}{2},1\right) \times \left[0,\frac{1}{2}\right)$
                 und
             |> li
                 $\left[\frac{3}{4},1\right)$ auf 
-                $\left[\frac{1}{2},1\right) \times \left[\frac{1}{2},1\right)$
-                .
+                $\left[\frac{1}{2},1\right) \times \left[\frac{1}{2},1\right)$.
 
     |> Highlight
         title=*Beweis.*
@@ -302,9 +281,7 @@
         title=*Beweis.*
         Da $\R \approx \cuben$ gilt, reicht es, zu zeigen,
         dass
-
         \begin{align*} \cuben \approx \left(\cuben\right)^{\N} \end{align*}
-
         gilt. Interpretieren wir die rechte Seite: das sind
         unendliche Folgen von "Dingern", und jedes Ding ist
         wiederum eine unendliche Folge von 0/1. Wir können
@@ -345,7 +322,6 @@
         title=*Zweiter Beweis.*
         Um zu zeigen, dass $\R^\N \approx \R$ gilt, rechnen
         wir:
-
         \begin{align} \R^\N&\approx \left(\cuben\right)^{\N} \\&\approx
         \cube^{\N \times \N} \\&\approx \cube^{\N} \\&\approx \R \ .
         \end{align}
@@ -361,7 +337,6 @@
     dürfen wir mit Plus, Mal und Hoch wie gewohnt rechnen?
     Und dürfen wir in den resultierenden Ausdrücken equipotente
     Mengen austauschen?
-
     Bevor wir das als Theorem formulieren, überlegen wir
     uns kurz, was denn die Analoga zu den arithmetischen
     Operationen sind. Am klarsten ist die Multiplikation:
@@ -380,7 +355,6 @@
     $\{1,2,3\} \uplus \{1,2\} = \{1,2,3,1',2'\}$ eine
     Menge der Kardinalität 5. Formal kann man 
     $A \uplus B$ so definieren;
-
     \begin{align*} A \uplus B := \{ (a,0) \ | \ a \in A\} \cup \{ (b,1) \ |
     \ b \in B\} \ . \end{align*}
 
@@ -393,8 +367,7 @@
         |> ol
             |> li
                 $A \times (B \uplus C) \approx (A \times B) \uplus
-                (A \times C)$
-                ,
+                (A \times C)$,
             |> li
                 $A^{B} \times A^{C} \approx A^{B \uplus C}$,
             |> li
@@ -433,14 +406,12 @@
         Beweisen Sie so viele Punkte von Theorem >>calculating-with-cardinals
         und Theorem >>replacing-equipotent-cardinals, wie Sie
         wollen.
-
         *Hinweis.* Die Beweise sind alle nicht wirklich schwierig.
         Sie müssen nur aufpassen, dass Sie sich nicht in der
         Notation verlieren.
 
     |> Topic
         Die Partialordnung $2^{\N}$.
-
     Wir betrachten $2^{\N}$, die Potenzmenge von $\N$,
     also die Menge aller Teilmengen.
 
@@ -466,10 +437,8 @@
     $A \ne B$ gilt $A \not \subseteq B$ und 
     $B \not \subseteq A$. Hier ist ein Beispiel für eine
     unendliche Kette:
-
     \begin{align*} \{\emptyset, \{1\}, \{1,2\}, \{1,2,3\}, \dots,
     \{1,2,\dots,k\}, \dots \} \end{align*}
-
     Diese Kette hat zufälligerweise die Form 
     $A_0 \subseteq A_1 \subseteq A_2 \subseteq \dots$,
     d.h., die Elemente der Kette sind schön sortiert, von
@@ -477,17 +446,15 @@
     $k \N := \{ k\cdot i \ | \ i \in \N\}$ die Menge der
     Vielfachen von $k$. Dann gilt 
     $1 \N \supseteq 2 \N \supseteq 4\N \supseteq 8\N \supseteq
-    \dots$
-    , die Elemente sind also in "absteigender" Reihenfolge
+    \dots$,
+    die Elemente sind also in "absteigender" Reihenfolge
     sortiert. Beide Beispiele haben einen "Anfangspunkt".
     Das muss aber nicht so sein: sei 
     $[k] := \{1,2,\dots,k\}$.
-
     \begin{align*} \dots \subseteq 2\N \setminus [6] \subseteq 2\N \setminus
     [4] \subseteq 2\N \setminus [2] \subseteq 2\N \subseteq 2\N \cup \{1\}
     \subseteq 2\N \cup \{1,3\} \subseteq 2\N \cup \{1,3,5\} \subseteq \dots
     \end{align*}
-
     Wenn wir ganz links noch $\{0\}$ hinschreiben und
     ganz rechts noch $\N$, dann haben wir ein weiteres,
     eventuell ungewohntes Phänomen: das Element 

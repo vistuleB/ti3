@@ -16,7 +16,6 @@
     die NOT-Gates nicht mitgezählt. Entlang eines Pfades
     wird also gelegentlich nur die Anzahl der AND- und
     OR-Gates bestimmt.
-
     Für alle Parameter Größe, Tiefe, Maximum-Fan-in gilt:
     klein ist gut. Dies ist klar, wenn Sie sich vorstellen,
     dass Schaltkreis industriell zum Einsatz kommt. Die
@@ -25,7 +24,6 @@
     braucht, um durch den ganzen Schaltkreis zu laufen
     und bestimmt somit die Geschwindigkeit, mit der Ihr
     Schaltkreis seinen Job erledigt.
-
     Der Fan-in ist eher von theoretischem Interesse. Wie
     bereits oben gesehen, können wir immer einen Fan-in
     von 2 garantieren, indem wir AND- und OR-Gates mit

@@ -8,7 +8,6 @@
     kennengelernt und können nun (hoffentlich) auch für
     manche Ihnen noch unbekannten Probleme neue Algorithmen
     entwickeln.
-
     In diesem Kurs stellen wir uns abstrakter die Frage,
     was denn ein Algorithmus ist; was es denn heißt, etwas
     zu berechnen. Ein Algorithmus, beispielsweise ein Sortieralgorithmus,
@@ -20,10 +19,8 @@
     beschränkt die ihm gegebenen Daten manipulieren; in
     jedem Schritt immer nur an einer bestimmten Stelle
     und nach festen Regeln.
-
     |> Topic
         Emailadressen und Arithmetische Ausdrücke
-
     Die Menge aller denkbaren Emailadressen ist unendlich
     - zumindest, solange wir für Nutzernamen und Domainnamen
     keine Längenbeschränkung haben. Nach welchen Regeln
@@ -52,31 +49,31 @@
 
         |> Highlight
             |> pre
-                |> code
+                |> span
                     class=pythonPrompt
                     (6 + 8) * 3
                 |> br
-                |> code
+                |> span
                     class=terminalOutput
                     42
                 |> br
-                |> code
+                |> span
                     class=pythonPrompt
                     (24 / 4 / 2) * (24 / ( 4 / 2)) + 1
                 |> br
-                |> code
+                |> span
                     class=terminalOutput
                     37
                 |> br
-                |> code
+                |> span
                     class=pythonPrompt
                     3 + 7 * 8
                 |> br
-                |> code
+                |> span
                     class=terminalOutput
                     59
                 |> br
-                |> code
+                |> span
                     class=pythonPrompt
                     (2 * 3))
                 |> br
@@ -87,7 +84,7 @@
                     \           ^
                     SyntaxError: unmatched ')'
                 |> br
-                |> code
+                |> span
                     class=pythonPrompt
                     (* 3)
                 |> br
@@ -103,13 +100,11 @@
         aufgebaut? Beschränken Sie sich gerne auf * und + und
         / und - und Zahlen und ignorieren Sie erst mal Variablen,
         Funktionsaufrufe und weitere Operatoren.
-
         Versuchen Sie, eine Art formale Sprache zu entwickeln,
         die die korrekten arithmetischen Ausdrücke beschreibt.
 
     |> Topic
         Endliche Regeln und unendliches Verhalten
-
     Das klassische Beispiel, wie sehr einfache Regeln
     ein extrem komplexes Verhalten erzeugen können, ist
     Conways Game of Life. Hier ist der 
@@ -216,10 +211,8 @@
     vorstellbar. Wenn wir am Ende dieses Kurses angelangt
     sind, werden Sie aber verstehen, warum das sogar recht
     plausibel ist.
-
     |> Topic
         Zusammenfassung
-
     Es geht also in diesem Kurs vor Allem um folgende
     Fragen:
 

@@ -6,24 +6,20 @@
     hat. Können wir auch für unendliche Mengen einen Größenbegriff
     einführen, oder sie zumindest hinsichtlich ihrer Größe
     vergleichen?
-
     Bei den "üblichen" unendlichen Mengen 
     $\N, \Z, \Q, \R$ scheint das zu gehen. Es gilt nämlich 
     $\N \subsetneq \Z \subsetneq \Q \subsetneq \R$, und
     damit können wir doch mit Fug und Recht behaupten:
     _Die Menge der ganzen Zahlen ist kleiner als die der
     rationalen Zahlen_.
-
     Unser erster Versuch, unendliche Mengen ihrer Größe
     nach zu vergleichen, verwendet Mengeninklusion: wenn 
     $A \subseteq B$ gilt, dann sagen wir, dass $A$ kleiner
     gleich $B$ gilt. Allerdings hat dieser Größenbegriff
     einen großen Nachteil: welche der beiden Mengen ist
     Ihrer Meinung denn größer:
-
     \begin{align*} \{\dots, -4, -2, 0, 2, 4, 6, \dots\} \quad
     \textnormal{oder}\quad \{0,1,2,3, \dots\} ? \end{align*}
-
     Also die geraden ganzen Zahlen oder die natürlichen?
     Oder noch schlimmer: ist $\Q$ oder $\{a,b\}^*$ größer?
     Die zweite Menge hat ja gar nichts mit Zahlen zu tun,
@@ -32,7 +28,6 @@
     $\{0,1,2,3,4,5,6,7,8,9\}$ und $\{a,e,i,o,u\}$ gibt
     es keine Inklusionsrelation, und dennoch ist erstere
     ganz klar größer als letztere.
-
     Eine rigorose und belastbare Weise, unendliche Mengen
     hinsichtlich ihrer Größe zu vergleichen, hat 
     |> a
@@ -56,10 +51,8 @@
 
         Wir können diese Zuordnung auch mit einer einfachen
         Formel beschreiben. Die Funktion
-
         \begin{align*} f : \N&\rightarrow \N^+ \\ n&\mapsto n+1
         \end{align*}
-
         ist eine Bijektion.
 
     Diese anfangs etwas überraschende Tatsache, dass 
@@ -98,7 +91,6 @@
 
         Wir können also unsere Bijektion 
         $f : \N \rightarrow \Z$ wie folgt definieren:
-
         \begin{align*} f : \N&\rightarrow \Z \\ n&\mapsto \begin{cases}
         \frac{n}{2}&\textnormal{ wenn $n$ gerade ist,} \\ - \frac{n+1}{2}&
         \textnormal{ wenn $n$ ungerade ist.} \end{cases} \end{align*}
@@ -110,7 +102,6 @@
         dass Sie sie mit den üblichen Operatoren (mal, plus,
         hoch, minus, geteilt durch) ohne Fallunterscheidung
         schreiben können.
-
         *Anmerkung:* es ist überhaupt nicht schlimm, eine
         Funktion mit einer Fallunterscheidung zu definieren.
         Sie ist dadurch nicht etwa eine "Funktion zweiter Klasse".
@@ -127,7 +118,6 @@
         Zwei Mengen $A$ und $B$ heißen _gleichmächtig_, wenn
         es eine Bijektion $f : A \rightarrow B$ gibt. Wir
         schreiben in diesem Falle $A \approx B$.
-
         Es gilt trivialerweise immer $A \approx A$, da wir
         ja die Identitätsfunktion $x \mapsto x$ als Bijektion
         nehmen können. Wenn es eine Bijektion 
@@ -149,10 +139,8 @@
     Mengen, die _nicht_ gleichmächtig mit $\N$ sind, weil
     sie "viel viel größer" sind. Wir nennen sie _überabzählbare_
     Mengen, auf Englisch _uncountably infinite_.
-
     |> Topic
         Was ist unendlich?
-
     Der Begriff der Gleichmächtigkeit liefert uns nun
     eine wunderbar einfache und rigorose Definition von
     Unendlichkeit.

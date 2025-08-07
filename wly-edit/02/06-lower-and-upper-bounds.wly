@@ -34,7 +34,6 @@
         machen Sie sich aber klar, dass wir diese Eigenschaft
         benötigen, falls Sie nämlich ein Abzählargument in
         anderen Kontexten anwenden).
-
         Die Antwort auf (1) ist einfach: es gibt genau 
         $2^{2^n}$ Boolesche Funktionen mit $n$ Variablen.
         Warum? Die Wahrheitstabelle hat $2^n$ Zeilen. Sie
@@ -74,12 +73,10 @@
                             ${s-1 \choose 2}$ Möglichkeiten.
 
                     Insgesamt haben wir also
-
                     $$
                     n + (s-1) + 2 {s-1 \choose 2} = n + s - 1 + (s-1)(s-2) =
                     n + s^2 - 2s + 1 \leq s^2
                     $$
-
                     Möglichkeiten.
                 |> li
                     Für den gesamten Schaltkreis: welches Gate Output-Gate
@@ -87,13 +84,11 @@
 
             Um die Gesamtzahl der Möglichkeiten abzuschätzen,
             müssen wir das alles multiplizieren. Wir haben höchstens
-
             $$
             \underbrace{s}_{\textnormal{Output-Gate wählen}} \cdot \underbrace{\prod_{i=1}^s
             (s^2)}_{\textnormal{jedes Gate beschriften}}
             = s \cdot (s^2)^s = s^{2s+1}
             $$
-
             Möglichkeiten. Es gibt also höchstens $s^{2s+1}$
             verschiedene Schaltkreise mit $s$ Gates, Fan-in 2
             und $n$ Variablen.
@@ -103,13 +98,11 @@
         mit $n$ Variablen, Fan-in 2 und $s$ Gates gibt es?
         Die Schranke in der obigen Behauptung sagt, dies seien
         höchstens
-
         \begin{align*}
         \pfrac{2^n}{2n}^{\frac{2^{n}}{n} + 1}&= \left(2^{n - \log (2n)}\right)^{\frac{2^n}{n} + 1} \\
         &= 2^{2^{n} + n - \log(2n) \frac{2^{n}}{n} - \log (2n)} \\
         &\lt 2^{2^n} \ .
         \end{align*}
-
         Also: es gibt mehr Boolesche Funktionen in $n$ Variablen,
         als es Boolesche Schaltkreise mit $\frac{2^n}{2n}$
         Gates gibt. Somit benötigen manche Boolesche Funktionen
@@ -121,7 +114,6 @@
         nur von Schaltkreisen mit Fan-in 2. Was geschieht,
         wenn wir beliebigen Fan-in erlauben? Wie ändern sich
         Aussage und Beweis?
-
         Was geschieht, wenn wir weitere Gates, z.B. 
         $\oplus$ als atomare Gates zulassen?
 
@@ -151,11 +143,9 @@
     |> Remark
         title=*Entscheidungsproblem 3-Färbbarkeit.*
         Gegeben ein Graph $G = (V,E)$, gibt es eine Funktion
-
         \begin{align*}
         c : V \rightarrow \{\textnormal{rot, grün, blau}\} \ ,
         \end{align*}
-
         so dass $c(u) \ne c(v)$ für alle $\{u,v\} \in E$ gilt?
         Dass also benachbarte Knoten verschiedene Farben bekommen?
 
@@ -176,7 +166,6 @@
 
     |> Topic
         Obere Schranken: Die Lupanov-Schranke
-
     Wir haben nun eine Konstruktion, die uns für jede
     beliebige Funktion $f: \fcube$ Schaltkresie mit 
     $O(2^n)$ Gates baut. Wir haben eine untere Schranke,
@@ -199,14 +188,12 @@
         Konstruktion jedes XOR-Gates durch einen kleinen Schaltkreis
         aus vier AND/OR/NOT-Gates ersetzen können, spielt dies
         keine Rolle (der Faktor 4 verschwindet in der $O$-Notation).
-
         Die zweite Idee ist, dass wir anstreben, für eine
         bliebige Menge $F$ an Booleschen Funktionen einen
         "überraschend guten" Schaltkreis zu bauen, der jede
         Funktion $f \in F$ berechnet. Dieser Schaltkreis wird 
         $|F|$ Output-Gates haben, und seine Größe wird auch
         von $|F|$ abhängen.
-
         *$\F_2$-Polynome.* Polynome in mehreren Variablen
         kennen Sie sicherlich: zum Beispiel 
         $xyz + xy + 1 + y$. Der Unterschied hier ist nur,
@@ -224,13 +211,11 @@
         $\x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$. Beachten
         Sie, dass wir vor den Monomen keine Koeffizienten brauchen,
         da es als Konstanten eh nur 0 und 1 gibt. Ein Polynom 
-        $p(\x)$ berechnet eine Boolesche Funktion $\fcube$
-        .
+        $p(\x)$ berechnet eine Boolesche Funktion $\fcube$.
 
         |> Exercise
             Zeigen Sie, dass sich jede Boolesche Funktion $f$
             als $\F_2$-Polynom schreiben lässt.
-
             *Tipp:* beschränken Sie sich zuerst auf Funktionen 
             $f$, deren Wahrheitstabelle in genau einer Zeile eine
             1 haben. Schreiben Sie eine solche Funktion als 
@@ -258,18 +243,15 @@
         $\F_2$. Dies ist also die erste Kernidee: wir arbeiten
         mit AND und XOR und somit mit $\F_2$-Polynomen. Wieviele
         Gates brauchen wir dafür?
-
         Schreiben wir 
         $f = \x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$. Ein
         Monom $\x^{I}$ können wir mit $|I|-1$ AND-Gates berechnen.
         Die Summe bilden wir mit $t-1$ weiteren XOR-Gates.
         Da $t \leq 2^n$ und $|I| \leq n$ gilt, brauchen wir
         maximal
-
         \begin{align*}
         (n-1) 2^n + 2^n - 1 \leq n 2^n
         \end{align*}
-
         Gates. Allerdings ist das eine ungenaue Rechnung:
         Selbst wenn _alle_ $2^n$ Monome vertreten sind, bestehen
         nicht alle Monome aus $n$ Variablen.
@@ -277,11 +259,9 @@
         |> Exercise
             Rechnen Sie genauer! Wenn Sie alle Monome berechnen
             wollen, brauchen Sie
-
             \begin{align*}
             \sum_{I \subseteq [n]} (|I| - 1)
             \end{align*}
-
             viele AND-Gates. Finden Sie eine geschlossene Formel
             für diesen Ausdruck.
 
@@ -308,7 +288,6 @@
             wollen. Wenn wir also einen Schaltkreis für 
             $x_1 x_2 x_3$ haben, können wir daraus mit _einem_
             zusätzlichen AND-Gate $x_1x_2x_3x_4$ berechnen.
-
             Formal geht es mit Induktion über $n$. Für $n=0$ haben
             wir ein einziges Monom, nämlich $1$, und einen Schaltkreis
             mit einem einzigen Gate: dem Konstant-1-Gate, das gleichzeitig
@@ -336,7 +315,6 @@
         um in $y_1, \dots, y_k$; die hinteren $n-k$ Variablen 
         $x_{n-k+1}, \dots, x_n$ in $z_1, \dots, z_n$. Wir
         können $f$ also wie folgt schreiben:
-
         \begin{align*}
         f(\x)&= \sum_{I \subseteq [n]} c_I \x^I \tag{mit Koeffizienten $c_I \in \{0,1\}$} \\
         &= \sum_{A \subseteq [n-k]} \sum_{B \subseteq [k]} c_{A,B} \y^A \z^B \\
@@ -344,7 +322,6 @@
         \tag{den Faktor $\y^A$ ausklammern} \\
         &=: \sum_{A \subseteq [n-k]} \y^A g_A(\z) \tag{der inneren Summe einen Namen geben}
         \end{align*}
-
         Die obige Summe beinhaltet also $2^{n-k}$ Terme von
         der Form $\y^A g_A(\z)$. Es gibt insgesamt nur 
         $2^{2^k}$ Polynome in den Variablen $\z$. Wenn nun
@@ -371,19 +348,16 @@
             Zeigen Sie, dass die obige Konstruktion verbessert
             werden kann, indem Sie einen Schaltkreis mit nur 
             $2^{2^k}$ Gates bauen.
-
             *Tip.* Jedes Gate muss also gleichzeitig ein Output-Gate
             sein.
 
         Wenn wir nun einen Schaltkreis haben, der uns jedes 
         $g : \{0,1\}^k \rightarrow \cube$ berechnet, schauen
         wir uns wieder $f(\x)$ an.
-
         \begin{align*}
         f(\x)&=
         \sum_{A \subseteq [n-k]} \y^A g_A(\z)
         \end{align*}
-
         Für jedes $g_A$ haben wir ja bereits ein Gate, das
         es berechnet. Mit einem weiteren Schaltkreis von 
         $2^{n-k}$ Gates können wir alle Monome $\y^A$ berechnen.
@@ -391,7 +365,6 @@
         $\sum_{A \subseteq [n-k]}$ bilden, wofür wir 
         $2^{n-k}$ XOR-Gates brauchen. Insgesamt brauchen wir
         also
-
         \begin{align}
         &\underbrace{2^{2^k} + 2^k}_{\textnormal{für alle $g: \cube^k \rightarrow \cube$}}
         +
@@ -405,7 +378,6 @@
         2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \ .
         \label{size-lupanov}
         \end{align}
-
         Wir müssen nun $k$ so wählen, dass der obige Ausdruck
         minimiert wird. Anstatt nun abzuleiten und gleich 0
         zu setzen, verwenden wir einen Faulheitstrick, der
@@ -414,13 +386,11 @@
         Ausdrücke - $2^{2^k}$ und $2^{n-k}$ ungefähr gleich
         sind. Das gibt nicht das präzise Minimum, aber sicherlich
         eine gültige Konstruktion und somit eine obere Schranke.
-
         \begin{align*}
         2^{2^k}&= 2^{n-k} \qquad \Leftrightarrow \\
         2^k&= n-k \qquad \Leftrightarrow \\
         2^k +k&= n
         \end{align*}
-
         Ich habe keine explizite Formel, um das für $k$ aufzulösen,
         also setze ich auf gut Glück $k = \log n$ und wir
         erhalten
@@ -434,7 +404,6 @@
         bereits $2^n$ ergibt. Das ist zu groß. Wir müssen 
         $k$ also kleiner wählen. Nächster Versuch: 
         $k := \log n - 1$.
-
         \begin{align*}
         (\ref{size-lupanov})&= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
         &=
@@ -444,6 +413,5 @@
         &=
         O\pfrac{2^n}{n} \ .
         \end{align*}
-
         Das ist die behauptete Schranke.
         |> QED

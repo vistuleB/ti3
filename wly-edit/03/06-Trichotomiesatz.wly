@@ -51,7 +51,6 @@
         Funktion, injektiv) konstruieren, so lohnt es sich
         oft, die gestellten Bedingungen zu relaxieren und sich
         langsam zu einer "richtigen" Lösung hinzutasten.
-
         Wir müssen zuerst uns in Erinnerung rufen, was eine
         _Funktion_ formal ist. 
         $A \times B := \{ (a,b) \ | \ a \in A, b \in B\}$,
@@ -77,22 +76,19 @@
                 |> li
                     Wenn $R$ ein Matching ist, dann _sättigt_ $R$ die
                     Menge $A$, wenn es für _jedes_ $a \in A$ ein 
-                    $b \in B$ mit $(a,b) \in R$ gibt; es _sättigt_ $B$
-                    , wenn es für _jedes_ $b \in B$ ein $a \in A$ gibt
-                    mit $(a,b) \in R$.
+                    $b \in B$ mit $(a,b) \in R$ gibt; es _sättigt_ $B$,
+                    wenn es für _jedes_ $b \in B$ ein $a \in A$ gibt mit 
+                    $(a,b) \in R$.
 
         Wir beobachten: wenn $R$ ein Matching ist und die
         Menge $A$ sättigt, dann ist $R$ eine injektive Funktion,
         und umgekehrt. Wenn $R$ ein Matching ist und sowohl 
         $A$ als auch $B$ sättigt, dann ist $R$ eine bijektive
         Funktion.
-
         Wir betrachten nun die Menge $\mathcal{M}$ aller Matchings
         in $A \times B$:
-
         \begin{align*} \mathcal{M} := \{ R \subseteq A \times B \ | \ R
         \textnormal{ ist ein Matching}\} \ . \end{align*}
-
         $(\mathcal{M}, \subseteq)$ ist eine Partialordnung.
 
         |> Remark
@@ -131,9 +127,7 @@
             Sei $(X, \preceq)$ eine Partialordnung und 
             $S \subseteq X$ eine Menge. Ein Element $x \in X$
             ist eine _obere Schranke für $S$_ wenn
-
             \begin{align*} s \leq x \quad \forall s \in S \end{align*}
-
             gilt. Dabei ist unerheblich, ob die obere Schranke 
             $x$ selbst in $S$ ist oder nicht.
 
@@ -157,9 +151,7 @@
             so dass für alle $M_1, M_2 \in S$ gilt: 
             $M_1 \subseteq M_2$ oder $M_2 \subseteq M_1$. Dann
             ist
-
             \begin{align*} \bigcup_{M \in S} M \end{align*}
-
             selbst ein Matching.
 
         Wir gehen nun wie folgt vor: wir starten mit einem
@@ -183,7 +175,6 @@
             Kette $S \subseteq X$ eine obere Schranke 
             $x \in X$ hat, dann enthält $X$ mindestens ein maximales
             Element.
-
             Wir sind nun fertig! Wir können das Zornsche Lemma
             auf $(\mathcal{M}, \subseteq)$ anwenden und erhalten
             ein maximales Matching. Dies sättigt $A$ oder $B$
@@ -194,7 +185,6 @@
     |> Topic
         Zornsches Lemma, Auswahlaxiom und die axiomatische
         Mengenlehre
-
     Glauben Sie das, was das Zornsche Lemma besagt? Bei
     unendlichen Mengen verlässt und leider schnell die
     Intuition, oder schlimmer: sie wird trügerisch. Gegen

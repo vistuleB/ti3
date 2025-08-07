@@ -2,7 +2,6 @@
     title=Binär-Addierer
     |> Topic
         Ein Schaltkreis für binäre Addition
-
     Schaltkreise, der zwei Binärzahlen addieren können,
     finden Sie heutzutage wahrscheinlich in jedem besseren
     Haushaltsgerät (und wenn Sie ein gegen Covid-19 geimpfter
@@ -15,7 +14,6 @@
     dann zu den links daneben stehenden Ziffern addiert
     werden. Binär ist alles viel einfacher, weil man sich
     nur 0 oder 1 merken muss.
-
     $$
     \begin{array}{cc|cc}
     x&y&{\rm result}&{\rm carry} \\ \hline
@@ -25,7 +23,6 @@
     1&1&0&1
     \end{array}
     $$
-
     Das Carry wird dann der eins weiter links stehenden
     Stelle zur Addition weitergegeben. Aber halt! Das heißt
     doch, dass wir in der nächsten Stelle _drei_ Bits addieren
@@ -33,7 +30,6 @@
     Carry $\cin$. Daraus berechnet sich das Output-Bit 
     $s$ und das ausgehende Carry $\cout$, das nach links
     weitergegeben wird. Unsere Tabelle ist also etwas größer:
-
     $$
     \begin{array}{ccc|cc}
     x&y&\cin&s&\cout \\ \hline
@@ -47,15 +43,12 @@
     1&1&1&1&1 \\
     \end{array}
     $$
-
     Glücklicherweise muss man sich diese Tabelle nicht
     merken, es gilt nämlich
-
     \begin{align*}
     s&= x \oplus y \oplus \cin \\
     \cout&= {\rm Maj} (x, y, \cin) \ .
     \end{align*}
-
     Die Funktion Maj haben wir schon oben kennengelernt;
     sie gibt 1 aus, wenn mindestens zwei ihrer drei Input-Bits
     1 sind. Wir kürzen Sie im folgenden mit $M$ ab. Hier
@@ -67,8 +60,8 @@
             src=img/circuits/adder-ripple.svg
             loading=lazy
 
-    Wir numerieren unsere Variablen von $0, \dots,n-1$
-    , damit wir die repräsentierte natürliche Zahl bequem
+    Wir numerieren unsere Variablen von $0, \dots,n-1$,
+    damit wir die repräsentierte natürliche Zahl bequem
     als $\sum_{i=0}^n x_i 2^i$ schreiben können. Beachten
     Sie auch die unvermittelt rechts stehende 0. Streng
     genommen lässt unsere Definition von Schaltkreisen
@@ -77,7 +70,6 @@
     aber den obigen Schaltkreis zu vereinfachen: 
     $M(x,y,0)$ würde dann zum Beispiel einfach zu 
     $x \wedge y$ werden).
-
     Wie groß ist dieser Schaltkreis? Wenn wir jedes 
     $\oplus$- und $M$-Gate als _ein_Gate zählen, so haben
     wir insgesamt $2n$ innere Gates und $2n$ Input-Gates.
@@ -114,32 +106,26 @@
     $\log n$ an (oder wenn wir besonders ambitionert sind
     und beliebig großen Fan-in zulassen, sogar konstante
     Tiefe $O(1)$).
-
     |> Topic
         Carry Look-Ahead
-
     Tiefenmässig hat uns der obige Addierer nicht befriedigt.
     Das Problem ist, dass das Carry im schlimmsten Fall
     von ganz rechts nach ganz links durchrasseln muss,
     zum Beispiel wenn man $11111111 + 00000001$ berechnet.
     So einen Addierer nennt man_ripple-carry adder_.
-
     Geringere Tiefe erreicht man mit _Carry Lookahead_.
     Hier versuchen wir, im Voraus bereits das Carry auf
     Position $i$ zu berechnen, ohne erst das auf Position 
     $i-1$ abzuwarten. Es lohnt, ein paar Dinge formaler
     zu definieren:
-
     $c_i$ ist das Carry, das von Position $i-1$ an Position 
     $i$ übergeben wird; $s_i$ ist das $i$-te Bit der Summe
     (von rechts nach links zählend, bei 0 beginnend). Es
     gilt also $c_0 = 0$ und
-
     \begin{align*}
     s_i&= x_i \oplus y_i \oplus c_i \\
     c_{i+1}&= M(x_i, y_i, c_i) \ ,
     \end{align*}
-
     und das Ergebnis ist dann 
     $c_{n} s_{n-1} s_{n-2} \dots, s_2 s_1 s_0$. Bauen
     wir uns doch mal einen Schaltkreis, der $c_{k+1}$
@@ -160,12 +146,10 @@
     nun $x_i \ne y_i$ ist, dann schaltet das $M$-Gate
     einfach $c_i$ unverändert durch. Dies motiviert die
     folgenden Definitionen:
-
     \begin{align*}
     g_i&:= x_i \wedge y_i \tag{carry-generate} \\
     p_i&:= x_i \vee y_i \tag{carry-propagate}
     \end{align*}
-
     Jetzt können wir $c_{k+1}$ wie folgt berechnen: an
     Stelle $k$ wird ein Carry ausgegeben, wenn es eine
     Stelle $i \leq k$ gibt, wo $x_i = y_i=1$ gilt, das
@@ -173,13 +157,11 @@
     für alle $j = \{i+1,\dots,k\}$ das Carry zumindest
     weitergereicht wird, also $ x_j \vee y_j = 1$ gilt
     (carry propagate):
-
     $$
     c_{k+1} := g_k \vee (g_{k-1} \wedge p_k) \vee (g_{k-2} \wedge p_{k-1} \wedge p_{k}) \vee \dots
     \vee
     (g_0 \wedge p_1 \wedge \dots \wedge p_k) \ .
     $$
-
     Und voilà: dies ist ein Schaltkreis für $c_{k+1}$
     und hat Tiefe 2 (wenn wir $g_i$ und $p_i$ als Inputgates
     betrachten). Wie groß ist er? Er hat $k$ OR-gates
@@ -196,10 +178,8 @@
     Für $n=64$ wie bei zeitgenössischen Rechnern ergibt
     dies 41664. Das ist nicht unerträglich groß, aber auch
     nicht besonders handlich.
-
     |> Topic
         Carry-Lookahead mit $O(n)$ Gates und $O(\log n)$ Tiefe
-
     Effizientere Lösungen beginnen oft mit einer guten
     Definition. In diesem Falle ist das die Verallgemeinerung
     von _Carry Generate $g_i$_ und _Carry Propagate 
@@ -229,8 +209,7 @@
             |> li
                 Ansonsten sei 
                 $i^* := \max \{i \in I \ | \ (x_i, y_i) \in \{(0,0),
-                (1,1)\} \}$
-                .
+                (1,1)\} \}$.
 
                 |> ul
                     |> li
@@ -246,7 +225,6 @@
 
     Hier sind Boolesche Formeln (in DNF) für 
     $p_{[a,b]}$ und $g_{[a,b]}$:
-
     \begin{align*}
     g_{[a,b]}&:= g_b \vee (g_{b-1} \wedge p_b) \vee (g_{b-2} \wedge p_{b-1} \wedge p_b)
     \vee \dots \vee (g_a \wedge p_{a+1} \wedge \dots \wedge p_b) \ , \\
@@ -254,7 +232,6 @@
     \vee \dots \vee (g_{a+1} \wedge p_{a+2} \wedge \dots \wedge p_b)
     \vee (p_a \wedge p_{a+1} \wedge \dots \wedge p_b) \ ,
     \end{align*}
-
     und hier ein Bild zur Illustration:
 
     |> figure
@@ -272,11 +249,9 @@
     $g_{[a,a]} = g_a, p_{[a,a]} = p_a$, also wie die "alten"
     individuellen $p_a, g_a$. Diese Definition 
     $g_{[a,b]}$ ist nützlich, da erstens
-
     $$
     c_{k+1} = g_{[0, k]}
     $$
-
     gilt, wir also die Carrys direkt ablesen, zweitens
     wir die $g_{[a,b]}$ bequem rekursiv berechnen können:
 
@@ -284,7 +259,6 @@
         title=*Beobachtung*
         Wenn wir $[a,b] = [a,i] \cup [i+1,b] $ schreiben für 
         $a \lt i \lt b$, dann gilt
-
         \begin{align*}
         p_{[a,b]}&= g_{[i+1,b]} \vee (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\
         g_{[a,b]}&= g_{[i+1,b]} \vee (g_{[a,i]} \wedge p_{[i+1,b]}) \ . \\
@@ -311,11 +285,9 @@
         title=*Definition*
         Ein Binärintervall ist eine Menge natürlicher Zahlen
         der Form
-
         $$
         \{ c \cdot 2^d, c \cdot 2^d + 1, \dots, c \cdot 2^{d} + 2^{d} - 1\}
         $$
-
         Es wird eventuell klarer, wenn wir uns die Binärdarstellung
         anschauen: $[a,b]$ ist ein Binärintervall, wenn 
         $a$ und $b$ folgende Binärdarstellung haben: 
@@ -345,21 +317,17 @@
         wir als Vereinigung von zwei kleineren Binärintervallen
         schreiben, hier $[32,47] = [32,39] \cup [40,47]$.
         In unserer Sternchen-Notation:
-
         $$
         [10****] = [100***] \cup [101***]
         $$
-
         Ganz allgemein gilt 
         $[c*^{k+1}] = [c0*^k] \cup [c1*^k]$ und somit, mit
         Hilfe von Beobachtung 1.10:
-
         \ 
         \begin{align*}
         p_{[c*^{k+1}]}&= g_{[c1*^k]} \vee (p_{c0*^k} \wedge p_{c1*^k})\\
         g_{[c*^{k+1}]}&= g_{[c1*^k]} \vee (g_{c0*^k} \wedge p_{c1*^k}) \ .
         \end{align*}
-
         Wir basteln uns also am Besten ein "$pg$-Gate" mit
         vier Inputs und zwei Outputs:
 
@@ -400,11 +368,9 @@
         2 (siehe oben), und mit den untersten $pg_i$ kommt
         noch einmal eine Schicht dazu. Die Gesamttiefe des
         oben abgebildeten Schaltkreises ist also
-
         $$
         2\, \ceil{\log_2 n} + 1 \ .
         $$
-
         Um die Größe zu bestimmen, beachten Sie, dass der
         Schaltkreis wie ein Binärbaum aus $pg$-Gates aussieht.
         Für $n$-stellige Zahlen gibt es also $n-1$ viele 
@@ -412,11 +378,9 @@
         Pro unterstem $pg_i$ kommen noch einmal zwei hinzu:
         ein $\wedge$-Gate für $g_i$ und ein $\vee$-Gate für 
         $p_i$. Insgesamt also
-
         $$
         4 (n-1) + 2n = 6n - 4 \ ,
         $$
-
         wie behauptet.
         |> QED
 
@@ -437,20 +401,16 @@
         Die Idee ist, dass wir jedes $[0,k]$ als Vereinigung
         von wenigen Binärintervallen schreiben können, zum
         Beispiel
-
         \begin{align*}
         [0,9]&= [0,7] \cup [8,9] \ , \\
         [0,12]&= [0,7] \cup [8,11] \cup [12] \ .
         \end{align*}
-
         Wie kann man das formalisieren?
-
         *1. Fall.* Wenn $k$ die Form $k = 2^d-1$ hat, dann
         ist $[0,k]$ bereits ein Binärintervall; dies passiert,
         wenn die Binärdarstellung von $k$ die Form 
         $k = (1^b)_2 $ hat (wobei $b=0$ sein kann, in welchem
         Fall $k=0$ ist).
-
         *2. Fall.* Wenn $k$ nicht die Form $k = 2^d-1$ hat,
         dann hat die Binärdarstellung von $k$ nicht die Form 
         $1^b$; sie enthält also auch nicht-führende Nullen
@@ -460,11 +420,9 @@
         $a \geq 1$ und $b \geq 0$. Definieren wir 
         $l := (\alpha 0 1^a 1^b)_2 $. Dann gilt 
         $l+1 = (\alpha 1 0^a 0^b)_2$. Es gilt also
-
         \begin{align*}
         [l+1, k] = [(\alpha 1 0^a 0^b)_2, (\alpha 1 0^a 1^b)_2] = [\alpha 1 0^a *^b] \ ,
         \end{align*}
-
         es handelt sich bei $[l+1,k]$ also um ein Binärintervall.
         Eine äquivalente Definition von $l$ wäre: das kleinste 
         $l$, so dass $[l+1,k]$ ein Binärintervall ist. Wir
@@ -485,12 +443,10 @@
         schließenden 1en in der Binärdarstellung also von 
         $b$ auf $a+b \geq b+1$ gewachsen ist. Hier ist ein
         Beispiel für $n = 32, k = 28$, in Dezimal- und Binärdarstellung:
-
         \begin{align*}
         [0,28]&= [0,15] \cup [16,23] \cup [24,27] \cup [28] \\
         [00000, 11100]&= [00000,01111] \cup [10000,10111] \cup [11000, 11011] \cup [11100] \ .
         \end{align*}
-
         Beachten wir die Folge $28, 27, 23, 15$, also immer
         die Endpunkte der betreffenden Intervalle; wir haben
         gesehen, dass die Anzahl der schließenden 1en von Element
@@ -518,7 +474,6 @@
         *Tiefe.* Jedes $pg$-Gate hat Tiefe 2, und somit erreichen 
         $d-1$ solche Gates hintereinander zusammen eine Tiefe
         von $2 (d-1) = 2 \ceil{\log_2 n} - 2$.
-
         *Größe.* Zählen wir die Anzahl von $pg$-Gates in unserem
         Schaltkreis. Wir haben bereits gesehen, dass die Berechnung
         von $g_{[0,k]}$ höchstens $d-1$ viele $pg$-Gates braucht.
@@ -531,7 +486,6 @@
         allerdings asymptotisch deutlich schlechter als der
         Ripple-Through-Addierer, und eben auch nicht das, was
         wir im Lemma behaupten.
-
         Nein, es ist in der Tat viel einfacher. Schauen Sie,
         wir berechnen oben zum Beispiel $pg_{[0,29]}$, in
         dem wir $pg_{[28,29]}$ (was bereits als Input bereitgestellt
@@ -577,22 +531,17 @@
     $x_0, y_0, \dots, x_{n-1}, y_{n-1} $ als Inputvariablen
     und Carrys $c_1, \dots, c_n$ als Output-Variablen.
     Jetzt können wir schließlich
-
     $$
     s_i = x_i \oplus y_i \oplus c_i
     $$
-
     berechnen. Dafür brauchen wir noch einen XOR-Schaltkreis
     mit 3 Input-Gates. Meine Konstruktion hierfür hat 12
     Gates (davon 3 NOT-Gates) und Tiefe 4 (wenn wir die
     NOT-Gates nicht mitzählen.) Insgesamt gibt das also
-
     $$
     12 n + 8n - 4 = 20n - 4
     $$
-
     Gates und Tiefe
-
     $$
     4 \ceil { \log_2 n } + 3\ .
     $$
@@ -600,7 +549,6 @@
     |> Exercise
         Bauen Sie einen Schaltkreis für die Boolesche Funktion
         "less-than":
-
         \begin{align*}
         LT : \{0,1\}^{n} \times \{0,1\}^n \rightarrow \{0,1\} \\
         LT(\mathbf{x}, \mathbf{y}) =
@@ -609,10 +557,8 @@
         0&\textnormal{ sonst.}
         \end{cases}
         \end{align*}
-
         der also $\mathbf{x}, \mathbf{y}$ als $n$-stellige
         Binärzahlen interpretiert und ausgibt, ob die erste
         kleiner ist als die zweite.
-
         Ihr Schaltkreis sollte im Idealfall Größe $O(n)$ und
         Tiefe $O(\log_2 n)$ und Fan-in 2 haben.

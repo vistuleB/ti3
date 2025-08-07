@@ -10,13 +10,11 @@
     Beschränken wir uns erst einmal auf Boolesche Funktionen
     mit _einem_ Ausgabewert, also 
     $f : \{0,1\}^{n} \to \{0,1\}$.
-
     Dies ist ein endliches Objekt, wir können es also
     codieren, indem wir für jeden Eingabewert 
     $(x_1, \ldots, x_n)$ den Ausgabewert angeben. Dies
     nennt man eine _Wahrheitstabelle_ (englisch _truth
     table_). Hier sehen Sie ein Beispiel:
-
     $$
     \begin{array}{ccc|c}
     x & y & z & f \\ \hline
@@ -30,17 +28,13 @@
     1 & 1 & 1 & 1 \\
     \end{array}
     $$
-
     Wie können wir von so einer Tabelle ausgehend einen
     Schaltkreis bauen, der diese Funktion berechnet? Ich
     stelle Ihnen drei Herangehensweisen vor.
-
     |> Topic
         Rekursiv, top-down
-
     Wir teilen die Tabelle in die obere Hälfte (wo 
     $x = 0$ gilt) und die untere Hälfte:
-
     \begin{align*}
     \color{red}{
     \begin{array}{ccc|c}
@@ -60,7 +54,6 @@
     \end{array}
     }
     \end{align*}
-
     Die obere, roten Hälfte kommt Ihnen vielleicht bekannt
     vor: es ist genau die Wahrheitstabelle von 
     $y \vee z$. Der Wert von $x$ ist im roten Teil ja
@@ -79,10 +72,8 @@
     ist (ich schreibe im Fließtext übrigens gerne 
     $\bar{y}$ statt $\neg y$, weil das mir lesbarer erscheint).
     Insgesamt also:
-
     f = `if` $x$ `then` $\bar{y} \vee z$ `else` 
     $y \vee z$
-
     Jetzt können wir das mit unserem if-then-else-Schaltkreis
     kombinieren.
 
@@ -118,12 +109,10 @@
         Funktion, $i \in \{1,\dots,n\}$ ein Index und 
         $b \in \{0,1\}$ ein Wert. Dann ist $f|_{x_i=b}$ eine
         neue Funktion, und zwar
-
         \begin{align*}
         f|_{x_i=b} &: \{0,1\}^{n-1} \rightarrow \{0,1\} \\
         (x_1,\dots,x_{i-1}, x_{i+1}, \dots, x_n) &\mapsto f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}).
         \end{align*}
-
         In Worten: wir fixieren den $i$-ten Input auf den
         Wert $b$ und erhalten eine Funktion in den restlichen 
         $n-1$ Variablen.
@@ -135,7 +124,6 @@
         Führen Sie das rekursive Verfahren durch, um für die
         folgende Funktion auf 4 Variablen einen Schaltkreis
         zu bauen:
-
         $$
         \begin{array}{cccc|c}
         u & x & y & z & f \\ \hline
@@ -160,7 +148,6 @@
 
     |> Topic
         Bottom-Up, als DNF
-
     Wenn Sie Rekursionshasser sind und generell lieber
     in `for` -Schleifen denken, dann wird die nächste Konstruktion
     mehr nach Ihrem Geschmack sein. Im Prinzip werden wir
@@ -169,11 +156,9 @@
     drei Variable $x,y,z$ und einen AND-Ausdruck, der
     jede Variable oder deren Negation enthält, also zum
     Beispiel
-
     $$
     x \wedge \bar{y} \wedge z \ .
     $$
-
     Von den 8 möglichen Input-Tupeln gibt es nur eins,
     für das dieser Ausdruck eine 1 ausgibt, in diesem Falle 
     $(1,0,1)$. Wir werden nun also für jede 1-Zeile unserer
@@ -181,7 +166,6 @@
     und diese dann in einem großen OR zusammenführen. Einen
     Ausdruck, der aus einem AND von Variablen oder deren
     Negation besteht, nennt man auch einen Term.
-
     $$
     \begin{array}{ccc|c|c}
     x & y & z & f & \text{Term} \\ \hline
@@ -195,7 +179,6 @@
     1 & 1 & 1 & 1 & x \wedge y \wedge z \\
     \end{array}
     $$
-
     Mit einem großen OR zusammengeführt ergibt das dann
 
     |> figure
@@ -211,7 +194,6 @@
     ausgehende Kante hat. Konkret bedeutet dies, dass man
     diesen Schaltkreis als logische Formel hinschreiben
     kann:
-
     $$
     (\bar{x} \wedge \bar{y} \wedge z)
     \vee (\bar{x} \wedge y \wedge \bar{z})
@@ -228,7 +210,6 @@
         von Literalen (beispielsweise 
         $\bar{x} \wedge \bar{y} \wedge z)$. Eine Formel in
         _disjunktiver Normalform_ (DNF) ist ein OR von Termen.
-
         Alternativ: eine DNF ist ein Schaltkreis der Tiefe
         2 (wobei NOT-Gates nicht mitzählen), dessen Output-Gate
         ein OR-Gate ist.
@@ -248,7 +229,6 @@
 
     |> Topic
         Bottom-Up, als CNF
-
     Zu der eben demonstrierten Konstruktion gibt es noch
     eine weitere, dazu duale Konstruktion. Bildlich gesprochen
     listet DNF-Konstruktion alle Möglichkeiten auf, wie
@@ -261,7 +241,6 @@
     $(\bar{x} \vee \bar{y} \vee z)$ verstehen als " 
     $(x,y,z)$ darf nicht $(1,1,0)$ sein." An dem obigen
     Beispiel ergibt dies:
-
     $$
     \begin{array}{ccc|c|c}
     x & y & z & f & \text{Term} \\ \hline
@@ -275,7 +254,6 @@
     1 & 1 & 1 & 1 & \\
     \end{array}
     $$
-
     Einen Ausdruck der Form 
     $\bar{x} \vee \bar{y} \vee z$, also ein OR von Literaten,
     nennt man auch eine _Klausel_. Eine Klausel mit 
@@ -293,7 +271,6 @@
         title=*Definition*
         Eine Formel in _konjunktiver Normalform_ (CNF) ist
         ein AND von Klauseln.
-
         Alternativ: eine CNF-Formel ist ein Schaltkreis der
         Tiefe 2 (wobei NOT-Gates nicht mitzählen), dessen Output-Gate
         ein AND-Gate ist.
@@ -305,7 +282,6 @@
     nachträglich bearbeiten und kleiner machen. Zum Beispiel
     können wir "nebeneinanderstehende" Terme zu einem einzigen
     zusammenziehen, z.B. :
-
     $$
     (\bar{x} \wedge y \wedge \bar{z}) \vee (\bar{x} \wedge y \wedge z) \equiv \bar{x} \wedge y \ .
     $$
