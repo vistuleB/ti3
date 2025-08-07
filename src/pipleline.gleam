@@ -15,10 +15,12 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
   [
-    [ dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")) ],
+    [
+      dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation"))
+    ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
     pp.splitting_empty_lines_cleanup(),
-    pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar),
+    pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar, infra.BackslashParenthesis),
     pp.splitting_empty_lines_cleanup(),
     [
       dl.regex_split_and_replace__outside(escape_dollar, ["Math", "MathBlock"]),

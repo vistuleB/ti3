@@ -20,11 +20,12 @@ const p_cannot_contain = [
   "Index", "Menu",
   "Highlight", "Carousel", "CarouselItems", "CarouselItem",
   "h1", "h2", "h3", "pre", "div", "br", "hr",
-  "figure", "img", "Scope"
+  "figure", "img", "Scope", "Topic", "SubTopic"
 ]
 
 const p_cannot_be_contained_in = [
-  "MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED", "Carousel"
+  "MathBlock", "p", "Index", "Menu", "code", "pre", "h1", "h2", "h3", "span", "NoWrap", "Math", "ChapterTitle", "SubTitle", "QED", "Carousel",
+  "Topic", "SubTopic"
 ]
 
 type FragmentType {
@@ -79,11 +80,10 @@ fn splitter(
 fn our_pipeline() -> List(Pipe) {
   [
     [
-      // dl.normalize_begin_end_align(#(infra.DoubleDollar, [infra.DoubleDollar])),
       dl.find_replace__outside(#("&amp;", "&"), []),
     ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BackslashSquareBracket, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
-    pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar),
+    pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
     [
       dl.strip_delimiters_inside_if(#(
         "MathBlock",
@@ -96,9 +96,16 @@ fn our_pipeline() -> List(Pipe) {
       dl.concatenate_text_nodes(),
       dl.fold_contents_into_text("Math"),
       dl.delete_empty_lines(),
+      dl.split_first_line_after_prefix(#("MathBlock", "\\begin{align}")),
+      dl.split_first_line_after_prefix(#("MathBlock", "\\begin{align*}")),
+      dl.split_last_line_before_suffix(#("MathBlock", "\\end{align}")),
+      dl.split_last_line_before_suffix(#("MathBlock", "\\end{align*}")),
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
       dl.delete_if_empty("p"),
+      dl.add_between(#("MathBlock", "p", "WriterlyBlankLine", [])),
+      dl.add_between(#("Topic", "p", "WriterlyBlankLine", [])),
+      dl.add_between(#("SubTopic", "p", "WriterlyBlankLine", [])),
       dl.add_between(#("Exercise", "p", "WriterlyBlankLine", [])),
       dl.add_between(#("Remark", "p", "WriterlyBlankLine", [])),
       dl.add_between(#("Statement", "p", "WriterlyBlankLine", [])),
@@ -108,6 +115,10 @@ fn our_pipeline() -> List(Pipe) {
       dl.add_between(#("ol", "p", "WriterlyBlankLine", [])),
       dl.add_between(#("ul", "p", "WriterlyBlankLine", [])),
       dl.add_between(#("figure", "p", "WriterlyBlankLine", [])),
+      dl.add_between(#("Carousel", "p", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("MathBlock", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("Topic", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("SubTopic", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("Exercise", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("Remark", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("Statement", "WriterlyBlankLine", [])),
@@ -117,14 +128,17 @@ fn our_pipeline() -> List(Pipe) {
       dl.add_before_but_not_before_first_child(#("ol", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("ul", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("figure", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("Carousel", "WriterlyBlankLine", [])),
       dl.unwrap("p"),
       dl.unwrap("MathBlock"),
+      dl.delete_attribute__batch(["test"]),
     ]
   ]
   |> list.flatten
   |> infra.wrap_desugarers(
-    infra.Off,                                                   // set to infra.OnChange for general debugging
-    sl.within_x_lines_below_tag(_, "marker", 10),                // see new file 'selector_library.gleam' in vxml_desugaring for other options
+    infra.OnChange,   
+    // sl.within_x_lines_below_tag(_, "marker", 10),
+    sl.within_x_lines_below_key_val(_, "test", "test", 10),
   )
 }
 
