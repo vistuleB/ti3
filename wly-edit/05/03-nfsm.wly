@@ -366,16 +366,17 @@
         mit Endzustandsmenge $\mathcal{F}$ definiert als
 
         \begin{align*}
-        \mathcal{F} := \{X \subseteq Q \ | \ X \cap F \ne \emptyset\}
+        \mathcal{F} := \{X
+        \subseteq Q \ | \ X \cap F \ne \emptyset\}
         \end{align*}
 
         und Zustandsübergangsfunktion $\Delta$ definiert
         als
 
         \begin{align*}
-        \Delta : \quad
-        &2^Q \times \Sigma \rightarrow 2^Q \\
-        &(R, x) \mapsto \{q' \in Q \ | \ \textnormal{ es gibt } \ q \in R \textnormal{ mit } q \step{x} q'\} 
+        \Delta : \quad&2^Q \times \Sigma \rightarrow 2^Q \\&(R, x) \mapsto
+        \{q' \in Q \ | \ \textnormal{ es gibt } \ q \in R \textnormal{ mit } q
+        \step{x} q'\} 
         \end{align*}
 
         der _Potenzmengenautomat_. Es gilt  

@@ -109,8 +109,8 @@
         Schreiben Sie mit Hilfe von `While`, `PrimRec` und
         `Comp` eine Funktion `collatzList`, die aus einer Zahl
         die Collatz-Folge baut, also
-        
+
         |> Highlight
-            
-            ```python-prompt
-            >>> collatzList(7)[]
+            |> WriterlyCodeBlock
+                language=python-prompt
+                >>> collatzList(7)[]
