@@ -28,7 +28,7 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
     ],
     pp.splitting_empty_lines_cleanup(),
     [
-      dl.python_prompt_code_block(Nil),
+      dl.python_prompt_code_block(),
       dl.auto_generate_child_if_missing_from_attribute(#(
         "Chapter",        // parent tag
         "ChapterTitle",   // new child tag
