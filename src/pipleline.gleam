@@ -173,7 +173,9 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   ]
   |> list.flatten
   |> infra.wrap_desugarers(
-    infra.Off,                                                   // set to infra.OnChange for general debugging
-    sl.within_x_lines_below_tag(_, "marker", 10),                // see new file 'selector_library.gleam' in vxml_desugaring for other options
+    infra.Off,                                                   // set to infra.OnChange for general
+    sl.tag("marker")
+    |> infra.extend_selector_up(4)
+    |> infra.extend_selector_down(4)
   )
 }

@@ -137,8 +137,9 @@ fn our_pipeline() -> List(Pipe) {
   |> list.flatten
   |> infra.wrap_desugarers(
     infra.OnChange,   
-    // sl.within_x_lines_below_tag(_, "marker", 10),
-    sl.within_x_lines_below_key_val(_, "test", "test", 10),
+    sl.tag("marker")
+    |> infra.extend_selector_up(4)
+    |> infra.extend_selector_down(4)
   )
 }
 
