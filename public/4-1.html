@@ -12,7 +12,7 @@
 </head>
 <body class="page-sub chapter-4 sub-1">
   <div
-    path="/4-1.html"
+    path="./4-1.html"
     class="subchapter"
   >
     <div class="menu">
@@ -70,7 +70,7 @@
       hat; daher ist irgendwie klar, dass $\succ$ berechen
       bar ist. Aber seien wir vorsichtig: wenn wir für natürliche
       Zahlen die Dezimaldarstellung (oder Binärdarstellung,
-      spielt keine Rolle) verwenden, dann ist die Operation 
+      spielt keine Rolle) verwenden, dann ist die Operation  
       $x \mapsto x+1$ bereits eine nicht ganz triviale Operation,
       sie erfordert beispielsweise Schleifen (von rechts
       nach links durchgehen), if-then-else-Ausdrücke (gibt
@@ -84,8 +84,8 @@
       Jezt brauchen wir
       für succ kein if-then-else und keine Schleifen, denn
       <span class="nowrap">$\succ(x) = 1x$.</span>
-      Eine weitere Klasse von "offensichtlich" berechenbaren
-      Funktionen sind die sogenannten Projektionen
+      Eine weitere Klasse von "offensichtlich"
+      berechenbaren Funktionen sind die sogenannten Projektionen
       <span class="nowrap">$\pi^n_k$,</span>
       definiert als
     </p>
@@ -118,9 +118,9 @@
       einfach $\pi_k$ statt
       <span class="nowrap">$\pi^n_k$.</span>
       <b>Kombinatoren.</b>
-      Die primitive Rekursion stellt zwei
-      Kombinatoren zur Verfügung: Komposition (Verknüpfung)
-      und primitive Rekursion.
+      Die
+      primitive Rekursion stellt zwei Kombinatoren zur Verfügung:
+      Komposition (Verknüpfung) und primitive Rekursion.
     </p>
     <div class="well statement out">
       <p>
@@ -129,7 +129,7 @@
         <b>(Komposition)</b>
         Sei $f: \N^k \rightarrow \N$ und
         <span class="nowrap">$g_1, \dots, g_k: \N^l \rightarrow \N$.</span>
-        Dann ist 
+        Dann ist  
         $\comp(f, g_1, \dots, g_k)$ die Funktion
       </p>
       <div class="math-block">
@@ -164,7 +164,7 @@
         <b>Definition</b>
         <b>4.1.2</b>
         <b>Primitive Rekursion</b>
-        Seien 
+        Seien  
         $g: \N^k \rightarrow \N$ und
         <span class="nowrap">$h: \N^{k+2} \rightarrow \N$.</span>
         Wir definieren eine
@@ -293,7 +293,7 @@ def PrimRec(g, h):
         verwenden, aber nicht selbst Python-Funktionen schreiben.
         Wir dürfen also nie selbst Integers in die Hand nehmen.
         Lassen Sie mich das am Beispiel der Addition erklären.
-        Ich will eine Funktion 
+        Ich will eine Funktion  
         ${\rm add}: \N^2 \rightarrow \N$ schreiben, die ihre
         beiden Argumente addiert. Ich darf also nicht einfach
         python programmieren und
@@ -310,10 +310,10 @@ def add(x,y):
         Rekursion, nicht Python! Wir müssen uns
         <code>add</code>
         aus den
-        Kombinatoren zusammenbasteln. Ich schreibe nun 
+        Kombinatoren zusammenbasteln. Ich schreibe nun  
         ${\rm add}(t,x)$ statt
         <span class="nowrap">${\rm add}(x,y)$,</span>
-        um den Rekursionsparameter 
+        um den Rekursionsparameter  
         $t$ deutlich zu machen.
       </p>
       <div class="math-block">
@@ -377,7 +377,7 @@ add = PrimRec (p0, Comp(succ,p0))
       <p>
         <b>Tip:</b>
         Für exp und minus ist es einfacher, die Argumente
-        "umgedreht" zu betrachten, also 
+        "umgedreht" zu betrachten, also  
         $(a,b) \mapsto b^a$ und
         <span class="nowrap">$(x,y) \mapsto y-x$.</span>
         
@@ -391,9 +391,9 @@ add = PrimRec (p0, Comp(succ,p0))
         <a href="../code/primitive-recursion/stockpile.py">stockpile.py</a>
         an, in der ich diese Funktionen zum Großteil implementiert
         habe (basierend auf den Übungen, die wir direkt in
-        der Vorlesung gemacht haben).
-        Experimentieren Sie weiter und implementieren Sie
-        "Boolesche" Prädikate und Funktionen wie
+        der Vorlesung gemacht haben). Experimentieren Sie weiter
+        und implementieren Sie "Boolesche" Prädikate und Funktionen
+        wie
       </p>
       <ul>
         <li>

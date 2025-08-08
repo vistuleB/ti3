@@ -15,6 +15,7 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   let post_transformation_document_tags = ["Document", "marker", "WriterlyCodeBlock"]
   let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
+
   [
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
@@ -71,15 +72,12 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
       dl.prepend_attribute_as_text(#("Statement","title")),
       dl.prepend_attribute_as_text(#("Highlight","title")),
       dl.prepend_attribute_as_text(#("Remark","title")),
-      dl.append_attribute__outside(#("Chapter", "path", "/::øøChapterCounter-0.html"), []),
-      dl.append_attribute__outside(#("Sub", "path", "/::øøChapterCounter-::øøSubCounter.html"), []),
+      dl.append_attribute__outside(#("Chapter", "path", "./::øøChapterCounter-0.html"), []),
+      dl.append_attribute__outside(#("Sub", "path", "./::øøChapterCounter-::øøSubCounter.html"), []),
       dl.counters_substitute_and_assign_handles(),
       dl.handles_generate_ids(),
       dl.handles_generate_dictionary("path"),
       dl.handles_substitute(#("path", "a", "a", [], [])),
-      dl.rearrange_links(#("Theorem <a href='1'>_1_</a>", "<a href='1'>Theorem _1_</a>")),
-      dl.rearrange_links(#("Übungsaufgabe <a href='1'>_1_</a>", "<a href='1'>Übungsaufgabe _1_</a>")),
-      dl.rearrange_links(#("Kapitel <a href='1'>_1_</a>", "<a href='1'>Kapitel _1_</a>")),
       dl.group_consecutive_children__outside(
         #(
           "p",
@@ -100,9 +98,12 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
         ),
         ["MathBlock", "p", "Index", "Menu", "Topic", "SubTopic", "code", "pre", "span", "NoWrap", "Math", "QED", "CarouselContainer"]
       ),
-      dl.unwrap("WriterlyBlankLine"),
+      dl.unwrap("WriterlyBlankLine"),      
       dl.trim("p"),
       dl.delete_if_empty("p"),
+      dl.rearrange_links(#("Theorem <a href='1'>_1_</a>", "<a href='1'>Theorem _1_</a>")),
+      dl.rearrange_links(#("Übungsaufgabe <a href='1'>_1_</a>", "<a href='1'>Übungsaufgabe _1_</a>")),
+      dl.rearrange_links(#("Kapitel <a href='1'>_1_</a>", "<a href='1'>Kapitel _1_</a>")),
     ],
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),
@@ -176,9 +177,10 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   ]
   |> list.flatten
   |> infra.wrap_desugarers(
-    infra.Off,
-    sl.tag("marker")
+    infra.OnChange,
+    // sl.tag("marker")
+    sl.key_val("test", "test")
     |> infra.extend_selector_up(4)
-    |> infra.extend_selector_down(10)
+    |> infra.extend_selector_down(16)
   )
 }

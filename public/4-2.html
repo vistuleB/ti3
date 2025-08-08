@@ -12,7 +12,7 @@
 </head>
 <body class="page-sub chapter-4 sub-2">
   <div
-    path="/4-2.html"
+    path="./4-2.html"
     class="subchapter"
   >
     <div class="menu">
@@ -46,7 +46,7 @@
       Arithmetische Operationen
     </h1>
     <p class="main-column">
-      Wir haben bereits gesehen, dass wir die Addition per 
+      Wir haben bereits gesehen, dass wir die Addition per  
       ${\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0))$
       schreiben können. Beachten Sie, dass ich hier die Indizierung
       immer bei 0 beginnen lasse, im Python-Code sowie im
@@ -94,7 +94,7 @@ def mult(t,x):
     <p class="main-column">
       Allerdings gibt uns das
       <span class="nowrap">$(t,x) \mapsto x^t$.</span>
-      Für 
+      Für  
       ${\rm exp}(a,b) = a^b$ müssen wir die Argumente umdrehen:
     </p>
     <div class="math-block main-column">
@@ -120,16 +120,16 @@ def factorial(t):
       Wir können nicht einfach $i+1$ schreiben! Wir müssen
       dies via $\comp(\succ,\pi_1)$ konstruieren. Denn:
       die Funktion $h$ bekommt ${\rm temp}, i, \vec{x}$
-      als Input; $\pi_1$ gibt uns davon das $i$ zurück und 
+      als Input; $\pi_1$ gibt uns davon das $i$ zurück und  
       $\comp(\succ, \pi_1)$ gibt uns
       <span class="nowrap">$i+1$.</span>
-      Operationen wie $\pred: t \mapsto t-1$ und 
-      ${\rm minus}$ sind konzeptuell nur ein bisschen anders.
-      Das liegt auch daran, dass wir keine negativen Zahlen
-      haben. Was ist
+      Operationen
+      wie $\pred: t \mapsto t-1$ und  ${\rm minus}$ sind
+      konzeptuell nur ein bisschen anders. Das liegt auch
+      daran, dass wir keine negativen Zahlen haben. Was ist
       <span class="nowrap">$\pred(0)$?</span>
-      Wir definieren das als
-      0. So können wir pred implementieren:
+      Wir definieren das als 0. So können wir
+      pred implementieren:
     </p>
     <div class="well highlight out">
 <pre>
@@ -141,7 +141,7 @@ def pred(t):
     <p class="main-column">
       In Worten: wenn
       <span class="nowrap">$t=0$,</span>
-      dann geben wir einfach 
+      dann geben wir einfach  
       $\zero()$ zurück, also
       <span class="nowrap">$0$.</span>
       Ansonsten durchlaufen
@@ -219,15 +219,14 @@ def pred(t):
       wir keine Formel mit
       <span class="nowrap">$+, *, -$,</span>
       auch keine schöne
-      rekursive Formel zur Hand. Es handelt sich um ein Suchproblem:
-      $\floor{\sqrt{x}}$ ist die größte natürliche Zahl 
+      rekursive Formel zur Hand. Es handelt sich um ein Suchproblem: 
+      $\floor{\sqrt{x}}$ ist die größte natürliche Zahl  
       $i$ mit
       <span class="nowrap">$i^2 \leq x$.</span>
-      Wir können auch den Suchraum begrenzen: da 
-      $\sqrt{x} \leq x$ für alle natürlichen Zahlen, so
-      gilt:
-      $\floor{\sqrt{x}}$ ist die größte natürliche Zahl 
-      $i \in \{0,1,\dots,x\}$ mit
+      Wir können auch den Suchraum
+      begrenzen: da  $\sqrt{x} \leq x$ für alle natürlichen
+      Zahlen, so gilt: $\floor{\sqrt{x}}$ ist die größte
+      natürliche Zahl  $i \in \{0,1,\dots,x\}$ mit
       <span class="nowrap">$i^2 \leq x$.</span>
       Das Prädikat
     </p>
@@ -260,7 +259,7 @@ def largestIbelowTwithISquareLessEqualX(t,x):
 </pre>
     </div>
     <p class="main-column">
-      Was geht hier vor? Wenn 
+      Was geht hier vor? Wenn  
       ${\rm iSquareLessEqualX}(i,x))$ True ist, dann ersetzen
       wir temp durch
       <span class="nowrap">$i$.</span>
@@ -292,7 +291,7 @@ def largestIbelowTwithISquareLessEqualX(t,x):
       da wir zum Suchen der Wurzel von $t$ gleich $t$ als
       Obergrenze des Suchraumes angeben können. Ganz allgemein
       können wir für ein Prädikat ${\rm predicate}(i,x)$
-      das größte $i \in \{0,\dots,t\}$ finden, für das 
+      das größte $i \in \{0,\dots,t\}$ finden, für das  
       ${\rm predicate}(i,x)$ True ergibt. Da wir wissen,
       wie wir das primitiv rekursiv machen können, erlauben
       wir uns, einen neuen Kombinator zu definieren, anstatt
@@ -371,8 +370,8 @@ a = b-a
       es, dass wir
       <i>Paare</i>
       als neue Datenstruktur verwenden.
-      Erinnern Sie sich: die primitive Rekursion stellt
-      uns als Datentyp von Haus aus nur die natürlichen Zahlen
+      Erinnern Sie sich: die primitive Rekursion stellt uns
+      als Datentyp von Haus aus nur die natürlichen Zahlen
       zur Verfügung. Alles andere müssen wir nach einem selbst
       gewählten Schema codieren. Bei Booleschen Werten war
       es einfach. Wie steht es mit
@@ -419,7 +418,7 @@ for i in range(t):
       die uns aus $\pair(x,y)$ wieder $x$ und $y$ berechnen,
       bestimmen wir erst den Wert von
       <span class="nowrap">$x+y$.</span>
-      Wenn 
+      Wenn  
       $\pair(x,y) = n$ gilt und $x+y=i)$ ist, dann ist
     </p>
     <div class="math-block main-column">
@@ -433,8 +432,8 @@ for i in range(t):
     <p class="main-column">
       und somit ist $x+y$ der größte Wert von
       <span class="nowrap">$i$,</span>
-      so dass 
-      $n \geq \pair(0,i)$ ist. Aus $x+y$ und 
+      so dass  
+      $n \geq \pair(0,i)$ ist. Aus $x+y$ und  
       ${x+y+1 \choose 2} + x$ können wir dann leicht $x$
       und $y$ berechnen:
     </p>
@@ -456,12 +455,8 @@ for i in range(t):
     </p>
     <div class="well highlight out">
 <pre class="python-prompt">
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,pair(7,9))</span>
-<span class="python-prompt-ok-response">11031</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(7,9)</span>
-<span class="python-prompt-ok-response">143</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,143)</span>
-<span class="python-prompt-ok-response">11031</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,pair(7,9)) 11031 &gt;&gt;&gt; pair(7,9) 143 &gt;&gt;&gt;</span>
+<span class="python-prompt-ok-response">pair(5,143) 11031</span>
 </pre>
     </div>
     <p class="main-column">
@@ -484,14 +479,9 @@ for i in range(t):
     </p>
     <div class="well highlight out">
 <pre class="python-prompt">
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> push(11, push(7, push(5, 0)))</span>
-<span class="python-prompt-ok-response">90537</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(90537)</span>
-<span class="python-prompt-ok-response">11</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(90537))</span>
-<span class="python-prompt-ok-response">7</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(tail(90537)))</span>
-<span class="python-prompt-ok-response">5</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> push(11, push(7, push(5, 0))) 90537 &gt;&gt;&gt; head(90537)</span>
+<span class="python-prompt-ok-response">11 &gt;&gt;&gt; head(tail(90537)) 7 &gt;&gt;&gt; head(tail(tail(90537)))
+5</span>
 </pre>
     </div>
     <p class="main-column">
@@ -506,7 +496,7 @@ for i in range(t):
       Längere Listen wie die gerade werden Sie in vertretbarer
       Zeit nicht behandeln können. Bei meinen eigenen Experimenten
       mit meinem Python-Framework bin ich daher dazu übergegangen,
-      dass ich, sobald ich gezeigt habe, dass eine Funktion 
+      dass ich, sobald ich gezeigt habe, dass eine Funktion  
       $f$ primitiv rekursiv ist, sie
       <i>nativ</i>
       in Python zu

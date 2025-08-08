@@ -12,7 +12,7 @@
 </head>
 <body class="page-sub chapter-5 sub-1">
   <div
-    path="/5-1.html"
+    path="./5-1.html"
     class="subchapter"
   >
     <div class="menu">
@@ -58,8 +58,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} X&amp;\rightarrow aY \\ X&amp;\rightarrow a \\ X&amp;
-        \rightarrow Y \\ X&amp;\rightarrow \epsilon \end{align*}
+        \begin{align*}
+        X&amp;\rightarrow aY \\ X&amp;\rightarrow a \\ X&amp;
+        \rightarrow Y \\ X&amp;\rightarrow \epsilon
+        \end{align*}
         $$
       </div>
       <p>
@@ -77,19 +79,21 @@
         <b>5.1.2</b>
         Die folgende Grammatik über dem Alphabet
         <span class="nowrap">$\Sigma = \{1\}$,</span>
-        den nichtterminalen Symbolen 
+        den nichtterminalen Symbolen  
         $\{E,O\}$ und den Regeln
       </p>
       <div class="math-block">
         $$
-        \begin{align*} E&amp;
-        \rightarrow 1O \ | \ \epsilon \\ O&amp;\rightarrow 1E \end{align*}
+        \begin{align*}
+        E&amp;
+        \rightarrow 1O \ | \ \epsilon \\ O&amp;\rightarrow 1E
+        \end{align*}
         $$
       </div>
       <p>
         erzeugt die Sprache
-        <span class="nowrap">$\{\epsilon, 11, 1111, 111111, \dots \}= \{1^n \ |
-           n \textnormal{ ist gerade}\}$.</span>
+        <span class="nowrap">$\{\epsilon, 11, 1111, 111111, \dots \}= \{1^n \ | 
+          n \textnormal{ ist gerade}\}$.</span>
         
       </p>
     </div>
@@ -105,13 +109,15 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} S&amp;\rightarrow A
+        \begin{align*}
+        S&amp;\rightarrow A
         B \\ A&amp;\rightarrow \epsilon \ | \ a A \\ B&amp;\rightarrow \epsilon \
-        | \ b B \ . \\ \end{align*}
+        | \ b B \ . \\
+        \end{align*}
         $$
       </div>
       <p>
-        Sie ist nicht regulär, weil die erste Regel 
+        Sie ist nicht regulär, weil die erste Regel  
         $S \rightarrow AB$ gegen die Definition regulärer
         Grammatiken verstößt. Allerdings können wir leicht
         eine reguläre Grammatik $G'$ angeben, die die gleiche
@@ -119,8 +125,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&amp;
-        \rightarrow \epsilon \ | \ b T \ . \end{align*}
+        \begin{align*}
+        S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&amp;
+        \rightarrow \epsilon \ | \ b T \ .
+        \end{align*}
         $$
       </div>
       <p>
@@ -130,9 +138,11 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} S
+        \begin{align*}
+        S
         \Rightarrow aS \Rightarrow aaS \Rightarrow aabT \Rightarrow aabbT
-        \Rightarrow aabbbT \Rightarrow aabbb \end{align*}
+        \Rightarrow aabbbT \Rightarrow aabbb
+        \end{align*}
         $$
       </div>
       <p>
@@ -160,7 +170,7 @@
         und $S \Rightarrow^* \alpha$ eine Ableitung einer
         Wortform
         <span class="nowrap">$\alpha \in (\Sigma \cup N)^*$.</span>
-        Dann hat 
+        Dann hat  
         $\alpha$ die Form $y X$ für $y \in \Sigma^*$ und
         <span class="nowrap">$X \in N \cup \{\epsilon\}$.</span>
         
@@ -181,7 +191,8 @@
       <div class="math-block">
         $$
         \begin{align*}
-        S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0 \end{align*}
+        S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0
+        \end{align*}
         $$
       </div>
       <p>
@@ -204,13 +215,14 @@
         \begin{align*}
         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\ B&amp;\rightarrow 0 C \ | 1 C \\
         C&amp;\rightarrow 0 D \ | 1 D \\ D&amp;\rightarrow 0 E \ | 1 E \\ E&amp;
-        \rightarrow \epsilon \ \end{align*}
+        \rightarrow \epsilon \
+        \end{align*}
         $$
       </div>
       <p>
         mit Startsymbol
         <span class="nowrap">$A$.</span>
-        Leiten Sie das Wort 
+        Leiten Sie das Wort  
         $01101001$ ab und beschreiben Sie die erzeugte Sprache
         in eigenen Worten.
       </p>
@@ -240,8 +252,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} L := \{x \in \{a,b\}^* \ | \
-        \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \ \end{align*}
+        \begin{align*}
+        L := \{x \in \{a,b\}^* \ | \
+        \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \
+        \end{align*}
         $$
       </div>
       <p>
@@ -253,7 +267,7 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 5.1.5</b>
-        Sei $\Sigma = \{a,b,.\}$ und 
+        Sei $\Sigma = \{a,b,.\}$ und  
         $L \subseteq \Sigma^*$ die Sprache aller Strings der
         Form
       </p>
@@ -286,13 +300,13 @@
         <i>nicht</i>
         regulär. Allerdings
         können wir eine reguläre Grammatik angeben, die die
-        gleiche Sprache erzeugt.
-        Entwerfen Sie eine reguläre Grammatik für die Sprache
-        aller korrekter Emailadressen über dem Alphabet
+        gleiche Sprache erzeugt. Entwerfen Sie eine reguläre
+        Grammatik für die Sprache aller korrekter Emailadressen
+        über dem Alphabet
         <span class="nowrap">$\Sigma = \{a,b,.,-,@\}$.</span>
-        Sie dürfen natürlich noch
-        weitere Buchstaben zulassen, dann schreiben Sie sich
-        aber schnell zu Tode.
+        Sie dürfen
+        natürlich noch weitere Buchstaben zulassen, dann schreiben
+        Sie sich aber schnell zu Tode.
       </p>
     </div>
     <h1 class="main-column">
@@ -306,7 +320,9 @@
     </p>
     <div class="math-block main-column">
       $$
-      \begin{align*} S \rightarrow \epsilon \ | \ 111S \end{align*}
+      \begin{align*}
+      S \rightarrow \epsilon \ | \ 111S
+      \end{align*}
       $$
     </div>
     <p class="main-column">
@@ -327,8 +343,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} X&amp;\rightarrow \alpha Y \\ X&amp;\rightarrow
-        \alpha \\ \end{align*}
+        \begin{align*}
+        X&amp;\rightarrow \alpha Y \\ X&amp;\rightarrow
+        \alpha \\
+        \end{align*}
         $$
       </div>
       <p>
@@ -369,16 +387,18 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} X&amp;
+        \begin{align*}
+        X&amp;
         \rightarrow a_1 X_2 \\ X_2&amp;\rightarrow a_2 X_3 \\ \dots \\ X_k&amp;
-        \rightarrow a_k Y \end{align*}
+        \rightarrow a_k Y
+        \end{align*}
         $$
       </div>
       <p>
         wobei wir darauf achten, dass $X_2, \dots, X_k$ "frische"
-        Nichtterminalsymbole sind. Falls 
+        Nichtterminalsymbole sind. Falls  
         $\alpha = \epsilon$ ist, so ist die Regel bereits
-        in einer in regulären Grammatiken erlaubten Form: 
+        in einer in regulären Grammatiken erlaubten Form:  
         $X \rightarrow Y$ oder
         <span class="nowrap">$X \rightarrow \epsilon$.</span>
         <span class="qed">\(\square\)</span>
@@ -402,16 +422,18 @@
       Im Folgenden zeigen wir, wie man die Form der Grammatiken
       noch stärker einschränken kann, ohne dass Sie an Mächtigkeit
       einbüßen. Per Definition
-      <a href="/5-1.html#_8_hgi_">5.1.1</a>
+      <a href="./5-1.html#_8_hgi_">5.1.1</a>
       hat jede Produktion
       in einer regulären Grammatik eine der folgenden vier
       Formen:
     </p>
     <div class="math-block main-column">
       $$
-      \begin{align*} 1.
+      \begin{align*}
+      1.
       \quad X&amp;\rightarrow aY \\ 2. \quad X&amp;\rightarrow a \\ 3. \quad X&amp;
-      \rightarrow Y \\ 4. \quad X&amp;\rightarrow \epsilon \end{align*}
+      \rightarrow Y \\ 4. \quad X&amp;\rightarrow \epsilon
+      \end{align*}
       $$
     </div>
     <p class="main-column">
@@ -435,17 +457,17 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Produktionen vom Typ 2, also von der Form 
+        Produktionen vom Typ 2, also von der Form  
         $X \rightarrow a$ können wir leicht eliminieren, indem
-        wir ein neues Nichtterminalsymbol 
-        $E \not \in \Sigma \cup N$ einführen, jedes 
+        wir ein neues Nichtterminalsymbol  
+        $E \not \in \Sigma \cup N$ einführen, jedes  
         $X \rightarrow a$ durch $X \rightarrow aE$ ersetzen
         und die Produktion $E \rightarrow \epsilon$ hinzufügen.
         Produktionen der Form $X \rightarrow Y$ zu eliminieren
         ist etwas komplizierter. Die Idee ist, dass in einer
         von $X$ ausgehende Ableitung eines Wortes irgendwann
         zum ersten Mal eine Wortform $\alpha$ vorkommen muss,
-        die nicht ein einzelnes Nichtterminalsymbol ist, also 
+        die nicht ein einzelnes Nichtterminalsymbol ist, also  
         $X \Rightarrow^* Y \Rightarrow \alpha$ mit
         <span class="nowrap">$\alpha \not \in N$.</span>
         Wir definieren nun
@@ -474,17 +496,19 @@
       Mengen berechnen? Dann das müssen wir ja tun, wenn
       wir eine solche Transformation durchführen wollen.
       Im Prinzip müssen wir alle Nichtterminale $X$ und
-      alle Produktionen $Y \rightarrow \alpha$ mit 
-      $\alpha \not \in N$ durchgehen und überprüfen, ob 
+      alle Produktionen $Y \rightarrow \alpha$ mit  
+      $\alpha \not \in N$ durchgehen und überprüfen, ob  
       $X \Rightarrow^* Y$ gilt. Dies können wir beispielsweise
       überprüfen, indem wir die Mengen
     </p>
     <div class="math-block main-column">
       $$
-      \begin{align*} N_k(X) := \{ Y \in N \ | \
+      \begin{align*}
+      N_k(X) := \{ Y \in N \ | \
       \textnormal{ es gibt } X_1,\dots, X_{l-1} \textnormal{ mit } X
       \rightarrow X_1 \rightarrow X_2 \cdots X_{l-1} \rightarrow Y
-      \textnormal{ und } l \leq k \} \end{align*}
+      \textnormal{ und } l \leq k \}
+      \end{align*}
       $$
     </div>
     <p class="main-column">
@@ -494,14 +518,16 @@
     </p>
     <div class="math-block main-column">
       $$
-      \begin{align*} N_0 (X)&amp;:= \{X\} \ , \\ N_{k+1}
+      \begin{align*}
+      N_0 (X)&amp;:= \{X\} \ , \\ N_{k+1}
       (X)&amp;:= N_k \cup \{Z \in N \ | \ \textnormal{ es gibt } Y \in
-      N_k(X) \textnormal{ mit } Y \rightarrow Z \} \ . \end{align*}
+      N_k(X) \textnormal{ mit } Y \rightarrow Z \} \ .
+      \end{align*}
       $$
     </div>
     <p class="main-column">
       Die Menge $N_{k+1}(X)$ lässt sich also mit zwei geschachtelten
-      <code>for</code>-Schleifen berechnen: eine über die 
+      <code>for</code>-Schleifen berechnen: eine über die  
       $Y \in N_k$ und eine über die Produktionen
       <span class="nowrap">$Y \rightarrow Z$.</span>
       Um $N_{k+1}(X)$ für
@@ -518,12 +544,12 @@
         <b>5.1.8</b>
         Wenn
         <span class="nowrap">$N_{k+1}(X) = N_k(X)$,</span>
-        dann ist 
+        dann ist  
         $N_k(X) = N_{k+1}(X) = N_{k+2}(X)= \dots$
       </p>
     </div>
     <p class="main-column">
-      Da die Menge $N_k$ nur wachsen kann, gilt nach höchstens 
+      Da die Menge $N_k$ nur wachsen kann, gilt nach höchstens  
       $n = |N|$ Schritten $N_n(X) = N_{n+1}(X)$ und somit
     </p>
     <div class="math-block main-column">
@@ -547,33 +573,33 @@
         <b>Übungsaufgabe 5.1.7</b>
         Sei
         <span class="nowrap">$\Sigma = \{a,b,c\}$.</span>
-        Die Grammatik mit den Regeln 
+        Die Grammatik mit den Regeln  
         $A \rightarrow \epsilon \ | \ b A \ | \ c A$ erzeugt
         die Sprache aller Wörter, die kein $a$ enthalten.
-        Die Grammatik 
+        Die Grammatik  
         $B \rightarrow \epsilon \ | \ a B \ | \ c B$ erzeugt
-        die Wörter, die kein $b$ enthalten. Die Grammatik 
+        die Wörter, die kein $b$ enthalten. Die Grammatik  
         $G$ mit Startsymbol $S$ und den Produktionen
       </p>
       <div class="math-block">
         $$
-        \begin{align*} S&amp;\rightarrow A \ | \ B \\ A&amp;
+        \begin{align*}
+        S&amp;\rightarrow A \ | \ B \\ A&amp;
         \rightarrow \epsilon \ | \ b A \ | \ c A \\ B&amp;\rightarrow \epsilon
-         | \ a B \ | \ c B \end{align*}
+         | \ a B \ | \ c B
+        \end{align*}
         $$
       </div>
       <p>
         erzeugt die Sprache aller Wörter, die kein $a$ oder
-        kein $b$ enthalten.
-        Die Grammatik $G$ ist regulär, enthält aber Produktionen
-        vom Typ 3, zum Beispiel
+        kein $b$ enthalten. Die Grammatik $G$ ist regulär,
+        enthält aber Produktionen vom Typ 3, zum Beispiel
         <span class="nowrap">$S \rightarrow A$.</span>
-        Schreiben
-        Sie eine äquivalente Grammatik
+        Schreiben Sie eine äquivalente
+        Grammatik
         <span class="nowrap">$G'$,</span>
-        die nur Produktionen
-        von der Form $X \rightarrow bY$ und 
-        $X \rightarrow \epsilon$ enthält.
+        die nur Produktionen von der Form 
+        $X \rightarrow bY$ und  $X \rightarrow \epsilon$ enthält.
       </p>
     </div>
     <p class="main-column">
@@ -584,17 +610,19 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 5.1.8</b>
-        Betrachten Sie die folgende Grammatik über 
-        $\Sigma = \{a_1,a_2,\dots,a_n\}$ mit den Nichtterminalsymbolen 
-        $\{S, A_1, A_2, \dots, A_n\}$ und den insgesamt 
+        Betrachten Sie die folgende Grammatik über  
+        $\Sigma = \{a_1,a_2,\dots,a_n\}$ mit den Nichtterminalsymbolen  
+        $\{S, A_1, A_2, \dots, A_n\}$ und den insgesamt  
         $3n-1$ Produktionen
       </p>
       <div class="math-block">
         $$
-        \begin{align*} S&amp;\rightarrow a_1 A_1 | a_2 A_2 | a_3 A_3 | \dots |
+        \begin{align*}
+        S&amp;\rightarrow a_1 A_1 | a_2 A_2 | a_3 A_3 | \dots |
         a_n A_n \\ A_1&amp;\rightarrow a_1 | A_2 \\ \dots \\ A_i&amp;\rightarrow
         a_{i} | A_{i+1}\\ \dots \\ A_{n-1}&amp;\rightarrow a_{n-1} | A_n \\
-        A_n&amp;\rightarrow a_n \end{align*}
+        A_n&amp;\rightarrow a_n
+        \end{align*}
         $$
       </div>
       <p>
@@ -652,13 +680,13 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Unsere Strategie ist, reguläre Grammatiken $G_1$ für 
+        Unsere Strategie ist, reguläre Grammatiken $G_1$ für  
         $L_1$ und $G_2$ für $L_2$ zu betrachten und daraus
-        eine neue reguläre Grammatik $G$ für 
+        eine neue reguläre Grammatik $G$ für  
         $L_1 \cup L_2$ zu bauen. Aus $G$ sollen also genau
-        diejenigen Strings ableitbar sein, die in $L_1$ oder 
-        $L_2$ enthalten sind.
-        Seien nun $G_1 = (\Sigma_1, N_1, P_1, S_1)$ und 
+        diejenigen Strings ableitbar sein, die in $L_1$ oder  
+        $L_2$ enthalten sind. Seien nun 
+        $G_1 = (\Sigma_1, N_1, P_1, S_1)$ und  
         $G_2 = (\Sigma_2, N_2, P_2, S_2)$ die beiden regulären
         Grammatiken. Wir gehen davon aus, dass
         <span class="nowrap">$N_1 \cap N_2 = \emptyset$,</span>
@@ -666,13 +694,14 @@
         Symbolen keinen Zweifel gibt, zu welcher Grammatik
         sie gehören. Falls dies nicht der Fall sein sollte,
         können wir zum Beispiel die Symbole in $N_2$ einfach
-        umbenennen. Wir erschaffen nun ein neues Startsymbol 
+        umbenennen. Wir erschaffen nun ein neues Startsymbol  
         $S \not \in N_1 \cup N_2$ und bauen uns eine neue
         Grammatik, in dem wir die zwei neuen Regeln
       </p>
       <div class="math-block">
         $$
-        \begin{align*} S&amp;\rightarrow S_1 \\ S&amp;\rightarrow S_2
+        \begin{align*}
+        S&amp;\rightarrow S_1 \\ S&amp;\rightarrow S_2
         \end{align*}
         $$
       </div>
@@ -697,21 +726,24 @@
       In einem nächsten Schritt werden wir zeigen, dass
       Konstrukte wie
       <i>Ding 1, gefolgt von Ding 2</i>
-      mit regulären Grammatiken realisierbar sind.
+      mit regulären
+      Grammatiken realisierbar sind.
     </p>
     <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>5.1.10</b>
         <b>(Kleenesche Hülle).</b>
-        Seien 
-        $L_1, L_2 \in \Sigma^*$ zwei Sprachen. Die Verknüpfungssprache 
+        Seien  
+        $L_1, L_2 \in \Sigma^*$ zwei Sprachen. Die Verknüpfungssprache  
         $L_1 \circ L_2$ ist definiert als
       </p>
       <div class="math-block">
         $$
-        \begin{align*} L_1 \circ L_2 := \{ \alpha \beta \ | \ \alpha \in
-        L_1, \beta \in L_2\} \ . \end{align*}
+        \begin{align*}
+        L_1 \circ L_2 := \{ \alpha \beta \ | \ \alpha \in
+        L_1, \beta \in L_2\} \ .
+        \end{align*}
         $$
       </div>
     </div>
@@ -727,7 +759,7 @@
       <p>
         <b>Beweis.</b>
         Wir im letzten Beweis nehmen wir uns eine reguläre
-        Grammatik $G_1 = (\Sigma, N_1, P_1, S_1)$ für 
+        Grammatik $G_1 = (\Sigma, N_1, P_1, S_1)$ für  
         $L_1$ und $G_2 = (\Sigma, N_2, P_2, S_2)$ für
         <span class="nowrap">$L_2$.</span>
         Ob die beiden Alphabete die gleichen sind,
@@ -738,8 +770,7 @@
         ist nicht entscheidend, da wir
         im letzteren Fall $L_1$ und $L_2$ als Sprachen über
         dem Alphabet $\Sigma := \Sigma_1 \cup \Sigma_2$ betrachten
-        können.
-        Wir führen nun wiederum ein neues Startsymbol 
+        können. Wir führen nun wiederum ein neues Startsymbol  
         $S \not \in N_1 \cup n_2$ ein und fügen die Regel
       </p>
       <div class="math-block">
@@ -749,31 +780,33 @@
       </div>
       <p>
         hinzu. Es sollte nun klar sein, dass wir aus $S$
-        genau die Wörter der Form $\alpha \beta$ mit 
-        $S_1 \Rightarrow^* \alpha$ und 
+        genau die Wörter der Form $\alpha \beta$ mit  
+        $S_1 \Rightarrow^* \alpha$ und  
         $S_2 \Rightarrow^* \beta$ ableiten können, also genau
         die in
         <span class="nowrap">$L_1 \cup L_2$.</span>
-        Leider ist die Regel 
+        Leider ist die Regel  
         $S \rightarrow S_1 S_2$ nicht regulär, da auf der
         rechten Seite zwei nichtterminale Symbole vorkommen.
-        Wir müssen anders vorgehen. Wir ändern die Regeln
-        von $G_1$ so ab, dass immer, wenn in einer
+        Wir müssen anders vorgehen. Wir ändern die Regeln von 
+        $G_1$ so ab, dass immer, wenn in einer
         <span class="nowrap">$G_1$-Regle</span>
         die Ableitung endet, wir das Zeichen $S_2$ anhängen:
       </p>
       <div class="math-block">
         $$
-        \begin{align*} \begin{array}{l|l} \textnormal{Regel in $G_1$}&amp;
+        \begin{align*}
+        \begin{array}{l|l} \textnormal{Regel in $G_1$}&amp;
         \textnormal{wird zu} \\ \hline X \rightarrow aY&amp;X \rightarrow aY
          X \rightarrow a&amp;X \rightarrow aS_2 \\ X \rightarrow Y&amp;X
         \rightarrow Y \\ X \rightarrow \epsilon&amp;Y \rightarrow S_2 \ .
-        \end{array} \end{align*}
+        \end{array}
+        \end{align*}
         $$
       </div>
       <p>
         Die Menge an Produktionen der Grammatik $G$ besteht
-        dann aus den nach dieser Tabelle modifizierten Produktionen 
+        dann aus den nach dieser Tabelle modifizierten Produktionen  
         $P_1$ von
         <span class="nowrap">$G_1$,</span>
         zusammen mit den (unmodifizierten)
@@ -802,8 +835,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} L^n := \{ \alpha_1 \alpha_2 \dots \alpha_n \ | \
-        \alpha_i \in L \ \forall 1 \leq i \leq n \} \ . \end{align*}
+        \begin{align*}
+        L^n := \{ \alpha_1 \alpha_2 \dots \alpha_n \ | \
+        \alpha_i \in L \ \forall 1 \leq i \leq n \} \ .
+        \end{align*}
         $$
       </div>
       <p>
@@ -813,8 +848,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} L^* := L^0 \cup L^1 \cup L^2 \cup L^3
-        \cup \dots \end{align*}
+        \begin{align*}
+        L^* := L^0 \cup L^1 \cup L^2 \cup L^3
+        \cup \dots
+        \end{align*}
         $$
       </div>
       <p>
@@ -843,8 +880,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} S'
-        &amp;\rightarrow \epsilon \\ S'&amp;\rightarrow SS' \end{align*}
+        \begin{align*}
+        S'
+        &amp;\rightarrow \epsilon \\ S'&amp;\rightarrow SS'
+        \end{align*}
         $$
       </div>
       <p>
@@ -857,11 +896,13 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} \begin{array}{l|l}
+        \begin{align*}
+        \begin{array}{l|l}
         \textnormal{Regel in $G$}&amp;\textnormal{wird zu} \\ \hline X
         \rightarrow aY&amp;X \rightarrow aY \\ X \rightarrow a&amp;X \rightarrow
         aS \\ X \rightarrow Y&amp;X \rightarrow Y \\ X \rightarrow \epsilon&amp;
-        Y \rightarrow S \ . \end{array} \end{align*}
+        Y \rightarrow S \ . \end{array}
+        \end{align*}
         $$
       </div>
       <p>
@@ -936,7 +977,7 @@
       <p>
         <b>Theorem</b>
         <b>5.1.14</b>
-        Sei $L \subseteq \Sigma^*$ eine reguläre Sprache und 
+        Sei $L \subseteq \Sigma^*$ eine reguläre Sprache und  
         $c \not \in \Sigma$ ein neues Terminalsymbol. Die
         Sprache aller nichtleeren Folgen von
         <span class="nowrap">$L$-Wörten,</span>
@@ -945,7 +986,9 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} L' := L \circ ( \{c\} \circ L)^* \end{align*}
+        \begin{align*}
+        L' := L \circ ( \{c\} \circ L)^*
+        \end{align*}
         $$
       </div>
       <p>
@@ -956,8 +999,8 @@
       <p>
         <b>Beweis.</b>
         Dies folgt sofort aus den vorherigen Theorem, weil
-        wir nur Konkatenation $\circ$ und Kleenesche Hülle 
-        $^*$ verwenden. Dennoch lohne es sich, explizit für 
+        wir nur Konkatenation $\circ$ und Kleenesche Hülle  
+        $^*$ verwenden. Dennoch lohne es sich, explizit für  
         $L'$ eine Grammatik zu bauen. Es ist auch recht einfach.
         Sei \(G = $\Sigma, N, P, S)$ eine reguläre Grammatik
         für
@@ -970,23 +1013,21 @@
         mit $S$ weiterzumachen. Also: wir beginnen mit
         <span class="nowrap">$P' := P$,</span>
         fügen aber noch weitere Produktionen hinzu.
-        Nämlich:
-        Für jede
+        Nämlich: Für jede
         <span class="nowrap">$G$-Produktion</span>
-        der Form 
-        $Y \rightarrow \epsilon$ fügen wir 
-        $Y \rightarrow cS$ hinzu.
-        Für jede
+        der Form  
+        $Y \rightarrow \epsilon$ fügen wir  
+        $Y \rightarrow cS$ hinzu. Für jede
         <span class="nowrap">$G$-Produktion</span>
-        der Form $Y \rightarrow a$
-        fügen wir $Y \rightarrow acS$ hinzu.
-        Die neue Grammatik $G'$ ist eine
-        <i>erweitert reguläre
-          Grammatik</i>, da Regeln wie $Y \rightarrow acS$ auf
-        der rechten Seite zwei Terminalsymbole haben. Wir müssen
-        sie also erst noch in eine "richtig reguläre" umwandeln.
-        In konkreten Anwendungne empfiehlt es dazu, die Nichtterminale
-        von $G'$ umzubenennen, damit keien Verwechslungsgefahr
+        der Form $Y \rightarrow a$ fügen wir 
+        $Y \rightarrow acS$ hinzu. Die neue Grammatik $G'$
+        ist eine
+        <i>erweitert reguläre Grammatik</i>, da Regeln
+        wie $Y \rightarrow acS$ auf der rechten Seite zwei
+        Terminalsymbole haben. Wir müssen sie also erst noch
+        in eine "richtig reguläre" umwandeln. In konkreten
+        Anwendungne empfiehlt es dazu, die Nichtterminale von 
+        $G'$ umzubenennen, damit keien Verwechslungsgefahr
         droht.<span class="qed">\(\square\)</span>
       </p>
     </div>

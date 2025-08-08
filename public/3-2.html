@@ -12,7 +12,7 @@
 </head>
 <body class="page-sub chapter-3 sub-2">
   <div
-    path="/3-2.html"
+    path="./3-2.html"
     class="subchapter"
   >
     <div class="menu">
@@ -58,7 +58,7 @@
       <p>
         <b>Theorem</b>
         <b>3.2.1</b>
-        Die Mengen $\N$ und $\N^2$ sind gleichmächtig. Mit 
+        Die Mengen $\N$ und $\N^2$ sind gleichmächtig. Mit  
         $\N^2$ (oder auch
         <span class="nowrap">$\N \times \N$)</span>
         bezeichnen wir hier
@@ -110,14 +110,14 @@
         Wir zerlegen $\N \times \N$ also in fallende Diagonale
         und gehen jede Diagonale von rechts unten nach links
         oben durch. Dadurch können wir die zweidimensionale
-        Gestalt von $\N \times \N$ "aufdröseln" und dem eindimensionalen 
+        Gestalt von $\N \times \N$ "aufdröseln" und dem eindimensionalen  
         $\N$ zuordnen.<span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 3.2.1</b>
-        Finden Sie eine explizite Formel für die Funktion 
+        Finden Sie eine explizite Formel für die Funktion  
         $f : \N \times \N$ aus dem obigen Theorem. Achten
         Sie erst einmal auf die Werte von
         <span class="nowrap">$f(x,0)$:</span>
@@ -126,7 +126,7 @@
         <span class="nowrap">$x$-Achse?</span>
         Haben Sie
         eine Formel für sie? Finden Sie eine. Dann erweitern
-        Sie die Formel, so dass sie für alle Werte von 
+        Sie die Formel, so dass sie für alle Werte von  
         $(x,y) \in \N \times \N$ funktioniert!
       </p>
     </div>
@@ -156,7 +156,7 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 3.2.4</b>
-        Zeigen Sie, dass 
+        Zeigen Sie, dass  
         $\N \times \N \times \N \approx \N$ gilt und ganz
         allgemein:
         <span class="nowrap">$\N^k \approx \N$.</span>
@@ -171,8 +171,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} \N^* := \{\epsilon\} \cup \N \cup \N^2 \cup \N^3 \cup
-        \dots \ , \end{align*}
+        \begin{align*}
+        \N^* := \{\epsilon\} \cup \N \cup \N^2 \cup \N^3 \cup
+        \dots \ ,
+        \end{align*}
         $$
       </div>
       <p>
@@ -186,7 +188,7 @@
       Rationale Zahlen
     </h1>
     <p class="main-column">
-      Ich will Sie nun davon überzeugen, dass 
+      Ich will Sie nun davon überzeugen, dass  
       $\Q \approx \N$ ist, dass es also "gleich viele rationale
       wie natürliche Zahlen" gibt. Ich beginne mit etwas
       Einfacherem:
@@ -202,16 +204,19 @@
     </div>
     <div class="well highlight out">
       <p>
-        <b>Beweis</b>Falls Sie es vergessen haben: eine Funktion 
+        <b>Beweis</b>
+        Falls Sie es vergessen haben: eine Funktion  
         $f: A \rightarrow B$ heißt injektiv, wenn für alle
         verschiedenen $a, a' \in A$ auch $f(a) \ne f(a')$
-        gilt. Wenn $f$ also "kollisionsfrei" ist.
-        Sei $q \in \Q$ eine rationale Zahl. Wir können $q$
-        als gekürzten Bruch schreiben, also
+        gilt. Wenn $f$ also "kollisionsfrei" ist. Sei 
+        $q \in \Q$ eine rationale Zahl. Wir können $q$ als
+        gekürzten Bruch schreiben, also
       </p>
       <div class="math-block">
         $$
-        \begin{align*} q = \frac{a}{b} \end{align*}
+        \begin{align*}
+        q = \frac{a}{b}
+        \end{align*}
         $$
       </div>
       <p>
@@ -228,24 +233,19 @@
         verschiedene Darstellung als gekürzter Bruch, und somit
         gilt auch
         <span class="nowrap">$f_1(q) \ne f_1(q')$.</span>
-        Wir haben nun also eine Injektion
+        Wir haben nun also
+        eine Injektion
         <span class="nowrap">$f_1 : \Q \rightarrow \Z \times \N$.</span>
         Mit
-        <a
-          href="/3-2.html#_2_hgi_"
-          class=""
-        >Übungsaufgabe 3.2.3</a>
+        <a href="./3-2.html#_2_hgi_">Übungsaufgabe 3.2.3</a>
         und
-        <a
-          href="/3-2.html#_1_hgi_"
-          class=""
-        >Theorem 3.2.1</a>
+        <a href="./3-2.html#_1_hgi_">Theorem 3.2.1</a>
         gilt
         <span class="nowrap">$\Z \times \N \approx \N \times \N \approx \N$,</span>
         und
         somit gibt es eine Bijektion
         <span class="nowrap">$f_2 : \Z \times \N \rightarrow \N$.</span>
-        Die Verknüpfung 
+        Die Verknüpfung  
         $f := f_2 \circ f_1 : \Q \rightarrow \N$ ist nun die
         gewünschte injektive Funktion $f$ von \(\$Q\) nach
         <span class="nowrap">$\N$.</span>
@@ -254,7 +254,7 @@
     </div>
     <p class="main-column">
       Dies ist leider keine Bijektion: das Paar $(6,9)$
-      beispielsweise wird nie vorkommen, weil 
+      beispielsweise wird nie vorkommen, weil  
       $\frac{6}{9}$ nicht gekürzt ist.
     </p>
     <div class="well statement out">
@@ -263,7 +263,6 @@
         <b>3.2.3</b>
         Es gibt eine injektive Funktion
         <span class="nowrap">$g: \N \rightarrow \Q$.</span>
-        
       </p>
     </div>
     <div class="well highlight out">
@@ -274,7 +273,9 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} g : \N&amp;\rightarrow \Q \\ n&amp;\mapsto n \end{align*}
+        \begin{align*}
+        g : \N&amp;\rightarrow \Q \\ n&amp;\mapsto n
+        \end{align*}
         $$
       </div>
       <p>
@@ -288,8 +289,8 @@
     </div>
     <p class="main-column">
       Wir sind nun also in der sonderbaren Situation, dass
-      wir eine injektive Funktion 
-      $f : \Q \rightarrow \N$ haben, die aber nicht alle 
+      wir eine injektive Funktion  
+      $f : \Q \rightarrow \N$ haben, die aber nicht alle  
       $\N$ ausfüllt, also nicht
       <i>surjektiv</i>
       ist. Gleichzeitig
@@ -360,14 +361,14 @@
         Das funktioniert natürlich: wir überspringen einfach
         die gelöschten Punkte. Wir können allerdings nicht
         bequem eine geschlossene Formel dafür angeben. Auf
-        dem "fünften Hütchen", das von $\frac{4}{1}$ nach 
+        dem "fünften Hütchen", das von $\frac{4}{1}$ nach  
         $\frac{-4}{1}$ läuft, sind zum Beispiel alle Punkte
         bis auf $(0,5)$ schwarz, was daran liegt, dass $5$
-        eine Primzahl ist und somit alle $(x,y)$ mit 
+        eine Primzahl ist und somit alle $(x,y)$ mit  
         $x+y = 5$ und $x, y \geq 1$ teilerfremd sind. Streng
         genommen müssten wir uns davon überzeugen, dass unendlich
         viele schwarze Punkte übrigbleiben. Das ist aber einfach,
-        weil alle Punkte der Form $(x,1)$ der Zahl 
+        weil alle Punkte der Form $(x,1)$ der Zahl  
         $\frac{x}{1}$ entsprechen, und das ist ja ein gekürzter
         Bruch.<span class="qed">\(\square\)</span>
       </p>
@@ -397,14 +398,15 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Hier ist eine Idee: wir interpretieren den Bitstring 
+        Hier ist eine Idee: wir interpretieren den Bitstring  
         $a_1 a_2 \dots a_n$ als
         <span class="nowrap">$n$-stellige</span>
         Binärzahl, also
       </p>
       <div class="math-block">
         $$
-        \begin{align*} f(a_1 a_2 \dots a_n) := \sum_{i=1}^n a_i 2^{n-i} \ .
+        \begin{align*}
+        f(a_1 a_2 \dots a_n) := \sum_{i=1}^n a_i 2^{n-i} \ .
         \end{align*}
         $$
       </div>
@@ -421,8 +423,10 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} 0011 \mapsto 10011 \mapsto (10011)_2 = 16 + 2 + 1 = 19
-         . \end{align*}
+        \begin{align*}
+        0011 \mapsto 10011 \mapsto (10011)_2 = 16 + 2 + 1 = 19
+         .
+        \end{align*}
         $$
       </div>
       <p>
@@ -430,14 +434,16 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} f : \{0,1\}^*&amp;\rightarrow \N \\ a_1 a_2 \dots a_n&amp;
-        \mapsto 2^n + \sum_{i=1}^n a_i 2^{n-i} \ . \end{align*}
+        \begin{align*}
+        f : \{0,1\}^*&amp;\rightarrow \N \\ a_1 a_2 \dots a_n&amp;
+        \mapsto 2^n + \sum_{i=1}^n a_i 2^{n-i} \ .
+        \end{align*}
         $$
       </div>
       <p>
         Eine äquivalente Interpretation: wir sortieren erst
         einmal die Bitstrings nach ihrer Länge. Dann gehen
-        wir $\{0,1\}^n$ lexicographisch durch, also von 
+        wir $\{0,1\}^n$ lexicographisch durch, also von  
         $00\dots0$ bis
         <span class="nowrap">$11\dots$.</span>
         Diese Reihenfolge durchläuft
@@ -446,7 +452,8 @@
       </p>
       <div class="math-block">
         $$
-        \begin{align*} \begin{array}{c|c} \epsilon&amp;0&amp;1&amp;00&amp;01&amp;10&amp;11
+        \begin{align*}
+        \begin{array}{c|c} \epsilon&amp;0&amp;1&amp;00&amp;01&amp;10&amp;11
         &amp;000&amp;001&amp;010&amp;011&amp;100&amp;101&amp;110&amp;111 \\ \hline 1&amp;2&amp;3&amp;
         4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11&amp;12&amp;13&amp;14&amp;15 \end{array}
         \end{align*}
@@ -454,14 +461,16 @@
       </div>
       <p>
         Das haut nicht ganz hin, weil die $0$ nie drankommt.
-        In der Tat stellt die obige Tabelle eine Bijektion 
+        In der Tat stellt die obige Tabelle eine Bijektion  
         $\{0,1\}^* \rightarrow \N^+$ dar. Dies ist leicht
         korrigiert, indem wir 1 abziehen: die Funktion
       </p>
       <div class="math-block">
         $$
-        \begin{align*} g : \{0,1\}^*&amp;\rightarrow \N \\ a_1 a_2 \dots a_n&amp;
-        \mapsto 2^n - 1 + \sum_{i=1}^n a_i 2^{n-i} \ . \end{align*}
+        \begin{align*}
+        g : \{0,1\}^*&amp;\rightarrow \N \\ a_1 a_2 \dots a_n&amp;
+        \mapsto 2^n - 1 + \sum_{i=1}^n a_i 2^{n-i} \ .
+        \end{align*}
         $$
       </div>
       <p>
@@ -480,14 +489,14 @@
         <span class="nowrap">$\{0,1,2,3\}$^*</span>
         nach
         <span class="nowrap">$\N$.</span>
-        Weil das "Alphabet" $\{0,1,2,3\}$ die Größe 
+        Weil das "Alphabet" $\{0,1,2,3\}$ die Größe  
         $4 = 2^2$ hat, können Sie sich mit einem kleinen Taschenspielertrick
         behelfen. Schwieriger wird es mit
         <span class="nowrap">$\{0,1,2\}^*$.</span>
         Zeigen
-        Sie, dass $\{0,1,2\}^* \approx \N$ gilt.
-        Zeigen Sie ganz allgemein: wenn $\Sigma$ eine endliche
-        Menge ist, dann gilt
+        Sie, dass $\{0,1,2\}^* \approx \N$ gilt. Zeigen Sie
+        ganz allgemein: wenn $\Sigma$ eine endliche Menge
+        ist, dann gilt
         <span class="nowrap">$\Sigma^* \approx \N$.</span>
         
       </p>

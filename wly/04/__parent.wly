@@ -1,7 +1,7 @@
 |> Chapter
     title=Berechenbarkeit und natürliche Zahlen
     Mit den Booleschen Schaltkreisen haben wir ein Modell
-    kennengelernt, dass die Berechnung von Booleschen Funkionen 
+    kennengelernt, dass die Berechnung von Booleschen Funkionen  
     $f: \{0,1\}^n \rightarrow \{0,1\}$ beschreibt. Wir
     haben mehrere Beweisen gesehen, dass es für jede Boolesche
     Funktion einen Schaltkreis gibt. Unsere Zielsetzung
@@ -10,15 +10,14 @@
     Tiefe entwerfen. Würden wir tiefer in die Schaltkreiskomplexität
     einsteigen, so würden wir uns fast ausschließlich mit
     _negativen_ Zielen beschäftigen: zu zeigen, dass es
-    zu bestimmten Funktionen eben nicht Schaltkreise mit 
+    zu bestimmten Funktionen eben nicht Schaltkreise mit  
     $S$ Gates und in Tiefe $d$ gibt; wir würden uns zum
-    Großteil mit _unteren Schranken_ beschäftigen.
-    Boolesche Funktionen sind immer _endliche_ Objekte.
-    In der Berechenbarkeitstheorie geht es im Grunde um
-    die Frage: welche _unendlichen_ Funktionen können wir
-    überhaupt berechnen? Und was gilt denn überhaupt als
-    zulässiges Modell für Berechenbarkeit?
-    Wenn wir nun also über Funktionen 
+    Großteil mit _unteren Schranken_ beschäftigen. Boolesche
+    Funktionen sind immer _endliche_ Objekte. In der Berechenbarkeitstheorie
+    geht es im Grunde um die Frage: welche _unendlichen_
+    Funktionen können wir überhaupt berechnen? Und was
+    gilt denn überhaupt als zulässiges Modell für Berechenbarkeit?
+    Wenn wir nun also über Funktionen  
     $f: X \rightarrow Y$ auf unendlichen Mengen sprechen
     und uns fragen, welche durch eine _endliche Rechenvorschrift_
     beschrieben werden können, dann müssen wir erst einmal
@@ -29,9 +28,11 @@
     wäre, wie sollten wir überhaupt über Berechenbarkeit
     sprechen?) Für uns als Informatiker wäre doch folgende
     Menge am naheliegendsten:
+
     \begin{align*}
     \{0,1\}^* \ ,
     \end{align*}
+
     also die Menge aller beliebig langen aber endlichen
     Bit-Strings. Wir können alle möglichen Dinge (Wörter,
     Programme, Dateien, natürliche Zahlen, rationale Zahlen)
@@ -42,17 +43,21 @@
     Rechner gebaut wurden. Daher beschäftigten sich die
     ersten Forscher auch mit einer anderen, uns sehr vertrauten
     Menge:
+
     \begin{align*}
     \mathbb{N} \ ,
     \end{align*}
+
     den natürlichen Zahlen. Im letzten Kapitel haben
     wir ja unter anderen bewiesen, dass diese gleichmächtig
     sind: $\{0,1\}^* \cong \N$ und haben auch eine Bijektion
     kennengelernt, beispielsweise
+
     \begin{align*}
     f : \{0,1\}^*&\rightarrow \N \\
     (x_1, \dots, x_n)&\mapsto (1 x_1\dots x_n)_2 - 1\ ,
     \end{align*}
+
     wir stellen also dem Bitstring $x_1,\dots,x_n$ eine
     1 voran und interpretieren das Ergebnis als natürliche
     Zahl; dann ziehen wir 1 ab. Es ist also für die Entwicklung

@@ -12,18 +12,21 @@
             den Iterationsindex).
 
     Der zweite Punkt ist keine echte Beschränkung, wie
-    wir gesehen haben: wenn wir zwei lokale Variablen 
-    $a,b$ führen wollen, können wir die via der Bijektion 
+    wir gesehen haben: wenn wir zwei lokale Variablen  
+    $a,b$ führen wollen, können wir die via der Bijektion  
     ${\rm pair} : \N^2 \rightarrow \N$ in _eine_ natürliche
     Zahl codieren. Der erste Punkt allerdings scheint eine
     echte Beschränkung zu sein: wir wissen schließlich
     nicht immer, wie oft wir eine Tätigkeit wiederholen
     müssen, bis wir fertig sind, und ob wir überhaupt jemals
     fertig werden. Sie kennen vielleicht die Collatz-Vermutung.
+
     |> Topic
         Die Collatz-Vermutung
-    Wir definieren eine Funktion 
+
+    Wir definieren eine Funktion  
     $f: \N_+ \rightarrow \N_+$ wie folgt:
+
     \begin{align*}
     f : \N_+&\rightarrow \N_+ \\
     n&\mapsto
@@ -32,13 +35,17 @@
     3n+1&\textnormal{ if $n$ odd.}
     \end{cases}
     \end{align*}
-    Für eine natürliche Zahl $n$ können wir dann die Collatz-Folge
-    definieren: $n, f(n), f(f(n)), ...$. Man sieht leicht,
-    dass diese Folge in einer Schleife landen kann:
+
+    Für eine natürliche Zahl $n$ können wir dann die
+    Collatz-Folge definieren: $n, f(n), f(f(n)), ...$.
+    Man sieht leicht, dass diese Folge in einer Schleife
+    landen kann:
+
     \begin{align*}
     13 \mapsto 40 \mapsto 20 \mapsto 10 \mapsto 5 \mapsto 16 \mapsto 8 \mapsto 4 \mapsto 2 \mapsto 1
     \mapsto 4 \mapsto 2 \mapsto 1 \dots
     \end{align*}
+
     Wir beenden die Sequenz daher üblicherweise, wenn
     wir bei 1 (und somit in dieser Dreierschleife) gelandet
     sind. Es kann allerdings etwas länger dauern:
@@ -78,8 +85,10 @@
     widersetzt und demonstriert eindrucksvoll, dass auch
     mathematische Probleme mit sehr einfacher Formulierung
     extrem schwierig sein können.
+
     |> Topic
         While-Schleifen
+
     Eine Einschränkung primitiv-rekursiver Funktionen
     ist also, dass wir immer vor der Schleife angeben müssen,
     wie oft diese durchlaufen werden soll. Es gibt also
@@ -102,7 +111,6 @@
         die Collatz-Folge baut, also
 
         |> Highlight
-            
-            ```python-prompt
-            >>> collatzList(7)[]
-            ```
+            |> WriterlyCodeBlock
+                language=python-prompt
+                >>> collatzList(7)[]

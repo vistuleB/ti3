@@ -12,7 +12,7 @@
 </head>
 <body class="page-sub chapter-2 sub-3">
   <div
-    path="/2-3.html"
+    path="./2-3.html"
     class="subchapter"
   >
     <div class="menu">
@@ -77,7 +77,7 @@
       und das eingehende
       Carry
       <span class="nowrap">$\cin$.</span>
-      Daraus berechnet sich das Output-Bit 
+      Daraus berechnet sich das Output-Bit  
       $s$ und das ausgehende Carry
       <span class="nowrap">$\cout$,</span>
       das nach links
@@ -136,27 +136,27 @@
       genommen lässt unsere Definition von Schaltkreisen
       so etwas nicht zu; allerdings ist es recht einfach,
       die Definition entsprechend zu verallgemeinern, oder
-      aber den obigen Schaltkreis zu vereinfachen: 
-      $M(x,y,0)$ würde dann zum Beispiel einfach zu 
-      $x \wedge y$ werden).
-      Wie groß ist dieser Schaltkreis? Wenn wir jedes
+      aber den obigen Schaltkreis zu vereinfachen:  
+      $M(x,y,0)$ würde dann zum Beispiel einfach zu  
+      $x \wedge y$ werden). Wie groß ist dieser Schaltkreis?
+      Wenn wir jedes
       <span class="nowrap">$\oplus$-</span>
       und
       <span class="nowrap">$M$-Gate</span>
       als
-      <i>ein</i>Gate zählen, so haben
-      wir insgesamt $2n$ innere Gates und $2n$ Input-Gates.
-      Wenn wir darauf bestehen,
+      <i>ein</i>Gate
+      zählen, so haben wir insgesamt $2n$ innere Gates und 
+      $2n$ Input-Gates. Wenn wir darauf bestehen,
       <span class="nowrap">$\oplus$-</span>
       und
       <span class="nowrap">$M$-Gates</span>
-      aus AND/OR/NOT zu basteln, haben wir mehr, allerdings
-      in jedem Fall $O(n)$ viele.
+      aus AND/OR/NOT zu basteln,
+      haben wir mehr, allerdings in jedem Fall $O(n)$ viele.
     </p>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.3.1</b>
-        Bauen Sie einen Schaltkreis oneBitAdder: &ensp;
+        Bauen Sie einen Schaltkreis oneBitAdder: &ensp; 
         $\{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende Funktionalität:
       </p>
       <figure>
@@ -179,7 +179,7 @@
       nicht wirklich erwarten, schließlich muss der Schaltkreis
       ja allein schon $n$ Input-Gates haben. Wie steht es
       mit der Tiefe? Wenn wir jedes $\oplus$ und $M$ als
-      Gate betrachten, dann hat der Pfad von $x_0$ zu 
+      Gate betrachten, dann hat der Pfad von $x_0$ zu  
       $s_n$ die Länge $n$ (beachten Sie: das ganz links
       stehende $M$ ist streng genommen bereits das Output-Gate;
       die ausgehende Kante $s_n$ ist also vielmehr ein Output-Label
@@ -188,7 +188,7 @@
       Tiefe
       <span class="nowrap">$n$.</span>
       Eine Tiefe von $\Omega(n)$ ist in der Regel
-      nicht gut. Idealerweise streben wir eine Tiefe von 
+      nicht gut. Idealerweise streben wir eine Tiefe von  
       $\log n$ an (oder wenn wir besonders ambitionert sind
       und beliebig großen Fan-in zulassen, sogar konstante
       Tiefe
@@ -203,14 +203,13 @@
       Das Problem ist, dass das Carry im schlimmsten Fall
       von ganz rechts nach ganz links durchrasseln muss,
       zum Beispiel wenn man $11111111 + 00000001$ berechnet.
-      So einen Addierer nennt man<i>ripple-carry adder</i>.
-      Geringere Tiefe erreicht man mit
-      <i>Carry Lookahead</i>.
-      Hier versuchen wir, im Voraus bereits das Carry auf
-      Position $i$ zu berechnen, ohne erst das auf Position 
-      $i-1$ abzuwarten. Es lohnt, ein paar Dinge formaler
-      zu definieren:
-      $c_i$ ist das Carry, das von Position $i-1$ an Position 
+      So einen Addierer nennt man<i>ripple-carry adder</i>. Geringere
+      Tiefe erreicht man mit
+      <i>Carry Lookahead</i>. Hier versuchen
+      wir, im Voraus bereits das Carry auf Position $i$
+      zu berechnen, ohne erst das auf Position  $i-1$ abzuwarten.
+      Es lohnt, ein paar Dinge formaler zu definieren: 
+      $c_i$ ist das Carry, das von Position $i-1$ an Position  
       $i$ übergeben wird; $s_i$ ist das
       <span class="nowrap">$i$-te</span>
       Bit der Summe
@@ -253,7 +252,7 @@
       <span class="nowrap">$(x_i,y_i) = (0,0)$,</span>
       so ist
       <span class="nowrap">$c_{i+1}=0$.</span>
-      In beiden Fällen spielt alles, was vor 
+      In beiden Fällen spielt alles, was vor  
       $i$ kommt (rechts davon) spielt keine Rolle. Wenn
       nun $x_i \ne y_i$ ist, dann schaltet das
       <span class="nowrap">$M$-Gate</span>
@@ -288,10 +287,10 @@
       Und voilà: dies ist ein Schaltkreis für $c_{k+1}$
       und hat Tiefe 2 (wenn wir $g_i$ und $p_i$ als Inputgates
       betrachten). Wie groß ist er? Er hat $k$ OR-gates
-      und $1 + 2 + \dots + k$ AND-gates, insgesamt also 
-      $\Theta(k^2)$ Gates. Wir konstruieren nun für jedes 
+      und $1 + 2 + \dots + k$ AND-gates, insgesamt also  
+      $\Theta(k^2)$ Gates. Wir konstruieren nun für jedes  
       $c_1,\dots, c_n$ einen Schaltkreis und setzen dann
-      einen Schaltkreis für 
+      einen Schaltkreis für  
       $s_k = x_k \oplus y_k \oplus c_k$ oben drauf. Insgesamt
       haben wir Tiefe
       <span class="nowrap">$O(1)$,</span>
@@ -316,13 +315,13 @@
       von
       <i>Carry Generate $g_i$</i>
       und
-      <i>Carry Propagate 
-        $p_i$</i>von Indizes auf Intervalle. Für ein Interval 
-      $[a,b] := \{a, a+1, \dots, b\}$ definieren wir Funktionen 
-      $g_{[a,b]}$ und $p_{[a,b]}$ in den Variablen 
-      $x_{a},\dots,x_{b}, y_a, \dots, y_b$ wie folgt: 
+      <i>Carry Propagate  
+        $p_i$</i>von Indizes auf Intervalle. Für ein Interval  
+      $[a,b] := \{a, a+1, \dots, b\}$ definieren wir Funktionen  
+      $g_{[a,b]}$ und $p_{[a,b]}$ in den Variablen  
+      $x_{a},\dots,x_{b}, y_a, \dots, y_b$ wie folgt:  
       $g_{[a,b]}$ soll 1 sein , wenn an Stelle $b$ ein Carry
-      nach $b+1$ geschickt wird, selbst wenn von $a-1$ nach 
+      nach $b+1$ geschickt wird, selbst wenn von $a-1$ nach  
       $a$ kein Carry reinkommt; wenn also $c_{b+1}=1$ ist,
       selbst wenn $c_{a}=0$ ist; $p_{[a,b]}$ soll 1 sein,
       wenn an Stelle $b$ ein Carry nach $b+1$ rausgeschickt
@@ -340,7 +339,7 @@
       <ul>
         <li>
           <p>
-            Wenn für alle $i \in I$ das Paar $x_i, y_i$ den Wert 
+            Wenn für alle $i \in I$ das Paar $x_i, y_i$ den Wert  
             $(0,1)$ oder $(1,0)$ hat, dann ist $p_I = 1$ und
             <span class="nowrap">$g_I = 0$.</span>
             
@@ -376,14 +375,14 @@
         </li>
       </ul>
       <p>
-        Insbesondere für ein-elementige Intervalle 
+        Insbesondere für ein-elementige Intervalle  
         $I = [a,a]$ gilt $p_{[a]} = p_a = x_a \vee y_a$ und
         <span class="nowrap">$g_{[a]} = g_a = x_a \wedge y_a$.</span>
         
       </p>
     </div>
     <p class="main-column">
-      Hier sind Boolesche Formeln (in DNF) für 
+      Hier sind Boolesche Formeln (in DNF) für  
       $p_{[a,b]}$ und
       <span class="nowrap">$g_{[a,b]}$:</span>
       
@@ -425,7 +424,7 @@
       also wie die "alten"
       individuellen
       <span class="nowrap">$p_a, g_a$.</span>
-      Diese Definition 
+      Diese Definition  
       $g_{[a,b]}$ ist nützlich, da erstens
     </p>
     <div class="math-block main-column">
@@ -462,12 +461,12 @@
       weitergegeben werden") oder indem Sie explizit die
       Definitionsformel von $g_{[a,b]}$ nehmen und in der
       unteren Hälfte "ausklammern". Die Idee ist jetzt, dass
-      wir mit Hilfe dieser Formel die Funktionen 
-      $p_I, g_I$ für alle Intervalle 
-      $I \subseteq [0,\dots,n-1]$ berechnen und dann mittels 
+      wir mit Hilfe dieser Formel die Funktionen  
+      $p_I, g_I$ für alle Intervalle  
+      $I \subseteq [0,\dots,n-1]$ berechnen und dann mittels  
       $s_i = x_i \oplus y_i \oplus c_i$ unmittelbar die
       Binärdarstellung der Summe $x+y$ ausgeben können.
-      Das Problem: es gibt zu viele Intervalle, nämlich 
+      Das Problem: es gibt zu viele Intervalle, nämlich  
       $1 + 2 + \dots + n = {n+1 \choose 2} = \Theta(n^2)$
       viele. Der Trick: wir beschränken uns auf besonders
       schöne Intervalle, nämlich<i>Binärintervalle</i>.
@@ -486,11 +485,11 @@
       </div>
       <p>
         Es wird eventuell klarer, wenn wir uns die Binärdarstellung
-        anschauen: $[a,b]$ ist ein Binärintervall, wenn 
-        $a$ und $b$ folgende Binärdarstellung haben: 
+        anschauen: $[a,b]$ ist ein Binärintervall, wenn  
+        $a$ und $b$ folgende Binärdarstellung haben:  
         $a = (c00\dots 0)_2$ und
         <span class="nowrap">$b = (c 11 \dots 1)_2$,</span>
-        wobei 
+        wobei  
         $c$ selbst aus mehreren Bits bestehen kann.
       </p>
     </div>
@@ -520,10 +519,10 @@
       <p>
         <b>Lemma</b>
         <b>2.3.4</b>
-        Es gibt einen Schaltkreis mit Input-Gates 
-        $x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}$ mit Größe 
-        $6n - 4 \in O(n)$ und Tiefe 
-        $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und Output-Gates 
+        Es gibt einen Schaltkreis mit Input-Gates  
+        $x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}$ mit Größe  
+        $6n - 4 \in O(n)$ und Tiefe  
+        $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und Output-Gates  
         $p_{I}, g_I$ für jedes Binärinterval
         <span class="nowrap">$I$.</span>
         
@@ -544,7 +543,7 @@
         $$
       </div>
       <p>
-        Ganz allgemein gilt 
+        Ganz allgemein gilt  
         $[c*^{k+1}] = [c0*^k] \cup [c1*^k]$ und somit, mit
         Hilfe von Beobachtung 1.10:
       </p>
@@ -572,11 +571,11 @@
         >
       </figure>
       <p>
-        Mit Hilfe dieses Gates können wir 
+        Mit Hilfe dieses Gates können wir  
         $p_{c0*^k}, g_{c0*^k}$ und $p_{c1*^k}, g_{c1*^k}$
         zu $p_{c*^{k+1}}, g_{c*^{k+1}}$ kombinieren. Wir fangen
         nun mit Binärintervallen der Größe $1$ an und arbeiten
-        uns hoch. Der Übersichtlichkeit halber schreiben wir 
+        uns hoch. Der Übersichtlichkeit halber schreiben wir  
         $pg_I$ für das Paar
         <span class="nowrap">$(p_I, g_I)$.</span>
         Für $n=16$ schaut
@@ -600,7 +599,7 @@
         sind, sondern wiederum aus $x_i, y_i$ berechnet werden
         mittels $p_i = x_i \vee y_i$ bzw.
         <span class="nowrap">$g_i = x_i \wedge y_i$.</span>
-        Der Schaltkreis hat also 
+        Der Schaltkreis hat also  
         $2n$ Input-Gates und pro Binärinterval $I$ zwei Output-Gates:
         <span class="nowrap">$p_I, g_I$.</span>
         Jedes $pg$ im obigen Bild ist also gleichzeitig
@@ -666,7 +665,7 @@
         <b>2.3.5</b>
         Es gibt einen Schaltkreis der Größe $2n$ und Tiefe
         <span class="nowrap">$2 \ceil{\log_2 n} - 2 = O(\log n)$,</span>
-        der die 
+        der die  
         $p_I, g_I$ für Binärintervalle als Inputs nimmt und
         daraus $g_{[0,k]}$ berechnet für jedes
         <span class="nowrap">$k=0,\dots,n-1$,</span>
@@ -691,20 +690,21 @@
       <p>
         Wie kann man das formalisieren?
         <b>1. Fall.</b>
-        Wenn $k$ die Form $k = 2^d-1$ hat, dann
-        ist $[0,k]$ bereits ein Binärintervall; dies passiert,
-        wenn die Binärdarstellung von $k$ die Form 
-        $k = (1^b)_2$ hat (wobei $b=0$ sein kann, in welchem
-        Fall $k=0$ ist).
+        Wenn 
+        $k$ die Form $k = 2^d-1$ hat, dann ist $[0,k]$ bereits
+        ein Binärintervall; dies passiert, wenn die Binärdarstellung
+        von $k$ die Form  $k = (1^b)_2$ hat (wobei $b=0$ sein
+        kann, in welchem Fall $k=0$ ist).
         <b>2. Fall.</b>
-        Wenn $k$ nicht die Form $k = 2^d-1$ hat,
-        dann hat die Binärdarstellung von $k$ nicht die Form
+        Wenn 
+        $k$ nicht die Form $k = 2^d-1$ hat, dann hat die Binärdarstellung
+        von $k$ nicht die Form
         <span class="nowrap">$1^b$;</span>
-        sie enthält also auch nicht-führende Nullen
-        (beachten Sie, dass $(0111)_2$ und $(111)_2$ die gleiche
-        natürliche Zahl darstellen, nämlich 7). Die Zahl 
-        $k$ hat also die Form $k = (\alpha 1 0^a 1^b)_2$ für 
-        $a \geq 1$ und
+        sie enthält also auch
+        nicht-führende Nullen (beachten Sie, dass 
+        $(0111)_2$ und $(111)_2$ die gleiche natürliche Zahl
+        darstellen, nämlich 7). Die Zahl  $k$ hat also die
+        Form $k = (\alpha 1 0^a 1^b)_2$ für  $a \geq 1$ und
         <span class="nowrap">$b \geq 0$.</span>
         Definieren wir
         <span class="nowrap">$l := (\alpha 0 1^a 1^b)_2$.</span>
@@ -724,7 +724,7 @@
         Eine äquivalente Definition von $l$ wäre: das kleinste
         <span class="nowrap">$l$,</span>
         so dass $[l+1,k]$ ein Binärintervall ist. Wir
-        zerlegen nun $[0,k] = [0,l] \cup [k+1,l]$ und berechnen 
+        zerlegen nun $[0,k] = [0,l] \cup [k+1,l]$ und berechnen  
         $pg_{[0,k]}$ so:
       </p>
       <figure>
@@ -742,11 +742,11 @@
         werden; der andere Input,
         <span class="nowrap">$pg_{[0,l]}$,</span>
         muss rekursiv
-        berechnet werden. Beachten Sie, dass 
-        $l = (\alpha 0 1^a 1^b)_2)$ gilt, die Anzahl der
-        schließenden 1en in der Binärdarstellung also von 
-        $b$ auf $a+b \geq b+1$ gewachsen ist. Hier ist ein
-        Beispiel für
+        berechnet werden. Beachten Sie, dass  
+        $l = (\alpha 0 1^a 1^b)_2)$ gilt, die Anzahl der schließenden
+        1en in der Binärdarstellung also von  $b$ auf 
+        $a+b \geq b+1$ gewachsen ist. Hier ist ein Beispiel
+        für
         <span class="nowrap">$n = 32, k = 28$,</span>
         in Dezimal- und Binärdarstellung:
       </p>
@@ -770,13 +770,13 @@
         Die Anzahl schließender
         1en ist mindestens 0 (trivialierweise) und höchstens
         <span class="nowrap">$d$;</span>
-        ein genauerer Blick zeigt, dass sie sogar höchstens 
+        ein genauerer Blick zeigt, dass sie sogar höchstens  
         $d-1$ ist: wäre sie genau
         <span class="nowrap">$d$,</span>
         dann hätten wir es
-        mit der Zahl $(1^d)_2 = 2^d-1 \geq n-1$ zu tun;
-        da aber die Folge der Zahlen
-        <i>abnimmt</i>, müsste bereits 
+        mit der Zahl $(1^d)_2 = 2^d-1 \geq n-1$ zu tun; da
+        aber die Folge der Zahlen
+        <i>abnimmt</i>, müsste bereits  
         $k = 2^d-1$ gelten, und wir wären in Fall 1, bzw.
         bereits fertig, weil $[0,k]$ bereits in Binärintervall
         wäre. Der Wert von
@@ -803,16 +803,17 @@
         <b>Tiefe.</b>
         Jedes
         <span class="nowrap">$pg$-Gate</span>
-        hat Tiefe 2, und somit erreichen 
+        hat Tiefe 2, und somit erreichen  
         $d-1$ solche Gates hintereinander zusammen eine Tiefe
         von
         <span class="nowrap">$2 (d-1) = 2 \ceil{\log_2 n} - 2$.</span>
         <b>Größe.</b>
-        Zählen wir die Anzahl von
+        Zählen
+        wir die Anzahl von
         <span class="nowrap">$pg$-Gates</span>
-        in unserem
-        Schaltkreis. Wir haben bereits gesehen, dass die Berechnung
-        von $g_{[0,k]}$ höchstens $d-1$ viele
+        in unserem Schaltkreis.
+        Wir haben bereits gesehen, dass die Berechnung von 
+        $g_{[0,k]}$ höchstens $d-1$ viele
         <span class="nowrap">$pg$-Gates</span>
         braucht.
         Es scheint also, als bräuchten wir für alle $n$ Werte
@@ -824,25 +825,24 @@
         ergeben; das ist nicht schlecht,
         allerdings asymptotisch deutlich schlechter als der
         Ripple-Through-Addierer, und eben auch nicht das, was
-        wir im Lemma behaupten.
-        Nein, es ist in der Tat viel einfacher. Schauen Sie,
-        wir berechnen oben zum Beispiel
+        wir im Lemma behaupten. Nein, es ist in der Tat viel
+        einfacher. Schauen Sie, wir berechnen oben zum Beispiel
         <span class="nowrap">$pg_{[0,29]}$,</span>
-        in
-        dem wir $pg_{[28,29]}$ (was bereits als Input bereitgestellt
-        wird, weil $[28,29]$ ein Binärintervall ist) mit 
-        $pg_{[0,27]}$ kombinieren. Nun muss aber $k=29$ nicht
-        für $pg_{[0,27]}$ "bezahlen", weil wir es für 
-        $k = 27$ eh berechnen müssen! In anderen Worten, jedes 
-        $pg_{[0, l]}$ ist ja nicht nur Zwischenergebnis, sondern
-        selbst Output-Gate, und somit ist die Anzahl der
+        in dem wir $pg_{[28,29]}$ (was bereits
+        als Input bereitgestellt wird, weil $[28,29]$ ein
+        Binärintervall ist) mit  $pg_{[0,27]}$ kombinieren.
+        Nun muss aber $k=29$ nicht für $pg_{[0,27]}$ "bezahlen",
+        weil wir es für  $k = 27$ eh berechnen müssen! In
+        anderen Worten, jedes  $pg_{[0, l]}$ ist ja nicht
+        nur Zwischenergebnis, sondern selbst Output-Gate, und
+        somit ist die Anzahl der
         <span class="nowrap">$pg$-Gates</span>
-        gleich der Anzahl der Output-Gates, nämlich
-        genau
+        gleich der Anzahl
+        der Output-Gates, nämlich genau
         <span class="nowrap">$n$.</span>
-        Sogar weniger, weil wir gar kein Gate brauchen,
-        wenn $[0,k]$ bereits ein Binärinterval ist. Hier ist
-        die Konstruktion für
+        Sogar weniger,
+        weil wir gar kein Gate brauchen, wenn $[0,k]$ bereits
+        ein Binärinterval ist. Hier ist die Konstruktion für
         <span class="nowrap">$n=16$:</span>
         
       </p>
@@ -860,13 +860,13 @@
         <span class="nowrap">$pg$-Gates;</span>
         jedes davon besteht wiederum aus 4 Basis-Gates
         <span class="nowrap">$\wedge, \vee$,</span>
-        und somit brauchen wir maximal 
+        und somit brauchen wir maximal  
         $4n$ Gates. Wenn wir ganz genau hinsehen, können wir
         es mit $2n$ Gates schaffen: da
         <span class="nowrap">$c_{k+1} = g_{[0,k]}$,</span>
         brauchen wir ja $p_{[0,k]}$
-        gar nicht. Auch, um $g_{[0,k]}$ aus $pg_{[0,l]}$ und 
-        $pg_{[l+1,k]}]$ zu berechnen, brauchen wir 
+        gar nicht. Auch, um $g_{[0,k]}$ aus $pg_{[0,l]}$ und  
+        $pg_{[l+1,k]}]$ zu berechnen, brauchen wir  
         $p_{[0,l]}$ nicht:
       </p>
       <figure>
@@ -885,10 +885,10 @@
     </div>
     <p class="main-column">
       Wir kombinieren wir nun die beiden Lemmas und erhalten
-      einen Schaltkreis der Tiefe 
+      einen Schaltkreis der Tiefe  
       $4 \ceil { \log_2 n } - 1$ und Größe
       <span class="nowrap">$8n - 4$,</span>
-      mit 
+      mit  
       $x_0, y_0, \dots, x_{n-1}, y_{n-1}$ als Inputvariablen
       und Carrys $c_1, \dots, c_n$ als Output-Variablen.
       Jetzt können wir schließlich
@@ -939,9 +939,9 @@
         der also $\mathbf{x}, \mathbf{y}$ als
         <span class="nowrap">$n$-stellige</span>
         Binärzahlen interpretiert und ausgibt, ob die erste
-        kleiner ist als die zweite.
-        Ihr Schaltkreis sollte im Idealfall Größe $O(n)$ und
-        Tiefe $O(\log_2 n)$ und Fan-in 2 haben.
+        kleiner ist als die zweite. Ihr Schaltkreis sollte
+        im Idealfall Größe $O(n)$ und Tiefe $O(\log_2 n)$
+        und Fan-in 2 haben.
       </p>
     </div>
   </div>
