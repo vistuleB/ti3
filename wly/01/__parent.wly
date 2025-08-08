@@ -7,20 +7,21 @@
     \ haben Sie allerhand Problemstellungen und Algorithmen
     kennengelernt und können nun (hoffentlich) auch für
     manche Ihnen noch unbekannten Probleme neue Algorithmen
-    entwickeln.
-    In diesem Kurs stellen wir uns abstrakter die Frage,
-    was denn ein Algorithmus ist; was es denn heißt, etwas
-    zu berechnen. Ein Algorithmus, beispielsweise ein Sortieralgorithmus,
-    kann ja prinzipiell Arrays beliebiger Länge sorteren.
-    Es gibt also unendlich viele potentielle Eingaben.
-    Dennoch ist der Algorithmus selbst ein endliches Objekt
-    - der Programmcode beispielsweise besteht aus endlich
-    vielen Zeichen. Noch dazu kann ein Algorithmus nur
-    beschränkt die ihm gegebenen Daten manipulieren; in
-    jedem Schritt immer nur an einer bestimmten Stelle
-    und nach festen Regeln.
+    entwickeln. In diesem Kurs stellen wir uns abstrakter
+    die Frage, was denn ein Algorithmus ist; was es denn
+    heißt, etwas zu berechnen. Ein Algorithmus, beispielsweise
+    ein Sortieralgorithmus, kann ja prinzipiell Arrays
+    beliebiger Länge sorteren. Es gibt also unendlich viele
+    potentielle Eingaben. Dennoch ist der Algorithmus selbst
+    ein endliches Objekt - der Programmcode beispielsweise
+    besteht aus endlich vielen Zeichen. Noch dazu kann
+    ein Algorithmus nur beschränkt die ihm gegebenen Daten
+    manipulieren; in jedem Schritt immer nur an einer bestimmten
+    Stelle und nach festen Regeln.
+
     |> Topic
         Emailadressen und Arithmetische Ausdrücke
+
     Die Menge aller denkbaren Emailadressen ist unendlich
     - zumindest, solange wir für Nutzernamen und Domainnamen
     keine Längenbeschränkung haben. Nach welchen Regeln
@@ -99,12 +100,13 @@
         nicht korrekt. Wie sind korrekte arithmetische Ausdrücke
         aufgebaut? Beschränken Sie sich gerne auf * und + und
         / und - und Zahlen und ignorieren Sie erst mal Variablen,
-        Funktionsaufrufe und weitere Operatoren.
-        Versuchen Sie, eine Art formale Sprache zu entwickeln,
-        die die korrekten arithmetischen Ausdrücke beschreibt.
+        Funktionsaufrufe und weitere Operatoren. Versuchen
+        Sie, eine Art formale Sprache zu entwickeln, die die
+        korrekten arithmetischen Ausdrücke beschreibt.
 
     |> Topic
         Endliche Regeln und unendliches Verhalten
+
     Das klassische Beispiel, wie sehr einfache Regeln
     ein extrem komplexes Verhalten erzeugen können, ist
     Conways Game of Life. Hier ist der 
@@ -211,8 +213,10 @@
     vorstellbar. Wenn wir am Ende dieses Kurses angelangt
     sind, werden Sie aber verstehen, warum das sogar recht
     plausibel ist.
+
     |> Topic
         Zusammenfassung
+
     Es geht also in diesem Kurs vor Allem um folgende
     Fragen:
 
