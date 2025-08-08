@@ -48,16 +48,20 @@
       können. Die Basisfunktionen sind:
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       \zero:&amp;\N^* \rightarrow \N \\
       \vec{x}&amp;\mapsto 0
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       \succ: \N&amp;\rightarrow \N \\
       x&amp;\mapsto x+1
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       Sind diese Funktionen "offensichtlich berechenbar"?
@@ -74,7 +78,7 @@
       würden wir natürliche Zahlen in
       <i>unärer Schreibweise</i>
       (auhc Steinzeitnotation genannt) darstellen, also vier
-      <span class="nowrap">$ = 1111$,</span>
+      <span class="nowrap">$= 1111$,</span>
       sieben =
       <span class="nowrap">$= 1111111$.</span>
       Jezt brauchen wir
@@ -86,10 +90,12 @@
       definiert als
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       \pi^n_k : \N^n&amp;\rightarrow \N \\
       \vec{x}&amp;\mapsto x_k \ .
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       Irgendwie sollte auch hier klar sein, dass die Vorschrift
@@ -100,10 +106,12 @@
       0 beginnen lasse, also zum Beispiel
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       \pi^3_0: (x,y,z) \mapsto x \\
       \pi^3_1: (x,y,z) \mapsto y \ .
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       Auch die Stelligkeit $n$ lasse ich oft weg und schreibe
@@ -125,10 +133,12 @@
         $\comp(f, g_1, \dots, g_k)$ die Funktion
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         \N^l&amp;\rightarrow \N \\
         \vec{x}&amp;\mapsto f(g_1(\vec{x}), \dots, g_k(\vec{x}))
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Graphisch können Sie sich Komposition so vorstellen:
@@ -161,13 +171,15 @@
         neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         f : \N^{k+1}&amp;\rightarrow \N \\
         (t, \vec{x})&amp;\rightarrow \begin{cases}
         g(\vec{x})&amp;\textnormal{ if $t=0$} \\
         h(f(t-1, \vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$}.
         \end{cases}
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Für diese Konstruktion schreiben wir kompakt
@@ -214,10 +226,12 @@ def PrimRec(g, h):
         
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         {\rm zero}:&amp;\vec{x} \mapsto 0 \\
         {\rm succ}:&amp;x \mapsto x+1
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         als "übliche" Python-Funktionen. Darüberhinaus implementiert
@@ -230,10 +244,12 @@ def PrimRec(g, h):
             <code>Proj(k)</code>: erzeugt die Funktion
           </p>
           <div class="math-block">
-            $$\begin{align*}
+            $$
+            \begin{align*}
             \pi_k : \N^*&amp;\rightarrow \N \\
             \vec{x}&amp;\mapsto x_k \ .
-            \end{align*}$$
+            \end{align*}
+            $$
           </div>
         </li>
         <li>
@@ -241,9 +257,11 @@ def PrimRec(g, h):
             <code>Comp(f, g0, g1, ...)</code>: erzeugt die Funktion
           </p>
           <div class="math-block">
-            $$\begin{align*}
+            $$
+            \begin{align*}
             \vec{x} \mapsto f(g0(x), g1(x), ...)
-            \end{align*}$$
+            \end{align*}
+            $$
           </div>
           <p>
             Sie als User müssen sicherstellen, dass die Stelligkeit
@@ -256,12 +274,14 @@ def PrimRec(g, h):
             <code>PrimRec(g,h)</code>: erzeugt die Funktion
           </p>
           <div class="math-block">
-            $$\begin{align*}
+            $$
+            \begin{align*}
             (t, \vec{x}) \mapsto \begin{cases}
             g(\vec{x})&amp;\textnormal{ if $t=0$,} \\
             h(f(t-1, \vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$.}
             \end{cases}
-            \end{align*}$$
+            \end{align*}
+            $$
           </div>
         </li>
       </ul>
@@ -297,7 +317,8 @@ def add(x,y):
         $t$ deutlich zu machen.
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         {\rm add}(t,x)&amp;= \begin{cases}
         x&amp;\textnormal{ if $t=0$} \\
         {\rm succ}({\rm add}(t-1,x))&amp;\textnormal{ if $t \geq 1$.}
@@ -306,7 +327,8 @@ def add(x,y):
         \pi_0(x)&amp;\textnormal{ if $t=0$} \\
         {\rm succ}(\pi_0({\rm add}(t-1,x), t-1, x))&amp;\textnormal{ if $t \geq 1$.}
         \end{cases} \\
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wir sehen also, dass dies eine Anwendung der primitiven

@@ -103,10 +103,12 @@
       merken, es gilt nämlich
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       s&amp;= x \oplus y \oplus \cin \\
       \cout&amp;= {\rm Maj} (x, y, \cin) \ .
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       Die Funktion Maj haben wir schon oben kennengelernt;
@@ -155,7 +157,7 @@
       <p>
         <b>Übungsaufgabe 2.3.1</b>
         Bauen Sie einen Schaltkreis oneBitAdder: &ensp;
-        $ \{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende Funktionalität:
+        $\{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende Funktionalität:
       </p>
       <figure>
         <img
@@ -216,10 +218,12 @@
       gilt also $c_0 = 0$ und
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       s_i&amp;= x_i \oplus y_i \oplus c_i \\
       c_{i+1}&amp;= M(x_i, y_i, c_i) \ ,
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       und das Ergebnis ist dann
@@ -257,10 +261,12 @@
       folgenden Definitionen:
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       g_i&amp;:= x_i \wedge y_i \tag{carry-generate} \\
       p_i&amp;:= x_i \vee y_i \tag{carry-propagate}
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       Jetzt können wir $c_{k+1}$ wie folgt berechnen: an
@@ -268,7 +274,7 @@
       Stelle $i \leq k$ gibt, wo $x_i = y_i=1$ gilt, das
       Carry also erzeugt wird (carry generate), und dann
       für alle $j = \{i+1,\dots,k\}$ das Carry zumindest
-      weitergereicht wird, also $ x_j \vee y_j = 1$ gilt
+      weitergereicht wird, also $x_j \vee y_j = 1$ gilt
       (carry propagate):
     </p>
     <div class="math-block main-column">
@@ -295,7 +301,7 @@
       Die Anzahl der Gates ist in jedem Fall
       <span class="nowrap">$\Theta(n^3)$,</span>
       genauer gesagt etwa
-      <span class="nowrap">$ {n \choose 3}$.</span>
+      <span class="nowrap">${n \choose 3}$.</span>
       Dies scheint recht verschwenderisch.
       Für $n=64$ wie bei zeitgenössischen Rechnern ergibt
       dies 41664. Das ist nicht unerträglich groß, aber auch
@@ -351,7 +357,7 @@
             <li>
               <p>
                 Falls
-                <span class="nowrap">$ (x_{i^*}, y_{i^*}) = (1,1) $,</span>
+                <span class="nowrap">$(x_{i^*}, y_{i^*}) = (1,1)$,</span>
                 dann sind
                 <span class="nowrap">$p_I = g_I = 1$.</span>
                 
@@ -360,7 +366,7 @@
             <li>
               <p>
                 Falls
-                <span class="nowrap">$ (x_{i^*}, y_{i^*}) = (0,0) $,</span>
+                <span class="nowrap">$(x_{i^*}, y_{i^*}) = (0,0)$,</span>
                 dann sind
                 <span class="nowrap">$p_I = g_I = 0$.</span>
                 
@@ -383,13 +389,15 @@
       
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       g_{[a,b]}&amp;:= g_b \vee (g_{b-1} \wedge p_b) \vee (g_{b-2} \wedge p_{b-1} \wedge p_b)
       \vee \dots \vee (g_a \wedge p_{a+1} \wedge \dots \wedge p_b) \ , \\
       p_{[a,b]}&amp;:= g_b \vee (g_{b-1} \wedge p_b) \vee (g_{b-2} \wedge p_{b-1} \wedge p_b)
       \vee \dots \vee (g_{a+1} \wedge p_{a+2} \wedge \dots \wedge p_b)
       \vee (p_a \wedge p_{a+1} \wedge \dots \wedge p_b) \ ,
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       und hier ein Bild zur Illustration:
@@ -433,15 +441,17 @@
       <p>
         <b>Beobachtung</b>
         <b>2.3.2</b>
-        Wenn wir $[a,b] = [a,i] \cup [i+1,b] $ schreiben für
+        Wenn wir $[a,b] = [a,i] \cup [i+1,b]$ schreiben für
         <span class="nowrap">$a \lt i \lt b$,</span>
         dann gilt
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         p_{[a,b]}&amp;= g_{[i+1,b]} \vee (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\
         g_{[a,b]}&amp;= g_{[i+1,b]} \vee (g_{[a,i]} \wedge p_{[i+1,b]}) \ . \\
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
     </div>
     <p class="main-column">
@@ -539,10 +549,12 @@
         Hilfe von Beobachtung 1.10:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         p_{[c*^{k+1}]}&amp;= g_{[c1*^k]} \vee (p_{c0*^k} \wedge p_{c1*^k})\\
         g_{[c*^{k+1}]}&amp;= g_{[c1*^k]} \vee (g_{c0*^k} \wedge p_{c1*^k}) \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wir basteln uns also am Besten ein
@@ -669,10 +681,12 @@
         Beispiel
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         [0,9]&amp;= [0,7] \cup [8,9] \ , \\
         [0,12]&amp;= [0,7] \cup [8,11] \cup [12] \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wie kann man das formalisieren?
@@ -680,7 +694,7 @@
         Wenn $k$ die Form $k = 2^d-1$ hat, dann
         ist $[0,k]$ bereits ein Binärintervall; dies passiert,
         wenn die Binärdarstellung von $k$ die Form 
-        $k = (1^b)_2 $ hat (wobei $b=0$ sein kann, in welchem
+        $k = (1^b)_2$ hat (wobei $b=0$ sein kann, in welchem
         Fall $k=0$ ist).
         <b>2. Fall.</b>
         Wenn $k$ nicht die Form $k = 2^d-1$ hat,
@@ -693,15 +707,17 @@
         $a \geq 1$ und
         <span class="nowrap">$b \geq 0$.</span>
         Definieren wir
-        <span class="nowrap">$l := (\alpha 0 1^a 1^b)_2 $.</span>
+        <span class="nowrap">$l := (\alpha 0 1^a 1^b)_2$.</span>
         Dann gilt
         <span class="nowrap">$l+1 = (\alpha 1 0^a 0^b)_2$.</span>
         Es gilt also
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         [l+1, k] = [(\alpha 1 0^a 0^b)_2, (\alpha 1 0^a 1^b)_2] = [\alpha 1 0^a *^b] \ ,
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         es handelt sich bei $[l+1,k]$ also um ein Binärintervall.
@@ -727,7 +743,7 @@
         <span class="nowrap">$pg_{[0,l]}$,</span>
         muss rekursiv
         berechnet werden. Beachten Sie, dass 
-        $ l = (\alpha 0 1^a 1^b)_2) $ gilt, die Anzahl der
+        $l = (\alpha 0 1^a 1^b)_2)$ gilt, die Anzahl der
         schließenden 1en in der Binärdarstellung also von 
         $b$ auf $a+b \geq b+1$ gewachsen ist. Hier ist ein
         Beispiel für
@@ -735,10 +751,12 @@
         in Dezimal- und Binärdarstellung:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         [0,28]&amp;= [0,15] \cup [16,23] \cup [24,27] \cup [28] \\
         [00000, 11100]&amp;= [00000,01111] \cup [10000,10111] \cup [11000, 11011] \cup [11100] \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Beachten wir die Folge
@@ -748,7 +766,7 @@
         gesehen, dass die Anzahl der schließenden 1en von Element
         zu Element in dieser Folge strikt zunimmt (im Allgemeinen
         folgt auf Element $k=(\alpha 1 0^a 1^b)_2)$ das Element
-        <span class="nowrap">$l := (\alpha 0 1^a 1^b)_2 $.</span>
+        <span class="nowrap">$l := (\alpha 0 1^a 1^b)_2$.</span>
         Die Anzahl schließender
         1en ist mindestens 0 (trivialierweise) und höchstens
         <span class="nowrap">$d$;</span>
@@ -756,7 +774,7 @@
         $d-1$ ist: wäre sie genau
         <span class="nowrap">$d$,</span>
         dann hätten wir es
-        mit der Zahl $ (1^d)_2 = 2^d-1 \geq n-1 $ zu tun;
+        mit der Zahl $(1^d)_2 = 2^d-1 \geq n-1$ zu tun;
         da aber die Folge der Zahlen
         <i>abnimmt</i>, müsste bereits 
         $k = 2^d-1$ gelten, und wir wären in Fall 1, bzw.
@@ -769,7 +787,7 @@
         <span class="nowrap">$pg$-Gates.</span>
         Das
         Maximum wird erreicht, wenn
-        <span class="nowrap">$k = (1...10)_2 $:</span>
+        <span class="nowrap">$k = (1...10)_2$:</span>
         
       </p>
       <figure>
@@ -798,11 +816,11 @@
         <span class="nowrap">$pg$-Gates</span>
         braucht.
         Es scheint also, als bräuchten wir für alle $n$ Werte
-        von $k$ insgesamt $(d-1)n = \Theta(n \log n) $ viele.
+        von $k$ insgesamt $(d-1)n = \Theta(n \log n)$ viele.
         Wir könnten vielleicht noch eine genauere Schranke
         beweisen, weil nicht jedes $k$ den Wert $d-1$ erreicht,
         allerdings würde auch eine genauere Rechnung
-        <span class="nowrap">$\Theta(n \log n) $)</span>
+        <span class="nowrap">$\Theta(n \log n)$)</span>
         ergeben; das ist nicht schlecht,
         allerdings asymptotisch deutlich schlechter als der
         Ripple-Through-Addierer, und eben auch nicht das, was
@@ -868,10 +886,10 @@
     <p class="main-column">
       Wir kombinieren wir nun die beiden Lemmas und erhalten
       einen Schaltkreis der Tiefe 
-      $ 4 \ceil { \log_2 n } - 1$ und Größe
+      $4 \ceil { \log_2 n } - 1$ und Größe
       <span class="nowrap">$8n - 4$,</span>
       mit 
-      $x_0, y_0, \dots, x_{n-1}, y_{n-1} $ als Inputvariablen
+      $x_0, y_0, \dots, x_{n-1}, y_{n-1}$ als Inputvariablen
       und Carrys $c_1, \dots, c_n$ als Output-Variablen.
       Jetzt können wir schließlich
     </p>
@@ -906,14 +924,16 @@
         "less-than":
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         LT : \{0,1\}^{n} \times \{0,1\}^n \rightarrow \{0,1\} \\
         LT(\mathbf{x}, \mathbf{y}) =
         \begin{cases}
         1&amp;\textnormal{ wenn $(\mathbf{x})_2 \lt (\mathbf{y})_2$, } \\
         0&amp;\textnormal{ sonst.}
         \end{cases}
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         der also $\mathbf{x}, \mathbf{y}$ als

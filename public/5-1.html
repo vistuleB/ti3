@@ -57,8 +57,10 @@
         vier Formen hat:
       </p>
       <div class="math-block">
-        $$\begin{align*} X&amp;\rightarrow aY \\ X&amp;\rightarrow a \\ X&amp;
-        \rightarrow Y \\ X&amp;\rightarrow \epsilon \end{align*}$$
+        $$
+        \begin{align*} X&amp;\rightarrow aY \\ X&amp;\rightarrow a \\ X&amp;
+        \rightarrow Y \\ X&amp;\rightarrow \epsilon \end{align*}
+        $$
       </div>
       <p>
         Eine Sprache $L \subseteq \Sigma^*$ heißt
@@ -79,8 +81,10 @@
         $\{E,O\}$ und den Regeln
       </p>
       <div class="math-block">
-        $$\begin{align*} E&amp;
-        \rightarrow 1O \ | \ \epsilon \\ O&amp;\rightarrow 1E \end{align*}$$
+        $$
+        \begin{align*} E&amp;
+        \rightarrow 1O \ | \ \epsilon \\ O&amp;\rightarrow 1E \end{align*}
+        $$
       </div>
       <p>
         erzeugt die Sprache
@@ -100,9 +104,11 @@
         Abschnitt kennengelernt. Sie ist nicht regulär:
       </p>
       <div class="math-block">
-        $$\begin{align*} S&amp;\rightarrow A
+        $$
+        \begin{align*} S&amp;\rightarrow A
         B \\ A&amp;\rightarrow \epsilon \ | \ a A \\ B&amp;\rightarrow \epsilon \
-        | \ b B \ . \\ \end{align*}$$
+        | \ b B \ . \\ \end{align*}
+        $$
       </div>
       <p>
         Sie ist nicht regulär, weil die erste Regel 
@@ -112,8 +118,10 @@
         Sprache erzeugt:
       </p>
       <div class="math-block">
-        $$\begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&amp;
-        \rightarrow \epsilon \ | \ b T \ . \end{align*}$$
+        $$
+        \begin{align*} S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&amp;
+        \rightarrow \epsilon \ | \ b T \ . \end{align*}
+        $$
       </div>
       <p>
         Hier ist beispielsweise eine Ableitung des Wortes
@@ -121,9 +129,11 @@
         
       </p>
       <div class="math-block">
-        $$\begin{align*} S
+        $$
+        \begin{align*} S
         \Rightarrow aS \Rightarrow aaS \Rightarrow aabT \Rightarrow aabbT
-        \Rightarrow aabbbT \Rightarrow aabbb \end{align*}$$
+        \Rightarrow aabbbT \Rightarrow aabbb \end{align*}
+        $$
       </div>
       <p>
         Wir sehen, dass wir eine Folge von
@@ -169,8 +179,10 @@
         
       </p>
       <div class="math-block">
-        $$\begin{align*}
-        S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0 \end{align*}$$
+        $$
+        \begin{align*}
+        S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0 \end{align*}
+        $$
       </div>
       <p>
         Leiten Sie das Wort $11010$ ab. Beschreiben Sie in
@@ -188,10 +200,12 @@
         
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\ B&amp;\rightarrow 0 C \ | 1 C \\
         C&amp;\rightarrow 0 D \ | 1 D \\ D&amp;\rightarrow 0 E \ | 1 E \\ E&amp;
-        \rightarrow \epsilon \ \end{align*}$$
+        \rightarrow \epsilon \ \end{align*}
+        $$
       </div>
       <p>
         mit Startsymbol
@@ -208,8 +222,10 @@
         Sprache
       </p>
       <div class="math-block">
-        $$ L :=
-        \{1^n \ | \ \textnormal{ $n$ ist durch 3 teilbar} \} \ . $$
+        $$
+        L :=
+        \{1^n \ | \ \textnormal{ $n$ ist durch 3 teilbar} \} \ .
+        $$
       </div>
       <p>
         Schreiben Sie eine reguläre Grammatik für
@@ -223,8 +239,10 @@
         Betrachten Sie die Sprache
       </p>
       <div class="math-block">
-        $$\begin{align*} L := \{x \in \{a,b\}^* \ | \
-        \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \ \end{align*}$$
+        $$
+        \begin{align*} L := \{x \in \{a,b\}^* \ | \
+        \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \ \end{align*}
+        $$
       </div>
       <p>
         und entwerfen Sie eine reguläre Grammatik für
@@ -240,7 +258,9 @@
         Form
       </p>
       <div class="math-block">
-        $$ x_1 . x_2 . x_3 . \cdots . x_n $$
+        $$
+        x_1 . x_2 . x_3 . \cdots . x_n
+        $$
       </div>
       <p>
         wobei $n \geq 2$ und jedes
@@ -285,7 +305,9 @@
       besonders einfache Lösung:
     </p>
     <div class="math-block main-column">
-      $$\begin{align*} S \rightarrow \epsilon \ | \ 111S \end{align*}$$
+      $$
+      \begin{align*} S \rightarrow \epsilon \ | \ 111S \end{align*}
+      $$
     </div>
     <p class="main-column">
       Sehen Sie, Sie können hier Einsen nur in Dreierblöcken
@@ -304,8 +326,10 @@
         hat:
       </p>
       <div class="math-block">
-        $$\begin{align*} X&amp;\rightarrow \alpha Y \\ X&amp;\rightarrow
-        \alpha \\ \end{align*}$$
+        $$
+        \begin{align*} X&amp;\rightarrow \alpha Y \\ X&amp;\rightarrow
+        \alpha \\ \end{align*}
+        $$
       </div>
       <p>
         hat, wobei $X \in N$ und $\alpha \in \Sigma^*$ ist.
@@ -335,16 +359,20 @@
         Wir ersetzen einfach jede Regel der Form
       </p>
       <div class="math-block">
-        $$ X \rightarrow a_1 a_2
-        \dots a_k Y $$
+        $$
+        X \rightarrow a_1 a_2
+        \dots a_k Y
+        $$
       </div>
       <p>
         durch $k$ reguläre Regeln:
       </p>
       <div class="math-block">
-        $$\begin{align*} X&amp;
+        $$
+        \begin{align*} X&amp;
         \rightarrow a_1 X_2 \\ X_2&amp;\rightarrow a_2 X_3 \\ \dots \\ X_k&amp;
-        \rightarrow a_k Y \end{align*}$$
+        \rightarrow a_k Y \end{align*}
+        $$
       </div>
       <p>
         wobei wir darauf achten, dass $X_2, \dots, X_k$ "frische"
@@ -380,9 +408,11 @@
       Formen:
     </p>
     <div class="math-block main-column">
-      $$\begin{align*} 1.
+      $$
+      \begin{align*} 1.
       \quad X&amp;\rightarrow aY \\ 2. \quad X&amp;\rightarrow a \\ 3. \quad X&amp;
-      \rightarrow Y \\ 4. \quad X&amp;\rightarrow \epsilon \end{align*}$$
+      \rightarrow Y \\ 4. \quad X&amp;\rightarrow \epsilon \end{align*}
+      $$
     </div>
     <p class="main-column">
       Wir zeigen nun, dass man auf Produktionen der Form
@@ -421,10 +451,12 @@
         Wir definieren nun
       </p>
       <div class="math-block">
-        $$ P' := \{
+        $$
+        P' := \{
         X \rightarrow \alpha \ | \ \alpha \textnormal{ ist kein einzelnes
         Nichtterminal, und es gibt $Y \in N$ mit $X \Rightarrow^* Y$ und
-        $Y \rightarrow \alpha$}) \} $$
+        $Y \rightarrow \alpha$}) \}
+        $$
       </div>
       <p>
         als neue Menge von Produktionen, die keine Produktionen
@@ -448,10 +480,12 @@
       überprüfen, indem wir die Mengen
     </p>
     <div class="math-block main-column">
-      $$\begin{align*} N_k(X) := \{ Y \in N \ | \
+      $$
+      \begin{align*} N_k(X) := \{ Y \in N \ | \
       \textnormal{ es gibt } X_1,\dots, X_{l-1} \textnormal{ mit } X
       \rightarrow X_1 \rightarrow X_2 \cdots X_{l-1} \rightarrow Y
-      \textnormal{ und } l \leq k \} \end{align*}$$
+      \textnormal{ und } l \leq k \} \end{align*}
+      $$
     </div>
     <p class="main-column">
       definieren, also die Menge derjenigen Nichtterminalsymbole,
@@ -459,9 +493,11 @@
       lassen. Wir berechnen die $N_k$ iterativ wie folgt:
     </p>
     <div class="math-block main-column">
-      $$\begin{align*} N_0 (X)&amp;:= \{X\} \ , \\ N_{k+1}
+      $$
+      \begin{align*} N_0 (X)&amp;:= \{X\} \ , \\ N_{k+1}
       (X)&amp;:= N_k \cup \{Z \in N \ | \ \textnormal{ es gibt } Y \in
-      N_k(X) \textnormal{ mit } Y \rightarrow Z \} \ . \end{align*}$$
+      N_k(X) \textnormal{ mit } Y \rightarrow Z \} \ . \end{align*}
+      $$
     </div>
     <p class="main-column">
       Die Menge $N_{k+1}(X)$ lässt sich also mit zwei geschachtelten
@@ -491,8 +527,10 @@
       $n = |N|$ Schritten $N_n(X) = N_{n+1}(X)$ und somit
     </p>
     <div class="math-block main-column">
-      $$ N_n(X) = \{Y
-      \in N \ | \ X \Rightarrow^* Y\} \ . $$
+      $$
+      N_n(X) = \{Y
+      \in N \ | \ X \Rightarrow^* Y\} \ .
+      $$
     </div>
     <p class="main-column">
       Das geht auch aus einer anderen Überlegung hervor:
@@ -518,9 +556,11 @@
         $G$ mit Startsymbol $S$ und den Produktionen
       </p>
       <div class="math-block">
-        $$\begin{align*} S&amp;\rightarrow A \ | \ B \\ A&amp;
+        $$
+        \begin{align*} S&amp;\rightarrow A \ | \ B \\ A&amp;
         \rightarrow \epsilon \ | \ b A \ | \ c A \\ B&amp;\rightarrow \epsilon
-         | \ a B \ | \ c B \end{align*}$$
+         | \ a B \ | \ c B \end{align*}
+        $$
       </div>
       <p>
         erzeugt die Sprache aller Wörter, die kein $a$ oder
@@ -550,10 +590,12 @@
         $3n-1$ Produktionen
       </p>
       <div class="math-block">
-        $$\begin{align*} S&amp;\rightarrow a_1 A_1 | a_2 A_2 | a_3 A_3 | \dots |
+        $$
+        \begin{align*} S&amp;\rightarrow a_1 A_1 | a_2 A_2 | a_3 A_3 | \dots |
         a_n A_n \\ A_1&amp;\rightarrow a_1 | A_2 \\ \dots \\ A_i&amp;\rightarrow
         a_{i} | A_{i+1}\\ \dots \\ A_{n-1}&amp;\rightarrow a_{n-1} | A_n \\
-        A_n&amp;\rightarrow a_n \end{align*}$$
+        A_n&amp;\rightarrow a_n \end{align*}
+        $$
       </div>
       <p>
         Schreiben Sie eine äquivalente Grammatik ohne Produktionen
@@ -629,16 +671,20 @@
         Grammatik, in dem wir die zwei neuen Regeln
       </p>
       <div class="math-block">
-        $$\begin{align*} S&amp;\rightarrow S_1 \\ S&amp;\rightarrow S_2
-        \end{align*}$$
+        $$
+        \begin{align*} S&amp;\rightarrow S_1 \\ S&amp;\rightarrow S_2
+        \end{align*}
+        $$
       </div>
       <p>
         hinzufügen. Formal also
       </p>
       <div class="math-block">
-        $$ G := (\Sigma_1 \cup
+        $$
+        G := (\Sigma_1 \cup
         \Sigma_2, N_1 \cup N_2 \cup \{S\}, P_1 \cup P_2 \cup \{S
-        \rightarrow S_1, S \rightarrow S_2\}, S) \ . $$
+        \rightarrow S_1, S \rightarrow S_2\}, S) \ .
+        $$
       </div>
       <p>
         In einer Ableitung aus $G$ müssen wir uns also im
@@ -663,8 +709,10 @@
         $L_1 \circ L_2$ ist definiert als
       </p>
       <div class="math-block">
-        $$\begin{align*} L_1 \circ L_2 := \{ \alpha \beta \ | \ \alpha \in
-        L_1, \beta \in L_2\} \ . \end{align*}$$
+        $$
+        \begin{align*} L_1 \circ L_2 := \{ \alpha \beta \ | \ \alpha \in
+        L_1, \beta \in L_2\} \ . \end{align*}
+        $$
       </div>
     </div>
     <div class="well statement out">
@@ -695,7 +743,9 @@
         $S \not \in N_1 \cup n_2$ ein und fügen die Regel
       </p>
       <div class="math-block">
-        $$ S \rightarrow S_1 S_2 $$
+        $$
+        S \rightarrow S_1 S_2
+        $$
       </div>
       <p>
         hinzu. Es sollte nun klar sein, dass wir aus $S$
@@ -713,11 +763,13 @@
         die Ableitung endet, wir das Zeichen $S_2$ anhängen:
       </p>
       <div class="math-block">
-        $$\begin{align*} \begin{array}{l|l} \textnormal{Regel in $G_1$}&amp;
+        $$
+        \begin{align*} \begin{array}{l|l} \textnormal{Regel in $G_1$}&amp;
         \textnormal{wird zu} \\ \hline X \rightarrow aY&amp;X \rightarrow aY
          X \rightarrow a&amp;X \rightarrow aS_2 \\ X \rightarrow Y&amp;X
         \rightarrow Y \\ X \rightarrow \epsilon&amp;Y \rightarrow S_2 \ .
-        \end{array} \end{align*}$$
+        \end{array} \end{align*}
+        $$
       </div>
       <p>
         Die Menge an Produktionen der Grammatik $G$ besteht
@@ -749,8 +801,10 @@
         die Menge
       </p>
       <div class="math-block">
-        $$\begin{align*} L^n := \{ \alpha_1 \alpha_2 \dots \alpha_n \ | \
-        \alpha_i \in L \ \forall 1 \leq i \leq n \} \ . \end{align*}$$
+        $$
+        \begin{align*} L^n := \{ \alpha_1 \alpha_2 \dots \alpha_n \ | \
+        \alpha_i \in L \ \forall 1 \leq i \leq n \} \ . \end{align*}
+        $$
       </div>
       <p>
         Insbesondere ist $L^1 = L$ und
@@ -758,8 +812,10 @@
         Die Menge $L^*$ ist nun
       </p>
       <div class="math-block">
-        $$\begin{align*} L^* := L^0 \cup L^1 \cup L^2 \cup L^3
-        \cup \dots \end{align*}$$
+        $$
+        \begin{align*} L^* := L^0 \cup L^1 \cup L^2 \cup L^3
+        \cup \dots \end{align*}
+        $$
       </div>
       <p>
         also die Sprache der Wörter der Form
@@ -786,8 +842,10 @@
         und
       </p>
       <div class="math-block">
-        $$\begin{align*} S'
-        &amp;\rightarrow \epsilon \\ S'&amp;\rightarrow SS' \end{align*}$$
+        $$
+        \begin{align*} S'
+        &amp;\rightarrow \epsilon \\ S'&amp;\rightarrow SS' \end{align*}
+        $$
       </div>
       <p>
         als zwei neue Regeln einführen. Natürlich geht das
@@ -798,11 +856,13 @@
         ab:
       </p>
       <div class="math-block">
-        $$\begin{align*} \begin{array}{l|l}
+        $$
+        \begin{align*} \begin{array}{l|l}
         \textnormal{Regel in $G$}&amp;\textnormal{wird zu} \\ \hline X
         \rightarrow aY&amp;X \rightarrow aY \\ X \rightarrow a&amp;X \rightarrow
         aS \\ X \rightarrow Y&amp;X \rightarrow Y \\ X \rightarrow \epsilon&amp;
-        Y \rightarrow S \ . \end{array} \end{align*}$$
+        Y \rightarrow S \ . \end{array} \end{align*}
+        $$
       </div>
       <p>
         Um überhaupt eine Ableitung beenden zu können, fügen
@@ -884,7 +944,9 @@
         durch $c$ separiert sind, also formal
       </p>
       <div class="math-block">
-        $$\begin{align*} L' := L \circ ( \{c\} \circ L)^* \end{align*}$$
+        $$
+        \begin{align*} L' := L \circ ( \{c\} \circ L)^* \end{align*}
+        $$
       </div>
       <p>
         ist wiederum regulär.

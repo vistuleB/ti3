@@ -411,7 +411,7 @@ find tree key =
       landen wir im Millionenbereich. In den theoretischen
       Beispielen, die in diesem Kurs folgen werden, ist das
       Alphabet fast immer viel kleiner: typische Alphabete
-      zum Beispiel sind $ \{0,1\}$ , $\{a,b,c,d\}$ oder
+      zum Beispiel sind $\{0,1\}$ , $\{a,b,c,d\}$ oder
       auch
       <span class="nowrap">$\{1\}$,</span>
       ein Alphabet mit nur einem Zeichen.
@@ -616,16 +616,18 @@ find tree key =
         $G = (\{a,b\}, \{S, A, B\}, P, S)$ mit den Produktionsregeln
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         S&amp;\rightarrow A B \\
         A&amp;\rightarrow \epsilon \ | \ a A \\
         B&amp;\rightarrow \epsilon \ | \ b B \ . \\
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Formal sind die Produktionsregeln $P$ eine Teilmenge
         von
-        <span class="nowrap">$ N \times (\Sigma \cup \N)^*$,</span>
+        <span class="nowrap">$N \times (\Sigma \cup \N)^*$,</span>
         also
       </p>
       <div class="math-block">
@@ -642,10 +644,12 @@ find tree key =
         basierend auf der Grammatik:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         S \Rightarrow AB \Rightarrow aAB \Rightarrow aAbB \Rightarrow aAbbB
         \Rightarrow aAbb \Rightarrow abb \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         In jedem Schritt wählen wir ein Nichtterminal aus,
@@ -691,7 +695,7 @@ find tree key =
         $\beta = \beta_1 \gamma \beta_2$ mit Wortformen 
         $\alpha_1, \alpha_2, \beta_1, \gamma, \beta_2$ und
         einem Nichtterminal $X$ schreiben können, so dass 
-        $X \rightarrow \gamma $ eine Produktionsregel in 
+        $X \rightarrow \gamma$ eine Produktionsregel in 
         $P$ ist.
         Wenn wir $\alpha = \beta$ "vorlesen", dann sagen wir
         <i>$\beta$ kann aus $\alpha$ in einem Schritt abgeleitet
@@ -730,22 +734,26 @@ find tree key =
       für unsere einfache Grammatik mit den Produktionsregeln
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       S&amp;\rightarrow A B \\
       A&amp;\rightarrow \epsilon \ | \ a A \\
       B&amp;\rightarrow \epsilon \ | \ b B \ . \\
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       haben wir beispielsweise
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       A&amp;\rightarrow aA \\
       aA&amp;\rightarrow aaA \\
       aaA&amp;\rightarrow aaaA \\
       \dots
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       und sehen, dass die Menge aller Paare 
@@ -757,15 +765,17 @@ find tree key =
         <b>5.4</b>
         <b>(Die von einer Grammatik erzeugte Sprache).</b>
         Sei 
-        $G = (\Sigma, N, P, S) $ eine kontextfreie Grammatik.
+        $G = (\Sigma, N, P, S)$ eine kontextfreie Grammatik.
         Die von $G$ erzeugte Sprache $L(G)$ ist die Menge
         aller Wörter, die vom Startsymbol $S$ abgeleitet werden
         können, also
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         L(G) := \{x \in \Sigma^* \ | \ S \Rightarrow^* x\} \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wenn es zu einer Sprache $L \subseteq \Sigma^*$ eine
@@ -809,11 +819,13 @@ find tree key =
         $G_2 = (\{a,b\}, \{S\}, P, S)$ mit den Produktionsregeln
       </p>
       <div class="math-block">
-        $$\begin{align}
+        $$
+        \begin{align}
         S&amp;\rightarrow aSbS \\
         S&amp;\rightarrow bSaS \\
         S&amp;\rightarrow \epsilon \ .
-        \end{align}$$
+        \end{align}
+        $$
       </div>
       <p>
         Hier sind mögliche Ableitungen des Wortes
@@ -823,7 +835,8 @@ find tree key =
         haben:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         S&amp;\stackrel{(1)}{\Rightarrow} aSbS
         \stackrel{(1)}{\Rightarrow} aSbaSbS
         \stackrel{(3)}{\Rightarrow} aSbaSb
@@ -834,7 +847,8 @@ find tree key =
         \stackrel{(1)}{\Rightarrow} abaSbS
         \stackrel{(3)}{\Rightarrow} ababS
         \stackrel{(3)}{\Rightarrow} abab \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wir sehen also: das gleiche Wort kann mehrere Ableitungen
@@ -864,13 +878,15 @@ find tree key =
         
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         S&amp;\stackrel{(1)}{\Rightarrow} aSbS
         \stackrel{(2)}{\Rightarrow} abSaSbS
         \stackrel{(3)}{\Rightarrow} abaSbS
         \stackrel{(3)}{\Rightarrow} ababS
         \stackrel{(3)}{\Rightarrow} abab
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Sehen Sie, dass diese Ableitung

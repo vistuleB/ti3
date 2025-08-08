@@ -197,9 +197,11 @@
         einer Zustandsübergangsfunktion
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         \delta : Q \times \Sigma \rightarrow Q \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Formal gesehen ist also ein Automat ein Quintupel
@@ -254,12 +256,14 @@
         $M = (\Sigma, Q, \qstart, F, \delta)$ dar mit
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         \Sigma&amp;= \{x,y,z\} \\
         Q&amp;= \{S, X, Y\} \\
         \qstart&amp;= S \\
         F&amp;= \{X\} \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Um noch die Zustandsübergangsfunktion $\delta$ darzustellen,
@@ -271,7 +275,8 @@
         getan haben. $\delta$ ist also
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         \begin{array}{cc|c}
         q&amp;\sigma&amp;\delta(q,x) \\ \hline
         S&amp;x&amp;X \\
@@ -284,7 +289,8 @@
         Y&amp;y&amp;Y \\
         Y&amp;z&amp;Y
         \end{array}
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Da die Funktion $\delta$ bei jedem endlichen Automaten
@@ -292,14 +298,16 @@
         übersichtlicher als zweidimensionale Tabelle darstellen:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         \begin{array}{c|c|c|c}
         &amp;x&amp;y&amp;z \\ \hline
         S&amp;X&amp;S&amp;S \\ \hline
         X&amp;X&amp;Y&amp;S \\ \hline
         Y&amp;Y&amp;Y&amp;Y
         \end{array}
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Diese zwei Tabellen dienen in diesem Beispiel aber
@@ -337,10 +345,12 @@
         wie folgt:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         \hat{\delta} (q, \epsilon)&amp;= q \\
         \hat{\delta} (q, x\alpha)&amp;= \hat{\delta} (\delta(x), \alpha) \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         $\hat{\delta} (q, \alpha) = q'$ heißt also, dass
@@ -363,9 +373,11 @@
         Automat. Die von $M$ akzeptierte Sprache ist
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         L(M) := \{ \alpha \in \Sigma \ | \ \hat{\delta}(\qstart, \alpha) \in F \} \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
     </div>
     <div class="well statement out">
@@ -444,19 +456,23 @@
       ergeben:
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       S&amp;\rightarrow y S \ | \ zS \ | \ x X \\
       X&amp;\rightarrow x X \ | \ z S \ | \ y Y \\
       Y&amp;\rightarrow x Y \ | \ y Y \ | \ z Y \\
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       und, weil $X$ ein akzeptierender Zustand ist,
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       X&amp;\rightarrow \epsilon
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       Dies geht ganz allgemein:
@@ -487,10 +503,12 @@
         wird, eine Ableitungsregel ein:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         q_1 \stackrel{x}{\rightarrow} q_2&amp;\quad \textnormal{ wird zur Produktion } \quad
         q_1 \rightarrow xq_2
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Hiermit erhalten wir eine "Zwischengrammatik"
@@ -500,9 +518,11 @@
         Produktion
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         q \rightarrow \epsilon
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         einführen. Wir zeigen nun per Induktion:
@@ -635,9 +655,11 @@
           gewesen sein. Die Ableitung hat also die Form
         </p>
         <div class="math-block">
-          $$\begin{align*}
+          $$
+          \begin{align*}
           q \Rightarrow x q_1 \Rightarrow^* x \beta q' \ ,
-          \end{align*}$$
+          \end{align*}
+          $$
         </div>
         <p>
           wir können also aus $q_1$ die Wortform $\beta q'$
@@ -653,7 +675,7 @@
           $$
         </div>
         <p>
-          gilt. Die Produktionsregel $q \rightarrow x q_1 $
+          gilt. Die Produktionsregel $q \rightarrow x q_1$
           kann nur in $G'$ eingeführt worden sein, weil
           <span class="nowrap">$\delta(q,x) = q_1$,</span>
           also
@@ -798,10 +820,12 @@
         >Kapitel 5.1.3</a>
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\
         T&amp;\rightarrow \epsilon \ | \ b T \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Versuchen wir, daraus einen endlichen Automaten zu
@@ -867,13 +891,15 @@
         >Kapitel 5.1.2</a>:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A&amp;\rightarrow 0 A \ | 1 A \ | 1 B \\
         B&amp;\rightarrow 0 C \ | 1 C \\
         C&amp;\rightarrow 0 D \ | 1 D \\
         D&amp;\rightarrow 0 E \ | 1 E \\
         E&amp;\rightarrow \epsilon \
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wobei wir aus dem vorherigen Beispiel lernen und

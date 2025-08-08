@@ -76,34 +76,40 @@
         <b>(Péter-Ackermann-Funktion).</b>
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A(m,n)&amp;:= \begin{cases}
         n+1&amp;\textnormal{ if $m=0$,} \\
         A(m-1,1)&amp;\textnormal{ if $m \geq 1, n=0$} \\
         A(m-1, A(m,n-1))&amp;\textnormal{ if $m,n \geq 1$} \ .
         \end{cases}
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Manchmal sehen Sie in der Literatur auch die äquivalente,
         vielleicht lesbarere Definition:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A(0,n)&amp;:= n+1 \\
         A(m+1, 0)&amp;:= A(m,1) \\
         A(m+1, n+1)&amp;:= A(m, A(m+1,n))
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Für festes $m\in \N$ schreiben wir auch $A_m$ für
         die ein-parametrige Funktion
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A_m :&amp;\N \rightarrow \N \\
         n&amp;\mapsto A(m,n) \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
     </div>
     <p class="main-column">
@@ -113,7 +119,8 @@
       wir
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       A_1 (n)&amp;= A_0 ( A_1 (n-1)) =
       A_0 (A_0(A_1(n-2))) = \dots =
       \underbrace{A_0 (A_0 (...(A_0}_{i \textnormal{ mal}}(A_1(n-i)))...)) \\
@@ -121,16 +128,19 @@
       \underbrace{A_0 (A_0 (...(A_0}_{n \textnormal{ mal}}(A_1(0)))...)) \\
       &amp;= \underbrace{A_0 (A_0 (...(A_0}_{n+1 \textnormal{ mal}}(1))...)) \\
       &amp;= n+2 \ .
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       Soweit schaut die Funktion nicht besonders beindruckend
       aus. $A_2$ bekommen iwr nach dem gleichen Schema:
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       A_2 (n)&amp;= \underbrace{A_1 (A_1 (...(A_1}_{n+1 \textnormal{ mal}}(1))...)) \ , \\
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       wir fangen also mit $1$ an und zählen $n+1$ mal eine
@@ -139,9 +149,11 @@
       also
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       A_2 (n)&amp;= 2n + 3 \ .
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       $A_3$ wird etwas unangenehmer, weil wir keine gute
@@ -152,13 +164,15 @@
       wir also
     </p>
     <div class="math-block main-column">
-      $$\begin{align*}
+      $$
+      \begin{align*}
       1 \stackrel{A_2}{\rightarrow} 5
       \stackrel{A_2}{\rightarrow} 13
       \stackrel{A_2}{\rightarrow} 29
       \stackrel{A_2}{\rightarrow} 61
       \stackrel{A_2}{\rightarrow} 125
-      \end{align*}$$
+      \end{align*}
+      $$
     </div>
     <p class="main-column">
       Das ist schon genug, um eine Vermutung zu formulieren: 
@@ -189,9 +203,11 @@
         Wir sehen, dass
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A_m(t) = A_{m-1} (A(m,t-1)) \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Ich schreibe nun $t$ anstatt $n$ als Parameter, um
@@ -200,12 +216,14 @@
         ist. Wir können $A_m(t)$ also schreiben als
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A_m(t)&amp;= \begin{cases}
         A_{m-1} (1)&amp;\textnormal{ if $t=0$} \\
         A_{m-1} (A_m(t-1))&amp;\textnormal{ if $t \geq 1$.}
         \end{cases}
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wir können also $h = \comp (A_{m-1}, \pi^3_1)$ wählen.
@@ -230,9 +248,11 @@
         Variante einfacher, und somit
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A_m&amp;= \primrec(\comp (A_{m-1}, {\rm one}), \comp (A_{m-1}, \pi^3_1)) \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wir sehen also: jedes
@@ -317,7 +337,7 @@
       <p>
         <b>Beweis.</b>
         Wir brauchen eine robuste Definition, was es heißt,
-        dass eine Funktion $f: \N \rightarrow \N $ schneller
+        dass eine Funktion $f: \N \rightarrow \N$ schneller
         wächst als
         <span class="nowrap">$g: \N^k \rightarrow \N$.</span>
         
@@ -334,9 +354,11 @@
           wenn
         </p>
         <div class="math-block">
-          $$\begin{align*}
+          $$
+          \begin{align*}
           f (\max(x_1,\dots,x_k) \gt g(x_1, \dots, x_k) \ .
-          \end{align*}$$
+          \end{align*}
+          $$
         </div>
         <p>
           für alle $x_1,\dots,x_k \in \N$ gilt. Wir schreiben
@@ -386,17 +408,21 @@
         würde:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A_r (\max(m,n)) \gt A(m,n)
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         für alle Werte $m,n \in \N$ und somit insbesondere
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A_r (r) \gt A(r,r) \ ,
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         was offensichtlich ein Widerspruch ist, da beide
@@ -423,11 +449,13 @@
         und somit ist
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         \zero(\vec{x})&amp;= 0 \lt 1 \lt A_1(x) \\
         \succ(x)&amp;= x+1 \lt x+2 = A_1(x) \\
         \pi^n_k (\vec{x})&amp;= x_k \leq x \lt x + 2 = A_1(x) \ ,
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         wobei wir die Schreibweise 
@@ -452,12 +480,14 @@
         $x := \max(x_1,\dots,x_n)$ und rechnen:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         f(\vec{x})&amp;= g(h_1(\vec{x}), \dots, h_k(\vec{x})) \\
         &amp;\lt A_r (\max (h_1(\vec{x}), \dots, h_k(\vec{x}))) \tag{weil \(A_q \gt g\)} \\
         &amp;\leq A_r ( \max (A_{s_1}(x), A_{s_2}(x), \dots, A_{s_k}(x))) \tag{weil \(A_r\) monoton und
         \(A_{s_i} \gt h_i\)}
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Wir setzen nun
@@ -466,19 +496,23 @@
         ist der obige Wert höchstens:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         \dots&amp;\leq A_q (A_q(x)) \\
         &amp;\leq A_{q} (A_{q+1} (x)) = A_{q+1} (x+1) \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Schlussendlich behaupte ich, dass 
         $A_{q+1}(x+1) \leq A_{q+2}(x)$ gilt:
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A_{q+2}(x)&amp;= A_{q+1} (A_{q+2}(x-1)) \geq A_{q+1} (A_2 (x-1)) = A_{q+1} (x+1) \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Also: $A_{q+2}$ majorisiert
@@ -488,13 +522,15 @@
         also
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         f(t, \vec{x})&amp;=
         \begin{cases}
         g(\vec{x})&amp;\textnormal{ if $t=0$} \\
         h(f(t-1,\vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$}
         \end{cases} \ ,
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         wobei $g, h$ bereits mit weniger Kombinatoren konstruierte
@@ -522,15 +558,18 @@
           dann gilt
         </p>
         <div class="math-block">
-          $$\begin{align*}
+          $$
+          \begin{align*}
           f(0,\vec{x})&amp;= g(\vec{x}) \lt A_q (x) \leq A_{q+1} (x) \ .
-          \end{align*}$$
+          \end{align*}
+          $$
         </div>
         <p>
           Wenn $t \geq 1$ ist, dann gilt
         </p>
         <div class="math-block">
-          $$\begin{align*}
+          $$
+          \begin{align*}
           \hspace{-3cm}
           f(t, \vec{x})&amp;= h(f(t-1,\vec{x}), t-1, \vec{x}) \\
           &amp;\lt A_{q} (\max(f(t-1, \vec{x}), t-1, x_1, \dots, x_n)) \tag {weil \(A_q \gt h\)}
@@ -541,7 +580,8 @@
           &amp;= A_q (A_{q+1}(t-1+x)) % \tag{weil \(\max(t-1,x) \leq t-1+x \leq A_{q+1}(t-1+x)\)}
           \\
           &amp;= A_{q+1}(t+x) \ .
-          \end{align*}$$
+          \end{align*}
+          $$
         </div>
         <p>
           Somit ist die Behauptung bewiesen.<span class="qed">\(\square\)</span>
@@ -562,12 +602,14 @@
         Dann gilt
       </p>
       <div class="math-block">
-        $$\begin{align*}
+        $$
+        \begin{align*}
         A_{q+1} (x+t)&amp;\leq A_{q+1} (2z) \leq A_{q+1} (2(z-1) + 3) \\
         &amp;= A_{q+1} (A_2(z-1)) \tag{da $A_2(n) = 2n+3$}\\
         &amp;\leq A_{q+1} (A_{q+2}(z-1)) \\
         &amp;= A_{q+2}(z) \ .
-        \end{align*}$$
+        \end{align*}
+        $$
       </div>
       <p>
         Es gilt also $A_{q+2} \gt f$ und das Lemma ist bewiesen.<span class="qed">\(\square\)</span>
