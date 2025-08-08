@@ -239,6 +239,18 @@ pre {
     margin: 0 2ch;
 }
 
+.python-prompt-carets {
+    color: purple;
+}
+
+.python-prompt-ok-response {
+    color: blue;
+}
+
+.python-prompt-error-response {
+    color: red;
+}
+
 pre span.pythonPrompt {
     color: #000;
 }

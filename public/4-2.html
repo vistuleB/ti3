@@ -455,8 +455,13 @@ for i in range(t):
       <span style="color:red">$\pair(5, \pair(7, 9))$</span>. Das ist natürlich inkorrekt:
     </p>
     <div class="well highlight out">
-<pre>
-<span class="pythonPrompt">pair(5,pair(7,9))</span><br><span class="terminalOutput">11031</span><br><span class="pythonPrompt">pair(7,9)</span><br><span class="terminalOutput">143</span><br><span class="pythonPrompt">pair(5,143)</span><br><span class="terminalOutput">11031</span>
+<pre class="python-prompt">
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,pair(7,9))</span>
+<span class="python-prompt-ok-response">11031</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(7,9)</span>
+<span class="python-prompt-ok-response">143</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,143)</span>
+<span class="python-prompt-ok-response">11031</span>
 </pre>
     </div>
     <p class="main-column">
@@ -478,8 +483,15 @@ for i in range(t):
       Jetzt klappt alles wunderbar:
     </p>
     <div class="well highlight out">
-<pre>
-<span class="pythonPrompt">push(11, push(7, push(5, 0)))</span><br><span class="terminalOutput">90537</span><br><span class="pythonPrompt">head(90537)</span><br><span class="terminalOutput">11</span><br><span class="pythonPrompt">head(tail(90537))</span><br><span class="terminalOutput">7</span><br><span class="pythonPrompt">head(tail(tail(90537)))</span><br><span class="terminalOutput">5</span>
+<pre class="python-prompt">
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> push(11, push(7, push(5, 0)))</span>
+<span class="python-prompt-ok-response">90537</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(90537)</span>
+<span class="python-prompt-ok-response">11</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(90537))</span>
+<span class="python-prompt-ok-response">7</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(tail(90537)))</span>
+<span class="python-prompt-ok-response">5</span>
 </pre>
     </div>
     <p class="main-column">

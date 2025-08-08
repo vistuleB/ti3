@@ -7,16 +7,17 @@ import selector_library as sl
 
 pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
-  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "Topic", "SubTopic", "Statement", "Exercise", "Highlight", "Remark", "QED", "Carousel", "CarouselItem", "marker"]
+  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "Topic", "SubTopic", "Statement", "Exercise", "Highlight", "Remark", "QED", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   
-  let post_transformation_document_tags = ["Document", "marker"]
+  let post_transformation_document_tags = ["Document", "marker", "WriterlyCodeBlock"]
   let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
   [
     [
-      dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation"))
+      dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
+      dl.rename(#("WriterlyCodeBlock","CodeBlock")),
     ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
     pp.splitting_empty_lines_cleanup(),
@@ -27,6 +28,7 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
     ],
     pp.splitting_empty_lines_cleanup(),
     [
+      dl.python_prompt_code_block(Nil),
       dl.auto_generate_child_if_missing_from_attribute(#(
         "Chapter",        // parent tag
         "ChapterTitle",   // new child tag

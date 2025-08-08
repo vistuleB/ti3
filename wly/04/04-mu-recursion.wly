@@ -102,10 +102,7 @@
         die Collatz-Folge baut, also
 
         |> Highlight
-            |> pre
-                |> span
-                    class=pythonPrompt
-                    collatzList(7)
-                |> span
-                    class=terminalOutput
-                    []
+            
+            ```python-prompt
+            >>> collatzList(7)[]
+            ```

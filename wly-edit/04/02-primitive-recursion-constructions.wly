@@ -356,33 +356,18 @@
         style=color:red
         $\pair(5, \pair(7, 9))$
     . Das ist natürlich inkorrekt:
-
+    
     |> Highlight
-        |> pre
-            |> span
-                class=pythonPrompt
-                pair(5,pair(7,9))
-            |> br
-            |> span
-                class=terminalOutput
-                11031
-            |> br
-            |> span
-                class=pythonPrompt
-                pair(7,9)
-            |> br
-            |> span
-                class=terminalOutput
-                143
-            |> br
-            |> span
-                class=pythonPrompt
-                pair(5,143)
-            |> br
-            |> span
-                class=terminalOutput
-                11031
-
+    
+        ```python-prompt
+        >>> pair(5,pair(7,9))
+        11031
+        >>> pair(7,9)
+        143
+        >>> pair(5,143)
+        11031
+        ```
+        
     Das Problem ist, dass wir das Ende der Liste nicht
     kennen. Wir lösen das Problem, indem wir die leere
     Liste mit $0$ codieren und dann aber beim Davorhängen
@@ -395,40 +380,19 @@
     \end{align*}
 
     Jetzt klappt alles wunderbar:
-
+    
     |> Highlight
-        |> pre
-            |> span
-                class=pythonPrompt
-                push(11, push(7, push(5, 0)))
-            |> br
-            |> span
-                class=terminalOutput
-                90537
-            |> br
-            |> span
-                class=pythonPrompt
-                head(90537)
-            |> br
-            |> span
-                class=terminalOutput
-                11
-            |> br
-            |> span
-                class=pythonPrompt
-                head(tail(90537))
-            |> br
-            |> span
-                class=terminalOutput
-                7
-            |> br
-            |> span
-                class=pythonPrompt
-                head(tail(tail(90537)))
-            |> br
-            |> span
-                class=terminalOutput
-                5
+    
+        ```python-prompt
+        >>> push(11, push(7, push(5, 0)))
+        90537
+        >>> head(90537)
+        11
+        >>> head(tail(90537))
+        7
+        >>> head(tail(tail(90537)))
+        5
+        ```
 
     *Native Implementierung.* Die primitive Rekursion
     ist ein theoretischer Berechenbarkeitsbegriff für Funktionen
