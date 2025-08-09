@@ -78,6 +78,7 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
       dl.handles_generate_ids(),
       dl.handles_generate_dictionary("path"),
       dl.handles_substitute(#("path", "a", "a", [], [])),
+      dl.expand_ti3_carousel(),
       dl.group_consecutive_children__outside(
         #(
           "p",
