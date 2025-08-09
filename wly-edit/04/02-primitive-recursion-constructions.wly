@@ -360,8 +360,12 @@
     |> Highlight
 
         ```python-prompt
-        >>> pair(5,pair(7,9)) 11031 >>> pair(7,9) 143 >>>
-        pair(5,143) 11031
+        >>> pair(5,pair(7,9))
+        11031
+        >>> pair(7,9)
+        143
+        >>> pair(5,143)
+        11031
         ```
 
     Das Problem ist, dass wir das Ende der Liste nicht
@@ -380,8 +384,13 @@
     |> Highlight
 
         ```python-prompt
-        >>> push(11, push(7, push(5, 0))) 90537 >>> head(90537)
-        11 >>> head(tail(90537)) 7 >>> head(tail(tail(90537)))
+        >>> push(11, push(7, push(5, 0)))
+        90537
+        >>> head(90537)
+        11
+        >>> head(tail(90537))
+        7
+        >>> head(tail(tail(90537)))
         5
         ```
 

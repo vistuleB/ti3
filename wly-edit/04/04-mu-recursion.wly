@@ -112,5 +112,5 @@
         |> Highlight
 
             ```python-prompt
-            >>> collatzList(7)[]
+            >>> collatzList(7)
             ```
