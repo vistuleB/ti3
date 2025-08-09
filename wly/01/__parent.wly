@@ -49,6 +49,7 @@
         können:
 
         |> Highlight
+
             ```python-prompt
             >>> (6 + 8) * 3
             42

@@ -30,81 +30,31 @@
     nehmen wir das Beispiel $\alpha = yxzxxyy$.
 
     |> Carousel
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-01.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-02.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-03.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-04.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-05.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-06.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-07.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-08.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-09.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-10.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-11.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-12.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-13.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-14.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-15.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-16.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-17.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-18.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-19.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-20.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-21.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-22.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-23.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-24.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/fsa-example-01-25.svg
+        src=./img/finite-state-automata/fsa-example-01-01.svg
+        src=./img/finite-state-automata/fsa-example-01-02.svg
+        src=./img/finite-state-automata/fsa-example-01-03.svg
+        src=./img/finite-state-automata/fsa-example-01-04.svg
+        src=./img/finite-state-automata/fsa-example-01-05.svg
+        src=./img/finite-state-automata/fsa-example-01-06.svg
+        src=./img/finite-state-automata/fsa-example-01-07.svg
+        src=./img/finite-state-automata/fsa-example-01-08.svg
+        src=./img/finite-state-automata/fsa-example-01-09.svg
+        src=./img/finite-state-automata/fsa-example-01-10.svg
+        src=./img/finite-state-automata/fsa-example-01-11.svg
+        src=./img/finite-state-automata/fsa-example-01-12.svg
+        src=./img/finite-state-automata/fsa-example-01-13.svg
+        src=./img/finite-state-automata/fsa-example-01-14.svg
+        src=./img/finite-state-automata/fsa-example-01-15.svg
+        src=./img/finite-state-automata/fsa-example-01-16.svg
+        src=./img/finite-state-automata/fsa-example-01-17.svg
+        src=./img/finite-state-automata/fsa-example-01-18.svg
+        src=./img/finite-state-automata/fsa-example-01-19.svg
+        src=./img/finite-state-automata/fsa-example-01-20.svg
+        src=./img/finite-state-automata/fsa-example-01-21.svg
+        src=./img/finite-state-automata/fsa-example-01-22.svg
+        src=./img/finite-state-automata/fsa-example-01-23.svg
+        src=./img/finite-state-automata/fsa-example-01-24.svg
+        src=./img/finite-state-automata/fsa-example-01-25.svg
 
     In diesem Beispiel endet der Automat im Zustand   
     $Y$. Sie sehen, dass der Zustand $X$ mit einem doppelten
