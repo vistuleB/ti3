@@ -240,6 +240,8 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
 pub fn main() {
   let args = argv.load().arguments
 
+  io.println(ins(args))
+
   use amendments <- infra.on_error_on_ok(
     vr.process_command_line_arguments(args, ["--wly-edit"]),
     fn(error) {
