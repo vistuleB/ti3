@@ -250,72 +250,28 @@
     Anfang hat der Startzustand $A$ einen roten Punkt.
 
     |> Carousel
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-01.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-02.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-03.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-04.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-05.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-06.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-07.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-08.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-09.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-10.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-11.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-12.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-13.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-14.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-15.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-16.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-17.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-18.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-19.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-20.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-21.svg
-        |> CarouselItem
-            |> img
-                src=./img/finite-state-automata/nfsm-colored-balls-22.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-01.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-02.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-03.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-04.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-05.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-06.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-07.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-08.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-09.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-10.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-11.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-12.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-13.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-14.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-15.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-16.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-17.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-18.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-19.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-20.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-21.svg
+        src=./img/finite-state-automata/nfsm-colored-balls-22.svg
 
     Am Ende landet der grüne Punkt im Zustand $E$. Das
     Wort ist also in $L(M)$. Das können wir auch ganz
@@ -424,57 +380,23 @@
         $1$-Pfeil an, wobei wir womöglich neue Zustände "entdecken".
 
         |> Carousel
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/01.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/02.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/03.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/04.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/05.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/06.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/07.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/08.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/09.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/10.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/11.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/12.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/13.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/14.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/15.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/16.svg
-            |> CarouselItem
-                |> img
-                    src=./img/finite-state-automata/potenzmengenautomat/17.svg
+            src=./img/finite-state-automata/potenzmengenautomat/01.svg
+            src=./img/finite-state-automata/potenzmengenautomat/02.svg
+            src=./img/finite-state-automata/potenzmengenautomat/03.svg
+            src=./img/finite-state-automata/potenzmengenautomat/04.svg
+            src=./img/finite-state-automata/potenzmengenautomat/05.svg
+            src=./img/finite-state-automata/potenzmengenautomat/06.svg
+            src=./img/finite-state-automata/potenzmengenautomat/07.svg
+            src=./img/finite-state-automata/potenzmengenautomat/08.svg
+            src=./img/finite-state-automata/potenzmengenautomat/09.svg
+            src=./img/finite-state-automata/potenzmengenautomat/10.svg
+            src=./img/finite-state-automata/potenzmengenautomat/11.svg
+            src=./img/finite-state-automata/potenzmengenautomat/12.svg
+            src=./img/finite-state-automata/potenzmengenautomat/13.svg
+            src=./img/finite-state-automata/potenzmengenautomat/14.svg
+            src=./img/finite-state-automata/potenzmengenautomat/15.svg
+            src=./img/finite-state-automata/potenzmengenautomat/16.svg
+            src=./img/finite-state-automata/potenzmengenautomat/17.svg
 
         Wenn wir uns vorstellen, dass wir vor das Eingabewort  
         $\alpha$ die Zeichen 000 stellen, also $\alpha$ durch  
