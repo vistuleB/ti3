@@ -65,18 +65,10 @@
         von jedem $b$ zu $f(b)$:
 
         |> Carousel
-            |> CarouselItem
-                |> img
-                    src=./img/infinite-sets/schroeder-bernstein-digraph-1.svg
-            |> CarouselItem
-                |> img
-                    src=./img/infinite-sets/schroeder-bernstein-digraph-2.svg
-            |> CarouselItem
-                |> img
-                    src=./img/infinite-sets/schroeder-bernstein-digraph-3.svg
-            |> CarouselItem
-                |> img
-                    src=../img/infinite-sets/schroeder-bernstein-digraph-4.svg
+            src=./img/infinite-sets/schroeder-bernstein-digraph-1.svg
+            src=./img/infinite-sets/schroeder-bernstein-digraph-2.svg
+            src=./img/infinite-sets/schroeder-bernstein-digraph-3.svg
+            src=../img/infinite-sets/schroeder-bernstein-digraph-4.svg
 
         Wenn wir die Menge $A \cup B$ zusammen mit den $f$-
         und $g$-Pfeilen als Graphen auf einer unendlichen
@@ -92,15 +84,9 @@
         $f$ verwenden, in den vom Typ (2) jedoch $g^{-1}$:
 
         |> Carousel
-            |> CarouselItem
-                |> img
-                    src=./img/infinite-sets/schroeder-bernstein-bijektion-1.svg
-            |> CarouselItem
-                |> img
-                    src=./img/infinite-sets/schroeder-bernstein-bijektion-2.svg
-            |> CarouselItem
-                |> img
-                    src=./img/infinite-sets/schroeder-bernstein-bijektion-3.svg
+            src=./img/infinite-sets/schroeder-bernstein-bijektion-1.svg
+            src=./img/infinite-sets/schroeder-bernstein-bijektion-2.svg
+            src=./img/infinite-sets/schroeder-bernstein-bijektion-3.svg
 
         Formalisieren wir das ein bisschen. Wir definieren
         eine Folge $X_0, X_1, \dots$, sodass  
