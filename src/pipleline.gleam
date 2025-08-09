@@ -180,7 +180,8 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   |> infra.wrap_desugarers(
     infra.OnChange,
     // sl.tag("marker")
-    sl.key_val("test", "test")
+    // sl.key_val("test", "test")
+    sl.text("ächstes wollen wir zeig")
     |> infra.extend_selector_up(4)
     |> infra.extend_selector_down(16)
   )
