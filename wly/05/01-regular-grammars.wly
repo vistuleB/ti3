@@ -613,6 +613,7 @@
     es in der Praxis recht häufig vorkommt.
 
     |> Statement
+        handle=operation-L
         title=*Theorem*
         Sei $L \subseteq \Sigma^*$ eine reguläre Sprache und  
         $c \not \in \Sigma$ ein neues Terminalsymbol. Die
