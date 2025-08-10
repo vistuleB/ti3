@@ -92,11 +92,22 @@ lorenz.klein@greatest/company/in/the/world.com
       </p>
       <div class="well highlight">
 <pre class="python-prompt">
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (6 + 8) * 3 42 &gt;&gt;&gt; (24 / 4 / 2) * (24 / ( 4 /</span>
-<span class="python-prompt-error-response">2)) + 1 37 &gt;&gt;&gt; 3 + 7 * 8 59 &gt;&gt;&gt; (2 * 3)) File "&lt;stdin&gt;",
-line 1     (2 * 3))            ^ SyntaxError: unmatched
-')' &gt;&gt;&gt; (* 3) File "&lt;stdin&gt;", line 1     (* 3)     
-^^^ SyntaxError: cannot use starred expression here</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (6 + 8) * 3</span>
+<span class="python-prompt-ok-response">42</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (24 / 4 / 2) * (24 / ( 4 / 2)) + 1</span>
+<span class="python-prompt-ok-response">37</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> 3 + 7 * 8</span>
+<span class="python-prompt-ok-response">59</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (2 * 3))</span>
+<span class="python-prompt-error-response">File "&lt;stdin&gt;", line 1
+    (2 * 3))
+           ^
+SyntaxError: unmatched ')'</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (* 3)</span>
+<span class="python-prompt-error-response">File "&lt;stdin&gt;", line 1
+    (* 3)
+     ^^^
+SyntaxError: cannot use starred expression here</span>
 </pre>
       </div>
       <p>
