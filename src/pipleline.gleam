@@ -105,6 +105,7 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
       dl.rearrange_links(#("Theorem <a href='1'>_1_</a>", "<a href='1'>Theorem _1_</a>")),
       dl.rearrange_links(#("Übungsaufgabe <a href='1'>_1_</a>", "<a href='1'>Übungsaufgabe _1_</a>")),
       dl.rearrange_links(#("Kapitel <a href='1'>_1_</a>", "<a href='1'>Kapitel _1_</a>")),
+      dl.rearrange_links(#("Lemma <a href='1'>_1_</a>", "<a href='1'>Lemma _1_</a>")),
     ],
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),

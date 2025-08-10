@@ -399,6 +399,7 @@
         Ihre neue Grammatik?
 
     |> Topic
+        handle=baukasten
         Reguläre Sprachen nach Baukastenprinzip bauen
 
     Eine schöne Eigenschaft von regulären Grammatiken
