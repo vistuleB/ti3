@@ -213,6 +213,7 @@
                 loading=lazy
 
     |> Exercise
+        handle=exercise-divisibility
         Sei $\Sigma = \{1\}$ und   
         \(L_k := \{1^n \ | \textnormal{ $n$ ist durch $k$
         teilbar}\}\).
