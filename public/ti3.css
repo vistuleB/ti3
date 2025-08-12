@@ -198,7 +198,8 @@ p:has(> mjx-container) {
     border-radius: 4px;
 }
 
-.highlight .statement {
+.highlight .statement,
+.statement .statement {
     background-color: #F0FFFF;
 }
 
