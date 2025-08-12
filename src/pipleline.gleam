@@ -53,6 +53,7 @@ pub fn pipeline()  -> List(Pipe) {
       ]),
       dl.append_value_to_handle_attribute_if_has_ancestor_else(#("Statement", "Sub", "::øøChapterCounter.::øøSubCounter.::øøStatementCounter", "::øøChapterCounter.::øøStatementCounter")),
       dl.append_value_to_handle_attribute_if_has_ancestor_else(#("Exercise", "Sub", "::øøChapterCounter.::øøSubCounter.::øøExerciseCounter", "::øøChapterCounter.::øøExerciseCounter")),
+      dl.append_value_to_handle_attribute_if_has_ancestor_else(#("Topic", "Sub", "::øøChapterCounter.::øøSubCounter", "::øøChapterCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Chapter", "ChapterCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Exercise", "ExerciseCounter")),
       dl.associate_counter_by_prepending_incrementing_attribute(#("Sub", "SubCounter")),
