@@ -111,6 +111,6 @@
 
         |> Highlight
 
-            |> WriterlyCodeBlock
-                language=python-prompt
-                >>> collatzList(7)
+            ```python-prompt
+            >>> collatzList(7)
+            ```
