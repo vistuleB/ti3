@@ -5,7 +5,7 @@ import prefabricated_pipelines as pp
 import group_replacement_splitting as grs
 import selector_library as sl
 
-pub fn pipeline(_batch: Bool)  -> List(Pipe) {
+pub fn pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
 
   let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "Topic", "SubTopic", "Statement", "Exercise", "Highlight", "Remark", "QED", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
@@ -179,11 +179,15 @@ pub fn pipeline(_batch: Bool)  -> List(Pipe) {
   ]
   |> list.flatten
   |> infra.wrap_desugarers(
-    infra.OnChange,
+    infra.Off,
     // sl.tag("marker")
     // sl.key_val("test", "test")
     sl.text("ächstes wollen wir zeig")
     |> infra.extend_selector_up(4)
     |> infra.extend_selector_down(16)
+    |> infra.extend_selector_to_ancestors(
+      with_elder_siblings: True,
+      with_attributes: False,
+    )
   )
 }

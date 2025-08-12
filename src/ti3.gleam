@@ -261,11 +261,12 @@ pub fn main() {
     vr.Renderer(
       assembler: vr.default_blamed_lines_assembler(amendments.spotlight_paths),
       source_parser: vr.default_writerly_source_parser(amendments.spotlight_key_values),
-      pipeline: pipeline(False),
+      pipeline: pipeline(),
       splitter: ti3_splitter,
       emitter: our_emitter,
       prettifier: vr.default_prettier_prettifier,
     )
+    |> vr.amend_renderer_by_command_line_amendments(amendments)
 
   let parameters =
     vr.RendererParameters(
@@ -273,11 +274,11 @@ pub fn main() {
       output_dir: "./public",
       prettifier_on_by_default: False,
     )
-    |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
+    |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
   let debug_options =
     vr.default_renderer_debug_options()
-    |> vr.amend_renderer_debug_options_by_command_line_amendment(amendments, pipeline(False))
+    |> vr.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
   // clean up HTML files before rendering
   case cleanup_html_files(parameters.output_dir) {

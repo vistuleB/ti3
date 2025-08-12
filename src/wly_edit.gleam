@@ -157,6 +157,7 @@ pub fn entrypoint(amendments: vr.CommandLineAmendments) {
       emitter: vr.stub_writerly_emitter,
       prettifier: vr.default_prettier_prettifier,
     )
+    |> vr.amend_renderer_by_command_line_amendments(amendments)
 
   let parameters =
     vr.RendererParameters(
@@ -164,11 +165,11 @@ pub fn entrypoint(amendments: vr.CommandLineAmendments) {
       output_dir: "./wly-edit",
       prettifier_on_by_default: False,
     )
-    |> vr.amend_renderer_paramaters_by_command_line_amendment(amendments)
+    |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
   let debug_options =
     vr.default_renderer_debug_options()
-    |> vr.amend_renderer_debug_options_by_command_line_amendment(amendments, pipeline)
+    |> vr.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
   let _ = simplifile.delete("./wly-edit/*")
 
