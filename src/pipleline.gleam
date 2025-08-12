@@ -143,11 +143,11 @@ pub fn pipeline()  -> List(Pipe) {
       dl.append_class_to_child_if__batch([
         #("Chapter", "out", infra.has_class(_, "well"), ""),
         #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
-          "Topic", "SubTopic", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
+          "Topic", "SubTopic", "div", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
           ]), ""),
         #("Sub", "out", infra.has_class(_, "well"), ""),
         #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
-            "Topic", "SubTopic", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
+            "Topic", "SubTopic", "div", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
           ]), ""),
         #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}, ""),
       ]),

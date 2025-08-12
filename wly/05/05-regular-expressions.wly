@@ -159,18 +159,27 @@
             |> span
                 class=terminalPrompt
                 java TestRegex
+            |> br
             |> span
                 class=terminalOutput
                 Please enter a regular expression:
-            \ (a+)(:a+)*
+                |> span 
+                    (a+)(:a+)*
+            |> br
             |> span
                 class=terminalOutput
                 Enter words to be matched, one per line
-            `aaaaa:aa:aaaa:a`
+            |> br
+            |> span
+                aaaaa:aa:aaaa:a
+            |> br
             |> span
                 class=terminalOutput
                 true
-            `aaa:aa:`
+            |> br
+            |> span 
+                aaa:aa:
+            |> br
             |> span
                 class=terminalOutput
                 false
@@ -360,8 +369,8 @@
         
     Hier sehen Sie den ganzen Ablauf an unserer `aaaa:a:aaa.aa-aa`-Sprache:
     |> div
-        style=overflow-x: auto; margin: 1em;
         |> figure
+            style=overflow-x: auto; margin: 0 center;
             |> img
                 style=height:20em
                 src=./img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg

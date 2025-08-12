@@ -262,6 +262,21 @@ pre span.pythonPrompt::before {
     width: 8em;
 }
 
+pre span.terminalPrompt::before {
+    color: gray;
+    font-family: "courier";
+    content: "user@home:~$ ";
+    width: 8em;
+}
+
+pre > span.terminalPrompt {
+    color: #000;
+}
+
+pre > span.terminalOutput {
+    color: blue;;
+}
+
 pre {
     color: var(--body-color);
     font-size: 0.9rem;

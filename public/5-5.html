@@ -91,7 +91,10 @@
       $L_1 \circ L_2$ und $L$ konstruieren zu können.
       Sie sollten sich jetzt folgende Frage stellen:
     </p>
-    <div style="text-align:center">
+    <div
+      style="text-align:center"
+      class="main-column"
+    >
       <p>
         <b>Frage:</b>
         Können
@@ -336,7 +339,7 @@
         kompilieren und starten Sie es.
       </p>
 <pre>
-<span class="terminalPrompt">java TestRegex</span><span class="terminalOutput">Please enter a regular expression:</span> (a+)(:a+)*<span class="terminalOutput">Enter words to be matched, one per line</span><code>aaaaa:aa:aaaa:a</code><span class="terminalOutput">true</span><code>aaa:aa:</code><span class="terminalOutput">false</span>
+<span class="terminalPrompt">java TestRegex</span><br><span class="terminalOutput">Please enter a regular expression:<span>(a+)(:a+)*</span></span><br><span class="terminalOutput">Enter words to be matched, one per line</span><br><span>aaaaa:aa:aaaa:a</span><br><span class="terminalOutput">true</span><br><span>aaa:aa:</span><br><span class="terminalOutput">false</span>
 </pre>
       <p>
         Schreiben Sie nun einen regulären Ausdruck $R$ für die obige Sprache und testen Sie ihn
@@ -641,8 +644,8 @@
       Hier sehen Sie den ganzen Ablauf an unserer
       <code>aaaa:a:aaa.aa-aa</code>-Sprache:
     </p>
-    <div style="overflow-x: auto; margin: 1em;">
-      <figure>
+    <div class="main-column">
+      <figure style="overflow-x: auto; margin: 0 center;">
         <img
           style="height:20em"
           src="./img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg"
