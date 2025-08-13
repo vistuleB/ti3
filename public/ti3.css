@@ -274,10 +274,6 @@ pre > span.terminalPrompt {
     color: #000;
 }
 
-pre > span.terminalOutput {
-    color: blue;;
-}
-
 pre {
     color: var(--body-color);
     font-size: 0.9rem;
