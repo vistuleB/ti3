@@ -298,7 +298,7 @@ find tree key =
           Das Alphabet $\Sigma$ aller verwendeten Zeichen, in
           unserem Fall also
           <span class="nowrap">$\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$.</span>
-          Wir nennen   
+          Wir nennen    
           $\Sigma$ die Menge der
           <i>terminalen Symbole</i>.
         </p>
@@ -411,7 +411,7 @@ find tree key =
       miteinschließen, landen wir im Millionenbereich. In
       den theoretischen Beispielen, die in diesem Kurs folgen
       werden, ist das Alphabet fast immer viel kleiner: typische
-      Alphabete zum Beispiel sind $\{0,1\}$ ,  
+      Alphabete zum Beispiel sind $\{0,1\}$ ,   
       $\{a,b,c,d\}$ oder auch
       <span class="nowrap">$\{1\}$,</span>
       ein Alphabet mit
@@ -612,7 +612,7 @@ find tree key =
       <p>
         <b>Beispiel</b>
         <b>5.2</b>
-        Wir betrachten die Grammatik   
+        Wir betrachten die Grammatik    
         $G = (\{a,b\}, \{S, A, B\}, P, S)$ mit den Produktionsregeln
       </p>
       <div class="math-block">
@@ -672,7 +672,7 @@ find tree key =
         <b>5.3</b>
         Gegeben sei eine kontextfreie Grammatik
         <span class="nowrap">$G = (\Sigma, N, P, S)$.</span>
-        Ein String   
+        Ein String    
         $\alpha \in (\Sigma \cup N)^*$ heißt
         <i>Wortform</i>
         (im
@@ -690,12 +690,12 @@ find tree key =
         wenn wir $\alpha$ zu $\beta$ machen können, indem
         wir ein nichtterminales Symbol $X$ in $\alpha$ durch
         die rechte Seite $X \rightarrow \gamma$ ersetzen können.
-        Formal gesprochen, wenn wir   
-        $\alpha = \alpha_1 X \alpha_2$ und   
-        $\beta = \beta_1 \gamma \beta_2$ mit Wortformen   
+        Formal gesprochen, wenn wir    
+        $\alpha = \alpha_1 X \alpha_2$ und    
+        $\beta = \beta_1 \gamma \beta_2$ mit Wortformen    
         $\alpha_1, \alpha_2, \beta_1, \gamma, \beta_2$ und
-        einem Nichtterminal $X$ schreiben können, so dass   
-        $X \rightarrow \gamma$ eine Produktionsregel in   
+        einem Nichtterminal $X$ schreiben können, so dass    
+        $X \rightarrow \gamma$ eine Produktionsregel in    
         $P$ ist. Wenn wir $\alpha = \beta$ "vorlesen", dann
         sagen wir
         <i>$\beta$ kann aus $\alpha$ in einem Schritt
@@ -706,30 +706,30 @@ find tree key =
         Formal
         bedeutet
         <span class="nowrap">$\alpha \Rightarrow^* \beta$,</span>
-        dass es ein  
-        $k \geq 0$ gibt und "Zwischenwortformen"   
-        $\alpha_0, \alpha_1, \dots, \alpha_k$ mit   
+        dass es ein   
+        $k \geq 0$ gibt und "Zwischenwortformen"    
+        $\alpha_0, \alpha_1, \dots, \alpha_k$ mit    
         $\alpha = \alpha_0$ und
         <span class="nowrap">$\alpha_k = \beta$,</span>
-        sodass   
-        $\alpha_i \Rightarrow \alpha_{i+1}$ für alle   
+        sodass    
+        $\alpha_i \Rightarrow \alpha_{i+1}$ für alle    
         $i = 0, 1, \dots, k-1$ gilt. Dies schließt den "trivialen"
         Fall $k=0$ mit ein, in welchem $\alpha = \beta$ gilt.
       </p>
     </div>
     <p class="main-column">
-      Nochmals: wenn $\alpha$ die Form   
-      $\alpha_1 X \alpha_2$ hat, dann dürfen Sie das Nichtterminal   
-      $X$ durch die rechte Seite einer Produktionsregel   
+      Nochmals: wenn $\alpha$ die Form    
+      $\alpha_1 X \alpha_2$ hat, dann dürfen Sie das Nichtterminal    
+      $X$ durch die rechte Seite einer Produktionsregel    
       $X \rightarrow \gamma$ ersetzen; Sie dürfen das unabhängig
       von dem
-      <i>Kontext</i>, in welchem $X$ in der Wortform   
+      <i>Kontext</i>, in welchem $X$ in der Wortform    
       $\alpha$ vorkommt. Daher rührt der Name
       <i>kontextfreie
         Grammatik</i>. Beachten Sie, dass $P$ per Definition
       eine
       <i>endliche Menge</i>
-      von Regeln sein muss, dass jedoch   
+      von Regeln sein muss, dass jedoch    
       $\Rightarrow$ im Allgemeinen unendlich ist. Bereits
       für unsere einfache Grammatik mit den Produktionsregeln
     </p>
@@ -756,7 +756,7 @@ find tree key =
       $$
     </div>
     <p class="main-column">
-      und sehen, dass die Menge aller Paare   
+      und sehen, dass die Menge aller Paare    
       $\alpha \Rightarrow \beta$ unendlich ist.
     </p>
     <div class="well statement out">
@@ -764,7 +764,7 @@ find tree key =
         <b>Definition</b>
         <b>5.4</b>
         <b>(Die von einer Grammatik erzeugte Sprache).</b>
-        Sei   
+        Sei    
         $G = (\Sigma, N, P, S)$ eine kontextfreie Grammatik.
         Die von $G$ erzeugte Sprache $L(G)$ ist die Menge
         aller Wörter, die vom Startsymbol $S$ abgeleitet werden
@@ -782,7 +782,7 @@ find tree key =
         kontextfreie Grammatik $G$ mit $L(G) = L$ gibt, so
         nennen wir $L$ eine
         <i>kontextfreie Sprache</i>. Beachten
-        Sie, dass in dem obigen Beispiel die Wortform   
+        Sie, dass in dem obigen Beispiel die Wortform    
         $aaAB$ zwar aus $S$ abgeleitet werden kann, allerdings
         kein
         <i>Wort</i>
@@ -797,7 +797,7 @@ find tree key =
       <p>
         <b>Beispiel</b>
         <b>5.5</b>
-        Sei $G$ die zuletzt betrachtete Grammatik. Dann ist   
+        Sei $G$ die zuletzt betrachtete Grammatik. Dann ist    
         $L(G)$ die Menge aller Wörter der Form
         <span class="nowrap">$a^* b^*$,</span>
         also Wörter, in denen auf beliebig viele
@@ -815,7 +815,7 @@ find tree key =
       <p>
         <b>Beispiel</b>
         <b>5.6</b>
-        Wir betrachten die Grammatik   
+        Wir betrachten die Grammatik    
         $G_2 = (\{a,b\}, \{S\}, P, S)$ mit den Produktionsregeln
       </p>
       <div class="math-block">
@@ -830,7 +830,7 @@ find tree key =
       <p>
         Hier sind mögliche Ableitungen des Wortes
         <span class="nowrap">$abab$.</span>
-        Zur Verdeutlichung schreiben wir über den Pfeil   
+        Zur Verdeutlichung schreiben wir über den Pfeil    
         $\Rightarrow$ die Nummer der Regel, die wir angewendet
         haben:
       </p>
@@ -892,10 +892,10 @@ find tree key =
         Sehen Sie, dass diese Ableitung
         <i>qualitativ</i>
         anders
-        ist, da wir hier auch die Regel   
+        ist, da wir hier auch die Regel    
         $S \rightarrow bSaS$ angewendet haben? Um die Struktur
         der Ableitung zu verdeutlichen, könnten wir die ersten
-        beiden Ableitungen mit Wort   
+        beiden Ableitungen mit Wort    
         $S \Rightarrow^* (ab)(ab)$ bezeichnen und die dritte
         mit Wort
         <span class="nowrap">$S \Rightarrow^* a(ba)b$.</span>
@@ -907,15 +907,15 @@ find tree key =
     </h1>
     <p class="main-column">
       Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen
-      formal beschreiben können; wie wir, gegeben eine Grammatik   
+      formal beschreiben können; wie wir, gegeben eine Grammatik    
       $G$ und ein Zielwort
       <span class="nowrap">$x$,</span>
-      eine Ableitung   
+      eine Ableitung    
       $G \Rightarrow^* x$ finden können. Anhand der Ableitungssequenz
-      können wir dann oft auf die logische Struktur von   
+      können wir dann oft auf die logische Struktur von    
       $x$ schließen. Handelt es sich bei $G$ zum Beispiel
       um eine Grammatik für die Programmiersprache Java,
-      so wäre ein Ziel, aus der Ableitungssequenz   
+      so wäre ein Ziel, aus der Ableitungssequenz    
       $G \Rightarrow^* x$ die Struktur des Programms
       <span class="nowrap">$x$,</span>
       also Klassenstruktur, Methoden, etc., ablesen zu können
@@ -950,7 +950,7 @@ find tree key =
       in seiner ganzen Allgemeinheit in
       <i>linearer Zeit</i>
       erledigt,
-      dessen Laufzeit also proportional zur Länge des Zielwortes  
+      dessen Laufzeit also proportional zur Länge des Zielwortes   
       $x$ ist. Dies ist aber, was wir in der Praxis, zum
       Beispiel bei Compilern, erwarten.
       <b>Die gute Nachricht:</b>
