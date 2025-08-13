@@ -113,4 +113,5 @@
 
             ```python-prompt
             >>> collatzList(7)
+            []
             ```
