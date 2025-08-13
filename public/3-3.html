@@ -53,7 +53,7 @@
       steht für
       <i>die reellen Zahlen</i>.
       Im nächsten Kapitel werden wir zeigen, dass es "echt
-      mehr" reelle Zahlen gibt als natürliche; dass also  
+      mehr" reelle Zahlen gibt als natürliche; dass also   
       $\R$ nicht abzählbar ist. Aber eins nach dem anderen.
     </p>
     <div class="well statement out">
@@ -134,12 +134,12 @@
         Zeigen Sie, dass
         <span class="nowrap">$[0,1]$,</span>
         <span class="nowrap">$[0,1)$,</span>
-        $(0,1]$ und  
+        $(0,1]$ und   
         $(0,1)$ alle gleichmächtig sind.
       </p>
     </div>
     <p class="main-column">
-      Wir führen nun eine neue Notation ein:  
+      Wir führen nun eine neue Notation ein:   
       $\{0,1\}^{\N}$ ist die Menge aller unendlichen Folgen
       von $0$ und
       <span class="nowrap">$1$.</span>
@@ -178,7 +178,7 @@
         einmal ein paar Dinge schief, die man wieder flicken
         muss. Da laut
         <a href="./3-3.html#_3_hgi_">Übungsaufgabe 3.3.3</a>
-        $\R \approx [0,1)$ gilt, reicht es, eine Bijektion  
+        $\R \approx [0,1)$ gilt, reicht es, eine Bijektion   
         $f : [0,1) \rightarrow \{0,1\}^{\N}$ zu konstruieren.
         So geht's: Jede Zahl $0 \leq x \lt 1$ lässt sich als
         (unendliche) Binärzahl $(x)_2$ schreiben, beispielsweise
@@ -200,14 +200,14 @@
         <span class="nowrap">$[0,1)$:</span>
         <span class="nowrap">$f(1/2) = 100000\dots$,</span>
         <span class="nowrap">$f(1/4) = 010000\dots$.</span>
-        Die konstruierte Funktion 
-        $f$ ist injektiv: zwei verschiedene  
+        Die konstruierte Funktion  
+        $f$ ist injektiv: zwei verschiedene   
         $0 \leq x \lt y \lt 1$ haben verschiedene Binärdarstellung
         und werden somit zu zwie verschiedenen
         <span class="nowrap">$0/1$-Folgen.</span>
         Leider ist sie nicht surjektiv: die Binärdarstellung
         einer reellen Zahl hört nie mit $11111\dots$ auf.
-        Statt $0.001111111\dots$ würden wir einfach  
+        Statt $0.001111111\dots$ würden wir einfach   
         $0.0100000\dots$ schreiben. Das entspricht dem Phänomen
         in der Dezimalschreibweise, dass $0.99999999\dots$
         und $1.000000\dots$ die gleiche Zahl repräsentieren.
@@ -229,11 +229,11 @@
         $$
       </div>
       <p>
-        Unsere Funktion $f$ ist eine Bijektion von 
+        Unsere Funktion $f$ ist eine Bijektion von  
         $[0,1)$ nach
         <span class="nowrap">$\{0,1\}^{\N} \setminus X$.</span>
         Um daraus
-        eine Bijektion  
+        eine Bijektion   
         $g : [0,1) \rightarrow \{0,1\}^{\N}$ zu bauen, müssen
         wir die Lücken füllen, die $f$ lässt - also
         <span class="nowrap">$X$.</span>
@@ -242,7 +242,7 @@
       <div class="well exercise">
         <p>
           <b>Übungsaufgabe 3.3.4</b>
-          Sei  
+          Sei   
           $Y := \{ a_1 a_2 a_3 \dots \in \{0,1\}^{\N} \ | \
           \exists\ n \geq 1: a_i = 0 \ \forall i \geq n\}$
           die Menge aller
@@ -250,7 +250,7 @@
           mit einem unendlichen
           Schweif von Nullen. Offensichtlich gilt
           <span class="nowrap">$X \approx Y$.</span>
-          Zeigen Sie, dass 
+          Zeigen Sie, dass  
           $Y \approx X \cup Y$ gilt.
         </p>
       </div>
@@ -258,7 +258,7 @@
         <p>
           <b>Übungsaufgabe 3.3.5</b>
           Verwenden Sie die vorherige Übungsaufgabe, um $Y$
-          zu verdoppeln und somit eine Bijektion von  
+          zu verdoppeln und somit eine Bijektion von   
           $[0,1) \rightarrow \{0,1\}^{\N}$ zu konstruieren.
           Vielleicht hilft Ihnen folgendes Bild:
         </p>
@@ -298,9 +298,9 @@
         <a href="./3-3.html#_4_hgi_">Theorem 3.3.2</a>
         geht das
         ganz einfach. Da $\R \approx \{0,1\}^\N$ gilt, reicht
-        es nämlich, eine Bijektion  
+        es nämlich, eine Bijektion   
         $\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N$
-        zu konstruieren. Ein Element von  
+        zu konstruieren. Ein Element von   
         $\{0,1\}^\N \times \{0,1\}^\N$ besteht aus zwei unendlichen
         <span class="nowrap">$0/1$-Folgen:</span>
         
@@ -315,8 +315,8 @@
       <p>
         Wir müssen dieses Folgenpaar nun in
         <i>eine</i>
-        Folge
-        codieren. Ganz klar:
+        Folge codieren.
+        Ganz klar:
       </p>
       <div class="math-block">
         $$
@@ -327,18 +327,18 @@
         $$
       </div>
       <p>
-        Dies ist die gewünschte Bijektion  
+        Dies ist die gewünschte Bijektion   
         $\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N$
         .<span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Aus der Funktion  
+      Aus der Funktion   
       $f: \{0,1\}^{\N} \times \{0,1\}^{\N} \mapsto \{0,1\}^{\N}$
       aus
       <a href="./3-3.html#_5_hgi_">Theorem 3.3.3</a>
       können wir eine
-      (fast) bijektive Funktion  
+      (fast) bijektive Funktion   
       $[0,1) \times [0,1) \rightarrow [0,1)$ bauen. Wir
       nehmen zwei Zahlen
       <span class="nowrap">$0 \leq x,y \lt 1$,</span>
@@ -387,12 +387,12 @@
       </p>
     </figure>
     <p class="main-column">
-      Als nächstes versuche ich, die Umkehrfunktion  
+      Als nächstes versuche ich, die Umkehrfunktion   
       $f^{-1} : [0,1) \mapsto [0,1) \times [0,1)$ zu skizzieren.
       Das ist etwas schwierig, weil $f^{-1}$ nicht stetig
       ist. Was macht
       <span class="nowrap">$f^{-1}(z)$?</span>
-      Sie betrachtet  
+      Sie betrachtet   
       $z \in [0,1)$ in Binärdarstellung und dröselt dann
       die unendlich vielen Nachkommastellen auf. Die ungeraden
       bilden
@@ -426,7 +426,7 @@
       <ul>
         <li>
           <p>
-            $\left[0,\frac{1}{4}\right)$ auf  
+            $\left[0,\frac{1}{4}\right)$ auf   
             $\left[0,\frac{1}{2}\right) \times \left[0,\frac{1}{2}\right)$
             ab,
           </p>
@@ -440,7 +440,7 @@
         </li>
         <li>
           <p>
-            $\left[\frac{1}{2},\frac{3}{4}\right)$ auf  
+            $\left[\frac{1}{2},\frac{3}{4}\right)$ auf   
             $\left[\frac{1}{2},1\right) \times \left[0,\frac{1}{2}\right)$
             und
           </p>
@@ -457,17 +457,17 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir zeigen den ersten Punkt. Sei  
+        Wir zeigen den ersten Punkt. Sei   
         $0 \leq z \lt 1/2$ und
         <span class="nowrap">$(x,y) = f^{-1}(z)$.</span>
-        Dann hat  
+        Dann hat   
         $z$ die Binärdarstellung
         <span class="nowrap">$z = (0.00z_3z_4z_5\dots)$.</span>
         Die ersten beiden Bits
         nach dem Komma sind
         <span class="nowrap">$0$,</span>
         und somit sind die jeweils
-        ersten Bits von $x$ und $y$ auch 0, was  
+        ersten Bits von $x$ und $y$ auch 0, was   
         $x,y \lt 1/2$ bedeutet. Punkt 2 bis 4 folgen aus ähnlichen
         Überlegungen.<span class="qed">\(\square\)</span>
       </p>
@@ -531,9 +531,9 @@
     </div>
     <p class="main-column">
       Wir wissen nun, dass $\R \approx \R^2$ gilt. Ebenso
-      können wir $\R \approx \R^{k}$ für jedes  
-      $k \in \N^+$ zeigen. Wie sieht es aber mit  
-      $\R^{\N}$ aus? Das ist die Menge aller Funktionen  
+      können wir $\R \approx \R^{k}$ für jedes   
+      $k \in \N^+$ zeigen. Wie sieht es aber mit   
+      $\R^{\N}$ aus? Das ist die Menge aller Funktionen   
       $\phi: \N \rightarrow \R$ oder, etwas freundlicher
       formuliert, die Menge aller unendlichen Folgen reeller
       Zahlen:
@@ -584,7 +584,7 @@
         >
       </figure>
       <p>
-        Wir wollen jetzt eine Bijektion  
+        Wir wollen jetzt eine Bijektion   
         $f : \cuben \times \cuben \rightarrow \cuben$ definieren.
         Dafür wenden wir den gleichen Trick an wie in dem Beweis,
         dass $\N \approx \N \times \N$ ist: wir zerlegen die
@@ -614,7 +614,7 @@
       </p>
     </div>
     <p class="main-column">
-      Wir haben also die Beweisidee von  
+      Wir haben also die Beweisidee von   
       $\N \times \N \approx \N$ recycelt. Diese Beobachtung
       motiviert den folgenden, etwas kurz angebundenen Beweis:
     </p>
@@ -637,7 +637,7 @@
       </p>
     </div>
     <p class="main-column">
-      Dürfen wir das? Dürfen wir Rechenregeln wie  
+      Dürfen wir das? Dürfen wir Rechenregeln wie   
       $\left(x^{b}\right)^c = x^{b \cdot c}$ so einfach
       anwenden? Noch grundlegender, und das ist auch ein
       Punkt im ersten Beweis, den ich unter den Teppich gekehrt
@@ -651,14 +651,14 @@
       Mengen austauschen? Bevor wir das als Theorem formulieren,
       überlegen wir uns kurz, was denn die Analoga zu den
       arithmetischen Operationen sind. Am klarsten ist die
-      Multiplikation: die Zahlenmultiplikation 
+      Multiplikation: die Zahlenmultiplikation  
       $a \cdot b$ hat als mengentheoretisches Analog das
       Cartesische Produkt
       <span class="nowrap">$A \times B$,</span>
       die Menge aller
       Paare $(x,y)$ mit
       <span class="nowrap">$x \in A, y \in B$.</span>
-      Die Exponentiation  
+      Die Exponentiation   
       $a^b$ hat als Analog
       <span class="nowrap">$A^B$,</span>
       die Menge aller
@@ -673,9 +673,9 @@
       <span class="nowrap">$A \uplus B$,</span>
       die die Elemente von $B$ erst einmal
       "markiert", um sie von denen von $A$ unterscheidbar
-      zu machen. Somit wäre also  
+      zu machen. Somit wäre also   
       $\{1,2,3\} \uplus \{1,2\} = \{1,2,3,1',2'\}$ eine
-      Menge der Kardinalität 5. Formal kann man  
+      Menge der Kardinalität 5. Formal kann man   
       $A \uplus B$ so definieren;
     </p>
     <div class="math-block main-column">
@@ -718,7 +718,7 @@
         </li>
       </ol>
       <p>
-        sowie Kommutativität und Assoziativität von  
+        sowie Kommutativität und Assoziativität von   
         $\uplus$ und
         <span class="nowrap">$\times$.</span>
         
@@ -726,7 +726,7 @@
     </div>
     <p class="main-column">
       Als zweites gilt, dass wir in so einem "mengentheoretisch-arithmetischen"
-      Ausdruck eine Menge $A$ durch eine äquipotente Menge  
+      Ausdruck eine Menge $A$ durch eine äquipotente Menge   
       $A'$ ersetzen können:
     </p>
     <div
@@ -814,16 +814,16 @@
       <span class="nowrap">$A \subseteq \N$,</span>
       sind nach Inklusion geordnet:
       <span class="nowrap">$A \subseteq B$.</span>
-      Somit ist  
+      Somit ist   
       $\left(2^{\N}, \subseteq\right)$ eine Partialordnung.
       Eine
       <i>Kette</i>
-      in einer Partialordnung  
+      in einer Partialordnung   
       $(X, \preceq)$ ist eine Menge
       <span class="nowrap">$Z$,</span>
       in der alle Elemente
       paarweise vergleichbar sind. In diesem konkreten Beispiel
-      heißt das: $Z \subseteq 2^{\N}$ und für alle  
+      heißt das: $Z \subseteq 2^{\N}$ und für alle   
       $A, B \in Z$ gilt $A \subseteq B$ oder
       <span class="nowrap">$B \subseteq A$.</span>
       Erinnern Sie sich: $A$ und $B$ sind
@@ -837,7 +837,7 @@
       <i>unvergleichbar</i>
       sind. In diesem Beispiel heißt das:
       <span class="nowrap">$Z \subseteq 2^N$,</span>
-      und für alle $A, B \in Z$ mit  
+      und für alle $A, B \in Z$ mit   
       $A \ne B$ gilt $A \not \subseteq B$ und
       <span class="nowrap">$B \not \subseteq A$.</span>
       Hier ist ein Beispiel für eine
@@ -855,7 +855,7 @@
       Diese Kette hat zufälligerweise die Form
       <span class="nowrap">$A_0 \subseteq A_1 \subseteq A_2 \subseteq \dots$,</span>
       d.h., die Elemente der Kette sind schön sortiert, von
-      klein nach groß. Dies muss nicht so sein: sei  
+      klein nach groß. Dies muss nicht so sein: sei   
       $k \N := \{ k\cdot i \ | \ i \in \N\}$ die Menge der
       Vielfachen von
       <span class="nowrap">$k$.</span>
@@ -882,7 +882,7 @@
       ganz rechts noch
       <span class="nowrap">$\N$,</span>
       dann haben wir ein weiteres,
-      eventuell ungewohntes Phänomen: das Element  
+      eventuell ungewohntes Phänomen: das Element   
       $\{0\}$ in der Kette hat keinen eindeutigen
       <i>Nachfolger</i>.
       Egal, welches $A$ mit $\{0\} \subsetneq A$ Sie wählen,
@@ -895,9 +895,9 @@
         <b>Definition</b>
         <b>3.3.8</b>
         <b>(Dichte Partialordnung)</b>
-        Eine Partialordnung  
+        Eine Partialordnung   
         $(X,\preceq)$ heißt
-        <i>dicht</i>, wenn es für alle  
+        <i>dicht</i>, wenn es für alle   
         $x,z \in X$ mit $x \prec z$ ein $y \in X$ gibt mit
         <span class="nowrap">$x \prec y \prec z$.</span>
         
@@ -926,9 +926,9 @@
         <span class="nowrap">$X$,</span>
         so dass $(X, \subseteq)$ dicht ist. Also: eine Menge
         <span class="nowrap">$X$,</span>
-        so dass für alle $A,C \in X$ mit $A \ne C$ entweder  
-        $A \subsetneq C$ oder $C \subsetneq A$ gilt (d.h.  
-        $X$ soll eine Kette sein) und zusätzlich ein  
+        so dass für alle $A,C \in X$ mit $A \ne C$ entweder   
+        $A \subsetneq C$ oder $C \subsetneq A$ gilt (d.h.   
+        $X$ soll eine Kette sein) und zusätzlich ein   
         $B \in X$ mit $A \subsetneq B \subsetneq C$ (oder
         <span class="nowrap">$C \subseteq B \subsetneq A$).</span>
         
