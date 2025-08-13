@@ -4,34 +4,16 @@
     Email-Adressen. Mit _gültig_ meine ich, dass sie syntaktisch
     korrekt sind, ungeachtet, ob ein Konto mit dieser Email-Adresse
     besteht.
-
+    
     |> Highlight
-        style=padding-left: 0.2rem
-        |> pre
-            thomas.schmitz@hszg.de                              
-            |> span
-                class=comment
-                Gültig
-            |> br
-            dominik@cs.sjtu.edu.cn                              
-            |> span
-                class=comment
-                Gültig
-            |> br
-            raffaela@mayer@gmail.com                            
-            |> span
-                class=comment
-                Ungültig: @ kommt zweimal vor
-            |> br
-            lorenz.klein@greatest/company/in/the/world.com      
-            |> span
-                class=comment
-                Ungültig: Domain-Name darf kein / enthalten
-            |> br
-            .schlaumeier@gmail.com                              
-            |> span
-                class=comment
-                Ungültig: Google will kein . an erster Stelle
+        
+        ```orange-comment
+        thomas.schmitz@hszg.de                              //Gültig
+        dominik@cs.sjtu.edu.cn                              //Gültig
+        raffaela@mayer@gmail.com                            //Ungültig: @ kommt zweimal vor
+        lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name darf kein / enthalten
+        .schlaumeier@gmail.com                              //Ungültig: Google will kein . an erster Stelle
+        ```
 
     Hier sehen Sie den Teil eines HTML-Dokuments. Beachten
     Sie die typische hierarchisch-geschachtelte Struktur

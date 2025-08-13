@@ -57,22 +57,16 @@
     Die Fakultätsfunktion $t!$ ist konzeptuell ähnlich,
     allerdings etwas interessanter, weil wir hier auf das
     Zwischenergebnis und die Laufvariable zugreifen müssen:
-
+    
     |> Highlight
-        |> pre
-            def factorial(t):
-            \   temp = 1 
-            |> span
-                class=comment
-                = one() 
-            |> br
-            for i in range(t):
-            \   temp = mult(temp,i+1) 
-            |> span
-                class=comment
-                = Comp(mult, p_0, Comp(succ, p_1)) (temp,i) 
-            |> br
-            \   return temp
+        
+        ```orange-comment
+        def factorial(t):
+           temp = 1 //= one()
+        for i in range(t):
+           temp = mult(temp,i+1) //= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)
+           return temp
+        ```
 
     Wir können nicht einfach $i+1$ schreiben! Wir müssen
     dies via $\comp(\succ,\pi_1)$ konstruieren. Denn:
@@ -84,22 +78,16 @@
     daran, dass wir keine negativen Zahlen haben. Was ist  
     $\pred(0)$? Wir definieren das als 0. So können wir
     pred implementieren:
-
+    
     |> Highlight
-        |> pre
-            def pred(t):
-            \   temp = 0 
-            |> span
-                class=comment
-                = zero() 
-            |> br
-            \   for i in range(t):
-            \       temp = i 
-            |> span
-                class=comment
-                = p1 (temp,i) 
-            |> br
-            \   return temp
+    
+        ```orange-comment
+        def pred(t):
+            temp = 0 //= zero()
+            for i in range(t):
+                temp = i //= p1 (temp,i)
+            return temp
+        ```
 
     In Worten: wenn $t=0$, dann geben wir einfach   
     $\zero()$ zurück, also $0$. Ansonsten durchlaufen
@@ -130,24 +118,17 @@
     ist das recht naheliegend. Wir codieren `True` als
     1 und `False` als 0. Unser erstes Prädikat, also Funktion
     mit Booleschem Ausgabewert, ist `isPositive`:
-
+    
     |> Highlight
-        |> pre
-            class=listing
-            def pred(t):
-            \   temp = 0 
-            |> span
-                class=comment
-                = zero() 
-            |> br
-            \   for i in range(t):
-            \   temp = 1 
-            |> span
-                class=comment
-                = one 
-            |> br
-            \   return temp
-
+    
+        ```orange-comment
+        def pred(t):
+            temp = 0 //= zero()
+            for i in range(t):
+                temp = 1 //= one
+            return temp
+        ```
+    
     und somit
 
     \begin{align*}
@@ -183,22 +164,16 @@
 
     und damit können wir die ganzzahlige Wurzel schreiben
     als
-
+    
     |> Highlight
-        |> pre
-            def largestIbelowTwithISquareLessEqualX(t,x):
-            \   temp = 0 
-            |> span
-                class=comment
-                = zero(x) 
-            |> br
-            \   for i in range(t):
-            \       temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) 
-            |> span
-                class=comment
-                = Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x) 
-            |> br
-            \   return temp
+
+        ```orange-comment
+        def largestIbelowTwithISquareLessEqualX(t,x):
+            temp = 0 //= zero(x)
+            for i in range(t):
+                temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) //= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)
+            return temp
+        ```
 
     Was geht hier vor? Wenn   
     ${\rm iSquareLessEqualX}(i,x))$ True ist, dann ersetzen
@@ -299,20 +274,15 @@
     kennengelernt. Diese Funktion ist primitiv rekursiv:
     es gilt ${n \choose 2} = 1 + 2 + \cdots + (n-1)$ und
     somit
-
+    
     |> Highlight
-        |> pre
-            def choose2(t):
-            \   temp = 0 
-            |> span
-                class=comment
-                = zero() 
-            \ 
+    
+        ```orange-comment
+        def choose2(t):
+            temp = 0 //= zero()
             for i in range(t):
-            \   temp = add(temp,i) 
-            |> span
-                class=comment
-                = Comp(add, p0, p1)
+                temp = add(temp,i) //= Comp(add, p0, p1)
+        ```
 
     und somit
 

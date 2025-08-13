@@ -114,8 +114,10 @@ def mult(t,x):
     <div class="well highlight out">
 <pre>
 def factorial(t):
-   temp = 1 <span class="comment">= one() </span><br>for i in range(t):
-   temp = mult(temp,i+1) <span class="comment">= Comp(mult, p_0, Comp(succ, p_1)) (temp,i) </span><br>   return temp
+   temp = 1 <span class="orange-comment">= one()</span>
+for i in range(t):
+   temp = mult(temp,i+1) <span class="orange-comment">= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)</span>
+   return temp
 </pre>
     </div>
     <p class="main-column">
@@ -136,8 +138,10 @@ def factorial(t):
     <div class="well highlight out">
 <pre>
 def pred(t):
-   temp = 0 <span class="comment">= zero() </span><br>   for i in range(t):
-       temp = i <span class="comment">= p1 (temp,i) </span><br>   return temp
+    temp = 0 <span class="orange-comment">= zero()</span>
+    for i in range(t):
+        temp = i <span class="orange-comment">= p1 (temp,i)</span>
+    return temp
 </pre>
     </div>
     <p class="main-column">
@@ -192,10 +196,12 @@ def pred(t):
       <code>isPositive</code>:
     </p>
     <div class="well highlight out">
-<pre class="listing">
+<pre>
 def pred(t):
-   temp = 0 <span class="comment">= zero() </span><br>   for i in range(t):
-   temp = 1 <span class="comment">= one </span><br>   return temp
+    temp = 0 <span class="orange-comment">= zero()</span>
+    for i in range(t):
+        temp = 1 <span class="orange-comment">= one</span>
+    return temp
 </pre>
     </div>
     <p class="main-column">
@@ -256,8 +262,10 @@ def pred(t):
     <div class="well highlight out">
 <pre>
 def largestIbelowTwithISquareLessEqualX(t,x):
-   temp = 0 <span class="comment">= zero(x) </span><br>   for i in range(t):
-       temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span class="comment">= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x) </span><br>   return temp
+    temp = 0 <span class="orange-comment">= zero(x)</span>
+    for i in range(t):
+        temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span class="orange-comment">= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)</span>
+    return temp
 </pre>
     </div>
     <p class="main-column">
@@ -399,9 +407,9 @@ a = b-a
     <div class="well highlight out">
 <pre>
 def choose2(t):
-   temp = 0 <span class="comment">= zero() </span> 
-for i in range(t):
-   temp = add(temp,i) <span class="comment">= Comp(add, p0, p1)</span>
+    temp = 0 <span class="orange-comment">= zero()</span>
+    for i in range(t):
+        temp = add(temp,i) <span class="orange-comment">= Comp(add, p0, p1)</span>
 </pre>
     </div>
     <p class="main-column">
