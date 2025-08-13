@@ -23,20 +23,14 @@
     in Orange auch gleich die Funktionen $g$ und $h$ dazu:
 
     |> Highlight
-        |> pre
-            def mult(t,x):
-            \   temp = 0 
-            |> span
-                class=comment
-                = zero(x) 
-            |> br
-            \   for i in range(t):
-            \       temp = add(temp,x) 
-            |> span
-                class=comment
-                = Comp(add, p_0, p2) (temp,i,x) 
-            |> br
-            \   return temp
+    
+        ```orange-comment
+        def mult(t,x):
+           temp = 0 //= zero(x)
+           for i in range(t):
+               temp = add(temp,x) //= Comp(add, p_0, p2) (temp,i,x) 
+           return temp
+        ```
 
     erinnern Sie sich daran: $h$ muss immer eine Funktion
     in der lokalen Variable temp, der Laufvariable $i$

@@ -311,6 +311,12 @@ pre.listing > span::before {
     display: inline;
 }
 
+.orange-comment {
+    color:darkorange;
+    font-style: italic;
+    display: inline;
+}
+
 figure.main-column,
 .well figure {
     width: fit-content;
