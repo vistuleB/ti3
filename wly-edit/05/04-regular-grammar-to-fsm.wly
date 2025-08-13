@@ -252,7 +252,7 @@
     `:` _wir sind innerhalb eines Labels mit_ `:`.
 
     |> Exercise
-        Erinnern Sie sich an Übungsaufgabe >>exercise-divisibility. 
+        Erinnern Sie sich an Aufgabe >>exercise-divisibility. 
         Hier sehen Sie einen nichtdeterministischen endlichen
         Automaten für die Sprache $L_4 \cup L_6$, also die
         Sprache aller Wörter $1^n$ für ein $n$, das durch

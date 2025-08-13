@@ -11,7 +11,7 @@
     verstehen als ein eingeschränktes Modell eines Rechners;
     oder als Blaupause für einen effizienten Algorithmus,
     um reguläre Grammatiken zu parsen. Hier sehen Sie ein
-    Beispiel für einen endlichen Automaten über dem Alphabet 
+    Beispiel für einen endlichen Automaten über dem Alphabet  
     $\Sigma = \{x,y,z\}$. Die Idee ist, dass der Automat
     ein Wort $\alpha$ Zeichen für Zeichen einliest. Die
     Pfeile zwischen den Kreisen (den _Zuständen_ des Automaten)
@@ -56,23 +56,23 @@
         src=./img/finite-state-automata/fsa-example-01-24.svg
         src=./img/finite-state-automata/fsa-example-01-25.svg
 
-    In diesem Beispiel endet der Automat im Zustand  
+    In diesem Beispiel endet der Automat im Zustand   
     $Y$. Sie sehen, dass der Zustand $X$ mit einem doppelten
     Rand markiert ist: dies symbolisiert, dass $X$ ein
     _akzeptierender_ Endzustand ist. Wenn der Automat ein
     Wort $\alpha$ abgearbeitet hat, _akzeptiert_ er es,
     wenn er in einem akzeptierenden Endzustand gelandet
     ist; ansonsten _lehnt er es ab_. In unserem Beispiel
-    sehen wir also, dass der Automat das Eingabewort  
+    sehen wir also, dass der Automat das Eingabewort   
     $yxzxxyy$ ablehnt.
 
     |> Statement
         handle=definition-finite-state-machine
         title=*Definition*
         *(Endlicher Automat, Finite State Machine).* Ein endlicher
-        Automat besteht aus einem endlichen Eingabealphaet  
+        Automat besteht aus einem endlichen Eingabealphaet   
         $\Sigma$, einer endlichen Menge $Q$ von Zuständen,
-        einem Startzustand $\qstart \in Q$, einer Menge  
+        einem Startzustand $\qstart \in Q$, einer Menge   
         $F \subseteq Q$ von akzeptierenden Endzuständen und
         einer Zustandsübergangsfunktion
 
@@ -80,14 +80,14 @@
         \delta : Q \times \Sigma \rightarrow Q \ .
         \end{align*}
 
-        Formal gesehen ist also ein Automat ein Quintupel  
+        Formal gesehen ist also ein Automat ein Quintupel   
         $M = (\Sigma, Q, \qstart, F, \delta)$.
 
-    Die Idee ist, dass der Automat im Zustand  
+    Die Idee ist, dass der Automat im Zustand   
     $\qstart$ startet und nun in jedem Schritt ein weiteres
-    Zeichen des Eingabewortes liest. Wenn er im Zustand  
+    Zeichen des Eingabewortes liest. Wenn er im Zustand   
     $q$ ist und das Zeichen $x$ liest, so wechselt er
-    in den Zustand $\delta(q,x)$. Statt  
+    in den Zustand $\delta(q,x)$. Statt   
     $\delta(q,x) = q'$ verwenden wir die leichter zu lesende
     Schreibweise
 
@@ -95,8 +95,8 @@
     q \stackrel{x}{\rightarrow} q' \ .
     $$
 
-    Wenn das Wort zu Ende ist, dann _akzeptiert_ der
-    Automat, wenn er in einem akzeptierenden Zustand angekommen
+    Wenn das Wort zu Ende ist, dann _akzeptiert_ der Automat,
+    wenn er in einem akzeptierenden Zustand angekommen
     ist, also in $F$.
 
     |> Statement
@@ -110,7 +110,7 @@
                 loading=lazy
 
         und stellen ihn gemäß Definition >>definition-finite-state-machine 
-        als Quintupel  
+        als Quintupel   
         $M = (\Sigma, Q, \qstart, F, \delta)$ dar mit
 
         \begin{align*}
@@ -170,16 +170,16 @@
                 src=./img/finite-state-automata/finite-state-machine-example-01.svg
                 loading=lazy
 
-        Das ist eine völlig legitime Notation für eine Funktion  
+        Das ist eine völlig legitime Notation für eine Funktion   
         $\delta: Q \times \Sigma \rightarrow Q$ und genau
         so formal wie die Tabellenschreibweise.
 
     |> Statement
         title=*Definition*
         *(Erweiterte Zuständsübergangsfunktion)*. Für einen
-        endlichen Automaten  
+        endlichen Automaten   
         $(\Sigma, Q, \qstart, F, \delta)$ definieren wir die
-        _erweiterte Zustandsübergangsfunktion_  
+        _erweiterte Zustandsübergangsfunktion_   
         $\hat{\delta}: Q \times \Sigma^* \rightarrow Q$ rekursiv
         wie folgt:
 
@@ -188,9 +188,9 @@
         \hat{\delta} (q, x\alpha)&= \hat{\delta} (\delta(x), \alpha) \ .
         \end{align*}
 
-        $\hat{\delta} (q, \alpha) = q'$ heißt also, dass
-        der Automat, wenn er sich im Zustand $q$ befindet
-        und das Wort $\alpha$ abarbeitet, er danach im Zustand  
+        $\hat{\delta} (q, \alpha) = q'$ heißt also, dass der
+        Automat, wenn er sich im Zustand $q$ befindet und
+        das Wort $\alpha$ abarbeitet, er danach im Zustand   
         $q'$ landet. Wir schreiben auch kompakt
 
         $$
@@ -199,7 +199,7 @@
 
     |> Statement
         title=*Definition*
-        * (Akzeptierte Sprache). * Sei  
+        * (Akzeptierte Sprache). * Sei   
         $M = (\Sigma, Q, \qstart, F, \delta)$ ein endlicher
         Automat. Die von $M$ akzeptierte Sprache ist
 
@@ -218,7 +218,7 @@
                 src=./img/finite-state-automata/finite-state-machine-example-01.svg
                 loading=lazy
 
-        akzeptiert die Sprache aller  
+        akzeptiert die Sprache aller   
         $\alpha \in \{x,y,z\}$, die auf $x$ enden und nicht
         die Buchstabenfolge $xy$ enthalten.
 
@@ -272,7 +272,7 @@
         handle=theorem-fsm-regular
         title=*Theorem*
         Sei $M = (\Sigma, Q, \qstart, F, \delta)$ ein endlicher
-        Automat. Dann gibt es eine reguläre Grammatik  
+        Automat. Dann gibt es eine reguläre Grammatik   
         $G = (\Sigma, N, P, S)$ mit $L(G) = L(M)$.
 
     Wir nehmen dies als Anlass, um mal wieder einen Induktionsbeweis
@@ -289,7 +289,7 @@
         q_1 \rightarrow xq_2
         \end{align*}
 
-        Hiermit erhalten wir eine "Zwischengrammatik"  
+        Hiermit erhalten wir eine "Zwischengrammatik"   
         $G'$. Die endgültige Grammatik $G$ erhalten wir, indem
         wir für jeden akzeptierenden Zustand $q \in N$ die
         Produktion
@@ -308,37 +308,37 @@
             gilt.
 
         Bevor wir diese Behauptung beweisen, achten Sie auf
-        die Bedeutung der Symbole. Der einfache Pfeil in  
+        die Bedeutung der Symbole. Der einfache Pfeil in   
         $q \stackrel{\alpha}{\rightarrow} q'$ beschreibt die
         Arbeitsweise des endlichen Automaten, dass nämlich
-        das Verarbeiten von $\alpha$ den Automaten vom Zustand  
+        das Verarbeiten von $\alpha$ den Automaten vom Zustand   
         $q$ in den Zustand $q'$ führt. Der doppelte Pfeil
         in $q \Rightarrow^* \alpha q'$ sagt aus, dass aus
         dem Nichtterminalsymbol $q$ in der Grammatik $G$ in
-        möglicherweise mehreren Schritten die Wortform  
-        $\alpha q'$ abgeleitet werden kann. Der Pfeil  
-        $\rightarrow$ "lebt" also im Automaten $M$, der Pfeil  
+        möglicherweise mehreren Schritten die Wortform   
+        $\alpha q'$ abgeleitet werden kann. Der Pfeil   
+        $\rightarrow$ "lebt" also im Automaten $M$, der Pfeil   
         $\Rightarrow^*$ lebt in der Grammatik $G'$.
 
         |> Remark
             title=*Beweis.*
-            Wir verwenden Induktion über die Länge des Wortes  
-            $\alpha$. *Induktionsbasis.* Wenn 
+            Wir verwenden Induktion über die Länge des Wortes   
+            $\alpha$. *Induktionsbasis.* Wenn  
             $\alpha = \epsilon$ gilt, also $\alpha$ die Länge
-            0 hat, dann gilt  
+            0 hat, dann gilt   
             $q \stackrel{\epsilon}{\rightarrow} q'$ genau dann,
-            wenn $q = q'$ ist. Wie kann nun  
+            wenn $q = q'$ ist. Wie kann nun   
             $q \Rightarrow^* \epsilon q'$ in $G'$ gelten? Beachten
             Sie, dass jede Produktion in $G'$ ein Terminalsymbol
             erzeugt; $q \Rightarrow^* \epsilon q'$ kann also nur
-            gelten, wenn _keine_ Produktion erfolgt ist und somit  
+            gelten, wenn _keine_ Produktion erfolgt ist und somit   
             $q = q'$ gilt. Wir sehen: beide Aussagen sind äquivalent
             zu $q = q'$ und somit auch äquivalent zueinander.
             *Induktionsschritt*. Wenn $\alpha$ die Länge $n+1$
-            hat, so schreiben wir $\alpha = x \beta$ für ein Wort  
+            hat, so schreiben wir $\alpha = x \beta$ für ein Wort   
             $\beta \in \Sigma^*$ der Länge $n$. Per Induktionshypothese
-            können wir nun davon ausgehen, dass für alle  
-            $q_1, q_2 \in Q$ die Aussage  
+            können wir nun davon ausgehen, dass für alle   
+            $q_1, q_2 \in Q$ die Aussage   
             $q_1 \stackrel{\beta}{\rightarrow} q_2$ genau dann
             gilt, wenn $q_1 \Rightarrow^* \beta q_2$ gilt. Unser
             Ziel ist es, zu zeigen, dass die beiden folgenden Aussagen
@@ -353,22 +353,22 @@
 
             Wir müssen beide Richtungen zeigen, also zeigen, dass
             aus Aussage (1) die Aussage (2) folgt und umgekehrt.
-            *Aus (1) folgt (2).* Nehmen wir also an, dass  
-            $q \stackrel{x \beta}{\rightarrow} q'$ gilt und bezeichnen  
+            *Aus (1) folgt (2).* Nehmen wir also an, dass   
+            $q \stackrel{x \beta}{\rightarrow} q'$ gilt und bezeichnen   
             $q_1 := \delta(q,x)$. Es gilt also
 
             $$
             q \stackrel{x}{\rightarrow} q_1 \stackrel{\beta}{\rightarrow} q'
             $$
 
-            Der erste Teil, also  
+            Der erste Teil, also   
             $q \stackrel{x}{\rightarrow} q_1$, bedeutet, dass
             wir in $G'$ die Produktion $q \rightarrow xq_1$ eingeführt
-            haben. Auf den zweiten Teil, also  
+            haben. Auf den zweiten Teil, also   
             $q_1 \stackrel{\beta}{\rightarrow} q'$, können wir
-            die Induktionshypothese anwenden und schließen, dass  
+            die Induktionshypothese anwenden und schließen, dass   
             $q_1 \Rightarrow^* \beta q'$ gilt. Nun können wir
-            mit dem Nichtterminal $q$ beginnen, die Produktion  
+            mit dem Nichtterminal $q$ beginnen, die Produktion   
             $q \rightarrow x q_1$ anwenden und dann mit $q_1$
             fortfahrend die Wortform $\beta q'$ ableiten, also
 
@@ -377,7 +377,7 @@
             $$
 
             Dies zeigt die erste Richtung. *Aus (2) folgt (1).*
-            Nun nehmen wir an, dass  
+            Nun nehmen wir an, dass   
             $q \Rightarrow^* x \beta q'$ gilt. Untersuchen wir
             die erste Produktion, die in dieser Ableitung verwendet
             worden ist. Alle Produktionen in $G'$ erzeugen ein
@@ -402,9 +402,9 @@
             q_1 \stackrel{\beta}{\rightarrow} q'
             $$
 
-            gilt. Die Produktionsregel $q \rightarrow x q_1$
-            kann nur in $G'$ eingeführt worden sein, weil  
-            $\delta(q,x) = q_1$, also  
+            gilt. Die Produktionsregel $q \rightarrow x q_1$ kann
+            nur in $G'$ eingeführt worden sein, weil   
+            $\delta(q,x) = q_1$, also   
             $q \stackrel{x}{\rightarrow} q_1$. Somit sehen wir,
             dass
 
@@ -412,13 +412,13 @@
             q \stackrel{x}{\rightarrow} q_1 \stackrel{\beta}{\rightarrow} q'
             $$
 
-            gilt, also zusammengenommen  
+            gilt, also zusammengenommen   
             $q \stackrel{x\beta}{\rightarrow} q'$. Dies zeigt
             die zweite Richtung. Hiermit endet der Induktionsbeweis.
             |> QED
 
         Wir haben nun die Behauptung bewiesen. Als nächstens
-        betrachten wir die Grammatik $G$ und behaupten, dass  
+        betrachten wir die Grammatik $G$ und behaupten, dass   
         $L(G) = L(M)$ gilt. Sei $\alpha \in \Sigma$, dann
         behaupten wir also, dass wir folgenden zwei Aussagen
         äquivalent sind:
@@ -430,35 +430,35 @@
             |> li
                 $\qstart \Rightarrow^* \alpha$ in Grammatik $G$.
 
-        Wenn nun also  
-        $\qstart \stackrel{\alpha}{\rightarrow} q'$ gilt und  
+        Wenn nun also   
+        $\qstart \stackrel{\alpha}{\rightarrow} q'$ gilt und   
         $q' \in F$, dann wissen wir von der obigen Behauptung,
-        dass es in $G'$ die Ableitung  
-        $\qstart \Rightarrow^* \alpha q'$ gibt. Da  
-        $q' \in F$ ist, enthält $G$ die Produktion  
-        $q' \rightarrow \epsilon$, und somit können wir in  
-        $G$ die Ableitung  
+        dass es in $G'$ die Ableitung   
+        $\qstart \Rightarrow^* \alpha q'$ gibt. Da   
+        $q' \in F$ ist, enthält $G$ die Produktion   
+        $q' \rightarrow \epsilon$, und somit können wir in   
+        $G$ die Ableitung   
         $\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$
-        machen. In der anderen Richtung, wenn  
+        machen. In der anderen Richtung, wenn   
         $\qstart \Rightarrow^* \alpha$ in Grammatik $G$ gilt,
         dann betrachten wir den letzten Ableitungsschritt.
         Da $\alpha$ keine Nichtterminalsymbole enthält, muss
         im letzten Ableitungsschritt ein Nichtterminalsymbol
-        verschwunden sein. Die einzigen Produktionen in  
+        verschwunden sein. Die einzigen Produktionen in   
         $G$ bei denen das Nichtterminal verschwindet, sind
         von der Form $q' \rightarrow \epsilon$, wenn $q'$
         im Automaten $M$ ein akzeptierender Endzustand ist.
         Sei nun also $q' \rightarrow \epsilon$ die Produktion,
         die im letzten Ableitungsschritt angewendet worden
-        ist. Es gilt also  
+        ist. Es gilt also   
         $\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$.
         Beachten Sie nun weiter, dass all jene Produktionen,
-        die in $G$ aber nicht in $G'$ sind, die Form  
+        die in $G$ aber nicht in $G'$ sind, die Form   
         $q' \rightarrow \epsilon$ haben, also das Nichtterminalsymbol
         verschwinden lassen; es kann in einer Ableitung also
         nur eine solche Produktion angewandt worden sein, und
-        das ganz zum Schluss. Das heißt: die Ableitung  
-        $\qstart \Rightarrow^* \alpha q'$ verwendet ausschließlich  
+        das ganz zum Schluss. Das heißt: die Ableitung   
+        $\qstart \Rightarrow^* \alpha q'$ verwendet ausschließlich   
         $G'$-Produktionen. Somit können wir die oben gezeigte
         Behauptung anwenden und folgern, dass
 
@@ -476,7 +476,7 @@
     zu rufen.
 
     |> Exercise
-        Schreiben Sie zu folgendem Automaten über dem Alphabet  
+        Schreiben Sie zu folgendem Automaten über dem Alphabet   
         $\Sigma = \{0,1,2,3,4,5,6,7,8,9\}$ eine äquivalente
         reguläre Grammatik:
 
@@ -495,8 +495,8 @@
     einem gegebenen endlichen Automaten recht einfach eine
     äquivalente reguläre Grammatik schreibne können. Es
     drängt sich die Frage auf: geht das auch umgekehrt?
-    Versuchen wir es. Zu jedem "Grammatik-Pfeil"  
-    $X \rightarrow aY$ bauen wir uns einen "Automaten-Pfeil"  
+    Versuchen wir es. Zu jedem "Grammatik-Pfeil"   
+    $X \rightarrow aY$ bauen wir uns einen "Automaten-Pfeil"   
     $X \stackrel{a}{\rightarrow} Y$.
 
     |> Statement
@@ -511,9 +511,9 @@
 
         Versuchen wir, daraus einen endlichen Automaten zu
         bauen. Als Zustandsmenge nehmen wir die Menge nichtterminaler
-        Symbole $\{S,T\}$, als Startzustand das Startsymbol  
+        Symbole $\{S,T\}$, als Startzustand das Startsymbol   
         $S$. Zustandsübergänge ergeben sich aus den Produktionsregeln,
-        wobei wir für Produktionen der Form  
+        wobei wir für Produktionen der Form   
         $A \rightarrow \epsilon$ den Zustand $A$ zu einem
         Endzustand machen. Also:
 
@@ -543,7 +543,7 @@
                 src=./img/finite-state-automata/finite-state-machine-example-04.svg
                 loading=lazy
 
-        Dies ist nun unser endlicher Automat $M$ mit  
+        Dies ist nun unser endlicher Automat $M$ mit   
         $L(M) = L(G)$.
 
     |> Statement
@@ -559,8 +559,8 @@
         E&\rightarrow \epsilon \
         \end{align*}
 
-        Wobei wir aus dem vorherigen Beispiel lernen und
-        einen Fehlerzustand einführen:
+        Wobei wir aus dem vorherigen Beispiel lernen und einen
+        Fehlerzustand einführen:
 
         |> figure
             |> img

@@ -89,7 +89,6 @@ window.MathJax = {
       steps: ["\\stackrel{#1}{\\rightarrow^*}", 1],
       front: "\\textnormal{front}",
       Front: "\\textnormal{Front}",
-      qend: "{q_{\\rm end}",
       dk: ["\\hat{#1}", 1],
       dkt: ["#1", 1],
       qaccept: "q_{\\rm yes}",
