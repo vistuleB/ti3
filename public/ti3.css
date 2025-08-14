@@ -356,6 +356,7 @@ figure.main-column img.constrained,
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .carousel__nav-button {
@@ -390,6 +391,10 @@ figure.main-column img.constrained,
     flex: 1 0 0%;
     display: flex;
     text-align: center;
+}
+
+.carousel__item {
+    width: 100%;
 }
 
 .carousel__item > * {
