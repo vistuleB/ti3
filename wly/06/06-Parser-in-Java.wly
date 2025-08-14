@@ -2,7 +2,7 @@
     title=Einen Parser in Java implementieren
     
     |> div
-        class=alert-info
+        class=well alert-info
         Den vollständigen Quelltext, den wir in der Vorlesung geschrieben haben,
         finden Sie in der Datei 
         |> a
