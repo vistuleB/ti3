@@ -314,6 +314,7 @@
     also folgendes Theorem:
 
     |> Statement
+        handle=nfsm-to-fsm
         title=*Theorem*
         *(Einen nichtdeterministischen endlichen Automaten
         deterministisch machen).* Sei     
@@ -341,6 +342,7 @@
     Wir folgern also
 
     |> Statement
+        handle=regular-grammar-to-fsm
         title=*Theorem*
         Zu jeder regulären Sprache $L$ gibt es einen deterministischen
         endlichen Automaten $M$ mit $L(M) = L$.

@@ -110,7 +110,7 @@ pub fn pipeline()  -> List(Pipe) {
       dl.rearrange_links(#("Übungsaufgabe <a href='1'>_1_</a>", "<a href='1'>Übungsaufgabe _1_</a>")),
       dl.rearrange_links(#("Aufgabe <a href='1'>_1_</a>", "<a href='1'>Aufgabe _1_</a>")),
       dl.rearrange_links(#("Kapitel <a href='1'>_1_</a>", "<a href='1'>Kapitel _1_</a>")),
-      dl.rearrange_links(#("Lemma <a href='1'>_1_</a>", "<a href='1'>Lemma _1_</a>")),
+       dl.rearrange_links(#("Lemma <a href='1'>_1_</a>", "<a href='1'>Lemma _1_</a>")),     dl.rearrange_links(#("Algorithmus <a href='1'>_1_</a>", "<a href='1'>Algorithmus _1_</a>")),
     ],
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),

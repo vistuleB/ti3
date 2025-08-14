@@ -255,6 +255,7 @@
         $\alpha \beta w$ zu einer gültigen Wortform macht.
         
     |> Statement
+        handle=lemma-characterization-LR0
         title=*Lemma*
         
         *(LR(0), äquivalente Formulierung).*
