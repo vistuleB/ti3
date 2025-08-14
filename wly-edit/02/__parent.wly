@@ -49,7 +49,7 @@
     Die dritte Zeile der mittleren Tabelle sagt beispielsweise
     aus, dass $1 \vee 0 = 1$ gilt. Vielleicht wünschen
     Sie sich noch mehr Gates, zum Beispiel ein if-then-else-Gate
-    mit drei Inputs  $x,y,z$, welches $y$ ausgibt, wenn   
+    mit drei Inputs  $x,y,z$, welches $y$ ausgibt, wenn    
     $x$ wahr ist und ansonsten $z$ ausgibt. So ein Gate
     können Sie sich einfach aus And, Or, Not bauen:
 
@@ -101,7 +101,7 @@
                 welches 1 ausgibt, wenn eine ungerade Anzahl seiner
                 Inputs auf 1 stehen.
             |> li
-                Ein $n$-faches Majority-Gate    
+                Ein $n$-faches Majority-Gate     
                 $\mathrm{Maj}(x_1,\ldots,x_n)$, welches 1 ausgibt,
                 wenn mehr als $n/2$ der Inputs auf 1 stehen. Sie können
                 annehmen, dass $n$ ungerade ist, wenn es Ihnen hilft.
@@ -110,7 +110,7 @@
                 hin, den man realistischerweise herstellen kann?
 
     Je nach Kontext kann es hilfreich sein, Gatter mit
-    beliebig vielen Inputs zuzulassen, beispielsweise    
+    beliebig vielen Inputs zuzulassen, beispielsweise     
     $x_1 \land x_2 \land \ldots \land x_n$ als ein Gate
     darzustellen:
 
@@ -154,20 +154,20 @@
             src=img/circuits/flipflop.svg
             loading=lazy
 
-    Das Flipflop zeigt ein interessantes Verhalten: wenn    
+    Das Flipflop zeigt ein interessantes Verhalten: wenn     
     $\text{Reset} = 0$, $\text{Set} = 1$ ist, so ist der
     Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1,
     und somit ist $\bar{Q} = 0$; somit sind wiederum beide
-    Input-Werte des oberen OR-Gates 0 und $Q = 1$. Wenn    
-    $\text{Reset} = 1$, $\text{Set} = 0$, dann ist analog    
-    $Q = 0$, $\bar{Q} = 1$. Wenn    
+    Input-Werte des oberen OR-Gates 0 und $Q = 1$. Wenn     
+    $\text{Reset} = 1$, $\text{Set} = 0$, dann ist analog     
+    $Q = 0$, $\bar{Q} = 1$. Wenn     
     $\text{Reset} = \text{Set} = 0$, dann leiten beide
     OR-Gates einfach die Werte der anderen, von rechts
-    kommenden Kabel durch, und somit gilt    
+    kommenden Kabel durch, und somit gilt     
     $Q = \neg{\bar{Q}}$ und $\bar{Q} = \neg{Q}$; das heißt,
     die Werte, die zuvor bestanden, bestehen weiter. Das
     Flipflop implementiert somit einen 1-Bit-Speicher (die
-    Kombination $\text{Set} = \text{Reset} = 1$ würde    
+    Kombination $\text{Set} = \text{Reset} = 1$ würde     
     $Q = \bar{Q} = 0$ erzeugen und gilt als illegale Eingabe).
     Ein Flipflop hat somit einen inneren Zustand. Die Schaltkreise
     in diesem Kapitel haben keinen inneren Zustand: die
@@ -193,26 +193,26 @@
         eingehende Kante haben und die mit AND oder OR beschrifteten
         Knoten mindestens zwei eingehende Kanten haben. Mindestens
         ein Knoten ist als Output-Gate gekennzeichnet. Die
-        Output-Gates sind ihrerseits mit Output-Variablen    
+        Output-Gates sind ihrerseits mit Output-Variablen     
         $y_1, \ldots, y_m$ beschriftet.
 
     Oft haben wir es mit Schaltkreisen mit nur einem Output-Gate
     zu tun; in diesem Falle lassen wir die Beschriftung
     auch gerne weg, weil sie keine zusätzliche Information
-    bringt. Wenn wir allen Input-Variablen eines Schaltkreises    
+    bringt. Wenn wir allen Input-Variablen eines Schaltkreises     
     $C$ einen Wahrheitswert zugewiesen bekommen haben,
     dann können wir den Schaltkreis von "unten" (Input-Gates)
     nach "oben" (Output-Gates) auswerten, indem eben jeder
     mit OR/AND/NOT beschriftete Knoten den ihm zugeordnete
     Booleschen Operator auswertet. Es ist klar, dass der
-    Schaltkreis $C$ eine _Funktion_    
+    Schaltkreis $C$ eine _Funktion_     
     $f_C : \{0,1\}^n \to \{0,1\}^m$ berechnet. Oft schreiben
     wir einfach $C : \{0,1\}^n \to \{0,1\}^m$.
 
     |> Statement
         title=*Beobachtung*
         Ein Schaltkreis $C$ mit $n$ Input-Gates und $m$ Output-Gates
-        berechnet eine Funktion    
+        berechnet eine Funktion     
         $f_C : \{0,1\}^n \to \{0,1\}^m$
 
     Es ist auch nicht weiter überraschend, dass es Schaltkreise
@@ -226,5 +226,5 @@
         title=*Definition*
         Zwei Boolesche Schaltkreise $C, C^{\prime}$ heißen
         äquivalent, wenn $f_C = f_{C^{\prime}}$, wenn sie
-        also die gleiche Funktion berechnen. Wir schreiben    
+        also die gleiche Funktion berechnen. Wir schreiben     
         $C \equiv C^{\prime}$.

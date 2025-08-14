@@ -119,7 +119,7 @@
         <p>
           Die Sprachen
           <span class="nowrap">$\emptyset$,</span>
-          $\{\epsilon\}$ und  
+          $\{\epsilon\}$ und   
           $\{x\}$ für jedes $x \in \Sigma$ sind regulär.
         </p>
       </li>
@@ -151,7 +151,7 @@
             $\epsilon$ ist
             ein regulärer Ausdruck und beschreibt die Sprache
             <span class="nowrap">$\{\epsilon\}$.</span>
-            Jedes einzelne Zeichen  
+            Jedes einzelne Zeichen   
             $x \in \Sigma$ ist ein regulärer Ausdruck und beschreibt
             die Sprache
             <span class="nowrap">$\{x\}$.</span>
@@ -162,7 +162,7 @@
           <p>
             <b>Alternative.</b>
             Wenn $R_1, R_2$ reguläre Ausdrücke
-            über $\Sigma$ sind und die Sprachen $L_1$ und  
+            über $\Sigma$ sind und die Sprachen $L_1$ und   
             $L_2$ beschreiben, so ist $(R_1 | R_2)$ ein regulärer
             Ausdruck und beschreibt die Sprache $L_1 \cup L_2$
             (die regulär ist, wie wir in
@@ -186,7 +186,7 @@
           <p>
             <b>Kleenesche Hülle.</b>
             Wenn $R$ ein regulärer Ausdruck
-            ist und die Sprache $L$ beschreibt, dann ist  
+            ist und die Sprache $L$ beschreibt, dann ist   
             $(R^*)$ ein regulärer Ausdruck und beschreibt die
             Sprache
             <span class="nowrap">$L^*$.</span>
@@ -202,7 +202,7 @@
         <span class="nowrap">$L$-Wörtern</span>
         wir oft
         <i>nichtleere</i>
-        Folgen wollen, führen wir die Abkürzung  
+        Folgen wollen, führen wir die Abkürzung   
         $R^+$ für $R (R^*)$ ein und bezeichnen die beschriebene
         Sprache $L \circ L^*$ kurzerhand als
         <span class="nowrap">$L^+$.</span>
@@ -212,7 +212,7 @@
     <p class="main-column">
       In konkreten fällen lassen gerne die Klammerung weg,
       wenn keine Verwechslungsgefahr besteht. Auch gehen
-      wir davon aus, dass die Operatoren die Präzedenz  
+      wir davon aus, dass die Operatoren die Präzedenz   
       $^*$ vor $\circ$ vor $|$ haben (wie
       <i>hoch</i>
       vor
@@ -220,8 +220,8 @@
       vor
       <i>Strich</i>
       in der Arithmetik), sodass beispielsweise
-      der Ausdruck $a^*b|c^*$ die Bedeutung von  
-      $(((a^*)b)(c^*))$ hat, genauso wie wir in der Arithmetik  
+      der Ausdruck $a^*b|c^*$ die Bedeutung von   
+      $(((a^*)b)(c^*))$ hat, genauso wie wir in der Arithmetik   
       $a^2 b + c^3$ statt $(((a^2)b) + c^3)$ schreiben.
       Die von den atomaren Ausdrücken beschriebenen Sprachen
       sind alle regulär, da sie alle
@@ -334,7 +334,7 @@
         $$
       </div>
       <p>
-        Somit können wir nun den regulären Ausdruck für  
+        Somit können wir nun den regulären Ausdruck für   
         $L$ in seiner ganzen Pracht zeigen:
       </p>
       <div class="math-block">
@@ -428,7 +428,7 @@
         ist, gibt es einen nichtdeterministischen endlichen
         Automaten
         <span class="nowrap">$M$,</span>
-        die $L$ akzeptiert. Wir werden nun  
+        die $L$ akzeptiert. Wir werden nun   
         $M$ Schritt für Schritt in einen regulären Ausdruck
         verwandeln. Kern der Idee ist, dass wir neben den üblichen
         Übergängen
@@ -441,10 +441,10 @@
         $$
       </div>
       <p>
-        komplexere Übergänge wie zum Beispiel  
+        komplexere Übergänge wie zum Beispiel   
         $q_1 \step{xy} q_2$ zulassen. Die Bedeutung wäre hier
-        beispielsweise, dass der Automat von $q_1$ nach  
-        $q_2$ übergehen kann, wenn er die Eingabesymbole  
+        beispielsweise, dass der Automat von $q_1$ nach   
+        $q_2$ übergehen kann, wenn er die Eingabesymbole   
         $xy$ liest. Wir lassen auch komplexere Übergänge wie
       </p>
       <div class="math-block">
@@ -473,11 +473,11 @@
       </div>
       <p>
         wobei $R$ ein regulärer Ausdruck ist. Insbesondere
-        lassen wir Übergänge der Form  
+        lassen wir Übergänge der Form   
         $q_1 \step{\epsilon} q_2$ zu. Dies bedeutet, dass
         der Automat von $q_1$ nach $q_2$ "springen" kann,
         ohne ein Eingabesymbol zu lesen. Des weiteren verlangen
-        wir, dass es genau einen akzeptierenden Endzustand  
+        wir, dass es genau einen akzeptierenden Endzustand   
         $q_{\rm end}$ mit
         <span class="nowrap">$\qstart \ne q_{\rm end}$,</span>
         und dass
@@ -528,14 +528,14 @@
         </div>
         <p>
           Jede Kante $(q_i, q_j) \in E$ ist mit einem regulären
-          Ausdruck $\delta(q_i, q_j)$ beschriftet. Wenn  
+          Ausdruck $\delta(q_i, q_j)$ beschriftet. Wenn   
           $R = \delta(q_i, q_j)$ gilt, dann schreiben wir
           <span class="nowrap">$q_i \step{R} q_j$.</span>
-          Wenn $\beta \in L(R)$ gilt,  
+          Wenn $\beta \in L(R)$ gilt,   
           $\beta$ also ein Wort in der von $R$ beschriebenen
           Sprache ist, dann schreiben wir auch
           <span class="nowrap">$q_i \step{\beta \in R} q_j$.</span>
-          Für $q, q' \in Q$ und 
+          Für $q, q' \in Q$ und  
           $\alpha \in \Sigma^*$ schreiben wir
         </p>
         <div class="math-block">
@@ -546,10 +546,10 @@
           $$
         </div>
         <p>
-          wenn man $\alpha$ zerlegen kann als  
-          $\alpha = \beta_1 \beta_2 \dots \beta_k$ gibt (wobei  
-          $\beta_i = \epsilon$ zulässig ist) und es eine Zustandsfolge  
-          $q = q_0, q_1, \dots, q_k = q'$ gibt, wobei  
+          wenn man $\alpha$ zerlegen kann als   
+          $\alpha = \beta_1 \beta_2 \dots \beta_k$ gibt (wobei   
+          $\beta_i = \epsilon$ zulässig ist) und es eine Zustandsfolge   
+          $q = q_0, q_1, \dots, q_k = q'$ gibt, wobei   
           $(q_{i-1}, q_i)\in E$ ist und mit einem regulären
           Ausdruck $R_i$ beschriftet ist und jedes $\beta_i$
           in der von $R_i$ beschriebenen Sprache ist. Wenn also
@@ -571,7 +571,7 @@
         transformieren, indem wir, soweit nötig, (1) einen
         neuen Startzustand kreieren (damit dieser keine eingehenden
         Kanten hat), (2) einen neuen Endzustand kreieren, (3)
-        "parallele" Übergänge wie  
+        "parallele" Übergänge wie   
         $(q_i, x, q_j), (q_i, y, q_j)$ zu einer Kante zusammenfassen,
         der dann mit dem regulären Ausdruck $x | y$ beschriftet
         ist. Wir haben den ganzen Aufwand betrieben, weil wir
@@ -620,7 +620,7 @@
         den wir eliminieren
         wollen, und führen die oben beschriebene
         <span class="nowrap">$B$-Umfahrung</span>
-        parallel für alle Paare $A,C$ aus, für die es  
+        parallel für alle Paare $A,C$ aus, für die es   
         $A \step{} B \step{} C$ gibt. Wir erhalten einen VNEA
         mit einem Zustand weniger, der zu dem vorherigen VNEA
         äquivalent ist, also die gleiche Sprache akzeptiert.
@@ -637,9 +637,9 @@
         >
       </figure>
       <p>
-        Dieser VNEA akzeptiert immer noch die gleiche Sprache  
+        Dieser VNEA akzeptiert immer noch die gleiche Sprache   
         $L$ wie der ursprüngliche NEA, mit dem wir begonnen
-        haben. Welche Sprache ist das? Es ist die Sprache aller  
+        haben. Welche Sprache ist das? Es ist die Sprache aller   
         $\alpha \in \Sigma$ mit
       </p>
       <div class="math-block">
