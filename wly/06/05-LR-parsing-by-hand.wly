@@ -76,60 +76,62 @@
     Am Besten betrachten wir ein Beispiel für
     $L_2 = \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0\}$. Die Farbe grau bedeutet
     hier, dass wir das Eingabezeichen noch nicht gelesen haben.
-    
-    |> Carousel
-        style=height:18em
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-01.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-02.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-03.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-04.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-05.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-06.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-07.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-08.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-09.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-10.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-11.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-12.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-13.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-14.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-15.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-16.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-17.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-18.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-19.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-20.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-21.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-22.svg
-        src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-23.svg
+   
+    |> Highlight 
+        |> Carousel
+            style=height:18em
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-01.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-02.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-03.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-04.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-05.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-06.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-07.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-08.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-09.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-10.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-11.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-12.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-13.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-14.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-15.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-16.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-17.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-18.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-19.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-20.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-21.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-22.svg
+            src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-23.svg
 
     Betrachten wir noch ein Beispiel, nun für die etwas nützlichere Grammatik
     der streng geklammerten arithmetischen Ausdrücke.
-    
-    |> Carousel
-        style=height:18em
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-01.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-02.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-03.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-04.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-05.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-06.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-07.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-08.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-09.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-10.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-11.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-12.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-13.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-14.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-15.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-16.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-17.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-18.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-19.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-20.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-21.svg
-        src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-22.svg
+
+    |> Highlight    
+        |> Carousel
+            style=height:18em
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-01.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-02.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-03.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-04.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-05.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-06.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-07.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-08.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-09.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-10.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-11.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-12.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-13.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-14.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-15.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-16.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-17.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-18.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-19.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-20.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-21.svg
+            src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-22.svg
       
     Wenn wir uns nun die Ableitung ansehen, die wir gefunden haben:
     \begin{align*}
