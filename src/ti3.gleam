@@ -1,5 +1,5 @@
 import argv
-import blamedlines.{type Blame, type BlamedLine, Blame, BlamedLine}
+import blamedlines.{type Blame, type OutputLine, Blame, OutputLine}
 import gleam/io
 import gleam/list
 import gleam/dict
@@ -19,7 +19,7 @@ pub type FragmentType {
 }
 
 type TI3Fragment(z) = vr.OutputFragment(FragmentType, z)
-type BL = List(BlamedLine)
+type BL = List(OutputLine)
 
 pub type TI3SplitterError {
   NoChapters
@@ -108,25 +108,25 @@ fn index_emitter(
   let lines =
     list.flatten([
       [
-        BlamedLine(blame_us("index_emitter"), 0, "<!DOCTYPE html>"),
-        BlamedLine(blame_us("index_emitter"), 0, "<html>"),
-        BlamedLine(blame_us("index_emitter"), 0, "<head>"),
-        BlamedLine(blame_us("index_emitter"), 2, "<meta charset=\"utf-8\">"),
-        BlamedLine(blame_us("index_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
-        BlamedLine(blame_us("index_emitter"), 2, "<meta name=\"description\" content=\"Table of contents for TI3 - Theoretische Informatik 2\">"),
-        BlamedLine(blame_us("index_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
-        BlamedLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
-        BlamedLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        BlamedLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
-        BlamedLine(blame_us("index_emitter"), 2, "<title>TI3 - Index</title>"),
-        BlamedLine(blame_us("index_emitter"), 0, "</head>"),
-        BlamedLine(blame_us("index_emitter"), 0, "<body class=\"page-index\">"),
+        OutputLine(blame_us("index_emitter"), 0, "<!DOCTYPE html>"),
+        OutputLine(blame_us("index_emitter"), 0, "<html>"),
+        OutputLine(blame_us("index_emitter"), 0, "<head>"),
+        OutputLine(blame_us("index_emitter"), 2, "<meta charset=\"utf-8\">"),
+        OutputLine(blame_us("index_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
+        OutputLine(blame_us("index_emitter"), 2, "<meta name=\"description\" content=\"Table of contents for TI3 - Theoretische Informatik 2\">"),
+        OutputLine(blame_us("index_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        OutputLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        OutputLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        OutputLine(blame_us("index_emitter"), 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
+        OutputLine(blame_us("index_emitter"), 2, "<title>TI3 - Index</title>"),
+        OutputLine(blame_us("index_emitter"), 0, "</head>"),
+        OutputLine(blame_us("index_emitter"), 0, "<body class=\"page-index\">"),
       ],
-      vxml.vxml_to_html_blamed_lines(fragment.payload, 2, 2),
+      vxml.vxml_to_html_output_lines(fragment.payload, 2, 2),
       [
-        BlamedLine(blame_us("index_emitter"), 0, "</body>"),
-        BlamedLine(blame_us("index_emitter"), 0, "</html>"),
-        BlamedLine(blame_us("index_emitter"), 0, ""),
+        OutputLine(blame_us("index_emitter"), 0, "</body>"),
+        OutputLine(blame_us("index_emitter"), 0, "</html>"),
+        OutputLine(blame_us("index_emitter"), 0, ""),
       ],
     ])
   Ok(vr.OutputFragment(..fragment, payload: lines))
@@ -140,25 +140,25 @@ fn chapter_emitter(
   let lines =
     list.flatten([
       [
-        BlamedLine(blame_us("chapter_emitter"), 0, "<!DOCTYPE html>"),
-        BlamedLine(blame_us("chapter_emitter"), 0, "<html>"),
-        BlamedLine(blame_us("chapter_emitter"), 0, "<head>"),
-        BlamedLine(blame_us("chapter_emitter"), 2, "<meta charset=\"utf-8\">"),
-        BlamedLine(blame_us("chapter_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
-        BlamedLine(blame_us("chapter_emitter"), 2, "<meta name=\"description\" content=\"Chapter " <> string.inspect(n) <> " of TI3 - Theoretische Informatik 2\">"),
-        BlamedLine(blame_us("chapter_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
-        BlamedLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
-        BlamedLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        BlamedLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
-        BlamedLine(blame_us("chapter_emitter"), 2, "<title>TI3 - Chapter " <> string.inspect(n) <> "</title>"),
-        BlamedLine(blame_us("chapter_emitter"), 0, "</head>"),
-        BlamedLine(blame_us("chapter_emitter"), 0, "<body class=\"page-chapter chapter-" <> string.inspect(n) <> "\">"),
+        OutputLine(blame_us("chapter_emitter"), 0, "<!DOCTYPE html>"),
+        OutputLine(blame_us("chapter_emitter"), 0, "<html>"),
+        OutputLine(blame_us("chapter_emitter"), 0, "<head>"),
+        OutputLine(blame_us("chapter_emitter"), 2, "<meta charset=\"utf-8\">"),
+        OutputLine(blame_us("chapter_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
+        OutputLine(blame_us("chapter_emitter"), 2, "<meta name=\"description\" content=\"Chapter " <> string.inspect(n) <> " of TI3 - Theoretische Informatik 2\">"),
+        OutputLine(blame_us("chapter_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        OutputLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        OutputLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        OutputLine(blame_us("chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
+        OutputLine(blame_us("chapter_emitter"), 2, "<title>TI3 - Chapter " <> string.inspect(n) <> "</title>"),
+        OutputLine(blame_us("chapter_emitter"), 0, "</head>"),
+        OutputLine(blame_us("chapter_emitter"), 0, "<body class=\"page-chapter chapter-" <> string.inspect(n) <> "\">"),
       ],
-      vxml.vxml_to_html_blamed_lines(fragment.payload, 2, 2),
+      vxml.vxml_to_html_output_lines(fragment.payload, 2, 2),
       [
-        BlamedLine(blame_us("chapter_emitter"), 0, "</body>"),
-        BlamedLine(blame_us("chapter_emitter"), 0, "</html>"),
-        BlamedLine(blame_us("chapter_emitter"), 0, ""),
+        OutputLine(blame_us("chapter_emitter"), 0, "</body>"),
+        OutputLine(blame_us("chapter_emitter"), 0, "</html>"),
+        OutputLine(blame_us("chapter_emitter"), 0, ""),
       ],
     ])
   Ok(vr.OutputFragment(..fragment, payload: lines))
@@ -172,25 +172,25 @@ fn sub_chapter_emitter(
   let lines =
     list.flatten([
       [
-        BlamedLine(blame_us("sub_chapter_emitter"), 0, "<!DOCTYPE html>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 0, "<html>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 0, "<head>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<meta charset=\"utf-8\">"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<meta name=\"description\" content=\"Section " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n) <> " of TI3 - Theoretische Informatik 2\">"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 2, "<title>TI3 - Chapter " <> string.inspect(chapter_n) <> ", Section " <> string.inspect(sub_n) <> "</title>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 0, "</head>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 0, "<body class=\"page-sub chapter-" <> string.inspect(chapter_n) <> " sub-" <> string.inspect(sub_n) <> "\">"),
+        OutputLine(blame_us("sub_chapter_emitter"), 0, "<!DOCTYPE html>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 0, "<html>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 0, "<head>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 2, "<meta charset=\"utf-8\">"),
+        OutputLine(blame_us("sub_chapter_emitter"), 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
+        OutputLine(blame_us("sub_chapter_emitter"), 2, "<meta name=\"description\" content=\"Section " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n) <> " of TI3 - Theoretische Informatik 2\">"),
+        OutputLine(blame_us("sub_chapter_emitter"), 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        OutputLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 2, "<title>TI3 - Chapter " <> string.inspect(chapter_n) <> ", Section " <> string.inspect(sub_n) <> "</title>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 0, "</head>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 0, "<body class=\"page-sub chapter-" <> string.inspect(chapter_n) <> " sub-" <> string.inspect(sub_n) <> "\">"),
       ],
-      vxml.vxml_to_html_blamed_lines(fragment.payload, 2, 2),
+      vxml.vxml_to_html_output_lines(fragment.payload, 2, 2),
       [
-        BlamedLine(blame_us("sub_chapter_emitter"), 0, "</body>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 0, "</html>"),
-        BlamedLine(blame_us("sub_chapter_emitter"), 0, ""),
+        OutputLine(blame_us("sub_chapter_emitter"), 0, "</body>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 0, "</html>"),
+        OutputLine(blame_us("sub_chapter_emitter"), 0, ""),
       ],
     ])
   Ok(vr.OutputFragment(..fragment, payload: lines))
@@ -259,7 +259,7 @@ pub fn main() {
 
   let renderer =
     vr.Renderer(
-      assembler: vr.default_blamed_lines_assembler(amendments.spotlight_paths),
+      assembler: vr.default_input_lines_assembler(amendments.spotlight_paths),
       source_parser: vr.default_writerly_source_parser(amendments.spotlight_key_values),
       pipeline: pipeline(),
       splitter: ti3_splitter,
