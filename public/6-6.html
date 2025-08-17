@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 6.6 of TI3 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="ti3.css" />
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./ti3.js"></script>
+  <title>TI3 - Chapter 6, Section 6</title>
+</head>
+<body class="page-sub chapter-6 sub-6">
+  <div
+    path="./6-6.html"
+    class="subchapter"
+  >
+    <div class="menu">
+      <div class="menu-left">
+        <a href="./index.html">Inhaltsverzeichnis</a><a
+          id="prev-page"
+          href="./6-5.html"
+        >&lt;&lt; Kapitel 6.5</a>
+      </div>
+      <div class="menu-right">
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+          id="next-page"
+          href="./6-7.html"
+        >Kapitel 6.7  &gt;&gt;</a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        6.6 
+        Einen Parser in Java implementieren
+      </p>
+    </div>
+    <div class="well alert-info main-column out">
+      <p>
+        Den vollständigen Quelltext, den wir in der Vorlesung geschrieben haben,
+        finden Sie in der Datei
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/code/parsing/arithmetic-in-class/ArithmeticGrammar.java">ArithmeticGrammar.java</a>.
+      </p>
+    </div>
+    <p class="main-column">
+      Ich möchte nun eine kontextfreie Grammatik für arithmetische Ausdrücke der
+      Form
+      <tt>((31+402)*83)</tt>
+      entwerfen. Der Einfachheit halber bestehe ich
+      auf strenger Klammerung, so wäre
+      <tt>(2*(1+2+3))</tt>
+      zum Beispiel nicht erlaubt.
+      Unsere Grammatik soll allgemeine Dezimalzahlen darstellen können.
+      Das Alphabet ist somit
+      <span class="nowrap">$\Sigma = \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
+        \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
+        \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$.</span>
+      Die Produktionsregeln sind:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      E&amp;\rightarrow N \tag{JustNumber} \\
+      E&amp;\rightarrow \texttt{(}E \texttt{+} E\texttt{)} \tag{Sum} \\
+      E&amp;\rightarrow \texttt{(}E \texttt{*} E\texttt{)} \tag{Product}\\
+      N&amp;\rightarrow D \tag{SingleDigit} \\
+      N&amp;\rightarrow ND \tag{NumberDigit} \\
+      D&amp;\rightarrow \texttt{0}\ | \ \texttt{1}\ | \ \texttt{2}\ | \ \texttt{3}\ | \ \texttt{4}\ | \
+      \texttt{5}\ | \ \texttt{6}\ | \ \texttt{7}\ | \ \texttt{8}\ | \ \texttt{9}
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Die Nichtterminale sind also $E$ (Expression), $N$ (Number) und $D$ (Digit). Wir haben auch
+      den einzelnen Produktionen Namen gegeben, bis auf die der Form
+      <span class="nowrap">$D \rightarrow i$.</span>
+      Was soll nun unser Parser tun? Er soll, gegeben ein Eingabewort
+      <span class="nowrap">$w \in L$,</span>
+      den
+      <i>Ableitungsbaum</i>
+      konstruieren, für
+      <tt>((31+402)*83)</tt>
+      also
+    </p>
+    <figure class="main-column">
+      <img
+        style="height:20em"
+        src="./img/context-free/arithmetic-syntax-tree.svg"
+        class="constrained transition-all"
+        onClick="onImgClick(event)"
+      >
+    </figure>
+    <p class="main-column">
+      Wie wir diesen Baum in Java repräsentieren, darüber sprechen wir in einer Minute.
+      Zuerst aber: wir wollen mit diesem Baum etwas Sinnvolles tun. Zum Beispiel
+      <i>auswerten</i>, so dass am Ende eine Zahl rauskommt, im obigen Beispiel
+      also
+      <span class="nowrap">$(31 + 402) \cdot 83 = 35939$.</span>
+      Oder den Ausdruck umformen von
+      Infix-Notation zu Präfixnotation, also<tt>(* (+ 31 402) 83)</tt>. All dies wird sehr einfach sein, sobald wir
+      den Ableitungsbaum als Datenstruktur vorliegen haben.
+    </p>
+    <h1 class="main-column">
+      Eine Datenstruktur für Ableitungsbäume
+    </h1>
+    <p class="main-column">
+      Für meine Implementierung in Java erschaffe ich für jedes Nichtterminal $X$
+      ein Interface
+      und für jede Produktionsregel $X \rightarrow \alpha$ eine Klasse,
+      die das Interface $X$ implementiert und $\alpha$ als Klassenvariable enthält.
+    </p>
+    <ul class="main-column">
+      <li>
+        <p>
+          <tt>interface Expression</tt>
+          wird implementiert von
+        </p>
+        <ul>
+          <li>
+            <p>
+              <tt>class Sum</tt>, die als Klassenvariable
+              <tt>Exrepssion e1, e2</tt>
+              enthält,
+            </p>
+          </li>
+          <li>
+            <p>
+              <tt>class Product</tt>, die als Klassenvariable
+              <tt>Exrepssion e1, e2</tt>
+              enthält,
+            </p>
+          </li>
+          <li>
+            <p>
+              <tt>class JustNumber</tt>, die als Klassenvariable nur eine
+              <tt>Number number</tt>enthält;
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <tt>interface Number</tt>
+          wird implementiert von
+        </p>
+        <ul>
+          <li>
+            <p>
+              <tt>class MultiDigitNumber</tt>, die als Klassenvariable eine<tt>Number</tt>
+              und eine
+              <tt>Digit</tt>
+              erhält und
+            </p>
+          </li>
+          <li>
+            <p>
+              <tt>class SingleDigitNumber</tt>, die als Klassenvariable ein
+              <tt>Digit</tt>enthält;
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <tt>interface Digit</tt>
+          wird implementiert von<tt>class DigitOne</tt>,<tt>class DigitTwo</tt>,<tt>class DigitThree</tt>,<tt>class DigitFour</tt>,<tt>class DigitFive</tt>,<tt>class DigitSix</tt>,<tt>class DigitSeven</tt>,<tt>class DigitEight</tt>
+          und<tt>class DigitNine</tt>.
+        </p>
+      </li>
+    </ul>
+    <p class="main-column">
+      In unserem Anwendungsfall hat jedes Interface eine Methode<tt>public int toInt()</tt>. Interface
+      <tt>Expression</tt>
+      hat zusätzlich noch
+      die Methode
+      <tt>String toPrefixNotation()</tt>. Ich schreibe auch ein
+      Über-Interface
+      <tt>ParseObject</tt>, das alle Interfaces zusammenfasst.
+      Um uns das Debugging zu erleichtern, überschreibe ich in jeder Klasse die Methode<tt>public String toString()</tt>.
+    </p>
+  </div>
+</body>
+</html>
