@@ -23,7 +23,7 @@ pub fn pipeline()  -> List(Pipe) {
     ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
     pp.splitting_empty_lines_cleanup(),
-    pp.create_math_elements([infra.SingleDollar, infra.BackslashParenthesis], infra.SingleDollar, infra.BackslashParenthesis),
+    pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
     pp.splitting_empty_lines_cleanup(),
     [
       dl.regex_split_and_replace__outside(escape_dollar, ["Math", "MathBlock"]),
