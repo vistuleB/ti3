@@ -6,7 +6,7 @@ import vxml_renderer as vr
 import infrastructure as infra
 import vxml.{type VXML, V}
 import blamedlines.{Src}
-import pipeline_wly_2_wly.{pipeline_wly_2_wly}
+import formatter_pipeline.{formatter_pipeline}
 
 type FragmentType {
   Root
@@ -61,8 +61,8 @@ fn splitter(
   |> Ok
 }
 
-pub fn renderer_wly_2_wly(amendments: vr.CommandLineAmendments) -> Nil {
-  let pipeline = pipeline_wly_2_wly()
+pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
+  let pipeline = formatter_pipeline()
 
   let renderer =
     vr.Renderer(

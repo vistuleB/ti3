@@ -3,8 +3,8 @@ import gleam/io
 import gleam/string
 import gleam/dict
 import infrastructure as infra
-import renderer_wly_2_wly
-import renderer_wly_2_html
+import formatter_renderer
+import main_renderer
 import vxml_renderer as vr
 
 const ins = string.inspect
@@ -13,11 +13,11 @@ fn cli_usage_supplementary() {
   io.println("TI3 Converter")
   io.println("")
   io.println("Usage:")
-  io.println("  ti3 --wly-edit [options]      Convert Writerly to Writerly (editing mode)")
+  io.println("  ti3 --fmt [options]           Convert Writerly to Writerly (formatting mode)")
   io.println("  ti3 [options]                 Convert Writerly to HTML format")
   io.println("")
   io.println("Examples:")
-  io.println("  ti3 --wly-edit --input-dir ./wly --output-dir ./wly-edit")
+  io.println("  ti3 --fmt --input-dir ./wly --output-dir ./wly-edit")
   io.println("  ti3 --input-dir ./wly --output-dir ./public")
   io.println("")
 }
@@ -35,7 +35,7 @@ pub fn main() {
 
     _ -> {
       use amendments <- infra.on_error_on_ok(
-        vr.process_command_line_arguments(args, ["--wly-edit"]),
+        vr.process_command_line_arguments(args, ["--fmt"]),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
@@ -45,14 +45,14 @@ pub fn main() {
         }
       )
 
-      case dict.get(amendments.user_args, "--wly-edit") {
+      case dict.get(amendments.user_args, "--fmt") {
         Ok(_) -> {
-          io.println("Running Writerly to Writerly renderer (editing mode)")
-          renderer_wly_2_wly.renderer_wly_2_wly(amendments)
+          io.println("Running Writerly formatter renderer")
+          formatter_renderer.formatter_renderer(amendments)
         }
         Error(_) -> {
-          io.println("Running Writerly to HTML renderer")
-          renderer_wly_2_html.renderer_wly_2_html(amendments)
+          io.println("Running main renderer (Writerly to HTML)")
+          main_renderer.main_renderer(amendments)
         }
       }
     }

@@ -23,7 +23,7 @@ const p_cannot_be_contained_in = [
   "Topic", "SubTopic"
 ]
 
-pub fn pipeline_wly_2_wly() -> List(Pipe) {
+pub fn formatter_pipeline() -> List(Pipe) {
   [
     [
       dl.find_replace__outside(#("&amp;", "&"), []),

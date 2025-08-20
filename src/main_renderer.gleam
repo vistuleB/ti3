@@ -4,7 +4,7 @@ import gleam/list
 import gleam/result
 import gleam/string.{inspect as ins}
 import infrastructure as infra
-import pipeline_wly_2_html.{pipeline_wly_2_html}
+import main_pipeline.{main_pipeline}
 import simplifile
 import vxml.{type VXML}
 import vxml_renderer as vr
@@ -232,12 +232,12 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
   }
 }
 
-pub fn renderer_wly_2_html(amendments: vr.CommandLineAmendments) -> Nil {
+pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
   let renderer =
     vr.Renderer(
       assembler: vr.default_input_lines_assembler(amendments.spotlight_paths),
       source_parser: vr.default_writerly_source_parser(amendments.spotlight_key_values),
-      pipeline: pipeline_wly_2_html(),
+      pipeline: main_pipeline(),
       splitter: ti3_splitter,
       emitter: our_emitter,
       prettifier: vr.default_prettier_prettifier,

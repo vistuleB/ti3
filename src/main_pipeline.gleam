@@ -5,7 +5,7 @@ import prefabricated_pipelines as pp
 import group_replacement_splitting as grs
 import selector_library as sl
 
-pub fn pipeline_wly_2_html()  -> List(Pipe) {
+pub fn main_pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
 
   let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "Topic", "SubTopic", "Statement", "Exercise", "Highlight", "Remark", "QED", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
