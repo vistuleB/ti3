@@ -1,6 +1,7 @@
 import blamedlines.{type Blame, type OutputLine, OutputLine, Src}
 import gleam/io
 import gleam/list
+import gleam/option.{None}
 import gleam/result
 import gleam/string.{inspect as ins}
 import infrastructure as infra
@@ -249,8 +250,13 @@ pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
       input_dir: "./wly",
       output_dir: "./public",
       prettifier_on_by_default: False,
+      prettier_dir: None,
     )
     |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
+
+  let final_renderer =
+    renderer
+    |> vr.update_renderer_prettifier_from_parameters(parameters)
 
   let debug_options =
     vr.default_renderer_debug_options()
@@ -262,7 +268,7 @@ pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
     Error(error) -> io.println("HTML cleanup failed: " <> error)
   }
 
-  case vr.run_renderer(renderer, parameters, debug_options) {
+  case vr.run_renderer(final_renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
     _ -> Nil
   }

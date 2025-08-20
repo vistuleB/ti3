@@ -1,6 +1,7 @@
 import simplifile
 import gleam/io
 import gleam/list
+import gleam/option.{None, Some}
 import gleam/string.{inspect as ins}
 import vxml_renderer as vr
 import infrastructure as infra
@@ -75,13 +76,38 @@ pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
     )
     |> vr.amend_renderer_by_command_line_amendments(amendments)
 
-  let parameters =
+  // Create parameters but don't amend prettier-related fields to ignore prettier options
+  let base_parameters =
     vr.RendererParameters(
       input_dir: "./wly",
       output_dir: "./wly-edit",
       prettifier_on_by_default: False,
+      prettier_dir: None,
     )
-    |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
+  
+  let parameters =
+    vr.RendererParameters(
+      input_dir: case amendments.input_dir {
+        None -> base_parameters.input_dir
+        Some(dir) -> dir
+      },
+      output_dir: case amendments.output_dir {
+        None -> base_parameters.output_dir
+        Some(dir) -> dir
+      },
+      prettifier_on_by_default: False,  // Always False for formatter
+      prettier_dir: None,                // Always None for formatter
+    )
+
+  let final_renderer =
+    vr.Renderer(
+      assembler: renderer.assembler,
+      source_parser: renderer.source_parser,
+      pipeline: renderer.pipeline,
+      splitter: renderer.splitter,
+      emitter: renderer.emitter,
+      prettifier: vr.empty_prettifier,
+    )
 
   let debug_options =
     vr.default_renderer_debug_options()
@@ -89,7 +115,7 @@ pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
 
   let _ = simplifile.delete("./wly-edit/*")
 
-  case vr.run_renderer(renderer, parameters, debug_options) {
+  case vr.run_renderer(final_renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
     _ -> Nil
   }
