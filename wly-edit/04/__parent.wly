@@ -1,7 +1,7 @@
 |> Chapter
     title=Berechenbarkeit und natürliche Zahlen
     Mit den Booleschen Schaltkreisen haben wir ein Modell
-    kennengelernt, dass die Berechnung von Booleschen Funkionen     
+    kennengelernt, dass die Berechnung von Booleschen Funkionen      
     $f: \{0,1\}^n \rightarrow \{0,1\}$ beschreibt. Wir
     haben mehrere Beweisen gesehen, dass es für jede Boolesche
     Funktion einen Schaltkreis gibt. Unsere Zielsetzung
@@ -10,14 +10,14 @@
     Tiefe entwerfen. Würden wir tiefer in die Schaltkreiskomplexität
     einsteigen, so würden wir uns fast ausschließlich mit
     _negativen_ Zielen beschäftigen: zu zeigen, dass es
-    zu bestimmten Funktionen eben nicht Schaltkreise mit     
+    zu bestimmten Funktionen eben nicht Schaltkreise mit      
     $S$ Gates und in Tiefe $d$ gibt; wir würden uns zum
     Großteil mit _unteren Schranken_ beschäftigen. Boolesche
     Funktionen sind immer _endliche_ Objekte. In der Berechenbarkeitstheorie
     geht es im Grunde um die Frage: welche _unendlichen_
     Funktionen können wir überhaupt berechnen? Und was
     gilt denn überhaupt als zulässiges Modell für Berechenbarkeit?
-    Wenn wir nun also über Funktionen     
+    Wenn wir nun also über Funktionen      
     $f: X \rightarrow Y$ auf unendlichen Mengen sprechen
     und uns fragen, welche durch eine _endliche Rechenvorschrift_
     beschrieben werden können, dann müssen wir erst einmal
