@@ -130,7 +130,7 @@
         nur dann zu einem _accept_, wenn dies am Ende des Wortes geschieht.
         
         |> Carousel
-            img-height=22em
+            height=22em
             src=./img/context-free/cfg-to-pda/01.svg
             src=./img/context-free/cfg-to-pda/02.svg
             src=./img/context-free/cfg-to-pda/03.svg
