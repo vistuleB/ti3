@@ -19,13 +19,10 @@ fn cli_usage_supplementary() {
   io.println("Examples:")
   io.println("  ti3 --fmt --input-dir ./wly --output-dir ./wly-edit")
   io.println("  ti3 --input-dir ./wly --output-dir ./public")
-  io.println("")
 }
 
 pub fn main() {
   let args = argv.load().arguments
-
-
 
   case args {
     ["--help"] | ["-h"] -> {
@@ -47,11 +44,13 @@ pub fn main() {
 
       case dict.get(amendments.user_args, "--fmt") {
         Ok(_) -> {
-          io.println("Running Writerly formatter renderer")
+          io.println("")
+          io.println("wly -> wly formatter")
           formatter_renderer.formatter_renderer(amendments)
         }
         Error(_) -> {
-          io.println("Running main renderer (Writerly to HTML)")
+          io.println("")
+          io.println("wly -> html")
           main_renderer.main_renderer(amendments)
         }
       }
