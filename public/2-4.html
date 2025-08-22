@@ -36,21 +36,21 @@
       </p>
     </div>
     <p class="main-column">
-      Für zwei Tupel     
+      Für zwei Tupel      
       $\mathbf{x}, \mathbf{y} \in \{0,1\}^n$ schreiben wir
       <span class="nowrap">$\mathbf{x} \leq \mathbf{y}$,</span>
       falls
       <span class="nowrap">$x_1 \leq y_1, \dots, x_n \leq y_n$,</span>
-      also     
+      also      
       $\mathbf{x}$
       <i>in jeder Koordinate</i>
-      kleiner gleich     
+      kleiner gleich      
       $\mathbf{y}$ ist. Beispielsweise gilt
       <span class="nowrap">$(0,0,1) \leq (1,0,1)$.</span>
-      Allerdings gilt weder     
+      Allerdings gilt weder      
       $(0,1,0) \leq (1,0,1)$ noch umgekehrt; die beiden
       Tupel sind
-      <i>unvergleichbar</i>; es handelt sich bei     
+      <i>unvergleichbar</i>; es handelt sich bei      
       $\leq$ also um eine
       <i>Partialordnung</i>. Am Besten stellen
       Sie sich eine solche Partialordnung als gerichteten
@@ -79,7 +79,7 @@
       Im obigen Bild steht zwar $001$ unterhalb
       von
       <span class="nowrap">$110$,</span>
-      allerdings werden Sie keinen Pfad von     
+      allerdings werden Sie keinen Pfad von      
       $001$ nach $110$ finden; es gilt also
       <span class="nowrap">$001 \not \leq 110$;</span>
       die beiden Elemente sind
@@ -87,9 +87,9 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition</b>
         <b>2.4.1</b>
-        Eine Boolesche Funktion     
+        <b>Definition</b>
+        Eine Boolesche Funktion      
         $f: \{0,1\}^n \rightarrow \{0,1\}$ heißt
         <i>monoton</i>,
         wenn
@@ -108,14 +108,14 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.4.1</b>
-        Welche der Booleschen Funktionen     
+        Welche der Booleschen Funktionen      
         $\wedge, \vee, \neg, \oplus, \maj$ sind monoton?
       </p>
     </div>
     <p class="main-column">
       Funktionen auf wenigen Variablen können wir graphisch
       darstellen und somit erkennen, ob sie monoton sind
-      oder nicht. Für eine Funktion     
+      oder nicht. Für eine Funktion      
       $f: \{0,1\}^2 \rightarrow \{0,1\}$ markieren wir im
       Hasse-Diagramm von $\{0,1\}^2$ diejenigen Elemente
       blau, auf denen $f(x,y) = 1$ ist, und die anderen
@@ -135,20 +135,20 @@
       roten Punkt gibt, der oberhalb eines blauen Punktes
       liegt, im Bild von $\oplus$ allerdings schon. Der
       Grund: $\wedge$ ist monoton, $\xor$ ist es nicht.
-      Formaler argumentiert: in der Partialordnung gilt     
+      Formaler argumentiert: in der Partialordnung gilt      
       $01 \leq 11$ aber
       <span class="nowrap">$\xor (0,1) \gt \xor (1,0)$,</span>
       was
       der Definition einer monotonen Funktion widerspricht.
-      (Ich habe hier absichtlich die Präfixschreibweise     
+      (Ich habe hier absichtlich die Präfixschreibweise      
       $\xor(0,1)$ verwendet, um hervorzuheben, dass es sich
       hierbei um eine Funktion in zwei Variablen handelt.)
       Beachten Sie, dass ich die Worte
       <i>"oberhalb"</i>
       im Sinne
       der Partialordnung meine, nicht wirklich im geometrischen
-      Sinne in der Abbildung. Von den Basis-Gates    
-      $\wedge, \vee, \neg$ sind  $\wedge$ und $\vee$ monoton,    
+      Sinne in der Abbildung. Von den Basis-Gates     
+      $\wedge, \vee, \neg$ sind  $\wedge$ und $\vee$ monoton,     
       $\neg$ ist es nicht. Es sollte also klar sein, dass
       ein Schaltkreis ohne Negation immer eine monotone Funktion
       berechnet. Allerdings stimmt der Umkehrschluss nicht.
@@ -173,9 +173,9 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem</b>
         <b>2.4.2</b>
-        Zu jeder monotonen Funktion     
+        <b>Theorem</b>
+        Zu jeder monotonen Funktion      
         $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
       </p>
@@ -256,9 +256,9 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem</b>
         <b>2.4.3</b>
-        Zu jeder monotonen Funktion     
+        <b>Theorem</b>
+        Zu jeder monotonen Funktion      
         $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
       </p>
@@ -339,9 +339,9 @@
       </p>
       <div class="well statement">
         <p>
-          <b>Theorem</b>
           <b>2.4.4</b>
-          Zu jeder Booleschen Funktion     
+          <b>Theorem</b>
+          Zu jeder Booleschen Funktion      
           $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen Schaltkreis
           <span class="nowrap">$C$,</span>
           der $f$ berechnet.
@@ -375,7 +375,7 @@
           <p>
             Zur Erinnerung: bei einem Beweis per Induktion wollen
             wir eine Aussage der Form
-            <i>Für alle natürlichen Zahlen     
+            <i>Für alle natürlichen Zahlen      
               $n \in \N$ gilt $P(n)$</i>
             beweisen, wobei $P(n)$ wiederum
             eine Aussage ist, in der die Zahl $n$ irgendwo vorkommt.
@@ -401,7 +401,7 @@
             argumentieren, dass aus $P(0)$ die Aussage $P(1)$
             folgt; dass aus $P(1)$ die Aussage $P(2)$ folgt; und
             so weiter. Da wir auf diese Weise jede natürliche Zahl
-            irgendwann erreichen, können wir schlussfolgern, dass     
+            irgendwann erreichen, können wir schlussfolgern, dass      
             $P(n)$ für jede Zahl $n \in \Z$ gilt.
           </p>
         </div>
@@ -416,8 +416,8 @@
         </p>
         <div class="well statement">
           <p>
-            <b>(Theorem 1.4.4, alternative Formulierung)</b>
             <b>2.4.5</b>
+            <b>(Theorem 1.4.4, alternative Formulierung)</b>
             Für jede natürliche Zahl $n$ gilt: zu jeder Booleschen
             Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es
             einen Schaltkreis
@@ -497,7 +497,7 @@ public boolean constantFalse(boolean x) {
             zweimal deklariert haben, einmal als
             Funktion mit 0 Input-Variablen, einmal als Funktion
             mit einer Input-Variablen. Um hundertprozentig korrekt
-            zu sein, müssten wir Funktionen     
+            zu sein, müssten wir Funktionen      
             $\textnormal{zero}_n$ definieren als
           </p>
           <div class="math-block">
@@ -526,14 +526,14 @@ public boolean constantFalse(boolean x) {
           Wir haben nun also die Induktionsbasis erfolgreich
           gezeigt. Als nächstes kommt nun der Schritt. In diesem
           nehmen wir an, dass die Aussage $P(n)$ bereits gilt,
-          und wollen davon ausgehend zeigen, dass auch     
-          $P(n+1)$ gilt. Alternativ können wir annehmen, dass     
+          und wollen davon ausgehend zeigen, dass auch      
+          $P(n+1)$ gilt. Alternativ können wir annehmen, dass      
           $P(n-1)$ gilt und wollen $P(n)$ zeigen (wobei wir
-          nun $n \geq 1$ annehmen müssen). Ob Sie     
-          $P(n) \Rightarrow P(n+1)$ oder     
+          nun $n \geq 1$ annehmen müssen). Ob Sie      
+          $P(n) \Rightarrow P(n+1)$ oder      
           $P(n-1) \Rightarrow P(n)$ zeigen, kommt aufs Gleiche
           raus und unterscheidet sich nur in der Notation; in
-          diesem Falle ist es mir angenehmer,     
+          diesem Falle ist es mir angenehmer,      
           $P(n-1) \Rightarrow P(n)$ zu zeigen. Wir dürfen also
           die
           <i>Induktionshypothese</i>
@@ -547,7 +547,7 @@ public boolean constantFalse(boolean x) {
           </p>
         </div>
         <p>
-          und wollen den Induktionsschritt vollziehen, also     
+          und wollen den Induktionsschritt vollziehen, also      
           $P(n)$ zeigen:
         </p>
         <div class="well remark">
@@ -566,7 +566,7 @@ public boolean constantFalse(boolean x) {
           Funktionen "zerlegen". Hier ist im Allgemeinen Kreativität
           gefragt. Im vorliegenden Falle ist es aber recht klar,
           welche Zerlegung in Frage kommt. Wir definieren zwei
-          neue, "kleinere" Funktionen     
+          neue, "kleinere" Funktionen      
           $f_0, f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
         </p>
         <div class="math-block">
@@ -582,7 +582,7 @@ public boolean constantFalse(boolean x) {
           auf einen konstanten Wert und erhalten so eine Funktion
           in $n-1$ Variablen. Die Funktion $f_0$ ist im Prinzip
           die obere Hälfte der Wahrheitstabelle, und $f_1$ ist
-          die untere Hälfte. Da $f_0$ und $f_1$ jeweils nur     
+          die untere Hälfte. Da $f_0$ und $f_1$ jeweils nur      
           $n-1$ Input-Variablen haben, können wir die Induktionshypothese
           anwenden und folgern, dass es Boolesche Schaltkreise
           für sie gibt. Nach
@@ -605,7 +605,7 @@ public boolean constantFalse(boolean x) {
           >
         </figure>
         <p>
-          Ich behaupte, dass obiger Schaltkreis tatsächlich     
+          Ich behaupte, dass obiger Schaltkreis tatsächlich      
           $f$ berechnet. Falls dies noch nicht klar sein sollte,
           können wir auch dies formal beweisen, und zwar durch
           die Methode
@@ -620,7 +620,7 @@ public boolean constantFalse(boolean x) {
               <span class="nowrap">$x_1 = 1$.</span>
               Dann gibt der obige Schaltkreis
               den Wert $f_1(x_2,\dots,x_n$ aus, was per Definition
-              von $f_1$ gleich     
+              von $f_1$ gleich      
               $f(1, x_2,\dots,x_n) = f(x_1,\dots,x_n)$ ist. Er gibt
               also den korrekten Wert aus.
             </p>
@@ -631,14 +631,14 @@ public boolean constantFalse(boolean x) {
               <span class="nowrap">$x_1 = 0$.</span>
               Dann gibt der obige Schaltkreis
               den Wert $f_0(x_2,\dots,x_n$ aus, was per Definition
-              von $f_0$ gleich     
+              von $f_0$ gleich      
               $f(0, x_2,\dots,x_n) = f(x_1,\dots,x_n)$ ist. Er gibt
               also auch hier den korrekten Wert aus.
             </p>
           </li>
         </ul>
         <p>
-          Wir haben also erfolgreich einen Schaltkreis für     
+          Wir haben also erfolgreich einen Schaltkreis für      
           $f: \{0,1\}^n \rightarrow \{0,1\}$ konstruiert. Unser
           Induktionsbeweis von Theorem 2 ist nun abgeschlossen.
           <span class="qed">\(\square\)</span>
@@ -657,7 +657,7 @@ public boolean constantFalse(boolean x) {
     <div class="well highlight out">
       <p>
         <b>Theorem 1.4.3, nochmals.</b>
-        Zu jeder monotonen Funktion     
+        Zu jeder monotonen Funktion      
         $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
       </p>
@@ -674,7 +674,7 @@ public boolean constantFalse(boolean x) {
         weniger formal und weise Sie nicht mehr ständig auf
         die Bestandteile eines Induktionsbeweises hin) und
         zerlegen $f: \{0,1\}^n \rightarrow \{0,1\}$ in zwei
-        neue, "kleinere" Funktionen     
+        neue, "kleinere" Funktionen      
         $f_0, f_1: \{0,1\}^{n-1} \rightarrow \{0,1\}$ per
       </p>
       <div class="math-block">
@@ -752,7 +752,7 @@ public boolean constantFalse(boolean x) {
         $$
       </div>
       <p>
-        Ich erlaube mir hier, aus Bequemlichkeit einfach     
+        Ich erlaube mir hier, aus Bequemlichkeit einfach      
         $f_1$ statt $f_1(x_2,\dots,x_n)$ zu schreiben. Auch
         ein
         <i>abuse of notation</i>. In der obigen Formel habe
@@ -795,9 +795,9 @@ public boolean constantFalse(boolean x) {
       </p>
       <div class="well statement">
         <p>
-          <b>Behauptung</b>
           <b>2.4.6</b>
-          Für alle $x_1,\dots,x_n$ gilt     
+          <b>Behauptung</b>
+          Für alle $x_1,\dots,x_n$ gilt      
           $f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n))
           \vee f_0(x_2,\dots,x_n) \ .$
         </p>
@@ -878,7 +878,7 @@ public boolean constantFalse(boolean x) {
               $$
             </div>
             <p>
-              Wir überprüfen nun also: wenn     
+              Wir überprüfen nun also: wenn      
               $f_0(x_2, \dots, x_n) = 0$ ist, dann gilt
               <span class="nowrap">$f_0 \vee f_1 = 0 \vee f_1 = f_1$.</span>
               Wenn $f_0 = 1$
@@ -901,7 +901,7 @@ public boolean constantFalse(boolean x) {
         </ul>
       </div>
       <p>
-        Wir haben nun also gezeigt, dass für jeden Input     
+        Wir haben nun also gezeigt, dass für jeden Input      
         $x_1,\dots,x_n$ gilt:
       </p>
       <div class="math-block">
@@ -912,7 +912,7 @@ public boolean constantFalse(boolean x) {
         $$
       </div>
       <p>
-        (wobei wir aus Gründen der Lesbarkeit statt     
+        (wobei wir aus Gründen der Lesbarkeit statt      
         $f(x_1,\dots,x_n)$ einfach $f$ schreiben); per Induktion
         können wir für $f_1, f_0$ monotone Schaltkreise finden,
         und somit ist
@@ -962,7 +962,7 @@ public boolean constantFalse(boolean x) {
       <p>
         Als Beispiel: wenn $n=5$ und
         <span class="nowrap">$\mathbf{a} = (10010)$,</span>
-        dann ist     
+        dann ist      
         $I_{\mathbf{a}} = \{1,4\}$ und
         <span class="nowrap">$I_{\mathbf{a}} = \{2,3,5\}$.</span>
         Wir definieren
@@ -1045,15 +1045,15 @@ public boolean constantFalse(boolean x) {
         in der Vorlesung bereits besprochen haben.
         <b>Das Bekannte
           abwandeln.</b>
-        Der Ausdruck     
+        Der Ausdruck      
         $\bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}}$
         ist ja bereits ein Schaltkreis (der Tiefe 2), allerdings
-        im Allgemeinen kein monotoner, da die Terme     
+        im Allgemeinen kein monotoner, da die Terme      
         $T_{\mathbf{a}}$ negative Literale (und somit NOT-Gates)
         enthalten können. Wie werden wir diese los? Sie erinnern
         sich, was wir im letzten Beweis getan haben: die NOT-Gates
         einfach weglassen und die ausgehenden Kabel ersatzlos
-        streichen. Hier hieße das nun, aus dem Term     
+        streichen. Hier hieße das nun, aus dem Term      
         $x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4
         \wedge \bar{x}_5$
         den Term $x_1 \wedge x_4$ zu machen. Wir definieren
@@ -1072,8 +1072,8 @@ public boolean constantFalse(boolean x) {
       </p>
       <div class="well statement">
         <p>
-          <b>Behauptung</b>
           <b>2.4.7</b>
+          <b>Behauptung</b>
           Für alle $x_1,\dots,x_n$ gilt
           <span class="nowrap">$T_{\mathbf{a}} \leq T'_{\mathbf{a}}$.</span>
           
@@ -1085,9 +1085,9 @@ public boolean constantFalse(boolean x) {
           Definieren wir zusätzlich noch
           <span class="nowrap">$T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
             \bar{x}_i$,</span>
-          dann können wir     
+          dann können wir      
           $T_{\mathbf{a}} = T'_{\mathbf{a}} \wedge T''_{\mathbf{a}}$
-          schreiben. Und jetzt ist     
+          schreiben. Und jetzt ist      
           $T'_{\mathbf{a}} \wedge T''_{\mathbf{a}} \leq T'_{\mathbf{a}}$
           offensichtlich, weil $g \wedge h \leq g$ ganz allgemein
           gilt (überzeugen Sie sich davon).<span class="qed">\(\square\)</span>
@@ -1108,8 +1108,8 @@ public boolean constantFalse(boolean x) {
       </p>
       <div class="well statement">
         <p>
-          <b>Behauptung</b>
           <b>2.4.8</b>
+          <b>Behauptung</b>
           <span class="nowrap">$F \equiv F'$,</span>
           d.h. sie berechnen beide dieselbe Funktion,
           nämlich
@@ -1146,7 +1146,7 @@ public boolean constantFalse(boolean x) {
           </li>
         </ol>
         <p>
-          Punkt 1 ist einfach: wir haben bereits gesehen, dass     
+          Punkt 1 ist einfach: wir haben bereits gesehen, dass      
           $T_{\mathbf{a}} \leq T'_{\mathbf{a}}$ gilt, und somit
           auch
         </p>
@@ -1160,13 +1160,13 @@ public boolean constantFalse(boolean x) {
           Hier haben wir angewendet, dass $\bigvee$ eine monotone
           Funktion ist und wir somit vom $\leq$ ihrer Inputs
           auf das $\leq$ ihres Outputs schließen können. Punkt
-          2 ist schwieriger. Um     
+          2 ist schwieriger. Um      
           $F'(\mathbf{x}) \leq F(\mathbf{x})$ zu zeigen, machen
-          wir eine Fallunterscheidung. Falls     
+          wir eine Fallunterscheidung. Falls      
           $F'(\mathbf{x}) = 0$ ist, so gilt die Ungleichung
           offensichtlich, denn kleiner als $0$ kann der Output
           ja nicht werden. Falls nun $F'(\mathbf{x}) = 1$ ist,
-          dann müssen wir zeigen, dass auch     
+          dann müssen wir zeigen, dass auch      
           $F(\mathbf{x}) = 1$ gilt. Und das muss mindestens
           ein bisschen nicht-triviale Arbeit erfordern, weil
           wir ja irgendwo verwenden müssen, dass $f$ nicht monoton
@@ -1175,7 +1175,7 @@ public boolean constantFalse(boolean x) {
           <b>Strategie: was haben wir?</b>
           Es ist immer gut,
           Dinge konkret "in der Hand zu haben". In diesem Falle?
-          Wir wissen ja, dass     
+          Wir wissen ja, dass      
           $F' = \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}}$
           ist. Wenn nun also die linke Seite,
           <span class="nowrap">$F'$,</span>
@@ -1200,7 +1200,7 @@ public boolean constantFalse(boolean x) {
         </div>
         <p>
           Wir wollen zeigen, dass $F(x_1,\dots,x_n) = 1$ gilt.
-          Da     
+          Da      
           $F = \bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}}$
           gilt, liegt der Verdacht nahe, dass der entsprechende
           Term $T_{\mathbf{a}^*}$ auch 1 ausgibt. Das Problem
@@ -1216,19 +1216,19 @@ public boolean constantFalse(boolean x) {
           $$
         </div>
         <p>
-          Wir wissen also, dass $x_i=1$ für alle     
-          $i \in I(\mathbf{a}^*)$ gilt; über die     
+          Wir wissen also, dass $x_i=1$ für alle      
+          $i \in I(\mathbf{a}^*)$ gilt; über die      
           $i \in O(\mathbf{a}^*)$ wissen wir leider nichts.
           Was hätten wir denn gerne? Wir hätten gerne, dass für
-          die alle $x_i = 0$ gilt, weil dann     
+          die alle $x_i = 0$ gilt, weil dann      
           $\bigwedge_{i \in O(\mathbf{a}^*)} \bar{x}_i = 1$
           wäre; wir können das aber nicht garantieren. Wie schaut
-          denn ein Input $\mathbf{y}$ aus, auf dem     
+          denn ein Input $\mathbf{y}$ aus, auf dem      
           $T_{\mathbf{a}^*}$ 1 ausgibt? So ein $\mathbf{y}$
-          müsste $y_i=1$ für alle $i \in I(\mathbf{a}^*)$ und     
+          müsste $y_i=1$ für alle $i \in I(\mathbf{a}^*)$ und      
           $y_i=0$ für alle $i \in O(\mathbf{a}^*)$ haben; also
           1 sein, wo $\mathbf{a}^*$ auch 1 ist, und 0 sein,
-          wo $\mathbf{a}^*$ auch 0 ist. Aha! Es müsste     
+          wo $\mathbf{a}^*$ auch 0 ist. Aha! Es müsste      
           $\mathbf{a}^*$ selbst sein! Na klar, wir erinnern
           uns: wir haben den Term $T_{\mathbf{a}}$ so definiert,
           dass er auf $\mathbf{a}$ und nur dort 1 wird. Wir
@@ -1245,14 +1245,14 @@ public boolean constantFalse(boolean x) {
           Ansonsten gilt immerhin,
           dass $x_i=1$ für alle
           <span class="nowrap">$i \in I(\mathbf{a}^*)$,</span>
-          also     
+          also      
           $x_1 = 1$ wenn
           <span class="nowrap">$a^*_i = 1$.</span>
           In anderen Worten, es
           gilt
           <span class="nowrap">$\mathbf{x} \geq \mathbf{a}^*$!</span>
           Wunderbar! Jetzt
-          können wir Monotonie anwenden! Denn selbst wenn     
+          können wir Monotonie anwenden! Denn selbst wenn      
           $T_{\mathbf{a}^*}$ nicht monoton ist, so wissen wir,
           dass $F$ eine monotone Funktion berechnet, und somit
         </p>
@@ -1269,7 +1269,7 @@ public boolean constantFalse(boolean x) {
         </p>
       </div>
       <p>
-        Wir haben nun gezeigt, dass die DNF-Formeln $F$ und     
+        Wir haben nun gezeigt, dass die DNF-Formeln $F$ und      
         $F'$ dieselbe Boolesche Funktion berechnen, nämlich
         <span class="nowrap">$f$.</span>
         Die Formel $F'$ enthält keine negativen Literale
@@ -1279,9 +1279,9 @@ public boolean constantFalse(boolean x) {
     <p class="main-column">
       Ich habe Ihnen zweieinhalb Beweise versprochen. Der
       zweieinhalbte Beweis geht nun genau so wie der zweite,
-      nur dass er eine CNF-Formel $G$ statt einer DNF-Formel     
+      nur dass er eine CNF-Formel $G$ statt einer DNF-Formel      
       $F$ konstruiert und aus dieser dann alle negativen
-      Literale entfernt, womit wir eine monotone CNF-Formel     
+      Literale entfernt, womit wir eine monotone CNF-Formel      
       $G'$ erhalten. Der Beweis, dass $G'$ und $G$ dieselbe
       Funktion berechnen, geht analog zu dem obigen Beweis.
     </p>

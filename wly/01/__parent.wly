@@ -66,7 +66,6 @@
                 ^^^
         SyntaxError: cannot use starred expression here
         ```
-
         Die letzten beiden waren in Pythons Augen offensichtlich
         nicht korrekt. Wie sind korrekte arithmetische Ausdrücke
         aufgebaut? Beschränken Sie sich gerne auf * und + und

@@ -50,16 +50,16 @@
     <div class="math-block main-column">
       $$
       \begin{align*}
-      \zero:&amp;\N^* \rightarrow \N \\
-      \vec{x}&amp;\mapsto 0
+      \zero: &amp;\ \N^* \rightarrow \N \\
+      &amp;\ \vec{x} \mapsto 0
       \end{align*}
       $$
     </div>
     <div class="math-block main-column">
       $$
       \begin{align*}
-      \succ: \N&amp;\rightarrow \N \\
-      x&amp;\mapsto x+1
+      \succ: &amp;\ \N \rightarrow \N \\
+      &amp;\  x \mapsto x+1
       \end{align*}
       $$
     </div>
@@ -70,7 +70,7 @@
       hat; daher ist irgendwie klar, dass $\succ$ berechen
       bar ist. Aber seien wir vorsichtig: wenn wir für natürliche
       Zahlen die Dezimaldarstellung (oder Binärdarstellung,
-      spielt keine Rolle) verwenden, dann ist die Operation     
+      spielt keine Rolle) verwenden, dann ist die Operation      
       $x \mapsto x+1$ bereits eine nicht ganz triviale Operation,
       sie erfordert beispielsweise Schleifen (von rechts
       nach links durchgehen), if-then-else-Ausdrücke (gibt
@@ -92,8 +92,8 @@
     <div class="math-block main-column">
       $$
       \begin{align*}
-      \pi^n_k : \N^n&amp;\rightarrow \N \\
-      \vec{x}&amp;\mapsto x_k \ .
+      \succ: &amp;\ \N \rightarrow \N \\
+      &amp;\ x \mapsto x+1
       \end{align*}
       $$
     </div>
@@ -108,8 +108,8 @@
     <div class="math-block main-column">
       $$
       \begin{align*}
-      \pi^3_0: (x,y,z) \mapsto x \\
-      \pi^3_1: (x,y,z) \mapsto y \ .
+      &amp;\pi^3_0: (x,y,z) \mapsto x \ ,\\
+      &amp;\pi^3_1: (x,y,z) \mapsto y \ .
       \end{align*}
       $$
     </div>
@@ -124,12 +124,12 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition</b>
         <b>4.1.1</b>
+        <b>Definition</b>
         <b>(Komposition)</b>
         Sei $f: \N^k \rightarrow \N$ und
         <span class="nowrap">$g_1, \dots, g_k: \N^l \rightarrow \N$.</span>
-        Dann ist     
+        Dann ist      
         $\comp(f, g_1, \dots, g_k)$ die Funktion
       </p>
       <div class="math-block">
@@ -161,10 +161,10 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition</b>
         <b>4.1.2</b>
+        <b>Definition</b>
         <b>Primitive Rekursion</b>
-        Seien     
+        Seien      
         $g: \N^k \rightarrow \N$ und
         <span class="nowrap">$h: \N^{k+2} \rightarrow \N$.</span>
         Wir definieren eine
@@ -214,8 +214,8 @@ def PrimRec(g, h):
     </p>
     <div class="well statement out">
       <p>
-        <b>Demo</b>
         <b>4.1.3</b>
+        <b>Demo</b>
         Speichern Sie die Datei
         <a href="../code/primitive-recursion/primrec.py">primrec.py</a>
         auf Ihrem Rechner. Diese Datei stellt ein Framework
@@ -293,7 +293,7 @@ def PrimRec(g, h):
         verwenden, aber nicht selbst Python-Funktionen schreiben.
         Wir dürfen also nie selbst Integers in die Hand nehmen.
         Lassen Sie mich das am Beispiel der Addition erklären.
-        Ich will eine Funktion     
+        Ich will eine Funktion      
         ${\rm add}: \N^2 \rightarrow \N$ schreiben, die ihre
         beiden Argumente addiert. Ich darf also nicht einfach
         python programmieren und
@@ -310,10 +310,10 @@ def add(x,y):
         Rekursion, nicht Python! Wir müssen uns
         <code>add</code>
         aus den
-        Kombinatoren zusammenbasteln. Ich schreibe nun     
+        Kombinatoren zusammenbasteln. Ich schreibe nun      
         ${\rm add}(t,x)$ statt
         <span class="nowrap">${\rm add}(x,y)$,</span>
-        um den Rekursionsparameter     
+        um den Rekursionsparameter      
         $t$ deutlich zu machen.
       </p>
       <div class="math-block">
@@ -377,7 +377,7 @@ add = PrimRec (p0, Comp(succ,p0))
       <p>
         <b>Tip:</b>
         Für exp und minus ist es einfacher, die Argumente
-        "umgedreht" zu betrachten, also     
+        "umgedreht" zu betrachten, also      
         $(a,b) \mapsto b^a$ und
         <span class="nowrap">$(x,y) \mapsto y-x$.</span>
         

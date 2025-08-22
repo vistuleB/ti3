@@ -12,8 +12,8 @@
             den Iterationsindex).
 
     Der zweite Punkt ist keine echte Beschränkung, wie
-    wir gesehen haben: wenn wir zwei lokale Variablen     
-    $a,b$ führen wollen, können wir die via der Bijektion     
+    wir gesehen haben: wenn wir zwei lokale Variablen      
+    $a,b$ führen wollen, können wir die via der Bijektion      
     ${\rm pair} : \N^2 \rightarrow \N$ in _eine_ natürliche
     Zahl codieren. Der erste Punkt allerdings scheint eine
     echte Beschränkung zu sein: wir wissen schließlich
@@ -24,7 +24,7 @@
     |> Topic
         Die Collatz-Vermutung
 
-    Wir definieren eine Funktion     
+    Wir definieren eine Funktion      
     $f: \N_+ \rightarrow \N_+$ wie folgt:
 
     \begin{align*}

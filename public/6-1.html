@@ -37,26 +37,27 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Definition (Ableitung)</b>
         <b>6.1.1</b>
+        <b>Definition (Ableitung)</b>
         Sei $G$ eine Grammatik mit Startsymbol
         <span class="nowrap">$S$.</span>
-        Die Ableitung eines
-        Wortes $\alpha$ ist eine Sequenz von Wortformen $w_0, w_1, \dots,
-        w_n$ mit $w_0 = S, w_n = \alpha$ und
-        <span class="nowrap">$w_{i-1} \Longrightarrow
-          w_i$.</span>
+        Die Ableitung
+        eines Wortes $\alpha$ ist eine Sequenz von Wortformen 
+        $w_0, w_1, \dots, w_n$ mit $w_0 = S, w_n = \alpha$
+        und
+        <span class="nowrap">$w_{i-1} \Longrightarrow w_i$.</span>
         
       </p>
     </div>
     <p class="main-column">
-      Das folgende Beispiel ist Beispiel 3.22 aus dem Buch von Aho und Ullman.
-      Wir betrachten die klassische kontextfreie Grammatik für arithmetische
-      Ausdrücke mit Klammerung:
+      Das folgende Beispiel ist Beispiel 3.22 aus dem Buch
+      von Aho und Ullman. Wir betrachten die klassische kontextfreie
+      Grammatik für arithmetische Ausdrücke mit Klammerung:
     </p>
     <div class="math-block main-column">
       $$
-      \begin{align*} (1)\ E \rightarrow&amp;E + T \\
+      \begin{align*}
+      (1)\ E \rightarrow&amp;E + T \\
       (2)\ E \rightarrow&amp;T \\ (3)\ T \rightarrow&amp;T * F \\ (4)\ T
       \rightarrow&amp;F \\ (5)\ F \rightarrow&amp;(E) \\ (6)\ F \rightarrow&amp;a \\
       \end{align*}
@@ -68,53 +69,56 @@
     </p>
     <div class="math-block main-column">
       $$
-      \begin{align*} E&amp;\stackrel{2}{\Longrightarrow} T
+      \begin{align*}
+      E&amp;\stackrel{2}{\Longrightarrow} T
       \stackrel{3}{\Longrightarrow} T * F \stackrel{4}{\Longrightarrow} F * F
       \stackrel{6}{\Longrightarrow} a * F&amp;\\&amp;\stackrel{5}{\Longrightarrow}
       a * (E) \stackrel{1}{\Longrightarrow} a * (E + T)
       \stackrel{2}{\Longrightarrow} a * (T + T)&amp;\\&amp;
       \stackrel{4}{\Longrightarrow} a * (F + T) \stackrel{6}{\Longrightarrow}
       a * (a + T) \stackrel{4}{\Longrightarrow} a * (a + F)
-      \stackrel{6}{\Longrightarrow} a * (a + a)&amp;\end{align*}
+      \stackrel{6}{\Longrightarrow} a * (a + a)&amp;
+      \end{align*}
       $$
     </div>
     <p class="main-column">
-      Insbesondere
-      ist es eine
-      <i>Linksableitung</i>, das heißt, in jedem Schritt wird
-      das am weitesten links stehende Nichtterminal expandiert. In der Tat
-      reicht es, nur die Nummer der angewandten Regel anzugeben (da ja klar
-      ist, welches Nichtterminal expandiert werden muss). Die obige Ableitung
-      kann also kompakt durch die Zahlenfolge 23465124646 repräsentiert
-      werden.
-    </p>
-    <p class="main-column">
-      Betrachten wir im Folgenden ein weiteres Beispiel einer Ableitung, in
-      diesem Falle eine
-      <i>Rechtsableitung</i>, in der in jedem Schritt
-      das am weitesten rechts stehende Nichtterminal expandiert wird:
+      Insbesondere ist es eine
+      <i>Linksableitung</i>, das heißt,
+      in jedem Schritt wird das am weitesten links stehende
+      Nichtterminal expandiert. In der Tat reicht es, nur
+      die Nummer der angewandten Regel anzugeben (da ja klar
+      ist, welches Nichtterminal expandiert werden muss).
+      Die obige Ableitung kann also kompakt durch die Zahlenfolge
+      23465124646 repräsentiert werden.
+      Betrachten wir im Folgenden ein weiteres Beispiel
+      einer Ableitung, in diesem Falle eine
+      <i>Rechtsableitung</i>,
+      in der in jedem Schritt das am weitesten rechts stehende
+      Nichtterminal expandiert wird:
     </p>
     <div class="math-block main-column">
       $$
-      \begin{align*} E&amp;\stackrel{2}{\Longrightarrow} T
+      \begin{align*}
+      E&amp;\stackrel{2}{\Longrightarrow} T
       \stackrel{3}{\Longrightarrow} T * F \stackrel{5}{\Longrightarrow} T *
       (E) \stackrel{1}{\Longrightarrow} T * (E+T)
       \stackrel{4}{\Longrightarrow} T * (E+F)&amp;\\&amp;
       \stackrel{6}{\Longrightarrow} T * (E+a) \stackrel{2}{\Longrightarrow} T
       * (T + a) \stackrel{4}{\Longrightarrow} T * (F + a)&amp;\\&amp;
       \stackrel{6}{\Longrightarrow} T * (a + a) \stackrel{4}{\Longrightarrow}
-      F * (a + a) \stackrel{6}{\Longrightarrow} a * (a + a)&amp;\end{align*}
+      F * (a + a) \stackrel{6}{\Longrightarrow} a * (a + a)&amp;
+      \end{align*}
       $$
     </div>
     <p class="main-column">
-      Rechtsableitungen können auch kompakt als Zahlenfolge repräsentiert
-      werden. Allerdings geben wir Rechtsableitungen immer in umgekehrter
-      Reihenfolge an, also von hinten nach vorne, in diesem Falle also nicht
-      2351... sondern 64642641532.
-    </p>
-    <p class="main-column">
-      Beachten Sie, dass wir es hier mit einer eindeutigen Grammatik zu tun
-      haben, es also nur einen Syntaxbaum gibt:
+      Rechtsableitungen können auch kompakt als Zahlenfolge
+      repräsentiert werden. Allerdings geben wir Rechtsableitungen
+      immer in umgekehrter Reihenfolge an, also von hinten
+      nach vorne, in diesem Falle also nicht 2351... sondern
+      64642641532.
+      Beachten Sie, dass wir es hier mit einer eindeutigen
+      Grammatik zu tun haben, es also nur einen Syntaxbaum
+      gibt:
     </p>
     <figure class="main-column">
       <img
@@ -126,9 +130,9 @@
       >
     </figure>
     <p class="main-column">
-      Rechtsableitung und Linksableitung sowie deren Codierung als
-      Zahlenfolge spiegeln also nur zwei verschiedene Weisen wieder, den
-      Baum auszugeben.
+      Rechtsableitung und Linksableitung sowie deren Codierung
+      als Zahlenfolge spiegeln also nur zwei verschiedene
+      Weisen wieder, den Baum auszugeben.
     </p>
     <div class="well highlight out">
 <pre class="listing numbered-pre">
@@ -136,7 +140,6 @@ def treeToLeftDerivation (tree):
   print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
   for child in tree.children (from left ro right):
       treeToLeftDerivation(child) 
-  
 def treeToRightDerivation (tree):
   for child in tree.children (from left ro right):
       treeToLeftDerivation(child)
@@ -144,8 +147,8 @@ def treeToRightDerivation (tree):
 </pre>
     </div>
     <p class="main-column">
-      Beachten Sie, dass wir in beiden Fällen die Liste Kinder von links
-      nach rechts durchgehen.
+      Beachten Sie, dass wir in beiden Fällen die Liste
+      Kinder von links nach rechts durchgehen.
     </p>
   </div>
 </body>

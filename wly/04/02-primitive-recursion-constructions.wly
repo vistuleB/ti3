@@ -11,7 +11,7 @@
     |> Topic
         Arithmetische Operationen
 
-    Wir haben bereits gesehen, dass wir die Addition per     
+    Wir haben bereits gesehen, dass wir die Addition per      
     ${\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0))$
     schreiben können. Beachten Sie, dass ich hier die Indizierung
     immer bei 0 beginnen lasse, im Python-Code sowie im
@@ -29,7 +29,6 @@
             temp = add(temp,x) //= Comp(add, p_0, p2) (temp,i,x) 
         return temp
     ```
-
     erinnern Sie sich daran: $h$ muss immer eine Funktion
     in der lokalen Variable temp, der Laufvariable $i$
     und $\vec{x}$ sein. Daher:
@@ -45,7 +44,7 @@
     {\rm expReverse} = \primrec({\rm one}, \comp({\rm mult}, \pi_0, \pi_2))
     \end{align*}
 
-    Allerdings gibt uns das $(t,x) \mapsto x^t$. Für     
+    Allerdings gibt uns das $(t,x) \mapsto x^t$. Für      
     ${\rm exp}(a,b) = a^b$ müssen wir die Argumente umdrehen:
 
     \begin{align*}
@@ -63,15 +62,14 @@
         temp = mult(temp,i+1) //= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)
         return temp
     ```
-
     Wir können nicht einfach $i+1$ schreiben! Wir müssen
     dies via $\comp(\succ,\pi_1)$ konstruieren. Denn:
     die Funktion $h$ bekommt ${\rm temp}, i, \vec{x}$
-    als Input; $\pi_1$ gibt uns davon das $i$ zurück und     
+    als Input; $\pi_1$ gibt uns davon das $i$ zurück und      
     $\comp(\succ, \pi_1)$ gibt uns $i+1$. Operationen
     wie $\pred: t \mapsto t-1$ und  ${\rm minus}$ sind
     konzeptuell nur ein bisschen anders. Das liegt auch
-    daran, dass wir keine negativen Zahlen haben. Was ist    
+    daran, dass wir keine negativen Zahlen haben. Was ist     
     $\pred(0)$? Wir definieren das als 0. So können wir
     pred implementieren:
 
@@ -82,8 +80,7 @@
             temp = i //= p1 (temp,i)
         return temp
     ```
-
-    In Worten: wenn $t=0$, dann geben wir einfach     
+    In Worten: wenn $t=0$, dann geben wir einfach      
     $\zero()$ zurück, also $0$. Ansonsten durchlaufen
     wir die Schleife $t$ mal; der letzte Schleifenindex
     ist $t-1$, und das ist dann auch der Wert von temp,
@@ -93,7 +90,7 @@
     \pred = \primrec(\zero, \pi_1)
     \end{align*}
 
-    Für minus schreiben wir uns erst mal     
+    Für minus schreiben wir uns erst mal      
     ${\rm subtractFrom}: (t,x) \mapsto x-t$. Hierfür wenden
     wir einfach pred $t$ mal auf $x$ an:
 
@@ -120,7 +117,6 @@
             temp = 1 //= one
         return temp
     ```
-
     und somit
 
     \begin{align*}
@@ -136,12 +132,12 @@
     Eine größere Herausforderung stellt die ganzzahlige
     Wurzel $x \mapsto \floor{\sqrt{x}}$ dar. Hierfür haben
     wir keine Formel mit $+, *, -$, auch keine schöne
-    rekursive Formel zur Hand. Es handelt sich um ein Suchproblem:    
-    $\floor{\sqrt{x}}$ ist die größte natürliche Zahl     
+    rekursive Formel zur Hand. Es handelt sich um ein Suchproblem:     
+    $\floor{\sqrt{x}}$ ist die größte natürliche Zahl      
     $i$ mit $i^2 \leq x$. Wir können auch den Suchraum
     begrenzen: da  $\sqrt{x} \leq x$ für alle natürlichen
     Zahlen, so gilt: $\floor{\sqrt{x}}$ ist die größte
-    natürliche Zahl  $i \in \{0,1,\dots,x\}$ mit    
+    natürliche Zahl  $i \in \{0,1,\dots,x\}$ mit     
     $i^2 \leq x$. Das Prädikat
 
     \begin{align*}
@@ -164,8 +160,7 @@
             temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) //= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)
         return temp
     ```
-
-    Was geht hier vor? Wenn     
+    Was geht hier vor? Wenn      
     ${\rm iSquareLessEqualX}(i,x))$ True ist, dann ersetzen
     wir temp durch $i$. Ansonsten belassen wir es beim
     alten Wert; der endgültige Wert von temp ist also das
@@ -185,7 +180,7 @@
     da wir zum Suchen der Wurzel von $t$ gleich $t$ als
     Obergrenze des Suchraumes angeben können. Ganz allgemein
     können wir für ein Prädikat ${\rm predicate}(i,x)$
-    das größte $i \in \{0,\dots,t\}$ finden, für das     
+    das größte $i \in \{0,\dots,t\}$ finden, für das      
     ${\rm predicate}(i,x)$ True ergibt. Da wir wissen,
     wie wir das primitiv rekursiv machen können, erlauben
     wir uns, einen neuen Kombinator zu definieren, anstatt
@@ -271,7 +266,6 @@
         for i in range(t):
             temp = add(temp,i) //= Comp(add, p0, p1)
     ```
-
     und somit
 
     \begin{align*}
@@ -281,7 +275,7 @@
 
     Um die Umkehrfunktionen $\first, \second$ zu implementieren,
     die uns aus $\pair(x,y)$ wieder $x$ und $y$ berechnen,
-    bestimmen wir erst den Wert von $x+y$. Wenn     
+    bestimmen wir erst den Wert von $x+y$. Wenn      
     $\pair(x,y) = n$ gilt und $x+y=i)$ ist, dann ist
 
     \begin{align*}
@@ -289,8 +283,8 @@
     {i+1 \choose 2} + 0 = \pair(0,i) \ ,
     \end{align*}
 
-    und somit ist $x+y$ der größte Wert von $i$, so dass     
-    $n \geq \pair(0,i)$ ist. Aus $x+y$ und     
+    und somit ist $x+y$ der größte Wert von $i$, so dass      
+    $n \geq \pair(0,i)$ ist. Aus $x+y$ und      
     ${x+y+1 \choose 2} + x$ können wir dann leicht $x$
     und $y$ berechnen:
 
@@ -317,7 +311,6 @@
     >>> pair(5,143)
     11031
     ```
-
     Das Problem ist, dass wir das Ende der Liste nicht
     kennen. Wir lösen das Problem, indem wir die leere
     Liste mit $0$ codieren und dann aber beim Davorhängen
@@ -341,7 +334,6 @@
     >>> head(tail(tail(90537)))
     5
     ```
-
     *Native Implementierung.* Die primitive Rekursion
     ist ein theoretischer Berechenbarkeitsbegriff für Funktionen
     auf natürlichen Zahlen. Es ist definitiv keine ernstzunehmende
@@ -352,7 +344,7 @@
     Längere Listen wie die gerade werden Sie in vertretbarer
     Zeit nicht behandeln können. Bei meinen eigenen Experimenten
     mit meinem Python-Framework bin ich daher dazu übergegangen,
-    dass ich, sobald ich gezeigt habe, dass eine Funktion     
+    dass ich, sobald ich gezeigt habe, dass eine Funktion      
     $f$ primitiv rekursiv ist, sie _nativ_ in Python zu
     implementieren, also beispielsweise in meiner Datei
     `stockpile.py`:

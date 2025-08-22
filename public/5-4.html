@@ -41,7 +41,7 @@
       mit einer Beschreibung eines Formats in natürlicher
       Sprache; (2) basteln uns daraus mit Hilfe des "Baukastenprinzips"
       eine reguläre Sprache; (3) säubern diese, indem wir
-      Regeln der Form $X \rightarrow Y$ und   
+      Regeln der Form $X \rightarrow Y$ und    
       $X \rightarrow a$ eliminieren; (4) bauen einen nichtdeterministischen
       endlichen Automaten; (5) transformieren diesen in einen
       deterministischen endlichen Automaten.
@@ -120,7 +120,7 @@
       `a`. Dazu kommen die Separatoren
       <code>:-.</code>. Also:
       <span class="nowrap">$\Sigma = \{a,.,:,-\}$.</span>
-      Stellen Sie sich einfach vor,   
+      Stellen Sie sich einfach vor,    
       $a$ stehe für beliebige alphanumerische Zeichen. Sowohl
       Grammatik als auch Automaten lassen sich einfach anpassen.
       Wir beginnen ganz unten und schreiben eine Grammatik
@@ -135,10 +135,10 @@
       $$
     </div>
     <p class="main-column">
-      Als nächstes führen wir ein nichtterminales Symbole   
+      Als nächstes führen wir ein nichtterminales Symbole    
       $C$ für Labels mit
       <code>:</code>
-      ein und ein Nichtterminal   
+      ein und ein Nichtterminal    
       $D$ für Labels mit
       <code>-</code>. Wir wählen die Buchstaben
       <span class="nowrap">$C,D$,</span>
@@ -189,7 +189,7 @@
         href="./5-1.html#_14_hgi_"
         class=""
       >Theorem 5.1.14</a>
-      anwenden, dieses mal auf die von   
+      anwenden, dieses mal auf die von    
       $T$ erzeugte Sprache. Im Ergebnis benennen wir das
       Startsymbol in $S$ um.
     </p>
@@ -226,11 +226,11 @@
       3. Die reguläre Grammatik säubern
     </h1>
     <p class="main-column">
-      Wir wollen nun alle Produktionen der Form   
+      Wir wollen nun alle Produktionen der Form    
       $Y \rightarrow x$ eliminieren. Hierfür nehmen wir
       uns
       <i>ein</i>
-      neues Nichtterminal $E$ und ersetzen   
+      neues Nichtterminal $E$ und ersetzen    
       $Y \rightarrow x$ durch $Y \rightarrow xE$ und fügen
       die Produktion $E \rightarrow \epsilon$ hinzu.
     </p>
@@ -248,9 +248,9 @@
       $$
     </div>
     <p class="main-column">
-      In einem zweiten Schritt wollen wir die Produktionen   
+      In einem zweiten Schritt wollen wir die Produktionen    
       $S \rightarrow C$ und $S \rightarrow D$ eliminieren,
-      sodass wir nur noch Produktionen der From   
+      sodass wir nur noch Produktionen der From    
       $X \rightarrow aY$ und $E \rightarrow \epsilon$ haben.
       Wir gehen vor wie in
       <a
@@ -289,7 +289,7 @@
       bauen
     </h1>
     <p class="main-column">
-      Dies sollte nun einfach sein. Wir erschaffen Zustände   
+      Dies sollte nun einfach sein. Wir erschaffen Zustände    
       $S, C, C', D, D', S', E$ und übersetzen jeden Grammatik-Pfeil
       in einen Automaten-Pfeil.
     </p>
@@ -319,7 +319,7 @@
       also
       insgesamt sieben Zustände. Wenn wir genau nach Buch
       vorgingen, müssten wir den endlichen Automaten auf
-      der Zustandsmenge $2^Q$ definieren, er hätte also   
+      der Zustandsmenge $2^Q$ definieren, er hätte also    
       $2^7 = 128$ viele Zustände. Das wäre jetzt für einen
       Rechner kein Problem, aber in diesem vorlesungsskript
       doch etwas ungünstig. Wir gehen
@@ -327,7 +327,7 @@
       vor, erschaffen
       Zustände in $2^Q$ also nur dann, wenn wir sie brauchen.
       Wir beginnen mit dem Zustand $\{S\}$ und legen dann
-      an jeden Zustand Kanten an, jeweils mit   
+      an jeden Zustand Kanten an, jeweils mit    
       $a, :, -, .$ beschriftet, und erschaffen, falls nötig,
       dabei neue Zustände. In der folgenden Animation sehen
       Sie manchmal den mit einem Kreuz markierten Fehlerzustand
@@ -475,7 +475,7 @@
       <code>:</code>
       oder eines mit
       <code>-</code>
-      ist. Der Zustand   
+      ist. Der Zustand    
       $\{C',C,E,S'\}$ bzw. das Nichtterminal $C$ heißt dann
       <code>:</code>
       <i>wir sind innerhalb eines Labels mit</i>
@@ -496,7 +496,7 @@
         Sprache aller Wörter $1^n$ für ein
         <span class="nowrap">$n$,</span>
         das durch
-        4 oder 6 teilbar ist. Da unser Alphabet   
+        4 oder 6 teilbar ist. Da unser Alphabet    
         $\Sigma = \{1\}$ eh nur aus einem Zeichen besteht,
         habe ich auf die Beschriftung der Kanten verzichtet.
       </p>
@@ -514,7 +514,7 @@
         hätte also $2^{11} = 2048$ Zustände. Führen Sie die
         Konstruktion
         <i>lazy</i>
-        durch, indem Sie vom Startzustand   
+        durch, indem Sie vom Startzustand    
         $\{S\}$ ausgehend die Folgezustände konstruieren.
         Wieviele Zustände bekommen Sie?
       </p>
