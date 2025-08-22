@@ -185,9 +185,7 @@ pub fn main_pipeline()  -> List(Pipe) {
   |> list.flatten
   |> infra.wrap_desugarers(
     infra.Off,
-    // sl.tag("marker")
-    // sl.key_val("test", "test")
-    sl.text("ächstes wollen wir zeig")
+    sl.verbatim("ächstes wollen wir zeig")
     |> infra.extend_selector_up(4)
     |> infra.extend_selector_down(16)
     |> infra.extend_selector_to_ancestors(

@@ -85,7 +85,7 @@ pub fn formatter_pipeline() -> List(Pipe) {
   |> list.flatten
   |> infra.wrap_desugarers(
     infra.Off,
-    sl.tag("marker")
+    sl.verbatim("<> marker")
     |> infra.extend_selector_up(4)
     |> infra.extend_selector_down(4)
   )
