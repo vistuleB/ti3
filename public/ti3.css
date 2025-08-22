@@ -235,9 +235,20 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
 }
 
 pre {
-    font-size: 1rem;
+    color: var(--body-color);
+    font-size: 0.9rem;
     white-space: pre-wrap;
     margin: 0 2ch;
+}
+
+.arbitrary-prompt {
+    color: blue;
+}
+
+.terminal-prompt {
+    font-family: Courier, 'Courier New';
+    color: #777;
+    font-size: 1em;
 }
 
 .python-prompt-carets {
@@ -256,14 +267,14 @@ pre span.pythonPrompt {
     color: #000;
 }
 
-pre span.pythonPrompt::before {
+/* pre span.pythonPrompt::before {
     color: purple;
     font-family: "courier";
     content: ">>> ";
     width: 8em;
-}
+} */
 
-pre span.terminalPrompt::before {
+/* pre span.terminalPrompt::before {
     color: gray;
     font-family: "courier";
     content: "user@home:~$ ";
@@ -272,14 +283,7 @@ pre span.terminalPrompt::before {
 
 pre > span.terminalPrompt {
     color: #000;
-}
-
-pre {
-    color: var(--body-color);
-    font-size: 0.9rem;
-    white-space: pre-wrap;
-    margin: 0 2ch;
-}
+} */
 
 pre.listing:before {
     counter-reset: listing;

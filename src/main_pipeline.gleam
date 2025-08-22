@@ -32,6 +32,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     [
       dl.ti3_parse_python_prompt_code_block(),
       dl.ti3_parse_orange_comment_code_block(),
+      dl.ti3_parse_arbitrary_prompt_response_code_block(),
       dl.auto_generate_child_if_missing_from_attribute(#(
         "Chapter",        // parent tag
         "ChapterTitle",   // new child tag
@@ -62,14 +63,18 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("Statement", "StatementCounter", infra.Continue)
       ]),
       dl.prepend_text_node_if_has_ancestor_else__batch([
-        #("Exercise",
+        #(
+          "Exercise",
           "Sub",
           " *Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter* ",
-          " *Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* "),
-        #("Statement",
+          " *Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* "
+        ),
+        #(
+          "Statement",
           "Sub",
           " *::øøChapterCounter.::øøSubCounter.::øøStatementCounter* ",
-          " *::øøChapterCounter.::øøStatementCounter* "),
+          " *::øøChapterCounter.::øøStatementCounter* "
+        ),
       ]),
       dl.prepend_text_node(#("ChapterTitle","::øøChapterCounter. ")), 
       dl.prepend_text_node(#("SubTitle", "::øøChapterCounter.::øøSubCounter ")),
@@ -110,7 +115,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.rearrange_links(#("Übungsaufgabe <a href='1'>_1_</a>", "<a href='1'>Übungsaufgabe _1_</a>")),
       dl.rearrange_links(#("Aufgabe <a href='1'>_1_</a>", "<a href='1'>Aufgabe _1_</a>")),
       dl.rearrange_links(#("Kapitel <a href='1'>_1_</a>", "<a href='1'>Kapitel _1_</a>")),
-       dl.rearrange_links(#("Lemma <a href='1'>_1_</a>", "<a href='1'>Lemma _1_</a>")),     dl.rearrange_links(#("Algorithmus <a href='1'>_1_</a>", "<a href='1'>Algorithmus _1_</a>")),
+      dl.rearrange_links(#("Lemma <a href='1'>_1_</a>", "<a href='1'>Lemma _1_</a>")),     dl.rearrange_links(#("Algorithmus <a href='1'>_1_</a>", "<a href='1'>Algorithmus _1_</a>")),
     ],
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),

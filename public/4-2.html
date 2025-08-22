@@ -59,15 +59,13 @@
       wie sie die primitive Rekursion zulässt, und schreiben
       in Orange auch gleich die Funktionen $g$ und $h$ dazu:
     </p>
-    <div class="well highlight out">
-<pre>
+<pre class="well highlight main-column out">
 def mult(t,x):
-   temp = 0 <span class="orange-comment">= zero(x)</span>
-   for i in range(t):
-       temp = add(temp,x) <span class="orange-comment">= Comp(add, p_0, p2) (temp,i,x) </span>
-   return temp
+    temp = 0 <span class="orange-comment">= zero(x)</span>
+    for i in range(t):
+        temp = add(temp,x) <span class="orange-comment">= Comp(add, p_0, p2) (temp,i,x) </span>
+    return temp
 </pre>
-    </div>
     <p class="main-column">
       erinnern Sie sich daran: $h$ muss immer eine Funktion
       in der lokalen Variable temp, der Laufvariable $i$
@@ -111,15 +109,13 @@ def mult(t,x):
       allerdings etwas interessanter, weil wir hier auf das
       Zwischenergebnis und die Laufvariable zugreifen müssen:
     </p>
-    <div class="well highlight out">
-<pre>
+<pre class="well highlight main-column out">
 def factorial(t):
-   temp = 1 <span class="orange-comment">= one()</span>
+    temp = 1 <span class="orange-comment">= one()</span>
 for i in range(t):
-   temp = mult(temp,i+1) <span class="orange-comment">= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)</span>
-   return temp
+    temp = mult(temp,i+1) <span class="orange-comment">= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)</span>
+    return temp
 </pre>
-    </div>
     <p class="main-column">
       Wir können nicht einfach $i+1$ schreiben! Wir müssen
       dies via $\comp(\succ,\pi_1)$ konstruieren. Denn:
@@ -135,15 +131,13 @@ for i in range(t):
       Wir definieren das als 0. So können wir
       pred implementieren:
     </p>
-    <div class="well highlight out">
-<pre>
+<pre class="well highlight main-column out">
 def pred(t):
     temp = 0 <span class="orange-comment">= zero()</span>
     for i in range(t):
         temp = i <span class="orange-comment">= p1 (temp,i)</span>
     return temp
 </pre>
-    </div>
     <p class="main-column">
       In Worten: wenn
       <span class="nowrap">$t=0$,</span>
@@ -195,15 +189,13 @@ def pred(t):
       mit Booleschem Ausgabewert, ist
       <code>isPositive</code>:
     </p>
-    <div class="well highlight out">
-<pre>
+<pre class="well highlight main-column out">
 def pred(t):
     temp = 0 <span class="orange-comment">= zero()</span>
     for i in range(t):
         temp = 1 <span class="orange-comment">= one</span>
     return temp
 </pre>
-    </div>
     <p class="main-column">
       und somit
     </p>
@@ -259,15 +251,13 @@ def pred(t):
       und damit können wir die ganzzahlige Wurzel schreiben
       als
     </p>
-    <div class="well highlight out">
-<pre>
+<pre class="well highlight main-column out">
 def largestIbelowTwithISquareLessEqualX(t,x):
     temp = 0 <span class="orange-comment">= zero(x)</span>
     for i in range(t):
         temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span class="orange-comment">= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)</span>
     return temp
 </pre>
-    </div>
     <p class="main-column">
       Was geht hier vor? Wenn     
       ${\rm iSquareLessEqualX}(i,x))$ True ist, dann ersetzen
@@ -404,14 +394,12 @@ a = b-a
       es gilt ${n \choose 2} = 1 + 2 + \cdots + (n-1)$ und
       somit
     </p>
-    <div class="well highlight out">
-<pre>
+<pre class="well highlight main-column out">
 def choose2(t):
     temp = 0 <span class="orange-comment">= zero()</span>
     for i in range(t):
         temp = add(temp,i) <span class="orange-comment">= Comp(add, p0, p1)</span>
 </pre>
-    </div>
     <p class="main-column">
       und somit
     </p>
@@ -463,8 +451,7 @@ def choose2(t):
       zu
       <span style="color:red">$\pair(5, \pair(7, 9))$</span>. Das ist natürlich inkorrekt:
     </p>
-    <div class="well highlight out">
-<pre class="python-prompt">
+<pre class="well highlight main-column out">
 <span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,pair(7,9))</span>
 <span class="python-prompt-ok-response">11031</span>
 <span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(7,9)</span>
@@ -472,7 +459,6 @@ def choose2(t):
 <span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,143)</span>
 <span class="python-prompt-ok-response">11031</span>
 </pre>
-    </div>
     <p class="main-column">
       Das Problem ist, dass wir das Ende der Liste nicht
       kennen. Wir lösen das Problem, indem wir die leere
@@ -491,8 +477,7 @@ def choose2(t):
     <p class="main-column">
       Jetzt klappt alles wunderbar:
     </p>
-    <div class="well highlight out">
-<pre class="python-prompt">
+<pre class="well highlight main-column out">
 <span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> push(11, push(7, push(5, 0)))</span>
 <span class="python-prompt-ok-response">90537</span>
 <span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(90537)</span>
@@ -502,7 +487,6 @@ def choose2(t):
 <span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(tail(90537)))</span>
 <span class="python-prompt-ok-response">5</span>
 </pre>
-    </div>
     <p class="main-column">
       <b>Native Implementierung.</b>
       Die primitive Rekursion

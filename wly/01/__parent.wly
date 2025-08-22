@@ -48,26 +48,24 @@
         zum Beispiel in Python eingeben und auswerten lassen
         können:
 
-        |> Highlight
-
-            ```python-prompt
-            >>> (6 + 8) * 3
-            42
-            >>> (24 / 4 / 2) * (24 / ( 4 / 2)) + 1
-            37
-            >>> 3 + 7 * 8
-            59
-            >>> (2 * 3))
-            File "<stdin>", line 1
-                (2 * 3))
-                       ^
-            SyntaxError: unmatched ')'
-            >>> (* 3)
-            File "<stdin>", line 1
-                (* 3)
-                 ^^^
-            SyntaxError: cannot use starred expression here
-            ```
+        ```python-prompt
+        >>> (6 + 8) * 3
+        42
+        >>> (24 / 4 / 2) * (24 / ( 4 / 2)) + 1
+        37
+        >>> 3 + 7 * 8
+        59
+        >>> (2 * 3))
+        File "<stdin>", line 1
+            (2 * 3))
+                    ^
+        SyntaxError: unmatched ')'
+        >>> (* 3)
+        File "<stdin>", line 1
+            (* 3)
+                ^^^
+        SyntaxError: cannot use starred expression here
+        ```
 
         Die letzten beiden waren in Pythons Augen offensichtlich
         nicht korrekt. Wie sind korrekte arithmetische Ausdrücke

@@ -22,15 +22,13 @@
     wie sie die primitive Rekursion zulässt, und schreiben
     in Orange auch gleich die Funktionen $g$ und $h$ dazu:
 
-    |> Highlight
-
-        ```orange-comment
-        def mult(t,x):
-           temp = 0 //= zero(x)
-           for i in range(t):
-               temp = add(temp,x) //= Comp(add, p_0, p2) (temp,i,x) 
-           return temp
-        ```
+    ```orange-comment
+    def mult(t,x):
+        temp = 0 //= zero(x)
+        for i in range(t):
+            temp = add(temp,x) //= Comp(add, p_0, p2) (temp,i,x) 
+        return temp
+    ```
 
     erinnern Sie sich daran: $h$ muss immer eine Funktion
     in der lokalen Variable temp, der Laufvariable $i$

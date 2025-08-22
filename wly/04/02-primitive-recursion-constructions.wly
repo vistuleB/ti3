@@ -22,15 +22,13 @@
     wie sie die primitive Rekursion zulässt, und schreiben
     in Orange auch gleich die Funktionen $g$ und $h$ dazu:
 
-    |> Highlight
-
-        ```orange-comment
-        def mult(t,x):
-           temp = 0 //= zero(x)
-           for i in range(t):
-               temp = add(temp,x) //= Comp(add, p_0, p2) (temp,i,x) 
-           return temp
-        ```
+    ```orange-comment
+    def mult(t,x):
+        temp = 0 //= zero(x)
+        for i in range(t):
+            temp = add(temp,x) //= Comp(add, p_0, p2) (temp,i,x) 
+        return temp
+    ```
 
     erinnern Sie sich daran: $h$ muss immer eine Funktion
     in der lokalen Variable temp, der Laufvariable $i$
@@ -58,15 +56,13 @@
     allerdings etwas interessanter, weil wir hier auf das
     Zwischenergebnis und die Laufvariable zugreifen müssen:
 
-    |> Highlight
-
-        ```orange-comment
-        def factorial(t):
-           temp = 1 //= one()
-        for i in range(t):
-           temp = mult(temp,i+1) //= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)
-           return temp
-        ```
+    ```orange-comment
+    def factorial(t):
+        temp = 1 //= one()
+    for i in range(t):
+        temp = mult(temp,i+1) //= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)
+        return temp
+    ```
 
     Wir können nicht einfach $i+1$ schreiben! Wir müssen
     dies via $\comp(\succ,\pi_1)$ konstruieren. Denn:
@@ -79,15 +75,13 @@
     $\pred(0)$? Wir definieren das als 0. So können wir
     pred implementieren:
 
-    |> Highlight
-
-        ```orange-comment
-        def pred(t):
-            temp = 0 //= zero()
-            for i in range(t):
-                temp = i //= p1 (temp,i)
-            return temp
-        ```
+    ```orange-comment
+    def pred(t):
+        temp = 0 //= zero()
+        for i in range(t):
+            temp = i //= p1 (temp,i)
+        return temp
+    ```
 
     In Worten: wenn $t=0$, dann geben wir einfach     
     $\zero()$ zurück, also $0$. Ansonsten durchlaufen
@@ -119,15 +113,13 @@
     1 und `False` als 0. Unser erstes Prädikat, also Funktion
     mit Booleschem Ausgabewert, ist `isPositive`:
 
-    |> Highlight
-
-        ```orange-comment
-        def pred(t):
-            temp = 0 //= zero()
-            for i in range(t):
-                temp = 1 //= one
-            return temp
-        ```
+    ```orange-comment
+    def pred(t):
+        temp = 0 //= zero()
+        for i in range(t):
+            temp = 1 //= one
+        return temp
+    ```
 
     und somit
 
@@ -165,15 +157,13 @@
     und damit können wir die ganzzahlige Wurzel schreiben
     als
 
-    |> Highlight
-
-        ```orange-comment
-        def largestIbelowTwithISquareLessEqualX(t,x):
-            temp = 0 //= zero(x)
-            for i in range(t):
-                temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) //= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)
-            return temp
-        ```
+    ```orange-comment
+    def largestIbelowTwithISquareLessEqualX(t,x):
+        temp = 0 //= zero(x)
+        for i in range(t):
+            temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) //= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)
+        return temp
+    ```
 
     Was geht hier vor? Wenn     
     ${\rm iSquareLessEqualX}(i,x))$ True ist, dann ersetzen
@@ -275,14 +265,12 @@
     es gilt ${n \choose 2} = 1 + 2 + \cdots + (n-1)$ und
     somit
 
-    |> Highlight
-
-        ```orange-comment
-        def choose2(t):
-            temp = 0 //= zero()
-            for i in range(t):
-                temp = add(temp,i) //= Comp(add, p0, p1)
-        ```
+    ```orange-comment
+    def choose2(t):
+        temp = 0 //= zero()
+        for i in range(t):
+            temp = add(temp,i) //= Comp(add, p0, p1)
+    ```
 
     und somit
 
@@ -321,16 +309,14 @@
         $\pair(5, \pair(7, 9))$
     . Das ist natürlich inkorrekt:
 
-    |> Highlight
-
-        ```python-prompt
-        >>> pair(5,pair(7,9))
-        11031
-        >>> pair(7,9)
-        143
-        >>> pair(5,143)
-        11031
-        ```
+    ```python-prompt
+    >>> pair(5,pair(7,9))
+    11031
+    >>> pair(7,9)
+    143
+    >>> pair(5,143)
+    11031
+    ```
 
     Das Problem ist, dass wir das Ende der Liste nicht
     kennen. Wir lösen das Problem, indem wir die leere
@@ -345,18 +331,16 @@
 
     Jetzt klappt alles wunderbar:
 
-    |> Highlight
-
-        ```python-prompt
-        >>> push(11, push(7, push(5, 0)))
-        90537
-        >>> head(90537)
-        11
-        >>> head(tail(90537))
-        7
-        >>> head(tail(tail(90537)))
-        5
-        ```
+    ```python-prompt
+    >>> push(11, push(7, push(5, 0)))
+    90537
+    >>> head(90537)
+    11
+    >>> head(tail(90537))
+    7
+    >>> head(tail(tail(90537)))
+    5
+    ```
 
     *Native Implementierung.* Die primitive Rekursion
     ist ein theoretischer Berechenbarkeitsbegriff für Funktionen
