@@ -46,9 +46,8 @@
                 S -&gt; "(" S "]" S;
 
         Was ist die erzeugte Sprache? Können Sie sie in Worten
-        beschreiben?
-        Erzeugen Sie Wörter in dieser Sprache, für die der
-        Backtrack-Baum viele rote Sackgassen enthält.
+        beschreiben? Erzeugen Sie Wörter in dieser Sprache,
+        für die der Backtrack-Baum viele rote Sackgassen enthält.
         Schreiben Sie eine äquivalente Grammatik (d.h., die
         die gleiche Sprache erzeugt), für die es keine oder
         nur sehr kurze Sackgassen gibt. Testen Sie die beiden
@@ -130,7 +129,7 @@
         ist. Können Sie eine _eindeutige_ Grammatik angebene,
         die ähnlich exponentielles Verhalten zeigt? Exponentiell
         heißt: mit jedem zusätlichen Zeichen des Eingabewortes
-        kann die Größe des Backtrack-Baumes um einen Faktor 
+        kann die Größe des Backtrack-Baumes um einen Faktor  
         $R \gt 1$ wachsen.
 
     |> Exercise

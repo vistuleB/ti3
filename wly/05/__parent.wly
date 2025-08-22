@@ -313,8 +313,8 @@
     |> ul
         |> li
             Das Alphabet $\Sigma$ aller verwendeten Zeichen, in
-            unserem Fall also      
-            $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$. Wir nennen      
+            unserem Fall also       
+            $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$. Wir nennen       
             $\Sigma$ die Menge der _terminalen Symbole_.
         |> li
             Eine Menge $N$ abstrakter Symbole, hier
@@ -428,7 +428,7 @@
         Alphabet
 
     Wenn wir über formale Sprachen reden, so liegt immer
-    eine (endliche) Menge von Symbolen zugrunde, das Alphabet      
+    eine (endliche) Menge von Symbolen zugrunde, das Alphabet       
     $\Sigma$. Im Emailadressen-Beispiel war (\Sigma) recht
     groß: die 52 Buchstaben; 10 Ziffern; die Zeichen `@
     . -` . Für Java-Programme oder andere Programmiersprachen
@@ -437,7 +437,7 @@
     miteinschließen, landen wir im Millionenbereich. In
     den theoretischen Beispielen, die in diesem Kurs folgen
     werden, ist das Alphabet fast immer viel kleiner: typische
-    Alphabete zum Beispiel sind $\{0,1\}$ ,     
+    Alphabete zum Beispiel sind $\{0,1\}$ ,      
     $\{a,b,c,d\}$ oder auch $\{1\}$, ein Alphabet mit
     nur einem Zeichen. Für ein Alphabet $\Sigma$ bezeichnen
     wir mit  $\Sigma^*$ die Menge aller endlichen Strings
@@ -452,7 +452,7 @@
     Ein Element $x \in \Sigma^*$, also einen endlichen
     String aus $\Sigma$-Symbolen, bezeichnen wir als _Wort
     über $\Sigma$_. Mit $\Sigma^+$ bezeichnen wir die
-    Menge aller nichtleeren Strings, also      
+    Menge aller nichtleeren Strings, also       
     $\Sigma^+ = \Sigma^* \setminus \{\epsilon\}$.
 
     |> SubTopic
@@ -518,13 +518,13 @@
                 die _nichtterminalen Symbole_;
             |> li
                 einer endlichen Menge $P$ von _Produktionsregeln_
-                der Form $X \rightarrow \alpha$ mit $X \in N$ und      
-                $\alpha \in (\Sigma \cup \N)^*$; formal also      
+                der Form $X \rightarrow \alpha$ mit $X \in N$ und       
+                $\alpha \in (\Sigma \cup \N)^*$; formal also       
                 $P \subseteq N \times (\Sigma \cup \N)^*$.
             |> li
                 einem Startsymbol $S \in N$.
 
-        Die Grammatik $G$ ist also ein 4-Tupel      
+        Die Grammatik $G$ ist also ein 4-Tupel       
         $(\Sigma, N, P, S)$.
 
     Woher der Name _kontextfrei_ kommt, werden Sie hoffentlich
@@ -540,7 +540,7 @@
 
     |> Statement
         title=*Beispiel*
-        Wir betrachten die Grammatik      
+        Wir betrachten die Grammatik       
         $G = (\{a,b\}, \{S, A, B\}, P, S)$ mit den Produktionsregeln
 
         \begin{align*}
@@ -557,7 +557,7 @@
         $$
 
         Für konkrete Beispiele wie die gerade betrachtete
-        Grammatik jedoch verwenden wir einfach die Pfeilschreibweise      
+        Grammatik jedoch verwenden wir einfach die Pfeilschreibweise       
         $S \rightarrow AB, \dots$. Hier ist eine _Ableitung_
         basierend auf der Grammatik:
 
@@ -575,8 +575,8 @@
 
     |> Statement
         title=*Definition*
-        Gegeben sei eine kontextfreie Grammatik      
-        $G = (\Sigma, N, P, S)$. Ein String      
+        Gegeben sei eine kontextfreie Grammatik       
+        $G = (\Sigma, N, P, S)$. Ein String       
         $\alpha \in (\Sigma \cup N)^*$ heißt _Wortform_ (im
         Gegensatz zu einem Wort $x \in \Sigma^*)$. Für zwei
         Wortformen $\alpha , \beta$ schreiben wir
@@ -588,33 +588,33 @@
         wenn wir $\alpha$ zu $\beta$ machen können, indem
         wir ein nichtterminales Symbol $X$ in $\alpha$ durch
         die rechte Seite $X \rightarrow \gamma$ ersetzen können.
-        Formal gesprochen, wenn wir      
-        $\alpha = \alpha_1 X \alpha_2$ und      
-        $\beta = \beta_1 \gamma \beta_2$ mit Wortformen      
+        Formal gesprochen, wenn wir       
+        $\alpha = \alpha_1 X \alpha_2$ und       
+        $\beta = \beta_1 \gamma \beta_2$ mit Wortformen       
         $\alpha_1, \alpha_2, \beta_1, \gamma, \beta_2$ und
-        einem Nichtterminal $X$ schreiben können, so dass      
-        $X \rightarrow \gamma$ eine Produktionsregel in      
+        einem Nichtterminal $X$ schreiben können, so dass       
+        $X \rightarrow \gamma$ eine Produktionsregel in       
         $P$ ist. Wenn wir $\alpha = \beta$ "vorlesen", dann
         sagen wir _$\beta$ kann aus $\alpha$ in einem Schritt
         abgeleitet werden_. Wenn $\beta$ aus $\alpha$ in mehreren
         (im Extremfall null) Schritten abgeleitet werden kann,
         so schreiben wir $\alpha \Rightarrow^* \beta$. Formal
-        bedeutet $\alpha \Rightarrow^* \beta$, dass es ein     
-        $k \geq 0$ gibt und "Zwischenwortformen"      
-        $\alpha_0, \alpha_1, \dots, \alpha_k$ mit      
-        $\alpha = \alpha_0$ und $\alpha_k = \beta$, sodass      
-        $\alpha_i \Rightarrow \alpha_{i+1}$ für alle      
+        bedeutet $\alpha \Rightarrow^* \beta$, dass es ein      
+        $k \geq 0$ gibt und "Zwischenwortformen"       
+        $\alpha_0, \alpha_1, \dots, \alpha_k$ mit       
+        $\alpha = \alpha_0$ und $\alpha_k = \beta$, sodass       
+        $\alpha_i \Rightarrow \alpha_{i+1}$ für alle       
         $i = 0, 1, \dots, k-1$ gilt. Dies schließt den "trivialen"
         Fall $k=0$ mit ein, in welchem $\alpha = \beta$ gilt.
 
-    Nochmals: wenn $\alpha$ die Form      
-    $\alpha_1 X \alpha_2$ hat, dann dürfen Sie das Nichtterminal      
-    $X$ durch die rechte Seite einer Produktionsregel      
+    Nochmals: wenn $\alpha$ die Form       
+    $\alpha_1 X \alpha_2$ hat, dann dürfen Sie das Nichtterminal       
+    $X$ durch die rechte Seite einer Produktionsregel       
     $X \rightarrow \gamma$ ersetzen; Sie dürfen das unabhängig
-    von dem _Kontext_, in welchem $X$ in der Wortform      
+    von dem _Kontext_, in welchem $X$ in der Wortform       
     $\alpha$ vorkommt. Daher rührt der Name _kontextfreie
     Grammatik_. Beachten Sie, dass $P$ per Definition
-    eine _endliche Menge_ von Regeln sein muss, dass jedoch      
+    eine _endliche Menge_ von Regeln sein muss, dass jedoch       
     $\Rightarrow$ im Allgemeinen unendlich ist. Bereits
     für unsere einfache Grammatik mit den Produktionsregeln
 
@@ -633,12 +633,12 @@
     \dots
     \end{align*}
 
-    und sehen, dass die Menge aller Paare      
+    und sehen, dass die Menge aller Paare       
     $\alpha \Rightarrow \beta$ unendlich ist.
 
     |> Statement
         title=*Definition*
-        *(Die von einer Grammatik erzeugte Sprache).* Sei      
+        *(Die von einer Grammatik erzeugte Sprache).* Sei       
         $G = (\Sigma, N, P, S)$ eine kontextfreie Grammatik.
         Die von $G$ erzeugte Sprache $L(G)$ ist die Menge
         aller Wörter, die vom Startsymbol $S$ abgeleitet werden
@@ -651,7 +651,7 @@
         Wenn es zu einer Sprache $L \subseteq \Sigma^*$ eine
         kontextfreie Grammatik $G$ mit $L(G) = L$ gibt, so
         nennen wir $L$ eine _kontextfreie Sprache_. Beachten
-        Sie, dass in dem obigen Beispiel die Wortform      
+        Sie, dass in dem obigen Beispiel die Wortform       
         $aaAB$ zwar aus $S$ abgeleitet werden kann, allerdings
         kein _Wort_ ist, da es noch nichtterminale Symbole
         enthält. Es gilt also $aaAB \not \in L(G)$. Oft können
@@ -659,7 +659,7 @@
 
     |> Statement
         title=*Beispiel*
-        Sei $G$ die zuletzt betrachtete Grammatik. Dann ist      
+        Sei $G$ die zuletzt betrachtete Grammatik. Dann ist       
         $L(G)$ die Menge aller Wörter der Form $a^* b^*$,
         also Wörter, in denen auf beliebig viele $a$'s beliebig
         viele $b$'s folgen.
@@ -668,7 +668,7 @@
 
     |> Statement
         title=*Beispiel*
-        Wir betrachten die Grammatik      
+        Wir betrachten die Grammatik       
         $G_2 = (\{a,b\}, \{S\}, P, S)$ mit den Produktionsregeln
 
         \begin{align}
@@ -678,7 +678,7 @@
         \end{align}
 
         Hier sind mögliche Ableitungen des Wortes $abab$.
-        Zur Verdeutlichung schreiben wir über den Pfeil      
+        Zur Verdeutlichung schreiben wir über den Pfeil       
         $\Rightarrow$ die Nummer der Regel, die wir angewendet
         haben:
 
@@ -713,7 +713,7 @@
         mit der Beschriftung $\stackrel{(i)}{\Rightarrow}$,
         die die Nummer der angewendeten Regel angibt, ist eindeutig,
         wie wir von $S$ zum abgeleiteten Wort gekommen sind.
-        Betrachten Sie nun eine weitere Linksableitung      
+        Betrachten Sie nun eine weitere Linksableitung       
         $S \Rightarrow^* abab$:
 
         \begin{align*}
@@ -725,10 +725,10 @@
         \end{align*}
 
         Sehen Sie, dass diese Ableitung _qualitativ_ anders
-        ist, da wir hier auch die Regel      
+        ist, da wir hier auch die Regel       
         $S \rightarrow bSaS$ angewendet haben? Um die Struktur
         der Ableitung zu verdeutlichen, könnten wir die ersten
-        beiden Ableitungen mit Wort      
+        beiden Ableitungen mit Wort       
         $S \Rightarrow^* (ab)(ab)$ bezeichnen und die dritte
         mit Wort $S \Rightarrow^* a(ba)b$.
 
@@ -736,13 +736,13 @@
         Ziele der Theorie der formalen Sprachen
 
     Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen
-    formal beschreiben können; wie wir, gegeben eine Grammatik      
-    $G$ und ein Zielwort $x$, eine Ableitung      
+    formal beschreiben können; wie wir, gegeben eine Grammatik       
+    $G$ und ein Zielwort $x$, eine Ableitung       
     $G \Rightarrow^* x$ finden können. Anhand der Ableitungssequenz
-    können wir dann oft auf die logische Struktur von      
+    können wir dann oft auf die logische Struktur von       
     $x$ schließen. Handelt es sich bei $G$ zum Beispiel
     um eine Grammatik für die Programmiersprache Java,
-    so wäre ein Ziel, aus der Ableitungssequenz      
+    so wäre ein Ziel, aus der Ableitungssequenz       
     $G \Rightarrow^* x$ die Struktur des Programms $x$,
     also Klassenstruktur, Methoden, etc., ablesen zu können
     und schlussendlich das Programm in ausführbaren Maschinencode
@@ -751,7 +751,7 @@
     |> Statement
         title=*Algorithmisches Problem: Parsing*
         Gegeben eine (kontextfreie) Grammatik $G$ und ein
-        Zielwort $x$, finde eine Ableitung      
+        Zielwort $x$, finde eine Ableitung       
         $G \Rightarrow^* x$, falls es so eine gibt. Für einen
         String $x$ eine Ableitung zu finden bezeichnen wir
         als _parsen_, das zugehörige Hauptwort als _Parsing_.
@@ -762,7 +762,7 @@
     legen. *Die schlechte Nachricht:* wir kennen keinen
     Algorithmus, der das Parsing kontextfreier Sprachen
     in seiner ganzen Allgemeinheit in _linearer Zeit_ erledigt,
-    dessen Laufzeit also proportional zur Länge des Zielwortes     
+    dessen Laufzeit also proportional zur Länge des Zielwortes      
     $x$ ist. Dies ist aber, was wir in der Praxis, zum
     Beispiel bei Compilern, erwarten. *Die gute Nachricht:*
     in fast allen praktisch relevanten Fällen haben wir

@@ -83,7 +83,7 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.5.1</b>
-        Sei $n$ eine ungerade Zahl. Zeigen Sie, dass      
+        Sei $n$ eine ungerade Zahl. Zeigen Sie, dass       
         $\maj_n$ für genau die Hälfte aller $2^n$ möglichen
         Eingaben eine 1 ausgibt (und für die andere Hälfte
         eine 0).
@@ -116,7 +116,7 @@
       $$
     </div>
     <p class="main-column">
-      Wenn dieser Term 1 wird, dann sind      
+      Wenn dieser Term 1 wird, dann sind       
       $x_1 = x_3 = x_4 = x_6 = x_7$ sein, also insgesamt
       fünf Input-Bits 1, und $\maj_7$ gibt 1 aus. Hier ist
       also eine Vereinfachung: wir folgen der Wahrheitstabellen-Methode,
@@ -133,10 +133,10 @@
       an. Auch dieser kommt in der Wahrheitstabelle vor,
       da $\maj_7(1001011)=1$ gilt. In unserer neuen Konstruktion
       wird dieser zu $x_1 x_4 x_6 x_7$ vereinfacht. Nun
-      schauen Sie: wenn $T'$ den Wert 1 ausgibt, dann gibt      
-      $x_1 x_4 x_6 x_7$ auf jeden Fall 1 aus, und      
+      schauen Sie: wenn $T'$ den Wert 1 ausgibt, dann gibt       
+      $x_1 x_4 x_6 x_7$ auf jeden Fall 1 aus, und       
       $\maj_7$ wird 1; $T'$ ist also redundant. Irgendwie
-      ist das ja auch klar: zu verlangen, dass die fünf Variablen      
+      ist das ja auch klar: zu verlangen, dass die fünf Variablen       
       $x_1, x_3, x_4 x_6, x_7$ alle mit 1 abstimmen, ist
       zwar hinreichend, aber eben schon mehr als nötig. Es
       reicht also, sich auf alle Terme mit genau 4 Variablen
@@ -175,7 +175,7 @@
         <b>Beweis.</b>
         Sei
         <span class="nowrap">$k \in \{1,\dots,n\}$.</span>
-        Vergleichen wir      
+        Vergleichen wir       
         ${n \choose k}$ mit
         <span class="nowrap">${n \choose k-1}$:</span>
         
@@ -203,14 +203,14 @@
         $$
       </div>
       <p>
-        Aus der letzten Zeile folgt nun, dass      
+        Aus der letzten Zeile folgt nun, dass       
         ${n \choose k}$ durch $k := \ceil{\frac{n}{2}}$ maximiert
-        wird, also      
+        wird, also       
         ${n \choose k} \leq {n \choose \ceil{\frac{n}{2}}}$
-        gilt. Als nächstes müssen wir uns die Definition von      
-        ${n \choose k}$ ins Gedächtnis rufen. Nein,      
+        gilt. Als nächstes müssen wir uns die Definition von       
+        ${n \choose k}$ ins Gedächtnis rufen. Nein,       
         $\frac{n!}{k!(n-k)!}$ ist nicht die Definition, sondern
-        eine Formel dafür. Die Definition ist:      
+        eine Formel dafür. Die Definition ist:       
         ${n \choose k}$ ist die Menge der Teilmengen von
         <span class="nowrap">$\{1,\dots,n\}$,</span>
         die Größe $k$ haben. Wieviele Teilmenge
@@ -226,7 +226,7 @@
         $$
       </div>
       <p>
-        Intuitiv gesprochen heißt das: diese Summe hat      
+        Intuitiv gesprochen heißt das: diese Summe hat       
         $n+1$ Terme
         <span class="nowrap">($k$</span>
         wandert von 0 bis
@@ -282,10 +282,10 @@
       $$
     </div>
     <p class="main-column">
-      Die Funktion $\maj_n$ ist also ein Speziallfall      
+      Die Funktion $\maj_n$ ist also ein Speziallfall       
       $\theta^n_k$ für
       <span class="nowrap">$k = \ceil{\frac{n+1}{2}}$.</span>
-      Wir können      
+      Wir können       
       $\theta^n_k$ rekursiv zerlegen wie folgt:
     </p>
     <div class="math-block main-column">
@@ -297,7 +297,7 @@
       $$
     </div>
     <p class="main-column">
-      und somit $\theta^n_k$ aus $\theta^{n-1}_{k-1}$ und      
+      und somit $\theta^n_k$ aus $\theta^{n-1}_{k-1}$ und       
       $\theta^{n-1}_k$ berechnen. Rekursiv fortgefühtr sieht
       das dann so aus:
     </p>
@@ -313,13 +313,13 @@
     <p class="main-column">
       Die Konstruktion endet mit
       <span class="nowrap">$\theta^m_0$,</span>
-      was immer      
+      was immer       
       $1$ ausgibt, und mit
       <span class="nowrap">$\theta^m_{m}$,</span>
-      was      
+      was       
       $x_1 \wedge \dots \wedge x_m$ ist. Die Konstruktion
-      ist leider auch nicht effizient; wenn man mit      
-      $C^n_k$ die Anzahl der $\theta^m_m$ und      
+      ist leider auch nicht effizient; wenn man mit       
+      $C^n_k$ die Anzahl der $\theta^m_m$ und       
       $\theta^m_0$ in diesem Baum zählt, dann sieht man,
       dass
     </p>
@@ -392,7 +392,7 @@ def binomial(n,k):
       Gates. Die Tiefe ist
       <span class="nowrap">$O(n)$,</span>
       da in jedem Schritt von
-      grauem Kasten zu dem nächsttieferen der Wert von      
+      grauem Kasten zu dem nächsttieferen der Wert von       
       $m$ abnimmt. Insgesamt also haben wir gezeigt:
     </p>
     <div class="well statement out">
@@ -415,14 +415,14 @@ def binomial(n,k):
       sie mit
       <span class="nowrap">$\ceil{n}{2}$.</span>
       Wie aber sollen wir zählen?
-      Ganz einfach: mit einem Binäraddierer! Sei      
+      Ganz einfach: mit einem Binäraddierer! Sei       
       $d = \ceil{\log_2(n+1)}$ die Anzahl der Bits in der
       Binärdarstellung von
       <span class="nowrap">$n$.</span>
       Wir interpretieren jede
       Input-Variable $x_i$ als
       <span class="nowrap">$d$-stellige</span>
-      Binärzahl, wobei      
+      Binärzahl, wobei       
       $x_i = 1$ der Zahl
       <span class="nowrap">$000\dots 001$,</span>
       also 1 entspricht,
@@ -460,7 +460,7 @@ def binomial(n,k):
       <span class="nowrap">$\theta^m_l$-Konstruktion,</span>
       allerdings wurde das Ziel,
       eine Tiefe von $O (\log n)$ zu erreichen, wieder verfehlt,
-      wenn auch knapp. Die Idee, die eine Tiefe von      
+      wenn auch knapp. Die Idee, die eine Tiefe von       
       $O (\log n)$ erreichen wird, ist ebenso einfach wie
       genial.
     </p>
@@ -471,10 +471,10 @@ def binomial(n,k):
         Es gibt einen Schaltkreis mit $O(n)$ Gates, Tiefe
         2 und Fan-In 2, der als Input drei
         <span class="nowrap">$n$-stellige</span>
-        Binärzahlen      
+        Binärzahlen       
         $x,y,z$ nimmt und zwei
         <span class="nowrap">$n+1$-stellige</span>
-        Binärzahlen       
+        Binärzahlen        
         $u, v$ ausgibt, so dass
       </p>
       <div class="math-block">
@@ -529,7 +529,7 @@ def binomial(n,k):
       </p>
     </div>
     <p class="main-column">
-      Wir interpretieren nun die $n$ Inputs      
+      Wir interpretieren nun die $n$ Inputs       
       $x_1,\dots,x_n$ von Majoroty als einstellige Binärzahlen,
       sortieren sie in Dreiergruppen und machen per 2-for-3-Addierer
       daraus $\ceil{\frac{2n}{3}}$ Zahlen. Dann machen wir
@@ -575,7 +575,7 @@ def binomial(n,k):
         <b>2.5.4</b>
         <b>Theorem</b>
         Die Konstruktion mit 2-for-3-Addierern gibt uns einen
-        Schaltkreis für Majority mit Fan-in 2, Tiefe      
+        Schaltkreis für Majority mit Fan-in 2, Tiefe       
         $O(\log n)$ und Größe $O (n \log n)$
       </p>
     </div>
@@ -627,14 +627,14 @@ def binomial(n,k):
       Die Idee ist, dass wir, anstatt $\theta^n_k$ aus
       <span class="nowrap">$x_n$,</span>
       $\theta^{n-1}_{k-1}$ und $\theta^{n-1}_{k}$
-      zu berechnen, versuchen, irgendwie von $n$ auf      
+      zu berechnen, versuchen, irgendwie von $n$ auf       
       $n/2$ runterzukommen. Dann könnten wir rekursiv weitermachen
       und müssten uns nur durch logarithmisch viele Werte
       von $n$ wühlen. Wir sehen, dass wir $k$ auf $k+1$
-      Weisen als Summe zweier nichtnegativer Zahlen      
+      Weisen als Summe zweier nichtnegativer Zahlen       
       $a+b = k$ schreiben können. Des weiteren zerlegen
-      wir $\mathbf{x} \in \{0,1\}^n$ in      
-      $\mathbf{y} = (x_1, \dots, x_{n/2})$ und      
+      wir $\mathbf{x} \in \{0,1\}^n$ in       
+      $\mathbf{y} = (x_1, \dots, x_{n/2})$ und       
       $\mathbf{z} = (x_{n/2+1}, \dots, x_n)$ und sehen,
       dass
     </p>
@@ -700,7 +700,7 @@ def binomial(n,k):
         Es gibt einen monotonen Schaltkreis mit Fan-in 2,
         Tiefe $O(\log n)$ und Größe
         <span class="nowrap">$\poly(n)$,</span>
-        der      
+        der       
         $\maj_n$ berechnet.
       </p>
     </div>
@@ -711,7 +711,7 @@ def binomial(n,k):
         neu für Sie. Wir verwenden bei der Konstruktion des
         Schaltkreises
         <i>Zufall</i>; am Ende werden wir zeigen,
-        dass dieser zufällige Schaltkreis mit hoher Wahrscheinlichkeit      
+        dass dieser zufällige Schaltkreis mit hoher Wahrscheinlichkeit       
         $\maj_n$ auf allen möglichen $2^n$ Inputs korrekt
         berechnen, und folgern daraus, das etwas, was mit hoher
         Wahrscheinlichkeit eintritt, auch existieren muss.
@@ -725,7 +725,7 @@ def binomial(n,k):
         Konstruktion durchführen und Ihnen erklären, das der
         resultierende Schaltkreis höchstwahrscheinlich korrekt
         ist. Während des ganzen Beweises müssen Sie sich vor
-        Augen halten, dass wir bei der Konstruktion des Schaltkreises      
+        Augen halten, dass wir bei der Konstruktion des Schaltkreises       
         $C$ Zufall verwenden; wir nehmen nicht an, dass die
         Inputs $x \in \{0,1\}^n$ in irgendeiner Weise zufällig
         sind. Wir verwenden also
@@ -743,7 +743,7 @@ def binomial(n,k):
           Sei $\mathcal{C}$ eine Verteilung über Schaltkreise
           mit Input-Variablen
           <span class="nowrap">$x_1,\dots,x_n$.</span>
-          Wir sagen, dass      
+          Wir sagen, dass       
           $\mathcal{C}$
           <i>Signalstärke mindestens $\delta$</i>
           hat,
@@ -760,7 +760,7 @@ def binomial(n,k):
         </p>
       </div>
       <p>
-        In Worten, wenn der zufällig ausgewählte Schaltkreis      
+        In Worten, wenn der zufällig ausgewählte Schaltkreis       
         $C$ den Wert $\maj_n(x)$ besser als ein Münzwurf vorhersagt,
         und zwar um $\delta/2$ besser. Wir können einen ganz
         einfachen (zufälligen Schaltkreis) bauen, der ein schwache
@@ -770,13 +770,13 @@ def binomial(n,k):
         <p>
           <b>2.5.7</b>
           <b>Lemma</b>
-          Es gibt eine Wahrscheinlichkeitsverteilung      
+          Es gibt eine Wahrscheinlichkeitsverteilung       
           $\mathcal{C}_0$ über monotone Schaltkreise der Größe
           1, die Signalstärke $\frac{1}{n}$ hat. Genauer gesagt
           gilt für jeden Input
           <span class="nowrap">$x \in \{0,1\}^n$:</span>
           ein nach dieser
-          Verteilung zufällig ausgewählter Schaltkreis      
+          Verteilung zufällig ausgewählter Schaltkreis       
           $C \sim \mathcal{C}_0$ ist mit Wahrscheinlichkeit
           mindestens $\frac{1}{2} + \frac{1}{2n}$ korrekt ist.
           Formal ausgedrückt:
@@ -792,7 +792,7 @@ def binomial(n,k):
         <p>
           <b>Beweis.</b>
           Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung
-          ist extrem einfach. Wir wählen zufällig einen Index      
+          ist extrem einfach. Wir wählen zufällig einen Index       
           $I \in \{1,\dots,n\}$ und geben $x_I$ als unseren
           Schaltkreis $C$ (bestehend aus einem einzigen Input-Gate,
           das gleichzeitig das Output-Gate ist) aus. Dieser Schaltkreis
@@ -814,8 +814,8 @@ def binomial(n,k):
           $$
         </div>
         <p>
-          Wir unterscheiden nun zwei Fälle. Wenn      
-          $\maj_n(\x) = 1$ ist, dann gibt es mindestens      
+          Wir unterscheiden nun zwei Fälle. Wenn       
+          $\maj_n(\x) = 1$ ist, dann gibt es mindestens       
           $k+1$ Indizes $i$ mit
           <span class="nowrap">$x_i = 1$.</span>
           Wenn wir mit $I$
@@ -834,11 +834,11 @@ def binomial(n,k):
           $$
         </div>
         <p>
-          Wenn nun $\maj_n(\x) = 0$ ist, dann gibt es mindestens      
+          Wenn nun $\maj_n(\x) = 0$ ist, dann gibt es mindestens       
           $k+1$ Stellen $i$ mit
           <span class="nowrap">$x_i = 0$,</span>
-          und somit ist      
-          $C(\x)$ auch wieder mit Wahrscheinlichkeit mindestens      
+          und somit ist       
+          $C(\x)$ auch wieder mit Wahrscheinlichkeit mindestens       
           $\frac{k+1}{n+1}$ korrekt.<span class="qed">\(\square\)</span>
         </p>
       </div>
@@ -867,7 +867,7 @@ def binomial(n,k):
       <p>
         Dann können wir
         <i>drei</i>
-        Schaltkreise      
+        Schaltkreise       
         $C_1, C_2, C_3 \sim \mathcal{C}$ unabhängig voneinander
         samplen und einen neuen Schaltkreis bauen:
         <span class="nowrap">$C'(\x) := \maj_3 (C_1(\x), C_2(\x), C_3(\x))$.</span>
@@ -921,7 +921,7 @@ def binomial(n,k):
           $V := C_2(\x)$
           und
           <span class="nowrap">$W := C_3(\x)$.</span>
-          Da      
+          Da       
           $C_1, C_2, C_3 \sim \mathcal{C}$ zufällige Schaltkreise
           sind, sind $U, V, W$ Zufallsvariable über
           <span class="nowrap">$\cube$,</span>
@@ -954,7 +954,7 @@ def binomial(n,k):
         </p>
       </div>
       <p>
-        Wir beginnen nun mit der Verteilung      
+        Wir beginnen nun mit der Verteilung       
         $\mathcal{C}_0$ über Schaltkreise der Größe 1 und
         definieren
       </p>
@@ -967,20 +967,20 @@ def binomial(n,k):
       </div>
       <p>
         Zur Wiederholung: um $C \sim \mathcal{C}_{i+1}$ zu
-        sampeln, sampeln wir unabhängig drei Schaltkreise      
+        sampeln, sampeln wir unabhängig drei Schaltkreise       
         $\sim \mathcal{C}_i$ und verknüpfen deren Output-Gates
         mit einem
         <span class="nowrap">$\maj_3$-Gadget.</span>
         Wenn $\mathcal{C}_i$ die
-        Signalstärke $\delta_i$ hat, dann hat      
+        Signalstärke $\delta_i$ hat, dann hat       
         $\mathcal{C}_{i+1}$ Signalstärke
         <span class="nowrap">$\frac{3}{2} \delta_i - \frac{1}{2} \delta_i^3$.</span>
-        Wenn      
+        Wenn       
         $\delta_i \leq 1/2$ sein sollte, dann ist das mindestens
         <span class="nowrap">$\frac{5}{4} \delta_i$.</span>
-        Daraus folgt, dass nach höchstens      
+        Daraus folgt, dass nach höchstens       
         $i^* := \log_{5/4} n$ Rekursionsstufen eine Signalstärke
-        von mindestens $1/2$ erreicht ist:      
+        von mindestens $1/2$ erreicht ist:       
         $\mathcal{C}_{i^*}$ hat Signalstärke mindestens
         <span class="nowrap">$1/2$.</span>
         Wenn wir jetzt die rekursive Konstruktion fortsetzen,
@@ -994,7 +994,7 @@ def binomial(n,k):
         knapp unter $1$ liegen, führen wir einen Parameterwechsel
         durch: eine Verteilung $\mathcal{C}$ von Schaltkreisen
         mit Inputs $x_1,\dots,x_n$ hat
-        <i>Fehlerwahrscheinlichkeit      
+        <i>Fehlerwahrscheinlichkeit       
           $\epsilon$</i>, wenn
       </p>
       <div class="math-block">
@@ -1008,7 +1008,7 @@ def binomial(n,k):
         Eine Signalstärke von $\delta$ entspricht einer Fehlerwahrscheinlichkeit
         von
         <span class="nowrap">$\frac{1-\delta}{2}$.</span>
-        Die Verteilung      
+        Die Verteilung       
         $\mathcal{C}_{i^*}$ hat also eine Fehlerwahrscheinlichkeit
         von höchstens
         <span class="nowrap">$\frac{1 - 1/2}{2} = 1/4$.</span>
@@ -1019,7 +1019,7 @@ def binomial(n,k):
       <div class="well remark">
         <p>
           <b>Behauptung</b>
-          Wenn $\mathcal{C}$ Fehlerwahrscheinlichkeit      
+          Wenn $\mathcal{C}$ Fehlerwahrscheinlichkeit       
           $\epsilon$ hat, dann hat $\mathcal{C}^{\otimes 3}$
           Fehlerwahrscheinlichkeit $3 \epsilon^2$
         </p>
@@ -1027,7 +1027,7 @@ def binomial(n,k):
       <div class="well highlight">
         <p>
           <b>Beweis.</b>
-          Wie im Beweis vom Lemma setzen wir      
+          Wie im Beweis vom Lemma setzen wir       
           $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
         </p>
         <div class="math-block">
@@ -1048,8 +1048,8 @@ def binomial(n,k):
         Für $i^* := \log_{5/4} n$ hat $\mathcal{C}_{i^*}$
         eine Fehlerwahrscheinlichkeit von höchstens
         <span class="nowrap">$1/4$.</span>
-        Für $i^* + 1$ wird das zu      
-        $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und für      
+        Für $i^* + 1$ wird das zu       
+        $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und für       
         $i^* + 2$ zu
         <span class="nowrap">$3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$.</span>
         Wenn nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt
@@ -1059,8 +1059,8 @@ def binomial(n,k):
         also die Fehlerwahrscheinlichkeit
         von
         <span class="nowrap">$\mathcal{C}_i$.</span>
-        Es gilt also      
-        $\epsilon_{i+1} \leq (\epsilon_i)^{3/2}$ für alle      
+        Es gilt also       
+        $\epsilon_{i+1} \leq (\epsilon_i)^{3/2}$ für alle       
         $i \geq i^*+2$ und somit
       </p>
       <div class="math-block">
@@ -1114,7 +1114,7 @@ def binomial(n,k):
         >
         <br>
         <p>
-          Signalstärke $\delta$ wächst für      
+          Signalstärke $\delta$ wächst für       
           $p \in [1/2, 3/4]$ exponentiell.
         </p>
       </figure>
@@ -1128,26 +1128,26 @@ def binomial(n,k):
         >
         <br>
         <p>
-          Fehlerwahrscheinlichkeit $\epsilon$ fällt für      
+          Fehlerwahrscheinlichkeit $\epsilon$ fällt für       
           $p \in [3/4, 1/2]$ doppelt exponentiell.
         </p>
       </figure>
       <hr>
       <p>
-        Wir setzen nun      
+        Wir setzen nun       
         $k := i^* + 2 + j^* = \log_{5/4} n + 2 + \log_{3/2}
         n = O(\log n)$
         und sehen, dass $\mathcal{C}_k$ eine Verteilung über
         Schaltkreise mit Tiefe $O(\log n)$ und Fehlerwahrscheinlichkeit
         kleiner als $2^{-n}$ ist. Was nun kommt, ist ein absolutes
         Standardargument in probabilitischen Beweisen: ein
-        Union Bound. Das geht ungefähr so: wenn für jedes feste      
+        Union Bound. Das geht ungefähr so: wenn für jedes feste       
         $\b \in \cube^n$ ein Schaltkreis $C \mathcal{C}_k$
         mit Wahrscheinlichkeit $\epsilon_k$ irrt, dann ist
-        die Wahrscheinlichkeit, dass $C$ sich für irgendein      
+        die Wahrscheinlichkeit, dass $C$ sich für irgendein       
         $\x \in \cube^n$ irrt, höchstens
         <span class="nowrap">$2^n \epsilon_k$.</span>
-        Formal: für jedes $\b \in \cube^n$ definieren wir      
+        Formal: für jedes $\b \in \cube^n$ definieren wir       
         $E_{\b}$ als die Menge der Schaltkreise mit Input-Variablen
         <span class="nowrap">$x_1,\dots,x_n$,</span>
         die sich auf $\b$ irren, also
@@ -1180,7 +1180,7 @@ def binomial(n,k):
         Oder kompakt ausgedrückt:
         <span class="nowrap">$\Pr_{\mathcal{C}_k} [E_{\b}] \lt 2^n$.</span>
         Wir haben
-        nun ein Ereignis $E_{\b}$ für jedes      
+        nun ein Ereignis $E_{\b}$ für jedes       
         $\b \in \cube^n$ und definieren
       </p>
       <div class="math-block">
@@ -1198,7 +1198,7 @@ def binomial(n,k):
         Was ist das Komplement
         <span class="nowrap">$\bar{E}$?</span>
         Das ist die Menge
-        der Schaltkreise, die sich auf keinem      
+        der Schaltkreise, die sich auf keinem       
         $\b \in \cube^n$ irren, also die Menge der Schaltkreise,
         die $\maj_n$ korrekt berechnen. Es gilt nun
       </p>
@@ -1216,22 +1216,22 @@ def binomial(n,k):
         Also $\Pr_{\mathcal{C}_k}[E] \lt 1$ und somit
         <span class="nowrap">$\Pr_{\mathcal{C}_k}[\bar{E}] \gt 0$.</span>
         Das bedeutet,
-        dass ein zufälliger Schaltkreis      
+        dass ein zufälliger Schaltkreis       
         $C \sim \mathcal{C}_K$ mit positiver Wahrscheinlichkeit
         die Funktion $\maj_n$ korrekt berechnet. Jeder Schaltkreis,
         der unter $\mathcal{C}_k$ gesampelt werden kann, hat
         Tiefe
         <span class="nowrap">$O(\log n)$,</span>
         Fan-in 2 und ist monoton, und somit
-        schließen wir: es gibt einen monotonen Schaltkreis      
+        schließen wir: es gibt einen monotonen Schaltkreis       
         $C$ mit Fan-in 2 und Tiefe
         <span class="nowrap">$O(\log n)$,</span>
-        der      
+        der       
         $\maj_n$ berechnet. Es bleibt die Frage, wie groß
         dieser Schaltkreis  $C$ ist. Seien wir hier bequem:
         ein Schaltkreis mit Fan-in 2 und einem Output-Gate
         hat höchstens $2^i$ Gates, die Abstand $i$ vom Output-Gate
-        haben. Somit hat ein Schaltkreis mit Fan-in 2 und Tiefe     
+        haben. Somit hat ein Schaltkreis mit Fan-in 2 und Tiefe      
         $d$ höchstens
       </p>
       <div class="math-block">
@@ -1242,8 +1242,8 @@ def binomial(n,k):
         $$
       </div>
       <p>
-        Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe      
-        $c \log_2 n$ hat also insgesamt höchstens      
+        Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe       
+        $c \log_2 n$ hat also insgesamt höchstens       
         $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$ Gates.<span class="qed">\(\square\)</span>
       </p>
     </div>
@@ -1253,7 +1253,7 @@ def binomial(n,k):
         Präzisieren Sie die Größe von Valiants Schaltkreis
         und bestimmen ein
         <span class="nowrap">$c \in \R$,</span>
-        so dass er die Größe      
+        so dass er die Größe       
         $\Theta(n^c)$ hat.
       </p>
     </div>

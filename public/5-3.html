@@ -115,11 +115,11 @@
       <i>deterministische</i>
       endliche Automaten, um den Unterschied
       zu den nichtdeterministischen zu verdeutlichen. Wenn
-      in einem deterministischen endlichen Automaten      
+      in einem deterministischen endlichen Automaten       
       $\delta(q,x) = q'$ war, so hatte das die Bedeutung
       <i>wenn der Automat im Zustand $q$ ist und $x$ liest,
         so geht er in Zustand $q'$ über</i>; wenn nun in einem
-      nichtdeterministischen Automaten      
+      nichtdeterministischen Automaten       
       $(q,x,q') \in \delta$ gilt, so bedeutet das,
       <i>wenn
         der Automat im Zustand $q$ ist und $x$ liest, so kann
@@ -131,14 +131,14 @@
         <b>5.3.2</b>
         <b>Definition</b>
         <b>(Erweiterte Zuständsübergangsfunktion)</b>. Für einen
-        nichtdeterministischen endlichen Automaten      
+        nichtdeterministischen endlichen Automaten       
         $(\Sigma, Q, \qstart, F, \delta)$ definieren wir die
         <i>erweiterte Zustandsübergangsrelation</i>
         $\hat{\delta}\subseteq Q \times \Sigma^* \rightarrow
         Q$
         als die Menge aller Zustand-Wort-Zustand-Tripel
         <span class="nowrap">$(q,x_1 x_2 \dots x_n,q')$,</span>
-        für die wir Zwischenzustände      
+        für die wir Zwischenzustände       
         $q = \qstart, q_1, q_2, \dots, q_n = q'$ finden können
         mit
       </p>
@@ -154,7 +154,7 @@
         Wie zuvor schreiben
         wir
         <span class="nowrap">$q \stackrel{\alpha}{\rightarrow} q'$.</span>
-        Die von     
+        Die von      
         $M$ akzeptierte Sprache ist
       </p>
       <div class="math-block">
@@ -170,7 +170,7 @@
         <b>5.3.3</b>
         <b>Beobachtung</b>
         Sei $M = (\Sigma, Q, \qstart, F, \delta)$ ein nichtdeterministischer
-        endlicher Automat. Dann gibt es eine reguläre Grammatik      
+        endlicher Automat. Dann gibt es eine reguläre Grammatik       
         $G$ mit
         <span class="nowrap">$L(G) = L(M)$.</span>
         
@@ -239,14 +239,14 @@
       <p>
         also einem Pfeil $X \stackrel{a}{\rightarrow} Y$ in
         <span class="nowrap">$M$.</span>
-        Für jede Regel der Form      
+        Für jede Regel der Form       
         $X \rightarrow \epsilon$ machen wir $X$ zu einem Endzustand.
         Was aber mit Regeln der Form
         <span class="nowrap">$X \rightarrow Y$?</span>
         Hierfür
         könnte man Nichtdeterministische Automaten mit
         <span class="nowrap">$\epsilon$-Übergängen</span>
-        definieren, die also vom Zustand      
+        definieren, die also vom Zustand       
         $X$ nach $Y$ wechseln können, ohne ein Eingabesymbol
         zu lesen; wir gehen hier einen anderen Weg und verweisen
         auf
@@ -254,7 +254,7 @@
           href="./5-1.html#_11_hgi_"
           class=""
         >Theorem 5.1.7</a>,  welches
-        uns erlaubt, Regeln der Form $X \rightarrow Y$ und      
+        uns erlaubt, Regeln der Form $X \rightarrow Y$ und       
         $X \rightarrow a$ zu eliminieren.<span class="qed">\(\square\)</span>
       </p>
     </div>
@@ -293,7 +293,7 @@
       <p>
         Wir sehen nun, dass dies genau der nichtdeterministische
         Automat ist, den wir nach Theorem &gt;&gt;#theorem-nfsm-regular 
-        bauen können. Die Zustandsübergangsrelation      
+        bauen können. Die Zustandsübergangsrelation       
         $\delta$ ist
       </p>
       <div class="math-block">
@@ -305,7 +305,7 @@
       <p>
         Jeder Zustand ist ein Endzustand, allerdings heißt
         das nicht, dass der Automat jedes Wort akzeptiert.
-        Für $\alpha = ba$ beispielsweise gibt es keinen Zustand      
+        Für $\alpha = ba$ beispielsweise gibt es keinen Zustand       
         $q$ mit
         <span class="nowrap">$S \stackrel{ba}{\rightarrow} q$,</span>
         geschweige
@@ -336,7 +336,7 @@
       </div>
       <p>
         Bevor wir einen nichtdeterministischen Automaten bauen
-        können, müssen wir erst die Produktionen der Form     
+        können, müssen wir erst die Produktionen der Form      
         $X \rightarrow Y$ eliminieren bzw. ersetzen. Wenn
         Sie Aufgabe 4.1.7 gelöst haben, haben Sie wahrscheinlich
         in etwa folgende Grammatik erhalten:
@@ -353,7 +353,7 @@
       <p>
         Also insgesamt 11 statt 8 Produktionen. Alle Nichtterminale
         erlauben auf ihrer rechten Seite ein $\epsilon$ und
-        werden so zu akzeptierenden Zuständen. Die Zustandsübergangsrelation      
+        werden so zu akzeptierenden Zuständen. Die Zustandsübergangsrelation       
         $\delta$ ist also
       </p>
       <div class="math-block">
@@ -544,7 +544,7 @@
       operiert. Das heißt, im Gegensatz zu
       <span class="nowrap">$\delta$,</span>
       das
-      eine Funktion      
+      eine Funktion       
       $\delta: Q \times \Sigma \rightarrow Q$ ist, ist
     </p>
     <div class="math-block main-column">
@@ -572,9 +572,9 @@
         <b>Theorem</b>
         <b>(Einen nichtdeterministischen endlichen Automaten
           deterministisch machen).</b>
-        Sei      
+        Sei       
         $M = (\Sigma, Q, \qstart, F, \delta)$ ein nichtdeterministischer
-        Automat; dann heiße der deterministische Automat      
+        Automat; dann heiße der deterministische Automat       
         $M' = (\Sigma, 2^Q, \{\qstart\}, \mathcal{F}, \Delta)$
         mit Endzustandsmenge $\mathcal{F}$ definiert als
       </p>
@@ -629,11 +629,11 @@
         <span class="nowrap">$M$,</span>
         der die
         Sprache aller Wörter, deren viertletztes Zeichen eine
-        1 ist, akzeptiert, hat fünf Zustände. Sein Potenzmengenautomat      
+        1 ist, akzeptiert, hat fünf Zustände. Sein Potenzmengenautomat       
         $M'$ hätte also
         <span class="nowrap">$2^5 = 32$.</span>
         Allerdings sehen wir,
-        dass alle "relevanten" Zustände von $M$ den Zustand      
+        dass alle "relevanten" Zustände von $M$ den Zustand       
         $A$ enthalten. Dieser wird nie verschwinden. Also
         sehen wir, dass man $M'$ mit 16 Zuständen implementieren
         kann (die anderen, die, die nicht $A$ enthalten, sind
@@ -734,8 +734,8 @@
         </div>
       </div>
       <p>
-        Wenn wir uns vorstellen, dass wir vor das Eingabewort      
-        $\alpha$ die Zeichen 000 stellen, also $\alpha$ durch      
+        Wenn wir uns vorstellen, dass wir vor das Eingabewort       
+        $\alpha$ die Zeichen 000 stellen, also $\alpha$ durch       
         $000\alpha$ ersetzen, dann codiert jeder Zustand genau
         die letzten drei Zeichen des Eingabewortes, die der
         Automat gelesen hat. Der Zustand $ACD$ bedeutet zum

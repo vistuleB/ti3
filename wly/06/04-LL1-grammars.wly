@@ -12,13 +12,13 @@
         S \Step{}^* w A \alpha
         \end{align*}
 
-        gibt. In anderen Worten: eine Grenzform ist das,
-        was bei einem Kellerautomaten auf dem Stack liegt,
-        wenn ein Nichtterminal ganz oben liegt.
+        gibt. In anderen Worten: eine Grenzform ist das, was
+        bei einem Kellerautomaten auf dem Stack liegt, wenn
+        ein Nichtterminal ganz oben liegt.
 
     Grenzformen sind also diejenigen Wortformen, bei denen
     der Kellerautomat eine Entscheidung treffen muss, weil
-    er eventuell mehrere Produktionen 
+    er eventuell mehrere Produktionen  
     $A \rightarrow \beta$ zur Auswahl hat. In diesem Teilkapitel
     wollen wir herausarbeiten, unter welchen Umständen
     wir die richtige Auswahl treffen können, auch wenn
@@ -37,13 +37,13 @@
         \end{cases}
         \end{align*}
 
-        In Worten: $\first_{k}(w)$ besteht aus den ersten 
+        In Worten: $\first_{k}(w)$ besteht aus den ersten  
         $k$ Zeichen von $w$ (oder aus ganz $w$, falls es weniger
         als $k$ lang ist).
 
     |> Statement
         title=*Definition*
-        *LL($k$)-Grammatiken* Eine kontextfreie Grammatik 
+        *LL($k$)-Grammatiken* Eine kontextfreie Grammatik  
         $G = (\Sigma, N, S, P)$ ist eine LL($k$)-Grammatik,
         wenn für jede Grenzform $A \alpha$ und für jedes Paar
 
@@ -52,7 +52,7 @@
         A&\step{2} \gamma
         \end{align*}
 
-        verschiedener Produktionen (also 
+        verschiedener Produktionen (also  
         $\beta \ne \gamma$) folgendes gilt: wenn
 
         \begin{align*}
@@ -103,13 +103,12 @@
 
             gilt, dann auch $\first_1(x) \ne \first_2(y)$ gilt.
             Offensichtlich ist $\first_2(y) =$ "$\texttt{(}$".
-            Was kann $\first_k(x)$ sein?
-            *Behauptung.* Wenn 
+            Was kann $\first_k(x)$ sein? *Behauptung.* Wenn  
             $S \rightarrow \delta \in (\Sigma \cup N)^*$, dann
-            steht jedes $S$ in $\delta$ entweder am Ende von 
+            steht jedes $S$ in $\delta$ entweder am Ende von  
             $\delta$ oder unmittelbar vor einem "$\texttt{)}$".
             Das folgt per Induktion über die Länge der Ableitung.
-            Wenn es also für $\delta$ gilt und wir die Produktion 
+            Wenn es also für $\delta$ gilt und wir die Produktion  
             $S \rightarrow (S)S$ auf $\delta$ anwenden, dann gilt
             es für jedes "alte" $S$ und auch für die beiden neu
             erzeugten; wenn wir $S \rightarrow \epsilon$ anwenden,
@@ -117,9 +116,9 @@
             nach wie vor für alle anderen $S$ in $\delta$.
             |> QED
             Wir folgern also, dass für das $\alpha$ den beiden
-            obigne Herleitungen 
+            obigne Herleitungen  
             $\first_k(\alpha) \in \{\epsilon, \texttt{)}\}$ gilt.
-            Keines davon ist ein Nichtterminal, und so muss auch 
+            Keines davon ist ein Nichtterminal, und so muss auch  
             $\first_k(\alpha) = \first_k(x)$ gelten. Zusammenfassend
             gesagt:
 
@@ -128,7 +127,7 @@
             \first_y(y)&= \texttt{(} \ ,
             \end{align*}
 
-            und somit sind sie verschieden. Wir folgern, dass 
+            und somit sind sie verschieden. Wir folgern, dass  
             $G$ eine LL(1)-Grammatik ist.
 
     Sehen Sie, dass die LL($k$)-Bedingung der Aussage
@@ -144,16 +143,16 @@
     Ableitungsschritt den Terminalpräfix wachsen lassen
     (Regeln wie $X \rightarrow YbZ$ zum Beispiel ersetzen
     einfach das erste Nichtterminal), aber "moralisch"
-    geschieht etwas ähnliches).
-    Wenn umgekehrt eine Grammatik _nicht_ LL($k$) ist,
-    dann muss der Backtrack-Baum beiden Ableitungen
+    geschieht etwas ähnliches). Wenn umgekehrt eine Grammatik
+    _nicht_ LL($k$) ist, dann muss der Backtrack-Baum
+    beiden Ableitungen
 
     \begin{align*}
     w A \alpha&\Rightarrow w \beta \alpha \\
     w A \alpha&\Rightarrow w \gamma \alpha \\
     \end{align*}
 
-    mindestens so lange weiterverfolgen, bis der Terminalpräfix 
+    mindestens so lange weiterverfolgen, bis der Terminalpräfix  
     $k$ weitere Zeichen dazugewonnen hat. Der Baum bekommt
     also dementsprechend lange Sackgassen.
 
@@ -169,12 +168,11 @@
         A&\step{4} b
         \end{align*}
 
-        Zeigen Sie, dass diese Grammatik LL(2) ist, aber
-        nicht LL(1).
-        *Tip.* Leiten Sie erst einmal ein Dutzend verschiedene
+        Zeigen Sie, dass diese Grammatik LL(2) ist, aber nicht
+        LL(1). *Tip.* Leiten Sie erst einmal ein Dutzend verschiedene
         Wörter ab und finden dann eine "normalsprachliche"
         Beschreibung dieser Sprache. Beschreiben Sie dann alle
-        möglichen Wortformen $\alpha$ mit 
+        möglichen Wortformen $\alpha$ mit  
         $S \Step{}^* \alpha$.
 
     |> Exercise
@@ -199,14 +197,14 @@
         \end{align*}
 
         also Wörter, wo auf beliebig viele $a$'s eine Folge
-        von _höchstens_ so vielen $b$'s folgt.
-        Geben Sie diese Grammatik in den
+        von _höchstens_ so vielen $b$'s folgt. Geben Sie diese
+        Grammatik in den
         |> a
             href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html
             Parser-Simulator
-        ein und finden Wörter mit langen Sackgassen.
-        Zeigen Sie, dass diese Grammatik nicht LL$(k)$ ist,
-        für kein $k \in \N$.
+        ein und finden Wörter mit langen Sackgassen. Zeigen
+        Sie, dass diese Grammatik nicht LL$(k)$ ist, für kein 
+        $k \in \N$.
 
     |> Exercise
         Sei $t \in \N$ eine feste, im Voraus bekannte Zahl.
@@ -216,10 +214,9 @@
         L_t := \{a^{m + l} b^m \ | \ m \geq 0, l \leq t\} \ ,
         \end{align*}
 
-        also die Wörter der Form $a^m b^n$ mit 
-        $n \leq m \leq n+t$.
-        Schreiben Sie für $L_3$ eine Grammatik, geben Sie
-        diese im
+        also die Wörter der Form $a^m b^n$ mit  
+        $n \leq m \leq n+t$. Schreiben Sie für $L_3$ eine
+        Grammatik, geben Sie diese im
         |> a
             href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html
             Parser-Simulator
@@ -232,7 +229,7 @@
     |> Topic
         LL$(k)$-Grammatiken parsen
 
-    Wir wollen nun erarbeiten, wie wir für eine LL
+    Wir wollen nun erarbeiten, wie wir für eine LL 
     $(k)$-Grammatik einen Parser, also im Prinzip einen
     deterministischen Pushdown-Automaten schreiben können.
     Wir tasten uns langsam voran. Wir beginnen mit einer
@@ -241,8 +238,8 @@
 
     |> Statement
         title=*Definition*
-        Sei eine kontextfreie Grammatik 
-        $G = (\Sigma, N, S, P)$ und eine Wortform 
+        Sei eine kontextfreie Grammatik  
+        $G = (\Sigma, N, S, P)$ und eine Wortform  
         $\alpha \in (\Sigma \cup N)^*$ gegeben. Wir definieren
 
         \begin{align*}
@@ -279,15 +276,15 @@
     durchgeführt. Die Wortform $\alpha$ ist genau das,
     was im Moment auf dem Stack des Automaten liegt (um
     ganz genau zu sein: \(\alpha\texttt{\$}\) liegt auf
-    dem Stack). Wenn $\alpha$ mit einem Terminalsymbol 
+    dem Stack). Wenn $\alpha$ mit einem Terminalsymbol  
     $c$ beginnt, so ist klar, was wir machen müssen: wir
-    schauen, ob $y$ mit $c$ beginnt. Wenn ja, lesen wir 
+    schauen, ob $y$ mit $c$ beginnt. Wenn ja, lesen wir  
     $c$ und poppen es vom Stack. Der schwierige Fall ist,
-    wenn $\alpha$ mit einem Nichtterminal beginnt.
-    Nochmal von vorn: im schwierigen Fall liegt auf dem
-    Stack (oberhalb vom \(\$\)) eine Wortform, die mit
-    einem Nichtterminal beginnt, also $A \alpha$. Das
-    bedeutet, dass der Automat per Linksableitung bis jetzt
+    wenn $\alpha$ mit einem Nichtterminal beginnt. Nochmal
+    von vorn: im schwierigen Fall liegt auf dem Stack (oberhalb
+    vom \(\$\)) eine Wortform, die mit einem Nichtterminal
+    beginnt, also $A \alpha$. Das bedeutet, dass der Automat
+    per Linksableitung bis jetzt
 
     \begin{align*}
     S \Step{}^* x A \alpha
@@ -318,14 +315,14 @@
     da ja nach obiger Beobachtung diese Mengen disjunkt
     sind. Wenn $\first_k(y)$ in _keiner_ dieser Mengen
     enthalten ist, so kann die Ableitung offensichtlich
-    nicht vervollständigt werden, und wir schließen, dass 
-    $xy \not \in L(G)$ ist. Wenn es _genau ein_ 
-    $\beta_i$ gibt mit 
-    $\first_k(y) \in \first_k(\beta_i \alpha)$, dann ist 
+    nicht vervollständigt werden, und wir schließen, dass  
+    $xy \not \in L(G)$ ist. Wenn es _genau ein_  
+    $\beta_i$ gibt mit  
+    $\first_k(y) \in \first_k(\beta_i \alpha)$, dann ist  
     $A \rightarrow \beta_i$ die "richtige" Produktion.
     Wir wenden sie an, ersetzen also $A$ auf dem Stack
-    durch $\beta_i$. Falls es zwei oder mehr Produktionen 
-    $A \rightarrow \beta_i$ gibt mit 
+    durch $\beta_i$. Falls es zwei oder mehr Produktionen  
+    $A \rightarrow \beta_i$ gibt mit  
     $\first_k(y) \in \first_k(\beta_i \alpha)$, dann ist
     die Grammatik nicht LL$(k)$; wir beenden den Parsing-Prozess
     mit einer Laufzeitfehlermeldung. Hier ist ein Entwurf
@@ -338,16 +335,14 @@
             |> li
                 Lege \(S\texttt{\$}\) auf den Stack.
             |> li
-                |> tt
-                    while
-                \ Stack nicht leer
+                `while` Stack nicht leer
 
             |> ol
                 class=nested
                 |> li
                     Sei $y$ das Resteingabewort.
                 |> li
-                    Wenn das oberste Symbol auf dem Stack ein Terminalsymbol 
+                    Wenn das oberste Symbol auf dem Stack ein Terminalsymbol  
                     $c$ ist:
 
                     |> ul
@@ -356,12 +351,9 @@
                         |> li
                             Wenn $c = c'$, poppe $c$ vom Stack;
                         |> li
-                            ansonsten 
-                            |> tt
-                                Reject
-                            .
+                            ansonsten `Reject`.
                 |> li
-                    Wenn das oberste Symbol auf dem Stack ein Nichtterminalsymbol 
+                    Wenn das oberste Symbol auf dem Stack ein Nichtterminalsymbol  
                     $A$ ist:
 
                     |> ol
@@ -369,40 +361,33 @@
                         |> li
                             Schreibe den Stack als $A \alpha$
                         |> li
-                            Seien 
+                            Seien  
                             $A \rightarrow \beta_1, \dots, A \rightarrow \beta_l$
                             alle Produktionen mit $A$ auf der linken Seite.
                         |> li
                             |> span
                                 style=color:red; font-weight: bold;
-                                Berechne $\First_k(\beta_i\alpha)$ für alle 
+                                Berechne $\First_k(\beta_i\alpha)$ für alle  
                                 $\beta_i$ und schaue, welches $\first_k(y)$ enthält
 
                             |> ul
                                 |> li
-                                    Wenn es genau eine solche Produktion 
+                                    Wenn es genau eine solche Produktion  
                                     $A \rightarrow \beta_i$ gibt: wende Sie an; es ist
                                     die richtige Produktion.
                                 |> li
-                                    Wenn es keine gibt: 
-                                    |> tt
-                                        Reject
-                                    . Das Wort kann nicht abgeleitet werden.
+                                    Wenn es keine gibt: `Reject`. Das Wort kann nicht
+                                    abgeleitet werden.
                                 |> li
                                     Wenn es mehrere gibt: ende mit einem Laufzeitfehler;
                                     die Grammatik ist nicht LL$(k)$.
                 |> li
                     Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
-                    Eingabewort zu Ende 
-                    |> tt
-                        Accept
-                    \ ansonsten 
-                    |> tt
-                        Reject
+                    Eingabewort zu Ende `Accept` ansonsten `Reject`
 
     Die rot und fett gedruckte Zeile ist das "Herz" dieses
     Algorithmus. Um den Algorithmus implementieren zu können,
-    müssen wir es schaffen, die Menge 
+    müssen wir es schaffen, die Menge  
     $\First_k(\beta_i\alpha)$ zu berechnen.
 
     |> Topic
@@ -410,7 +395,7 @@
 
     |> Statement
         title=*Definition*
-        Seien $K, L \subseteq \Sigma^*$ zwei Mengen. Mit 
+        Seien $K, L \subseteq \Sigma^*$ zwei Mengen. Mit  
         $K \circ L$ bezeichnen wir die Menge
 
         \begin{align*}
@@ -432,11 +417,11 @@
         &= \{\first_k(xy) \ | \ x \in K, y \in L\} \ .
         \end{align*}
 
-    Im Allgemeinen gilt 
+    Im Allgemeinen gilt  
     $\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k
     S_2 \circ_k \dots \circ_k S_l$.
     In Worten: der $\circ_k$-Operator bildet alle möglichen
-    Kombinationen von Wörtern und nimmt von jedem die ersten 
+    Kombinationen von Wörtern und nimmt von jedem die ersten  
     $k$ Zeichen.
 
     |> Statement
@@ -464,8 +449,8 @@
     |> Statement
         title=*Beobachtung*
         *- Wie man $\First_k(\alpha)$ berechnet.* Sei eine
-        Wortform $\alpha$ gegeben, also 
-        $\alpha \in (\Sigma \cup N)^*$. Wir berechnen 
+        Wortform $\alpha$ gegeben, also  
+        $\alpha \in (\Sigma \cup N)^*$. Wir berechnen  
         $\First_k(\alpha)$, indem wir als erstes $\alpha$
         aussschreiben als
 
@@ -474,7 +459,7 @@
         \end{align*}
 
         wobei jedes $\sigma_i$ ein Terminalsymbol oder ein
-        Nichtterminalsymbol ist, und berechnen dann 
+        Nichtterminalsymbol ist, und berechnen dann  
         $\First_k(\alpha)$ wie folgt:
 
         \begin{align}
@@ -490,14 +475,7 @@
             |> li
                 Initialisiere $K := \{\epsilon\}$
             |> li
-                |> tt
-                    for
-                \ $i=n$ 
-                |> tt
-                    down to
-                \ 1 
-                |> tt
-                    do:
+                `for` $i=n$ `down to` 1 `do:`
 
                 |> ul
                     class=nested
@@ -505,17 +483,15 @@
                         $K := \First_k(\sigma_i) \circ_k K$
                         |> span
                             class=comment
-                            // $K$ ist jetzt 
+                            // $K$ ist jetzt  
                             $\First_k(\sigma_i) \circ_k \dots \circ_k \First_k(\sigma_n)$
             |> li
-                |> tt
-                    return
-                \ $K$
+                `return` $K$
 
-        Wir müssen nur noch herausfinden, wie wir 
+        Wir müssen nur noch herausfinden, wie wir  
         $\First_k(\sigma)$ für einzelne Zeichen $\sigma$ berechnen.
 
-    Für ein Terminalsymbol $c$ ist es trivial, 
+    Für ein Terminalsymbol $c$ ist es trivial,  
     $\First_k(c)$ zu berechnen: es ist $\{c\}$, da sich
     aus $c$ natürlich nur das Wort $c$ ableiten lässt.
     Für Nichtterminale müssen wir uns anstrengen. Die erste
@@ -543,26 +519,26 @@
 
         Was ja eigentlich offensichtlich ist: wenn sich ein
         Wort $X \Step{}^* w$ aus $X$ ableiten lässt, dann
-        muss dies mittels einer der obigen Produktionen geschehen: 
-        $X \Step{} \alpha_i \Step{}^* w$, und somit gilt 
+        muss dies mittels einer der obigen Produktionen geschehen:  
+        $X \Step{} \alpha_i \Step{}^* w$, und somit gilt  
         $\first_k(w)\in \First_k(\alpha_i)$.
 
-    Die Gleichungen $(\ref{first-k-wortform})$ und 
+    Die Gleichungen $(\ref{first-k-wortform})$ und  
     $(\ref{first-k-nonterminal})$ leuchten zwar ein, scheinen
     aber erstmal nicht hilfreich, diese Mengen auch tatsächlich
     zu berechnen. Denn eventuell taucht $X$ selbst wieder
     auf einer rechten Seite auf, sagen wir $\alpha_1$.
-    Um $\First_k(X)$ zu berechnen, müssen wir also laut 
-    $(\ref{first-k-nonterminal})$ die Menge 
+    Um $\First_k(X)$ zu berechnen, müssen wir also laut  
+    $(\ref{first-k-nonterminal})$ die Menge  
     $\First_k(\alpha_1)$ kennen; um diese zu berechnen,
     brauchen wir laut $(\ref{first-k-wortform})$ allerdings
     zuerst unter Anderem die Menge $\First_k(X)$. Wo sollen
-    wir also anfangen?
-    In solchen Situationen, wo sich "die Katze in den
-    Schwanz beißt", hilft es oft, die Definition vorerst
-    _komplexere_ un _genauer_ zu machen. Wir führen nun,
-    zusätzlich zu $\First_k(X)$ und $\First_k(\alpha)$,
-    noch eine feinere Unterteilung an:
+    wir also anfangen? In solchen Situationen, wo sich
+    "die Katze in den Schwanz beißt", hilft es oft, die
+    Definition vorerst _komplexere_ un _genauer_ zu machen.
+    Wir führen nun, zusätzlich zu $\First_k(X)$ und 
+    $\First_k(\alpha)$, noch eine feinere Unterteilung
+    an:
 
     |> Statement
         title=*Definition*
@@ -597,15 +573,15 @@
         c \in \First_1^{(d)} (S) \ .
         \end{align*}
 
-        Ein Baum der Höhe 1, der mit $S$ beginnt, könnte
-        ja nur $Xa$ ableiten und somit gar kein Wort. Es gilt
+        Ein Baum der Höhe 1, der mit $S$ beginnt, könnte ja
+        nur $Xa$ ableiten und somit gar kein Wort. Es gilt
         also
 
         \begin{align*}
         \First_1^{(1)} (S) = \emptyset \ .
         \end{align*}
 
-        Für eine Wortform 
+        Für eine Wortform  
         $\alpha = \sigma_1 \sigma_2 \dots \sigma_n \in (\Sigma
         \cup N)^*$
         definieren wir
@@ -615,13 +591,13 @@
         \circ_k \First_k^{(d)}
         \end{align*}
 
-        Eine Ableitung $\alpha \Step{}^* w$ der Höhe maximal 
+        Eine Ableitung $\alpha \Step{}^* w$ der Höhe maximal  
         $d$ entspricht also einer Folge von $n$ Ableitungsbäumen,
         von denen jeder Höhe maximal $d$ hat.
 
-    Mit dieser Definition können wir nun Gleichungen für 
+    Mit dieser Definition können wir nun Gleichungen für  
     $\First_k^{(d)}(X)$ und $\First_k^{(d)}(\alpha)$ angeben.
-    Seien 
+    Seien  
     $X \rightarrow \alpha_1 \ | \ \dots \ | \ \alpha_k$
     die Produktionen mit $X$ auf der linken Seite. Dann
     gilt für $k \geq 1$:
@@ -648,14 +624,14 @@
         \First_k^{(d)}(a)&:= \{a\} \tag{für jedes Terminalsymbol und jedes \(d \in \N\)}
         \end{align*}
 
-    Die Gleichungen sagen, dass wir, falls wir 
+    Die Gleichungen sagen, dass wir, falls wir  
     $\First_{k}^{(d-1)}(X)$ für alle Nichtterminale kennen,
     dann auch $\First_{k}^{(d)}(X)$ berechnen können.
-    Daraus folgt auch: wenn 
-    $\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$ für alle 
-    $X \in N$, dann auch 
-    $\First_{k}^{(d)}(X)=\First_{k}^{(d+1)}(X)$ für alle 
-    $X \in N$, und somit werden die Mengen 
+    Daraus folgt auch: wenn  
+    $\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$ für alle  
+    $X \in N$, dann auch  
+    $\First_{k}^{(d)}(X)=\First_{k}^{(d+1)}(X)$ für alle  
+    $X \in N$, und somit werden die Mengen  
     $\First_{k}^{(d)}(X)$ für alle $d$ von nun an gleich
     bleiben.
 

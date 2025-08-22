@@ -37,7 +37,7 @@
     </div>
     <p class="main-column">
       Betrachten wir die kontextfreie Grammatik $G$ für
-      arithmetische Ausdrücke mit den Variablen 
+      arithmetische Ausdrücke mit den Variablen  
       $x, y, z$ und strenger Klammerung über dem Alphabet
       <span class="nowrap">$\Sigma = \{x, y, z, (, ), +, *\}$:</span>
       
@@ -54,8 +54,8 @@
     <p class="main-column">
       Sie kann also $(x + (y*z))$ ableiten aber eben nicht
       <span class="nowrap">$(x + y + z)$.</span>
-      Wie können wir nun einen Parser für 
-      $G$ schreiben? Also einen Algorithmus, der ein Wort 
+      Wie können wir nun einen Parser für  
+      $G$ schreiben? Also einen Algorithmus, der ein Wort  
       $w \in \Sigma^*$ nimmt und einen Ableitungsbaum konstruiert
       (falls
       <span class="nowrap">$w \in L(G)$)?</span>
@@ -72,7 +72,7 @@
       $$
     </div>
     <p class="main-column">
-      dann wissen wir nicht, ob wir als ersten Schritt 
+      dann wissen wir nicht, ob wir als ersten Schritt  
       $S \rightarrow (S+S)$ oder $S \rightarrow (S*S)$ tätigen
       sollen. Das geht auch nicht, wenn wir $k$ Zeichen
       vorauslesen dürfen, weil der
@@ -133,7 +133,7 @@
         ob danach gleich viele oder weniger
         <span class="nowrap">$b$'s</span>
         folgen werden,
-        ob wir also $S \rightarrow sS$ oder 
+        ob wir also $S \rightarrow sS$ oder  
         $S \rightarrow Xc$ anwenden sollen. Das lässt sich
         auch nicht durch Umschreiben der Grammatik lösen. Wir
         müssen lesen, bis wir ein $b$ sehen.
@@ -144,7 +144,7 @@
     </h1>
     <p class="main-column">
       Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma
-      war ja, mit $S$ zu starten und, geleitet von den nächsten 
+      war ja, mit $S$ zu starten und, geleitet von den nächsten  
       $k$ Zeichen, zu entscheiden, welche Ableitungsregel
       als nächstes anzuwenden ist. Hierbei haben wir immer
       versucht, für das am weitesten links stehende Nichtterminal
@@ -164,7 +164,7 @@
       Zusammen mit dem ungelesenen Teil $w$ des
       Eingabewortes ergibt das eine Wortform
       <span class="nowrap">$\gamma w$.</span>
-      Solange es eine Rechtsableitung 
+      Solange es eine Rechtsableitung  
       $S \Pets{} \gamma w \Pets{} v$ gibt, sind wir auf
       dem richtigen Weg. Am Besten betrachten wir ein Beispiel
       für
@@ -549,7 +549,7 @@
       per $Y \rightarrow Ya$ reduzieren müssen und nicht
       per
       <span class="nowrap">$Y \rightarrow a$?</span>
-      Wir könnten ja auch auf 
+      Wir könnten ja auch auf  
       $XYa \Pets{} XYY$ reduzieren. Oder in Schritt 2, bei
       <span class="nowrap">$a\textcolor{darkgray}{cabaz}$.</span>
       Da könnten wir ja
@@ -580,13 +580,13 @@
       Wenn wir Glück haben, gibt es immer höchstens eine
       Reduktionsregel
       <span class="nowrap">$\alpha \beta w \Pets{} \alpha X w$,</span>
-      so dass 
+      so dass  
       $S \Step{}^* \alpha X w \Step{} \alpha \beta w$ in
       einer Rechtsableitung vorkommen kann. Das hängt von
       der Grammatik ab. Aber selbst dann brauchen wir einen
-      Algorithmus, der uns sagen kann, ob 
+      Algorithmus, der uns sagen kann, ob  
       $XYa \Pets{} XYY$ ein korrekter Reduktionsschritt
-      ist. Dies scheint komplexer, als 
+      ist. Dies scheint komplexer, als  
       $w \stackrel{?}{\in} L$ zu entscheiden, ist aber
       <i>einfacher</i>!
       Ein zweites Problem ist, dass wir eben manchmal kein
@@ -635,18 +635,18 @@
     </div>
     <p class="main-column">
       wobei $Sb$ eben keine Wortform ist, die in einer Rechtsableitung
-      vorkommen könnte. Das wissen wir aber erst, wenn wir 
+      vorkommen könnte. Das wissen wir aber erst, wenn wir  
       $b$ gelesen haben. Wäre das Eingabewort nämlich nur
       <span class="nowrap">$ca$,</span>
       dann wäre $XY \Pets{} S$ tatsächlich die korrekte
       Reduktion. In der ersten Grammatik hatten wir als "Work-around"
       ein $z$ am Ende angehängt, um das Wortende zu erkennen.
       Im Allgemeinen ist es aber leichter, dem Parser zu
-      erlauben, das nächste Zeichen zu lesen.
-      All diese Gedanken theoretisch rigoros zu formulieren
-      ist einigermaßen herausvordernd. Daher werden wir erst
-      einmal für eine Grammatik arithmetischer Ausdrücke
-      einen Parser in Java implementieren.
+      erlauben, das nächste Zeichen zu lesen. All diese Gedanken
+      theoretisch rigoros zu formulieren ist einigermaßen
+      herausvordernd. Daher werden wir erst einmal für eine
+      Grammatik arithmetischer Ausdrücke einen Parser in
+      Java implementieren.
     </p>
   </div>
 </body>

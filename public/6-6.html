@@ -45,13 +45,13 @@
     <p class="main-column">
       Ich möchte nun eine kontextfreie Grammatik für arithmetische
       Ausdrücke der Form
-      <tt>((31+402)*83)</tt>
-      entwerfen. Der Einfachheit halber bestehe ich auf
-      strenger Klammerung, so wäre
-      <tt>(2*(1+2+3))</tt>
-      zum Beispiel nicht erlaubt. Unsere Grammatik soll
-      allgemeine Dezimalzahlen darstellen können. Das Alphabet
-      ist somit
+      <code>((31+402)*83)</code>
+      entwerfen. Der Einfachheit
+      halber bestehe ich auf strenger Klammerung, so wäre
+      <code>(2*(1+2+3))</code>
+      zum Beispiel nicht erlaubt. Unsere Grammatik
+      soll allgemeine Dezimalzahlen darstellen können. Das
+      Alphabet ist somit
       <span class="nowrap">$\Sigma = \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
         \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
         \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$.</span>
@@ -81,7 +81,7 @@
       den
       <i>Ableitungsbaum</i>
       konstruieren, für
-      <tt>((31+402)*83)</tt>
+      <code>((31+402)*83)</code>
       also
     </p>
     <figure class="main-column">
@@ -100,8 +100,9 @@
       obigen Beispiel also
       <span class="nowrap">$(31 + 402) \cdot 83 = 35939$.</span>
       Oder den Ausdruck umformen von Infix-Notation zu Präfixnotation,
-      also<tt>(* (+ 31 402) 83)</tt>. All dies wird sehr einfach sein, sobald wir den
-      Ableitungsbaum als Datenstruktur vorliegen haben.
+      also<code>(* (+ 31 402) 83)</code>. All dies wird sehr einfach
+      sein, sobald wir den Ableitungsbaum als Datenstruktur
+      vorliegen haben.
     </p>
     <h1 class="main-column">
       Eine Datenstruktur für Ableitungsbäume
@@ -116,71 +117,79 @@
     <ul class="main-column">
       <li>
         <p>
-          <tt>interface Expression</tt>
+          <code>interface Expression</code>
           wird implementiert von
         </p>
         <ul>
           <li>
             <p>
-              <tt>class Sum</tt>, die als Klassenvariable
-              <tt>Exrepssion e1, e2</tt>
+              <code>class Sum</code>, die als Klassenvariable
+              <code>Exrepssion e1,
+                e2</code>
               enthält,
             </p>
           </li>
           <li>
             <p>
-              <tt>class Product</tt>, die als Klassenvariable
-              <tt>Exrepssion e1, e2</tt>
+              <code>class Product</code>, die als Klassenvariable
+              <code>Exrepssion
+                e1, e2</code>
               enthält,
             </p>
           </li>
           <li>
             <p>
-              <tt>class JustNumber</tt>, die als Klassenvariable nur eine
-              <tt>Number number</tt>enthält;
+              <code>class JustNumber</code>, die als Klassenvariable nur eine
+              <code>Number number</code>enthält;
             </p>
           </li>
         </ul>
       </li>
       <li>
         <p>
-          <tt>interface Number</tt>
+          <code>interface Number</code>
           wird implementiert von
         </p>
         <ul>
           <li>
             <p>
-              <tt>class MultiDigitNumber</tt>, die als Klassenvariable eine<tt>Number</tt>
+              <code>class MultiDigitNumber</code>, die als Klassenvariable
+              eine<code>Number</code>
               und eine
-              <tt>Digit</tt>
+              <code>Digit</code>
               erhält und
             </p>
           </li>
           <li>
             <p>
-              <tt>class SingleDigitNumber</tt>, die als Klassenvariable ein
-              <tt>Digit</tt>enthält;
+              <code>class SingleDigitNumber</code>, die als Klassenvariable
+              ein
+              <code>Digit</code>enthält;
             </p>
           </li>
         </ul>
       </li>
       <li>
         <p>
-          <tt>interface Digit</tt>
-          wird implementiert von<tt>class DigitOne</tt>,<tt>class DigitTwo</tt>,<tt>class DigitThree</tt>,<tt>class DigitFour</tt>,<tt>class DigitFive</tt>,<tt>class DigitSix</tt>,<tt>class DigitSeven</tt>,<tt>class DigitEight</tt>
-          und<tt>class DigitNine</tt>.
+          <code>interface Digit</code>
+          wird implementiert von<code>class DigitOne</code>,`class
+          DigitTwo<code>,`class DigitThree</code>,`class DigitFour<code>,`class
+            DigitFive</code>,`class DigitSix<code>,`class DigitSeven</code>,`class
+          DigitEight` und<code>class DigitNine</code>.
         </p>
       </li>
     </ul>
     <p class="main-column">
       In unserem Anwendungsfall hat jedes Interface eine
-      Methode<tt>public int toInt()</tt>. Interface
-      <tt>Expression</tt>
+      Methode<code>public int toInt()</code>. Interface
+      <code>Expression</code>
       hat zusätzlich noch die Methode
-      <tt>String toPrefixNotation()</tt>. Ich schreibe auch ein Über-Interface
-      <tt>ParseObject</tt>, das alle Interfaces zusammenfasst. Um uns das Debugging
+      <code>String toPrefixNotation()</code>.
+      Ich schreibe auch ein Über-Interface
+      <code>ParseObject</code>,
+      das alle Interfaces zusammenfasst. Um uns das Debugging
       zu erleichtern, überschreibe ich in jeder Klasse die
-      Methode<tt>public String toString()</tt>.
+      Methode<code>public String toString()</code>.
     </p>
   </div>
 </body>

@@ -30,9 +30,9 @@
     S&\rightarrow a \ | \ b \ | \ \epsilon
     \end{align*}
 
-    Weder LL-Parser noch LR-Parser können bei langen
-    Wörtern wie $aaaaaaaaaaaaaabbaaaaaaaaaaaaaa$ erkennen,
-    wo die Mitte ist. Das muss man aber wissen, denn sonst
+    Weder LL-Parser noch LR-Parser können bei langen Wörtern
+    wie $aaaaaaaaaaaaaabbaaaaaaaaaaaaaa$ erkennen, wo
+    die Mitte ist. Das muss man aber wissen, denn sonst
     landet man in einer Sackgasse. Es gilt sogar: jeder
     Kellerautomat für diese Sprache muss nichtdeterministisch
     sein (was wir an dieser Stelle weder formal definieren
@@ -56,13 +56,12 @@
     Die Grammatik ist _mehrdeutig_, insbesondere kann
     jedes Wort der Form $a^i b^i c^i$ auf zwei Weisen
     abgeleitet werden: via $AY$ und via $XC$. Man kann
-    sogar zeigen, dass _jede_ äquivalente Grammatik 
+    sogar zeigen, dass _jede_ äquivalente Grammatik  
     $G'$, die also die gleiche Sprache $L$ erzeugt, mehrdeutig
     sein muss; man sagt, die Sprache $L$ ist _inhärent
-    mehrdeutig_.
-    Für nichtdeterministische oder gar mehrdeutige Grammatiken
-    / Sprachen sind LL- und LR-Parser unbrauchbar. Gibt
-    es eine allgemeine Methode, die für alle Grammatiken
+    mehrdeutig_. Für nichtdeterministische oder gar mehrdeutige
+    Grammatiken / Sprachen sind LL- und LR-Parser unbrauchbar.
+    Gibt es eine allgemeine Methode, die für alle Grammatiken
     funktioniert? Ja, den sogenannten CYK-Algorithmus.
     Nur leider ist die nicht besonders schnell. Sie hat
     kubische Laufzeit $O(n^3)$, was zwar in der theoretischen
@@ -111,13 +110,13 @@
         C&\rightarrow xzA \ | \ AB \ | \ \epsilon
         \end{align*}
 
-        eine äquivalente in Chomsky-Normalform.
-        Fragen, die Sie sich dabei stellen sollten:
+        eine äquivalente in Chomsky-Normalform. Fragen, die
+        Sie sich dabei stellen sollten:
 
         |> ol
             |> li
                 Für welche Nichtterminale gibt es $U \Step{}^* V$?
-                Zeichnen Sie ein Bildchen mit all diesen 
+                Zeichnen Sie ein Bildchen mit all diesen  
                 $\Step{}^*$-Pfeilen.
             |> li
                 Von welchen Nichtterminalen können Sie überhaupt Wörter
@@ -129,7 +128,7 @@
                 Allgemeinen heraus?
 
     Wenn nun $G$ in Chomsky-Normalform vorliegt und wir
-    für ein gegebenes Eingabewort $w$ eine Ableitung 
+    für ein gegebenes Eingabewort $w$ eine Ableitung  
     $G: S \Step{}^* w$ finden wollen (oder feststellen,
     dass es keine gibt), so ist die erste Beobachtung,
     dass eine Linksableitung die Form
@@ -140,13 +139,13 @@
 
     haben muss, für $w = uv$. Wenn wir die Unterteilung
     von $w$ in $u$ und $v$ kennen würden, so könnten wir
-    rekursiv fragen, wie man denn $A \Step{}^* u$ und 
+    rekursiv fragen, wie man denn $A \Step{}^* u$ und  
     $B \Step{}^* v$ ableitet. Da wir sie aber _nicht_
-    kennen, also konkret nicht wissen, wie lange $u$ und 
+    kennen, also konkret nicht wissen, wie lange $u$ und  
     $v$ sind, können wir alle Möglichkeiten durchprobieren.
     Da $G$ in Chomsky-Normalform vorliegt, wissen wir,
-    dass $|u| \geq 1$ und $|v| \geq 1$, also 
-    $1 \leq |u| \leq |w|-1$. Wir probieren also alle 
+    dass $|u| \geq 1$ und $|v| \geq 1$, also  
+    $1 \leq |u| \leq |w|-1$. Wir probieren also alle  
     $n-1$ möglichen Zerlegungen von $w$ durch. Wenn wir
     das rekursiv täten, dann würden das eine enorme Laufzeit
     verursachen. Der Trick besteht darin, Zwischenergebnisse
@@ -166,15 +165,14 @@
         Algorithmen und Komplexität
     \ im dritten Semester ausführlicher kennenlernen wollen.
     Wir beschränken uns bei dem folgenden Algorithmus zunächst
-    darauf, die Frage zu beantworten, ob den überhaupt 
+    darauf, die Frage zu beantworten, ob den überhaupt  
     $S \Step{}^* w$ gilt, und interessieren uns erst einmal
     nicht dafür eine solche Ableitung auch zu finden (in
     der Algorithmik versteht man das als _Entscheidungsproblem_,
-    im Gegensatz zu dem allgemeinerin _Suchproblem_).
-    Der Entwurf eines Dynamic-Programming-Algorithmus
-    beginnt oft mit der folgenden Frage: _Was sind sinnvolle
-    Zwischenergebnisse?_ In unserem Falle sind Ableitungen
-    der Form
+    im Gegensatz zu dem allgemeinerin _Suchproblem_). Der
+    Entwurf eines Dynamic-Programming-Algorithmus beginnt
+    oft mit der folgenden Frage: _Was sind sinnvolle Zwischenergebnisse?_
+    In unserem Falle sind Ableitungen der Form
 
     \begin{align*}
     X&\Step{}^* u
@@ -197,7 +195,7 @@
     Das ist also die Menge der Nichtterminale, die das
     Teilwort $w[i:j]$ ableiten können. Die "Hauptfrage"
     ist dann: enthält $N_{0,|w|}$ das Startsymbol $S$?
-    Der CYK-Algorithmus berechnet nun die Mengen 
+    Der CYK-Algorithmus berechnet nun die Mengen  
     $N_{i, i+d}$ systematisch für $d = 1, \dots, n$, versucht
     also, alle Unterwörter der Länge $d$ abzuleiten, beginnend
     mit $d = 1$, also $N_{i,i+1}$. Diese Mengen sind leicht
@@ -211,12 +209,12 @@
     Das gilt nur, weil $G$ in Chomsky-Normalform vorliegt
     und somit Ableitungen mit mehr als einem Schritt notwendigerweise
     Wörter mit mehr als einem Zeichen produzieren würden.
-    Nun müssen wir uns Gedanken machen, wie wir 
+    Nun müssen wir uns Gedanken machen, wie wir  
     $N_{i,k}$ berechnen, also das Unterwort $w[i:k]$,
     das Länge $k-i$ hat, ableiten, wenn wir bereits wissen,
     wie wir kürzere Unterwörter herleiten. Die Kernbeobachtung
     ist: $X \in N_{i,k}$, also $X \Step{}^* w[i:k]$ gilt
-    genau dann, wenn es eine Produktion 
+    genau dann, wenn es eine Produktion  
     $X \rightarrow YZ$ gibt, so dass dann
 
     \begin{align*}
@@ -234,16 +232,16 @@
     \label{equation-Nij}
     \end{align}
 
-    Dies können wir mit einer Schleife über 
-    $j = i+1 \dots k-1$ und einer Schleife über alle Produktionen 
-    $X \rightarrow YZ$ berechnen, da wir die Mengen 
-    $N_{i,j}$ und $N_{j-k}$ ja bereits kennen, da 
+    Dies können wir mit einer Schleife über  
+    $j = i+1 \dots k-1$ und einer Schleife über alle Produktionen  
+    $X \rightarrow YZ$ berechnen, da wir die Mengen  
+    $N_{i,j}$ und $N_{j-k}$ ja bereits kennen, da  
     $k-j, j-i \lt k-i$, diese Bereiche also kleinere Unterwörter
     darstellen.
 
     |> ul
         |> li
-            Initialisiere für alle $0 \leq i \lt n$ die Mengen 
+            Initialisiere für alle $0 \leq i \lt n$ die Mengen  
             \(N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{
             ist eine Produktion in $G$}\}\)
         |> li
@@ -294,7 +292,7 @@
             `return True if` $S \in N_{0,n}$ `else return False`
 
     Was ist die Laufzeit des Algorithmus? Sei $g$ die
-    Anzahl der Produktionen in $G$ der Form 
+    Anzahl der Produktionen in $G$ der Form  
     $X \rightarrow YZ$. Die innerste Schleife, also Punkt
     a, wird jedes Mal $g$ mal durchlaufen, und somit wird
     Zeile a insgesamt
@@ -305,7 +303,7 @@
 
     ausgeführt. Können Sie eine geschlossene Form für
     die drei Summen angeben? Leichter geht es, wenn wir
-    erkennen, dass für alle $i,j,k$ die Ungleichung 
+    erkennen, dass für alle $i,j,k$ die Ungleichung  
     $0 \leq i \lt j \lt k \leq n-1$ gilt, und jedes solche
     Tripel auch drankommt. Wie viele solche Tripel gibt
     es? Genau ${n \choose 3}$ viele. Also: die Zeile a
@@ -315,13 +313,13 @@
     g \cdot {n \choose 3} = g \cdot \frac{n (n-1) (n-2)}{6}
     \end{align*}
 
-    mal durchlaufen. Also "ungefähr" $g n^3 / 6$ und
-    "noch ungefährer" $g n^3$. Also:
+    mal durchlaufen. Also "ungefähr" $g n^3 / 6$ und "noch
+    ungefährer" $g n^3$. Also:
 
     |> Statement
         title=*Beobachtung*
         Sei $n = |w|$ die Länge des Eingabewortes und $g$
-        die Anzahl der Produktionen der Form 
+        die Anzahl der Produktionen der Form  
         $X \rightarrow YZ$. Dann ist die Laufzeit des CYK-Algorithmus
         proportional zu $g \cdot n^3$.
 
@@ -386,6 +384,6 @@
 
         Wenn wir uns zusätzlich zu jedem $X \in N_{i,k}$ noch
         merken, durch welche Regeln $X \rightarrow YZ$ es
-        aufgenommen wurde und für welches $j$ man 
+        aufgenommen wurde und für welches $j$ man  
         $Y \in N_{i,j}, Z \in N_{j,k}$ hat, dann können wir
         den Ableitungsbaum leicht rekonstruieren.
