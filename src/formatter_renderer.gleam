@@ -81,8 +81,8 @@ pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
     vr.RendererParameters(
       input_dir: "./wly",
       output_dir: "./wly-edit",
-      prettifier_on_by_default: False,
-      prettier_dir: None,
+      prettifier_behavior: vr.PrettifierOff
+      
     )
   
   let parameters =
@@ -95,8 +95,7 @@ pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
         None -> base_parameters.output_dir
         Some(dir) -> dir
       },
-      prettifier_on_by_default: False,  // Always False for formatter
-      prettier_dir: None,                // Always None for formatter
+      prettifier_behavior: vr.PrettifierOff
     )
 
   let final_renderer =
