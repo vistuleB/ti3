@@ -63,7 +63,7 @@
         n&\mapsto A(m,n) \ .
         \end{align*}
 
-    Es lohnt sich, diese Funktion für kleine Werte von       
+    Es lohnt sich, diese Funktion für kleine Werte von        
     $m$ zu untersuchen. Aus der Definition geht unmittelbar
     hervor, dass $A_0(n) = n+1$ ist. Für $A_1 (n)$ rechnen
     wir
@@ -105,7 +105,7 @@
     \stackrel{A_2}{\rightarrow} 125
     \end{align*}
 
-    Das ist schon genug, um eine Vermutung zu formulieren:       
+    Das ist schon genug, um eine Vermutung zu formulieren:        
     $A_3(n) = 2^{n+3} - 3$ und diese dann per Indution
     zu beweisen.
 
@@ -119,8 +119,8 @@
 
     |> Highlight
         title=*Beweis.*
-        Wir verwenden Induktion über $m$. Für $m=0$ gilt       
-        $A_0(n)= n+1$ und somit $A_0 = \succ$. Sei nun also       
+        Wir verwenden Induktion über $m$. Für $m=0$ gilt        
+        $A_0(n)= n+1$ und somit $A_0 = \succ$. Sei nun also        
         $m \geq 1$. Wir sehen, dass
 
         \begin{align*}
@@ -143,9 +143,9 @@
         Was ist $g$? Der Startwert soll $g(\vec{x})$ sein,
         wir haben aber kein $\vec{x}$, bzw. dies ist der "leere
         Vektor". Wir brauchen eine Funktion $C$, die null
-        Argumente nimmt und $A_{m-1}(1)$ zurückgibt. Also:       
+        Argumente nimmt und $A_{m-1}(1)$ zurückgibt. Also:        
         $g = \comp(A_{m-1}, {\rm one})$. Wir könnten sogar
-        noch frecher sein und       
+        noch frecher sein und        
         $g = \comp(\succ, \comp(\succ, \comp(... \comp(\succ,
         \zero))))$
         schreiben, einfach $A_{m-1}(1)$ mal hintereinander;
@@ -163,9 +163,9 @@
     Wir haben also gezeigt, dass jedes $A_m$ primitiv
     rekursiv ist. Heißt das auch, dass die zwei-parametrige
     Funktion $A(m,n)$ _berechenbar_ ist? In der primitiven
-    Rekursion haben wir keine Möglichkeit, den Index       
+    Rekursion haben wir keine Möglichkeit, den Index        
     $m$ als Eingabewert zu lesen und dann aus dem unendlichen
-    Array primitiv rekursiver Funktionen       
+    Array primitiv rekursiver Funktionen        
     $[A_0, A_1, A_2, \dots]$ den Eintrag $A_m$ auszulesen.
     Aber _berechenbar_ in einem ganz allgemeinen Sinn?
     Diese Frage können wir zu diesem Zeitpunkt nicht formal
@@ -194,23 +194,23 @@
     der Aussage_, nicht Eingabeparameter der Funktion;
     die Funktion $A_m$ hat nur _einen_ Eingabeparameter.
     Theorem 3.3.3 hingegen macht eine Aussage über _eine_
-    Funktion $A(m,n)$ mit _zwei_ Eingabeparametern, und       
+    Funktion $A(m,n)$ mit _zwei_ Eingabeparametern, und        
     $m$ ist nun einer dieser beiden. Anders ausgedrückt:
     sie können zwar jedes einzelne  $A_m$ in der "Programmiersprache"
     der primitiven Rekursion implementieren, allerdings
     brauchen Sie für jedes  $m$ neuen Code. Sie können
     keinen Code schreiben, der, gegeben $m$, den Code
-    für $A_m$ irgendwie implizit produziert und dann mit      
+    für $A_m$ irgendwie implizit produziert und dann mit       
     $n$ aufruft. Jedenfalls nicht in der Programmiersprache
-    der primitiven Rekursion. *Beweisidee.* Für jedes feste      
-    $m$ ist die ein-parametrige Funktion      
+    der primitiven Rekursion. *Beweisidee.* Für jedes feste       
+    $m$ ist die ein-parametrige Funktion       
     $A_m := n \mapsto A(m,n)$ primitiv rekursiv und kann
     als Funktion mit $m$ verschachtelten `for`-Schleifen
-    betrachtet werden. Es wird sich herausstellen, dass       
+    betrachtet werden. Es wird sich herausstellen, dass        
     $A_m$ in gewisser Weise die am schnellsten wachsende
     aller solcher Funktionen ist. Wäre also $A(m,n)$ primitiv-rekursiv,
     dann könnten wir es mit $d$ verschachtelten `for`-Schleifen
-    berechnen; was ein Widerspruch ist, weil bereits       
+    berechnen; was ein Widerspruch ist, weil bereits        
     $A_{d+1}$ schneller wächst als jede primitiv-rekursive
     Funktion mit $d$ verschachtelten Schleifen.
 
@@ -222,8 +222,8 @@
 
         |> Statement
             title=*Definition*
-            Sei $f: \N \rightarrow \N$ und       
-            $g: \N^k \rightarrow \N$. Die Funktion $f$ _majorisiert_       
+            Sei $f: \N \rightarrow \N$ und        
+            $g: \N^k \rightarrow \N$. Die Funktion $f$ _majorisiert_        
             $g$, wenn
 
             \begin{align*}
@@ -233,14 +233,14 @@
             für alle $x_1,\dots,x_k \in \N$ gilt. Wir schreiben
             auch kurzerhand $f \gt g$.
 
-        Sei zum Beispiel $g(x,y) = x \cdot y$ und       
-        $f(x) = 2^x$. Dann majorisiert $2^x$ die Funktion       
-        $x \cdot y$ nicht; sei beispielsweise       
-        $(x,y) = (3,2)$, dann ist $g(x,y)=6$ aber       
-        $f(\max(3,2)) = 2^3 = 8$. Allerdings majorisiert       
-        $2^x + 2$ die Funktion $x+y$, ganz allgemein weil       
+        Sei zum Beispiel $g(x,y) = x \cdot y$ und        
+        $f(x) = 2^x$. Dann majorisiert $2^x$ die Funktion        
+        $x \cdot y$ nicht; sei beispielsweise        
+        $(x,y) = (3,2)$, dann ist $g(x,y)=6$ aber        
+        $f(\max(3,2)) = 2^3 = 8$. Allerdings majorisiert        
+        $2^x + 2$ die Funktion $x+y$, ganz allgemein weil        
         $2^x + 2 \gt x^2$ für alle $x \in \N$ gilt. Wir werden
-        nun zeigen, dass jede primitiv rekursive Funktion       
+        nun zeigen, dass jede primitiv rekursive Funktion        
         $g: \N^k \rightarrow \N$ von einem $A_r$ majorisiert
         wird; hierbei ist wichtig, dass der Index $r$ als
         Konstante betrachtet wird, also von der "Bauweise"
@@ -249,13 +249,13 @@
 
         |> Statement
             title=*Lemma*
-            Für jede primitiv rekursive Funktion       
+            Für jede primitiv rekursive Funktion        
             $f: \N^k \rightarrow \N$ gibt es ein $r \in \N$, so
             dass $f$ von $A_r$ majorisiert wird.
 
         Aus diesem Lemma folgt dann, dass $A(m,n)$ selbst
         nicht primitiv rekursiv sein kann. Wäre es dies, dann
-        gäbe es ja ein $r$, so dass das ein-parametrige       
+        gäbe es ja ein $r$, so dass das ein-parametrige        
         $A_r$ die zwei-parametrige Funktion $A(m,n)$ majorisieren
         würde:
 
@@ -271,16 +271,16 @@
 
         was offensichtlich ein Widerspruch ist, da beide Seiten
         gleich sind. Wir werden nun das Lemma beweisen. Wir
-        verwenden Induktion über die Weise, in der die Funktion     
+        verwenden Induktion über die Weise, in der die Funktion      
         $f$ konstruiert worden ist, also über die Anzahl der
-        Comp- und PrimRec-Kombinatoren, die wir zum Bau von     
+        Comp- und PrimRec-Kombinatoren, die wir zum Bau von      
         $f$ gebraucht haben. Im folgenden schreiben wir, wenn
         wir einen Vektor   $\vec{x} = (x_1,\dots,x_n)$ aus
-        natürlichen Zahlen haben, oft     
+        natürlichen Zahlen haben, oft      
         $x := \max(x_1,\dots,x_n)$. *Induktionsbasis.*   Wir
-        betrachten wir die Basisfunktionen       
-        $\zero, \succ, \pi^n_k$. Wir wissen bereits, dass       
-        $A_0(n) = n+1$ ist, also $A_0 = \succ$. Leider majorisiert       
+        betrachten wir die Basisfunktionen        
+        $\zero, \succ, \pi^n_k$. Wir wissen bereits, dass        
+        $A_0(n) = n+1$ ist, also $A_0 = \succ$. Leider majorisiert        
         $A_0$ also $\succ$ nicht. Wie steht es mit $A_1$?
         Es gilt $A_1(n) = n+2$, und somit ist
 
@@ -290,20 +290,20 @@
         \pi^n_k (\vec{x})&= x_k \leq x \lt x + 2 = A_1(x) \ ,
         \end{align*}
 
-        wobei wir die Schreibweise       
+        wobei wir die Schreibweise        
         $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$ verwenden.
         Wir schlussfolgern: $A_2$ majorisiert jede Basisfunktion.
         *Induktionsschritt.* Wenn $f$ keine Basisfunktion
         ist, dann wurde $f$ mittels Komposition oder primitiver
         Rekursion konstruiert. Für jeden Fall führen wir eine
-        getrennte Rechnung durch. *Komposition:*       
+        getrennte Rechnung durch. *Komposition:*        
         $f(\vec{x}) = g(h_1(\vec{x}), \dots, h_k(\vec{x}))$,
-        für primitiv rekursive Funktionen       
+        für primitiv rekursive Funktionen        
         $g, h_1, \dots, h_k$. Jede dieser Funktionen wurde
         mit _weniger_ Kombinatoren konstruiert; somit wird
-        jede dieser Funktionen von einem $A_r$ majorisiert:       
+        jede dieser Funktionen von einem $A_r$ majorisiert:        
         $A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k$.
-        Für einen Eingabevektor $\vec{x}$ schreiben wir       
+        Für einen Eingabevektor $\vec{x}$ schreiben wir        
         $x := \max(x_1,\dots,x_n)$ und rechnen:
 
         \begin{align*}
@@ -321,14 +321,14 @@
         &\leq A_{q} (A_{q+1} (x)) = A_{q+1} (x+1) \ .
         \end{align*}
 
-        Schlussendlich behaupte ich, dass       
+        Schlussendlich behaupte ich, dass        
         $A_{q+1}(x+1) \leq A_{q+2}(x)$ gilt:
 
         \begin{align*}
         A_{q+2}(x)&= A_{q+1} (A_{q+2}(x-1)) \geq A_{q+1} (A_2 (x-1)) = A_{q+1} (x+1) \ .
         \end{align*}
 
-        Also: $A_{q+2}$ majorisiert $f$. *Primitive Rekursion:*      
+        Also: $A_{q+2}$ majorisiert $f$. *Primitive Rekursion:*       
         $f = \primrec (g,h)$, also
 
         \begin{align*}
@@ -340,12 +340,12 @@
         \end{align*}
 
         wobei $g, h$ bereits mit weniger Kombinatoren konstruierte
-        primitiv rekursive Funktionen sind. Daher gibt es ein       
+        primitiv rekursive Funktionen sind. Daher gibt es ein        
         $q \in \N$ mit $A_q \gt g$ und $A_q \gt h$.
 
         |> Statement
             title=*Behauptung*
-            $f(t, \vec{x}) \leq A_{q+1} (t+x)$, wobei       
+            $f(t, \vec{x}) \leq A_{q+1} (t+x)$, wobei        
             $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$.
 
         |> Remark
@@ -376,11 +376,11 @@
             |> QED
 
         Die Behauptung reicht aber noch nicht, da die rechte
-        Seite der Ungleichung       
+        Seite der Ungleichung        
         $f(t,\vec{x}) \lt A_{q+1}(t+x)$ eine Funktion in zwei
         Parametern ist: $t$ und $x$, wir aber für das zu beweisende
         Lemma aber eine Funktion in einem Parameter brauchen,
-        nämlich $\max(t, \vec{x})$. Sei also       
+        nämlich $\max(t, \vec{x})$. Sei also        
         $z := \max(t,x) = \max(t, x_1,\dots,x_n)$. Dann gilt
 
         \begin{align*}
@@ -396,7 +396,7 @@
     In der Vorlesung am 7. Mai 2024 hatte ich den _Grad_
     einer primitiv-rekursiven Funktion definiert. Das ist
     in etwa die "Verschachtelungstiefe" von $f$. Betrachten
-    wir beispielsweise die Funktion       
+    wir beispielsweise die Funktion        
     $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln
     auf, wie wir diese als primitiv-rekursive Funktion
     konstruiert haben:

@@ -2,7 +2,7 @@
     title=Untere und obere Schranken
     Wir haben zwei Methoden gesehen, zu einer beliebigen
     Booleschen Funktion $f : \fcube$ einen Booleschen
-    Schaltkreis zu konstruieren: top-down, indem wir       
+    Schaltkreis zu konstruieren: top-down, indem wir        
     $f$ in $f_0$ und $f_1$ zerlegen und mit Hilfe eines
     if-then-else-Gates wieder zusammenfügen; und bottom-up
     als DNF oder CNF. Die so entstandenen Schaltkreise
@@ -35,19 +35,19 @@
         benötigen, falls Sie nämlich ein Abzählargument in
         anderen Kontexten anwenden). Die Antwort auf (1) ist
         einfach: es gibt genau  $2^{2^n}$ Boolesche Funktionen
-        mit $n$ Variablen. Warum? Die Wahrheitstabelle hat      
-        $2^n$ Zeilen. Sie könnne sich also $2^n$ mal für      
+        mit $n$ Variablen. Warum? Die Wahrheitstabelle hat       
+        $2^n$ Zeilen. Sie könnne sich also $2^n$ mal für       
         $0$ oder $1$ entscheiden.
 
         |> Remark
             title=*Behauptung*
-            Sei $s \geq n \geq 1$. Dann gibt es höchstens       
+            Sei $s \geq n \geq 1$. Dann gibt es höchstens        
             $s^{2s+1}$ Schaltkreise mit $n$ Input-Variablen, Fan-in
             2 und $s$ Gates.
 
         |> Highlight
             title=*Beweis.*
-            Wir bauen den Schaltkreis, indem wir erst einmal       
+            Wir bauen den Schaltkreis, indem wir erst einmal        
             $s$ Gates unbeschriftet "hinmalen". Um nun zu entscheiden,
             was für ein Schaltkreis das sein soll, müssen wir Entscheidungen
             treffen:
@@ -58,18 +58,18 @@
 
                     |> ul
                         |> li
-                            Ein Input-Gate? Dann müssen wir es mit einer der       
+                            Ein Input-Gate? Dann müssen wir es mit einer der        
                             $n$ Input-Variablen beschriften.
                         |> li
                             Ein Not-Gate? Dann müssen wir eines der anderen Gates
-                            als Vorgänger-Gate wählen. Wir haben höchstens       
+                            als Vorgänger-Gate wählen. Wir haben höchstens        
                             $s-1$ Möglichkeiten.
                         |> li
                             Ein And-Gate? Dann müssen wir zwei der anderen Gates
-                            als Vorgänger-Gates wählen. Wir haben höchstesn       
+                            als Vorgänger-Gates wählen. Wir haben höchstesn        
                             ${s-1 \choose 2} = \frac{(s-1)(s-2)}{2}$ Möglichkeiten.
                         |> li
-                            Ein Or-Gate? Dann haben wir auch höchstens       
+                            Ein Or-Gate? Dann haben wir auch höchstens        
                             ${s-1 \choose 2}$ Möglichkeiten.
 
                     Insgesamt haben wir also
@@ -135,7 +135,7 @@
 
     |> Remark
         title=*Forschungsprojekt.*
-        Finde eine konkret beschreibbare Funktion       
+        Finde eine konkret beschreibbare Funktion        
         $f: \fcube$, die exponentiell viele (oder zumindest
         superpolynomiell viele) Gates benötigt.
 
@@ -165,8 +165,8 @@
     große Schaltkreise haben, ist noch offener.
 
     |> Exercise
-        Formal gesehen ist Graphenfärbbarkeit eine Sprache       
-        $L \subseteq \Sigma^*$ über einem Alphabet       
+        Formal gesehen ist Graphenfärbbarkeit eine Sprache        
+        $L \subseteq \Sigma^*$ über einem Alphabet        
         $\Sigma$, dass uns erlaubt, Graphen zu codieren. Wie
         können wir $L$ als Boolesche Funktion darstellen?
 
@@ -174,17 +174,17 @@
         Obere Schranken: Die Lupanov-Schranke
 
     Wir haben nun eine Konstruktion, die uns für jede
-    beliebige Funktion $f: \fcube$ Schaltkresie mit       
+    beliebige Funktion $f: \fcube$ Schaltkresie mit        
     $O(2^n)$ Gates baut. Wir haben eine untere Schranke,
-    die besagt, dass es mit weniger als       
+    die besagt, dass es mit weniger als        
     $\frac{2^{n}}{2n}$ Gates nicht geht. Diese beiden
-    Schranken lassen aber immer noch eine Lücke der Größenordnung       
+    Schranken lassen aber immer noch eine Lücke der Größenordnung        
     $n$. Können wir sie schließen?
 
     |> Statement
         title=*Theorem*
         *(Lupanov)*. Für jede Boolesche Funktion in $n$ Variablen
-        gibt es einen Schaltkreis mit Fan-in 2 und       
+        gibt es einen Schaltkreis mit Fan-in 2 und        
         $O(2^n / n)$ Gates.
 
     |> Highlight
@@ -197,11 +197,11 @@
         keine Rolle (der Faktor 4 verschwindet in der $O$-Notation).
         Die zweite Idee ist, dass wir anstreben, für eine bliebige
         Menge $F$ an Booleschen Funktionen einen "überraschend
-        guten" Schaltkreis zu bauen, der jede Funktion      
-        $f \in F$ berechnet. Dieser Schaltkreis wird       
+        guten" Schaltkreis zu bauen, der jede Funktion       
+        $f \in F$ berechnet. Dieser Schaltkreis wird        
         $|F|$ Output-Gates haben, und seine Größe wird auch
         von $|F|$ abhängen. *$\F_2$-Polynome.* Polynome in
-        mehreren Variablen kennen Sie sicherlich: zum Beispiel       
+        mehreren Variablen kennen Sie sicherlich: zum Beispiel        
         $xyz + xy + 1 + y$. Der Unterschied hier ist nur,
         dass wir alle Werte modulo 2 auswerten, also in dem
         endlichen Körper $\F_2$ arbeiten. Wir brauchen daher
@@ -211,12 +211,12 @@
         Polynome beschränken. Führen wir Polynome formal ein:
         wir haben eine Menge $x_1, \dots, x_n$ von Variablen;
         ein Monom in diesem Variablen ist ein Produkt aus Variablen,
-        also $\prod_{i \in I} x_i$ für eine Menge       
-        $I \subseteq [n]$. Wir schreiben das kurzerhand als       
-        $\x^I$. Ein Polynom ist nun eine Summe von Monomen:       
+        also $\prod_{i \in I} x_i$ für eine Menge        
+        $I \subseteq [n]$. Wir schreiben das kurzerhand als        
+        $\x^I$. Ein Polynom ist nun eine Summe von Monomen:        
         $\x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$. Beachten
         Sie, dass wir vor den Monomen keine Koeffizienten brauchen,
-        da es als Konstanten eh nur 0 und 1 gibt. Ein Polynom       
+        da es als Konstanten eh nur 0 und 1 gibt. Ein Polynom        
         $p(\x)$ berechnet eine Boolesche Funktion $\fcube$.
 
         |> Exercise
@@ -244,10 +244,10 @@
 
         Ein $\F_2$-Polynom können wir natürlich ganz einfach
         als Schaltkreis mit AND- und XOR-Gates schreiben. AND
-        für die Multiplikation und XOR für die Addition in       
+        für die Multiplikation und XOR für die Addition in        
         $\F_2$. Dies ist also die erste Kernidee: wir arbeiten
         mit AND und XOR und somit mit $\F_2$-Polynomen. Wieviele
-        Gates brauchen wir dafür? Schreiben wir       
+        Gates brauchen wir dafür? Schreiben wir        
         $f = \x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$. Ein
         Monom $\x^{I}$ können wir mit $|I|-1$ AND-Gates berechnen.
         Die Summe bilden wir mit $t-1$ weiteren XOR-Gates.
@@ -273,13 +273,13 @@
             viele AND-Gates. Finden Sie eine geschlossene Formel
             für diesen Ausdruck.
 
-        Als nächstes wollen wir zeigen, wie man $f$ mit höchstens       
+        Als nächstes wollen wir zeigen, wie man $f$ mit höchstens        
         $2^n$ AND-Gates und $2^n-1$ XOR-Gates berechnet. Wir
         zeigen in der Tat etwas mehr:
 
         |> Statement
             title=*Lemma*
-            Es gibt einen Schaltkreis $C_n$ mit $n$ Input-Gates       
+            Es gibt einen Schaltkreis $C_n$ mit $n$ Input-Gates        
             $x_1, \dots, x_n$ und $2^n$ Output-Gates, eines für
             jedes Monom $x^{I}$, der $2^n$ Gates hat.
 
@@ -293,17 +293,17 @@
             Die Idee ist: wenn wir $x_1 x_2 x_3 x_4$ berechnen
             wollen, brauchen wir drei AND-Gates. Allerdings müssen
             wir $x_1 x_2 x_3$ eh berechnen, da wir ja _alle_ Monome
-            wollen. Wenn wir also einen Schaltkreis für       
+            wollen. Wenn wir also einen Schaltkreis für        
             $x_1 x_2 x_3$ haben, können wir daraus mit _einem_
             zusätzlichen AND-Gate $x_1x_2x_3x_4$ berechnen. Formal
             geht es mit Induktion über $n$. Für $n=0$ haben wir
             ein einziges Monom, nämlich $1$, und einen Schaltkreis
             mit einem einzigen Gate: dem Konstant-1-Gate, das gleichzeitig
             ein Output-Gate ist. Für $n \geq 1$ bauen wir zuerst
-            per Induktion einen Schaltkreis $C_{n-1}$, der alle       
+            per Induktion einen Schaltkreis $C_{n-1}$, der alle        
             $2^{n-1}$ Monome $x^{I}$ für $I \subseteq [n-1]$ berechnet.
-            Um $C_n$ zu bauen, schaffen wir für jedes       
-            $I \subseteq [n-1]$ ein AND-Gate, das       
+            Um $C_n$ zu bauen, schaffen wir für jedes        
+            $I \subseteq [n-1]$ ein AND-Gate, das        
             $\x^{I} \wedge x_n$ berechnet.
 
             |> Carousel
@@ -318,7 +318,7 @@
         dass wir die Variablen $x_1, \dots, x_n$ in einen
         vorderen und in einen hinteren Teil aufteilen: die
         erste $k$ Variablen $x_1,\dots, x_k$ benennen wir
-        um in $y_1, \dots, y_k$; die hinteren $n-k$ Variablen       
+        um in $y_1, \dots, y_k$; die hinteren $n-k$ Variablen        
         $x_{n-k+1}, \dots, x_n$ in $z_1, \dots, z_n$. Wir
         können $f$ also wie folgt schreiben:
 
@@ -331,18 +331,18 @@
         \end{align*}
 
         Die obige Summe beinhaltet also $2^{n-k}$ Terme von
-        der Form $\y^A g_A(\z)$. Es gibt insgesamt nur       
+        der Form $\y^A g_A(\z)$. Es gibt insgesamt nur        
         $2^{2^k}$ Polynome in den Variablen $\z$. Wenn nun
-        also $2^{n-k} \gg 2^{2^k}$ ist, werden gewisse Polynome       
+        also $2^{n-k} \gg 2^{2^k}$ ist, werden gewisse Polynome        
         $g_A$ mehrfach auftreten, und wir können sparen. Dafür
-        berechnen wir vorsorglich _alle_ Funktionen in       
+        berechnen wir vorsorglich _alle_ Funktionen in        
         $z_1,\dots,z_k$.
 
         |> Remark
             title=*Lemma.*
-            Es gibt einen Schaltkreis mit Input-Gates       
+            Es gibt einen Schaltkreis mit Input-Gates        
             $z_1,\dots,z_k$ und $2^{2^k}$ Output-Gates, einen
-            für jede Funktion       
+            für jede Funktion        
             $g: \{0,1\}^k \rightarrow \{0,1\}$. Der Schaltkreis
             hat Fan-in 2 und insgesamt $2^k + 2^{2^k}$ Gates (AND-Gates
             und XOR-Gates).
@@ -354,11 +354,11 @@
 
         |> Exercise
             Zeigen Sie, dass die obige Konstruktion verbessert
-            werden kann, indem Sie einen Schaltkreis mit nur       
+            werden kann, indem Sie einen Schaltkreis mit nur        
             $2^{2^k}$ Gates bauen. *Tip.* Jedes Gate muss also
             gleichzeitig ein Output-Gate sein.
 
-        Wenn wir nun einen Schaltkreis haben, der uns jedes       
+        Wenn wir nun einen Schaltkreis haben, der uns jedes        
         $g : \{0,1\}^k \rightarrow \cube$ berechnet, schauen
         wir uns wieder $f(\x)$ an.
 
@@ -368,10 +368,10 @@
         \end{align*}
 
         Für jedes $g_A$ haben wir ja bereits ein Gate, das
-        es berechnet. Mit einem weiteren Schaltkreis von       
+        es berechnet. Mit einem weiteren Schaltkreis von        
         $2^{n-k}$ Gates können wir alle Monome $\y^A$ berechnen.
-        Schlussendlich müssen wir noch die Summe       
-        $\sum_{A \subseteq [n-k]}$ bilden, wofür wir       
+        Schlussendlich müssen wir noch die Summe        
+        $\sum_{A \subseteq [n-k]}$ bilden, wofür wir        
         $2^{n-k}$ XOR-Gates brauchen. Insgesamt brauchen wir
         also
 
@@ -414,8 +414,8 @@
             &= 2^{2^{\log n}} + \dots
             \end{align*}
         und wir können gleich aufhören, da der erste Term
-        bereits $2^n$ ergibt. Das ist zu groß. Wir müssen       
-        $k$ also kleiner wählen. Nächster Versuch:       
+        bereits $2^n$ ergibt. Das ist zu groß. Wir müssen        
+        $k$ also kleiner wählen. Nächster Versuch:        
         $k := \log n - 1$.
 
         \begin{align*}

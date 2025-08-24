@@ -1,8 +1,8 @@
 |> Sub
     title=LR-Parser per Hand entwerfen
     Betrachten wir die kontextfreie Grammatik $G$ für
-    arithmetische Ausdrücke mit den Variablen  
-    $x, y, z$ und strenger Klammerung über dem Alphabet  
+    arithmetische Ausdrücke mit den Variablen   
+    $x, y, z$ und strenger Klammerung über dem Alphabet   
     $\Sigma = \{x, y, z, (, ), +, *\}$:
 
     \begin{align*}
@@ -11,9 +11,9 @@
     S&\rightarrow (S*S)
     \end{align*}
 
-    Sie kann also $(x + (y*z))$ ableiten aber eben nicht  
-    $(x + y + z)$. Wie können wir nun einen Parser für  
-    $G$ schreiben? Also einen Algorithmus, der ein Wort  
+    Sie kann also $(x + (y*z))$ ableiten aber eben nicht   
+    $(x + y + z)$. Wie können wir nun einen Parser für   
+    $G$ schreiben? Also einen Algorithmus, der ein Wort   
     $w \in \Sigma^*$ nimmt und einen Ableitungsbaum konstruiert
     (falls $w \in L(G)$)? Wenn wir uns an das LL-Paradigma
     halten und eine Linksableitung bauen wollen, dann stoßen
@@ -24,7 +24,7 @@
     w = ((((\dots
     \end{align*}
 
-    dann wissen wir nicht, ob wir als ersten Schritt  
+    dann wissen wir nicht, ob wir als ersten Schritt   
     $S \rightarrow (S+S)$ oder $S \rightarrow (S*S)$ tätigen
     sollen. Das geht auch nicht, wenn wir $k$ Zeichen
     vorauslesen dürfen, weil der $(((\dots$-Präfix ja
@@ -59,10 +59,10 @@
         X&\rightarrow ab
         \end{align}
 
-        Wenn wir jetzt die ersten $k$ Zeichen lesen:  
+        Wenn wir jetzt die ersten $k$ Zeichen lesen:   
         $aaaa \dots$, dann gibt es keinen Weg, zu entscheiden,
         ob danach gleich viele oder weniger $b$'s folgen werden,
-        ob wir also $S \rightarrow sS$ oder  
+        ob wir also $S \rightarrow sS$ oder   
         $S \rightarrow Xc$ anwenden sollen. Das lässt sich
         auch nicht durch Umschreiben der Grammatik lösen. Wir
         müssen lesen, bis wir ein $b$ sehen.
@@ -71,7 +71,7 @@
         Das LR-Paradigma
 
     Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma
-    war ja, mit $S$ zu starten und, geleitet von den nächsten  
+    war ja, mit $S$ zu starten und, geleitet von den nächsten   
     $k$ Zeichen, zu entscheiden, welche Ableitungsregel
     als nächstes anzuwenden ist. Hierbei haben wir immer
     versucht, für das am weitesten links stehende Nichtterminal
@@ -83,13 +83,13 @@
     erkennen - bis also $\gamma = \alpha \beta$ und es
     eine Produktion $X \rightarrow \beta$ gibt. Dann ersetzen
     wir $\alpha \beta$ durch $\alpha X$. Unser Stack enthält
-    nun keine Präfix von $v$ mehr, sondern eine Wortform  
+    nun keine Präfix von $v$ mehr, sondern eine Wortform   
     $\gamma$. Zusammen mit dem ungelesenen Teil $w$ des
     Eingabewortes ergibt das eine Wortform $\gamma w$.
-    Solange es eine Rechtsableitung  
+    Solange es eine Rechtsableitung   
     $S \Pets{} \gamma w \Pets{} v$ gibt, sind wir auf
     dem richtigen Weg. Am Besten betrachten wir ein Beispiel
-    für  
+    für   
     $L_2 = \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0\}$.
     Die Farbe grau bedeutet hier, dass wir das Eingabezeichen
     noch nicht gelesen haben.
@@ -167,7 +167,7 @@
     handelt. Daher der Name LR-Parsing: wir beginnen links
     (daher das L) und suchen eine Rechtsableitung (daher
     das R), allerdings in umgekehrter Reihenfolge. Statt
-    von $S$ ausgehend $w$ abzuleiten, also  
+    von $S$ ausgehend $w$ abzuleiten, also   
     $S \Step{}^* w$, versuchen wir $w$ zu $S$ zu _reduzieren_,
     also $w \Pets{}^* S$. Allerdings ist das nicht immer
     so einfach: manchmal ist nicht auf den ersten Blick
@@ -210,8 +210,8 @@
     Es stellen sich einige Fragen: woher wissen wir zum
     Beispiel bei $XYa\textcolor{darkgray}{z}$, dass wir
     per $Y \rightarrow Ya$ reduzieren müssen und nicht
-    per $Y \rightarrow a$? Wir könnten ja auch auf  
-    $XYa \Pets{} XYY$ reduzieren. Oder in Schritt 2, bei  
+    per $Y \rightarrow a$? Wir könnten ja auch auf   
+    $XYa \Pets{} XYY$ reduzieren. Oder in Schritt 2, bei   
     $a\textcolor{darkgray}{cabaz}$. Da könnten wir ja
     gleich $a \Pets{} Y$ reduzieren.
 
@@ -219,7 +219,7 @@
         title=*Beobachtung*
         Die Reduktion $XYa \Pets{} XYY$ kann nicht richtig
         sein, weil $XYY$ nie als Präfix in einer Rechtsableitung
-        vorkommen kann. Genauer gesagt: es gibt kein  
+        vorkommen kann. Genauer gesagt: es gibt kein   
         $w \in \Sigma^*$, so dass
 
         \begin{align*}
@@ -229,14 +229,14 @@
         eine Rechtsableitung ist.
 
     Wenn wir Glück haben, gibt es immer höchstens eine
-    Reduktionsregel  
-    $\alpha \beta w \Pets{} \alpha X w$, so dass  
+    Reduktionsregel   
+    $\alpha \beta w \Pets{} \alpha X w$, so dass   
     $S \Step{}^* \alpha X w \Step{} \alpha \beta w$ in
     einer Rechtsableitung vorkommen kann. Das hängt von
     der Grammatik ab. Aber selbst dann brauchen wir einen
-    Algorithmus, der uns sagen kann, ob  
+    Algorithmus, der uns sagen kann, ob   
     $XYa \Pets{} XYY$ ein korrekter Reduktionsschritt
-    ist. Dies scheint komplexer, als  
+    ist. Dies scheint komplexer, als   
     $w \stackrel{?}{\in} L$ zu entscheiden, ist aber _einfacher_!
     Ein zweites Problem ist, dass wir eben manchmal kein
     Glück haben und es mehrere plausible Reduktionsschritte
@@ -270,8 +270,8 @@
     \end{align*}
 
     wobei $Sb$ eben keine Wortform ist, die in einer Rechtsableitung
-    vorkommen könnte. Das wissen wir aber erst, wenn wir  
-    $b$ gelesen haben. Wäre das Eingabewort nämlich nur  
+    vorkommen könnte. Das wissen wir aber erst, wenn wir   
+    $b$ gelesen haben. Wäre das Eingabewort nämlich nur   
     $ca$, dann wäre $XY \Pets{} S$ tatsächlich die korrekte
     Reduktion. In der ersten Grammatik hatten wir als "Work-around"
     ein $z$ am Ende angehängt, um das Wortende zu erkennen.

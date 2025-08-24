@@ -13,7 +13,7 @@
     halber bestehe ich auf strenger Klammerung, so wäre
     `(2*(1+2+3))` zum Beispiel nicht erlaubt. Unsere Grammatik
     soll allgemeine Dezimalzahlen darstellen können. Das
-    Alphabet ist somit  
+    Alphabet ist somit   
     $\Sigma = \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
     \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
     \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$.
@@ -31,7 +31,7 @@
 
     Die Nichtterminale sind also $E$ (Expression), $N$
     (Number) und $D$ (Digit). Wir haben auch den einzelnen
-    Produktionen Namen gegeben, bis auf die der Form  
+    Produktionen Namen gegeben, bis auf die der Form   
     $D \rightarrow i$. Was soll nun unser Parser tun?
     Er soll, gegeben ein Eingabewort $w \in L$, den _Ableitungsbaum_
     konstruieren, für `((31+402)*83)` also

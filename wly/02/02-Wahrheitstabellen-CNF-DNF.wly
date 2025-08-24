@@ -8,7 +8,7 @@
     sehen. Als erstes lassen Sie uns überlegen, wie man
     eine Boolesche Funktion im Allgemeinen aufschreibt/codiert.
     Beschränken wir uns erst einmal auf Boolesche Funktionen
-    mit _einem_ Ausgabewert, also       
+    mit _einem_ Ausgabewert, also        
     $f : \{0,1\}^{n} \to \{0,1\}$. Dies ist ein endliches
     Objekt, wir können es also codieren, indem wir für
     jeden Eingabewert  $(x_1, \ldots, x_n)$ den Ausgabewert
@@ -36,7 +36,7 @@
     |> Topic
         Rekursiv, top-down
 
-    Wir teilen die Tabelle in die obere Hälfte (wo       
+    Wir teilen die Tabelle in die obere Hälfte (wo        
     $x = 0$ gilt) und die untere Hälfte:
 
     \begin{align*}
@@ -60,7 +60,7 @@
     \end{align*}
 
     Die obere, roten Hälfte kommt Ihnen vielleicht bekannt
-    vor: es ist genau die Wahrheitstabelle von       
+    vor: es ist genau die Wahrheitstabelle von        
     $y \vee z$. Der Wert von $x$ ist im roten Teil ja
     immer $0$, also ist die obere Hälfte im Prinzip eine
     Funktion mit zwei Variablen: $y$ und $z$; wir sagen
@@ -74,14 +74,14 @@
     |> span
         style=color:blue
         $\bar{y} \vee z$ 
-    ist (ich schreibe im Fließtext übrigens gerne       
+    ist (ich schreibe im Fließtext übrigens gerne        
     $\bar{y}$ statt $\neg y$, weil das mir lesbarer erscheint).
-    Insgesamt also: f = `if` $x$ `then`      
+    Insgesamt also: f = `if` $x$ `then`       
     $\bar{y} \vee z$ `else`  $y \vee z$ Jetzt können wir
     das mit unserem if-then-else-Schaltkreis kombinieren.
 
     |> Exercise
-        Führen Sie die Konstruktion zu Ende, indem Sie       
+        Führen Sie die Konstruktion zu Ende, indem Sie        
         $\bar{y} \vee z$ und $y \vee z$ mit dem if-then-else-Schaltkreis
         kombinieren.
 
@@ -95,12 +95,12 @@
             (für die $x_1 = 1$ gilt) auf.
         |> li
             Jede Hälfte kann als Boolesche Funktion mit $n-1$
-            Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise       
+            Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise        
             $C_0$ für die obere und $C_1$ für die untere Hälfte,
             beide mit Input-Variablen $x_2,\dots,x_n$.
         |> li
             Kombinieren Sie diese via `if` $x_1$ `then` $C_1$
-            `else` $C_0$, zu einem Schaltkreis für $f$ mit insgesamt       
+            `else` $C_0$, zu einem Schaltkreis für $f$ mit insgesamt        
             $n$ Input-Variablen.
 
     An dieser Stelle zahlt es sich aus, eine formale Notation
@@ -109,7 +109,7 @@
     |> Statement
         title=*Definition*
         Sei $f: \{0,1\}^n \rightarrow \{0,1\}$ eine Boolesche
-        Funktion, $i \in \{1,\dots,n\}$ ein Index und       
+        Funktion, $i \in \{1,\dots,n\}$ ein Index und        
         $b \in \{0,1\}$ ein Wert. Dann ist $f|_{x_i=b}$ eine
         neue Funktion, und zwar
 
@@ -119,7 +119,7 @@
         \end{align*}
 
         In Worten: wir fixieren den $i$-ten Input auf den
-        Wert $b$ und erhalten eine Funktion in den restlichen       
+        Wert $b$ und erhalten eine Funktion in den restlichen        
         $n-1$ Variablen.
 
     Das Ergebnis ist im Allgemeinen sehr groß, aber was
@@ -169,7 +169,7 @@
     $$
 
     Von den 8 möglichen Input-Tupeln gibt es nur eins,
-    für das dieser Ausdruck eine 1 ausgibt, in diesem Falle       
+    für das dieser Ausdruck eine 1 ausgibt, in diesem Falle        
     $(1,0,1)$. Wir werden nun also für jede 1-Zeile unserer
     Wahrheitstabelle einen solchen Ausdruck hinschreiben
     und diese dann in einem großen OR zusammenführen. Einen
@@ -217,9 +217,9 @@
 
     |> Statement
         title=*Definition*
-        Ein _Literal_ ist eine Variable $x$ oder deren Negation       
+        Ein _Literal_ ist eine Variable $x$ oder deren Negation        
         $\bar{x}$. Ein _Term_ ist ein AND (auch: Konjunktion)
-        von Literalen (beispielsweise       
+        von Literalen (beispielsweise        
         $\bar{x} \wedge \bar{y} \wedge z)$. Eine Formel in
         _disjunktiver Normalform_ (DNF) ist ein OR von Termen.
         Alternativ: eine DNF ist ein Schaltkreis der Tiefe
@@ -250,8 +250,8 @@
     tritt _keine_ davon ein, muss wohl eine 1 herauskommen.
     Wir gehen also in der Wahrheitstabelle alle Zeilen
     mit Wert 0 durch und schreiben einen Ausdruck, der
-    genau diese Zeile verbietet. So kann man den Ausdruck       
-    $(\bar{x} \vee \bar{y} \vee z)$ verstehen als "       
+    genau diese Zeile verbietet. So kann man den Ausdruck        
+    $(\bar{x} \vee \bar{y} \vee z)$ verstehen als "        
     $(x,y,z)$ darf nicht $(1,1,0)$ sein." An dem obigen
     Beispiel ergibt dies:
 
@@ -269,9 +269,9 @@
     \end{array}
     $$
 
-    Einen Ausdruck der Form       
+    Einen Ausdruck der Form        
     $\bar{x} \vee \bar{y} \vee z$, also ein OR von Literaten,
-    nennt man auch eine _Klausel_. Eine Klausel mit       
+    nennt man auch eine _Klausel_. Eine Klausel mit        
     $n$ (hier: $n=3$) Literaten verbietet genau ein Tupel
     von Wahrheitswerten. Wenn wir also alle Verbote mit
     AND verknüpfen, erhalten wir
@@ -307,13 +307,13 @@
         zusammenfassen.
 
     |> Exercise
-        Zeigen Sie, dass es zu jeder Booleschen Funktion       
+        Zeigen Sie, dass es zu jeder Booleschen Funktion        
         $f: \{0,1\}^n \rightarrow \{0,1\}$ eine äquivalente
         DNF-Formel mit höchstens $2^{n-1}$ Termen gibt.
 
     |> Exercise
         Zeigen Sie, dass jede DNF-Formel für die Boolesche
-        Funktion $x_1 \oplus \dots \oplus x_n$ genau       
+        Funktion $x_1 \oplus \dots \oplus x_n$ genau        
         $2^{n-1}$ Terme besitzen muss.
 
     Sie haben eventuell von Methoden zur Minimierung von

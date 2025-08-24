@@ -5,7 +5,7 @@
     mit einer Beschreibung eines Formats in natürlicher
     Sprache; (2) basteln uns daraus mit Hilfe des "Baukastenprinzips"
     eine reguläre Sprache; (3) säubern diese, indem wir
-    Regeln der Form $X \rightarrow Y$ und     
+    Regeln der Form $X \rightarrow Y$ und      
     $X \rightarrow a$ eliminieren; (4) bauen einen nichtdeterministischen
     endlichen Automaten; (5) transformieren diesen in einen
     deterministischen endlichen Automaten.
@@ -45,8 +45,8 @@
     Beginnen wir mit dem Alphabet. Da es 62 alphanumerische
     Zeichen gibt: `a..zA..Z0..9` und wir uns keine unnötige
     Arbeit machen wollen, beschränken wir uns auf ein Zeichen:
-    `a`. Dazu kommen die Separatoren `:-.`. Also:     
-    $\Sigma = \{a,.,:,-\}$. Stellen Sie sich einfach vor,     
+    `a`. Dazu kommen die Separatoren `:-.`. Also:      
+    $\Sigma = \{a,.,:,-\}$. Stellen Sie sich einfach vor,      
     $a$ stehe für beliebige alphanumerische Zeichen. Sowohl
     Grammatik als auch Automaten lassen sich einfach anpassen.
     Wir beginnen ganz unten und schreiben eine Grammatik
@@ -57,9 +57,9 @@
     B&\rightarrow a \ | \ aB
     \end{align*}
 
-    Als nächstes führen wir ein nichtterminales Symbole     
-    $C$ für Labels mit `:` ein und ein Nichtterminal     
-    $D$ für Labels mit `-`. Wir wählen die Buchstaben     
+    Als nächstes führen wir ein nichtterminales Symbole      
+    $C$ für Labels mit `:` ein und ein Nichtterminal      
+    $D$ für Labels mit `-`. Wir wählen die Buchstaben      
     $C,D$, weil `:` auf Englisch _colon_ und `-` _dash_
     heißt. $C$-Labels können wir uns nach dem Baukastenprizip
     bauen, in dem wir Theorem >>operation-L  anwenden.
@@ -77,9 +77,9 @@
     \end{align*}
 
     Von $L$ lassen sich nun also alle Labels ableiten.
-    Wir brauchen nun zum Schluss wieder eine Folge von     
+    Wir brauchen nun zum Schluss wieder eine Folge von      
     $L$, mit `.` separiert, müssen also wieder Theorem
-    >>operation-L  anwenden, dieses mal auf die von     
+    >>operation-L  anwenden, dieses mal auf die von      
     $T$ erzeugte Sprache. Im Ergebnis benennen wir das
     Startsymbol in $S$ um.
 
@@ -90,8 +90,8 @@
     \end{align*}
 
     Um eine "richtig" reguläre Sprache zu erhalten, entzerren
-    wir die erweitert regulären Produktionen wie     
-    $C \rightarrow a{:}C$. Dafür brauchen wir neue Symbole     
+    wir die erweitert regulären Produktionen wie      
+    $C \rightarrow a{:}C$. Dafür brauchen wir neue Symbole      
     $C', D', S'$:
 
     \begin{align*}
@@ -106,9 +106,9 @@
     |> Topic
         3. Die reguläre Grammatik säubern
 
-    Wir wollen nun alle Produktionen der Form     
+    Wir wollen nun alle Produktionen der Form      
     $Y \rightarrow x$ eliminieren. Hierfür nehmen wir
-    uns _ein_ neues Nichtterminal $E$ und ersetzen     
+    uns _ein_ neues Nichtterminal $E$ und ersetzen      
     $Y \rightarrow x$ durch $Y \rightarrow xE$ und fügen
     die Produktion $E \rightarrow \epsilon$ hinzu.
 
@@ -122,9 +122,9 @@
     E&\rightarrow \epsilon
     \end{align*}
 
-    In einem zweiten Schritt wollen wir die Produktionen     
+    In einem zweiten Schritt wollen wir die Produktionen      
     $S \rightarrow C$ und $S \rightarrow D$ eliminieren,
-    sodass wir nur noch Produktionen der From     
+    sodass wir nur noch Produktionen der From      
     $X \rightarrow aY$ und $E \rightarrow \epsilon$ haben.
     Wir gehen vor wie in Theorem >>theorem-regular-simplified 
     beschrieben. Wir ersetzen $S \rightarrow C$ also durch
@@ -132,7 +132,7 @@
     wobei $\alpha$ eine Wortform ist, die sich aus $C$
     ableiten lässt und nicht nur aus einem einzelnen Nichtterminal
     besteht; dies trifft glücklicherweise auf _alle_ rechten
-    Seiten der $C$-Produktionen zu; gleiches gilt für     
+    Seiten der $C$-Produktionen zu; gleiches gilt für      
     $D$. Wir erhalten:
 
     \begin{align*}
@@ -149,7 +149,7 @@
         4. Einen nichtdeterministischen endlichen Automaten
         bauen
 
-    Dies sollte nun einfach sein. Wir erschaffen Zustände     
+    Dies sollte nun einfach sein. Wir erschaffen Zustände      
     $S, C, C', D, D', S', E$ und übersetzen jeden Grammatik-Pfeil
     in einen Automaten-Pfeil.
 
@@ -170,13 +170,13 @@
     Zustandsmenge $Q = \{S, S', C, C', D, D', E\}$, also
     insgesamt sieben Zustände. Wenn wir genau nach Buch
     vorgingen, müssten wir den endlichen Automaten auf
-    der Zustandsmenge $2^Q$ definieren, er hätte also     
+    der Zustandsmenge $2^Q$ definieren, er hätte also      
     $2^7 = 128$ viele Zustände. Das wäre jetzt für einen
     Rechner kein Problem, aber in diesem vorlesungsskript
     doch etwas ungünstig. Wir gehen _lazy_ vor, erschaffen
     Zustände in $2^Q$ also nur dann, wenn wir sie brauchen.
     Wir beginnen mit dem Zustand $\{S\}$ und legen dann
-    an jeden Zustand Kanten an, jeweils mit     
+    an jeden Zustand Kanten an, jeweils mit      
     $a, :, -, .$ beschriftet, und erschaffen, falls nötig,
     dabei neue Zustände. In der folgenden Animation sehen
     Sie manchmal den mit einem Kreuz markierten Fehlerzustand
@@ -243,11 +243,11 @@
 
     Die Zustände des deterministischen Automaten beschreiben
     im Prinzip das, was wir uns merken müssen, wenn wir
-    so einen String "parsen": Zustand     
+    so einen String "parsen": Zustand      
     $\{C',C,E,D,D',S'\}$, der in der Grammatik dann zum
     Nichtterminal $T$ wird, bedeutet beispielsweise _das
     Label hat schon begonnen, wir wissen aber noch nicht,
-    ob es eines mit `:` oder eines mit `-` ist. Der Zustand     
+    ob es eines mit `:` oder eines mit `-` ist. Der Zustand      
     $\{C',C,E,S'\}$ bzw. das Nichtterminal $C$ heißt dann
     `:` _wir sind innerhalb eines Labels mit_ `:`.
 
@@ -256,7 +256,7 @@
         Hier sehen Sie einen nichtdeterministischen endlichen
         Automaten für die Sprache $L_4 \cup L_6$, also die
         Sprache aller Wörter $1^n$ für ein $n$, das durch
-        4 oder 6 teilbar ist. Da unser Alphabet     
+        4 oder 6 teilbar ist. Da unser Alphabet      
         $\Sigma = \{1\}$ eh nur aus einem Zeichen besteht,
         habe ich auf die Beschriftung der Kanten verzichtet.
 
@@ -268,6 +268,6 @@
 
         Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat
         hätte also $2^{11} = 2048$ Zustände. Führen Sie die
-        Konstruktion _lazy_ durch, indem Sie vom Startzustand     
+        Konstruktion _lazy_ durch, indem Sie vom Startzustand      
         $\{S\}$ ausgehend die Folgezustände konstruieren.
         Wieviele Zustände bekommen Sie?
