@@ -10,15 +10,10 @@ import vxml_renderer as vr
 const ins = string.inspect
 
 fn cli_usage_supplementary() {
-  io.println("TI3 Converter")
+  io.println("Format Writerly to Writerly")
+  io.println("Make sure there exists wly-edit directory where formatted source will be saved")
   io.println("")
-  io.println("Usage:")
-  io.println("  ti3 --fmt [options]           Convert Writerly to Writerly (formatting mode)")
-  io.println("  ti3 [options]                 Convert Writerly to HTML format")
-  io.println("")
-  io.println("Examples:")
-  io.println("  ti3 --fmt --input-dir ./wly --output-dir ./wly-edit")
-  io.println("  ti3 --input-dir ./wly --output-dir ./public")
+  io.println("gleam run -- --fmt")
 }
 
 pub fn main() {
