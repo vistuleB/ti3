@@ -112,7 +112,7 @@
       </div>
     </div>
     <p class="main-column">
-      Es lohnt sich, diese Funktion für kleine Werte von       
+      Es lohnt sich, diese Funktion für kleine Werte von        
       $m$ zu untersuchen. Aus der Definition geht unmittelbar
       hervor, dass $A_0(n) = n+1$ ist. Für $A_1 (n)$ rechnen
       wir
@@ -174,7 +174,7 @@
       $$
     </div>
     <p class="main-column">
-      Das ist schon genug, um eine Vermutung zu formulieren:       
+      Das ist schon genug, um eine Vermutung zu formulieren:        
       $A_3(n) = 2^{n+3} - 3$ und diese dann per Indution
       zu beweisen.
     </p>
@@ -194,7 +194,7 @@
         <b>Beweis.</b>
         Wir verwenden Induktion über
         <span class="nowrap">$m$.</span>
-        Für $m=0$ gilt       
+        Für $m=0$ gilt        
         $A_0(n)= n+1$ und somit
         <span class="nowrap">$A_0 = \succ$.</span>
         Sei nun also
@@ -238,7 +238,7 @@
         Argumente nimmt und $A_{m-1}(1)$ zurückgibt. Also:
         <span class="nowrap">$g = \comp(A_{m-1}, {\rm one})$.</span>
         Wir könnten sogar
-        noch frecher sein und       
+        noch frecher sein und        
         $g = \comp(\succ, \comp(\succ, \comp(... \comp(\succ,
         \zero))))$
         schreiben, einfach $A_{m-1}(1)$ mal hintereinander;
@@ -266,9 +266,9 @@
       Funktion $A(m,n)$
       <i>berechenbar</i>
       ist? In der primitiven
-      Rekursion haben wir keine Möglichkeit, den Index       
+      Rekursion haben wir keine Möglichkeit, den Index        
       $m$ als Eingabewert zu lesen und dann aus dem unendlichen
-      Array primitiv rekursiver Funktionen       
+      Array primitiv rekursiver Funktionen        
       $[A_0, A_1, A_2, \dots]$ den Eintrag $A_m$ auszulesen.
       Aber
       <i>berechenbar</i>
@@ -307,7 +307,7 @@
       <i>eine</i>
       Funktion $A(m,n)$ mit
       <i>zwei</i>
-      Eingabeparametern, und       
+      Eingabeparametern, und        
       $m$ ist nun einer dieser beiden. Anders ausgedrückt:
       sie können zwar jedes einzelne  $A_m$ in der "Programmiersprache"
       der primitiven Rekursion implementieren, allerdings
@@ -315,21 +315,21 @@
       keinen Code schreiben, der, gegeben
       <span class="nowrap">$m$,</span>
       den Code
-      für $A_m$ irgendwie implizit produziert und dann mit      
+      für $A_m$ irgendwie implizit produziert und dann mit       
       $n$ aufruft. Jedenfalls nicht in der Programmiersprache
       der primitiven Rekursion.
       <b>Beweisidee.</b>
-      Für jedes feste      
-      $m$ ist die ein-parametrige Funktion      
+      Für jedes feste       
+      $m$ ist die ein-parametrige Funktion       
       $A_m := n \mapsto A(m,n)$ primitiv rekursiv und kann
       als Funktion mit $m$ verschachtelten
       <code>for</code>-Schleifen
-      betrachtet werden. Es wird sich herausstellen, dass       
+      betrachtet werden. Es wird sich herausstellen, dass        
       $A_m$ in gewisser Weise die am schnellsten wachsende
       aller solcher Funktionen ist. Wäre also $A(m,n)$ primitiv-rekursiv,
       dann könnten wir es mit $d$ verschachtelten
       <code>for</code>-Schleifen
-      berechnen; was ein Widerspruch ist, weil bereits       
+      berechnen; was ein Widerspruch ist, weil bereits        
       $A_{d+1}$ schneller wächst als jede primitiv-rekursive
       Funktion mit $d$ verschachtelten Schleifen.
     </p>
@@ -370,17 +370,17 @@
       <p>
         Sei zum Beispiel $g(x,y) = x \cdot y$ und
         <span class="nowrap">$f(x) = 2^x$.</span>
-        Dann majorisiert $2^x$ die Funktion       
+        Dann majorisiert $2^x$ die Funktion        
         $x \cdot y$ nicht; sei beispielsweise
         <span class="nowrap">$(x,y) = (3,2)$,</span>
         dann ist $g(x,y)=6$ aber
         <span class="nowrap">$f(\max(3,2)) = 2^3 = 8$.</span>
-        Allerdings majorisiert       
+        Allerdings majorisiert        
         $2^x + 2$ die Funktion
         <span class="nowrap">$x+y$,</span>
-        ganz allgemein weil       
+        ganz allgemein weil        
         $2^x + 2 \gt x^2$ für alle $x \in \N$ gilt. Wir werden
-        nun zeigen, dass jede primitiv rekursive Funktion       
+        nun zeigen, dass jede primitiv rekursive Funktion        
         $g: \N^k \rightarrow \N$ von einem $A_r$ majorisiert
         wird; hierbei ist wichtig, dass der Index $r$ als
         Konstante betrachtet wird, also von der "Bauweise"
@@ -391,7 +391,7 @@
         <p>
           <b>4.3.5</b>
           <b>Lemma</b>
-          Für jede primitiv rekursive Funktion       
+          Für jede primitiv rekursive Funktion        
           $f: \N^k \rightarrow \N$ gibt es ein
           <span class="nowrap">$r \in \N$,</span>
           so
@@ -403,7 +403,7 @@
         nicht primitiv rekursiv sein kann. Wäre es dies, dann
         gäbe es ja ein
         <span class="nowrap">$r$,</span>
-        so dass das ein-parametrige       
+        so dass das ein-parametrige        
         $A_r$ die zwei-parametrige Funktion $A(m,n)$ majorisieren
         würde:
       </p>
@@ -427,9 +427,9 @@
       <p>
         was offensichtlich ein Widerspruch ist, da beide Seiten
         gleich sind. Wir werden nun das Lemma beweisen. Wir
-        verwenden Induktion über die Weise, in der die Funktion     
+        verwenden Induktion über die Weise, in der die Funktion      
         $f$ konstruiert worden ist, also über die Anzahl der
-        Comp- und PrimRec-Kombinatoren, die wir zum Bau von     
+        Comp- und PrimRec-Kombinatoren, die wir zum Bau von      
         $f$ gebraucht haben. Im folgenden schreiben wir, wenn
         wir einen Vektor   $\vec{x} = (x_1,\dots,x_n)$ aus
         natürlichen Zahlen haben, oft
@@ -438,10 +438,10 @@
         Wir
         betrachten wir die Basisfunktionen
         <span class="nowrap">$\zero, \succ, \pi^n_k$.</span>
-        Wir wissen bereits, dass       
+        Wir wissen bereits, dass        
         $A_0(n) = n+1$ ist, also
         <span class="nowrap">$A_0 = \succ$.</span>
-        Leider majorisiert       
+        Leider majorisiert        
         $A_0$ also $\succ$ nicht. Wie steht es mit
         <span class="nowrap">$A_1$?</span>
         Es gilt
@@ -458,7 +458,7 @@
         $$
       </div>
       <p>
-        wobei wir die Schreibweise       
+        wobei wir die Schreibweise        
         $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$ verwenden.
         Wir schlussfolgern: $A_2$ majorisiert jede Basisfunktion.
         <b>Induktionsschritt.</b>
@@ -476,7 +476,7 @@
         Kombinatoren konstruiert; somit wird
         jede dieser Funktionen von einem $A_r$ majorisiert:
         <span class="nowrap">$A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k$.</span>
-        Für einen Eingabevektor $\vec{x}$ schreiben wir       
+        Für einen Eingabevektor $\vec{x}$ schreiben wir        
         $x := \max(x_1,\dots,x_n)$ und rechnen:
       </p>
       <div class="math-block">
@@ -504,7 +504,7 @@
         $$
       </div>
       <p>
-        Schlussendlich behaupte ich, dass       
+        Schlussendlich behaupte ich, dass        
         $A_{q+1}(x+1) \leq A_{q+2}(x)$ gilt:
       </p>
       <div class="math-block">
@@ -534,7 +534,7 @@
       </div>
       <p>
         wobei $g, h$ bereits mit weniger Kombinatoren konstruierte
-        primitiv rekursive Funktionen sind. Daher gibt es ein       
+        primitiv rekursive Funktionen sind. Daher gibt es ein        
         $q \in \N$ mit $A_q \gt g$ und
         <span class="nowrap">$A_q \gt h$.</span>
         
@@ -589,7 +589,7 @@
       </div>
       <p>
         Die Behauptung reicht aber noch nicht, da die rechte
-        Seite der Ungleichung       
+        Seite der Ungleichung        
         $f(t,\vec{x}) \lt A_{q+1}(t+x)$ eine Funktion in zwei
         Parametern ist: $t$ und
         <span class="nowrap">$x$,</span>
@@ -622,7 +622,7 @@
       in etwa die "Verschachtelungstiefe" von
       <span class="nowrap">$f$.</span>
       Betrachten
-      wir beispielsweise die Funktion       
+      wir beispielsweise die Funktion        
       $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln
       auf, wie wir diese als primitiv-rekursive Funktion
       konstruiert haben:

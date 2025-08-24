@@ -41,9 +41,9 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 5.7.1</b>
-        Sei  
+        Sei   
         $\Sigma = \{\sigma_1, \sigma_2, \dots, \sigma_k\}$
-        ein endliches Alphabet. Wir können jedes Zeichen  
+        ein endliches Alphabet. Wir können jedes Zeichen   
         $\sigma_i \in \Sigma$ als natürliche Zahl $i$ codieren.
         Ein Wort $\alpha \in \Sigma^*$ wird somit zu einer
         Folge
@@ -53,7 +53,7 @@
         <a href="./2-2.html">Kapitel 2.2</a>als
         <i>eine</i>
         natürliche Zahl $\bar{\alpha}$ codieren
-        können. Mittels dieser Codierung wird eine Sprache  
+        können. Mittels dieser Codierung wird eine Sprache   
         $L \subseteq \Sigma^*$ zu einer Funktion
       </p>
       <div class="math-block">
@@ -69,7 +69,7 @@
         $$
       </div>
       <p>
-        Sei $L$ eine reguläre Sprache. Zeigen Sie, dass  
+        Sei $L$ eine reguläre Sprache. Zeigen Sie, dass   
         $f_L$ primitiv rekursiv ist!
       </p>
     </div>
@@ -77,13 +77,13 @@
       Reguläre Sprachen und Schaltkreise
     </h1>
     <p class="main-column">
-      Wir können jedes Zeichen $\sigma \in \Sigma$ als Bitstring  
+      Wir können jedes Zeichen $\sigma \in \Sigma$ als Bitstring   
       $x_{\sigma} \in \cube^k$ codieren, mit
       <span class="nowrap">$k = \ceil{\log_2|\Sigma|}$,</span>
-      und damit jedes  
-      $\alpha = (a_1, \dots, a_n) \in \Sigma^*$ als  
-      $x_a \in \cube^*$ mit $nk$ Bits. Smit wird jede Sprache  
-      $L \subseteq \Sigma^*$ zu einer Funktion  
+      und damit jedes   
+      $\alpha = (a_1, \dots, a_n) \in \Sigma^*$ als   
+      $x_a \in \cube^*$ mit $nk$ Bits. Smit wird jede Sprache   
+      $L \subseteq \Sigma^*$ zu einer Funktion   
       $f_L : \cube^* \rightarrow \cube$ mittels
     </p>
     <div class="math-block main-column">
@@ -99,7 +99,7 @@
       $$
     </div>
     <p class="main-column">
-      Für festes $n$ definieren wir  
+      Für festes $n$ definieren wir   
       $f_L^n : \cube^n \rightarrow \cube$ als die Restriktion
       von $f_L$ auf
       <span class="nowrap">$\cube$,</span>
@@ -113,7 +113,7 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 5.7.2</b>
-        Verbessern Sie die obige Konstruktion: Ihr Schaltkreis  
+        Verbessern Sie die obige Konstruktion: Ihr Schaltkreis   
         $C$ sollte nun Tiefe $O(\log(n))$ haben und vorzugsweise
         immer noch $O(n)$ Gates.
       </p>
@@ -160,8 +160,8 @@
         <i>kein</i>
         Wort in
         <span class="nowrap">$L(M)$.</span>
-        Zeigen Sie, dass 
-        $L(M)$ eine reguläre Sprache ist. Dass man also aus 
+        Zeigen Sie, dass  
+        $L(M)$ eine reguläre Sprache ist. Dass man also aus  
         $M$ einen neuen Automaten $M'$ bauen kann, der nur
         nach rechts laufen kann.
       </p>
@@ -181,7 +181,7 @@
         $$
       </div>
       <p>
-        Zeigen Sie, dass ein endlicher Automat für $L$ mindestens  
+        Zeigen Sie, dass ein endlicher Automat für $L$ mindestens   
         $2^k$ Zustände braucht.
       </p>
     </div>
@@ -197,10 +197,10 @@
         <b>Übungsaufgabe 5.7.6</b>
         <b>(Challange.)</b>
         Sei $L$ die Sprache aus der vorherigen
-        Aufgabe und $\bar{L} = \Sigma^* \setminus L$ ihr Komplement.  
+        Aufgabe und $\bar{L} = \Sigma^* \setminus L$ ihr Komplement.   
         $\bar{L}$ ist also die Sprache aller Wörter, in denen
         jedes Zeichen aus $\Sigma$ mindestens einmal vorkommt.
-        Zeigen Sie, dass jede reguläre Grammatik für  
+        Zeigen Sie, dass jede reguläre Grammatik für   
         $\bar{L}$ mindestens $2^k$ Nichtterminale benötigt.
       </p>
     </div>
