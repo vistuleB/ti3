@@ -4,6 +4,9 @@
     --outer-well-width: 100vw;
     --carousel-arrow-size: 48px;
     --body-top-margin: 80px;
+    --carousel-indicator-size: 12px;
+    --carousel-indicator-padding: 12px;
+    --max-carousel-indicators-per-line: 30;
 }
 
 * {
@@ -424,10 +427,10 @@ figure.main-column img.constrained,
 }
 
 .carousel__indicators {
-    max-width: calc(100% - (var(--carousel-arrow-size) * 2));
+    max-width: calc(var(--carousel-indicator-size) * var(--max-carousel-indicators-per-line) * 2); /* double the space because we are accounting for padding of each indicator */
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 12px;
+    gap: 8px var(--carousel-indicator-padding);
     justify-content: center;
     margin-top: 4px;
     padding: 0;
@@ -435,8 +438,8 @@ figure.main-column img.constrained,
 }
 
 .carousel__indicator {
-    width: 12px;
-    height: 12px;
+    width: var(--carousel-indicator-size);
+    height: var(--carousel-indicator-size);
     border-radius: 50%;
     border: none;
     background-color: rgba(0, 0, 0, 0.3);
