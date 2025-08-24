@@ -182,34 +182,17 @@
             href=./code/regular-expressions/TestRegex.java
             TestRegex.java
         \ herunter, kompilieren und starten Sie es.
-        |> pre
-            |> span
-                class=terminalPrompt
-                java TestRegex
-            |> br
-            |> span
-                class=terminalOutput
-                Please enter a regular expression:
-                |> span
-                    (a+)(:a+)*
-            |> br
-            |> span
-                class=terminalOutput
-                Enter words to be matched, one per line
-            |> br
-            |> span
-                aaaaa:aa:aaaa:a
-            |> br
-            |> span
-                class=terminalOutput
-                true
-            |> br
-            |> span
-                aaa:aa:
-            |> br
-            |> span
-                class=terminalOutput
-                false
+        
+        ```arbitrary-prompt-response
+        user@home:~$ java TestRegex
+        Please enter a regular expression: <- (a+)(:a+)*
+        Enter words to be matched, one per line 
+        <- aaaaa:aa:aaaa:a
+        true
+        <- aaa:aa:
+        false
+        ```
+
         Schreiben Sie nun einen regulären Ausdruck $R$ für
         die obige Sprache und testen Sie ihn mit dem Java-Programm.
 
