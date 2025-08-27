@@ -13,7 +13,6 @@ version = "1.0.0"
 # https://gleam.run/writing-gleam/gleam-toml/.
 
 [dependencies]
-blamedlines = { "path" = "../../vistuleB/blamedlines" }
 vxml = { "path" = "../../vistuleB/vxml" }
 writerly = { "path" = "../../vistuleB/writerly" }
 vxml_desugaring = { "path" = "../../vistuleB/vxml_desugaring" }

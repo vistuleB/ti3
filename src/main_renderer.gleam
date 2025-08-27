@@ -1,9 +1,10 @@
-import blamedlines.{type Blame, type OutputLine, OutputLine, Src}
+import blame.{type Blame, Src}
 import gleam/io
 import gleam/list
 import gleam/result
 import gleam/string.{inspect as ins}
 import infrastructure as infra
+import io_lines.{type OutputLine, OutputLine}
 import main_pipeline.{main_pipeline}
 import simplifile
 import vxml.{type VXML}
@@ -62,9 +63,9 @@ fn ti3_splitter(
       fn(chapter, chapter_index) {
         let chapter_number = chapter_index + 1
         vr.OutputFragment(
+          Chapter(chapter_number),
           string.inspect(chapter_number) <> "-0" <> ".html",
-          chapter,
-          Chapter(chapter_number)
+          chapter
         )
       }
     )
@@ -79,9 +80,9 @@ fn ti3_splitter(
           fn(sub, sub_index) {
             let sub_number = sub_index + 1
             vr.OutputFragment(
+              Sub(chapter_number, sub_number),
               string.inspect(chapter_number) <> "-" <> string.inspect(sub_number) <> ".html",
-              sub,
-              Sub(chapter_number, sub_number)
+              sub
             )
           }
         )
@@ -90,7 +91,7 @@ fn ti3_splitter(
     |> list.flatten
 
   list.flatten([
-    [vr.OutputFragment("index.html", index, Index)],
+    [vr.OutputFragment(Index, "index.html", index)],
     chapter_fragments,
     sub_fragments,
   ])
@@ -235,8 +236,8 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
 pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
   let renderer =
     vr.Renderer(
-      assembler: vr.default_input_lines_assembler(amendments.spotlight_paths),
-      source_parser: vr.default_writerly_source_parser(amendments.spotlight_key_values),
+      assembler: vr.default_assembler(amendments.spotlight_paths),
+      parser: vr.default_writerly_parser(amendments.spotlight_key_values),
       pipeline: main_pipeline(),
       splitter: ti3_splitter,
       emitter: our_emitter,
@@ -248,7 +249,8 @@ pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
     vr.RendererParameters(
       input_dir: "./wly",
       output_dir: "./public",
-      prettifier_behavior: vr.PrettifierOff
+      prettifier_behavior: vr.PrettifierOff,
+      pipeline_table: True
     )
     |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
 

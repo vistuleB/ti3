@@ -5,7 +5,7 @@ import gleam/string.{inspect as ins}
 import vxml_renderer as vr
 import infrastructure as infra
 import vxml.{type VXML, V}
-import blamedlines.{Src}
+import blame.{Src}
 import formatter_pipeline.{formatter_pipeline}
 
 type FragmentType {
@@ -66,8 +66,8 @@ pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
 
   let renderer =
     vr.Renderer(
-      assembler: vr.default_input_lines_assembler(amendments.spotlight_paths),
-      source_parser: vr.default_writerly_source_parser(amendments.spotlight_key_values),
+      assembler: vr.default_assembler(amendments.spotlight_paths),
+      parser: vr.default_writerly_parser(amendments.spotlight_key_values),
       pipeline: pipeline,
       splitter: splitter,
       emitter: vr.stub_writerly_emitter,
@@ -79,7 +79,8 @@ pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
     vr.RendererParameters(
       input_dir: "./wly",
       output_dir: "./wly-edit",
-      prettifier_behavior: vr.PrettifierOff
+      prettifier_behavior: vr.PrettifierOff,
+      pipeline_table: True
       
     )
     |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
