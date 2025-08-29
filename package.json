@@ -4,8 +4,8 @@
     "vite": "^7.0.6"
   },
   "scripts": {
-    "server": "vite public --host 0.0.0.0 --port 8080",
-    "gleam": "nodemon --watch wly --ext wly --exec \"gleam run\"",
+    "serve": "vite public --host 0.0.0.0 --port 8080",
+    "watch-wly": "nodemon --watch wly --ext wly --exec \"gleam run\"",
     "open": "open http://127.0.0.1:8080"
   }
 }
