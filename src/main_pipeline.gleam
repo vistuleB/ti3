@@ -189,7 +189,7 @@ pub fn main_pipeline()  -> List(Pipe) {
   ]
   |> list.flatten
   |> infra.wrap_desugarers(
-    infra.Off,
+    infra.TrackingOff,
     sl.verbatim("ächstes wollen wir zeig")
     |> infra.extend_selector_up(4)
     |> infra.extend_selector_down(16)

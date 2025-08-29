@@ -22,7 +22,7 @@ pub fn main() {
   case args {
     ["--help"] | ["-h"] -> {
       cli_usage_supplementary()
-      vr.cli_usage()
+      vr.basic_cli_usage()
     }
 
     _ -> {
@@ -32,7 +32,7 @@ pub fn main() {
           io.println("")
           io.println("command line error: " <> ins(error))
           io.println("")
-          vr.cli_usage()
+          vr.basic_cli_usage()
           cli_usage_supplementary()
         }
       )

@@ -54,7 +54,7 @@ fn ti3_splitter(
 
   let #(chapters, list_list_subs) =
     chapters
-    |> list.map(infra.excise_children(_, fn(child) {infra.has_class(child, "subchapter")}))
+    |> list.map(infra.extract_children(_, fn(child) {infra.has_class(child, "subchapter")}))
     |> list.unzip
 
   let chapter_fragments =
@@ -236,8 +236,8 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
 pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
   let renderer =
     vr.Renderer(
-      assembler: vr.default_assembler(amendments.spotlight_paths),
-      parser: vr.default_writerly_parser(amendments.spotlight_key_values),
+      assembler: vr.default_assembler(amendments.only_paths),
+      parser: vr.default_writerly_parser(amendments.only_key_values),
       pipeline: main_pipeline(),
       splitter: ti3_splitter,
       emitter: our_emitter,

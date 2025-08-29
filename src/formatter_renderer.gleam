@@ -66,8 +66,8 @@ pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
 
   let renderer =
     vr.Renderer(
-      assembler: vr.default_assembler(amendments.spotlight_paths),
-      parser: vr.default_writerly_parser(amendments.spotlight_key_values),
+      assembler: vr.default_assembler(amendments.only_paths),
+      parser: vr.default_writerly_parser(amendments.only_key_values),
       pipeline: pipeline,
       splitter: splitter,
       emitter: vr.stub_writerly_emitter,
