@@ -427,7 +427,10 @@ figure.main-column img.constrained,
 }
 
 .carousel__indicators {
-    max-width: calc(var(--carousel-indicator-size) * var(--max-carousel-indicators-per-line) * 2); /* double the space because we are accounting for padding of each indicator */
+    max-width: min(
+      calc((var(--carousel-indicator-size) + var(--carousel-indicator-padding)) * 30),
+      calc(100% - (2 * var(--carousel-arrow-size)))
+    );
     display: flex;
     flex-wrap: wrap;
     gap: 8px var(--carousel-indicator-padding);
