@@ -105,6 +105,8 @@ class Carousel {
     this.container = container;
     this.carousel = container.querySelector(".carousel");
     this.carouselItems = container.querySelectorAll(".carousel__item");
+    this.indicators = null;
+    this.hasIndicators = false;
     this.totalCarouselItems = this.carouselItems.length - 1;
     this.currentCarouselItem = 0;
 
@@ -112,9 +114,17 @@ class Carousel {
   }
 
   init() {
-    this.createNavigationButtons();
-    this.createIndicators();
-    this.showCurrentItem();
+    onMobile(() => {
+      this.createNavigationButtons();
+      this.showCurrentItem();
+    });
+
+    onWideScreen(() => {
+      this.createNavigationButtons();
+      this.createIndicators();
+      this.showCurrentItem();
+    });
+
     this.attachEventListeners();
   }
 
@@ -137,8 +147,10 @@ class Carousel {
   }
 
   createIndicators() {
-    const indicatorsContainer = document.createElement("div");
-    indicatorsContainer.className = "carousel__indicators";
+    if (this.hasIndicators && this.indicators) return;
+
+    this.indicators = document.createElement("div");
+    this.indicators.className = "carousel__indicators";
 
     for (let i = 0; i <= this.totalCarouselItems; i++) {
       const indicator = document.createElement("button");
@@ -146,10 +158,19 @@ class Carousel {
       if (i === 0) indicator.classList.add("active");
       indicator.setAttribute("aria-label", `Go to slide ${i + 1}`);
       indicator.addEventListener("click", () => this.goToCarouselItem(i));
-      indicatorsContainer.appendChild(indicator);
+      this.indicators.appendChild(indicator);
     }
 
-    this.container.appendChild(indicatorsContainer);
+    this.container.appendChild(this.indicators);
+    this.hasIndicators = true;
+  }
+
+  removeIndicators() {
+    if (this.hasIndicators && this.indicators) {
+      this.container.removeChild(this.indicators);
+      this.indicators = null;
+      this.hasIndicators = false;
+    }
   }
 
   showCurrentItem() {
@@ -194,6 +215,11 @@ class Carousel {
     }
   }
 
+  handleResize() {
+    onMobile(() => this.removeIndicators());
+    onWideScreen(() => this.createIndicators());
+  }
+
   attachEventListeners() {
     const prevBtn = this.container.querySelector(".carousel__nav-item--prev");
     const nextBtn = this.container.querySelector(".carousel__nav-item--next");
@@ -205,6 +231,8 @@ class Carousel {
     nextBtn.addEventListener("click", () => {
       this.changeCarouselItem(1);
     });
+
+    window.addEventListener("resize", () => this.handleResize());
   }
 }
 
@@ -286,6 +314,12 @@ const onWideScreen = (callback) => {
   const screenWidth = window.innerWidth;
   if (screenWidth <= WELL_100VW_MAX_WIDTH) return;
   return callback();
+};
+
+const onMobile = (callback) => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= WELL_100VW_MAX_WIDTH) return callback();
+  return;
 };
 
 const onLoad = () => {
