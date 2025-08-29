@@ -96,7 +96,7 @@
 
     |> Highlight
         |> Carousel
-            height=18em
+            width=36em
             src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-01.svg
             src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-02.svg
             src=./img/context-free/LR/LR-first-example/aaaabbbc-example-01-03.svg
@@ -127,7 +127,7 @@
 
     |> Highlight
         |> Carousel
-            height=18em
+            width=36em
             src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-01.svg
             src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-02.svg
             src=./img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-03.svg
