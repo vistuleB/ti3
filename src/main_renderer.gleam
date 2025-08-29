@@ -250,7 +250,7 @@ pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
       input_dir: "./wly",
       output_dir: "./public",
       prettifier_behavior: vr.PrettifierOff,
-      pipeline_table: True
+      table: True
     )
     |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
 

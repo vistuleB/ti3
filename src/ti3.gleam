@@ -1,10 +1,10 @@
 import argv
+import formatter_renderer
+import gleam/dict
 import gleam/io
 import gleam/string
-import gleam/dict
-import infrastructure as infra
-import formatter_renderer
 import main_renderer
+import on
 import vxml_renderer as vr
 
 const ins = string.inspect
@@ -26,7 +26,7 @@ pub fn main() {
     }
 
     _ -> {
-      use amendments <- infra.on_error_on_ok(
+      use amendments <-  on.error_ok(
         vr.process_command_line_arguments(args, ["--fmt"]),
         fn(error) {
           io.println("")
