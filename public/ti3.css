@@ -4,7 +4,7 @@
     --outer-well-width: 100vw;
     --carousel-arrow-size: 48px;
     --body-top-margin: 80px;
-    --carousel-indicator-size: 12px;
+    --carousel-indicator-size: 10px;
     --carousel-indicator-padding: 12px;
     --max-carousel-indicators-per-line: 30;
 }
@@ -452,6 +452,7 @@ figure.main-column img.constrained,
 
 .carousel__indicator.active {
     background-color: #333;
+    transform: scale(1.30);
 }
 
 h1 {
