@@ -80,7 +80,7 @@
       Rekursiv, top-down
     </h1>
     <p class="main-column">
-      Wir teilen die Tabelle in die obere Hälfte (wo        
+      Wir teilen die Tabelle in die obere Hälfte (wo
       $x = 0$ gilt) und die untere Hälfte:
     </p>
     <div class="math-block main-column">
@@ -122,7 +122,7 @@
       einer Null, allerdings ist die Null mittendrin. Überprüfen
       Sie es, wenn ich Ihnen sage, dass die untere Hälfte
       <span style="color:blue">$\bar{y} \vee z$
-      </span>ist (ich schreibe im Fließtext übrigens gerne        
+      </span>ist (ich schreibe im Fließtext übrigens gerne
       $\bar{y}$ statt
       <span class="nowrap">$\neg y$,</span>
       weil das mir lesbarer erscheint).
@@ -138,7 +138,7 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.2.1</b>
-        Führen Sie die Konstruktion zu Ende, indem Sie        
+        Führen Sie die Konstruktion zu Ende, indem Sie
         $\bar{y} \vee z$ und $y \vee z$ mit dem if-then-else-Schaltkreis
         kombinieren.
       </p>
@@ -158,7 +158,7 @@
       <li>
         <p>
           Jede Hälfte kann als Boolesche Funktion mit $n-1$
-          Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise        
+          Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise
           $C_0$ für die obere und $C_1$ für die untere Hälfte,
           beide mit Input-Variablen
           <span class="nowrap">$x_2,\dots,x_n$.</span>
@@ -174,7 +174,7 @@
           $C_1$
           <code>else</code>
           <span class="nowrap">$C_0$,</span>
-          zu einem Schaltkreis für $f$ mit insgesamt        
+          zu einem Schaltkreis für $f$ mit insgesamt
           $n$ Input-Variablen.
         </p>
       </li>
@@ -188,7 +188,7 @@
         <b>2.2.1</b>
         <b>Definition</b>
         Sei $f: \{0,1\}^n \rightarrow \{0,1\}$ eine Boolesche
-        Funktion, $i \in \{1,\dots,n\}$ ein Index und        
+        Funktion, $i \in \{1,\dots,n\}$ ein Index und
         $b \in \{0,1\}$ ein Wert. Dann ist $f|_{x_i=b}$ eine
         neue Funktion, und zwar
       </p>
@@ -204,7 +204,7 @@
         In Worten: wir fixieren den
         <span class="nowrap">$i$-ten</span>
         Input auf den
-        Wert $b$ und erhalten eine Funktion in den restlichen        
+        Wert $b$ und erhalten eine Funktion in den restlichen
         $n-1$ Variablen.
       </p>
     </div>
@@ -376,8 +376,8 @@
       davon ein, muss wohl eine 1 herauskommen.
       Wir gehen also in der Wahrheitstabelle alle Zeilen
       mit Wert 0 durch und schreiben einen Ausdruck, der
-      genau diese Zeile verbietet. So kann man den Ausdruck        
-      $(\bar{x} \vee \bar{y} \vee z)$ verstehen als "        
+      genau diese Zeile verbietet. So kann man den Ausdruck
+      $(\bar{x} \vee \bar{y} \vee z)$ verstehen als "
       $(x,y,z)$ darf nicht $(1,1,0)$ sein." An dem obigen
       Beispiel ergibt dies:
     </p>
@@ -401,7 +401,7 @@
       <span class="nowrap">$\bar{x} \vee \bar{y} \vee z$,</span>
       also ein OR von Literaten,
       nennt man auch eine
-      <i>Klausel</i>. Eine Klausel mit        
+      <i>Klausel</i>. Eine Klausel mit
       $n$ (hier:
       <span class="nowrap">$n=3$)</span>
       Literaten verbietet genau ein Tupel
@@ -454,7 +454,7 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.2.5</b>
-        Zeigen Sie, dass es zu jeder Booleschen Funktion        
+        Zeigen Sie, dass es zu jeder Booleschen Funktion
         $f: \{0,1\}^n \rightarrow \{0,1\}$ eine äquivalente
         DNF-Formel mit höchstens $2^{n-1}$ Termen gibt.
       </p>
@@ -463,7 +463,7 @@
       <p>
         <b>Übungsaufgabe 2.2.6</b>
         Zeigen Sie, dass jede DNF-Formel für die Boolesche
-        Funktion $x_1 \oplus \dots \oplus x_n$ genau        
+        Funktion $x_1 \oplus \dots \oplus x_n$ genau
         $2^{n-1}$ Terme besitzen muss.
       </p>
     </div>

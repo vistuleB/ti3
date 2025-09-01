@@ -39,7 +39,7 @@
             src=img/circuits/and-n-fold-log-depth.svg
             loading=lazy
 
-    In beiden Fällen ersetzen wir ein AND-Gate von Fan-in        
+    In beiden Fällen ersetzen wir ein AND-Gate von Fan-in
     $n$ durch $n - 1$ AND-Gates von je Fan-in 2. Wenn
     wir allerdings die Tiefe betrachten, so sehen wir,
     dass der linke Schaltkreis Tiefe $n - 1$ hat, der
@@ -47,8 +47,8 @@
 
     |> Statement
         title=*Theorem*
-        Sei $C$ ein Schaltkreis Maximum-Fan-in $k$ Größe        
+        Sei $C$ ein Schaltkreis Maximum-Fan-in $k$ Größe
         $s$ und Tiefe $d$. Dann gibt es einen äquivalenten
         Schaltkreis $C^{\prime}$ mit Maximum-Fan-in $2$, Größe
-        höchstens $s(k - 1)$ und Tiefe höchstens        
+        höchstens $s(k - 1)$ und Tiefe höchstens
         $d \ceil{\log_{2}k}$.

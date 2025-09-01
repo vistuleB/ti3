@@ -3,7 +3,7 @@
     |> Statement
         title=*Definition (Ableitung)*
         Sei $G$ eine Grammatik mit Startsymbol $S$. Die Ableitung
-        eines Wortes $\alpha$ ist eine Sequenz von Wortformen   
+        eines Wortes $\alpha$ ist eine Sequenz von Wortformen
         $w_0, w_1, \dots, w_n$ mit $w_0 = S, w_n = \alpha$
         und $w_{i-1} \Longrightarrow w_i$.
 
@@ -78,7 +78,7 @@
             def treeToLeftDerivation (tree):
             \  print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
             \  for child in tree.children (from left ro right):
-            \      treeToLeftDerivation(child) 
+            \      treeToLeftDerivation(child)
             def treeToRightDerivation (tree):
             \  for child in tree.children (from left ro right):
             \      treeToLeftDerivation(child)

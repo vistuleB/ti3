@@ -26,6 +26,10 @@ const p_cannot_be_contained_in = [
 pub fn formatter_pipeline() -> List(Pipe) {
   [
     [
+      dl.identity(),
+      // dl.normalize_spaces__outside(["pre, Math, MathBlock, WriterlyCodeBlock"]),
+      dl.trim_spaces_around_newlines__outside(["pre", "Math", "MathBlock", "WriterlyCodeBlock"]),
+      dl.trim_ending_spaces_except_last_line(),
       dl.find_replace__outside(#("&amp;", "&"), []),
     ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BackslashSquareBracket, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
@@ -51,6 +55,7 @@ pub fn formatter_pipeline() -> List(Pipe) {
       dl.split_last_line_before_suffix(#("MathBlock", "\\end{align}")),
       dl.split_last_line_before_suffix(#("MathBlock", "\\end{align*}")),
       dl.unwrap("WriterlyBlankLine"),
+      dl.trim_spaces_around_newlines__outside(["pre", "Math", "MathBlock", "WriterlyCodeBlock"]),
       dl.trim("p"),
       dl.delete_if_empty("p"),
       dl.add_between(#("MathBlock", "p", "WriterlyBlankLine", [])),

@@ -28,7 +28,7 @@
             src=./img/circuits/maj3.svg
             loading=lazy
 
-    Wie können wir das sinnvoll verallgemeinern für größere        
+    Wie können wir das sinnvoll verallgemeinern für größere
     $n$? Was geschieht, wenn wir einfach die Wahrheitstabellen-Methode
     anwenden? Falls $n$ ungerade ist, dann sieht man leicht,
     dass die Wahrheitstabelle in genau $2^{n-1}$ vielen
@@ -36,7 +36,7 @@
     0.
 
     |> Exercise
-        Sei $n$ eine ungerade Zahl. Zeigen Sie, dass        
+        Sei $n$ eine ungerade Zahl. Zeigen Sie, dass
         $\maj_n$ für genau die Hälfte aller $2^n$ möglichen
         Eingaben eine 1 ausgibt (und für die andere Hälfte
         eine 0).
@@ -61,7 +61,7 @@
     T' := x_1 x_3 x_4 x_6 x_7 \ .
     $$
 
-    Wenn dieser Term 1 wird, dann sind        
+    Wenn dieser Term 1 wird, dann sind
     $x_1 = x_3 = x_4 = x_6 = x_7$ sein, also insgesamt
     fünf Input-Bits 1, und $\maj_7$ gibt 1 aus. Hier ist
     also eine Vereinfachung: wir folgen der Wahrheitstabellen-Methode,
@@ -76,19 +76,19 @@
     an. Auch dieser kommt in der Wahrheitstabelle vor,
     da $\maj_7(1001011)=1$ gilt. In unserer neuen Konstruktion
     wird dieser zu $x_1 x_4 x_6 x_7$ vereinfacht. Nun
-    schauen Sie: wenn $T'$ den Wert 1 ausgibt, dann gibt        
-    $x_1 x_4 x_6 x_7$ auf jeden Fall 1 aus, und        
+    schauen Sie: wenn $T'$ den Wert 1 ausgibt, dann gibt
+    $x_1 x_4 x_6 x_7$ auf jeden Fall 1 aus, und
     $\maj_7$ wird 1; $T'$ ist also redundant. Irgendwie
-    ist das ja auch klar: zu verlangen, dass die fünf Variablen        
+    ist das ja auch klar: zu verlangen, dass die fünf Variablen
     $x_1, x_3, x_4 x_6, x_7$ alle mit 1 abstimmen, ist
     zwar hinreichend, aber eben schon mehr als nötig. Es
     reicht also, sich auf alle Terme mit genau 4 Variablen
-    zu beschränken. Im allgemeinen sei        
+    zu beschränken. Im allgemeinen sei
     $k = \ceil{\frac{k+1}{2}}$. Dann gilt
 
     \begin{align}
     \maj_n (x_1,\dots,x_n) = \bigvee_{\substack{I \subseteq [n] \\ |I| = k}} \bigwedge_{i \in I} x_i
-    \ .
+    .
     \label{johns-equation}
     \end{align}
 
@@ -106,7 +106,7 @@
 
     |> Highlight
         title=*Beweis.*
-        Sei $k \in \{1,\dots,n\}$. Vergleichen wir        
+        Sei $k \in \{1,\dots,n\}$. Vergleichen wir
         ${n \choose k}$ mit ${n \choose k-1}$:
 
         \begin{align*}
@@ -118,21 +118,21 @@
 
         \begin{align*}
         {n \choose k} & \geq {n \choose k-1} \quad \Longleftrightarrow \\
-        \       n-k+1 & \geq k \quad \Longleftrightarrow \\
-        \          2k & \leq n+1 \quad \Longleftrightarrow \\
-        \           k & \leq \frac{n+1}{2} \quad \Longleftrightarrow \\
-        \           k & \leq \floor{ \frac{n+1}{2}} = \ceil{\frac{n}{2}} \ .
+        n-k+1 & \geq k \quad \Longleftrightarrow \\
+        2k & \leq n+1 \quad \Longleftrightarrow \\
+        k & \leq \frac{n+1}{2} \quad \Longleftrightarrow \\
+        k & \leq \floor{ \frac{n+1}{2}} = \ceil{\frac{n}{2}} \ .
         \end{align*}
 
-        Aus der letzten Zeile folgt nun, dass        
+        Aus der letzten Zeile folgt nun, dass
         ${n \choose k}$ durch $k := \ceil{\frac{n}{2}}$ maximiert
-        wird, also        
+        wird, also
         ${n \choose k} \leq {n \choose \ceil{\frac{n}{2}}}$
-        gilt. Als nächstes müssen wir uns die Definition von        
-        ${n \choose k}$ ins Gedächtnis rufen. Nein,        
+        gilt. Als nächstes müssen wir uns die Definition von
+        ${n \choose k}$ ins Gedächtnis rufen. Nein,
         $\frac{n!}{k!(n-k)!}$ ist nicht die Definition, sondern
-        eine Formel dafür. Die Definition ist:        
-        ${n \choose k}$ ist die Menge der Teilmengen von        
+        eine Formel dafür. Die Definition ist:
+        ${n \choose k}$ ist die Menge der Teilmengen von
         $\{1,\dots,n\}$, die Größe $k$ haben. Wieviele Teilmenge
         (jeglicher Größe) gibt es insgesamt? Genau $2^n$ viele:
         Sie müssen für jede Zahl $i \in \{1,\dots,n\}$ die
@@ -144,7 +144,7 @@
         \sum_{k=0}^n {n \choose k} = 2^n \ .
         $$
 
-        Intuitiv gesprochen heißt das: diese Summe hat        
+        Intuitiv gesprochen heißt das: diese Summe hat
         $n+1$ Terme ($k$ wandert von 0 bis $n$, also muss
         der größte Term mindestens ein $(n+1)$-tel des Gesamtbetrages
         sein. Formal:
@@ -181,13 +181,13 @@
     \begin{align*}
     \theta^n_k (x_1,\dots,x_n) & :=
     \begin{cases}
-    \                        1 & \textnormal{ falls $x_1 + \dots + x_n \geq k$} \\
-    \                        0 & \textnormal{ sonst.}
+    1 & \textnormal{ falls $x_1 + \dots + x_n \geq k$} \\
+    0 & \textnormal{ sonst.}
     \end{cases}
     \end{align*}
 
-    Die Funktion $\maj_n$ ist also ein Speziallfall        
-    $\theta^n_k$ für $k = \ceil{\frac{n+1}{2}}$. Wir können        
+    Die Funktion $\maj_n$ ist also ein Speziallfall
+    $\theta^n_k$ für $k = \ceil{\frac{n+1}{2}}$. Wir können
     $\theta^n_k$ rekursiv zerlegen wie folgt:
 
     $$
@@ -197,7 +197,7 @@
     \theta^{n-1}_{k} (x_1,\dots,x_{n-1}) \
     $$
 
-    und somit $\theta^n_k$ aus $\theta^{n-1}_{k-1}$ und        
+    und somit $\theta^n_k$ aus $\theta^{n-1}_{k-1}$ und
     $\theta^{n-1}_k$ berechnen. Rekursiv fortgefühtr sieht
     das dann so aus:
 
@@ -207,11 +207,11 @@
             src=./img/circuits/majority-theta-recursive.svg
             loading=lazy
 
-    Die Konstruktion endet mit $\theta^m_0$, was immer        
-    $1$ ausgibt, und mit $\theta^m_{m}$, was        
+    Die Konstruktion endet mit $\theta^m_0$, was immer
+    $1$ ausgibt, und mit $\theta^m_{m}$, was
     $x_1 \wedge \dots \wedge x_m$ ist. Die Konstruktion
-    ist leider auch nicht effizient; wenn man mit        
-    $C^n_k$ die Anzahl der $\theta^m_m$ und        
+    ist leider auch nicht effizient; wenn man mit
+    $C^n_k$ die Anzahl der $\theta^m_m$ und
     $\theta^m_0$ in diesem Baum zählt, dann sieht man,
     dass
 
@@ -257,13 +257,13 @@
     Implementierung mittels _Dynamic Programming_, bei
     welchem wir uns die Zwischenergebnisse merken. Um Größe
     und Tiefe des Schaltkreises zu analysieren, machen
-    wir eine grobe Abschätzung. Für jedes        
-    $\theta^m_l$, das in unserer Pyramide vorkommt, brauchen
-    wir 2 Gates; $m$ kann die Werte $0, \dots, n$ annehmen
-    und $l$ die Werte $0,\dots,k$, also bekommen wir insgesamt
+    wir eine grobe Abschätzung. Für jedes $\theta^m_l$,
+    das in unserer Pyramide vorkommt, brauchen wir 2 Gates;
+    $m$ kann die Werte $0, \dots, n$ annehmen und $l$
+    die Werte $0,\dots,k$, also bekommen wir insgesamt
     höchstens $(n+1)(k+1)$ graue Kästchen und $O(n^2)$
     Gates. Die Tiefe ist $O(n)$, da in jedem Schritt von
-    grauem Kasten zu dem nächsttieferen der Wert von        
+    grauem Kasten zu dem nächsttieferen der Wert von
     $m$ abnimmt. Insgesamt also haben wir gezeigt:
 
     |> Statement
@@ -278,10 +278,10 @@
     $\maj_n(x_1,\dots,x_n)$ zu bestimmen sollte doch einfach
     sein:  wir zählen die Anzahl der 1en und vergleichen
     sie mit $\ceil{n}{2}$. Wie aber sollen wir zählen?
-    Ganz einfach: mit einem Binäraddierer! Sei        
+    Ganz einfach: mit einem Binäraddierer! Sei
     $d = \ceil{\log_2(n+1)}$ die Anzahl der Bits in der
     Binärdarstellung von $n$. Wir interpretieren jede
-    Input-Variable $x_i$ als $d$-stellige Binärzahl, wobei        
+    Input-Variable $x_i$ als $d$-stellige Binärzahl, wobei
     $x_i = 1$ der Zahl $000\dots 001$, also 1 entspricht,
     und $x_i = 0$ der Zahl $000\dots 0$, also 0, und addieren
     die dann auf:
@@ -304,18 +304,18 @@
         $O(\log n)$ Tiefe mit 2-for-3-Addierern.
 
     Die vorherige Konstruktion mit den Addierern war schon
-    deutlich effizienter als unsere pyramidenartige        
+    deutlich effizienter als unsere pyramidenartige
     $\theta^m_l$-Konstruktion, allerdings wurde das Ziel,
     eine Tiefe von $O (\log n)$ zu erreichen, wieder verfehlt,
-    wenn auch knapp. Die Idee, die eine Tiefe von        
+    wenn auch knapp. Die Idee, die eine Tiefe von
     $O (\log n)$ erreichen wird, ist ebenso einfach wie
     genial.
 
     |> Statement
         title=*Lemma (2-for-3 Adder)*
         Es gibt einen Schaltkreis mit $O(n)$ Gates, Tiefe
-        2 und Fan-In 2, der als Input drei $n$-stellige Binärzahlen        
-        $x,y,z$ nimmt und zwei $n+1$-stellige Binärzahlen         
+        2 und Fan-In 2, der als Input drei $n$-stellige Binärzahlen
+        $x,y,z$ nimmt und zwei $n+1$-stellige Binärzahlen
         $u, v$ ausgibt, so dass
 
         $$
@@ -352,7 +352,7 @@
         nicht mitzählen).
         |> QED
 
-    Wir interpretieren nun die $n$ Inputs        
+    Wir interpretieren nun die $n$ Inputs
     $x_1,\dots,x_n$ von Majoroty als einstellige Binärzahlen,
     sortieren sie in Dreiergruppen und machen per 2-for-3-Addierer
     daraus $\ceil{\frac{2n}{3}}$ Zahlen. Dann machen wir
@@ -362,7 +362,7 @@
     von $\frac{2}{3}$; nach  $\log_{3/2} n$ Ebenen haben
     wir schließlich noch zwei mittlerweile ($\log n$)-stellige
     Zahlen, die wir mit einem "normalen" Binäraddierer
-    addieren. Das Ergebnis vergleichen wir mit dem       
+    addieren. Das Ergebnis vergleichen wir mit dem
     $\geq$-Schaltkreis mit $\frac{k+1}{2}$. Was ist die
     Tiefe des Gesamtschaltkreises? Es ist
 
@@ -385,7 +385,7 @@
     |> Statement
         title=*Theorem*
         Die Konstruktion mit 2-for-3-Addierern gibt uns einen
-        Schaltkreis für Majority mit Fan-in 2, Tiefe        
+        Schaltkreis für Majority mit Fan-in 2, Tiefe
         $O(\log n)$ und Größe $O (n \log n)$
 
     |> Exercise
@@ -409,23 +409,23 @@
     Funktion, also ist es ja irgendwie verständlich, dass
     wir auch einen monotonen Schaltkreis wollen. Unser
     Pyramidenschema, in dem wir alle $\theta^m_k$ berechnen,
-    ist monoton, hat allerdings leider Tiefe        
+    ist monoton, hat allerdings leider Tiefe
     $\Omega(n)$.
 
     |> Topic
         Monoton und polylogarithmische Tiefe durch Halbierung
         und Aufzählung.
 
-    Die Idee ist, dass wir, anstatt $\theta^n_k$ aus        
+    Die Idee ist, dass wir, anstatt $\theta^n_k$ aus
     $x_n$, $\theta^{n-1}_{k-1}$ und $\theta^{n-1}_{k}$
-    zu berechnen, versuchen, irgendwie von $n$ auf        
+    zu berechnen, versuchen, irgendwie von $n$ auf
     $n/2$ runterzukommen. Dann könnten wir rekursiv weitermachen
     und müssten uns nur durch logarithmisch viele Werte
     von $n$ wühlen. Wir sehen, dass wir $k$ auf $k+1$
-    Weisen als Summe zweier nichtnegativer Zahlen        
+    Weisen als Summe zweier nichtnegativer Zahlen
     $a+b = k$ schreiben können. Des weiteren zerlegen
-    wir $\mathbf{x} \in \{0,1\}^n$ in        
-    $\mathbf{y} = (x_1, \dots, x_{n/2})$ und        
+    wir $\mathbf{x} \in \{0,1\}^n$ in
+    $\mathbf{y} = (x_1, \dots, x_{n/2})$ und
     $\mathbf{z} = (x_{n/2+1}, \dots, x_n)$ und sehen,
     dass
 
@@ -446,13 +446,13 @@
     Wenn wir diese Konstruktion rekursiv fortsetzen, erhalten
     wir $\log n$ Ebenen und somit auf den ersten Blick
     logarithmische Tiefe. Auf den zweiten Blick erkennen
-    wir, dass wir etwas geschummelt haben: die        
+    wir, dass wir etwas geschummelt haben: die
     $\bigvee$-Gates haben sehr großen Fan-in, nämlich
-    bis zu $n$. Um Fan-in 2 zu erreichen, müssen wir jedes        
-    $\bigvee$-Gate durch einen Binärbaum aus normalen        
+    bis zu $n$. Um Fan-in 2 zu erreichen, müssen wir jedes
+    $\bigvee$-Gate durch einen Binärbaum aus normalen
     $\vee$-Gates von Fan-in 2 ersetzen. Dies gibt uns
     zusätzlich Tiefe $O(\log n)$ _pro $\bigvee$-Gate_;
-    wir erhalten also insgesamt eine Tiefe von        
+    wir erhalten also insgesamt eine Tiefe von
     $O(\log^2 n)$.
 
     |> Exercise
@@ -467,7 +467,7 @@
     |> Statement
         title=*Theorem*
         Es gibt einen monotonen Schaltkreis mit Fan-in 2,
-        Tiefe $O(\log n)$ und Größe $\poly(n)$, der        
+        Tiefe $O(\log n)$ und Größe $\poly(n)$, der
         $\maj_n$ berechnet.
 
     |> Highlight
@@ -475,7 +475,7 @@
         Die Beweismethode, die wir verwenden, ist womöglich
         neu für Sie. Wir verwenden bei der Konstruktion des
         Schaltkreises _Zufall_; am Ende werden wir zeigen,
-        dass dieser zufällige Schaltkreis mit hoher Wahrscheinlichkeit        
+        dass dieser zufällige Schaltkreis mit hoher Wahrscheinlichkeit
         $\maj_n$ auf allen möglichen $2^n$ Inputs korrekt
         berechnen, und folgern daraus, das etwas, was mit hoher
         Wahrscheinlichkeit eintritt, auch existieren muss.
@@ -486,7 +486,7 @@
         Konstruktion durchführen und Ihnen erklären, das der
         resultierende Schaltkreis höchstwahrscheinlich korrekt
         ist. Während des ganzen Beweises müssen Sie sich vor
-        Augen halten, dass wir bei der Konstruktion des Schaltkreises        
+        Augen halten, dass wir bei der Konstruktion des Schaltkreises
         $C$ Zufall verwenden; wir nehmen nicht an, dass die
         Inputs $x \in \{0,1\}^n$ in irgendeiner Weise zufällig
         sind. Wir verwenden also _Wahrscheinlichkeitsverteilungen
@@ -497,7 +497,7 @@
         |> Statement
             title=*Definition (Signalstärke)*
             Sei $\mathcal{C}$ eine Verteilung über Schaltkreise
-            mit Input-Variablen $x_1,\dots,x_n$. Wir sagen, dass        
+            mit Input-Variablen $x_1,\dots,x_n$. Wir sagen, dass
             $\mathcal{C}$ _Signalstärke mindestens $\delta$_ hat,
             wenn
 
@@ -508,7 +508,7 @@
 
             gilt.
 
-        In Worten, wenn der zufällig ausgewählte Schaltkreis        
+        In Worten, wenn der zufällig ausgewählte Schaltkreis
         $C$ den Wert $\maj_n(x)$ besser als ein Münzwurf vorhersagt,
         und zwar um $\delta/2$ besser. Wir können einen ganz
         einfachen (zufälligen Schaltkreis) bauen, der ein schwache
@@ -516,11 +516,11 @@
 
         |> Statement
             title=*Lemma*
-            Es gibt eine Wahrscheinlichkeitsverteilung        
+            Es gibt eine Wahrscheinlichkeitsverteilung
             $\mathcal{C}_0$ über monotone Schaltkreise der Größe
             1, die Signalstärke $\frac{1}{n}$ hat. Genauer gesagt
             gilt für jeden Input $x \in \{0,1\}^n$: ein nach dieser
-            Verteilung zufällig ausgewählter Schaltkreis        
+            Verteilung zufällig ausgewählter Schaltkreis
             $C \sim \mathcal{C}_0$ ist mit Wahrscheinlichkeit
             mindestens $\frac{1}{2} + \frac{1}{2n}$ korrekt ist.
             Formal ausgedrückt:
@@ -533,7 +533,7 @@
         |> Remark
             title=*Beweis.*
             Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung
-            ist extrem einfach. Wir wählen zufällig einen Index        
+            ist extrem einfach. Wir wählen zufällig einen Index
             $I \in \{1,\dots,n\}$ und geben $x_I$ als unseren
             Schaltkreis $C$ (bestehend aus einem einzigen Input-Gate,
             das gleichzeitig das Output-Gate ist) aus. Dieser Schaltkreis
@@ -549,8 +549,8 @@
             x_I&= \maj_n (\x) \ .
             \end{align*}
 
-            Wir unterscheiden nun zwei Fälle. Wenn        
-            $\maj_n(\x) = 1$ ist, dann gibt es mindestens        
+            Wir unterscheiden nun zwei Fälle. Wenn
+            $\maj_n(\x) = 1$ ist, dann gibt es mindestens
             $k+1$ Indizes $i$ mit $x_i = 1$. Wenn wir mit $I$
             einen solchen ausgewählt haben, dann sind wir erfolgreich.
             Die Wahrscheinlichkeit hierfür ist
@@ -558,14 +558,14 @@
             \begin{align*}
             \Pr_{C \sim \mathcal{C}_0} [C(\x) = 1] = \Pr_{I \in [n]} [x_I = 1]&= \frac{| \{i \in [n]\
             |
-            \ x_i = 1\}}{n} \geq \frac{k+1}{n} \\
+            x_i = 1\}}{n} \geq \frac{k+1}{n} \\
             &= \frac{k+1}{2k+1} = \frac{k + \frac{1}{2} + \frac{1}{2}}{2k+1} \\
             &= \frac{1}{2} + \frac{1}{2n} \ .
             \end{align*}
 
-            Wenn nun $\maj_n(\x) = 0$ ist, dann gibt es mindestens        
-            $k+1$ Stellen $i$ mit $x_i = 0$, und somit ist        
-            $C(\x)$ auch wieder mit Wahrscheinlichkeit mindestens        
+            Wenn nun $\maj_n(\x) = 0$ ist, dann gibt es mindestens
+            $k+1$ Stellen $i$ mit $x_i = 0$, und somit ist
+            $C(\x)$ auch wieder mit Wahrscheinlichkeit mindestens
             $\frac{k+1}{n+1}$ korrekt.
             |> QED
 
@@ -575,9 +575,9 @@
         repräsentativ, aber immerhin leicht besser, als wenn
         Sie einfach raten würden. Unser zufälliger Schaltkreis
         sendet uns also ein schwaches aber positives Signal
-        in die richtige Richtung. Die Signalstärke ist        
+        in die richtige Richtung. Die Signalstärke ist
         $\frac{1}{n}$. Die zweite Zutat ist nun ein "Signalverstäker".
-        Angenommen, eine Verteilung $\mathcal{C}$ hat Signalstärke        
+        Angenommen, eine Verteilung $\mathcal{C}$ hat Signalstärke
         $\delta$, also
 
         $$
@@ -585,9 +585,9 @@
         \Pr_{C \sim \mathcal{C}} [C(\x) = \maj_n(\x)] \geq \frac{1+\delta}{2} \ .
         $$
 
-        Dann können wir _drei_ Schaltkreise        
+        Dann können wir _drei_ Schaltkreise
         $C_1, C_2, C_3 \sim \mathcal{C}$ unabhängig voneinander
-        samplen und einen neuen Schaltkreis bauen:        
+        samplen und einen neuen Schaltkreis bauen:
         $C'(\x) := \maj_3 (C_1(\x), C_2(\x), C_3(\x))$. Dies
         gibt uns wiederum eine Verteilung über Schaltkreise,
         die wir $\mathcal{C}^{\otimes 3}$ nennen. Diese hat
@@ -607,19 +607,19 @@
                     alle Schaltkreise in $\mathcal{C}^{\otimes 3}$ haben
                     Größe $3s+4$;
                 |> li
-                    die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist        
+                    die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
                     $\frac{3}{2} \delta - \frac{1}{2}\delta^3$.
 
         |> Highlight
             title=*Beweis.*
-            Wir betrachten ein festes $\x \in \cube^n$ mit        
+            Wir betrachten ein festes $\x \in \cube^n$ mit
             $\maj_n(\x) = 1$; der Fall $\maj_n(\x) = 0$ ist analog.
             Wir definieren nun $U := C_1(\x)$, $V := C_2(\x)$
-            und $W := C_3(\x)$. Da        
+            und $W := C_3(\x)$. Da
             $C_1, C_2, C_3 \sim \mathcal{C}$ zufällige Schaltkreise
             sind, sind $U, V, W$ Zufallsvariable über $\cube$,
             und zwar _unabhängig_, weil wir $C_1, C_2, C-3$ auch
-            unabhängig gesampelt haben. Wir wissen:        
+            unabhängig gesampelt haben. Wir wissen:
             $\Pr[U=1] = \Pr[V=1] = \Pr[W=1] \geq \frac{1+\delta}{2}
             =: p$.
             Was ist nun $\Pr[\maj_3(U,V,W) = 1]$?
@@ -634,11 +634,11 @@
             \end{align*}
 
             Die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
-            also mindestens        
+            also mindestens
             $\frac{3}{2} \delta - \frac{1}{2} \delta^3$.
             |> QED
 
-        Wir beginnen nun mit der Verteilung        
+        Wir beginnen nun mit der Verteilung
         $\mathcal{C}_0$ über Schaltkreise der Größe 1 und
         definieren
 
@@ -647,26 +647,26 @@
         \end{align*}
 
         Zur Wiederholung: um $C \sim \mathcal{C}_{i+1}$ zu
-        sampeln, sampeln wir unabhängig drei Schaltkreise        
+        sampeln, sampeln wir unabhängig drei Schaltkreise
         $\sim \mathcal{C}_i$ und verknüpfen deren Output-Gates
         mit einem $\maj_3$-Gadget. Wenn $\mathcal{C}_i$ die
-        Signalstärke $\delta_i$ hat, dann hat        
-        $\mathcal{C}_{i+1}$ Signalstärke        
-        $\frac{3}{2} \delta_i - \frac{1}{2} \delta_i^3$. Wenn        
-        $\delta_i \leq 1/2$ sein sollte, dann ist das mindestens        
-        $\frac{5}{4} \delta_i$. Daraus folgt, dass nach höchstens        
+        Signalstärke $\delta_i$ hat, dann hat
+        $\mathcal{C}_{i+1}$ Signalstärke
+        $\frac{3}{2} \delta_i - \frac{1}{2} \delta_i^3$. Wenn
+        $\delta_i \leq 1/2$ sein sollte, dann ist das mindestens
+        $\frac{5}{4} \delta_i$. Daraus folgt, dass nach höchstens
         $i^* := \log_{5/4} n$ Rekursionsstufen eine Signalstärke
-        von mindestens $1/2$ erreicht ist:        
-        $\mathcal{C}_{i^*}$ hat Signalstärke mindestens        
+        von mindestens $1/2$ erreicht ist:
+        $\mathcal{C}_{i^*}$ hat Signalstärke mindestens
         $1/2$. Wenn wir jetzt die rekursive Konstruktion fortsetzen,
-        steigt die Signalstärke weiter an und konvergiert gegen        
+        steigt die Signalstärke weiter an und konvergiert gegen
         $1$: $\lim_{i \rightarrow \infty} \delta_i = 1$. Die
         Frage ist nur, wie schnell konvergiert es? Da wir nun
         nicht mehr an Wahrscheinlichkeiten interessiert sind,
         die knapp über $1/2$ liegen, sondern an solchen, die
         knapp unter $1$ liegen, führen wir einen Parameterwechsel
         durch: eine Verteilung $\mathcal{C}$ von Schaltkreisen
-        mit Inputs $x_1,\dots,x_n$ hat _Fehlerwahrscheinlichkeit        
+        mit Inputs $x_1,\dots,x_n$ hat _Fehlerwahrscheinlichkeit
         $\epsilon$_, wenn
 
         \begin{align*}
@@ -674,7 +674,7 @@
         \end{align*}
 
         Eine Signalstärke von $\delta$ entspricht einer Fehlerwahrscheinlichkeit
-        von $\frac{1-\delta}{2}$. Die Verteilung        
+        von $\frac{1-\delta}{2}$. Die Verteilung
         $\mathcal{C}_{i^*}$ hat also eine Fehlerwahrscheinlichkeit
         von höchstens $\frac{1 - 1/2}{2} = 1/4$. Das obige
         Lemma, nun aus der Sicht der Fehlerwahrscheinlichkeit,
@@ -682,13 +682,13 @@
 
         |> Remark
             title=*Behauptung*
-            Wenn $\mathcal{C}$ Fehlerwahrscheinlichkeit        
+            Wenn $\mathcal{C}$ Fehlerwahrscheinlichkeit
             $\epsilon$ hat, dann hat $\mathcal{C}^{\otimes 3}$
             Fehlerwahrscheinlichkeit $3 \epsilon^2$
 
         |> Highlight
             title=*Beweis.*
-            Wie im Beweis vom Lemma setzen wir        
+            Wie im Beweis vom Lemma setzen wir
             $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
 
             \begin{align*}
@@ -696,21 +696,21 @@
             (1 - \epsilon^3) + 3 (1- \epsilon)^2 \epsilon = 1 - 3 \epsilon^2 \ .
             \end{align*}
 
-            Somit hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit        
+            Somit hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit
             $3 \epsilon^2$.
             |> QED
 
         Für $i^* := \log_{5/4} n$ hat $\mathcal{C}_{i^*}$
         eine Fehlerwahrscheinlichkeit von höchstens $1/4$.
-        Für $i^* + 1$ wird das zu        
-        $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und für        
-        $i^* + 2$ zu        
+        Für $i^* + 1$ wird das zu
+        $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und für
+        $i^* + 2$ zu
         $3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$.
-        Wenn nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt        
-        $3 \epsilon^2 \leq \epsilon^{3/2}$. Wir definieren        
+        Wenn nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt
+        $3 \epsilon^2 \leq \epsilon^{3/2}$. Wir definieren
         $\epsilon_i := \frac{1 - \delta_i}{2}$, also die Fehlerwahrscheinlichkeit
-        von $\mathcal{C}_i$. Es gilt also        
-        $\epsilon_{i+1} \leq (\epsilon_i)^{3/2}$ für alle        
+        von $\mathcal{C}_i$. Es gilt also
+        $\epsilon_{i+1} \leq (\epsilon_i)^{3/2}$ für alle
         $i \geq i^*+2$ und somit
 
         \begin{align*}
@@ -745,7 +745,7 @@
                 style=height:18em
                 src=./img/circuits/majority-probability-close-to-half-labeled.svg
             |> br
-            Signalstärke $\delta$ wächst für        
+            Signalstärke $\delta$ wächst für
             $p \in [1/2, 3/4]$ exponentiell.
         |> hr
 
@@ -754,23 +754,23 @@
                 style=height:18em
                 src=./img/circuits/majority-probability-close-to-one-labeled.svg
             |> br
-            Fehlerwahrscheinlichkeit $\epsilon$ fällt für        
+            Fehlerwahrscheinlichkeit $\epsilon$ fällt für
             $p \in [3/4, 1/2]$ doppelt exponentiell.
         |> hr
-        Wir setzen nun        
+        Wir setzen nun
         $k := i^* + 2 + j^* = \log_{5/4} n + 2 + \log_{3/2}
         n = O(\log n)$
         und sehen, dass $\mathcal{C}_k$ eine Verteilung über
         Schaltkreise mit Tiefe $O(\log n)$ und Fehlerwahrscheinlichkeit
         kleiner als $2^{-n}$ ist. Was nun kommt, ist ein absolutes
         Standardargument in probabilitischen Beweisen: ein
-        Union Bound. Das geht ungefähr so: wenn für jedes feste        
+        Union Bound. Das geht ungefähr so: wenn für jedes feste
         $\b \in \cube^n$ ein Schaltkreis $C \mathcal{C}_k$
         mit Wahrscheinlichkeit $\epsilon_k$ irrt, dann ist
-        die Wahrscheinlichkeit, dass $C$ sich für irgendein        
+        die Wahrscheinlichkeit, dass $C$ sich für irgendein
         $\x \in \cube^n$ irrt, höchstens $2^n \epsilon_k$.
-        Formal: für jedes $\b \in \cube^n$ definieren wir        
-        $E_{\b}$ als die Menge der Schaltkreise mit Input-Variablen        
+        Formal: für jedes $\b \in \cube^n$ definieren wir
+        $E_{\b}$ als die Menge der Schaltkreise mit Input-Variablen
         $x_1,\dots,x_n$, die sich auf $\b$ irren, also
 
         \begin{align*}
@@ -779,7 +779,7 @@
         \end{align*}
 
         Die Verteilung $\mathcal{C}_k$ existiert ja im Wahrscheinlichkeitsraum
-        aller Boolescher Schaltkreise mit Inputs        
+        aller Boolescher Schaltkreise mit Inputs
         $x_1,\dots, x_n$. Die Menge $E_{\b}$ ist somit ein
         _Ereignis_ in diesem Raum. Ein extrem unwahrscheinliches
         Ereignis:
@@ -788,9 +788,9 @@
         \forall \b \in \cube^n: \Pr_{C \sim \mathcal{C}_k} [ C \in E_{\b} ] = \epsilon_k \lt 2^{n-} \ .
         \end{align*}
 
-        Oder kompakt ausgedrückt:        
+        Oder kompakt ausgedrückt:
         $\Pr_{\mathcal{C}_k} [E_{\b}] \lt 2^n$. Wir haben
-        nun ein Ereignis $E_{\b}$ für jedes        
+        nun ein Ereignis $E_{\b}$ für jedes
         $\b \in \cube^n$ und definieren
 
         \begin{align*}
@@ -800,7 +800,7 @@
         Was ist $E$? Es ist die Menge der Schaltkreise, die
         sich auf mindestens einem $\b \in \cube^n$ irren.
         Was ist das Komplement $\bar{E}$? Das ist die Menge
-        der Schaltkreise, die sich auf keinem        
+        der Schaltkreise, die sich auf keinem
         $\b \in \cube^n$ irren, also die Menge der Schaltkreise,
         die $\maj_n$ korrekt berechnen. Es gilt nun
 
@@ -811,34 +811,34 @@
         &\lt \sum_{b \in \cube^n} 2^{-n} = 2^n 2^{-n} = 1 \ .
         \end{align*}
 
-        Also $\Pr_{\mathcal{C}_k}[E] \lt 1$ und somit        
+        Also $\Pr_{\mathcal{C}_k}[E] \lt 1$ und somit
         $\Pr_{\mathcal{C}_k}[\bar{E}] \gt 0$. Das bedeutet,
-        dass ein zufälliger Schaltkreis        
+        dass ein zufälliger Schaltkreis
         $C \sim \mathcal{C}_K$ mit positiver Wahrscheinlichkeit
         die Funktion $\maj_n$ korrekt berechnet. Jeder Schaltkreis,
         der unter $\mathcal{C}_k$ gesampelt werden kann, hat
         Tiefe $O(\log n)$, Fan-in 2 und ist monoton, und somit
-        schließen wir: es gibt einen monotonen Schaltkreis        
-        $C$ mit Fan-in 2 und Tiefe $O(\log n)$, der        
+        schließen wir: es gibt einen monotonen Schaltkreis
+        $C$ mit Fan-in 2 und Tiefe $O(\log n)$, der
         $\maj_n$ berechnet. Es bleibt die Frage, wie groß
         dieser Schaltkreis  $C$ ist. Seien wir hier bequem:
         ein Schaltkreis mit Fan-in 2 und einem Output-Gate
         hat höchstens $2^i$ Gates, die Abstand $i$ vom Output-Gate
-        haben. Somit hat ein Schaltkreis mit Fan-in 2 und Tiefe       
+        haben. Somit hat ein Schaltkreis mit Fan-in 2 und Tiefe
         $d$ höchstens
 
         \begin{align*}
         1 + 2 + 4 + \dots + 2^d = 2^{d+1}-1
         \end{align*}
 
-        Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe        
-        $c \log_2 n$ hat also insgesamt höchstens        
+        Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe
+        $c \log_2 n$ hat also insgesamt höchstens
         $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$ Gates.
         |> QED
 
     |> Exercise
         Präzisieren Sie die Größe von Valiants Schaltkreis
-        und bestimmen ein $c \in \R$, so dass er die Größe        
+        und bestimmen ein $c \in \R$, so dass er die Größe
         $\Theta(n^c)$ hat.
 
     Wir könnten nun noch ehrgeiziger sein und einen monotonen

@@ -53,7 +53,7 @@
     </div>
     <p class="main-column">
       die nächste Ableitungsregel $A \rightarrow \beta$
-      bestimmen müssen, ohne das "Endergebnis" von   
+      bestimmen müssen, ohne das "Endergebnis" von
       $\beta$ überhaupt vollständig gelesen zu haben. Sie
       müssen also erkennen, dass der rote / mit "?" markierte
       Pfeil in der Ableitung
@@ -68,10 +68,10 @@
     </div>
     <p class="main-column">
       die richtige Entscheidung ist, obwohl sie von dem
-      aus $\beta$ abgeleiteten Wort $x$ nur die ersten   
+      aus $\beta$ abgeleiteten Wort $x$ nur die ersten
       $k$ Buchstaben sehen. Dem entgegen haben wir in den
       letzten zwei Teilkapiteln LR-Parser gesehen. Diese
-      versuchen, von $w$ ausgehend eine Rechtsableitung   
+      versuchen, von $w$ ausgehend eine Rechtsableitung
       $S \Step{}^* w$ zu finden, allerdings in zeitlich
       umgekehrter Reihenfolge, also
     </p>
@@ -89,7 +89,7 @@
       Da aus der Sicht unseres neuen Parsers die Rückwärtsanwendung
       einer Produktion
       <span class="nowrap">$X \rightarrow \beta$,</span>
-      also der Schritt   
+      also der Schritt
       $\alpha X \gamma \Leftarrow \alpha \beta \gamma$ einen
       <i>Fortschritt</i>
       darstellt und zeitlich auch nach vorne
@@ -105,7 +105,7 @@
         <b>6.7.1</b>
         <b>Definition</b>
         <b>(Reduktion und Linksreduktion)</b>
-        Seien   
+        Seien
         $\alpha, \beta, \gamma \in (\Sigma \cup N)^*$ Wortformen
         und $X \rightarrow \beta$ eine Produktion. Dann schreiben
         wir
@@ -119,13 +119,13 @@
       </div>
       <p>
         und sagen
-        <i>$\alpha \beta \gamma$ reduziert zu   
+        <i>$\alpha \beta \gamma$ reduziert zu
           $\alpha X \gamma$</i>. Man nennt einen solchen Schritt
         auch einen
         <i>Reduktionsschritt</i>. Wir nennen den Schritt
         einen
-        <i>Linksreduktionsschritt</i>, wenn rechts von  
-        $\beta$ nur Terminale stehen. Wenn also  
+        <i>Linksreduktionsschritt</i>, wenn rechts von
+        $\beta$ nur Terminale stehen. Wenn also
         $\gamma = w \in \Sigma^*$ und somit
       </p>
       <div class="math-block">
@@ -148,7 +148,7 @@
     </div>
     <p class="main-column">
       <b>Beobachtung:</b>
-      Wenn wir einen Linksreduktionsschritt   
+      Wenn wir einen Linksreduktionsschritt
       $\alpha \beta w \rstep{} \alpha X w$ betrachten, also
     </p>
     <div class="math-block main-column">
@@ -187,7 +187,7 @@
       $$
     </div>
     <p class="main-column">
-      weil sie einer gültigen Rechtsableitung   
+      weil sie einer gültigen Rechtsableitung
       $N \Step{R}^* 14$ entspricht
       <span class="nowrap">($N$</span>
       ist das Startsymbol).
@@ -203,7 +203,7 @@
     <p class="main-column">
       da zwar
       <span class="nowrap">$DD \Step{R} D4$,</span>
-      allerdings es keine Rechtsableitung   
+      allerdings es keine Rechtsableitung
       $N \Step{R}^* DD$ gibt. Auch
     </p>
     <div class="math-block main-column">
@@ -215,7 +215,7 @@
     </div>
     <p class="main-column">
       ist inkorrekt. In unserer Java-Implementierung haben
-      wir dieses Problem händisch gelöst, indem wir der Regel   
+      wir dieses Problem händisch gelöst, indem wir der Regel
       $ND \rstep{} N$ den Vorzug vor $D \rstep{} N$ gegebene
       haben. Im allgemeinen müssen wir definieren, was ein
       <i>korrekter</i>
@@ -258,16 +258,16 @@
         der gültigen Wortform
         <span class="nowrap">$\alpha \beta w$.</span>
         Wenn die Grammatik
-        eindeutig ist, dann hat jede gültige Wortform  
-        $\gamma$ genau eine Front, die wir mit  
+        eindeutig ist, dann hat jede gültige Wortform
+        $\gamma$ genau eine Front, die wir mit
         $\front(\gamma)$ bezeichnen.
       </p>
     </div>
     <p class="main-column">
       Wenn wir uns erinnern, wie wir in den letzten zwei
       Teilkapiteln informell LR-Parser entworfen und implementiert
-      haben, dann sehen wir, dass in einem Linksreduktionsschritt   
-      $\alpha \beta w \rstep{} \alpha X w$ die Front   
+      haben, dann sehen wir, dass in einem Linksreduktionsschritt
+      $\alpha \beta w \rstep{} \alpha X w$ die Front
       $\alpha \beta$ der Stackinhalt ist und $w$ der bis
       jetzt ungelesene Teil des Eingabewortes. Wir wünschen
       wir uns folgendes:
@@ -277,8 +277,8 @@
         <b>6.7.3</b>
         <b>Wunsch.</b>
         Ob $\alpha \beta w \rstep{} \alpha X w$ gültig ist
-        oder nicht, wollen wir allein auf Grund der Front   
-        $\alpha \beta$ entscheiden können, das heißt, ohne   
+        oder nicht, wollen wir allein auf Grund der Front
+        $\alpha \beta$ entscheiden können, das heißt, ohne
         $w$ betrachten zu müssen.
       </p>
     </div>
@@ -298,8 +298,8 @@
       <li>
         <p>
           <b>Schlechter Fall 1:</b>
-          Es gibt für eine Wortform   
-          $\gamma$ zwei korrekte Linksreduktionsschritte:   
+          Es gibt für eine Wortform
+          $\gamma$ zwei korrekte Linksreduktionsschritte:
           $\gamma \rstep{} \gamma'$ und
           <span class="nowrap">$\gamma \rstep{} \gamma''$.</span>
           In diesem Falle gäbe es
@@ -327,7 +327,7 @@
           unattraktiv: wenn z.B. eine Programmiersprache eine
           mehrdeutige Grammatik hätte, dann wäre ja für gewisse
           Programme nicht eindeutig festzustellen, was damit
-          gemeint ist. Wir nehmen also an, dass die Grammatik   
+          gemeint ist. Wir nehmen also an, dass die Grammatik
           $G$ eindeutig ist und somit dieser Fall nicht eintreten
           kann.
         </p>
@@ -345,7 +345,7 @@
           $$
         </div>
         <p>
-          ist korrekt, aber für ein anderes   
+          ist korrekt, aber für ein anderes
           $w' \in \Sigma^*$ ist
         </p>
         <div class="math-block">
@@ -360,7 +360,7 @@
           korrekt, obwohl $\alpha\beta w'$ eine gültige
           Wortform ist. Dieser Fall ist schlecht, weil der Parser
           nur $\alpha \beta$ gelesen hat und somit nicht weiß,
-          ob es sich bei der gesamten Wortform um   
+          ob es sich bei der gesamten Wortform um
           $\alpha \beta w$ oder um $\alpha \beta w'$ handelt.
           Da beide gültig sind, können ja auch beide in einer
           Linksreduktion auftreten. Korrektheit hängt also davon
@@ -411,7 +411,7 @@
       <p>
         nicht korrekt (hier
         <span class="nowrap">$w' = b)$,</span>
-        da $aaXb$ gültig ist,   
+        da $aaXb$ gültig ist,
         $aaSb$ aber nicht. Die Entscheidung für eine Reduktionsregel
         kann also nicht ohne Wissen über das, was dahinter
         kommt, getroffen werden.
@@ -453,7 +453,7 @@
         $$
       </div>
       <p>
-        korrekt sind, sofern $w' \in \Sigma^*$ ist und   
+        korrekt sind, sofern $w' \in \Sigma^*$ ist und
         $\alpha \beta w'$ selbst eine gültige Wortform ist.
         In Worten/Graustufen: wenn wir
       </p>
@@ -467,7 +467,7 @@
       <p>
         guten Gewissens anwenden dürfen, ohne auch nur ein
         Zeichen von $w$ gelesen zu haben, sofern wir sicher
-        sind, dass es irgendein $w$ gibt, das   
+        sind, dass es irgendein $w$ gibt, das
         $\alpha \beta w$ zu einer gültigen Wortform macht.
       </p>
     </div>
@@ -479,16 +479,16 @@
         <b>6.7.6</b>
         <b>Lemma</b>
         <b>(LR(0), äquivalente Formulierung).</b>
-        Eine Grammatik   
+        Eine Grammatik
         $G$ ist LR(0) genau dann, wenn für alle korrekten
-        Linksreduktionsschritte   
-        $\alpha \beta w \rstep{} \alpha Xw$ und   
+        Linksreduktionsschritte
+        $\alpha \beta w \rstep{} \alpha Xw$ und
         $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
       </p>
       <ol>
         <li>
           <p>
-            Falls $\alpha \beta = \alpha' \beta'$ dann auch   
+            Falls $\alpha \beta = \alpha' \beta'$ dann auch
             $\beta = \beta'$ und
             <span class="nowrap">$X= X'$;</span>
             in Worten: wenn die
@@ -501,8 +501,8 @@
             <span class="nowrap">$|\varphi| \geq 1$,</span>
             dann
             <span class="nowrap">$\varphi \not \in \Sigma^*$;</span>
-            in Worten: wenn   
-            $\front(\gamma)$ ein echter Präfix von   
+            in Worten: wenn
+            $\front(\gamma)$ ein echter Präfix von
             $\front(\gamma')$ ist, dann muss in dem überstehenden
             Teil von $\front(\gamma)$ mindestens ein Nichtterminal
             vorkommen.
@@ -530,10 +530,10 @@
       <div class="well remark">
         <p>
           <b>Beweis.</b>
-          Um Punkt 1 zu zeigen, nehmen wir an, dass   
-          $\alpha \beta = \alpha' \beta'$ gilt. Da   
-          $\alpha \beta w \rstep{} \alpha X w$ korrekt ist,   
-          $\alpha' \beta' w'$ eine gültige Wortform ist und   
+          Um Punkt 1 zu zeigen, nehmen wir an, dass
+          $\alpha \beta = \alpha' \beta'$ gilt. Da
+          $\alpha \beta w \rstep{} \alpha X w$ korrekt ist,
+          $\alpha' \beta' w'$ eine gültige Wortform ist und
           $G$ eine LR(0)-Grammatik ist, so ist auch
         </p>
         <div class="math-block">
@@ -544,17 +544,17 @@
           $$
         </div>
         <p>
-          ein korrekter Linksreduktionsschritt. Also sind   
-          $\alpha' \beta' w' \rstep{} \alpha X w'$ und   
+          ein korrekter Linksreduktionsschritt. Also sind
+          $\alpha' \beta' w' \rstep{} \alpha X w'$ und
           $\alpha' \beta' w' \rstep{} \alpha' X' w'$ beides
           korrekte Linksreduktionsschritte. Da $G$ eindeutig
           ist, kann es nur eine Rechtsableitung geben, d.h.
           <span class="nowrap">$\alpha X w' = \alpha' X' w'$,</span>
-          was $X = X'$ und somit   
+          was $X = X'$ und somit
           $\beta = \beta'$ impliziert. Um Punkt 2 zu zeigen,
-          nehmen wir an, dass   
+          nehmen wir an, dass
           $\alpha' \beta' = \alpha \beta \varphi$ gilt. Falls
-          - entgegen der Schlussfolgerung - nun   
+          - entgegen der Schlussfolgerung - nun
           $\varphi \in \Sigma^*$ gälte, wäre
         </p>
         <div class="math-block">
@@ -567,14 +567,14 @@
         </div>
         <p>
           ein korrekter Linksreduktionsschritt; nach Voraussetzung
-          ist auch   
+          ist auch
           $\alpha' \beta' w' \rstep{} \alpha' X' w'$ korrekt.
           Es gäbe also zwei korrekte Linksreduktionsschritte
           und $G$ wäre nicht eindeutig. Wir folgern, dass
           <span class="nowrap">$\varphi^* \not \in \Sigma^*$.</span>
           Beachten Sie, dass
           es, wenn $\varphi$ Nichtterminale enthält, keinen
-          Widerspruch gibt: dann ist nämlich   
+          Widerspruch gibt: dann ist nämlich
           $\alpha \beta \varphi w' \rstep{} \alpha X \varphi
           w'$
           gar kein Linksreduktionsschritt, geschweige denn ein
@@ -637,11 +637,11 @@
           $$
         </div>
         <p>
-          ein korrekter Linksreduktionsschritt ist und   
+          ein korrekter Linksreduktionsschritt ist und
           $\gamma' := \alpha \beta w''$ eine gültige Wortform
           ist mit
           <span class="nowrap">$w'' \in \Sigma^*$.</span>
-          Wir müssen zeigen, dass   
+          Wir müssen zeigen, dass
           $\alpha X w''$ auch gültig ist. Da $G$ eindeutig ist,
           gibt es einen eindeutigen korrekten Linksreduktionsschritt
         </p>
@@ -656,24 +656,24 @@
           Da $\alpha \beta$ und $\alpha' \beta'$ beides Präfixe
           von $\gamma'$ sind, gibt es drei Fälle: (1)
           <span class="nowrap">$\alpha\beta = \alpha' \beta'$;</span>
-          (2)   
+          (2)
           $\alpha' \beta' = \alpha \beta \varphi$ mit
           <span class="nowrap">$\varphi \ne \epsilon$;</span>
-          (3)   
+          (3)
           $\alpha \beta = \alpha' \beta' \varphi$ mit
           <span class="nowrap">$\varphi \ne \epsilon$.</span>
-          (1) Wenn nun  
+          (1) Wenn nun
           $\alpha \beta = \alpha' \beta'$ gilt, dann sind nach
-          Punkt 1 der Schlussfolgerung  $\alpha' = \alpha$ und  
+          Punkt 1 der Schlussfolgerung  $\alpha' = \alpha$ und
           $\beta' = \beta$ und
           <span class="nowrap">$X = X'$;</span>
-          also ist   
+          also ist
           $\gamma = \alpha' \beta' w' = \alpha \beta w'$ und
           auch $\gamma = \alpha \beta w''$ und somit
           <span class="nowrap">$w'' = w'$.</span>
-          Somit ist   
+          Somit ist
           $\alpha' X' w' = \alpha X w''$ und letztere ist eine
-          gültige Wortform. (2) Wir haben zwei korrekte Linksreduktionsschritte   
+          gültige Wortform. (2) Wir haben zwei korrekte Linksreduktionsschritte
           $\alpha \beta w \rstep{} \alpha X w$ und
           <span class="nowrap">$\alpha' \beta' w' \rstep{} alpha' X' w'$.</span>
           Nach Punkt
