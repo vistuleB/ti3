@@ -157,7 +157,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
             "Topic", "SubTopic", "div", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
           ])),
-        #("Index", "main-column", fn(v) {!infra.tag_equals(v,"nav")}),
+        #("Index", "main-column", fn(v) {!infra.is_v_and_tag_equals(v,"nav")}),
       ]),
       dl.append_attribute__outside(#("img", "class", "constrained transition-all"), ["CarouselContainer"]),
       dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), ["CarouselContainer"]),

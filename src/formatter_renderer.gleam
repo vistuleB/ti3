@@ -36,14 +36,14 @@ fn fragment_bundler(
 fn splitter(
   root: VXML
 ) -> Result(List(FragmentOf(VXML)), String) {
-  let #(root, chapters) = infra.extract_children(root, infra.is_v_and_tag_equals(_, "Chapter"))
+  let #(root, chapters) = infra.v_extract_children(root, infra.is_v_and_tag_equals(_, "Chapter"))
   let root = fragment_bundler(root, Root)
   let #(chapters, subs) =
     chapters
     |> list.fold(
       #([], []),
       fn (acc, chapter) {
-        let #(chapter, subs) = infra.extract_children(chapter, infra.is_v_and_tag_equals(_, "Sub"))
+        let #(chapter, subs) = infra.v_extract_children(chapter, infra.is_v_and_tag_equals(_, "Sub"))
         let chapter = fragment_bundler(chapter, Chapter)
         let subs = list.map(
           subs,
