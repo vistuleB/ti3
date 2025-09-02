@@ -92,10 +92,10 @@ pub fn formatter_pipeline() -> List(Pipe) {
     ]
   ]
   |> list.flatten
-  |> infra.wrap_desugarers(
-    infra.TrackingOff,
+  |> infra.desugarers_2_pipeline(
     sl.verbatim("<> marker")
     |> infra.extend_selector_up(4)
-    |> infra.extend_selector_down(4)
+    |> infra.extend_selector_down(4),
+    infra.TrackingOff,
   )
 }
