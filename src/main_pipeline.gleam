@@ -17,15 +17,15 @@ pub fn main_pipeline()  -> List(Pipe) {
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
 
   let possible_outer_elements = [
-    "Topic",
-    "SubTopic",
-    "div",
     "p",
-    "ol",
     "ul",
-    "figure",
+    "ol",
+    "div",
     "pre",
     "code",
+    "figure",
+    "Topic",
+    "SubTopic",
     "MathBlock",
     "CarouselContainer",
   ]

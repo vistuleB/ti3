@@ -2,7 +2,7 @@ import simplifile
 import gleam/io
 import gleam/list
 import gleam/string.{inspect as ins}
-import vxml_renderer as vr
+import desugaring as ds
 import infrastructure as infra
 import vxml.{type VXML, V}
 import blame.{Src}
@@ -15,7 +15,7 @@ type FragmentType {
 }
 
 type FragmentOf(z) = 
-  vr.OutputFragment(FragmentType, z)
+  ds.OutputFragment(FragmentType, z)
 
 fn fragment_bundler(
   vxml : VXML,
@@ -26,7 +26,7 @@ fn fragment_bundler(
     Src(_, path, _, _) -> path
     _ -> "unknown"
   }
-  vr.OutputFragment(
+  ds.OutputFragment(
     path: path,
     payload: vxml,
     classifier: classifier,
@@ -61,37 +61,37 @@ fn splitter(
   |> Ok
 }
 
-pub fn formatter_renderer(amendments: vr.CommandLineAmendments) -> Nil {
+pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
   let pipeline = formatter_pipeline()
 
   let renderer =
-    vr.Renderer(
-      assembler: vr.default_assembler(amendments.only_paths),
-      parser: vr.default_writerly_parser(amendments.only_key_values),
+    ds.Renderer(
+      assembler: ds.default_assembler(amendments.only_paths),
+      parser: ds.default_writerly_parser(amendments.only_key_values),
       pipeline: pipeline,
       splitter: splitter,
-      emitter: vr.stub_writerly_emitter,
-      prettifier: vr.default_prettier_prettifier,
+      emitter: ds.stub_writerly_emitter,
+      prettifier: ds.default_prettier_prettifier,
     )
-    |> vr.amend_renderer_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_by_command_line_amendments(amendments)
 
   let parameters =
-    vr.RendererParameters(
+    ds.RendererParameters(
       input_dir: "./wly",
       output_dir: "./wly-edit",
-      prettifier_behavior: vr.PrettifierOff,
+      prettifier_behavior: ds.PrettifierOff,
       table: True
       
     )
-    |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
   
   let debug_options =
-    vr.default_renderer_debug_options()
-    |> vr.amend_renderer_debug_options_by_command_line_amendments(amendments)
+    ds.default_renderer_debug_options()
+    |> ds.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
   let _ = simplifile.delete("./wly-edit/*")
 
-  case vr.run_renderer(renderer, parameters, debug_options) {
+  case ds.run_renderer(renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
     _ -> Nil
   }

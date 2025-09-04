@@ -5,7 +5,7 @@ import gleam/io
 import gleam/string
 import main_renderer
 import on
-import vxml_renderer as vr
+import desugaring as ds
 
 const ins = string.inspect
 
@@ -22,17 +22,17 @@ pub fn main() {
   case args {
     ["--help"] | ["-h"] -> {
       cli_usage_supplementary()
-      vr.basic_cli_usage()
+      ds.basic_cli_usage()
     }
 
     _ -> {
       use amendments <-  on.error_ok(
-        vr.process_command_line_arguments(args, ["--fmt"]),
+        ds.process_command_line_arguments(args, ["--fmt"]),
         fn(error) {
           io.println("")
           io.println("command line error: " <> ins(error))
           io.println("")
-          vr.basic_cli_usage()
+          ds.basic_cli_usage()
           cli_usage_supplementary()
         }
       )

@@ -8,7 +8,7 @@ import io_lines.{type OutputLine, OutputLine}
 import main_pipeline.{main_pipeline}
 import simplifile
 import vxml.{type VXML}
-import vxml_renderer as vr
+import desugaring as ds
 
 pub type FragmentType {
   Chapter(Int)
@@ -16,7 +16,7 @@ pub type FragmentType {
   Index
 }
 
-type TI3Fragment(z) = vr.OutputFragment(FragmentType, z)
+type TI3Fragment(z) = ds.OutputFragment(FragmentType, z)
 type BL = List(OutputLine)
 
 pub type TI3SplitterError {
@@ -62,7 +62,7 @@ fn ti3_splitter(
     |> list.index_map(
       fn(chapter, chapter_index) {
         let chapter_number = chapter_index + 1
-        vr.OutputFragment(
+        ds.OutputFragment(
           Chapter(chapter_number),
           string.inspect(chapter_number) <> "-0" <> ".html",
           chapter
@@ -79,7 +79,7 @@ fn ti3_splitter(
           chapter_subs,
           fn(sub, sub_index) {
             let sub_number = sub_index + 1
-            vr.OutputFragment(
+            ds.OutputFragment(
               Sub(chapter_number, sub_number),
               string.inspect(chapter_number) <> "-" <> string.inspect(sub_number) <> ".html",
               sub
@@ -91,7 +91,7 @@ fn ti3_splitter(
     |> list.flatten
 
   list.flatten([
-    [vr.OutputFragment(Index, "index.html", index)],
+    [ds.OutputFragment(Index, "index.html", index)],
     chapter_fragments,
     sub_fragments,
   ])
@@ -127,7 +127,7 @@ fn index_emitter(
         OutputLine(blame_us("index_emitter"), 0, ""),
       ],
     ])
-  Ok(vr.OutputFragment(..fragment, payload: lines))
+  Ok(ds.OutputFragment(..fragment, payload: lines))
 }
 
 // chapter emitter - handles chapter fragments
@@ -159,7 +159,7 @@ fn chapter_emitter(
         OutputLine(blame_us("chapter_emitter"), 0, ""),
       ],
     ])
-  Ok(vr.OutputFragment(..fragment, payload: lines))
+  Ok(ds.OutputFragment(..fragment, payload: lines))
 }
 
 // sub-chapter emitter - handles sub fragments
@@ -191,7 +191,7 @@ fn sub_chapter_emitter(
         OutputLine(blame_us("sub_chapter_emitter"), 0, ""),
       ],
     ])
-  Ok(vr.OutputFragment(..fragment, payload: lines))
+  Ok(ds.OutputFragment(..fragment, payload: lines))
 }
 
 // main emitter that dispatches to appropriate sub-emitters
@@ -233,30 +233,30 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
   }
 }
 
-pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
+pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
   let renderer =
-    vr.Renderer(
-      assembler: vr.default_assembler(amendments.only_paths),
-      parser: vr.default_writerly_parser(amendments.only_key_values),
+    ds.Renderer(
+      assembler: ds.default_assembler(amendments.only_paths),
+      parser: ds.default_writerly_parser(amendments.only_key_values),
       pipeline: main_pipeline(),
       splitter: ti3_splitter,
       emitter: our_emitter,
-      prettifier: vr.default_prettier_prettifier,
+      prettifier: ds.default_prettier_prettifier,
     )
-    |> vr.amend_renderer_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_by_command_line_amendments(amendments)
 
   let parameters =
-    vr.RendererParameters(
+    ds.RendererParameters(
       input_dir: "./wly",
       output_dir: "./public",
-      prettifier_behavior: vr.PrettifierOff,
+      prettifier_behavior: ds.PrettifierOff,
       table: True
     )
-    |> vr.amend_renderer_paramaters_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
   let debug_options =
-    vr.default_renderer_debug_options()
-    |> vr.amend_renderer_debug_options_by_command_line_amendments(amendments)
+    ds.default_renderer_debug_options()
+    |> ds.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
   // clean up HTML files before rendering
   case cleanup_html_files(parameters.output_dir) {
@@ -264,7 +264,7 @@ pub fn main_renderer(amendments: vr.CommandLineAmendments) -> Nil {
     Error(error) -> io.println("HTML cleanup failed: " <> error)
   }
   
-  case vr.run_renderer(renderer, parameters, debug_options) {
+  case ds.run_renderer(renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
     _ -> Nil
   }
