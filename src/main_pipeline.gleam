@@ -16,6 +16,20 @@ pub fn main_pipeline()  -> List(Pipe) {
   let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
 
+  let possible_outer_elements = [
+    "Topic",
+    "SubTopic",
+    "div",
+    "p",
+    "ol",
+    "ul",
+    "figure",
+    "pre",
+    "code",
+    "MathBlock",
+    "CarouselContainer",
+  ]
+
   [
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
@@ -148,17 +162,11 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("CarouselItem", "class", "carousel__item"),
         #("NoWrap", "class", "nowrap"),
       ]),
-      dl.append_class_to_child_if__batch([
-        #("Chapter", "out", infra.has_class(_, "well")),
-        #("Chapter", "main-column", infra.is_v_and_tag_is_one_of(_, [
-          "Topic", "SubTopic", "div", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
-          ])),
-        #("Sub", "out", infra.has_class(_, "well")),
-        #("Sub", "main-column", infra.is_v_and_tag_is_one_of(_, [
-            "Topic", "SubTopic", "div", "p", "ol", "ul", "figure", "pre", "code", "MathBlock", "CarouselContainer"
-          ])),
-        #("Index", "main-column", fn(v) {!infra.is_v_and_tag_equals(v,"nav")}),
-      ]),
+      dl.append_class_to_child_if_has_class(#("Chapter", "out", "well")),
+      dl.append_class_to_child_if_has_class(#("Sub", "out", "well")),
+      dl.append_class_to_child_if_is_one_of(#("Chapter", "main-column", possible_outer_elements)),
+      dl.append_class_to_child_if_is_one_of(#("Sub", "main-column", possible_outer_elements)),
+      dl.append_class_to_child_if_is_not_one_of(#("Index", "main-column", ["nav"])),
       dl.append_attribute__outside(#("img", "class", "constrained transition-all"), ["CarouselContainer"]),
       dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), ["CarouselContainer"]),
       dl.rename_with_appended_attributes_and_prepended_text([#("QED", "span", "\\(\\square\\)", [#("class", "qed")])]),
