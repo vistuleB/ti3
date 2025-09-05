@@ -189,14 +189,13 @@
         die Turingmaschine keine Möglichkeit hat, die obere
         von der unteren Situation zu unterscheiden, und dass
         es somit nur recht und billig ist, beide als eine identische
-        Konfiguration aufzufassen.
-        All diese Schwierigkeiten verschwinden, wenn wir uns
-        den Speicher einer Turingmaschine nicht als unendliches
-        Band vorstellen, sondern als zwei Stapel, einer links
-        vom Kopf und einer rechts vom Kopf. Allerdings hat
-        sich die Vorstellung vom Band irgendwie als Standard
-        durchgesetzt. Hier sehen Sie die gleiche Konfiguration
-        in dem Modell mit zwei Stapeln:
+        Konfiguration aufzufassen. All diese Schwierigkeiten
+        verschwinden, wenn wir uns den Speicher einer Turingmaschine
+        nicht als unendliches Band vorstellen, sondern als
+        zwei Stapel, einer links vom Kopf und einer rechts
+        vom Kopf. Allerdings hat sich die Vorstellung vom Band
+        irgendwie als Standard durchgesetzt. Hier sehen Sie
+        die gleiche Konfiguration in dem Modell mit zwei Stapeln:
 
         |> figure
             |> img
@@ -282,25 +281,24 @@
     \end{cases}
     \end{align*}
 
-    Nochmal zur Verdeutlichung: wenn
-    $\delta^{(i)}(C)$ eine Endkonfiguration ist, dann
-    ist auch $\delta^{(j)}(C)$ eine, für jedes
-    $j \geq i$, weil wir $\hat{\delta}(C') = C'$ für jede
-    Endkonfiguration $C'$ definiert haben. Es spielt also
-    in der obigen Formulierung _wenn es ein $i$ gibt_
-    keine Rolle, welches solche $i$ wir wählen.
-    Für ein Eingabewort $x \in \Sigma^*$ können wir nun
-    das Ergebnis der Berechnung von Turingmaschine $M$
-    auf $x = x_1 \dots x_n$ definieren:
+    Nochmal zur Verdeutlichung: wenn $\delta^{(i)}(C)$
+    eine Endkonfiguration ist, dann ist auch
+    $\delta^{(j)}(C)$ eine, für jedes $j \geq i$, weil
+    wir $\hat{\delta}(C') = C'$ für jede Endkonfiguration
+    $C'$ definiert haben. Es spielt also in der obigen
+    Formulierung _wenn es ein $i$ gibt_ keine Rolle, welches
+    solche $i$ wir wählen. Für ein Eingabewort
+    $x \in \Sigma^*$ können wir nun das Ergebnis der Berechnung
+    von Turingmaschine $M$ auf $x = x_1 \dots x_n$ definieren:
 
     \begin{align*}
     \hat{M}(x) := \hat{\delta}^* (\qstart{} x_1 x_2 x_3 \dots x_n) \ .
     \end{align*}
 
-    Wir beginnen also mit der Startkonfiguration und
-    lassen die Turingmaschine dann laufen, bis sie einen
-    Endzustand erreicht. Die erreichte Konfiguration bezeichnen
-    wir mit $\hat{M}(x)$. Falls nie ein Endzustand erreicht
+    Wir beginnen also mit der Startkonfiguration und lassen
+    die Turingmaschine dann laufen, bis sie einen Endzustand
+    erreicht. Die erreichte Konfiguration bezeichnen wir
+    mit $\hat{M}(x)$. Falls nie ein Endzustand erreicht
     wird (die Turingmaschine also endlos läuft), ist
     $\hat{M}(x)$ `undefined`.
 
@@ -347,9 +345,8 @@
                 $x \in \Sigma^* \setminus L$.
 
         Insbesondere heißt das, dass $M$ auf jedem Eingabewort
-        terminiert.
-        Eine Sprache $L$ heißt _entscheidbar_, wenn es eine
-        Turingmaschine gibt, die sie entscheidet.
+        terminiert. Eine Sprache $L$ heißt _entscheidbar_,
+        wenn es eine Turingmaschine gibt, die sie entscheidet.
 
     |> Statement
         title=*Definition*
@@ -364,8 +361,8 @@
         für alle $x \in \Sigma^*$ gilt. Das heißt, dass
         $M$ für $x \not \in \Sigma^*$ entweder irgendwann
         den Endzustand $\qreject$ erreicht oder nie einen
-        Endzustand erreicht.
-        Eine Sprache $L \subseteq \Sigma^*$ heißt _semi-entscheidbar_,
+        Endzustand erreicht. Eine Sprache
+        $L \subseteq \Sigma^*$ heißt _semi-entscheidbar_,
         wenn es eine Turingmaschine $M$ gibt, die $L$ akzeptiert.
 
     In beiden Definition verlangen wir natürlich, dass
@@ -433,9 +430,8 @@
         ableiten kann genau dann, wenn $w \in S$ gilt. Wir
         brauchen \(\texttt{\$}\) und $\texttt{.}$ als Randmarkierungen.
         Wir lassen hier temporär zu, dass die linke Seite ausschließlich
-        aus Terminalsymbolen bestehen kann.
-        Hierfür definieren wir für jede Regel der Turingmaschine
-        eine Grammatik-Regel:
+        aus Terminalsymbolen bestehen kann. Hierfür definieren
+        wir für jede Regel der Turingmaschine eine Grammatik-Regel:
 
         \begin{align*}
         \begin{array}{lcl}
@@ -446,15 +442,14 @@
         \end{array}
         \end{align*}
 
-        Die Asymmetrie zwischen den Regeln, die den Kopf
-        nach rechts verschieben und denen, die ihn nach links
-        verschieben, ergibt sich aus unserer Konvention, die
-        Konfigurationen $uqv$ so zu interpretieren, dass der
-        Kopf auf dem ersten Symbol von $v$ und nicht etwa
-        auf dem letzten von $u$ steht. Ein Problem ergibt
-        sich, wenn $q$ am Rand steht. Hierfür erlauben wir,
-        an den Rändern der Konfiguration $\square$-Symbole
-        zu erzeugen:
+        Die Asymmetrie zwischen den Regeln, die den Kopf nach
+        rechts verschieben und denen, die ihn nach links verschieben,
+        ergibt sich aus unserer Konvention, die Konfigurationen
+        $uqv$ so zu interpretieren, dass der Kopf auf dem
+        ersten Symbol von $v$ und nicht etwa auf dem letzten
+        von $u$ steht. Ein Problem ergibt sich, wenn $q$ am
+        Rand steht. Hierfür erlauben wir, an den Rändern der
+        Konfiguration $\square$-Symbole zu erzeugen:
 
         \begin{align*}
         \texttt{\$}&\rightarrow \texttt{\$} \square \\
@@ -513,8 +508,8 @@
         \texttt{\$} \texttt{start} x_1 x_2 \dots x_n \texttt{.} \Step{}^* S
         \end{align*}
 
-        Wir bauen nun eine weitere Grammatik $G$, in der
-        wir jede Produktion $\alpha \rightarrow \beta$ umdrehen,
+        Wir bauen nun eine weitere Grammatik $G$, in der wir
+        jede Produktion $\alpha \rightarrow \beta$ umdrehen,
         also durch $\beta \rightarrow \alpha$ ersetzen. Zusätzlich
         definieren wir Abschlussregeln
 
@@ -550,13 +545,13 @@
         \texttt{start}&\step{10} \epsilon
         \end{align*}
 
-        Um also ein Wort $x \in L(M)$ abzuleiten, müssen
-        wir die akzeptierende Endkonfiguration $C$ von
-        $M(x)$ "erraten" und dann per Produktionen 1 und 2
-        die Wortform \(\texttt{\$}C\texttt{.}\) ableiten.
-        Von da an verwenden wir die Produktionen 3, 4, 5, 6,
-        7, um die Berechnung der Turingmaschine $M(x)$ von
-        hinten nach vorne zu simulieren, bis wir bei
+        Um also ein Wort $x \in L(M)$ abzuleiten, müssen wir
+        die akzeptierende Endkonfiguration $C$ von $M(x)$
+        "erraten" und dann per Produktionen 1 und 2 die Wortform
+        \(\texttt{\$}C\texttt{.}\) ableiten. Von da an verwenden
+        wir die Produktionen 3, 4, 5, 6, 7, um die Berechnung
+        der Turingmaschine $M(x)$ von hinten nach vorne zu
+        simulieren, bis wir bei
         \(\texttt{\$} \texttt{start}\ x \texttt{.}\) angelangt
         sind. Dann lassen wir
         \(\texttt{\$}, \texttt{start}, \texttt{.}\) mit den
