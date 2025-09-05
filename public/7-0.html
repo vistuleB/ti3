@@ -23,7 +23,10 @@
         >&lt;&lt; Kapitel 6.10</a>
       </div>
       <div class="menu-right">
-        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+          id="next-page"
+          href="./8-0.html"
+        >Kapitel 8  &gt;&gt;</a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -32,37 +35,42 @@
       </p>
     </div>
     <p class="main-column">
-      Wir haben nun ausführlich über kontextfreie Grammatiken gesprochen
-      und auch Sprachen gesehen, die nicht mit kontextfreien Grammatiken
-      zu beschreiben (und somit auch nicht mit Parsern oder allgemein mit
-      Kellerautomaten) zu entscheiden sind. Da stellen sich die folgenden Fragen:
+      Wir haben nun ausführlich über kontextfreie Grammatiken
+      gesprochen und auch Sprachen gesehen, die nicht mit
+      kontextfreien Grammatiken zu beschreiben (und somit
+      auch nicht mit Parsern oder allgemein mit Kellerautomaten)
+      zu entscheiden sind. Da stellen sich die folgenden
+      Fragen:
     </p>
     <ol class="main-column">
       <li>
         <p>
-          Wie mann man die Definition kontextfreier Grammatiken sinnvoll erweitern,
-          so dass sie beispielsweise auch Sprachen wie
-          $\{a^n b^n c^n \ | \ n \geq 0\}$ umfassen?
+          Wie mann man die Definition kontextfreier Grammatiken
+          sinnvoll erweitern, so dass sie beispielsweise auch
+          Sprachen wie $\{a^n b^n c^n \ | \ n \geq 0\}$ umfassen?
         </p>
       </li>
       <li>
         <p>
           Gibt es eine natürliche Barriere, jenseits derer es
-          keinen vernünftigen Begriff des "Beschreiben könnens" gibt?
-          Oder kann man immer noch allgemeinere Regelwerke zulassen?
+          keinen vernünftigen Begriff des "Beschreiben könnens"
+          gibt? Oder kann man immer noch allgemeinere Regelwerke
+          zulassen?
         </p>
       </li>
       <li>
         <p>
-          Gibt es für die (noch zu definierende) allgemeinere Art von
-          Grammatiken auch eine Art Automat, so wie die endlichen Automaten
-          für die regulären Grammatiken und die Kellerautomaten für die kontextfreien?
+          Gibt es für die (noch zu definierende) allgemeinere
+          Art von Grammatiken auch eine Art Automat, so wie die
+          endlichen Automaten für die regulären Grammatiken und
+          die Kellerautomaten für die kontextfreien?
         </p>
       </li>
     </ol>
     <p class="main-column">
-      Punkt 1 werden wir in diesem Kapitel diskutieren. Punkt 2 und 3 werden Gegenstand
-      des nächsten Kapitels sein, in welchem wir die Turing-Maschinen einführen.
+      Punkt 1 werden wir in diesem Kapitel diskutieren.
+      Punkt 2 und 3 werden Gegenstand des nächsten Kapitels
+      sein, in welchem wir die Turing-Maschinen einführen.
     </p>
     <h1 class="main-column">
       Allgemeine formale Grammatiken
@@ -72,12 +80,13 @@
         <b>Definition</b>
         <b>7.1</b>
         <b>(formale Grammatik)</b>
-        Eine formale Grammatik ist gegeben durch ein endliches Alphabet
-        $\Sigma$ aus
-        <i>Terminalsymbolen</i>, einer endlichen Menge
-        $\N$ von
-        <i>Nichtterminalen</i>, einem Startsymbol
-        $S \in N$ und einer endlichen Menge an Produktionen
+        Eine formale Grammatik ist gegeben
+        durch ein endliches Alphabet $\Sigma$ aus
+        <i>Terminalsymbolen</i>,
+        einer endlichen Menge $\N$ von
+        <i>Nichtterminalen</i>,
+        einem Startsymbol $S \in N$ und einer endlichen Menge
+        an Produktionen
       </p>
       <div class="math-block">
         $$
@@ -87,29 +96,31 @@
         $$
       </div>
       <p>
-        wobei $\beta \in (\Sigma \cup \Gamma)^*$
-        und
+        wobei $\beta \in (\Sigma \cup \Gamma)^*$ und
         <span class="nowrap">$\alpha \in (\Sigma \cup \Gamma)^* \setminus \Sigma^*$.</span>
-        Letzeres
-        bedeutet einfach, dass die linke Seite $\alpha$ mindestens ein
-        Nichtterminal enthalten muss.
+        Letzeres bedeutet einfach, dass die linke Seite
+        $\alpha$ mindestens ein Nichtterminal enthalten muss.
       </p>
     </div>
     <p class="main-column">
-      Die Definition formaler Grammatik umschließt offensichtlich die der kontextfreien:
-      sie verbietet nicht, dass alle linken Seiten $\alpha$ aus genau einem
-      Nichtterminal bestehen; in diesem Falle hätten wir eine kontextfreie Grammatik.
-      Sie verbietet auch nicht, dass zusätzlich alle rechten Seiten
-      $\beta \in \Sigma^* \times N \cup \Sigma^*$ sind, also höchstens ein
-      Nichtterminal enthalten, welches ganz rechts stehen muss. In diesem Falle
-      würde es sich um eine reguläre Grammatik handeln.
+      Die Definition formaler Grammatik umschließt offensichtlich
+      die der kontextfreien: sie verbietet nicht, dass alle
+      linken Seiten $\alpha$ aus genau einem Nichtterminal
+      bestehen; in diesem Falle hätten wir eine kontextfreie
+      Grammatik. Sie verbietet auch nicht, dass zusätzlich
+      alle rechten Seiten
+      $\beta \in \Sigma^* \times N \cup \Sigma^*$ sind,
+      also höchstens ein Nichtterminal enthalten, welches
+      ganz rechts stehen muss. In diesem Falle würde es sich
+      um eine reguläre Grammatik handeln.
     </p>
     <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>7.2</b>
         <b>(Ableitung und erzeugte Sprache)</b>. Sei $G$ eine formale
-        Grammtik und $\gamma_1, \gamma_2 \in (\Sigma\cup N)^*$ zwei Wortformen.
+        Grammtik und
+        $\gamma_1, \gamma_2 \in (\Sigma\cup N)^*$ zwei Wortformen.
         Wir schreiben
         <span class="nowrap">$\gamma_1 \Step{} \gamma_2$,</span>
         wenn wir
@@ -125,16 +136,16 @@
       <p>
         schreiben können für Wortformen
         <span class="nowrap">$u,v$,</span>
-        sodass $\alpha \rightarrow \beta$ eine
-        Produktion von $G$ ist.
+        sodass
+        $\alpha \rightarrow \beta$ eine Produktion von $G$
+        ist.
       </p>
     </div>
     <div class="well statement out">
       <p>
         <b>Beispiel</b>
         <b>7.3</b>
-        Betrachten wir die allgemeine Grammatik mit
-        Terminalalphabet
+        Betrachten wir die allgemeine Grammatik mit Terminalalphabet
         <span class="nowrap">$\Sigma = \{a,b,c\}$,</span>
         Nichtterminalsymbolen
         <span class="nowrap">$N = \{S, A, B, C\}$,</span>
@@ -170,35 +181,39 @@
       </div>
     </div>
     <p class="main-column">
-      Die obige Beispielableitung illustriert, dass allgemeine formale Grammatiken
-      etwas können, das kontextfreie Grammatiken nicht bieten konnten:
-      das Vertauschen von Symbolen. Das mag nicht als besonders viel erscheinen,
+      Die obige Beispielableitung illustriert, dass allgemeine
+      formale Grammatiken etwas können, das kontextfreie
+      Grammatiken nicht bieten konnten: das Vertauschen von
+      Symbolen. Das mag nicht als besonders viel erscheinen,
       wird sich aber als
       <i>Game Changer</i>
       herausstellen.
-    </p>
-    <p class="main-column">
-      Sobald wir eine Wortform erreicht haben, die nur aus Terminalsymbolen
-      besteht (also ein
+      Sobald wir eine Wortform erreicht haben, die nur aus
+      Terminalsymbolen besteht (also ein
       <i>Wort</i>
-      geworden ist), muss unsere Ableitung
-      aufhören: wir können keine weitere Produktion anwenden, da jede
-      linke Seite mindestens ein Nichtterminal enthält. Diese Einschränkung
-      in der Definition allgemeiner formaler Grammatiken ist nicht wirklich
-      notwenig, sie macht Dinge allerdings klar, wo eine Ableitung zu Ende ist / sein muss.
-      Es handelt sich also gewissermaßen um das Gegenteil von Syntax-Antizucker (mir ist
-      gerade keine Substanz eingefallen, deren Geschmack universell als abstoßend empfunden wird).
-      Wir können Grammatiken, die verbotene Produktionen der Form
+      geworden
+      ist), muss unsere Ableitung aufhören: wir können keine
+      weitere Produktion anwenden, da jede linke Seite mindestens
+      ein Nichtterminal enthält. Diese Einschränkung in der
+      Definition allgemeiner formaler Grammatiken ist nicht
+      wirklich notwenig, sie macht Dinge allerdings klar,
+      wo eine Ableitung zu Ende ist / sein muss. Es handelt
+      sich also gewissermaßen um das Gegenteil von Syntax-Antizucker
+      (mir ist gerade keine Substanz eingefallen, deren Geschmack
+      universell als abstoßend empfunden wird). Wir können
+      Grammatiken, die verbotene Produktionen der Form
       $\alpha \rightarrow \beta$ mit
-      $\alpha \in \Sigma^*$ enthalten, immer "auf Linie" bringen, indem
-      wir jedes Terminalsymbol $x$ in den Produktionen durch ein neues Nichtterminal
-      $X$ ersetzen und schließlich Produktionen $X \rightarrow x$ einführen.
+      $\alpha \in \Sigma^*$ enthalten, immer "auf Linie"
+      bringen, indem wir jedes Terminalsymbol $x$ in den
+      Produktionen durch ein neues Nichtterminal $X$ ersetzen
+      und schließlich Produktionen $X \rightarrow x$ einführen.
     </p>
     <div class="well statement out">
       <p>
         <b>Beispiel</b>
         <b>7.4</b>
-        Versuchen wir nun, eine allgemeine formale Grammatik für die Sprache
+        Versuchen wir nun, eine allgemeine formale Grammatik
+        für die Sprache
       </p>
       <div class="math-block">
         $$
@@ -208,10 +223,11 @@
         $$
       </div>
       <p>
-        zu erstellen. Wir haben ja bereits gesehen, dass es zu dieser Sprache keine
-        kontextfreie Grammatik gibt. Als ersten Versuch kopieren wir
-        die obige Grammatik, allerdings lassen wir nur die Vertauschungsregeln zu, die
-        die Buchstaben in die richtige Reihenfolge bringen:
+        zu erstellen. Wir haben ja bereits gesehen, dass
+        es zu dieser Sprache keine kontextfreie Grammatik gibt.
+        Als ersten Versuch kopieren wir die obige Grammatik,
+        allerdings lassen wir nur die Vertauschungsregeln zu,
+        die die Buchstaben in die richtige Reihenfolge bringen:
       </p>
       <div class="math-block">
         $$
@@ -227,15 +243,14 @@
         $$
       </div>
       <p>
-        Offensichtlich kann jedes Wort in $L$ erzeugt werden, allerdings
-        auch Wörter wie
+        Offensichtlich kann jedes Wort in $L$ erzeugt werden,
+        allerdings auch Wörter wie
         <span class="nowrap">$abcabc$,</span>
-        die nicht in $L$ sind. Können wir
-        die erzeugte Sprache beschreiben? Ich glaube, es ist die Sprache
-        aller
+        die nicht in
+        $L$ sind. Können wir die erzeugte Sprache beschreiben?
+        Ich glaube, es ist die Sprache aller
         <span class="nowrap">$abc$-Wörter</span>
-        $w$ mit
-        gilt
+        $w$ mit gilt
       </p>
       <div class="math-block">
         $$
@@ -246,13 +261,13 @@
         $$
       </div>
       <p>
-        wobei $\#_b(v)$ die Anzahl der in $v$ enthaltenen $b$ ist.
-      </p>
-      <p>
-        Nachdem also unser erster Versuch gescheitert ist, unternehmen wir einen
-        zweiten. Wir stellen uns die Ableitung als aus zwei Phasen
-        bestehend vor. In der ersten wird eine Wortform
-        $w \in \{A,B,C\}$ erzeugt mit
+        wobei $\#_b(v)$ die Anzahl der in $v$ enthaltenen
+        $b$ ist.
+        Nachdem also unser erster Versuch gescheitert ist,
+        unternehmen wir einen zweiten. Wir stellen uns die
+        Ableitung als aus zwei Phasen bestehend vor. In der
+        ersten wird eine Wortform $w \in \{A,B,C\}$ erzeugt
+        mit
       </p>
       <div class="math-block">
         $$
@@ -279,8 +294,9 @@
         $$
       </div>
       <p>
-        so dass $S \Step{}^* X (ABC)^n$ gilt. Als nächstes brauchen wir
-        die Vertauschregeln, um alles in die richtige Reihenfolge zu bringen:
+        so dass $S \Step{}^* X (ABC)^n$ gilt. Als nächstes
+        brauchen wir die Vertauschregeln, um alles in die richtige
+        Reihenfolge zu bringen:
       </p>
       <div class="math-block">
         $$
@@ -338,9 +354,9 @@
         <li>
           <p>
             <span class="nowrap">$Z$:</span>
-            will $C$ in $c$ umwandeln. Wir
-            können aber auch einfach aufhören, zum Beispiel
-            wenn wir den rechten Rand erreicht haben:
+            will $C$ in $c$ umwandeln. Wir können aber auch
+            einfach aufhören, zum Beispiel wenn wir den rechten
+            Rand erreicht haben:
           </p>
           <div class="math-block">
             $$
@@ -353,8 +369,9 @@
         </li>
       </ul>
       <p>
-        Nun müssen wir zeigen, dass die Grammatik die Sprache $L$ erzeugt. Für
-        jedes Wort $a^n b^n c^n \in L$ müssen wir zeigen, dass wir es ableiten können:
+        Nun müssen wir zeigen, dass die Grammatik die Sprache
+        $L$ erzeugt. Für jedes Wort $a^n b^n c^n \in L$ müssen
+        wir zeigen, dass wir es ableiten können:
       </p>
       <div class="math-block">
         $$
@@ -371,16 +388,14 @@
         $$
       </div>
       <p>
-        Als zweites müssen wir zeigen, dass jedes abgeleitete Wort
-        $S \Step{}^* w \in \{a,b,c\}^*$ auch in $L$ ist,
+        Als zweites müssen wir zeigen, dass jedes abgeleitete
+        Wort $S \Step{}^* w \in \{a,b,c\}^*$ auch in $L$ ist,
         also die Form $a^n b^n c^n$ haben. Wir machen das
         nur zu 80% formal.
-      </p>
-      <p>
-        Die erste Beobachtung ist: solange $S$ in der Wortform $\beta$
-        vorkommt, hat diese die Form $\beta = S \gamma$
-        mit $\gamma \in \{A,B,C\}^*$ enthält gleich viele
-        $A$ wie $B$ wie
+        Die erste Beobachtung ist: solange $S$ in der Wortform
+        $\beta$ vorkommt, hat diese die Form
+        $\beta = S \gamma$ mit $\gamma \in \{A,B,C\}^*$ enthält
+        gleich viele $A$ wie $B$ wie
         <span class="nowrap">$C$.</span>
         
       </p>
@@ -388,11 +403,13 @@
         <p>
           <b>Behauptung</b>
           <b>7.5</b>
-          Sei $\#_{A,a}(\beta)$ die Anahl der $A$ und $a$ in der Wortform
+          Sei $\#_{A,a}(\beta)$ die Anahl der $A$ und $a$ in
+          der Wortform
           <span class="nowrap">$\beta$.</span>
           Wenn
           <span class="nowrap">$S \Step{} \beta$,</span>
-          dann gilt
+          dann
+          gilt
         </p>
         <ol>
           <li \(\#_{A,a}(\beta)="\#_{B,b}(\beta) = \#_{C,c}(\beta)\)">
@@ -409,47 +426,48 @@
             <p>
               Wenn $\beta$ das Symbol $X$ enthält, dann ist
               <span class="nowrap">$\beta = a^* X \gamma$.</span>
-              Wenn es $Y$ enthält, dann ist
+              Wenn es $Y$ enthält, dann
+              ist
               <span class="nowrap">$\beta = a^* b^* Y \gamma$.</span>
-              Wenn es $Z$ enthält, dann ist es
+              Wenn es $Z$ enthält,
+              dann ist es
               <span class="nowrap">$\beta = a^* b^* c^* Z \gamma$.</span>
-              In allen drei Fällen enthält $\gamma$ keine Terminalsymbole.
+              In allen
+              drei Fällen enthält $\gamma$ keine Terminalsymbole.
             </p>
           </li>
           <li>
             <p>
-              Wenn es kein Symbol in $S,X,Y,Z$ enthält, dann ist es von
-              der Form $\beta = a^* b^* c^* \gamma$ und $\gamma$ enthält
-              keine Terminalsymbole.
+              Wenn es kein Symbol in $S,X,Y,Z$ enthält, dann ist
+              es von der Form $\beta = a^* b^* c^* \gamma$ und
+              $\gamma$ enthält keine Terminalsymbole.
             </p>
           </li>
         </ol>
       </div>
       <p>
-        Wir behaupten also, dass das $\gamma$ in Punkt 3 aus den Nichtterminalen
-        $A,B,C$ besteht, die jedoch nicht in der korrekten Reihenfolge sein müssen.
-        Wir können auch gar nicht verbieten, dass in einer Ableitung
-        die Vertausch-Regeln 3,4,5 und die Kontroll-Regeln 6,7,8,9,10,11
+        Wir behaupten also, dass das $\gamma$ in Punkt 3 aus
+        den Nichtterminalen $A,B,C$ besteht, die jedoch nicht
+        in der korrekten Reihenfolge sein müssen. Wir können
+        auch gar nicht verbieten, dass in einer Ableitung die
+        Vertausch-Regeln 3,4,5 und die Kontroll-Regeln 6,7,8,9,10,11
         vermischt angewandt werden.
-      </p>
-      <p>
-        Die Behauptung kann man beispielsweise mit Induktion über die
-        Länge der Ableitung zeigen. Intuitiv gesprochen: Sie gilt unmittelbar,
-        nachdem $S \rightarrow X$ angewandt wurde; danach
-        überträgt sich ihre Gültigkeit Schritt
-        für Schritt (z.B. weil Terminalsymbol immer nur links vom Symbol $X / Y / Z$
-        erzeugt werden können).
-      </p>
-      <p>
-        Wenn nun also $S \rightarrow a^* b^* c^* \gamma$ und $\gamma$ kein
-        Nichtterminal $S,X,Y,Z$ enthält, also
+        Die Behauptung kann man beispielsweise mit Induktion
+        über die Länge der Ableitung zeigen. Intuitiv gesprochen:
+        Sie gilt unmittelbar, nachdem $S \rightarrow X$ angewandt
+        wurde; danach überträgt sich ihre Gültigkeit Schritt
+        für Schritt (z.B. weil Terminalsymbol immer nur links
+        vom Symbol $X / Y / Z$ erzeugt werden können).
+        Wenn nun also $S \rightarrow a^* b^* c^* \gamma$ und
+        $\gamma$ kein Nichtterminal $S,X,Y,Z$ enthält, also
         <span class="nowrap">$\gamma \in \{A,B,C\}^*$,</span>
-        dann
-        können keine weiteren Produktionen angewandt werden und die
-        Ableitung endet. Wenn das also ein Wort sein soll, muss
-        $\gamma = \epsilon$ gelten und somit $\beta = a^* b^* c^*$ gelten.
-        Da nach Behauptung die Anzahl der drei Symbole gleich sein muss,
-        gilt also $\beta = a^n b^n c^n$ und somit
+        dann können keine weiteren
+        Produktionen angewandt werden und die Ableitung endet.
+        Wenn das also ein Wort sein soll, muss
+        $\gamma = \epsilon$ gelten und somit
+        $\beta = a^* b^* c^*$ gelten. Da nach Behauptung die
+        Anzahl der drei Symbole gleich sein muss, gilt also
+        $\beta = a^n b^n c^n$ und somit
         <span class="nowrap">$\beta \in L$.</span>
         
       </p>
@@ -460,8 +478,7 @@
         <b>7.6</b>
         Im
         <a href="./05-10-not-context-free.html">Teilkapitel 5.10</a>
-        gab
-        es
+        gab es
         <a href="./05-10-not-context-free.html#exericse-power-2">Übungsaufgabe 5.10.2</a>, in der zu zeigen war, dass
       </p>
       <div class="math-block">
@@ -472,14 +489,13 @@
         $$
       </div>
       <p>
-        nicht kontextfrei ist. Allerdings ist $L$ kein sehr kompliziertes Gebilde.
-        So könnten Sie recht einfach ein Programm schreiben, dass für ein Eingabewort
-        prüft, ob es in $L$ ist. Können wir also auch eine formale Grammatik
-        schreiben?
-      </p>
-      <p>
-        Dies geht sogar nohc einfacher als die obigen Sprachen. Wir
-        schaffen eine Startregel:
+        nicht kontextfrei ist. Allerdings ist $L$ kein sehr
+        kompliziertes Gebilde. So könnten Sie recht einfach
+        ein Programm schreiben, dass für ein Eingabewort prüft,
+        ob es in $L$ ist. Können wir also auch eine formale
+        Grammatik schreiben?
+        Dies geht sogar nohc einfacher als die obigen Sprachen.
+        Wir schaffen eine Startregel:
       </p>
       <div class="math-block">
         $$
@@ -489,10 +505,11 @@
         $$
       </div>
       <p>
-        Die Nichtterminale $L$ und $R$ zeigen den linken und rechten Rand an.
-        Wir können am linken Rand einen "Verdopplungssymbol" $D$ erzeugen. Dies
-        kann nur nach rechts durchwandern und bei $R$ verschwinden und verdoppelt dabei
-        jede
+        Die Nichtterminale $L$ und $R$ zeigen den linken
+        und rechten Rand an. Wir können am linken Rand einen
+        "Verdopplungssymbol" $D$ erzeugen. Dies kann nur nach
+        rechts durchwandern und bei $R$ verschwinden und verdoppelt
+        dabei jede
         <span class="nowrap">$1$,</span>
         die es trifft:
       </p>
@@ -506,8 +523,8 @@
         $$
       </div>
       <p>
-        Schlussendlich definieren wir End-Produktionen, die die Randmarkierungen
-        löschen:
+        Schlussendlich definieren wir End-Produktionen, die
+        die Randmarkierungen löschen:
       </p>
       <div class="math-block">
         $$
@@ -531,13 +548,14 @@
       </div>
     </div>
     <p class="main-column">
-      Wagen wir ein letztes Beispiel: die Sprache aller Wörter,
-      deren Länge eine Quadratzahl ist. Spätestens dieses Beispiel sollte Sie
-      davon überzeugen, dass allgemeine formale Gramatiken, im Gegensatz zu
-      kontextfreien und regulären, nicht nur
+      Wagen wir ein letztes Beispiel: die Sprache aller
+      Wörter, deren Länge eine Quadratzahl ist. Spätestens
+      dieses Beispiel sollte Sie davon überzeugen, dass allgemeine
+      formale Gramatiken, im Gegensatz zu kontextfreien und
+      regulären, nicht nur
       <i>Formate</i>
-      syntaktisch
-      beschreiben, sondern komplizierte Rechnungen durchführen können.
+      syntaktisch beschreiben,
+      sondern komplizierte Rechnungen durchführen können.
       Sie stellen somit ein völlig andersartiges Biest dar.
     </p>
     <div class="well statement out">
@@ -549,8 +567,8 @@
         deren Länge eine Quadratzahl ist.
         Wir werden als erstes eine
         <i>Multiplikationsgrammatik</i>
-        erzeugen.
-        Dies soll eine Menge von Produktionen sein, die Ableitungen der Form
+        erzeugen. Dies soll eine Menge von Produktionen sein,
+        die Ableitungen der Form
       </p>
       <div class="math-block">
         $$
@@ -560,7 +578,8 @@
         $$
       </div>
       <p>
-        ermöglicht. Wenn wir dies geschafft haben, sind wir fertig. Mittels
+        ermöglicht. Wenn wir dies geschafft haben, sind wir
+        fertig. Mittels
       </p>
       <div class="math-block">
         $$
@@ -573,10 +592,10 @@
       <p>
         können wir alle $S \Step{}^* L A^m B^m R$ ableiten.
         Die Multiplikationsgrammatik wandelt uns dies in
-        $L A^m B^m C^{m^2} T$ um. Schlussendlich führen
-        wir ein Killersymbol $K$ ein, das bei $T$ entsteht und sich
-        nach links durcharbeitet, dabei die $C$ in \(1)\ umwandelt
-        und die $\tilde{A},B$ durch $\epsilon$ ersetzt:
+        $L A^m B^m C^{m^2} T$ um. Schlussendlich führen wir
+        ein Killersymbol $K$ ein, das bei $T$ entsteht und
+        sich nach links durcharbeitet, dabei die $C$ in \(1)\
+        umwandelt und die $\tilde{A},B$ durch $\epsilon$ ersetzt:
       </p>
       <div class="math-block">
         $$
@@ -590,8 +609,8 @@
         $$
       </div>
       <p>
-        Es bleibt also, die Multiplikationsgrammatik zu entwerfen, die,
-        um es zu wiederholen,
+        Es bleibt also, die Multiplikationsgrammatik zu entwerfen,
+        die, um es zu wiederholen,
       </p>
       <div class="math-block">
         $$
@@ -601,7 +620,8 @@
         $$
       </div>
       <p>
-        ermöglicht, aber nicht wirklich viel mehr. Wir erschaffen die Produktion
+        ermöglicht, aber nicht wirklich viel mehr. Wir erschaffen
+        die Produktion
       </p>
       <div class="math-block">
         $$
@@ -611,16 +631,16 @@
         $$
       </div>
       <p>
-        Das neue Nichtterminal $\tilde{A}$ bedeutet soviel wie "ein
+        Das neue Nichtterminal $\tilde{A}$ bedeutet soviel
+        wie "ein
         <span class="nowrap">$A$,</span>
-        das bereits
-        abgearbeitet worden ist." Das Nichtterminal $X$ bedeutet:
-        erzeuge rechts vom
+        das bereits abgearbeitet worden ist."
+        Das Nichtterminal $X$ bedeutet: erzeuge rechts vom
         <span class="nowrap">$B$-Block</span>
         einen
         <span class="nowrap">$C$-Block</span>
-        gleicher Länge.
-        Wir wollen also
+        gleicher Länge. Wir wollen
+        also
       </p>
       <div class="math-block">
         $$
@@ -646,12 +666,12 @@
         $$
       </div>
       <p>
-        Das $X$ erzeugt also von seinem Entstehen bis zu seinem Verschwinden bei $R$
-        genau $n$ viele
+        Das $X$ erzeugt also von seinem Entstehen bis zu
+        seinem Verschwinden bei $R$ genau $n$ viele
         <span class="nowrap">$\tilde{C}$-Symbole.</span>
-        Wir erstellen nun Regeln,
-        die uns zwingen, jedes $\tilde{C}$ nach rechts laufen zu lassen,
-        wo sie in ein $C$ umgewandelt werden können:
+        Wir erstellen nun Regeln, die
+        uns zwingen, jedes $\tilde{C}$ nach rechts laufen
+        zu lassen, wo sie in ein $C$ umgewandelt werden können:
       </p>
       <div class="math-block">
         $$
@@ -663,38 +683,40 @@
         $$
       </div>
       <p>
-        Überzeugen wir uns, dass dies den gewünschten Effekt hat.
+        Überzeugen wir uns, dass dies den gewünschten Effekt
+        hat.
       </p>
       <ul>
         <li>
           <p>
             Wir können $R$ nur loswerden, indem wir es in das
             Killersymbol $K$ umwandeln. Das Killersymbol kann
-            nur bei $L$ verschwinden. Dazwischen kann es
-            nur die Zeichen $\tilde{A}, B, C$ passieren.
-            Zum Zeitpunkt, wo wir $R \rightarrow K$ anwenden,
-            darf die Wortform also keine
+            nur bei $L$ verschwinden. Dazwischen kann es nur die
+            Zeichen $\tilde{A}, B, C$ passieren. Zum Zeitpunkt,
+            wo wir $R \rightarrow K$ anwenden, darf die Wortform
+            also keine
             <span class="nowrap">$A$-Symbole</span>
             mehr enthalten.
           </p>
         </li>
         <li>
           <p>
-            Wir können eine $A$ nur verschwinden lassen
-            durch $A \rightarrow \tilde{A} X$ und $X$ nur
-            auf diese Weise entstehen lassen. Wir produzieren also,
-            wenn wir mit $L A^m B^n R$ beginnen, im Laufe der Ableitung genau
-            $m$ mal ein
+            Wir können eine $A$ nur verschwinden lassen durch
+            $A \rightarrow \tilde{A} X$ und $X$ nur auf diese
+            Weise entstehen lassen. Wir produzieren also, wenn
+            wir mit $L A^m B^n R$ beginnen, im Laufe der Ableitung
+            genau $m$ mal ein
             <span class="nowrap">$X$.</span>
             
           </p>
         </li>
         <li>
           <p>
-            Um ein $X$ wieder verschwinden zu lassen, muss es den ganzen
+            Um ein $X$ wieder verschwinden zu lassen, muss es
+            den ganzen
             <span class="nowrap">$B$-Block</span>
-            durchlaufen und produziert damit insgesamt $n$ viele
-            (\tilde{C}\).
+            durchlaufen und produziert damit
+            insgesamt $n$ viele (\tilde{C}\).
           </p>
         </li>
         <li>
@@ -706,18 +728,17 @@
         </li>
         <li>
           <p>
-            Jedes $\tilde{C}$ kann nur in ein $C$ umgewandelt werden.
-            Es entstehen also insgesamt $mn$ viele
+            Jedes $\tilde{C}$ kann nur in ein $C$ umgewandelt
+            werden. Es entstehen also insgesamt $mn$ viele
             <span class="nowrap">$C$.</span>
             
           </p>
         </li>
       </ul>
       <p>
-        Wenn wir also aus
-        $L A^m B^n R$ ein Wort ableiten, so
-        muss zum Zeitpunkt der Produktion $R \rightarrow K$
-        die Wortform so aussehen:
+        Wenn wir also aus $L A^m B^n R$ ein Wort ableiten,
+        so muss zum Zeitpunkt der Produktion
+        $R \rightarrow K$ die Wortform so aussehen:
       </p>
       <div class="math-block">
         $$
@@ -727,16 +748,14 @@
         $$
       </div>
       <p>
-        Wir können die Produktion $R \step{} K$ zwar schon früher
-        anwenden; wenn da allerdings noch
+        Wir können die Produktion $R \step{} K$ zwar schon
+        früher anwenden; wenn da allerdings noch
         <span class="nowrap">$A$-</span>
         oder
         <span class="nowrap">$\tilde{C}$-Symbole</span>
         enthalten sind, ist es
-        <i>game over</i>: wir könnten die nie
-        mehr in Terminale umwandeln.
-      </p>
-      <p>
+        <i>game over</i>:
+        wir könnten die nie mehr in Terminale umwandeln.
         In einer leichten Variation können wir auch die Sprache
       </p>
       <div class="math-block">
@@ -751,13 +770,13 @@
       </p>
     </div>
     <p class="main-column">
-      Die Sprache \{a^m b^n c^{m+n}\} können wir eh: die ist sogar kontextfrei.
-      Wir können also Arithmetik mit formalen Grammatiken "programmieren".
+      Die Sprache \{a^m b^n c^{m+n}\} können wir eh: die
+      ist sogar kontextfrei. Wir können also Arithmetik mit
+      formalen Grammatiken "programmieren".
     </p>
-    <div class="well statement out">
+    <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe</b>
-        <b>7.8</b>
+        <b>Übungsaufgabe 7.1</b>
         Geben Sie ein formale Grammatik für
       </p>
       <div class="math-block">
@@ -768,18 +787,18 @@
         $$
       </div>
       <p>
-        an. Dies ist auch ein Paradebeispiel für eine Sprache, die nicht kontextfrei ist.
+        an. Dies ist auch ein Paradebeispiel für eine Sprache,
+        die nicht kontextfrei ist.
       </p>
     </div>
     <p class="main-column">
-      Überlegen Sie, wie man "lineare Suche" implementieren könnte:
+      Überlegen Sie, wie man "lineare Suche" implementieren
+      könnte:
     </p>
-    <div class="well statement out">
+    <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe</b>
-        <b>7.9</b>
-        Sei $L$ die Sprache über $\Sigma = \{a,b,:,;\}$
-        mit
+        <b>Übungsaufgabe 7.2</b>
+        Sei $L$ die Sprache über $\Sigma = \{a,b,:,;\}$ mit
       </p>
       <div class="math-block">
         $$
@@ -791,13 +810,15 @@
       <p>
         mit
         <span class="nowrap">$w, w_1, \dots, w_n \in \{a,b\}^*$.</span>
-        Sie implementiert also im Prinzip die Funktion
+        Sie implementiert
+        also im Prinzip die Funktion
       </p>
 <pre>
 List.member x list
 </pre>
       <p>
-        die überprüft, ob $x$ in der angegebenen Liste enthalten ist:
+        die überprüft, ob $x$ in der angegebenen Liste enthalten
+        ist:
       </p>
       <div class="math-block">
         $$
@@ -811,18 +832,21 @@ List.member x list
         <b>Tip:</b>
         das ist einfach, wenn Sie bereits eine Grammatik
         für das vorherige Problem haben. Erzeugen Sie
-        $wXwY$ und lassen dann aus $X$ und $Y$ den Rest der Liste entstehen.
+        $wXwY$ und lassen dann aus $X$ und $Y$ den Rest der
+        Liste entstehen.
       </p>
     </div>
     <p class="main-column">
-      Sie haben sicherlich gemerkt, dass wir die Grammatikproduktionen nun nicht
-      mehr nur zum
+      Sie haben sicherlich gemerkt, dass wir die Grammatikproduktionen
+      nun nicht mehr nur zum
       <i>Erzeugen</i>
-      verwenden wie bei kontextfreien Sprachen, sondern zum
-      Umformen, Rumschieben, Kopieren etc. Es ist nun an der Zeit, die
-      Welt der Grammatiken zu verlassen und zu formalisieren, was man
-      mit Umformen, Rumschieben, Kopieren erreichen kann. In anderen Worten:
-      eine Formalisierung des Begriffs des
+      verwenden wie bei
+      kontextfreien Sprachen, sondern zum Umformen, Rumschieben,
+      Kopieren etc. Es ist nun an der Zeit, die Welt der
+      Grammatiken zu verlassen und zu formalisieren, was
+      man mit Umformen, Rumschieben, Kopieren erreichen kann.
+      In anderen Worten: eine Formalisierung des Begriffs
+      des
       <i>Berechnens</i>.
     </p>
   </div>

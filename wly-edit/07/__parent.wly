@@ -27,7 +27,7 @@
     Punkt 2 und 3 werden Gegenstand des nächsten Kapitels
     sein, in welchem wir die Turing-Maschinen einführen.
 
-    |> h3
+    |> Topic
         Allgemeine formale Grammatiken
 
     |> Statement
@@ -105,19 +105,19 @@
     formale Grammatiken etwas können, das kontextfreie
     Grammatiken nicht bieten konnten: das Vertauschen von
     Symbolen. Das mag nicht als besonders viel erscheinen,
-    wird sich aber als _Game Changer_ herausstellen.
-    Sobald wir eine Wortform erreicht haben, die nur aus
-    Terminalsymbolen besteht (also ein _Wort_ geworden
-    ist), muss unsere Ableitung aufhören: wir können keine
-    weitere Produktion anwenden, da jede linke Seite mindestens
-    ein Nichtterminal enthält. Diese Einschränkung in der
-    Definition allgemeiner formaler Grammatiken ist nicht
-    wirklich notwenig, sie macht Dinge allerdings klar,
-    wo eine Ableitung zu Ende ist / sein muss. Es handelt
-    sich also gewissermaßen um das Gegenteil von Syntax-Antizucker
-    (mir ist gerade keine Substanz eingefallen, deren Geschmack
-    universell als abstoßend empfunden wird). Wir können
-    Grammatiken, die verbotene Produktionen der Form
+    wird sich aber als _Game Changer_ herausstellen. Sobald
+    wir eine Wortform erreicht haben, die nur aus Terminalsymbolen
+    besteht (also ein _Wort_ geworden ist), muss unsere
+    Ableitung aufhören: wir können keine weitere Produktion
+    anwenden, da jede linke Seite mindestens ein Nichtterminal
+    enthält. Diese Einschränkung in der Definition allgemeiner
+    formaler Grammatiken ist nicht wirklich notwenig, sie
+    macht Dinge allerdings klar, wo eine Ableitung zu Ende
+    ist / sein muss. Es handelt sich also gewissermaßen
+    um das Gegenteil von Syntax-Antizucker (mir ist gerade
+    keine Substanz eingefallen, deren Geschmack universell
+    als abstoßend empfunden wird). Wir können Grammatiken,
+    die verbotene Produktionen der Form
     $\alpha \rightarrow \beta$ mit
     $\alpha \in \Sigma^*$ enthalten, immer "auf Linie"
     bringen, indem wir jedes Terminalsymbol $x$ in den
@@ -133,8 +133,8 @@
         L = \{a^nb^nc^n \ | \ n \geq 0\}
         \end{align*}
 
-        zu erstellen. Wir haben ja bereits gesehen, dass
-        es zu dieser Sprache keine kontextfreie Grammatik gibt.
+        zu erstellen. Wir haben ja bereits gesehen, dass es
+        zu dieser Sprache keine kontextfreie Grammatik gibt.
         Als ersten Versuch kopieren wir die obige Grammatik,
         allerdings lassen wir nur die Vertauschungsregeln zu,
         die die Buchstaben in die richtige Reihenfolge bringen:
@@ -161,11 +161,10 @@
         \end{align*}
 
         wobei $\#_b(v)$ die Anzahl der in $v$ enthaltenen
-        $b$ ist.
-        Nachdem also unser erster Versuch gescheitert ist,
-        unternehmen wir einen zweiten. Wir stellen uns die
-        Ableitung als aus zwei Phasen bestehend vor. In der
-        ersten wird eine Wortform $w \in \{A,B,C\}$ erzeugt
+        $b$ ist. Nachdem also unser erster Versuch gescheitert
+        ist, unternehmen wir einen zweiten. Wir stellen uns
+        die Ableitung als aus zwei Phasen bestehend vor. In
+        der ersten wird eine Wortform $w \in \{A,B,C\}$ erzeugt
         mit
 
         \begin{align*}
@@ -246,11 +245,11 @@
         Als zweites müssen wir zeigen, dass jedes abgeleitete
         Wort $S \Step{}^* w \in \{a,b,c\}^*$ auch in $L$ ist,
         also die Form $a^n b^n c^n$ haben. Wir machen das
-        nur zu 80% formal.
-        Die erste Beobachtung ist: solange $S$ in der Wortform
-        $\beta$ vorkommt, hat diese die Form
-        $\beta = S \gamma$ mit $\gamma \in \{A,B,C\}^*$ enthält
-        gleich viele $A$ wie $B$ wie $C$.
+        nur zu 80% formal. Die erste Beobachtung ist: solange
+        $S$ in der Wortform $\beta$ vorkommt, hat diese die
+        Form $\beta = S \gamma$ mit
+        $\gamma \in \{A,B,C\}^*$ enthält gleich viele $A$
+        wie $B$ wie $C$.
 
         |> Statement
             title=*Behauptung*
@@ -280,15 +279,15 @@
         in der korrekten Reihenfolge sein müssen. Wir können
         auch gar nicht verbieten, dass in einer Ableitung die
         Vertausch-Regeln 3,4,5 und die Kontroll-Regeln 6,7,8,9,10,11
-        vermischt angewandt werden.
-        Die Behauptung kann man beispielsweise mit Induktion
-        über die Länge der Ableitung zeigen. Intuitiv gesprochen:
-        Sie gilt unmittelbar, nachdem $S \rightarrow X$ angewandt
-        wurde; danach überträgt sich ihre Gültigkeit Schritt
-        für Schritt (z.B. weil Terminalsymbol immer nur links
-        vom Symbol $X / Y / Z$ erzeugt werden können).
-        Wenn nun also $S \rightarrow a^* b^* c^* \gamma$ und
-        $\gamma$ kein Nichtterminal $S,X,Y,Z$ enthält, also
+        vermischt angewandt werden. Die Behauptung kann man
+        beispielsweise mit Induktion über die Länge der Ableitung
+        zeigen. Intuitiv gesprochen: Sie gilt unmittelbar,
+        nachdem $S \rightarrow X$ angewandt wurde; danach
+        überträgt sich ihre Gültigkeit Schritt für Schritt
+        (z.B. weil Terminalsymbol immer nur links vom Symbol
+        $X / Y / Z$ erzeugt werden können). Wenn nun also
+        $S \rightarrow a^* b^* c^* \gamma$ und $\gamma$ kein
+        Nichtterminal $S,X,Y,Z$ enthält, also
         $\gamma \in \{A,B,C\}^*$, dann können keine weiteren
         Produktionen angewandt werden und die Ableitung endet.
         Wenn das also ein Wort sein soll, muss
@@ -317,19 +316,18 @@
         kompliziertes Gebilde. So könnten Sie recht einfach
         ein Programm schreiben, dass für ein Eingabewort prüft,
         ob es in $L$ ist. Können wir also auch eine formale
-        Grammatik schreiben?
-        Dies geht sogar nohc einfacher als die obigen Sprachen.
-        Wir schaffen eine Startregel:
+        Grammatik schreiben? Dies geht sogar nohc einfacher
+        als die obigen Sprachen. Wir schaffen eine Startregel:
 
         \begin{align*}
         S&\step{1} L1R
         \end{align*}
 
-        Die Nichtterminale $L$ und $R$ zeigen den linken
-        und rechten Rand an. Wir können am linken Rand einen
-        "Verdopplungssymbol" $D$ erzeugen. Dies kann nur nach
-        rechts durchwandern und bei $R$ verschwinden und verdoppelt
-        dabei jede $1$, die es trifft:
+        Die Nichtterminale $L$ und $R$ zeigen den linken und
+        rechten Rand an. Wir können am linken Rand einen "Verdopplungssymbol"
+        $D$ erzeugen. Dies kann nur nach rechts durchwandern
+        und bei $R$ verschwinden und verdoppelt dabei jede
+        $1$, die es trifft:
 
         \begin{align*}
         L&\step{2} LD \\
@@ -421,9 +419,9 @@
         L \tilde{A}^i A^j B^n C^n R
         \end{align*}
 
-        Die einfachste Möglichkeit ist vielleicht, das
-        $X$ nach rechts durchrutschen zu lassen und dabei
-        jedes $B$ durch ein $B \tilde{C}$ ersetzen zu lassen:
+        Die einfachste Möglichkeit ist vielleicht, das $X$
+        nach rechts durchrutschen zu lassen und dabei jedes
+        $B$ durch ein $B \tilde{C}$ ersetzen zu lassen:
 
         \begin{align*}
         XA&\rightarrow AX \\
@@ -432,11 +430,11 @@
         X\tilde{C}&\rightarrow \tilde{C}X
         \end{align*}
 
-        Das $X$ erzeugt also von seinem Entstehen bis zu
-        seinem Verschwinden bei $R$ genau $n$ viele
-        $\tilde{C}$-Symbole. Wir erstellen nun Regeln, die
-        uns zwingen, jedes $\tilde{C}$ nach rechts laufen
-        zu lassen, wo sie in ein $C$ umgewandelt werden können:
+        Das $X$ erzeugt also von seinem Entstehen bis zu seinem
+        Verschwinden bei $R$ genau $n$ viele $\tilde{C}$-Symbole.
+        Wir erstellen nun Regeln, die uns zwingen, jedes
+        $\tilde{C}$ nach rechts laufen zu lassen, wo sie in
+        ein $C$ umgewandelt werden können:
 
         \begin{align*}
         \tilde{C} B&\rightarrow B \tilde{C} \\
@@ -484,8 +482,8 @@
         Wir können die Produktion $R \step{} K$ zwar schon
         früher anwenden; wenn da allerdings noch $A$- oder
         $\tilde{C}$-Symbole enthalten sind, ist es _game over_:
-        wir könnten die nie mehr in Terminale umwandeln.
-        In einer leichten Variation können wir auch die Sprache
+        wir könnten die nie mehr in Terminale umwandeln. In
+        einer leichten Variation können wir auch die Sprache
 
         \begin{align*}
         \{a^m b^n c^{mn} \ | \ m,n \geq 0 \}
@@ -497,8 +495,7 @@
     ist sogar kontextfrei. Wir können also Arithmetik mit
     formalen Grammatiken "programmieren".
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Geben Sie ein formale Grammatik für
 
         \begin{align*}
@@ -511,8 +508,7 @@
     Überlegen Sie, wie man "lineare Suche" implementieren
     könnte:
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Sei $L$ die Sprache über $\Sigma = \{a,b,:,;\}$ mit
 
         \begin{align*}
