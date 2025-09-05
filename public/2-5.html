@@ -36,7 +36,7 @@
       </p>
     </div>
     <p class="main-column">
-      Unser Ziel in diesem Teilkapitel ist es, Schaltkreise
+      Unser ZiEl in diesem Teilkapitel ist es, Schaltkreise
       für die Majority-Funktion zu bauen:
     </p>
     <figure class="main-column">
@@ -366,13 +366,13 @@
       <span class="nowrap">${n \choose k}$,</span>
       
     </p>
-    <div class="well highlight out">
-<pre class="listing numbered-pre">
+    <div class="main-column">
+<pre class="listing">
 def binomial(n,k):
-   if k == 0 or k == n:
-       return 1
-   else:
-       return binomial(n-1,k-1) + binomial(n-1,k)
+    if k == 0 or k == n:
+        return 1
+    else:
+        return binomial(n-1,k-1) + binomial(n-1,k)
 </pre>
     </div>
     <p class="main-column">

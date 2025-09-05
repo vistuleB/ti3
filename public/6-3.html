@@ -31,6 +31,7 @@
     </div>
     <div class="main-column page-title">
       <p>
+        6.3 
         Rechnerübung: Gute kontextfreie Grammatiken entwerfen
       </p>
     </div>
@@ -91,13 +92,11 @@
         <b>Übungsaufgabe 6.3.1</b>
         Geben Sie folgende Grammatik in die App ein:
       </p>
-      <div class="well highlight">
 <pre>
-S -&gt; ;
-S -&gt; "("S")"S ;
-S -&gt; "(" S "]" S;
+S -&gt;; ;
+S -&gt;; "("S")"S ;
+S -&gt;; "(" S "]" S;
 </pre>
-      </div>
       <p>
         Was ist die erzeugte Sprache? Können Sie sie in Worten
         beschreiben? Erzeugen Sie Wörter in dieser Sprache,
@@ -138,12 +137,10 @@ S -&gt; "(" S "]" S;
         Entwerfen Sie eine Grammatik für arithmetische Ausdrücke
         im Racket-Stil, also
       </p>
-      <div class="well highlight">
 <pre>
 (* (+ 2 3) (- 4 (* 2 4) 5)
 (+ 1 2 (* 2))
 </pre>
-      </div>
       <p>
         Leidet Ihre Grammatik an langen Sackgassen? Wenn ja,
         können Sie die Grammatik abändern? Haben Sie mittlerweile
@@ -159,11 +156,9 @@ S -&gt; "(" S "]" S;
         sollten die Konventionen Punkt-vor-Strich beachtet
         werden. Im Ableitungsbaum von
       </p>
-      <div class="well highlight">
 <pre>
 2+3*(5+4)
 </pre>
-      </div>
       <p>
         sollte sich das wiederspiegeln.
       </p>
@@ -174,13 +169,11 @@ S -&gt; "(" S "]" S;
         <b>(Challenge)</b>
         Geben Sie die Grammatik hier ein:
       </p>
-      <div class="well highlight">
 <pre>
-S -&gt; "("S")"S;
-S -&gt; "["S"("S;
-S -&gt; ;
+S -&gt;; "("S")"S;
+S -&gt;; "["S"("S;
+S -&gt;; ;
 </pre>
-      </div>
       <p>
         Überlegen Sie, was diese "bedeutet". Sie sehen, die
         Grammatik ist nicht eindeutig. Das Wort `[([()(` hat
@@ -202,12 +195,10 @@ S -&gt; ;
         bei der Sie exponentiell große Backtrack-Bäume bekommen
         können:
       </p>
-      <div class="well highlight">
 <pre>
-S -&gt;  "a" X "b" | "a" X "c";
-X -&gt; "a" | "a" X | "a" X X;
+S -&gt;;  "a" X "b" | "a" X "c";
+X -&gt;; "a" | "a" X | "a" X X;
 </pre>
-      </div>
       <p>
         Das ist aber keine Kunst, da die Grammatik uneindeutig
         ist. Können Sie eine

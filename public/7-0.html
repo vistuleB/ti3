@@ -31,6 +31,7 @@
     </div>
     <div class="main-column page-title">
       <p>
+        7. 
         Allgemeine Grammatiken
       </p>
     </div>
@@ -187,21 +188,21 @@
       Symbolen. Das mag nicht als besonders viel erscheinen,
       wird sich aber als
       <i>Game Changer</i>
-      herausstellen.
-      Sobald wir eine Wortform erreicht haben, die nur aus
-      Terminalsymbolen besteht (also ein
+      herausstellen. Sobald
+      wir eine Wortform erreicht haben, die nur aus Terminalsymbolen
+      besteht (also ein
       <i>Wort</i>
-      geworden
-      ist), muss unsere Ableitung aufhören: wir können keine
-      weitere Produktion anwenden, da jede linke Seite mindestens
-      ein Nichtterminal enthält. Diese Einschränkung in der
-      Definition allgemeiner formaler Grammatiken ist nicht
-      wirklich notwenig, sie macht Dinge allerdings klar,
-      wo eine Ableitung zu Ende ist / sein muss. Es handelt
-      sich also gewissermaßen um das Gegenteil von Syntax-Antizucker
-      (mir ist gerade keine Substanz eingefallen, deren Geschmack
-      universell als abstoßend empfunden wird). Wir können
-      Grammatiken, die verbotene Produktionen der Form
+      geworden ist), muss unsere
+      Ableitung aufhören: wir können keine weitere Produktion
+      anwenden, da jede linke Seite mindestens ein Nichtterminal
+      enthält. Diese Einschränkung in der Definition allgemeiner
+      formaler Grammatiken ist nicht wirklich notwenig, sie
+      macht Dinge allerdings klar, wo eine Ableitung zu Ende
+      ist / sein muss. Es handelt sich also gewissermaßen
+      um das Gegenteil von Syntax-Antizucker (mir ist gerade
+      keine Substanz eingefallen, deren Geschmack universell
+      als abstoßend empfunden wird). Wir können Grammatiken,
+      die verbotene Produktionen der Form
       $\alpha \rightarrow \beta$ mit
       $\alpha \in \Sigma^*$ enthalten, immer "auf Linie"
       bringen, indem wir jedes Terminalsymbol $x$ in den
@@ -223,8 +224,8 @@
         $$
       </div>
       <p>
-        zu erstellen. Wir haben ja bereits gesehen, dass
-        es zu dieser Sprache keine kontextfreie Grammatik gibt.
+        zu erstellen. Wir haben ja bereits gesehen, dass es
+        zu dieser Sprache keine kontextfreie Grammatik gibt.
         Als ersten Versuch kopieren wir die obige Grammatik,
         allerdings lassen wir nur die Vertauschungsregeln zu,
         die die Buchstaben in die richtige Reihenfolge bringen:
@@ -262,11 +263,10 @@
       </div>
       <p>
         wobei $\#_b(v)$ die Anzahl der in $v$ enthaltenen
-        $b$ ist.
-        Nachdem also unser erster Versuch gescheitert ist,
-        unternehmen wir einen zweiten. Wir stellen uns die
-        Ableitung als aus zwei Phasen bestehend vor. In der
-        ersten wird eine Wortform $w \in \{A,B,C\}$ erzeugt
+        $b$ ist. Nachdem also unser erster Versuch gescheitert
+        ist, unternehmen wir einen zweiten. Wir stellen uns
+        die Ableitung als aus zwei Phasen bestehend vor. In
+        der ersten wird eine Wortform $w \in \{A,B,C\}$ erzeugt
         mit
       </p>
       <div class="math-block">
@@ -391,11 +391,11 @@
         Als zweites müssen wir zeigen, dass jedes abgeleitete
         Wort $S \Step{}^* w \in \{a,b,c\}^*$ auch in $L$ ist,
         also die Form $a^n b^n c^n$ haben. Wir machen das
-        nur zu 80% formal.
-        Die erste Beobachtung ist: solange $S$ in der Wortform
-        $\beta$ vorkommt, hat diese die Form
-        $\beta = S \gamma$ mit $\gamma \in \{A,B,C\}^*$ enthält
-        gleich viele $A$ wie $B$ wie
+        nur zu 80% formal. Die erste Beobachtung ist: solange
+        $S$ in der Wortform $\beta$ vorkommt, hat diese die
+        Form $\beta = S \gamma$ mit
+        $\gamma \in \{A,B,C\}^*$ enthält gleich viele $A$
+        wie $B$ wie
         <span class="nowrap">$C$.</span>
         
       </p>
@@ -451,15 +451,15 @@
         in der korrekten Reihenfolge sein müssen. Wir können
         auch gar nicht verbieten, dass in einer Ableitung die
         Vertausch-Regeln 3,4,5 und die Kontroll-Regeln 6,7,8,9,10,11
-        vermischt angewandt werden.
-        Die Behauptung kann man beispielsweise mit Induktion
-        über die Länge der Ableitung zeigen. Intuitiv gesprochen:
-        Sie gilt unmittelbar, nachdem $S \rightarrow X$ angewandt
-        wurde; danach überträgt sich ihre Gültigkeit Schritt
-        für Schritt (z.B. weil Terminalsymbol immer nur links
-        vom Symbol $X / Y / Z$ erzeugt werden können).
-        Wenn nun also $S \rightarrow a^* b^* c^* \gamma$ und
-        $\gamma$ kein Nichtterminal $S,X,Y,Z$ enthält, also
+        vermischt angewandt werden. Die Behauptung kann man
+        beispielsweise mit Induktion über die Länge der Ableitung
+        zeigen. Intuitiv gesprochen: Sie gilt unmittelbar,
+        nachdem $S \rightarrow X$ angewandt wurde; danach
+        überträgt sich ihre Gültigkeit Schritt für Schritt
+        (z.B. weil Terminalsymbol immer nur links vom Symbol
+        $X / Y / Z$ erzeugt werden können). Wenn nun also
+        $S \rightarrow a^* b^* c^* \gamma$ und $\gamma$ kein
+        Nichtterminal $S,X,Y,Z$ enthält, also
         <span class="nowrap">$\gamma \in \{A,B,C\}^*$,</span>
         dann können keine weiteren
         Produktionen angewandt werden und die Ableitung endet.
@@ -493,9 +493,8 @@
         kompliziertes Gebilde. So könnten Sie recht einfach
         ein Programm schreiben, dass für ein Eingabewort prüft,
         ob es in $L$ ist. Können wir also auch eine formale
-        Grammatik schreiben?
-        Dies geht sogar nohc einfacher als die obigen Sprachen.
-        Wir schaffen eine Startregel:
+        Grammatik schreiben? Dies geht sogar nohc einfacher
+        als die obigen Sprachen. Wir schaffen eine Startregel:
       </p>
       <div class="math-block">
         $$
@@ -505,11 +504,10 @@
         $$
       </div>
       <p>
-        Die Nichtterminale $L$ und $R$ zeigen den linken
-        und rechten Rand an. Wir können am linken Rand einen
-        "Verdopplungssymbol" $D$ erzeugen. Dies kann nur nach
-        rechts durchwandern und bei $R$ verschwinden und verdoppelt
-        dabei jede
+        Die Nichtterminale $L$ und $R$ zeigen den linken und
+        rechten Rand an. Wir können am linken Rand einen "Verdopplungssymbol"
+        $D$ erzeugen. Dies kann nur nach rechts durchwandern
+        und bei $R$ verschwinden und verdoppelt dabei jede
         <span class="nowrap">$1$,</span>
         die es trifft:
       </p>
@@ -651,9 +649,9 @@
         $$
       </div>
       <p>
-        Die einfachste Möglichkeit ist vielleicht, das
-        $X$ nach rechts durchrutschen zu lassen und dabei
-        jedes $B$ durch ein $B \tilde{C}$ ersetzen zu lassen:
+        Die einfachste Möglichkeit ist vielleicht, das $X$
+        nach rechts durchrutschen zu lassen und dabei jedes
+        $B$ durch ein $B \tilde{C}$ ersetzen zu lassen:
       </p>
       <div class="math-block">
         $$
@@ -666,12 +664,12 @@
         $$
       </div>
       <p>
-        Das $X$ erzeugt also von seinem Entstehen bis zu
-        seinem Verschwinden bei $R$ genau $n$ viele
+        Das $X$ erzeugt also von seinem Entstehen bis zu seinem
+        Verschwinden bei $R$ genau $n$ viele
         <span class="nowrap">$\tilde{C}$-Symbole.</span>
-        Wir erstellen nun Regeln, die
-        uns zwingen, jedes $\tilde{C}$ nach rechts laufen
-        zu lassen, wo sie in ein $C$ umgewandelt werden können:
+        Wir erstellen nun Regeln, die uns zwingen, jedes
+        $\tilde{C}$ nach rechts laufen zu lassen, wo sie in
+        ein $C$ umgewandelt werden können:
       </p>
       <div class="math-block">
         $$
@@ -755,8 +753,8 @@
         <span class="nowrap">$\tilde{C}$-Symbole</span>
         enthalten sind, ist es
         <i>game over</i>:
-        wir könnten die nie mehr in Terminale umwandeln.
-        In einer leichten Variation können wir auch die Sprache
+        wir könnten die nie mehr in Terminale umwandeln. In
+        einer leichten Variation können wir auch die Sprache
       </p>
       <div class="math-block">
         $$

@@ -29,6 +29,7 @@
             temp = add(temp,x) //= Comp(add, p_0, p2) (temp,i,x)
         return temp
     ```
+
     erinnern Sie sich daran: $h$ muss immer eine Funktion
     in der lokalen Variable temp, der Laufvariable $i$
     und $\vec{x}$ sein. Daher:
@@ -62,6 +63,7 @@
         temp = mult(temp,i+1) //= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)
         return temp
     ```
+
     Wir können nicht einfach $i+1$ schreiben! Wir müssen
     dies via $\comp(\succ,\pi_1)$ konstruieren. Denn:
     die Funktion $h$ bekommt ${\rm temp}, i, \vec{x}$
@@ -80,6 +82,7 @@
             temp = i //= p1 (temp,i)
         return temp
     ```
+
     In Worten: wenn $t=0$, dann geben wir einfach
     $\zero()$ zurück, also $0$. Ansonsten durchlaufen
     wir die Schleife $t$ mal; der letzte Schleifenindex
@@ -117,6 +120,7 @@
             temp = 1 //= one
         return temp
     ```
+
     und somit
 
     \begin{align*}
@@ -160,6 +164,7 @@
             temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) //= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)
         return temp
     ```
+
     Was geht hier vor? Wenn
     ${\rm iSquareLessEqualX}(i,x))$ True ist, dann ersetzen
     wir temp durch $i$. Ansonsten belassen wir es beim
@@ -186,16 +191,15 @@
     wir uns, einen neuen Kombinator zu definieren, anstatt
     diese Konstruktion jedes Mal "von Hand" durchzuführen:
 
-    |> Highlight
-        |> pre
-            def LargestLessThan(upperBound, predicate):
-            \       def new_function(*x):
-            \               temp = 0
-            \               for i in range(upperBound(*x)):
-            \                       if (predicate(i,*x)):
-            \                               temp = i
-            \               return temp
-            \       return new_function
+    |> pre
+        def LargestLessThan(upperBound, predicate):
+        \        def new_function(*x):
+        \                temp = 0
+        \                for i in range(upperBound(*x)):
+        \                        if (predicate(i,*x)):
+        \                                temp = i
+        \                return temp
+        \        return new_function
 
     und somit können wir sqrt schreiben als
 
@@ -213,25 +217,23 @@
     mindestens zwei zu benötigen. Betrachten wir den Fall
     der Fibonacci-Zahlen:
 
-    |> Highlight
-        |> pre
-            def fibIterative(t):
-            \   a = 0
-            \   b = 1
-            \   for i in range(t):
-            \       c = a+b
-            \       a = b
-            \       b = c
-            \   return a
+    |> pre
+        def fibIterative(t):
+        \    a = 0
+        \    b = 1
+        \    for i in range(t):
+        \        c = a+b
+        \        a = b
+        \        b = c
+        \    return a
 
     Wir führen hier zwei lokale Variable, $a$ und $b$.
     Das $c$ könnten wir mit diesem schönen Trick eliminieren:
 
-    |> Highlight
-        |> pre
+    |> pre
 
-            b = a+b
-            a = b-a 
+        b = a+b
+        a = b-a 
 
     Doch selbst dann hätten wir immer noch zwei lokale
     Variable. Die Fibonacci-Zahlen rekursiv per `return
@@ -266,6 +268,7 @@
         for i in range(t):
             temp = add(temp,i) //= Comp(add, p0, p1)
     ```
+
     und somit
 
     \begin{align*}
@@ -311,6 +314,7 @@
     >>> pair(5,143)
     11031
     ```
+
     Das Problem ist, dass wir das Ende der Liste nicht
     kennen. Wir lösen das Problem, indem wir die leere
     Liste mit $0$ codieren und dann aber beim Davorhängen
@@ -334,6 +338,7 @@
     >>> head(tail(tail(90537)))
     5
     ```
+
     *Native Implementierung.* Die primitive Rekursion
     ist ein theoretischer Berechenbarkeitsbegriff für Funktionen
     auf natürlichen Zahlen. Es ist definitiv keine ernstzunehmende
@@ -349,12 +354,8 @@
     implementieren, also beispielsweise in meiner Datei
     `stockpile.py`:
 
-    |> Highlight
-        |> pre
-            class=listing
-            |> span
-                style=counter-set: listing 63;
-                def pair(x,y):
-            |> br
-            |> span
-                \    return int(((x+y+1) * (x+y)) / 2 + x )
+    |> pre
+        class=listing
+        style=counter-set:listing 62;
+        def pair(x,y):
+        \    return int(((x+y+1) * (x+y)) / 2 + x )

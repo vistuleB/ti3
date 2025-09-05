@@ -31,6 +31,7 @@
     </div>
     <div class="main-column page-title">
       <p>
+        5. 
         Reguläre Sprachen
       </p>
     </div>
@@ -42,39 +43,45 @@
       korrekt sind, ungeachtet, ob ein Konto mit dieser Email-Adresse
       besteht.
     </p>
-<pre class="main-column">
+    <div class="main-column">
+<pre>
 thomas.schmitz@hszg.de                              <span class="orange-comment">Gültig</span>
 dominik@cs.sjtu.edu.cn                              <span class="orange-comment">Gültig</span>
 raffaela@mayer@gmail.com                            <span class="orange-comment">Ungültig: @ kommt zweimal vor</span>
 lorenz.klein@greatest/company/in/the/world.com      <span class="orange-comment">Ungültig: Domain-Name darf kein / enthalten</span>
 .schlaumeier@gmail.com                              <span class="orange-comment">Ungültig: Google will kein . an erster Stelle</span>
 </pre>
+    </div>
     <p class="main-column">
       Hier sehen Sie den Teil eines HTML-Dokuments. Beachten
       Sie die typische hierarchisch-geschachtelte Struktur
       (sie müssen es nicht im Detail lesen):
     </p>
-<pre class="listing main-column">
+    <div class="main-column">
+<pre class="listing">
 <span>&lt;div class='carousel-inner' style='display:inline-block'&gt;</span><br><span>   &lt;div class='item active'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$110 x + 794$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_110_794.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$502 x + 121$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_502_121.svg'&gt;</span><br><span>    &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$617 x + 5$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_617_5.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$815 x + 562$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_851_562.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$868 x + 858$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_868_858.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$915 x + 320$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_915_320.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>&lt;/div class='carousel-inner'&gt; </span>
 </pre>
+    </div>
     <p class="main-column">
       Hier sehen Sie einen Ausschnitt aus einem Elm-Programm
       (auch diesen müssen Sie nicht im Detail lesen):
     </p>
-<pre class="listing numbered-pre main-column">
+    <div class="main-column">
+<pre class="listing">
 find : Bst -&gt; String -&gt; Maybe String
 find tree key =
-   case tree of
-       Empty _ -&gt;
-           Nothing
-       Node ( keyHere, valueHere ) leftChild rightChild -&gt;
-           if key == keyHere then
-               Just valueHere
-           else if key&lt; keyHere then
-               find leftChild key
-           else
-               find rightChild key
+    case tree of
+        Empty _ -&gt;
+            Nothing
+        Node ( keyHere, valueHere ) leftChild rightChild -&gt;
+            if key == keyHere then
+                Just valueHere
+            else if key&lt; keyHere then
+                find leftChild key
+            else
+                find rightChild key
 </pre>
+    </div>
     <p class="main-column">
       Als letztes Beispiel sehen Sie hier eine svg-Datei.
       Dies ist ein Dateiformat für Vektorgrafiken. In diesem
@@ -88,7 +95,7 @@ find tree key =
         onClick="onImgClick(event)"
       >
     </figure>
-    <div class="well highlight out">
+    <div class="main-column">
 <pre class="listing">
 <span>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span>&lt;svg xmlns="http://www.w3.org/2000/svg" </span><br><span>   xmlns:xlink="http://www.w3.org/1999/xlink" </span><br><span>   width="102pt" height="102pt"</span><br><span>   viewBox="0 0 102 102"</span><br><span>   version="1.1"&gt;</span><br><span>&lt;g id="surface2322"&gt;</span><br><span>&lt;circle style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"</span><br><span>   cx="51" cy="51" r="40"/&gt;</span><br><span>&lt;path style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"</span><br><span>   d="M 50 50 l 33.5 -22.5"/&gt;</span><br><span>&lt;/g&gt;</span><br><span>&lt;/svg&gt;</span>
 </pre>
@@ -167,7 +174,7 @@ find tree key =
       <i>Ableitungsregel</i>
       darstellen:
     </p>
-    <div class="well highlight out">
+    <div class="main-column">
 <pre>
 &lt;EmailAdress&gt; -&gt; &lt;User&gt; @ &lt;Domain&gt;
 </pre>
@@ -192,7 +199,7 @@ find tree key =
         separierten Labels</i>, also wiederum etwas, das wie
       ein Domainname aussieht. Daher:
     </p>
-    <div class="well highlight out">
+    <div class="main-column">
 <pre>
 &lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Label&gt;
 &lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Domain&gt;
@@ -219,7 +226,7 @@ find tree key =
       mit unserer
       <code>--&gt;</code>-Notation? Wieder mit dem Rekursionstrick:
     </p>
-    <div class="well highlight out">
+    <div class="main-column">
 <pre>
 &lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt;
 &lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt; &lt;Label&gt;
@@ -234,7 +241,7 @@ find tree key =
       nämlich, dass wir verschiedene Alternativen mit einem
       senkrechten Strich | separieren:
     </p>
-    <div class="well highlight out">
+    <div class="main-column">
 <pre>
 &lt;AlphaNum&gt; -&gt; a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
 &lt;AlphaNum&gt; -&gt; A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
@@ -261,7 +268,7 @@ find tree key =
       separiert sind, wobei ein Namensblock
       eine nichtleere Folge alphanumerischer Zeichen ist.
     </p>
-    <div class="well highlight out">
+    <div class="main-column">
 <pre>
 &lt;User&gt; -&gt; &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;
 &lt;NameBlock&gt; -&gt; &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;
@@ -272,7 +279,7 @@ find tree key =
       Das gesamte Regelwerk sehen Sie hier noch einmal im
       Ganzen:
     </p>
-    <div class="well highlight out">
+    <div class="main-column">
 <pre class="listing">
 <span>&lt;EmailAddress&gt;    -&gt;    &lt;User&gt; @ &lt;Domain&gt;</span><br><span>&lt;Domain&gt;          -&gt;    &lt;Label&gt; . &lt;Label&gt; | &lt;Label&gt; . &lt;Domain&gt;</span><br><span>&lt;User&gt;            -&gt;    &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;</span><br><span>&lt;NameBlock&gt;       -&gt;    &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;</span><br><span>&lt;Label&gt;           -&gt;    &lt;AlphaNumOrDash&gt; | &lt;AlphaNumOrDash&gt; &lt;Label&gt;</span><br><span>&lt;AlphaNumOrDash&gt;  -&gt;    &lt;AlphaNum&gt; | - </span><br><span>&lt;AlphaNum&gt;        -&gt;    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z</span><br><span>&lt;AlphaNum&gt;        -&gt;    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z</span>
 </pre>
@@ -349,7 +356,7 @@ find tree key =
       ist ein Beispiel für eine Ableitung basierend auf der
       obigen Grammatik:
     </p>
-    <div class="well highlight out">
+    <div class="main-column">
 <pre>
 <span>&lt;EmailAddress&gt; -&gt; &lt;User&gt;@&lt;Domain&gt;</span><br><span>               -&gt; &lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;</span><br><span>               -&gt; &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;</span><br><span>               -&gt; &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Domain&gt;</span><br><span>               -&gt; &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;NameBlock&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;Label&gt;.&lt;Label&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;Label&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;Label&gt;</span><br><span>               -&gt; &lt;AlphaNum&gt;.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;</span><br><span>               -&gt; d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;&lt;AlphaNumOrDash&gt;</span><br><span>               -&gt; d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;e</span><br><span>               -&gt; d.&lt;AlphaNum&gt;@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</span><br><span>               -&gt; d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de</span><br><span>               -&gt; d.s@&lt;AlphaNumOrDash&gt;.b.de</span><br><span>               -&gt; d.s@a.b.de</span>
 </pre>

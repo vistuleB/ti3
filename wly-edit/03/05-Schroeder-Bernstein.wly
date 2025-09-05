@@ -53,6 +53,7 @@
         $g : B\rightarrow A$ gibt, dann gibt es auch eine
         bijektive Funktion $h: A \rightarrow B$.
 
+
     |> Highlight
         title=*Beweis.*
         Wir tun so, als ob $A \cap B = \emptyset$ gälte. Falls
@@ -68,7 +69,7 @@
             src=./img/infinite-sets/schroeder-bernstein-digraph-1.svg
             src=./img/infinite-sets/schroeder-bernstein-digraph-2.svg
             src=./img/infinite-sets/schroeder-bernstein-digraph-3.svg
-            src=../img/infinite-sets/schroeder-bernstein-digraph-4.svg
+            src=img/infinite-sets/schroeder-bernstein-digraph-4.svg
 
         Wenn wir die Menge $A \cup B$ zusammen mit den $f$-
         und $g$-Pfeilen als Graphen auf einer unendlichen
@@ -120,6 +121,7 @@
             title=*Behauptung 1.*
             $g^{-1}(a)$ ist definiert für jedes $a \in A'$.
 
+
         |> Highlight
             title=*Beweis.*
             Wenn $a \in A'$ gilt, dann gilt $a \in X_{2i+1}$,
@@ -136,6 +138,7 @@
         |> Remark
             title=*Behauptung 2.*
             $h$ ist injektiv.
+
 
         |> Highlight
             title=*Beweis.*
@@ -167,6 +170,7 @@
         |> Remark
             title=*Behauptung 3.*
             $h$ ist surjektiv.
+
 
         |> Highlight
             title=*Beweis.*

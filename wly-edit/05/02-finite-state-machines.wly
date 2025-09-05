@@ -23,38 +23,38 @@
     |> figure
         |> img
             style=height:13em
-            src=./img/finite-state-automata/finite-state-machine-example-01.svg
+            src=img/finite-state-automata/finite-state-machine-example-01.svg
             loading=lazy
 
     Um zu zeigen, wie der Automat ein Eingabewort verarbeitet,
     nehmen wir das Beispiel $\alpha = yxzxxyy$.
 
     |> Carousel
-        src=./img/finite-state-automata/fsa-example-01-01.svg
-        src=./img/finite-state-automata/fsa-example-01-02.svg
-        src=./img/finite-state-automata/fsa-example-01-03.svg
-        src=./img/finite-state-automata/fsa-example-01-04.svg
-        src=./img/finite-state-automata/fsa-example-01-05.svg
-        src=./img/finite-state-automata/fsa-example-01-06.svg
-        src=./img/finite-state-automata/fsa-example-01-07.svg
-        src=./img/finite-state-automata/fsa-example-01-08.svg
-        src=./img/finite-state-automata/fsa-example-01-09.svg
-        src=./img/finite-state-automata/fsa-example-01-10.svg
-        src=./img/finite-state-automata/fsa-example-01-11.svg
-        src=./img/finite-state-automata/fsa-example-01-12.svg
-        src=./img/finite-state-automata/fsa-example-01-13.svg
-        src=./img/finite-state-automata/fsa-example-01-14.svg
-        src=./img/finite-state-automata/fsa-example-01-15.svg
-        src=./img/finite-state-automata/fsa-example-01-16.svg
-        src=./img/finite-state-automata/fsa-example-01-17.svg
-        src=./img/finite-state-automata/fsa-example-01-18.svg
-        src=./img/finite-state-automata/fsa-example-01-19.svg
-        src=./img/finite-state-automata/fsa-example-01-20.svg
-        src=./img/finite-state-automata/fsa-example-01-21.svg
-        src=./img/finite-state-automata/fsa-example-01-22.svg
-        src=./img/finite-state-automata/fsa-example-01-23.svg
-        src=./img/finite-state-automata/fsa-example-01-24.svg
-        src=./img/finite-state-automata/fsa-example-01-25.svg
+        src=img/finite-state-automata/fsa-example-01-01.svg
+        src=img/finite-state-automata/fsa-example-01-02.svg
+        src=img/finite-state-automata/fsa-example-01-03.svg
+        src=img/finite-state-automata/fsa-example-01-04.svg
+        src=img/finite-state-automata/fsa-example-01-05.svg
+        src=img/finite-state-automata/fsa-example-01-06.svg
+        src=img/finite-state-automata/fsa-example-01-07.svg
+        src=img/finite-state-automata/fsa-example-01-08.svg
+        src=img/finite-state-automata/fsa-example-01-09.svg
+        src=img/finite-state-automata/fsa-example-01-10.svg
+        src=img/finite-state-automata/fsa-example-01-11.svg
+        src=img/finite-state-automata/fsa-example-01-12.svg
+        src=img/finite-state-automata/fsa-example-01-13.svg
+        src=img/finite-state-automata/fsa-example-01-14.svg
+        src=img/finite-state-automata/fsa-example-01-15.svg
+        src=img/finite-state-automata/fsa-example-01-16.svg
+        src=img/finite-state-automata/fsa-example-01-17.svg
+        src=img/finite-state-automata/fsa-example-01-18.svg
+        src=img/finite-state-automata/fsa-example-01-19.svg
+        src=img/finite-state-automata/fsa-example-01-20.svg
+        src=img/finite-state-automata/fsa-example-01-21.svg
+        src=img/finite-state-automata/fsa-example-01-22.svg
+        src=img/finite-state-automata/fsa-example-01-23.svg
+        src=img/finite-state-automata/fsa-example-01-24.svg
+        src=img/finite-state-automata/fsa-example-01-25.svg
 
     In diesem Beispiel endet der Automat im Zustand
     $Y$. Sie sehen, dass der Zustand $X$ mit einem doppelten
@@ -106,7 +106,7 @@
         |> figure
             |> img
                 style=height:10em
-                src=./img/finite-state-automata/finite-state-machine-example-01.svg
+                src=img/finite-state-automata/finite-state-machine-example-01.svg
                 loading=lazy
 
         und stellen ihn gemäß Definition >>definition-finite-state-machine
@@ -167,7 +167,7 @@
         |> figure
             |> img
                 style=height:10em
-                src=./img/finite-state-automata/finite-state-machine-example-01.svg
+                src=img/finite-state-automata/finite-state-machine-example-01.svg
                 loading=lazy
 
         Das ist eine völlig legitime Notation für eine Funktion
@@ -215,7 +215,7 @@
         |> figure
             |> img
                 style=height:10em
-                src=./img/finite-state-automata/finite-state-machine-example-01.svg
+                src=img/finite-state-automata/finite-state-machine-example-01.svg
                 loading=lazy
 
         akzeptiert die Sprache aller
@@ -248,7 +248,7 @@
     |> figure
         |> img
             style=height:10em
-            src=./img/finite-state-automata/finite-state-machine-example-01.svg
+            src=img/finite-state-automata/finite-state-machine-example-01.svg
             loading=lazy
 
     würde dies beispielsweise die folgenden Produktionen
@@ -277,6 +277,7 @@
 
     Wir nehmen dies als Anlass, um mal wieder einen Induktionsbeweis
     im Detail durchzuführen.
+
 
     |> Highlight
         title=*Beweis.*
@@ -482,7 +483,7 @@
         |> figure
             |> img
                 style=height:13em
-                src=./img/finite-state-automata/finite-state-machine-example-02.svg
+                src=img/finite-state-automata/finite-state-machine-example-02.svg
                 loading=lazy
 
         und beschreiben Sie die Sprache in eigenen Worten.
@@ -519,7 +520,7 @@
         |> figure
             |> img
                 style=height:11em
-                src=./img/finite-state-automata/finite-state-machine-example-03.svg
+                src=img/finite-state-automata/finite-state-machine-example-03.svg
                 loading=lazy
 
         Wie Sie sehen, ist das nicht ganz korrekt. Als erstes
@@ -539,7 +540,7 @@
         |> figure
             |> img
                 style=height:12em
-                src=./img/finite-state-automata/finite-state-machine-example-04.svg
+                src=img/finite-state-automata/finite-state-machine-example-04.svg
                 loading=lazy
 
         Dies ist nun unser endlicher Automat $M$ mit
@@ -564,7 +565,7 @@
         |> figure
             |> img
                 style=height:7em
-                src=./img/finite-state-automata/finite-state-machine-example-05.svg
+                src=img/finite-state-automata/finite-state-machine-example-05.svg
                 loading=lazy
 
         Leider ist diese Lösung auch nicht korrekt: jetzt

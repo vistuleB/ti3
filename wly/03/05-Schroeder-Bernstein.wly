@@ -68,7 +68,7 @@
             src=./img/infinite-sets/schroeder-bernstein-digraph-1.svg
             src=./img/infinite-sets/schroeder-bernstein-digraph-2.svg
             src=./img/infinite-sets/schroeder-bernstein-digraph-3.svg
-            src=../img/infinite-sets/schroeder-bernstein-digraph-4.svg
+            src=img/infinite-sets/schroeder-bernstein-digraph-4.svg
 
         Wenn wir die Menge $A \cup B$ zusammen mit den $f$-
         und $g$-Pfeilen als Graphen auf einer unendlichen

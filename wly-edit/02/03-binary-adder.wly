@@ -84,7 +84,7 @@
     haben wir mehr, allerdings in jedem Fall $O(n)$ viele.
 
     |> Exercise
-        Bauen Sie einen Schaltkreis oneBitAdder: &ensp;
+        Bauen Sie einen Schaltkreis oneBitAdder:
         $\{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende Funktionalität:
 
         |> figure
@@ -212,8 +212,8 @@
 
     |> Statement
         title=*Definition (Carry propagate / generate für Intervalle)*
-        &ensp;(Carry propagate / generate für Intervalle)
-        Sei $I = \{a,a+1, \dots, b\}$ ein Intervall natürlicher
+        (Carry propagate / generate für Intervalle) Sei
+        $I = \{a,a+1, \dots, b\}$ ein Intervall natürlicher
         Zahlen. Die Werte $p_I$ und $g_I$ sind wie folgt definiert:
 
         |> ul
@@ -333,6 +333,7 @@
         $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und Output-Gates
         $p_{I}, g_I$ für jedes Binärinterval $I$.
 
+
     |> Highlight
         title=*Beweis.*
         Ein Binärintervall, zum Beispiel $[32,47]$ können
@@ -424,6 +425,7 @@
         $p_I, g_I$ für Binärintervalle als Inputs nimmt und
         daraus $g_{[0,k]}$ berechnet für jedes
         $k=0,\dots,n-1$, also insgesamt $n$ Output-Gates.
+
 
     |> Highlight
         title=*Beweis.*

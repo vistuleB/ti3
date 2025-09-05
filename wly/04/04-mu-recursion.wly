@@ -93,16 +93,15 @@
     wie oft diese durchlaufen werden soll. Es gibt also
     keine `while`-Schleifen. Führen wir diese nun ein.
 
-    |> Highlight
-        |> pre
-            class=listing numbered-pre
-            def While (condition, step):
-            \   def f(x):
-            \           temp = x
-            \           while (condition(temp)):
-            \                   temp = step(temp)
-            \           return temp
-            \   return f
+    |> pre
+        class=listing
+        def While (condition, step):
+        \    def f(x):
+        \            temp = x
+        \            while (condition(temp)):
+        \                    temp = step(temp)
+        \            return temp
+        \    return f
 
     |> Exercise
         Schreiben Sie mit Hilfe von `While`, `PrimRec` und

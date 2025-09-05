@@ -23,11 +23,15 @@
         >&lt;&lt; Kapitel 8.1</a>
       </div>
       <div class="menu-right">
-        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+          id="next-page"
+          href="./8-3.html"
+        >Kapitel 8.3  &gt;&gt;</a>
       </div>
     </div>
     <div class="main-column page-title">
       <p>
+        8.2 
         Beispiele
       </p>
     </div>
@@ -49,8 +53,6 @@
         <span class="nowrap">$\{a,b,c\}$.</span>
         Wir wollen eine Turingmaschine
         entwerfen, die diese Sprache entscheidet.
-      </p>
-      <p>
         <b>Informelle
           Beschreibung.</b>
         Unsere Turingmaschine arbeitet in Phasen.
@@ -63,17 +65,15 @@
         dann ein
         <span class="nowrap">$c$.</span>
         Sobald sie das $c$ markiert hat, geht sie wieder
-        nach links. Dies beendet die Phase.
-        Wenn die Maschine kein $a$ mehr findet und auch kein
-        $b$ oder $c$ mehr da ist, akzeptiert die Maschine.
-        Wenn unterwegs ein "Fehler" geschieht, beispielsweise
-        die Maschine ein $b$ sucht aber keines findet, wechselt
-        sie in den
+        nach links. Dies beendet die Phase. Wenn die Maschine
+        kein $a$ mehr findet und auch kein $b$ oder $c$ mehr
+        da ist, akzeptiert die Maschine. Wenn unterwegs ein
+        "Fehler" geschieht, beispielsweise die Maschine ein
+        $b$ sucht aber keines findet, wechselt sie in den
         <code>reject</code>-Zustand.
-      </p>
-      <p>
         <b>Formellere Beschreibung.</b>
-        Als Bandalphabet verwenden wir
+        Als Bandalphabet
+        verwenden wir
       </p>
       <div class="math-block">
         $$

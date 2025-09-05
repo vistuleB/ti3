@@ -163,11 +163,11 @@
         |> li
             ...
 
-    wie sie zum Beispiel auf
+    wie sie zum Beispiel auf 
     |> a
         href=https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden
-        &ensp;Wikipedia 
-    &ensp;aufgeführt sind. Diesen zur Seite stehen die
+        Wikipedia
+    \ aufgeführt sind. Diesen zur Seite stehen die
     nicht wirklich formalisierbaren Beweistechniken oder
     Beweisstrategien, die sich oft aus persönlicher Erfahrung
     speisen, wie zum Beispiel
@@ -246,6 +246,7 @@
                 so weiter. Da wir auf diese Weise jede natürliche Zahl
                 irgendwann erreichen, können wir schlussfolgern, dass
                 $P(n)$ für jede Zahl $n \in \Z$ gilt.
+
             Als erstes müssen wir nun unsere Aussage, die wir
             beweisen wollen (also die im Theorem) so formulieren,
             dass sie die Form _$P(n)$ für alle $n \in \N$_ annimmt.
@@ -273,15 +274,14 @@
                 mit Funktionen mit null Variablen tun zu haben. Allerdings:
                 warum? In Java hätten Sie bestimmt kein Problem mit
 
-                |> Highlight
-                    |> pre
-                        class=listing
-                        public boolean constantFalse() {
-                        \   return false;
-                        }
-                        public boolean constantTrue() {
-                        \   return true;
-                        }
+                |> pre
+                    class=listing
+                    public boolean constantFalse() {
+                    \    return false;
+                    }
+                    public boolean constantTrue() {
+                    \    return true;
+                    }
 
                 und dies sind ja offensichtlich Boolesche Funktionen
                 mit null Input-Variablen. Ich nehme Ihre Ängste aber
@@ -303,12 +303,11 @@
                 ich an Ihre Programmiererfahrung: weder Sie noch der
                 Java-Compiler werden Probleme mit der Funktion
 
-                |> Highlight
-                    |> pre
-                        class=listing
-                        public boolean constantFalse(boolean x) {
-                        \   return false;
-                        }
+                |> pre
+                    class=listing
+                    public boolean constantFalse(boolean x) {
+                    \    return false;
+                    }
 
                 haben. Ja in der Tat, Java toleriert es, dass Sie
                 `constantFalse` zweimal deklariert haben, einmal als
@@ -620,8 +619,11 @@
         |> QED
 
     |> Highlight
-        *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*Als
-        Beweisstrategie verwende ich wieder _Bekanntes abwandeln._
+
+        *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*
+        Als Beweisstrategie verwende ich wieder _Bekanntes
+        abwandeln._
+
         *Das Bekannte.* Erinnern Sie sich an die Konstruktion
         einer DNF-Formel auf Basis der gegebenen Wahrheitstabelle.
         Für jedes $n$-Tupel

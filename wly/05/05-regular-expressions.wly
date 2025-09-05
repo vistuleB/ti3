@@ -192,6 +192,7 @@
         <- aaa:aa:
         false
         ```
+
         Schreiben Sie nun einen regulären Ausdruck $R$ für
         die obige Sprache und testen Sie ihn mit dem Java-Programm.
 

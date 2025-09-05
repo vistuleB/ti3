@@ -12,6 +12,7 @@
         *(Überabzählbarkeit der reellen Zahlen).*
         $\N \not \approx \R$.
 
+
     |> Highlight
         title=*Beweis.*
         Da wir bereits $\R \approx \{0,1\}^{\N}$ gesehen haben,

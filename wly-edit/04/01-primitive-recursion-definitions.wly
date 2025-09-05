@@ -107,16 +107,15 @@
     es als Funktion mit einer `for`-Schleife vorstellen,
     in der nur eine lokale Variable erlaubt ist:
 
-    |> Highlight
-        |> pre
-            class=listing numbered-pre
-            def PrimRec(g, h):
-            \   def f(t,*x):
-            \       temp = g(*x)
-            \       for i in range(t):
-            \         temp = h(temp, i, *x)
-            \       return temp
-            \   return f
+    |> pre
+        class=listing
+        def PrimRec(g, h):
+        \    def f(t,*x):
+        \        temp = g(*x)
+        \        for i in range(t):
+        \          temp = h(temp, i, *x)
+        \        return temp
+        \    return f
 
     Die Forderung, dass man nur _eine_ lokale Variable
     durch die Schleife führen darf, scheint sehr restriktiv;
@@ -181,11 +180,13 @@
         ${\rm add}: \N^2 \rightarrow \N$ schreiben, die ihre
         beiden Argumente addiert. Ich darf also nicht einfach
         python programmieren und
+
         |> pre
             style=color:red; background-color: yellow;
-            class=listing numbered-pre well
+            class=listing well
             def add(x,y):
-            \ return x + y
+            \    return x + y
+
         schreiben, denn unsere "Programmiersprache" ist Primitive
         Rekursion, nicht Python! Wir müssen uns `add` aus den
         Kombinatoren zusammenbasteln. Ich schreibe nun
@@ -207,12 +208,11 @@
         Rekursion ist mit $g = \pi_0$ und
         $h = {\comp}(\succ, \pi_0)$, also
 
-        |> Highlight
-            |> pre
-                class=listing numbered-pre
+        |> pre
+            class=listing
 
-                p0 = Proj(0)
-                add = PrimRec (p0, Comp(succ,p0))
+            p0 = Proj(0)
+            add = PrimRec (p0, Comp(succ,p0))
 
     |> Exercise
         Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv

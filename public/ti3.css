@@ -86,9 +86,6 @@ body {
     margin: 0.4rem 0;
 }
 
-/* Menu
-*/
-
 .menu {
     position: fixed;
     top: 0;
@@ -174,6 +171,20 @@ body {
     margin-bottom: 0;
 }
 
+pre {
+    line-height: 1.6;
+    color: var(--body-color);
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    width: 100%;
+    margin: 2ch auto;
+    padding: 1.3rem 1.5rem;
+    border: 1px #000 solid;
+    background-color: #eee;
+    overflow: scroll;
+    text-wrap: nowrap;
+}
+
 .out {
     width: var(--outer-well-width);
 }
@@ -237,13 +248,6 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
 
 .nowrap {
     white-space: nowrap;
-}
-
-pre {
-    color: var(--body-color);
-    font-size: 0.9rem;
-    white-space: pre-wrap;
-    margin: 0 2ch;
 }
 
 .arbitrary-prompt {
@@ -481,7 +485,7 @@ p + h2 {
 }
 
 code {
-    font-size: 0.98rem;
+    font-size: 0.9em;
     color: #c7254e;
 }
 

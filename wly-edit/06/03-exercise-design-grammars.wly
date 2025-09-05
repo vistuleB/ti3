@@ -39,11 +39,10 @@
     |> Exercise
         Geben Sie folgende Grammatik in die App ein:
 
-        |> Highlight
-            |> pre
-                S -&gt; ;
-                S -&gt; "("S")"S ;
-                S -&gt; "(" S "]" S;
+        |> pre
+            S ->; ;
+            S ->; "("S")"S ;
+            S ->; "(" S "]" S;
 
         Was ist die erzeugte Sprache? Können Sie sie in Worten
         beschreiben? Erzeugen Sie Wörter in dieser Sprache,
@@ -74,10 +73,9 @@
         Entwerfen Sie eine Grammatik für arithmetische Ausdrücke
         im Racket-Stil, also
 
-        |> Highlight
-            |> pre
-                (* (+ 2 3) (- 4 (* 2 4) 5)
-                (+ 1 2 (* 2))
+        |> pre
+            (* (+ 2 3) (- 4 (* 2 4) 5)
+            (+ 1 2 (* 2))
 
         Leidet Ihre Grammatik an langen Sackgassen? Wenn ja,
         können Sie die Grammatik abändern? Haben Sie mittlerweile
@@ -90,20 +88,18 @@
         sollten die Konventionen Punkt-vor-Strich beachtet
         werden. Im Ableitungsbaum von
 
-        |> Highlight
-            |> pre
-                2+3*(5+4)
+        |> pre
+            2+3*(5+4)
 
         sollte sich das wiederspiegeln.
 
     |> Exercise
         *(Challenge)* Geben Sie die Grammatik hier ein:
 
-        |> Highlight
-            |> pre
-                S -&gt; "("S")"S;
-                S -&gt; "["S"("S;
-                S -&gt; ;
+        |> pre
+            S ->; "("S")"S;
+            S ->; "["S"("S;
+            S ->; ;
 
         Überlegen Sie, was diese "bedeutet". Sie sehen, die
         Grammatik ist nicht eindeutig. Das Wort `[([()(` hat
@@ -120,10 +116,9 @@
         bei der Sie exponentiell große Backtrack-Bäume bekommen
         können:
 
-        |> Highlight
-            |> pre
-                S -&gt;  "a" X "b" | "a" X "c";
-                X -&gt; "a" | "a" X | "a" X X;
+        |> pre
+            S ->;  "a" X "b" | "a" X "c";
+            X ->; "a" | "a" X | "a" X X;
 
         Das ist aber keine Kunst, da die Grammatik uneindeutig
         ist. Können Sie eine _eindeutige_ Grammatik angebene,

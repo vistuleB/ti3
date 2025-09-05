@@ -31,6 +31,7 @@
     </div>
     <div class="main-column page-title">
       <p>
+        4.1 
         Primitive Rekursion: Motivation und Definitionen
       </p>
     </div>
@@ -192,15 +193,15 @@
       <code>for</code>-Schleife vorstellen,
       in der nur eine lokale Variable erlaubt ist:
     </p>
-    <div class="well highlight out">
-<pre class="listing numbered-pre">
+    <div class="main-column">
+<pre class="listing">
 def PrimRec(g, h):
-   def f(t,*x):
-       temp = g(*x)
-       for i in range(t):
-         temp = h(temp, i, *x)
-       return temp
-   return f
+    def f(t,*x):
+        temp = g(*x)
+        for i in range(t):
+          temp = h(temp, i, *x)
+        return temp
+    return f
 </pre>
     </div>
     <p class="main-column">
@@ -299,10 +300,10 @@ def PrimRec(g, h):
       </p>
 <pre
   style="color:red; background-color: yellow;"
-  class="listing numbered-pre well"
+  class="listing well"
 >
 def add(x,y):
- return x + y
+    return x + y
 </pre>
       <p>
         schreiben, denn unsere "Programmiersprache" ist Primitive
@@ -335,12 +336,10 @@ def add(x,y):
         <span class="nowrap">$h = {\comp}(\succ, \pi_0)$,</span>
         also
       </p>
-      <div class="well highlight">
-<pre class="listing numbered-pre">
+<pre class="listing">
 p0 = Proj(0)
 add = PrimRec (p0, Comp(succ,p0))
 </pre>
-      </div>
     </div>
     <div class="well exercise out">
       <p>

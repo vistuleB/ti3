@@ -51,6 +51,12 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("Sub", "SubCounter", infra.GoBack),
         #("Statement", "StatementCounter", infra.Continue)
       ]),
+      dl.auto_generate_child_if_missing_from_attribute(#("Chapter", "ChapterTitle", "title")),
+      dl.auto_generate_child_if_missing_from_attribute(#("Sub", "SubTitle", "title")),
+      dl.prepend_text_node(#("ChapterTitle","::øøChapterCounter. ")), 
+      dl.prepend_text_node(#("SubTitle", "::øøChapterCounter.::øøSubCounter ")),
+      dl.append_attribute__outside(#("Chapter", "path", "./::øøChapterCounter-0.html"), []),
+      dl.append_attribute__outside(#("Sub", "path", "./::øøChapterCounter-::øøSubCounter.html"), []),
       dl.prepend_text_node_if_has_ancestor_else__batch([
         #(
           "Exercise",
@@ -65,10 +71,6 @@ pub fn main_pipeline()  -> List(Pipe) {
           " *::øøChapterCounter.::øøStatementCounter* "
         ),
       ]),
-      dl.prepend_text_node(#("ChapterTitle","::øøChapterCounter. ")), 
-      dl.prepend_text_node(#("SubTitle", "::øøChapterCounter.::øøSubCounter ")),
-      dl.append_attribute__outside(#("Chapter", "path", "./::øøChapterCounter-0.html"), []),
-      dl.append_attribute__outside(#("Sub", "path", "./::øøChapterCounter-::øøSubCounter.html"), []),
       dl.counters_substitute_and_assign_handles(),
       dl.handles_generate_ids(),
       dl.handles_generate_dictionary("path"),
@@ -89,16 +91,6 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti3_parse_python_prompt_code_block(),
       dl.ti3_parse_orange_comment_code_block(),
       dl.ti3_parse_arbitrary_prompt_response_code_block(),
-      dl.auto_generate_child_if_missing_from_attribute(#(
-        "Chapter",        // parent tag
-        "ChapterTitle",   // new child tag
-        "title"           // attribute to extract from
-      )),
-      dl.auto_generate_child_if_missing_from_attribute(#(
-        "Sub",
-        "SubTitle",
-        "title"
-      )),
       dl.generate_ti3_index(),
       dl.generate_ti3_menu(),
       dl.expand_ti3_carousel(),
@@ -162,6 +154,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("CarouselItem", "class", "carousel__item"),
         #("NoWrap", "class", "nowrap"),
       ]),
+      dl.wrap_with_if_child_of(#("pre", "div", ["Sub", "Chapter"])),
       dl.append_class_to_child_if_has_class(#("Chapter", "out", "well")),
       dl.append_class_to_child_if_has_class(#("Sub", "out", "well")),
       dl.append_class_to_child_if_is_one_of(#("Chapter", "main-column", possible_outer_elements)),

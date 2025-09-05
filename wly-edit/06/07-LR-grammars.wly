@@ -314,6 +314,7 @@
                 Teil von $\front(\gamma)$ mindestens ein Nichtterminal
                 vorkommen.
 
+
     |> Highlight
         title=*Beweis.*
         Der Beweis ist leider etwas mechanisch und repetitiv.
@@ -375,6 +376,7 @@
             title=*Nur-dann-Richtung.*
             Wenn die Grammatik $G$ die Schlussfolgerungen des
             Lemmas erfüllt und müssen zeigen, dass sie auch LG(0).
+
 
         |> Highlight
             title=*Beweis.*
@@ -512,6 +514,7 @@
     Beide Aufgaben können mit Hilfe eines _endlichen Automaten_,
     des DK-Automaten erledigt werden (DK steht als Abkürzung
     für Donald Knuth, der als erstes diese Idee hatte).
+
     |> div
         class=well alert-warning
         *Hinweis.* Was nun folgt, ist mathematisch recht herausfordernd.

@@ -401,12 +401,11 @@
     auf, wie wir diese als primitiv-rekursive Funktion
     konstruiert haben:
 
-    |> Highlight
-        |> pre
+    |> pre
 
-            pair = Comp(add, p0, Comp(choose2,Comp(add,p0,Comp(succ,p1))))
-            choose2 = PrimRec(zero, Comp(add,p0,p1))
-            add = PrimRec (p0, Comp(succ, p0))
+        pair = Comp(add, p0, Comp(choose2,Comp(add,p0,Comp(succ,p1))))
+        choose2 = PrimRec(zero, Comp(add,p0,p1))
+        add = PrimRec (p0, Comp(succ, p0))
 
     dann können wir das auf Baum darstellen:
 

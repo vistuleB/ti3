@@ -84,7 +84,7 @@
     haben wir mehr, allerdings in jedem Fall $O(n)$ viele.
 
     |> Exercise
-        Bauen Sie einen Schaltkreis oneBitAdder: &ensp;
+        Bauen Sie einen Schaltkreis oneBitAdder:
         $\{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende Funktionalität:
 
         |> figure
@@ -212,7 +212,7 @@
 
     |> Statement
         title=*Definition (Carry propagate / generate für Intervalle)*
-        &ensp;(Carry propagate / generate für Intervalle)
+        (Carry propagate / generate für Intervalle)
         Sei $I = \{a,a+1, \dots, b\}$ ein Intervall natürlicher
         Zahlen. Die Werte $p_I$ und $g_I$ sind wie folgt definiert:
 

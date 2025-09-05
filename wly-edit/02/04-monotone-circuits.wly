@@ -163,14 +163,14 @@
         |> li
             ...
 
-    wie sie zum Beispiel auf
+    wie sie zum Beispiel auf 
     |> a
         href=https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden
-        &ensp;Wikipedia 
-    &ensp;aufgeführt sind. Diesen zur Seite stehen die
-    nicht wirklich formalisierbaren Beweistechniken oder
-    Beweisstrategien, die sich oft aus persönlicher Erfahrung
-    speisen, wie zum Beispiel
+        Wikipedia
+    \ aufgeführt sind. Diesen zur Seite stehen die nicht
+    wirklich formalisierbaren Beweistechniken oder Beweisstrategien,
+    die sich oft aus persönlicher Erfahrung speisen, wie
+    zum Beispiel
 
     |> ul
         |> li
@@ -186,6 +186,7 @@
     eine vollständige Liste anzugeben; ich habe die drei
     obigen Punkte gewählt, weil sie in der Tat das repräsentieren,
     was wir in den Beweisen jetzt verwenden werden.
+
 
     |> Highlight
         *Erster Beweis. Top-Down mit `if-then-else`.* In diesem
@@ -219,10 +220,12 @@
             href=#after-sub-proof
             runterspringen. 
 
+
         |> Highlight
             title=*Beweis.*
             Als _Beweismethode_ verwenden wir Induktion über
             $n$, die Anzahl der Variablen.
+
             |> div
                 class=well alert-info
                 Zur Erinnerung: bei einem Beweis per Induktion wollen
@@ -246,6 +249,7 @@
                 so weiter. Da wir auf diese Weise jede natürliche Zahl
                 irgendwann erreichen, können wir schlussfolgern, dass
                 $P(n)$ für jede Zahl $n \in \Z$ gilt.
+
             Als erstes müssen wir nun unsere Aussage, die wir
             beweisen wollen (also die im Theorem) so formulieren,
             dass sie die Form _$P(n)$ für alle $n \in \N$_ annimmt.
@@ -267,21 +271,21 @@
             gibt es einen Schaltkreis, nämlich bestehend aus einem
             Input-Gate (mit der Konstant 0 bzw. 1 beschriftet),
             das gleichzeitig auch Output-Gate ist.
+
             |> div
                 class=well alert-warning
                 Vielleicht fühlen Sie sich unwohl bei der Idee, es
                 mit Funktionen mit null Variablen tun zu haben. Allerdings:
                 warum? In Java hätten Sie bestimmt kein Problem mit
 
-                |> Highlight
-                    |> pre
-                        class=listing
-                        public boolean constantFalse() {
-                        \   return false;
-                        }
-                        public boolean constantTrue() {
-                        \   return true;
-                        }
+                |> pre
+                    class=listing
+                    public boolean constantFalse() {
+                    \    return false;
+                    }
+                    public boolean constantTrue() {
+                    \    return true;
+                    }
 
                 und dies sind ja offensichtlich Boolesche Funktionen
                 mit null Input-Variablen. Ich nehme Ihre Ängste aber
@@ -303,12 +307,11 @@
                 ich an Ihre Programmiererfahrung: weder Sie noch der
                 Java-Compiler werden Probleme mit der Funktion
 
-                |> Highlight
-                    |> pre
-                        class=listing
-                        public boolean constantFalse(boolean x) {
-                        \   return false;
-                        }
+                |> pre
+                    class=listing
+                    public boolean constantFalse(boolean x) {
+                    \    return false;
+                    }
 
                 haben. Ja in der Tat, Java toleriert es, dass Sie
                 `constantFalse` zweimal deklariert haben, einmal als
@@ -335,6 +338,7 @@
                 nicht ganz korrekt anwenden, aber davon ausgehen, dass
                 Leser oder Leserin (die ja Menschen sind und keine
                 Compiler), verstehen, was gemeint ist.
+
             Wir haben nun also die Induktionsbasis erfolgreich
             gezeigt. Als nächstes kommt nun der Schritt. In diesem
             nehmen wir an, dass die Aussage $P(n)$ bereits gilt,
@@ -429,11 +433,13 @@
         Theorem 1.4.3
     \ zu.
 
+
     |> Highlight
         title=*Theorem 1.4.3, nochmals.*
         Zu jeder monotonen Funktion
         $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
+
 
     |> Highlight
         *Erster Beweis. Top-Down mit `if-then-else`.* Wir
@@ -619,9 +625,11 @@
         ein monotoner Schaltkreis für $f$.
         |> QED
 
+
     |> Highlight
-        *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*Als
-        Beweisstrategie verwende ich wieder _Bekanntes abwandeln._
+        *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*
+        Als Beweisstrategie verwende ich wieder _Bekanntes
+        abwandeln._
         *Das Bekannte.* Erinnern Sie sich an die Konstruktion
         einer DNF-Formel auf Basis der gegebenen Wahrheitstabelle.
         Für jedes $n$-Tupel

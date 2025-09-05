@@ -155,6 +155,7 @@
     \end{align*}
 
     die _Startkonfiguration_.
+
     |> div
         class=well alert-info
         *Die Rolle des $\square$-Symbols*. Das Band der Turingmaschine
@@ -214,6 +215,7 @@
         leben damit, dass $uqv$ und $\Box \Box u q v \Box$
         formal zwei verschiedene Konfigurationen sind, auch
         wenn beide irgendwie das selbe beschreiben.
+
     Formal definiert $\delta$ nun auch eine Funktion auf
     der Menge der Konfigurationen:
 
@@ -417,6 +419,7 @@
         akzeptierte Sprache. Dann gibt es eine formale Grammatik
         $G$ mit $L(G) = L(M)$. In anderen Worten: formale
         Grammatiken sind mindestens so mächtig wie Turingmaschinen.
+
 
     |> Highlight
         title=*Beweis.*

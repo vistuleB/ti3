@@ -22,13 +22,17 @@
     (ein nichtleerer String aus Buchstaben und Zahlen),
     separiert durch `:` oder `-` aber niemals durch beides
     innerhalb eines Blockes. Also:
+
     |> div
         style=text-align:center
         `bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa`
+
     ist ein Wort in $L$, aber
+
     |> div
         style=text-align:center
         `a:b-c.hello`
+
     ist kein Wort in $L$, da das erste Label die Separatoren
     `:` und `-` mischt. Habe ich $L$ genau genug beschrieben?
     Stellen wir eine Meta-Frage: Was zählt überhaupt als
@@ -182,6 +186,7 @@
     Sie manchmal den mit einem Kreuz markierten Fehlerzustand
     (trap state). Die akzeptierenden Zustände sind mit
     fettem Rand markiert.
+
 
     |> Highlight
         style=text-align:center

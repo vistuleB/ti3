@@ -1,7 +1,5 @@
 |> Sub
     title=Beispiele
-    Beispiele von Turingmaschinen
-
     |> Statement
         title=*Beispiel*
         Betrachten wir die Sprache
@@ -17,13 +15,13 @@
         es (ersetzt es durch ein $X$). Dann geht sie nach
         rechts und sucht und markiert ein $b$; dann ein
         $c$. Sobald sie das $c$ markiert hat, geht sie wieder
-        nach links. Dies beendet die Phase.
-        Wenn die Maschine kein $a$ mehr findet und auch kein
-        $b$ oder $c$ mehr da ist, akzeptiert die Maschine.
-        Wenn unterwegs ein "Fehler" geschieht, beispielsweise
-        die Maschine ein $b$ sucht aber keines findet, wechselt
-        sie in den `reject`-Zustand. *Formellere Beschreibung.*
-        Als Bandalphabet verwenden wir
+        nach links. Dies beendet die Phase. Wenn die Maschine
+        kein $a$ mehr findet und auch kein $b$ oder $c$ mehr
+        da ist, akzeptiert die Maschine. Wenn unterwegs ein
+        "Fehler" geschieht, beispielsweise die Maschine ein
+        $b$ sucht aber keines findet, wechselt sie in den
+        `reject`-Zustand. *Formellere Beschreibung.* Als Bandalphabet
+        verwenden wir
 
         \begin{align*}
         \Gamma := \{a,b,c, X, \square\} \ .
@@ -101,9 +99,11 @@
         \end{align*}
 
         auf turingmachinesimulator.com als
+
         |> pre
             q, a
             r, b, D 
+
         angeben, wobei die Richtung $D$ mit den Symbolen `&lt;,
         -,&gt;` codiert wird.
 

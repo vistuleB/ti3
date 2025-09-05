@@ -1,8 +1,6 @@
 |> Sub
-    title=majority
-    |> SubTitle
-        Majority
-    Unser Ziel in diesem Teilkapitel ist es, Schaltkreise
+    title=Majority
+    Unser ZiEl in diesem Teilkapitel ist es, Schaltkreise
     für die Majority-Funktion zu bauen:
 
     |> figure
@@ -103,6 +101,7 @@
         $$
         {n \choose {\ceil{n/2}}} \geq \frac{2^n}{n+1} \ .
         $$
+
 
     |> Highlight
         title=*Beweis.*
@@ -244,14 +243,13 @@
     entspricht dem Unterschied zwischen dem rekursiven
     Code für ${n \choose k}$,
 
-    |> Highlight
-        |> pre
-            class=listing numbered-pre
-            def binomial(n,k):
-            \   if k == 0 or k == n:
-            \       return 1
-            \   else:
-            \       return binomial(n-1,k-1) + binomial(n-1,k)
+    |> pre
+        class=listing
+        def binomial(n,k):
+        \    if k == 0 or k == n:
+        \        return 1
+        \    else:
+        \        return binomial(n-1,k-1) + binomial(n-1,k)
 
     der exponentielle Laufzeit aufweist, und der effizienten
     Implementierung mittels _Dynamic Programming_, bei
@@ -323,6 +321,7 @@
         $$
 
         gilt.
+
 
     |> Highlight
         title=*Beweis.*
@@ -470,6 +469,7 @@
         Tiefe $O(\log n)$ und Größe $\poly(n)$, der
         $\maj_n$ berechnet.
 
+
     |> Highlight
         title=*Beweis.*
         Die Beweismethode, die wir verwenden, ist womöglich
@@ -610,6 +610,7 @@
                     die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
                     $\frac{3}{2} \delta - \frac{1}{2}\delta^3$.
 
+
         |> Highlight
             title=*Beweis.*
             Wir betrachten ein festes $\x \in \cube^n$ mit
@@ -685,6 +686,7 @@
             Wenn $\mathcal{C}$ Fehlerwahrscheinlichkeit
             $\epsilon$ hat, dann hat $\mathcal{C}^{\otimes 3}$
             Fehlerwahrscheinlichkeit $3 \epsilon^2$
+
 
         |> Highlight
             title=*Beweis.*

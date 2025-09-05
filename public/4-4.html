@@ -31,7 +31,10 @@
     </div>
     <div class="main-column page-title">
       <p>
-        Ein Schritt weiter:  while-Schleifen und \(\mu\)-Rekursion
+        4.4 
+        Ein Schritt weiter:  while-Schleifen und
+        <span class="nowrap">$\mu$-Rekursion</span>
+        
       </p>
     </div>
     <p class="main-column">
@@ -155,15 +158,15 @@
       keine
       <code>while</code>-Schleifen. Führen wir diese nun ein.
     </p>
-    <div class="well highlight out">
-<pre class="listing numbered-pre">
+    <div class="main-column">
+<pre class="listing">
 def While (condition, step):
-   def f(x):
-           temp = x
-           while (condition(temp)):
-                   temp = step(temp)
-           return temp
-   return f
+    def f(x):
+            temp = x
+            while (condition(temp)):
+                    temp = step(temp)
+            return temp
+    return f
 </pre>
     </div>
     <div class="well exercise out">

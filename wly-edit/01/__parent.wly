@@ -31,13 +31,12 @@
         Überlegen Sie sich, wie eine gültige Emailadresse
         auszusehen hat. Als konkrete Beispiele nehmen Sie bitte
 
-        |> Highlight
-            |> pre
-                thomas.schmitz@hszg.de
-                dominik@cs.sjtu.edu.cn
-                raffaela@mayer@gmail.com
-                lorenz.klein@greatest/company/in/the/world.com
-                .schlaumeier@gmail.com
+        |> pre
+            thomas.schmitz@hszg.de
+            dominik@cs.sjtu.edu.cn
+            raffaela@mayer@gmail.com
+            lorenz.klein@greatest/company/in/the/world.com
+            .schlaumeier@gmail.com
 
         Welches davon sind gültige Emailadressen? Können Sie
         genaue Regeln angeben, nach denen eine solche gebildet
@@ -66,6 +65,7 @@
                 ^^^
         SyntaxError: cannot use starred expression here
         ```
+
         Die letzten beiden waren in Pythons Augen offensichtlich
         nicht korrekt. Wie sind korrekte arithmetische Ausdrücke
         aufgebaut? Beschränken Sie sich gerne auf * und + und

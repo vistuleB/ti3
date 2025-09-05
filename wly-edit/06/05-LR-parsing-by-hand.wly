@@ -94,6 +94,7 @@
     Die Farbe grau bedeutet hier, dass wir das Eingabezeichen
     noch nicht gelesen haben.
 
+
     |> Highlight
         |> Carousel
             width=36em
@@ -124,6 +125,7 @@
     Betrachten wir noch ein Beispiel, nun für die etwas
     nützlichere Grammatik der streng geklammerten arithmetischen
     Ausdrücke.
+
 
     |> Highlight
         |> Carousel
