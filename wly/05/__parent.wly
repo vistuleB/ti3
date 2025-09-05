@@ -1,5 +1,6 @@
 |> Chapter
     title=Reguläre Sprachen
+
     Hier sehen Sie einige Beispiele für gültige und ungültige
     Email-Adressen. Mit _gültig_ meine ich, dass sie syntaktisch
     korrekt sind, ungeachtet, ob ein Konto mit dieser Email-Adresse
@@ -16,87 +17,85 @@
     Sie die typische hierarchisch-geschachtelte Struktur
     (sie müssen es nicht im Detail lesen):
 
-    |> Highlight
-        |> pre
-            class=listing
-            |> span
-                <div class='carousel-inner' style='display:inline-block'>
-            |> br
-            |> span
-                \   <div class='item active'>
-            |> br
-            |> span
-                \       <p>$110 x + 794$</p><img loading="lazy" src='../img/hash/hashfunction_110_794.svg'>
-            |> br
-            |> span
-                \   </div>
-            |> br
-            |> span
-                \   <div class='item'>
-            |> br
-            |> span
-                \       <p>$502 x + 121$</p><img loading="lazy" src='../img/hash/hashfunction_502_121.svg'>
-            |> br
-            |> span
-                \    </div>
-            |> br
-            |> span
-                \   <div class='item'>
-            |> br
-            |> span
-                \       <p>$617 x + 5$</p><img loading="lazy" src='../img/hash/hashfunction_617_5.svg'>
-            |> br
-            |> span
-                \   </div>
-            |> br
-            |> span
-                \   <div class='item'>
-            |> br
-            |> span
-                \       <p>$815 x + 562$</p><img loading="lazy" src='../img/hash/hashfunction_851_562.svg'>
-            |> br
-            |> span
-                \   </div>
-            |> br
-            |> span
-                \   <div class='item'>
-            |> br
-            |> span
-                \       <p>$868 x + 858$</p><img loading="lazy" src='../img/hash/hashfunction_868_858.svg'>
-            |> br
-            |> span
-                \   </div>
-            |> br
-            |> span
-                \   <div class='item'>
-            |> br
-            |> span
-                \       <p>$915 x + 320$</p><img loading="lazy" src='../img/hash/hashfunction_915_320.svg'>
-            |> br
-            |> span
-                \   </div>
-            |> br
-            |> span
-                </div class='carousel-inner'> 
+    |> pre
+        class=listing
+        |> span
+            <div class='carousel-inner' style='display:inline-block'>
+        |> br
+        |> span
+            \   <div class='item active'>
+        |> br
+        |> span
+            \       <p>$110 x + 794$</p><img loading="lazy" src='../img/hash/hashfunction_110_794.svg'>
+        |> br
+        |> span
+            \   </div>
+        |> br
+        |> span
+            \   <div class='item'>
+        |> br
+        |> span
+            \       <p>$502 x + 121$</p><img loading="lazy" src='../img/hash/hashfunction_502_121.svg'>
+        |> br
+        |> span
+            \    </div>
+        |> br
+        |> span
+            \   <div class='item'>
+        |> br
+        |> span
+            \       <p>$617 x + 5$</p><img loading="lazy" src='../img/hash/hashfunction_617_5.svg'>
+        |> br
+        |> span
+            \   </div>
+        |> br
+        |> span
+            \   <div class='item'>
+        |> br
+        |> span
+            \       <p>$815 x + 562$</p><img loading="lazy" src='../img/hash/hashfunction_851_562.svg'>
+        |> br
+        |> span
+            \   </div>
+        |> br
+        |> span
+            \   <div class='item'>
+        |> br
+        |> span
+            \       <p>$868 x + 858$</p><img loading="lazy" src='../img/hash/hashfunction_868_858.svg'>
+        |> br
+        |> span
+            \   </div>
+        |> br
+        |> span
+            \   <div class='item'>
+        |> br
+        |> span
+            \       <p>$915 x + 320$</p><img loading="lazy" src='../img/hash/hashfunction_915_320.svg'>
+        |> br
+        |> span
+            \   </div>
+        |> br
+        |> span
+            </div class='carousel-inner'> 
 
     Hier sehen Sie einen Ausschnitt aus einem Elm-Programm
     (auch diesen müssen Sie nicht im Detail lesen):
 
-    |> Highlight
-        |> pre
-            class=listing numbered-pre
-            find : Bst -&gt; String -&gt; Maybe String
-            find tree key =
-            \   case tree of
-            \       Empty _ -&gt;
-            \           Nothing
-            \       Node ( keyHere, valueHere ) leftChild rightChild -&gt;
-            \           if key == keyHere then
-            \               Just valueHere
-            \           else if key&lt; keyHere then
-            \               find leftChild key
-            \           else
-            \               find rightChild key
+    |> pre
+        class=listing numbered-pre
+        find : Bst -&gt; String -&gt; Maybe String
+        find tree key =
+        \   case tree of
+        \       Empty _ -&gt;
+        \           Nothing
+        \       Node ( keyHere, valueHere ) leftChild rightChild -&gt;
+        \           if key == keyHere then
+        \               Just valueHere
+        \           else if key&lt; keyHere then
+        \               find leftChild key
+        \           else
+        \               find rightChild key
 
     Als letztes Beispiel sehen Sie hier eine svg-Datei.
     Dies ist ein Dateiformat für Vektorgrafiken. In diesem

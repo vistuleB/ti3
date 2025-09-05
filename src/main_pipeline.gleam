@@ -34,34 +34,6 @@ pub fn main_pipeline()  -> List(Pipe) {
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
       dl.rename(#("WriterlyCodeBlock","CodeBlock")),
-      dl.prepend_attribute_as_text(#("Statement", "title")),
-      dl.prepend_attribute_as_text(#("Highlight", "title")),
-      dl.prepend_attribute_as_text(#("Remark", "title")),
-    ],
-    pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
-    pp.splitting_empty_lines_cleanup(),
-    pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
-    pp.splitting_empty_lines_cleanup(),
-    [
-      dl.regex_split_and_replace__outside(escape_dollar, ["Math", "MathBlock"]),
-    ],
-    pp.splitting_empty_lines_cleanup(),
-    [
-      dl.ti3_parse_python_prompt_code_block(),
-      dl.ti3_parse_orange_comment_code_block(),
-      dl.ti3_parse_arbitrary_prompt_response_code_block(),
-      dl.auto_generate_child_if_missing_from_attribute(#(
-        "Chapter",        // parent tag
-        "ChapterTitle",   // new child tag
-        "title"           // attribute to extract from
-      )),
-      dl.auto_generate_child_if_missing_from_attribute(#(
-        "Sub",
-        "SubTitle",
-        "title"
-      )),
-      dl.generate_ti3_index(),
-      dl.generate_ti3_menu(),
       dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
         #("Chapter", "counter", "SubCounter"),
@@ -101,6 +73,34 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.handles_generate_ids(),
       dl.handles_generate_dictionary("path"),
       dl.handles_substitute(#("path", "a", "a", [], [])),
+      dl.prepend_attribute_as_text(#("Statement", "title")),
+      dl.prepend_attribute_as_text(#("Highlight", "title")),
+      dl.prepend_attribute_as_text(#("Remark", "title")),
+    ],
+    pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
+    pp.splitting_empty_lines_cleanup(),
+    pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
+    pp.splitting_empty_lines_cleanup(),
+    [
+      dl.regex_split_and_replace__outside(escape_dollar, ["Math", "MathBlock"]),
+    ],
+    pp.splitting_empty_lines_cleanup(),
+    [
+      dl.ti3_parse_python_prompt_code_block(),
+      dl.ti3_parse_orange_comment_code_block(),
+      dl.ti3_parse_arbitrary_prompt_response_code_block(),
+      dl.auto_generate_child_if_missing_from_attribute(#(
+        "Chapter",        // parent tag
+        "ChapterTitle",   // new child tag
+        "title"           // attribute to extract from
+      )),
+      dl.auto_generate_child_if_missing_from_attribute(#(
+        "Sub",
+        "SubTitle",
+        "title"
+      )),
+      dl.generate_ti3_index(),
+      dl.generate_ti3_menu(),
       dl.expand_ti3_carousel(),
       dl.group_consecutive_children__outside(
         #(

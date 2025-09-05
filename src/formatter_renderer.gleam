@@ -70,7 +70,8 @@ pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
       parser: ds.default_writerly_parser(amendments.only_key_values),
       pipeline: pipeline,
       splitter: splitter,
-      emitter: ds.stub_writerly_emitter,
+      emitter: ds.default_writerly_emitter,
+      writer: ds.default_writer,
       prettifier: ds.default_prettier_prettifier,
     )
     |> ds.amend_renderer_by_command_line_amendments(amendments)
@@ -80,8 +81,7 @@ pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
       input_dir: "./wly",
       output_dir: "./wly-edit",
       prettifier_behavior: ds.PrettifierOff,
-      table: True
-      
+      table: True,
     )
     |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
   

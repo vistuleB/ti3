@@ -214,7 +214,7 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
         let file_path = output_dir <> "/" <> file
         case simplifile.delete(file_path) {
           Ok(_) -> {
-            io.println("Deleted: " <> file_path)
+            // io.println("Deleted: " <> file_path)
             Ok(Nil)
           }
           Error(error) -> {
@@ -241,6 +241,7 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
       pipeline: main_pipeline(),
       splitter: ti3_splitter,
       emitter: our_emitter,
+      writer: ds.default_writer,
       prettifier: ds.default_prettier_prettifier,
     )
     |> ds.amend_renderer_by_command_line_amendments(amendments)
@@ -250,7 +251,7 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
       input_dir: "./wly",
       output_dir: "./public",
       prettifier_behavior: ds.PrettifierOff,
-      table: True
+      table: False,
     )
     |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
 

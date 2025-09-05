@@ -43,6 +43,7 @@ pub fn main() {
           io.println("wly -> wly formatter")
           formatter_renderer.formatter_renderer(amendments)
         }
+
         Error(_) -> {
           io.println("")
           io.println("wly -> html")

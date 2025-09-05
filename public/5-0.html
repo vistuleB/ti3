@@ -31,7 +31,6 @@
     </div>
     <div class="main-column page-title">
       <p>
-        5. 
         Reguläre Sprachen
       </p>
     </div>
@@ -55,17 +54,14 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="orange-comment"
       Sie die typische hierarchisch-geschachtelte Struktur
       (sie müssen es nicht im Detail lesen):
     </p>
-    <div class="well highlight out">
-<pre class="listing">
+<pre class="listing main-column">
 <span>&lt;div class='carousel-inner' style='display:inline-block'&gt;</span><br><span>   &lt;div class='item active'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$110 x + 794$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_110_794.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$502 x + 121$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_502_121.svg'&gt;</span><br><span>    &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$617 x + 5$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_617_5.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$815 x + 562$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_851_562.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$868 x + 858$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_868_858.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>   &lt;div class='item'&gt;</span><br><span>       <span class="nowrap">&lt;p&gt;$915 x + 320$&lt;/p&gt;&lt;img</span> loading="lazy" src='../img/hash/hashfunction_915_320.svg'&gt;</span><br><span>   &lt;/div&gt;</span><br><span>&lt;/div class='carousel-inner'&gt; </span>
 </pre>
-    </div>
     <p class="main-column">
       Hier sehen Sie einen Ausschnitt aus einem Elm-Programm
       (auch diesen müssen Sie nicht im Detail lesen):
     </p>
-    <div class="well highlight out">
-<pre class="listing numbered-pre">
+<pre class="listing numbered-pre main-column">
 find : Bst -&gt; String -&gt; Maybe String
 find tree key =
    case tree of
@@ -79,7 +75,6 @@ find tree key =
            else
                find rightChild key
 </pre>
-    </div>
     <p class="main-column">
       Als letztes Beispiel sehen Sie hier eine svg-Datei.
       Dies ist ein Dateiformat für Vektorgrafiken. In diesem
@@ -539,8 +534,8 @@ find tree key =
     </h2>
     <div class="well statement out">
       <p>
-        <b>5.1</b>
         <b>Definition</b>
+        <b>5.1</b>
         <b>(Kontextfreie Grammatik).</b>
         Eine
         <i>kontextfreie Grammatik</i>
@@ -608,8 +603,8 @@ find tree key =
     </p>
     <div class="well statement out">
       <p>
-        <b>5.2</b>
         <b>Beispiel</b>
+        <b>5.2</b>
         Wir betrachten die Grammatik
         $G = (\{a,b\}, \{S, A, B\}, P, S)$ mit den Produktionsregeln
       </p>
@@ -666,8 +661,8 @@ find tree key =
     </div>
     <div class="well statement out">
       <p>
-        <b>5.3</b>
         <b>Definition</b>
+        <b>5.3</b>
         Gegeben sei eine kontextfreie Grammatik
         <span class="nowrap">$G = (\Sigma, N, P, S)$.</span>
         Ein String
@@ -759,8 +754,8 @@ find tree key =
     </p>
     <div class="well statement out">
       <p>
-        <b>5.4</b>
         <b>Definition</b>
+        <b>5.4</b>
         <b>(Die von einer Grammatik erzeugte Sprache).</b>
         Sei
         $G = (\Sigma, N, P, S)$ eine kontextfreie Grammatik.
@@ -793,8 +788,8 @@ find tree key =
     </div>
     <div class="well statement out">
       <p>
-        <b>5.5</b>
         <b>Beispiel</b>
+        <b>5.5</b>
         Sei $G$ die zuletzt betrachtete Grammatik. Dann ist
         $L(G)$ die Menge aller Wörter der Form
         <span class="nowrap">$a^* b^*$,</span>
@@ -811,8 +806,8 @@ find tree key =
     </p>
     <div class="well statement out">
       <p>
-        <b>5.6</b>
         <b>Beispiel</b>
+        <b>5.6</b>
         Wir betrachten die Grammatik
         $G_2 = (\{a,b\}, \{S\}, P, S)$ mit den Produktionsregeln
       </p>
@@ -922,8 +917,8 @@ find tree key =
     </p>
     <div class="well statement out">
       <p>
-        <b>5.7</b>
         <b>Algorithmisches Problem: Parsing</b>
+        <b>5.7</b>
         Gegeben eine (kontextfreie) Grammatik $G$ und ein
         Zielwort
         <span class="nowrap">$x$,</span>
