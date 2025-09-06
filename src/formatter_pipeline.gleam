@@ -59,6 +59,7 @@ pub fn formatter_pipeline() -> List(Pipe) {
       dl.trim("p"),
       dl.delete_if_empty("p"),
       dl.unwrap_if_unique_child_is(#("Highlight", "pre")),
+      dl.add_between(#("p", "p", "WriterlyBlankLine", [])),
       dl.add_between(#("WriterlyCodeBlock", "p", "WriterlyBlankLine", [])),
       dl.add_before(#("WriterlyCodeBlock", "WriterlyBlankLine", [])),
       dl.add_between(#("MathBlock", "p", "WriterlyBlankLine", [])),

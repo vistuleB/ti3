@@ -32,7 +32,6 @@
                 src=./img/infinite-sets/N-times-N.svg
             Die Menge $\N \times \N$ bzw. ein Teil davon.
 
-
     |> Highlight
         title=*Beweis*
         Wir skizzieren eine Bijektion
@@ -102,7 +101,6 @@
         Es gibt eine injektive Funktion
         $f : \Q \rightarrow \N$.
 
-
     |> Highlight
         title=*Beweis*
         Falls Sie es vergessen haben: eine Funktion
@@ -144,7 +142,6 @@
         Es gibt eine injektive Funktion
         $g: \N \rightarrow \Q$.
 
-
     |> Highlight
         title=*Beweis*
         Dies ist ganz einach: da $\N \subseteq \Q$ gilt, können
@@ -181,7 +178,6 @@
     |> Statement
         title=*Theorem*
         Es gilt $\Q \approx \N$.
-
 
     |> Highlight
         title=*Beweis*
@@ -236,7 +232,6 @@
     |> Statement
         title=*Theorem*
         Es gilt $\{0,1\}^* \approx \N$.
-
 
     |> Highlight
         title=*Beweis.*

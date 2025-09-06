@@ -238,19 +238,19 @@
     :
 
     |> pre
-        class=listing container
-        `name: replace_b_by_c`
-        `init: init`
-        `accept: accept`
-        ``
-        `init, a`
-        `init, a, &gt;`
-        ``
-        `init, b`
-        `init, c, &gt;`
-        ``
-        `init, _`
-        `accept, _, &gt;` 
+        class=listing
+        name: replace_b_by_c
+        init: init
+        accept: accept
+        \ 
+        init, a
+        init, a, >
+        \ 
+        init, b
+        init, c, >
+        \ 
+        init, _
+        accept, _, >
 
     Ungleich schwieriger ist die Aufgabe, jedes $b$ durch
     ein $bc$ zu ersetzen, weil wir hier etwas _einfügen_
@@ -292,7 +292,7 @@
     |> pre
         class=container
         q, x, _
-        r, _, x, &gt;, &gt; 
+        r, _, x, >, > 
 
     Eine Linksbewegung ist etwas schwieriger zu implementieren.
     Aus $\delta(q,x) = (r,y,\texttt{L})$ wird
@@ -614,15 +614,17 @@
     |> pre
         class=listing
         module SubsetSum exposing (..)
+        \ 
+        \ 
         subsetSum : List Int ->; Int ->; Bool
         subsetSum prices amount =
         \    case ( prices, amount ) of
         \    ( [], 0 ) ->;
         \        True
-        \
+        \ 
         \    ( x :: rest, _ ) ->;
         \        subsetSum rest amount || subsetSum rest (amount - x)
-        \
+        \ 
         \    ( [], _ ) ->;
         \        False
 

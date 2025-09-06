@@ -187,7 +187,6 @@
     obigen Punkte gewählt, weil sie in der Tat das repräsentieren,
     was wir in den Beweisen jetzt verwenden werden.
 
-
     |> Highlight
         *Erster Beweis. Top-Down mit `if-then-else`.* In diesem
         Beweis verwende ich die zweite oben erwähnte Technik:
@@ -219,7 +218,6 @@
         |> a
             href=#after-sub-proof
             runterspringen. 
-
 
         |> Highlight
             title=*Beweis.*
@@ -433,13 +431,11 @@
         Theorem 1.4.3
     \ zu.
 
-
     |> Highlight
         title=*Theorem 1.4.3, nochmals.*
         Zu jeder monotonen Funktion
         $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
-
 
     |> Highlight
         *Erster Beweis. Top-Down mit `if-then-else`.* Wir
@@ -624,7 +620,6 @@
 
         ein monotoner Schaltkreis für $f$.
         |> QED
-
 
     |> Highlight
         *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*

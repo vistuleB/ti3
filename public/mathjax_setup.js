@@ -93,6 +93,7 @@ window.MathJax = {
       dkt: ["#1", 1],
       qaccept: "q_{\\rm yes}",
       qreject: "q_{\\rm no}",
+      qstart: "q_{\\rm start}",
       state: "\\textnormal{state}",
       lsr: "\\{\\texttt{L}, \\texttt{S}, \\texttt{R}\\}",
       enc: "\\textnormal{enc}",
@@ -108,6 +109,7 @@ window.MathJax = {
       bnegdiag: "\\textnormal{TimedNegDiag}",
       bhalt: "{\\rm T{\\small IMED}H{\\small ALT}}",
       rls: "\\{\\texttt{L}, \\texttt{S}, \\texttt{R}\\}",
+      NTIME: "\\textnormal{NTIME}"
     },
-  },
-};
+  }
+}

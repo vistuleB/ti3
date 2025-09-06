@@ -333,7 +333,6 @@
         $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und Output-Gates
         $p_{I}, g_I$ für jedes Binärinterval $I$.
 
-
     |> Highlight
         title=*Beweis.*
         Ein Binärintervall, zum Beispiel $[32,47]$ können
@@ -425,7 +424,6 @@
         $p_I, g_I$ für Binärintervalle als Inputs nimmt und
         daraus $g_{[0,k]}$ berechnet für jedes
         $k=0,\dots,n-1$, also insgesamt $n$ Output-Gates.
-
 
     |> Highlight
         title=*Beweis.*

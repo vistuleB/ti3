@@ -278,7 +278,6 @@
     Wir nehmen dies als Anlass, um mal wieder einen Induktionsbeweis
     im Detail durchzuführen.
 
-
     |> Highlight
         title=*Beweis.*
         Wir setzen $N = Q$ und $S = \qstart$ und führen für

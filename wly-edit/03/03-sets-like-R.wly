@@ -17,7 +17,6 @@
         Es gilt $\R \approx (0,1)$, wobei $(0,1)$ das offene
         Einheitsintervall ist.
 
-
     |> Highlight
         title=*Beweis.*
         Wir können eine Bijektion explizit hinschreiben:
@@ -71,7 +70,6 @@
         title=*Theorem*
         handle=theorem-R-bitstrings
         $\R \approx \{0,1\}^{\N}$.
-
 
     |> Highlight
         title=*Beweis.*
@@ -147,7 +145,6 @@
         title=*Theorem*
         handle=theorem-square-interval
         Es gilt $\R^2 \approx \R$.
-
 
     |> Highlight
         title=*Beweis.*
@@ -249,7 +246,6 @@
                 $\left[\frac{3}{4},1\right)$ auf
                 $\left[\frac{1}{2},1\right) \times \left[\frac{1}{2},1\right)$.
 
-
     |> Highlight
         title=*Beweis.*
         Wir zeigen den ersten Punkt. Sei
@@ -311,7 +307,6 @@
         title=*Theorem*
         $\R \approx \R^{\N}$.
 
-
     |> Highlight
         title=*Beweis.*
         Da $\R \approx \cuben$ gilt, reicht es, zu zeigen,
@@ -356,7 +351,6 @@
     Wir haben also die Beweisidee von
     $\N \times \N \approx \N$ recycelt. Diese Beobachtung
     motiviert den folgenden, etwas kurz angebundenen Beweis:
-
 
     |> Highlight
         title=*Zweiter Beweis.*

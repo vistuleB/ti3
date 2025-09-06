@@ -71,7 +71,6 @@
     Falls das ihnen zu schnell ging, lesen Sie den zweiten
     Beweis, in dem ich mir mehr Zeit nehme.
 
-
     |> Highlight
         *Kurzer Beweis per Wiederspruch.* Nehmen wir an, es
         gäbe eine Maschine $H$, die $\halt$ entscheidet. Dann
@@ -114,7 +113,6 @@
         ein Widerspruch. Unsere Annahme, dass $\halt$ entscheidbar
         sei, ist also falsch.
         |> QED
-
 
     |> Highlight
         *Ausführlicher Beweis.* Ich finde Beweise durch Widerspruch

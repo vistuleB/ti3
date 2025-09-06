@@ -102,7 +102,6 @@
         {n \choose {\ceil{n/2}}} \geq \frac{2^n}{n+1} \ .
         $$
 
-
     |> Highlight
         title=*Beweis.*
         Sei $k \in \{1,\dots,n\}$. Vergleichen wir
@@ -322,7 +321,6 @@
 
         gilt.
 
-
     |> Highlight
         title=*Beweis.*
         Ich demonstriere das Beweisprinzip erst einmal mit
@@ -469,7 +467,6 @@
         Tiefe $O(\log n)$ und Größe $\poly(n)$, der
         $\maj_n$ berechnet.
 
-
     |> Highlight
         title=*Beweis.*
         Die Beweismethode, die wir verwenden, ist womöglich
@@ -610,7 +607,6 @@
                     die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
                     $\frac{3}{2} \delta - \frac{1}{2}\delta^3$.
 
-
         |> Highlight
             title=*Beweis.*
             Wir betrachten ein festes $\x \in \cube^n$ mit
@@ -686,7 +682,6 @@
             Wenn $\mathcal{C}$ Fehlerwahrscheinlichkeit
             $\epsilon$ hat, dann hat $\mathcal{C}^{\otimes 3}$
             Fehlerwahrscheinlichkeit $3 \epsilon^2$
-
 
         |> Highlight
             title=*Beweis.*

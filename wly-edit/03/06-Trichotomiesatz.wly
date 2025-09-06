@@ -45,7 +45,6 @@
             |> li
                 $A \gt B$.
 
-
     |> Highlight
         title=*(Unvollständiger) Beweis.*
         Will man ein Objekt mit gewissen Eigenschaften (hier:
@@ -105,7 +104,6 @@
             es $B$ sättigt, dann ist
             $R^{-1} := \{ (b,a) \ | \ (a,b) \in R\}$ eine injektive
             Funktion $B \rightarrow A$ und es gilt $B \leq A$.
-
 
         |> Highlight
             title=*Beweis.*

@@ -178,7 +178,6 @@
         Vergleichen wir
         ${n \choose k}$ mit
         <span class="nowrap">${n \choose k-1}$:</span>
-        
       </p>
       <div class="math-block">
         $$
@@ -364,7 +363,6 @@
       entspricht dem Unterschied zwischen dem rekursiven
       Code für
       <span class="nowrap">${n \choose k}$,</span>
-      
     </p>
     <div class="main-column">
 <pre class="listing">
@@ -617,7 +615,6 @@ def binomial(n,k):
       Pyramidenschema, in dem wir alle $\theta^m_k$ berechnen,
       ist monoton, hat allerdings leider Tiefe
       <span class="nowrap">$\Omega(n)$.</span>
-      
     </p>
     <h1 class="main-column">
       Monoton und polylogarithmische Tiefe durch Halbierung
@@ -675,11 +672,9 @@ def binomial(n,k):
       von Fan-in 2 ersetzen. Dies gibt uns
       zusätzlich Tiefe $O(\log n)$
       <i>pro
-        <span class="nowrap">$\bigvee$-Gate</span>
-        </i>;
+        <span class="nowrap">$\bigvee$-Gate</span></i>;
       wir erhalten also insgesamt eine Tiefe von
       <span class="nowrap">$O(\log^2 n)$.</span>
-      
     </p>
     <div class="well exercise out">
       <p>
@@ -890,7 +885,6 @@ def binomial(n,k):
               alle Schaltkreise in $\mathcal{C}^{\otimes 3}$ haben
               Tiefe
               <span class="nowrap">$d+2$;</span>
-              
             </p>
           </li>
           <li>
@@ -898,14 +892,12 @@ def binomial(n,k):
               alle Schaltkreise in $\mathcal{C}^{\otimes 3}$ haben
               Größe
               <span class="nowrap">$3s+4$;</span>
-              
             </p>
           </li>
           <li>
             <p>
               die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
               <span class="nowrap">$\frac{3}{2} \delta - \frac{1}{2}\delta^3$.</span>
-              
             </p>
           </li>
         </ol>
@@ -932,7 +924,6 @@ def binomial(n,k):
             =: p$.</span>
           Was ist nun
           <span class="nowrap">$\Pr[\maj_3(U,V,W) = 1]$?</span>
-          
         </p>
         <div class="math-block">
           $$
@@ -949,8 +940,7 @@ def binomial(n,k):
         <p>
           Die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
           also mindestens
-          <span class="nowrap">$\frac{3}{2} \delta - \frac{1}{2} \delta^3$.</span>
-          <span class="qed">\(\square\)</span>
+          <span class="nowrap">$\frac{3}{2} \delta - \frac{1}{2} \delta^3$.</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
@@ -1040,8 +1030,7 @@ def binomial(n,k):
         </div>
         <p>
           Somit hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit
-          <span class="nowrap">$3 \epsilon^2$.</span>
-          <span class="qed">\(\square\)</span>
+          <span class="nowrap">$3 \epsilon^2$.</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
@@ -1098,11 +1087,7 @@ def binomial(n,k):
           src="./img/circuits/majority-probability-labeled.svg"
           class="constrained transition-all"
           onClick="onImgClick(event)"
-        >
-        <br>
-        <p>
-          Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
-        </p>
+        ><br>Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
       </figure>
       <hr>
       <figure>
@@ -1111,12 +1096,8 @@ def binomial(n,k):
           src="./img/circuits/majority-probability-close-to-half-labeled.svg"
           class="constrained transition-all"
           onClick="onImgClick(event)"
-        >
-        <br>
-        <p>
-          Signalstärke $\delta$ wächst für
-          $p \in [1/2, 3/4]$ exponentiell.
-        </p>
+        ><br>Signalstärke $\delta$ wächst für
+        $p \in [1/2, 3/4]$ exponentiell.
       </figure>
       <hr>
       <figure>
@@ -1125,12 +1106,8 @@ def binomial(n,k):
           src="./img/circuits/majority-probability-close-to-one-labeled.svg"
           class="constrained transition-all"
           onClick="onImgClick(event)"
-        >
-        <br>
-        <p>
-          Fehlerwahrscheinlichkeit $\epsilon$ fällt für
-          $p \in [3/4, 1/2]$ doppelt exponentiell.
-        </p>
+        ><br>Fehlerwahrscheinlichkeit $\epsilon$ fällt für
+        $p \in [3/4, 1/2]$ doppelt exponentiell.
       </figure>
       <hr>
       <p>

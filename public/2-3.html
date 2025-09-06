@@ -116,7 +116,6 @@
       1 sind. Wir kürzen Sie im folgenden mit $M$ ab. Hier
       ist nun unser
       <span class="nowrap">$n$-Bit-Addierer:</span>
-      
     </p>
     <figure class="main-column">
       <img
@@ -193,7 +192,6 @@
       und beliebig großen Fan-in zulassen, sogar konstante
       Tiefe
       <span class="nowrap">$O(1)$).</span>
-      
     </p>
     <h1 class="main-column">
       Carry Look-Ahead
@@ -342,7 +340,6 @@
             Wenn für alle $i \in I$ das Paar $x_i, y_i$ den Wert
             $(0,1)$ oder $(1,0)$ hat, dann ist $p_I = 1$ und
             <span class="nowrap">$g_I = 0$.</span>
-            
           </p>
         </li>
         <li>
@@ -350,7 +347,6 @@
             Ansonsten sei
             <span class="nowrap">$i^* := \max \{i \in I \ | \ (x_i, y_i) \in \{(0,0),
               (1,1)\} \}$.</span>
-            
           </p>
           <ul>
             <li>
@@ -359,7 +355,6 @@
                 <span class="nowrap">$(x_{i^*}, y_{i^*}) = (1,1)$,</span>
                 dann sind
                 <span class="nowrap">$p_I = g_I = 1$.</span>
-                
               </p>
             </li>
             <li>
@@ -368,7 +363,6 @@
                 <span class="nowrap">$(x_{i^*}, y_{i^*}) = (0,0)$,</span>
                 dann sind
                 <span class="nowrap">$p_I = g_I = 0$.</span>
-                
               </p>
             </li>
           </ul>
@@ -378,14 +372,12 @@
         Insbesondere für ein-elementige Intervalle
         $I = [a,a]$ gilt $p_{[a]} = p_a = x_a \vee y_a$ und
         <span class="nowrap">$g_{[a]} = g_a = x_a \wedge y_a$.</span>
-        
       </p>
     </div>
     <p class="main-column">
       Hier sind Boolesche Formeln (in DNF) für
       $p_{[a,b]}$ und
       <span class="nowrap">$g_{[a,b]}$:</span>
-      
     </p>
     <div class="math-block main-column">
       $$
@@ -408,9 +400,7 @@
         loading="lazy"
         class="constrained transition-all"
         onClick="onImgClick(event)"
-      >
-      <br>
-      <img
+      ><br><img
         style="height:11em"
         src="img/circuits/carry-propagate-interval.svg"
         loading="lazy"
@@ -512,7 +502,6 @@
         Wie viele Binärintervalle gibt es
         in
         <span class="nowrap">$\{0,\dots,n-1\}$?</span>
-        
       </p>
     </div>
     <div class="well statement out">
@@ -525,7 +514,6 @@
         $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und Output-Gates
         $p_{I}, g_I$ für jedes Binärinterval
         <span class="nowrap">$I$.</span>
-        
       </p>
     </div>
     <div class="well highlight out">
@@ -788,7 +776,6 @@
         Das
         Maximum wird erreicht, wenn
         <span class="nowrap">$k = (1...10)_2$:</span>
-        
       </p>
       <figure>
         <img
@@ -844,7 +831,6 @@
         weil wir gar kein Gate brauchen, wenn $[0,k]$ bereits
         ein Binärinterval ist. Hier ist die Konstruktion für
         <span class="nowrap">$n=16$:</span>
-        
       </p>
       <figure>
         <img

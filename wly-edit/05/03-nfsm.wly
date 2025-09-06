@@ -102,7 +102,6 @@
         Dann gibt es einen nichtdeterministischen endlichen
         Automaten $M$ mit $L(G) = L(M)$.
 
-
     |> Highlight
         title=*Beweis.*
         Unser Automat hat als Zustandsmenge $N$, die Menge

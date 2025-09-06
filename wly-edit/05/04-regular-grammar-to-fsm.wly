@@ -187,7 +187,6 @@
     (trap state). Die akzeptierenden Zustände sind mit
     fettem Rand markiert.
 
-
     |> Highlight
         style=text-align:center
         Der nichtdeterministische Automat

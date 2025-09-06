@@ -200,7 +200,6 @@
         Sprache. Wenn $\alpha \equiv_M \beta$ gilt, dann auch
         $\alpha \equiv_L \beta$.
 
-
     |> Highlight
         title=*Beweis.*
         Nehmen wir an $\alpha \equiv_M \beta$; es gibt also
@@ -258,7 +257,6 @@
         das: wenn $L$ unendlichen Index hat, dann gibt es
         keinen endlichen Automaten, der $L$ akzeptiert;
         $L$ ist demnach nicht regulär.
-
 
     |> Highlight
         title=*Beweis.*
@@ -333,7 +331,6 @@
         title=*Theorem*
         Eine Sprache $L \subseteq \Sigma^*$ ist genau dann
         regulär, wenn sie endlichen Index hat.
-
 
     |> Highlight
         title=*Beweis.*

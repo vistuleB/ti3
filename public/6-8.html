@@ -87,13 +87,19 @@
         <div class="carousel">
           <div class="carousel__items">
             <div class="carousel__item">
-              <img src="./img/context-free/LR/G-right-derivation.svg">
+              <p>
+                <img src="./img/context-free/LR/G-right-derivation.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/G-left-derivation.svg">
+              <p>
+                <img src="./img/context-free/LR/G-left-derivation.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/G-messy-derivation.svg">
+              <p>
+                <img src="./img/context-free/LR/G-messy-derivation.svg">
+              </p>
             </div>
           </div>
         </div>
@@ -252,34 +258,54 @@
         <div class="carousel">
           <div class="carousel__items">
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/01.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/01.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/02.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/02.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/03.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/03.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/04.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/04.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/05.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/05.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/06.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/06.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/07.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/07.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/08.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/08.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/09.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/09.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="./img/context-free/LR/tree-destruction/10.svg">
+              <p>
+                <img src="./img/context-free/LR/tree-destruction/10.svg">
+              </p>
             </div>
           </div>
         </div>
@@ -323,7 +349,6 @@
         Für eine kontextfreie Grammatik $G$ definieren wir
         die Sprache
         <span class="nowrap">$\Front(G) \subseteq (\Sigma \cup N)^*$:</span>
-        
       </p>
       <div class="math-block">
         $$
@@ -379,21 +404,17 @@
       $\boxed{X}$ in den obigen Bäumen, wo also $N$ als
       Blatt vorkommt; das $\hat{X} \in \hat{N}$ entspricht
       dem
-    </p>
-    <img
-      style="height:1.5em"
-      src="./img/context-free/LR/circle-X.svg"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-    <p class="main-column">
-      , also wo $W$ als innerer Knoten vorkommt. Bevor ich
+      <img
+        class="circle-X-img"
+        src="img/context-free/LR/circle-X.svg"
+        class="constrained transition-all"
+        onClick="onImgClick(event)"
+      >, also wo $W$ als innerer Knoten vorkommt. Bevor ich
       $\hat{G}$ formal definiere, zeige ich den obigen Ableitungsbaum
       (ohne rechten Rand, weil der ja bei $\front(G)$ eh
       fehlt) und annotiere jeden Knoten auf dem Stamm mit
       der entsprechenden
       <span class="nowrap">$\hat{G}$-Produktion.</span>
-      
     </p>
     <figure class="main-column">
       <img
@@ -437,7 +458,6 @@
         wobei
         $\hat{P}$ für jede
         <span class="nowrap">$G$-Produktion</span>
-        
       </p>
       <div class="math-block">
         $$
@@ -470,7 +490,6 @@
         <b>6.8.5</b>
         $\hat{G}$ erzeugt die Sprache
         <span class="nowrap">$\Front(G)$.</span>
-        
       </p>
     </div>
     <div class="well statement out">
@@ -480,7 +499,6 @@
         Für unsere Grammatik $G$ oben ergeben sich folgende
         Produktionen $\hat{P}$ in
         <span class="nowrap">$\hat{G}$:</span>
-        
       </p>
       <div class="math-block">
         $$
@@ -532,12 +550,11 @@
         <b>Algorithmus</b>
         <b>6.8.7</b>
         <b>- Der
-          <span class="nowrap">$LR(0)$-Parser.</span>
-          </b>
+          <span class="nowrap">$LR(0)$-Parser.</span></b>
         Starte mit einem leerem Stack.
         Sei $\gamma$ der Inhalt des Stacks zu einem Zeitpunkt.
       </p>
-      <ol>
+      <ol class="outside-list">
         <li>
           <p>
             Wenn
@@ -561,7 +578,6 @@
           <p>
             Konkret: lösche $\beta$ vom Stack und ersetze es durch
             <span class="nowrap">$A$.</span>
-            
           </p>
         </li>
         <li>
@@ -596,7 +612,6 @@
         erfüllt,
         dann findet der Parser die Rechtsableitung
         <span class="nowrap">$S \Step{}^* w$,</span>
-        
       </p>
     </div>
     <div class="well highlight out">
@@ -620,10 +635,14 @@
         Sei $\gamma$ der Stackinhalt und $w$ der ungelesene
         Teil des Eingabewortes. Wir werden beweisen, dass zu
         jedem Zeitpunkt folgende Invariante gilt:
+      </p>
+      <p>
         <b>Behauptung.</b>
         (i) $\gamma w$ ist eine gültige Wortform. (ii)
         $\gamma$ ist ein Präfix von
         <span class="nowrap">$\front(\gamma w)$.</span>
+      </p>
+      <p>
         <b>Beweis.</b>
         Die Behauptung gilt offensichtlich am Anfang, da
         $\gamma = \epsilon$ und $w\in L$ ist und somit
@@ -638,7 +657,7 @@
         sie auch im nächsten Schritt $t+1$ gilt. Es gibt nun
         zwei Möglichkeiten.
       </p>
-      <ol>
+      <ol class="outside-list">
         <li>
           <p>
             Der Parser wendet Schritt 1 an, also
@@ -729,7 +748,6 @@
             Präfix von $\front(\gamma w)$ und somit ist
             $\gamma c$ immer noch ein Präfix von
             <span class="nowrap">$\front(\gamma w)$.</span>
-            
           </p>
         </li>
       </ol>

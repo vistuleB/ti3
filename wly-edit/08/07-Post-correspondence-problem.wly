@@ -17,7 +17,7 @@
     wird das beige-farbene Kärtchen zweimal verwendet:
 
     |> Carousel
-        style=height:18em
+        height=18em
         src=img/pcp/example-wikipedia/01.svg
         src=img/pcp/example-wikipedia/02.svg
         src=img/pcp/example-wikipedia/03.svg
@@ -38,7 +38,7 @@
     man mit der türkisen Kachel (der ersten) anfangen muss:
 
     |> Carousel
-        style=height:18em
+        height=18em
         src=img/pcp/example-expo/01.svg
         src=img/pcp/example-expo/02.svg
         src=img/pcp/example-expo/03.svg
@@ -129,8 +129,7 @@
     k_3 &:= (bba : bb) \ .
     \end{align*}
 
-    Oben sehen wir eine Kachelung $s := k_3 k_2 k_3$
-    und
+    Oben sehen wir eine Kachelung $s := k_3 k_2 k_3$ und
 
     \begin{align*}
     \top(s) &= bbaabbba \\
@@ -159,7 +158,6 @@
         title=*Theorem*
         PCP ist unentscheidbar.
 
-
     |> Highlight
         *Beweis.* Wir zeigen: wenn PCP entscheidbar _wäre_,
         dann _wäre_ auch $\halt$ entscheidbar. Da letzteres
@@ -176,21 +174,14 @@
         mit dieser Startkachel beginnen muss. Es ist also ein
         "strengeres" Problem als das PCP.
 
-        |> div
-            class=well subtheorem theorem
-            |> span
-                class=numbered-title
-                Lemma 
-                |> NumberedTitle
-                    ::::ChapterCtr.::::SectionCtr.::++DefCtr
-                \ 
+        |> Statement
+            title=*Lemma*
             Gegeben ein MPCP-Puzzle $S$, so können wir ein (normales)
             PCP-Puzzle $S'$ erstellen, mit der Eigenschaft, dass
             $S$ eine Lösung hat genau dann, wenn $S'$ eine Lösung
             hat.
 
-        |> div
-            class=well subtheorem
+        |> Remark
             *Beweis.* Im MPCP zwingen uns bereits die Spielregeln,
             mit der markierten Startkachel zu beginnen. Wir müssen
             nun, von $S$ ausgehend, ein ähnliches Puzzle bauen,
@@ -314,108 +305,16 @@
         ist, dann würden wir folgende Kachel erzeugen und
         wie folgt einsetzen:
 
-        |> figure
-            class=centered-figure
-            |> a
-                data-slide=prev
-                href=#pcp-step-right
-                class=left carousel-control-prev-icon
-                |> div
-                    class=carousel-nav-icon
-                    |> img
-                        src=img/carousel-prev-icon.svg
-            |> a
-                data-slide=next
-                href=#pcp-step-right
-                class=right carousel-control-next-icon
-                |> div
-                    class=carousel-nav-icon
-                    |> img
-                        src=img/carousel-next-icon.svg
-
-            |> div
-                style=display:inline-block
-                data-interval=false
-                class=carousel
-                id=pcp-step-right
-                |> ol
-                    class=carousel-indicators
-                    |> li
-                        class=active
-                        data-slide-to=1
-                        data-target=#pcp-step-right
-                    |> li
-                        data-slide-to=2
-                        data-target=#pcp-step-right
-                    |> li
-                        data-slide-to=3
-                        data-target=#pcp-step-right
-                    |> li
-                        data-slide-to=4
-                        data-target=#pcp-step-right
-                    |> li
-                        data-slide-to=5
-                        data-target=#pcp-step-right
-                    |> li
-                        data-slide-to=6
-                        data-target=#pcp-step-right
-                    |> li
-                        data-slide-to=7
-                        data-target=#pcp-step-right
-                    |> li
-                        data-slide-to=8
-                        data-target=#pcp-step-right
-
-                |> div
-                    style=display:inline-block
-                    class=carousel-inner
-                    |> div
-                        class=item active
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-right/01.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-right/02.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-right/03.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-right/04.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-right/05.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-right/06.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-right/07.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-right/08.svg
+        |> Carousel
+            height=12em
+            src=img/pcp/step-right/01.svg
+            src=img/pcp/step-right/02.svg
+            src=img/pcp/step-right/03.svg
+            src=img/pcp/step-right/04.svg
+            src=img/pcp/step-right/05.svg
+            src=img/pcp/step-right/06.svg
+            src=img/pcp/step-right/07.svg
+            src=img/pcp/step-right/08.svg
 
         Was geschieht nun? Für das Symbol $q_1$, das ja einen
         Zustand bezeichnet, gibt es keine Kopierkachel. Wenn
@@ -433,81 +332,13 @@
         $\delta(q_1, x_2) = (q_3, z, \texttt{L})$ entsprechende
         Kopfkachel:
 
-        |> figure
-            class=centered-figure
-            |> a
-                data-slide=prev
-                href=#pcp-step-left
-                class=left carousel-control-prev-icon
-                |> div
-                    class=carousel-nav-icon
-                    |> img
-                        src=img/carousel-prev-icon.svg
-            |> a
-                data-slide=next
-                href=#pcp-step-left
-                class=right carousel-control-next-icon
-                |> div
-                    class=carousel-nav-icon
-                    |> img
-                        src=img/carousel-next-icon.svg
-
-            |> div
-                style=display:inline-block
-                data-interval=false
-                class=carousel
-                id=pcp-step-left
-                |> ol
-                    class=carousel-indicators
-                    |> li
-                        class=active
-                        data-slide-to=1
-                        data-target=#pcp-step-left
-                    |> li
-                        data-slide-to=2
-                        data-target=#pcp-step-left
-                    |> li
-                        data-slide-to=3
-                        data-target=#pcp-step-left
-                    |> li
-                        data-slide-to=4
-                        data-target=#pcp-step-left
-                    |> li
-                        data-slide-to=5
-                        data-target=#pcp-step-left
-
-                |> div
-                    style=display:inline-block
-                    class=carousel-inner
-                    |> div
-                        class=item active
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-left/01.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-left/02.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-left/03.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-left/04.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:12em
-                            src=img/pcp/step-left/05.svg
+        |> Carousel
+            height=12em
+            src=img/pcp/step-left/01.svg
+            src=img/pcp/step-left/02.svg
+            src=img/pcp/step-left/03.svg
+            src=img/pcp/step-left/04.svg
+            src=img/pcp/step-left/05.svg
 
         Hier brauchen wir halt eine Kopfkachel
         $(q_2yz:yq_1x_2)$ für _jedes_ Bandsymbol $y$, da die
@@ -551,63 +382,11 @@
         um alles abzuschließen. Die letzten zwei Schritte sehen
         dann so aus:
 
-        |> figure
-            class=centered-figure
-            |> a
-                data-slide=prev
-                href=#pcp-finishing-tile
-                class=left carousel-control-prev-icon
-                |> div
-                    class=carousel-nav-icon
-                    |> img
-                        src=img/carousel-prev-icon.svg
-            |> a
-                data-slide=next
-                href=#pcp-finishing-tile
-                class=right carousel-control-next-icon
-                |> div
-                    class=carousel-nav-icon
-                    |> img
-                        src=img/carousel-next-icon.svg
-
-            |> div
-                style=display:inline-block
-                data-interval=false
-                class=carousel
-                id=pcp-finishing-tile
-                |> ol
-                    class=carousel-indicators
-                    |> li
-                        class=active
-                        data-slide-to=1
-                        data-target=#pcp-finishing-tile
-                    |> li
-                        data-slide-to=2
-                        data-target=#pcp-finishing-tile
-                    |> li
-                        data-slide-to=3
-                        data-target=#pcp-finishing-tile
-
-                |> div
-                    style=display:inline-block
-                    class=carousel-inner
-                    |> div
-                        class=item active
-                        |> img
-                            style=height:10em
-                            src=img/pcp/finish-00.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:10em
-                            src=img/pcp/finish-01.svg
-
-                    |> div
-                        class=item
-                        |> img
-                            style=height:10em
-                            src=img/pcp/finish-03.svg
+        |> Carousel
+            height=10em
+            src=img/pcp/finish-00.svg
+            src=img/pcp/finish-01.svg
+            src=img/pcp/finish-03.svg
 
         Strenggenommen müssten wir jetzt beweisen, dass das
         MPCP-Puzzle genau dann lösbar ist, wenn die Turingmaschine

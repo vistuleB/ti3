@@ -133,7 +133,6 @@
     $\epsilon$-Übergängen) können wir nun Schritt für
     Schritt zeichnen:
 
-
     |> Highlight
         |> Carousel
             src=./img/context-free/LR/dk-automaton-5-nea-aaabb/01.svg
@@ -209,7 +208,6 @@
     $q \step{\epsilon} q'$ gibt. Für den obigen nichtdeterministischen
     Automaten sieht das dann so aus:
 
-
     |> Highlight
         |> Carousel
             src=./img/context-free/LR/dk-automaton-6-dea-aaabb/dk-dea-for-aaabb-01-01.svg
@@ -277,7 +275,6 @@
         Wenn diese beiden Bedingungen gelten, sagen wir, dass
         $G$ den DK-Test bestanden hat. Das Theorem sagt also:
         $G$ ist LR(0) genau dann, wenn es den DK-Test besteht.
-
 
     |> Highlight
         title=*Beweisskizze.*

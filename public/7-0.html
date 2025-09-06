@@ -43,31 +43,33 @@
       zu entscheiden sind. Da stellen sich die folgenden
       Fragen:
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          Wie mann man die Definition kontextfreier Grammatiken
-          sinnvoll erweitern, so dass sie beispielsweise auch
-          Sprachen wie $\{a^n b^n c^n \ | \ n \geq 0\}$ umfassen?
-        </p>
-      </li>
-      <li>
-        <p>
-          Gibt es eine natürliche Barriere, jenseits derer es
-          keinen vernünftigen Begriff des "Beschreiben könnens"
-          gibt? Oder kann man immer noch allgemeinere Regelwerke
-          zulassen?
-        </p>
-      </li>
-      <li>
-        <p>
-          Gibt es für die (noch zu definierende) allgemeinere
-          Art von Grammatiken auch eine Art Automat, so wie die
-          endlichen Automaten für die regulären Grammatiken und
-          die Kellerautomaten für die kontextfreien?
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            Wie mann man die Definition kontextfreier Grammatiken
+            sinnvoll erweitern, so dass sie beispielsweise auch
+            Sprachen wie $\{a^n b^n c^n \ | \ n \geq 0\}$ umfassen?
+          </p>
+        </li>
+        <li>
+          <p>
+            Gibt es eine natürliche Barriere, jenseits derer es
+            keinen vernünftigen Begriff des "Beschreiben könnens"
+            gibt? Oder kann man immer noch allgemeinere Regelwerke
+            zulassen?
+          </p>
+        </li>
+        <li>
+          <p>
+            Gibt es für die (noch zu definierende) allgemeinere
+            Art von Grammatiken auch eine Art Automat, so wie die
+            endlichen Automaten für die regulären Grammatiken und
+            die Kellerautomaten für die kontextfreien?
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Punkt 1 werden wir in diesem Kapitel diskutieren.
       Punkt 2 und 3 werden Gegenstand des nächsten Kapitels
@@ -310,7 +312,7 @@
       <p>
         Die Nichtterminale $X,Y,Z$ stehen für folgendes:
       </p>
-      <ul>
+      <ul class="outside-list">
         <li>
           <p>
             <span class="nowrap">$X$:</span>
@@ -397,7 +399,6 @@
         $\gamma \in \{A,B,C\}^*$ enthält gleich viele $A$
         wie $B$ wie
         <span class="nowrap">$C$.</span>
-        
       </p>
       <div class="well statement">
         <p>
@@ -411,15 +412,17 @@
           dann
           gilt
         </p>
-        <ol>
-          <li \(\#_{A,a}(\beta)="\#_{B,b}(\beta) = \#_{C,c}(\beta)\)">
+        <ol class="outside-list">
+          <li>
+            <p>
+              $\#_{A,a}(\beta) = \#_{B,b}(\beta) = \#_{C,c}(\beta)$
+            </p>
           </li>
           <li>
             <p>
               Außer $A,a,B,b,C,c$ enthält $\beta$ höchstens ein
               weiteres Symbol, und dies ist in
               <span class="nowrap">$\{S,X,Y,Z\}$.</span>
-              
             </p>
           </li>
           <li>
@@ -469,7 +472,6 @@
         Anzahl der drei Symbole gleich sein muss, gilt also
         $\beta = a^n b^n c^n$ und somit
         <span class="nowrap">$\beta \in L$.</span>
-        
       </p>
     </div>
     <div class="well statement out">
@@ -684,7 +686,7 @@
         Überzeugen wir uns, dass dies den gewünschten Effekt
         hat.
       </p>
-      <ul>
+      <ul class="outside-list">
         <li>
           <p>
             Wir können $R$ nur loswerden, indem wir es in das
@@ -705,7 +707,6 @@
             wir mit $L A^m B^n R$ beginnen, im Laufe der Ableitung
             genau $m$ mal ein
             <span class="nowrap">$X$.</span>
-            
           </p>
         </li>
         <li>
@@ -729,7 +730,6 @@
             Jedes $\tilde{C}$ kann nur in ein $C$ umgewandelt
             werden. Es entstehen also insgesamt $mn$ viele
             <span class="nowrap">$C$.</span>
-            
           </p>
         </li>
       </ul>

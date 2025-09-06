@@ -35,7 +35,6 @@
     oder sogar $LR(0)$ ist. Ich interessiere mich gerade
     nur für Ableitungsbäume von Wortformen.
 
-
     |> Highlight
         |> Carousel
             src=./img/context-free/LR/G-right-derivation.svg
@@ -134,7 +133,6 @@
     $\gamma$, eine Linksreduktion
     $\gamma \rstep{}^* S$ finden, indem wir den Ableitungsbaum
     von $\gamma$ zeichnen und immer wieder die Blüte abschneiden:
-
 
     |> Highlight
         |> Carousel
@@ -345,7 +343,6 @@
         $w \in L(G)$ gilt und $G$ die  $LR(0)$-Bedingung erfüllt,
         dann findet der Parser die Rechtsableitung
         $S \Step{}^* w$,
-
 
     |> Highlight
         title=*Beweis.*

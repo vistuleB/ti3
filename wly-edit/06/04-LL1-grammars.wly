@@ -328,7 +328,6 @@
     mit einer Laufzeitfehlermeldung. Hier ist ein Entwurf
     eines allgemeinen Algorithmus für LL$(k)$-Grammatiken:
 
-
     |> Highlight
         title=*Generischer Algorithmus zum Parsen von LL\((k)\)-Gramatiken*
         |> ol

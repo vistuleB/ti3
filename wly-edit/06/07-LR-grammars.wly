@@ -314,7 +314,6 @@
                 Teil von $\front(\gamma)$ mindestens ein Nichtterminal
                 vorkommen.
 
-
     |> Highlight
         title=*Beweis.*
         Der Beweis ist leider etwas mechanisch und repetitiv.
@@ -376,7 +375,6 @@
             title=*Nur-dann-Richtung.*
             Wenn die Grammatik $G$ die Schlussfolgerungen des
             Lemmas erfüllt und müssen zeigen, dass sie auch LG(0).
-
 
         |> Highlight
             title=*Beweis.*

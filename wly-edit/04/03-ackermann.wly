@@ -117,7 +117,6 @@
         Sei $m \in \N$ gegeben. Die Funktion $A_m$ ist primitiv
         rekursiv.
 
-
     |> Highlight
         title=*Beweis.*
         Wir verwenden Induktion über $m$. Für $m=0$ gilt
@@ -214,7 +213,6 @@
     berechnen; was ein Widerspruch ist, weil bereits
     $A_{d+1}$ schneller wächst als jede primitiv-rekursive
     Funktion mit $d$ verschachtelten Schleifen.
-
 
     |> Highlight
         title=*Beweis.*

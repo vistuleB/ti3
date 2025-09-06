@@ -109,10 +109,10 @@ pub fn main_pipeline()  -> List(Pipe) {
             "Topic", "SubTopic",
             "Highlight", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
             "pre", "div", "br", "hr",
-            "figure", "img"
+            "figure"
           ]
         ),
-        ["MathBlock", "p", "Index", "Menu", "Topic", "SubTopic", "code", "pre", "span", "NoWrap", "Math", "QED", "CarouselContainer"]
+        ["MathBlock", "p", "Index", "Menu", "Topic", "SubTopic", "code", "pre", "span", "NoWrap", "Math", "QED", "CarouselContainer", "figure"]
       ),
       dl.unwrap("WriterlyBlankLine"),      
       dl.trim("p"),
@@ -131,6 +131,9 @@ pub fn main_pipeline()  -> List(Pipe) {
     pp.splitting_empty_lines_cleanup(),
     [
       dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
+    ],
+    pp.splitting_empty_lines_cleanup(),
+    [
       dl.fold_contents_into_text("Math"),
       dl.wrap_children_in(#("Carousel","CarouselItems")),
       dl.wrap(#("Carousel", "CarouselContainer")),

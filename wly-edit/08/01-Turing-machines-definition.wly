@@ -420,7 +420,6 @@
         $G$ mit $L(G) = L(M)$. In anderen Worten: formale
         Grammatiken sind mindestens so mächtig wie Turingmaschinen.
 
-
     |> Highlight
         title=*Beweis.*
         Die Idee ist, dass wir eine Grammatik $G$ schreiben,

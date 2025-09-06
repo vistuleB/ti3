@@ -32,7 +32,7 @@
     <div class="main-column page-title">
       <p>
         6.10 
-        Allgemeine kontextfreie Sprachen parsen
+        Allgemeines Parsing
       </p>
     </div>
     <p class="main-column">
@@ -192,7 +192,6 @@
             <span class="nowrap">$U \Step{}^* V$?</span>
             Zeichnen Sie ein Bildchen mit all diesen
             <span class="nowrap">$\Step{}^*$-Pfeilen.</span>
-            
           </p>
         </li>
         <li>
@@ -379,105 +378,106 @@
       diese Bereiche also kleinere Unterwörter
       darstellen.
     </p>
-    <ul class="main-column">
-      <li>
-        <p>
-          Initialisiere für alle $0 \leq i \lt n$ die Mengen
-          \(N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{
-          ist eine Produktion in $G$}\}\)
-        </p>
-      </li>
-      <li>
-        <p>
-          <code>for l = 2 .. n</code>
-        </p>
-        <ol
-          type="I"
-          class=""
-        >
-          <li>
-            <p>
-              <code>for i = 0 .. n-l</code>
-            </p>
-            <ol
-              type="i"
-              class=""
-            >
-              <li>
-                <p>
-                  <code>k := i+l</code>
-                  <span class="comment"># wir betrachten das Interval w[i:k] der Länge l</span>
-                </p>
-              </li>
-              <li>
-                <p>
-                  Berechne $N_{i,k}$ wie in
-                  <span class="nowrap">$(\ref{equation-Nij})$.</span>
-                  Konkret heißt das:
-                </p>
-              </li>
-              <li>
-                <p>
-                  Initialisiere $N_{i,k} := \emptyset$
-                </p>
-              </li>
-              <li>
-                <p>
-                  <code>for j = i+1 .. k-1:</code>
-                </p>
-                <ol
-                  type="1"
-                  class=""
-                >
-                  <li>
-                    <p>
-                      <code>for all productions</code>
-                      <span class="nowrap">$X \rightarrow YZ$:</span>
-                      
-                    </p>
-                    <ol type="a">
-                      <li>
-                        <p>
-                          füge $X$ zu $N_{i,k}$ hinzu, falls $Y \in N_{i,j}$
-                          und $Z \in N_{j,k}$ gilt.
-                        </p>
-                      </li>
-                    </ol>
-                  </li>
-                  <li>
-                    <p>
-                      <code>end for all productions</code>
-                    </p>
-                  </li>
-                </ol>
-              </li>
-              <li>
-                <p>
-                  <code>end for j</code>
-                </p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <p>
-              <code>end for k</code>
-            </p>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <p>
-          <code>end for i</code>
-        </p>
-      </li>
-      <li>
-        <p>
-          <code>return True if</code>
-          $S \in N_{0,n}$
-          <code>else return False</code>
-        </p>
-      </li>
-    </ul>
+    <div class="main-column">
+      <ul class="outside-list">
+        <li>
+          <p>
+            Initialisiere für alle $0 \leq i \lt n$ die Mengen
+            \(N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{
+            ist eine Produktion in $G$}\}\)
+          </p>
+        </li>
+        <li>
+          <p>
+            <code>for l = 2 .. n</code>
+          </p>
+          <ol
+            type="I"
+            class="outside-list"
+          >
+            <li>
+              <p>
+                <code>for i = 0 .. n-l</code>
+              </p>
+              <ol
+                type="i"
+                class="outside-list"
+              >
+                <li>
+                  <p>
+                    <code>k := i+l</code>
+                    <span class="comment"># wir betrachten das Interval w[i:k] der Länge l</span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Berechne $N_{i,k}$ wie in
+                    <span class="nowrap">$(\ref{equation-Nij})$.</span>
+                    Konkret heißt das:
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Initialisiere $N_{i,k} := \emptyset$
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <code>for j = i+1 .. k-1:</code>
+                  </p>
+                  <ol
+                    type="1"
+                    class="outside-list"
+                  >
+                    <li>
+                      <p>
+                        <code>for all productions</code>
+                        <span class="nowrap">$X \rightarrow YZ$:</span>
+                      </p>
+                      <ol type="a">
+                        <li>
+                          <p>
+                            füge $X$ zu $N_{i,k}$ hinzu, falls $Y \in N_{i,j}$
+                            und $Z \in N_{j,k}$ gilt.
+                          </p>
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      <p>
+                        <code>end for all productions</code>
+                      </p>
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <p>
+                    <code>end for j</code>
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                <code>end for k</code>
+              </p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p>
+            <code>end for i</code>
+          </p>
+        </li>
+        <li>
+          <p>
+            <code>return True if</code>
+            $S \in N_{0,n}$
+            <code>else return False</code>
+          </p>
+        </li>
+      </ul>
+    </div>
     <p class="main-column">
       Was ist die Laufzeit des Algorithmus? Sei $g$ die
       Anzahl der Produktionen in $G$ der Form
@@ -525,7 +525,6 @@
         Dann ist die Laufzeit des CYK-Algorithmus
         proportional zu
         <span class="nowrap">$g \cdot n^3$.</span>
-        
       </p>
     </div>
     <p class="main-column">
@@ -555,124 +554,199 @@
       <p>
         und das Eingabewort
         <span class="nowrap">$xyxxz$.</span>
-        
       </p>
       <div class="carousel__container">
         <div class="carousel">
           <div class="carousel__items">
             <div class="carousel__item">
-              <img src="./img/context-free/CYK/01-01.svg">
+              <p>
+                <img src="./img/context-free/CYK/01-01.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/01-02.svg">
+              <p>
+                <img src="img/context-free/CYK/01-02.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/01-03.svg">
+              <p>
+                <img src="img/context-free/CYK/01-03.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-01.svg">
+              <p>
+                <img src="img/context-free/CYK/02-01.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-02.svg">
+              <p>
+                <img src="img/context-free/CYK/02-02.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-03.svg">
+              <p>
+                <img src="img/context-free/CYK/02-03.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-04.svg">
+              <p>
+                <img src="img/context-free/CYK/02-04.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-05.svg">
+              <p>
+                <img src="img/context-free/CYK/02-05.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-06.svg">
+              <p>
+                <img src="img/context-free/CYK/02-06.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-07.svg">
+              <p>
+                <img src="img/context-free/CYK/02-07.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-08.svg">
+              <p>
+                <img src="img/context-free/CYK/02-08.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-09.svg">
+              <p>
+                <img src="img/context-free/CYK/02-09.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-10.svg">
+              <p>
+                <img src="img/context-free/CYK/02-10.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-11.svg">
+              <p>
+                <img src="img/context-free/CYK/02-11.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-12.svg">
+              <p>
+                <img src="img/context-free/CYK/02-12.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-13.svg">
+              <p>
+                <img src="img/context-free/CYK/02-13.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-14.svg">
+              <p>
+                <img src="img/context-free/CYK/02-14.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-15.svg">
+              <p>
+                <img src="img/context-free/CYK/02-15.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-16.svg">
+              <p>
+                <img src="img/context-free/CYK/02-16.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-17.svg">
+              <p>
+                <img src="img/context-free/CYK/02-17.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-18.svg">
+              <p>
+                <img src="img/context-free/CYK/02-18.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-19.svg">
+              <p>
+                <img src="img/context-free/CYK/02-19.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-20.svg">
+              <p>
+                <img src="img/context-free/CYK/02-20.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-21.svg">
+              <p>
+                <img src="img/context-free/CYK/02-21.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-22.svg">
+              <p>
+                <img src="img/context-free/CYK/02-22.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-23.svg">
+              <p>
+                <img src="img/context-free/CYK/02-23.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-24.svg">
+              <p>
+                <img src="img/context-free/CYK/02-24.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-25.svg">
+              <p>
+                <img src="img/context-free/CYK/02-25.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-26.svg">
+              <p>
+                <img src="img/context-free/CYK/02-26.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-27.svg">
+              <p>
+                <img src="img/context-free/CYK/02-27.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-28.svg">
+              <p>
+                <img src="img/context-free/CYK/02-28.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-29.svg">
+              <p>
+                <img src="img/context-free/CYK/02-29.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-30.svg">
+              <p>
+                <img src="img/context-free/CYK/02-30.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-31.svg">
+              <p>
+                <img src="img/context-free/CYK/02-31.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-32.svg">
+              <p>
+                <img src="img/context-free/CYK/02-32.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-33.svg">
+              <p>
+                <img src="img/context-free/CYK/02-33.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-34.svg">
+              <p>
+                <img src="img/context-free/CYK/02-34.svg">
+              </p>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/CYK/02-35.svg">
+              <p>
+                <img src="img/context-free/CYK/02-35.svg">
+              </p>
             </div>
           </div>
         </div>

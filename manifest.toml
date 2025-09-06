@@ -16,9 +16,9 @@ packages = [
   { name = "simplifile", version = "2.3.0", build_tools = ["gleam"], requirements = ["filepath", "gleam_stdlib"], otp_app = "simplifile", source = "hex", outer_checksum = "0A868DAC6063D9E983477981839810DC2E553285AB4588B87E3E9C96A7FB4CB4" },
   { name = "snag", version = "1.1.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "snag", source = "hex", outer_checksum = "7E9F06390040EB5FAB392CE642771484136F2EC103A92AE11BA898C8167E6E17" },
   { name = "vix", version = "0.35.0", build_tools = ["mix", "make"], requirements = ["cc_precompiler", "elixir_make", "kino"], otp_app = "vix", source = "hex", outer_checksum = "A3E80067A89D0631B6CF2B93594E03C1B303A2C7CDDBBDD28040750D521984E5" },
-  { name = "vxml", version = "1.0.0", build_tools = ["gleam"], requirements = ["gleam_regexp", "gleam_stdlib", "on", "simplifile", "xmlm"], source = "local", path = "../vxml" },
+  { name = "vxml", version = "1.0.0", build_tools = ["gleam"], requirements = ["gleam_regexp", "gleam_stdlib", "on", "simplifile", "xmlm"], source = "local", path = "../wly/vxml" },
   { name = "desugaring", version = "1.0.0", build_tools = ["gleam"], requirements = ["ansel", "argv", "gleam_regexp", "gleam_stdlib", "gleam_time", "on", "shellout", "simplifile", "vxml", "writerly", "xmlm"], source = "local", path = "../wly/desugaring" },
-  { name = "writerly", version = "1.0.0", build_tools = ["gleam"], requirements = ["gleam_regexp", "gleam_stdlib", "gleam_time", "simplifile", "vxml"], source = "local", path = "../writerly" },
+  { name = "writerly", version = "1.0.0", build_tools = ["gleam"], requirements = ["gleam_regexp", "gleam_stdlib", "gleam_time", "simplifile", "vxml"], source = "local", path = "../wly/writerly" },
   { name = "xmlm", version = "1.0.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "xmlm", source = "hex", outer_checksum = "295F483E1A930DC4C45ED0F07C3466C0A7381972C3C2FC64D66BD2FBB307ED6A" },
 ]
 
@@ -29,6 +29,6 @@ gleam_time = { version = ">= 1.2.0 and < 2.0.0" }
 gleeunit = { version = ">= 1.0.0 and < 2.0.0" }
 on = { version = ">= 1.0.0 and < 2.0.0" }
 simplifile = { version = ">= 2.3.0 and < 3.0.0" }
-vxml = { path = "../../vistuleB/wly/vxml" }
-desugaring = { path = "../../vistuleB/wly/desugaring" }
-writerly = { path = "../../vistuleB/wly/writerly" }
+vxml = { path = "../wly/vxml" }
+desugaring = { path = "../wly/desugaring" }
+writerly = { path = "../wly/writerly" }

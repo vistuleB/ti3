@@ -7,7 +7,6 @@
         $M = (\Sigma, Q, \Gamma, \qstart, \delta)$, der die
         gleiche Sprache akzeptiert, also $L(G) = L(M)$.
 
-
     |> Highlight
         title=*Beweis.*
         Der Beweis ist vergleichsweise einfach, weil wir die
@@ -201,7 +200,6 @@
 
     Ich folge hier im Wesentlichen dem Beweis aus Sipsers
     Kapitel 2.
-
 
     |> Highlight
         title=*Beweis.*

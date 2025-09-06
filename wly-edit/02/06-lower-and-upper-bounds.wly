@@ -16,7 +16,6 @@
         *(Shannon).* Es gibt Boolesche Funktionen $f$, die
         keine Schaltkreise kleiner als $\Omega(2^n / n)$ haben.
 
-
     |> Highlight
         title=*Beweis.*
         Die Beweismethode ist vielleicht neu für Sie, aber
@@ -45,7 +44,6 @@
             Sei $s \geq n \geq 1$. Dann gibt es höchstens
             $s^{2s+1}$ Schaltkreise mit $n$ Input-Variablen, Fan-in
             2 und $s$ Gates.
-
 
         |> Highlight
             title=*Beweis.*
@@ -189,7 +187,6 @@
         gibt es einen Schaltkreis mit Fan-in 2 und
         $O(2^n / n)$ Gates.
 
-
     |> Highlight
         title=*Beweis.*
         Der Beweis fußt auf zwei Kernideen: erstens bauen
@@ -290,7 +287,6 @@
                 |> img
                     style=height:10em
                     src=./img/circuits/all-monomials.svg
-
 
         |> Highlight
             title=*Beweis.*

@@ -460,12 +460,12 @@ figure.main-column img.constrained,
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     font-weight: normal;
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: normal;
     margin: 0px;
 }
@@ -485,14 +485,30 @@ p + h2 {
 }
 
 code {
-    font-size: 0.9em;
-    color: #c7254e;
+    font-size: 0.85em;
+    /* color: #c7254e; */
 }
 
 ol,
 ul {
     list-style-position: inside;
-    padding-left: 1rem;
+    padding:0em 2em;
+}
+
+ul.outside-list,
+ol.outside-list {
+    list-style-position: outside;
+    padding-left: 0.5rem;
+    margin:0em 2em;
+}
+
+ul.outside-list:not(li > ul),
+ol.outside-list:not(li > ol) {
+    margin: 0.7em 2em;
+}
+
+li {
+    margin: 0em 0;
 }
 
 li > p:first-child {
@@ -518,4 +534,10 @@ hr {
     width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
+}
+
+.circle-X-img {
+    height: 1.4em;
+    display: inline-block;
+    vertical-align:middle;
 }

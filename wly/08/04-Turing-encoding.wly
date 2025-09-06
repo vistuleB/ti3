@@ -35,14 +35,16 @@
     Um dies, zumindest auf dem Papier, in die Realität
     zu übersetzen, müssen wir zwei Fragen beantworten.
 
-    |> ol
-        |> li
-            Wie können wir eine Rechenvorschrift (d.h. ein Programm)
-            so codifizieren, dass wir es im Prinzip als eine Zeichenkette
-            aufschreiben und einer Maschine übergeben können?
-        |> li
-            Welche Maschine könnte so eine Rechenvorschrift lesen
-            und sie an gegebenen Eingabedaten dann auch ausführen?
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Wie können wir eine Rechenvorschrift (d.h. ein Programm)
+                so codifizieren, dass wir es im Prinzip als eine Zeichenkette
+                aufschreiben und einer Maschine übergeben können?
+            |> li
+                Welche Maschine könnte so eine Rechenvorschrift lesen
+                und sie an gegebenen Eingabedaten dann auch ausführen?
 
     Es stellt sich heraus, dass wir beide Antworten (beinahe)
     schon kennen. Eine beliebige Rechenvorschrift können
