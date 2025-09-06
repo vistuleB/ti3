@@ -69,7 +69,6 @@
       <img
         style="height:13em"
         src="img/finite-state-automata/finite-state-machine-example-01.svg"
-        loading="lazy"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -290,7 +289,6 @@
         <img
           style="height:10em"
           src="img/finite-state-automata/finite-state-machine-example-01.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -368,7 +366,6 @@
         <img
           style="height:10em"
           src="img/finite-state-automata/finite-state-machine-example-01.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -437,7 +434,6 @@
         <img
           style="height:10em"
           src="img/finite-state-automata/finite-state-machine-example-01.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -492,7 +488,6 @@
       <img
         style="height:10em"
         src="img/finite-state-automata/finite-state-machine-example-01.svg"
-        loading="lazy"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -605,6 +600,8 @@
           <b>Beweis.</b>
           Wir verwenden Induktion über die Länge des Wortes
           <span class="nowrap">$\alpha$.</span>
+        </p>
+        <p>
           <b>Induktionsbasis.</b>
           Wenn $\alpha = \epsilon$ gilt,
           also $\alpha$ die Länge 0 hat, dann gilt
@@ -618,6 +615,8 @@
           Produktion erfolgt ist und somit
           $q = q'$ gilt. Wir sehen: beide Aussagen sind äquivalent
           zu $q = q'$ und somit auch äquivalent zueinander.
+        </p>
+        <p>
           <b>Induktionsschritt</b>. Wenn $\alpha$ die Länge $n+1$
           hat, so schreiben wir $\alpha = x \beta$ für ein Wort
           $\beta \in \Sigma^*$ der Länge
@@ -630,7 +629,7 @@
           Ziel ist es, zu zeigen, dass die beiden folgenden Aussagen
           äquivalent sind:
         </p>
-        <ol>
+        <ol class="outside-list">
           <li>
             <p>
               $q \stackrel{x \beta}{\rightarrow} q'$ im endlichen
@@ -648,6 +647,8 @@
         <p>
           Wir müssen beide Richtungen zeigen, also zeigen, dass
           aus Aussage (1) die Aussage (2) folgt und umgekehrt.
+        </p>
+        <p>
           <b>Aus (1) folgt (2).</b>
           Nehmen wir also an, dass
           $q \stackrel{x \beta}{\rightarrow} q'$ gilt und bezeichnen
@@ -680,6 +681,8 @@
         </div>
         <p>
           Dies zeigt die erste Richtung.
+        </p>
+        <p>
           <b>Aus (2) folgt (1).</b>
           Nun nehmen wir an, dass
           $q \Rightarrow^* x \beta q'$ gilt. Untersuchen wir
@@ -733,7 +736,7 @@
           gilt, also zusammengenommen
           <span class="nowrap">$q \stackrel{x\beta}{\rightarrow} q'$.</span>
           Dies zeigt
-          die zweite Richtung. Hiermit endet der Induktionsbeweis.<span class="qed">\(\square\)</span>
+          die zweite Richtung. Hiermit endet der Induktionsbeweis.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
@@ -745,7 +748,7 @@
         behaupten wir also, dass wir folgenden zwei Aussagen
         äquivalent sind:
       </p>
-      <ol>
+      <ol class="outside-list">
         <li>
           <p>
             $\qstart \stackrel{\alpha}{\rightarrow} q'$ für einen
@@ -804,7 +807,7 @@
         $$
       </div>
       <p>
-        gilt. Dies ist genau Punkt 1, den wir zeigen wollten.<span class="qed">\(\square\)</span>
+        gilt. Dies ist genau Punkt 1, den wir zeigen wollten.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -825,7 +828,6 @@
         <img
           style="height:13em"
           src="img/finite-state-automata/finite-state-machine-example-02.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -880,7 +882,6 @@
         <img
           style="height:11em"
           src="img/finite-state-automata/finite-state-machine-example-03.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -906,7 +907,6 @@
         <img
           style="height:12em"
           src="img/finite-state-automata/finite-state-machine-example-04.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -945,7 +945,6 @@
         <img
           style="height:7em"
           src="img/finite-state-automata/finite-state-machine-example-05.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >

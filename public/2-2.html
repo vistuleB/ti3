@@ -147,37 +147,39 @@
       Können wir das mit beliebigen Funktionen machen? Ja
       klar! Wir gehen wie folgt vor:
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          Teile die Tabelle in die oberen $2^{n-1}$ Zeilen (für
-          die $x_1 = 0$ gilt) und die unteren $2^{n-1}$ Zeilen
-          (für die $x_1 = 1$ gilt) auf.
-        </p>
-      </li>
-      <li>
-        <p>
-          Jede Hälfte kann als Boolesche Funktion mit $n-1$
-          Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise
-          $C_0$ für die obere und $C_1$ für die untere Hälfte,
-          beide mit Input-Variablen
-          <span class="nowrap">$x_2,\dots,x_n$.</span>
-        </p>
-      </li>
-      <li>
-        <p>
-          Kombinieren Sie diese via
-          <code>if</code>
-          $x_1$
-          <code>then</code>
-          $C_1$
-          <code>else</code>
-          <span class="nowrap">$C_0$,</span>
-          zu einem Schaltkreis für $f$ mit insgesamt
-          $n$ Input-Variablen.
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            Teile die Tabelle in die oberen $2^{n-1}$ Zeilen (für
+            die $x_1 = 0$ gilt) und die unteren $2^{n-1}$ Zeilen
+            (für die $x_1 = 1$ gilt) auf.
+          </p>
+        </li>
+        <li>
+          <p>
+            Jede Hälfte kann als Boolesche Funktion mit $n-1$
+            Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise
+            $C_0$ für die obere und $C_1$ für die untere Hälfte,
+            beide mit Input-Variablen
+            <span class="nowrap">$x_2,\dots,x_n$.</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            Kombinieren Sie diese via
+            <code>if</code>
+            $x_1$
+            <code>then</code>
+            $C_1$
+            <code>else</code>
+            <span class="nowrap">$C_0$,</span>
+            zu einem Schaltkreis für $f$ mit insgesamt
+            $n$ Input-Variablen.
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       An dieser Stelle zahlt es sich aus, eine formale Notation
       einzuführen:
@@ -477,33 +479,35 @@
       in dem Sinne). Die genaue Komplexität dieser Optimierungsprobleme
       ist in der Tat Gegenstand aktiver Forschung,
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          Wenn die Funktion (1) bereits als
-          <i>Boolesche Formel</i>
-          vorliegt (also Schaltkreise, in denen außer den Eingabe-Gates
-          alle Gates nur eine ausgehende Kante haben), so ist
-          das Minimierungsproblem
-          <span class="nowrap">$Sigma_2^{P}$-vollständig,</span>
-          siehe
-          <a href="http://users.cms.caltech.edu/~umans/papers/BU07.pdf">Buchfuhrer, David; Umans, Christopher (January 2011),
-            The complexity of Boolean formula minimization (JCSS
-            2011).</a>
-        </p>
-      </li>
-      <li>
-        <p>
-          Wenn die Funktion (2) als Tabelle gegeben ist, dann
-          ist die genaue Komplexität nicht genau bekannt. Es
-          hat in den letzten Jahren Fortschritte gegeben (die
-          nahelegen, dass das Problem tatsächlich schwierig ist),
-          z.B.
-          <a href="https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf">Ilango, Loff, and Oliveira. NP-Hardness of Circuit
-            Minimization for Multi-Output Functions, (CCC 2020).</a>
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            Wenn die Funktion (1) bereits als
+            <i>Boolesche Formel</i>
+            vorliegt (also Schaltkreise, in denen außer den Eingabe-Gates
+            alle Gates nur eine ausgehende Kante haben), so ist
+            das Minimierungsproblem
+            <span class="nowrap">$Sigma_2^{P}$-vollständig,</span>
+            siehe
+            <a href="http://users.cms.caltech.edu/~umans/papers/BU07.pdf">Buchfuhrer, David; Umans, Christopher (January 2011),
+              The complexity of Boolean formula minimization (JCSS
+              2011).</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            Wenn die Funktion (2) als Tabelle gegeben ist, dann
+            ist die genaue Komplexität nicht genau bekannt. Es
+            hat in den letzten Jahren Fortschritte gegeben (die
+            nahelegen, dass das Problem tatsächlich schwierig ist),
+            z.B.
+            <a href="https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf">Ilango, Loff, and Oliveira. NP-Hardness of Circuit
+              Minimization for Multi-Output Functions, (CCC 2020).</a>
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Beachten Sie, dass (2) algorithmisch einfacher ist:
       durch die "verschwenderische" Darstellung der Funktion

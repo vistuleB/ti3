@@ -133,15 +133,18 @@
       Weisen wieder, den Baum auszugeben.
     </p>
     <div class="main-column">
-<pre class="listing">
-def treeToLeftDerivation (tree):
-  print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
-  for child in tree.children (from left ro right):
-      treeToLeftDerivation(child)
-def treeToRightDerivation (tree):
-  for child in tree.children (from left ro right):
-      treeToLeftDerivation(child)
-  print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+<pre
+  class="listing"
+  language=""
+>
+<span class="listing-bol"></span>def treeToLeftDerivation (tree):
+<span class="listing-bol"></span>    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+<span class="listing-bol"></span>    for child in tree.children (from left ro right):
+<span class="listing-bol"></span>        treeToLeftDerivation(child)
+<span class="listing-bol"></span>def treeToRightDerivation (tree):
+<span class="listing-bol"></span>    for child in tree.children (from left ro right):
+<span class="listing-bol"></span>        treeToLeftDerivation(child)
+<span class="listing-bol"></span>    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
 </pre>
     </div>
     <p class="main-column">

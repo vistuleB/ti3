@@ -257,7 +257,7 @@
         Wir sehen also: jedes
         <span class="nowrap">$A_m$,</span>
         betrachtet als Funktion
-        mit einem Eingabeparameter, ist primitiv rekursiv.<span class="qed">\(\square\)</span>
+        mit einem Eingabeparameter, ist primitiv rekursiv.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -318,6 +318,8 @@
       für $A_m$ irgendwie implizit produziert und dann mit
       $n$ aufruft. Jedenfalls nicht in der Programmiersprache
       der primitiven Rekursion.
+    </p>
+    <p class="main-column">
       <b>Beweisidee.</b>
       Für jedes feste
       $m$ ist die ein-parametrige Funktion
@@ -580,7 +582,7 @@
           $$
         </div>
         <p>
-          Somit ist die Behauptung bewiesen.<span class="qed">\(\square\)</span>
+          Somit ist die Behauptung bewiesen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
@@ -608,7 +610,7 @@
         $$
       </div>
       <p>
-        Es gilt also $A_{q+2} \gt f$ und das Lemma ist bewiesen.<span class="qed">\(\square\)</span>
+        Es gilt also $A_{q+2} \gt f$ und das Lemma ist bewiesen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -624,7 +626,7 @@
       konstruiert haben:
     </p>
     <div class="main-column">
-<pre>
+<pre language="">
 pair = Comp(add, p0, Comp(choose2,Comp(add,p0,Comp(succ,p1))))
 choose2 = PrimRec(zero, Comp(add,p0,p1))
 add = PrimRec (p0, Comp(succ, p0))

@@ -89,13 +89,18 @@
 
         |> pre
             class=listing
-            def is_3_colorable(graph):
-            \    F = convert_to_CNF_formula(graph)
-            \    
+            |> span
+                def is_3_colorable(graph):
+            |> br
+            |> span
+                \    F = convert_to_CNF_formula(graph)
+            |> br
             |> span
                 class=orange-comment
-                # F ist die oben beschriebene Formel mit 3n Variablen
-            \    return is_satisfiable(F)
+                \    # F ist die oben beschriebene Formel mit 3n Variablen
+            |> br
+            |> span
+                \    return is_satisfiable(F)
 
         Falls Ihnen eine Funktion `find_satisying_assignment`
         zur Verfügung steht, so können Sie natürlich die erfüllende
@@ -175,18 +180,31 @@
         in eine erfüllende Belegung übersetzen und umgekehrt.
         Hier ist also der Code:
 
+        ```orange-comments-listing
+        def is_3CNF_satisfiable(the_3_cnf_formula):
+            G = cOnvert_to_graph(the_3_cnf_formula)
+            //# G ist der oben konstruierte Graph
+            return is_3_colorable(G)
+        ```
+
         |> pre
             class=listing
-            def is_3CNF_satisfiable(the_3_cnf_formula):
-            \    G = convert_to_graph(the_3_cnf_formula)
+            |> span
+                def is_3CNF_satisfiable(the_3_cnf_formula):
+            |> br
+            |> span
+                \    G = convert_to_graph(the_3_cnf_formula)
+            |> br
             |> span
                 class=orange-comment
-            \    # G ist der oben konstruierte Graph
-            \    return is_3_colorable(G)
+                \    # G ist der oben konstruierte Graph
+            |> br
+            |> span
+                \    return is_3_colorable(G)
 
         |> QED
 
-    Wir haben also gezeigt, wie man eine $3$-CNF $F$ in
+    Wir haben also gEzeigt, wie man eine $3$-CNF $F$ in
     einen Graphen $G$ umwandelt, so dass
 
     \begin{align*}

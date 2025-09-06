@@ -3,13 +3,15 @@
     Primitive Rekursion erlaubt uns Schleifen, allerdings
     nur in einer sehr restriktiven Form:
 
-    |> ol
-        |> li
-            Wir müssen anfangs bereits angeben, wie oft wir die
-            Schleife durchlaufen wollen;
-        |> li
-            wir dürfen nur eine lokale Variable mitführen (und
-            den Iterationsindex).
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Wir müssen anfangs bereits angeben, wie oft wir die
+                Schleife durchlaufen wollen;
+            |> li
+                wir dürfen nur eine lokale Variable mitführen (und
+                den Iterationsindex).
 
     Der zweite Punkt ist keine echte Beschränkung, wie
     wir gesehen haben: wenn wir zwei lokale Variablen
@@ -50,6 +52,7 @@
     sind. Es kann allerdings etwas länger dauern:
 
     |> figure
+        style=padding:0 4em;
         7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16,
         8, 4, 2, 1.
 
@@ -57,6 +60,7 @@
     wir die Folge
 
     |> figure
+        style=padding:0 4em;
         27, 82, 41, 124, 62, 31, 94, 47, 142, 71, 214, 107,
         322, 161, 484, 242, 121, 364, 182, 91, 274, 137, 412,
         206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263,
@@ -93,15 +97,15 @@
     wie oft diese durchlaufen werden soll. Es gibt also
     keine `while`-Schleifen. Führen wir diese nun ein.
 
-    |> pre
-        class=listing
-        def While (condition, step):
-        \    def f(x):
-        \            temp = x
-        \            while (condition(temp)):
-        \                    temp = step(temp)
-        \            return temp
-        \    return f
+    ```listing
+    def While (condition, step):
+        def f(x):
+            temp = x
+            while (condition(temp)):
+                temp = step(temp)
+            return temp
+        return f
+    ```
 
     |> Exercise
         Schreiben Sie mit Hilfe von `While`, `PrimRec` und

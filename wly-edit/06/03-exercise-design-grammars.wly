@@ -16,33 +16,36 @@
 
     Diese besteht aus folgenden Teilen:
 
-    |> ol
-        |> li
-            Dem Eingabefenster für die Grammatik links oben. Hier
-            können Sie Ihre eigene Grammatik eingeben.
-        |> li
-            Dem Eingabefenster für das Eingabewort.
-        |> li
-            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
-            der Versuch, das Eingabewort aus den Grammatikregeln
-            per Linksableitung abzuleiten. Die Pfade, die in Sackgassen
-            enden, sind rot markiert.
-        |> li
-            Der Ableitungsbaum. Für jeden Knoten $w$ im Backtrack-Baum
-            stellt der Pfad von Wurzel nach $w$ eine Linksableitung
-            dar. Wenn Sie auf $w$ klicken, sehen Sie den entsprechenden
-            Ableitungsbaum. Per Default wird die erste erfolgreiche
-            Linksableitung in einen Ableitungsbaum umgewandelt
-            und angezeigt (wenn es denn überhaupt eine erfolgreiche
-            Ableitung gibt).
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Dem Eingabefenster für die Grammatik links oben. Hier
+                können Sie Ihre eigene Grammatik eingeben.
+            |> li
+                Dem Eingabefenster für das Eingabewort.
+            |> li
+                Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
+                der Versuch, das Eingabewort aus den Grammatikregeln
+                per Linksableitung abzuleiten. Die Pfade, die in Sackgassen
+                enden, sind rot markiert.
+            |> li
+                Der Ableitungsbaum. Für jeden Knoten $w$ im Backtrack-Baum
+                stellt der Pfad von Wurzel nach $w$ eine Linksableitung
+                dar. Wenn Sie auf $w$ klicken, sehen Sie den entsprechenden
+                Ableitungsbaum. Per Default wird die erste erfolgreiche
+                Linksableitung in einen Ableitungsbaum umgewandelt
+                und angezeigt (wenn es denn überhaupt eine erfolgreiche
+                Ableitung gibt).
 
     |> Exercise
         Geben Sie folgende Grammatik in die App ein:
 
-        |> pre
-            S ->; ;
-            S ->; "("S")"S ;
-            S ->; "(" S "]" S;
+        ```
+        S ->; ;
+        S ->; "("S")"S ;
+        S ->; "(" S "]" S;
+        ```
 
         Was ist die erzeugte Sprache? Können Sie sie in Worten
         beschreiben? Erzeugen Sie Wörter in dieser Sprache,
@@ -73,9 +76,10 @@
         Entwerfen Sie eine Grammatik für arithmetische Ausdrücke
         im Racket-Stil, also
 
-        |> pre
-            (* (+ 2 3) (- 4 (* 2 4) 5)
-            (+ 1 2 (* 2))
+        ```
+        (* (+ 2 3) (- 4 (* 2 4) 5)
+        (+ 1 2 (* 2))
+        ```
 
         Leidet Ihre Grammatik an langen Sackgassen? Wenn ja,
         können Sie die Grammatik abändern? Haben Sie mittlerweile
@@ -88,18 +92,20 @@
         sollten die Konventionen Punkt-vor-Strich beachtet
         werden. Im Ableitungsbaum von
 
-        |> pre
-            2+3*(5+4)
+        ```
+        2+3*(5+4)
+        ```
 
         sollte sich das wiederspiegeln.
 
     |> Exercise
         *(Challenge)* Geben Sie die Grammatik hier ein:
 
-        |> pre
-            S ->; "("S")"S;
-            S ->; "["S"("S;
-            S ->; ;
+        ```
+        S ->; "("S")"S;
+        S ->; "["S"("S;
+        S ->; ;
+        ```
 
         Überlegen Sie, was diese "bedeutet". Sie sehen, die
         Grammatik ist nicht eindeutig. Das Wort `[([()(` hat
@@ -116,9 +122,10 @@
         bei der Sie exponentiell große Backtrack-Bäume bekommen
         können:
 
-        |> pre
-            S ->;  "a" X "b" | "a" X "c";
-            X ->; "a" | "a" X | "a" X X;
+        ```
+        S ->;  "a" X "b" | "a" X "c";
+        X ->; "a" | "a" X | "a" X X;
+        ```
 
         Das ist aber keine Kunst, da die Grammatik uneindeutig
         ist. Können Sie eine _eindeutige_ Grammatik angebene,

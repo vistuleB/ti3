@@ -98,12 +98,12 @@ lorenz.klein@greatest/company/in/the/world.com
 <span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (2 * 3))</span>
 <span class="python-prompt-error-response">File "&lt;stdin&gt;", line 1
     (2 * 3))
-            ^
+           ^
 SyntaxError: unmatched ')'</span>
 <span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (* 3)</span>
 <span class="python-prompt-error-response">File "&lt;stdin&gt;", line 1
     (* 3)
-        ^^^
+     ^^^
 SyntaxError: cannot use starred expression here</span>
 </pre>
       <p>
@@ -147,25 +147,27 @@ SyntaxError: cannot use starred expression here</span>
       davon ab, wie viele der benachbarten 8 Felder von Einzellern
       besetzt sind.
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          <b>Einzeller bleibt:</b>
-          wenn auf einem Feld ein Einzeller
-          lebt und in seiner 8-Nachbarschaft zwei oder drei Einzeller
-          leben, dann überlebt er; in der nächsten Generation
-          wird dort wieder ein Einzeller leben.
-        </p>
-      </li>
-      <li>
-        <p>
-          <b>Einzeller entsteht: wenn auf einem Feld im Moment
-            kein Einzeller lebt, in der 8-Nachbarschaft aber genau
-            drei Einzeller leben, dann entseht hier in der nächsten
-            Generation ein neuer Einzeller.</b>
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            <b>Einzeller bleibt:</b>
+            wenn auf einem Feld ein Einzeller
+            lebt und in seiner 8-Nachbarschaft zwei oder drei Einzeller
+            leben, dann überlebt er; in der nächsten Generation
+            wird dort wieder ein Einzeller leben.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Einzeller entsteht: wenn auf einem Feld im Moment
+              kein Einzeller lebt, in der 8-Nachbarschaft aber genau
+              drei Einzeller leben, dann entseht hier in der nächsten
+              Generation ein neuer Einzeller.</b>
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Im Umkehrschluss: wenn ein Einzeller in seiner 8-Nachbarschaft
       vier oder mehr weitere Einzeller hat, dann stirbt er
@@ -208,7 +210,7 @@ SyntaxError: cannot use starred expression here</span>
         Spiele Sie mit Conways Game of Life! Hier finden Sie
         einen Simulator:<a href="https://playgameoflife.com/">playgameoflife.com</a>
       </p>
-      <ol>
+      <ol class="outside-list">
         <li>
           <p>
             Probieren Sie aus, was geschieht, wenn die Anfangspopulation
@@ -272,26 +274,28 @@ SyntaxError: cannot use starred expression here</span>
       Es geht also in diesem Kurs vor Allem um folgende
       Fragen:
     </p>
-    <ul class="main-column">
-      <li>
-        <p>
-          Wie können wir endliche Beschreibungen von unendlichen
-          Objekten angeben?
-        </p>
-      </li>
-      <li>
-        <p>
-          Was heißt es, etwas zu berechnen? Welche Modelle fürs
-          Rechnen gibt es, die einerseits
-          <i>umfassend</i>
-          sind, also
-          die möglichst viel können, andererseits auch
-          <i>physikalisch
-            realisierbar</i>
-          sind?
-        </p>
-      </li>
-    </ul>
+    <div class="main-column">
+      <ul class="outside-list">
+        <li>
+          <p>
+            Wie können wir endliche Beschreibungen von unendlichen
+            Objekten angeben?
+          </p>
+        </li>
+        <li>
+          <p>
+            Was heißt es, etwas zu berechnen? Welche Modelle fürs
+            Rechnen gibt es, die einerseits
+            <i>umfassend</i>
+            sind, also
+            die möglichst viel können, andererseits auch
+            <i>physikalisch
+              realisierbar</i>
+            sind?
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>

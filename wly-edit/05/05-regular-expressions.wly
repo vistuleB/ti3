@@ -10,27 +10,29 @@
     bereits in Kapitel >>baukasten das Baukastenprinzip
     kennengelernt:
 
-    |> ol
-        |> li
-            Wenn $L_1$ und $L_2$ reguläre Sprachen sind, dann
-            ist $L_1 \cup L_2$ auch regulär;
-        |> li
-            dann ist auch die Konkatenation
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Wenn $L_1$ und $L_2$ reguläre Sprachen sind, dann
+                ist $L_1 \cup L_2$ auch regulär;
+            |> li
+                dann ist auch die Konkatenation
 
-            \begin{align*}
-            L_1 \circ L_2 := \{\alpha \beta \ | \alpha \in L_1, \beta \in L_2\}
-            \end{align*}
+                \begin{align*}
+                L_1 \circ L_2 := \{\alpha \beta \ | \alpha \in L_1, \beta \in L_2\}
+                \end{align*}
 
-            regulär;
-        |> li
-            wenn $L$ regulär ist, dann ist auch ihre Kleenesche
-            Hülle
+                regulär;
+            |> li
+                wenn $L$ regulär ist, dann ist auch ihre Kleenesche
+                Hülle
 
-            \begin{align*}
-            L^* := \{ \alpha_1 \dots \alpha_n \ | \ n \geq 0, \alpha_1,\dots,\alpha_n \in L\}
-            \end{align*}
+                \begin{align*}
+                L^* := \{ \alpha_1 \dots \alpha_n \ | \ n \geq 0, \alpha_1,\dots,\alpha_n \in L\}
+                \end{align*}
 
-            regulär.
+                regulär.
 
     Darüberhinaus haben wir Techniken kennengelernt, um
     aus den gegebenen regulären Grammatiken eine neue Grammatik
@@ -38,7 +40,7 @@
     zu können. Sie sollten sich jetzt folgende Frage stellen:
 
     |> div
-        style=text-align:center
+        class=display
         *Frage:* Können _alle_ regulären Sprachen nach diesem
         Baukastenprinzip erstellt werden?
 
@@ -64,6 +66,7 @@
         folgt und beschreiben folgende Sprachen:
 
         |> ul
+            class=outside-list
             |> li
                 *Atome.* $\emptyset$ ist ein regulärer Ausdruck und
                 beschreibt die Sprache $\emptyset$. $\epsilon$ ist
@@ -208,7 +211,7 @@
         Sie hierfür unter Anderem
 
         |> div
-            style=text-align:center
+            class=display
             |> a
                 href=https://www.w3schools.com/java/java_regex.asp
                 W3Schools
@@ -216,7 +219,7 @@
         und
 
         |> div
-            style=text-align:center
+            class=display
             |> a
                 href=https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
                 Patternl.html auf der Java-API
@@ -408,12 +411,12 @@
     Hier sehen Sie den ganzen Ablauf an unserer `aaaa:a:aaa.aa-aa`-Sprache:
 
     |> div
+        style=padding:1em 0 0.5em;
         |> figure
-            style=overflow-x: auto; margin: 0 center;
+            style=overflow-x:auto;margin:0 center;
             |> img
                 style=height:20em
                 src=./img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg
-                loading=lazy
 
     |> Exercise
         Wandeln Sie nach dem eben beschriebenen Schema den
@@ -423,6 +426,5 @@
             |> img
                 style=height:10em
                 src=./img/finite-state-automata/nfsm-example-02.svg
-                loading=lazy
 
         in einen regulären Ausdruck um.

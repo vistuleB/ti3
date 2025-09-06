@@ -57,7 +57,6 @@
         |> img
             style=height:13em
             src=img/circuits/if-then-else-gate.svg
-            loading=lazy
         |> figcaption
             `if` $x$ `then` $y$ `else` $z$
 
@@ -73,7 +72,6 @@
         |> img
             style=height:13em
             src=img/circuits/if-then-else-gate-with-values.svg
-            loading=lazy
         |> figcaption
         Das if-then-else-Gate mit einer konkreten Belegung
         und einem Ausgabewert
@@ -83,6 +81,7 @@
         zusammen:
 
         |> ol
+            class=outside-list
             |> li
                 Ein XOR-Gate $x \oplus y$. Es gibt 1 aus, wenn einer
                 der beiden Inputs 1 ist und der andere 0.
@@ -96,7 +95,6 @@
                     |> img
                         style=height:4em
                         src=img/circuits/n-fold-xor.svg
-                        loading=lazy
 
                 welches 1 ausgibt, wenn eine ungerade Anzahl seiner
                 Inputs auf 1 stehen.
@@ -118,7 +116,6 @@
         |> img
             style=height:10em
             src=img/circuits/and-fan-in-n.svg
-            loading=lazy
 
     Man bezeichnet dies als AND-Gate mit einem Fan-in
     von $n$. Das "normale" AND-Gate hat einen Fan-in von
@@ -132,7 +129,6 @@
         |> img
             style=height:10em
             src=img/circuits/and-n-fold-linear-depth.svg
-            loading=lazy
 
     Also als geschachteltes AND, oder aber in Form eines
     Binärbaums:
@@ -141,7 +137,6 @@
         |> img
             style=height:10em
             src=img/circuits/and-n-fold-log-depth.svg
-            loading=lazy
 
     Schaltkreise, wie wir sie in diesem Kapitel betrachten,
     sind immer azyklisch. Das heißt insbesondere, das Dinge
@@ -152,7 +147,6 @@
         |> img
             style=height:10em
             src=img/circuits/flipflop.svg
-            loading=lazy
 
     Das Flipflop zeigt ein interessantes Verhalten: wenn
     $\text{Reset} = 0$, $\text{Set} = 1$ ist, so ist der
@@ -182,6 +176,7 @@
         acyclic graph, kurz DAG), in welchem jeder Knoten entweder
 
         |> ul
+            class=outside-list
             |> li
                 ein Input-Gate ist und mit einer Input-Variable oder
                 eine Booleschen Konstant (0 oder 1) beschriftet ist

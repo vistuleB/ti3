@@ -174,7 +174,7 @@
         |> img
             style=height:10em
             src=img/turing-machines/exampe-2-aabbcc/delta-table.svg
-            loading=lazy
+            
 
     würde dann zu folgender Tabelle:
 
@@ -182,7 +182,7 @@
         |> img
             style=height:10em
             src=img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg
-            loading=lazy
+            
 
     Wenn wir dies nun als _ein_ Wort in obigen Schema
     schreiben, können wir für eine Tabellenzelle

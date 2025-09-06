@@ -114,71 +114,73 @@
       die das Interface $X$ implementiert und $\alpha$ als
       Klassenvariable enthält.
     </p>
-    <ul class="main-column">
-      <li>
-        <p>
-          <code>interface Expression</code>
-          wird implementiert von
-        </p>
-        <ul>
-          <li>
-            <p>
-              <code>class Sum</code>, die als Klassenvariable
-              <code>Exrepssion e1,
-                e2</code>
-              enthält,
-            </p>
-          </li>
-          <li>
-            <p>
-              <code>class Product</code>, die als Klassenvariable
-              <code>Exrepssion
-                e1, e2</code>
-              enthält,
-            </p>
-          </li>
-          <li>
-            <p>
-              <code>class JustNumber</code>, die als Klassenvariable nur eine
-              <code>Number number</code>enthält;
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>
-          <code>interface Number</code>
-          wird implementiert von
-        </p>
-        <ul>
-          <li>
-            <p>
-              <code>class MultiDigitNumber</code>, die als Klassenvariable
-              eine<code>Number</code>
-              und eine
-              <code>Digit</code>
-              erhält und
-            </p>
-          </li>
-          <li>
-            <p>
-              <code>class SingleDigitNumber</code>, die als Klassenvariable
-              ein
-              <code>Digit</code>enthält;
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>
-          <code>interface Digit</code>
-          wird implementiert von<code>class DigitOne</code>,`class
-          DigitTwo<code>,`class DigitThree</code>,`class DigitFour<code>,`class
-            DigitFive</code>,`class DigitSix<code>,`class DigitSeven</code>,`class
-          DigitEight` und<code>class DigitNine</code>.
-        </p>
-      </li>
-    </ul>
+    <div class="main-column">
+      <ul class="outside-list">
+        <li>
+          <p>
+            <code>interface Expression</code>
+            wird implementiert von
+          </p>
+          <ul class="outside-list">
+            <li>
+              <p>
+                <code>class Sum</code>, die als Klassenvariable
+                <code>Exrepssion e1,
+                  e2</code>
+                enthält,
+              </p>
+            </li>
+            <li>
+              <p>
+                <code>class Product</code>, die als Klassenvariable
+                <code>Exrepssion
+                  e1, e2</code>
+                enthält,
+              </p>
+            </li>
+            <li>
+              <p>
+                <code>class JustNumber</code>, die als Klassenvariable nur eine
+                <code>Number number</code>enthält;
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <code>interface Number</code>
+            wird implementiert von
+          </p>
+          <ul class="outside-list">
+            <li>
+              <p>
+                <code>class MultiDigitNumber</code>, die als Klassenvariable
+                eine<code>Number</code>
+                und eine
+                <code>Digit</code>
+                erhält und
+              </p>
+            </li>
+            <li>
+              <p>
+                <code>class SingleDigitNumber</code>, die als Klassenvariable
+                ein
+                <code>Digit</code>enthält;
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <code>interface Digit</code>
+            wird implementiert von<code>class DigitOne</code>,`class
+            DigitTwo<code>,`class DigitThree</code>,`class DigitFour<code>,`class
+              DigitFive</code>,`class DigitSix<code>,`class DigitSeven</code>,`class
+            DigitEight` und<code>class DigitNine</code>.
+          </p>
+        </li>
+      </ul>
+    </div>
     <p class="main-column">
       In unserem Anwendungsfall hat jedes Interface eine
       Methode<code>public int toInt()</code>. Interface

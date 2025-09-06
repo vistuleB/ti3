@@ -4,11 +4,15 @@ import gleam/list
 import prefabricated_pipelines as pp
 import group_replacement_splitting as grs
 import selector_library as sl
+import blame as bl
+import vxml
+
+const our_blame = bl.Des([], "main_pipeline", 9)
 
 pub fn main_pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
 
-  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "Topic", "SubTopic", "Statement", "Exercise", "Highlight", "Remark", "QED", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
+  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "Topic", "SubTopic", "Statement", "Exercise", "Highlight", "Remark", "QED", "CircleX", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   
@@ -28,6 +32,29 @@ pub fn main_pipeline()  -> List(Pipe) {
     "SubTopic",
     "MathBlock",
     "CarouselContainer",
+  ]
+
+  let qed_replacer = [
+    vxml.V(
+      our_blame,
+      "span",
+      [
+        vxml.Attribute(our_blame, "style", "color:#0000;visibility:none;"),
+      ],
+      [
+        vxml.T(our_blame, [vxml.TextLine(our_blame, "A")]),
+      ]
+    ),
+    vxml.V(
+      our_blame,
+      "span",
+      [
+        vxml.Attribute(our_blame, "class", "qed"),
+      ],
+      [
+        vxml.T(our_blame, [vxml.TextLine(our_blame, "\\(\\square\\)")]),
+      ]
+    ),
   ]
 
   [
@@ -88,9 +115,13 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     pp.splitting_empty_lines_cleanup(),
     [
-      dl.ti3_parse_python_prompt_code_block(),
-      dl.ti3_parse_orange_comment_code_block(),
-      dl.ti3_parse_arbitrary_prompt_response_code_block(),
+      dl.ti3_code_block_to_pre(),
+      dl.ti3_parse_python_prompt_pre(),
+      dl.ti3_parse_orange_comments_pre(),
+      dl.ti3_parse_arbitrary_prompt_response_pre(),
+      dl.ti3_parse_redyellow_pre(),
+      dl.normalize_br_in_pre(),
+      dl.ti3_add_listing_bol_spans(),
       dl.generate_ti3_index(),
       dl.generate_ti3_menu(),
       dl.expand_ti3_carousel(),
@@ -117,11 +148,13 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.unwrap("WriterlyBlankLine"),      
       dl.trim("p"),
       dl.delete_if_empty("p"),
-      dl.rearrange_links(#("Theorem <a href='1'>_1_</a>", "<a href='1'>Theorem _1_</a>")),
-      dl.rearrange_links(#("Übungsaufgabe <a href='1'>_1_</a>", "<a href='1'>Übungsaufgabe _1_</a>")),
-      dl.rearrange_links(#("Aufgabe <a href='1'>_1_</a>", "<a href='1'>Aufgabe _1_</a>")),
-      dl.rearrange_links(#("Kapitel <a href='1'>_1_</a>", "<a href='1'>Kapitel _1_</a>")),
-      dl.rearrange_links(#("Lemma <a href='1'>_1_</a>", "<a href='1'>Lemma _1_</a>")),     dl.rearrange_links(#("Algorithmus <a href='1'>_1_</a>", "<a href='1'>Algorithmus _1_</a>")),
+      dl.rearrange_links(#("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>")),
+      dl.rearrange_links(#("Übungsaufgabe <a href=1>_1_</a>", "<a href=1>Übungsaufgabe _1_</a>")),
+      dl.rearrange_links(#("Aufgabe <a href=1>_1_</a>", "<a href=1>Aufgabe _1_</a>")),
+      dl.rearrange_links(#("Kapitel <a href=1>_1_</a>", "<a href=1>Kapitel _1_</a>")),
+      dl.rearrange_links(#("Lemma <a href=1>_1_</a>.<a href=2>_2_</a>.<a href=3>_3_</a>", "<a href=3>Lemma _1_._2_._3_</a>")),    
+      // dl.rearrange_links(#("Lemma <a href=1>_1_</a>", "<a href=1>Lemma _1_</a>")),    
+      dl.rearrange_links(#("Algorithmus <a href=1>_1_</a>", "<a href=1>Algorithmus _1_</a>")),
     ],
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),
@@ -165,7 +198,8 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.append_class_to_child_if_is_not_one_of(#("Index", "main-column", ["nav"])),
       dl.append_attribute__outside(#("img", "class", "constrained transition-all"), ["CarouselContainer"]),
       dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), ["CarouselContainer"]),
-      dl.rename_with_appended_attributes_and_prepended_text([#("QED", "span", "\\(\\square\\)", [#("class", "qed")])]),
+      dl.replace_with_arbitrary(#("QED", qed_replacer)),
+      dl.rename_with_attributes(#("CircleX", "img", [#("class", "circle-X-img"), #("src", "img/context-free/LR/circle-X.svg")])),
       dl.rename(#("MathBlock", "div")),
       dl.rename(#("Index", "div")),
       dl.rename(#("Menu", "div")),

@@ -195,7 +195,7 @@
                 |> img
                     style=height:5em
                     src=img/pcp/mpcp-to-pcp-01.svg
-                    loading=lazy
+                    
 
             wobei * ein neues Symbol ist. Offensichtlich kann
             keine solche Kachel ganz links stehen, da ja dann bereits
@@ -207,7 +207,7 @@
                 |> img
                     style=height:5em
                     src=img/pcp/mpcp-to-pcp-02.svg
-                    loading=lazy
+                    
 
             Die gesternten Kacheln zwingen uns nun dazu, mit der
             markierten zu beginnen, da diese ja die einzige ist,
@@ -222,7 +222,7 @@
                 |> img
                     style=height:4em
                     src=img/pcp/mpcp-to-pcp-03.svg
-                    loading=lazy
+                    
 
             Sie sehen: die letzte Kachel ist die einzige, die
             am rechten Rand stehen kann. Sollte nun das MPCP-Puzzle
@@ -288,7 +288,7 @@
             |> img
                 style=height:3em
                 src=img/pcp/halt-to-pcp-01.svg
-                loading=lazy
+                
 
         zu bauen. Wir sehen: oben "steht etwas über", und
         zwar genau die Startkonfiguration. Wir wollen nun weitere
@@ -356,7 +356,7 @@
             |> img
                 style=height:20em
                 src=img/pcp/almost-all-tiles.svg
-                loading=lazy
+                
 
         Wir sind noch nicht ganz fertig. Wir brauchen noch
         Regeln für den Fall, dass der Schreib-Lese-Kopf am
@@ -377,7 +377,7 @@
             |> img
                 style=height:6em
                 src=img/pcp/tile-delete-symbols.svg
-                loading=lazy
+                
 
         und ganz am Schluss eine Kachel $(\# : q^* \# \#)$,
         um alles abzuschließen. Die letzten zwei Schritte sehen

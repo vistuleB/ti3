@@ -211,10 +211,8 @@
     $\hat{X}$. Das $X \in N$ entspricht dem
     $\boxed{X}$ in den obigen Bäumen, wo also $N$ als
     Blatt vorkommt; das $\hat{X} \in \hat{N}$ entspricht
-    dem
-    |> img
-        style=height:1.5em
-        src=./img/context-free/LR/circle-X.svg
+    dem 
+    |> CircleX
     , also wo $W$ als innerer Knoten vorkommt. Bevor ich
     $\hat{G}$ formal definiere, zeige ich den obigen Ableitungsbaum
     (ohne rechten Rand, weil der ja bei $\front(G)$ eh
@@ -313,6 +311,7 @@
         Sei $\gamma$ der Inhalt des Stacks zu einem Zeitpunkt.
 
         |> ol
+            class=outside-list
             |> li
                 Wenn $\gamma \in \Front(G)$, dann betrachte die letzte
                 angewandte $\hat{G}$-Produktion
@@ -360,11 +359,14 @@
         wir einen Zeitpunkt während des Parsing-Prozesses.
         Sei $\gamma$ der Stackinhalt und $w$ der ungelesene
         Teil des Eingabewortes. Wir werden beweisen, dass zu
-        jedem Zeitpunkt folgende Invariante gilt: *Behauptung.*
-        (i) $\gamma w$ ist eine gültige Wortform. (ii)
-        $\gamma$ ist ein Präfix von  $\front(\gamma w)$. *Beweis.*
-        Die Behauptung gilt offensichtlich am Anfang, da
-        $\gamma = \epsilon$ und $w\in L$ ist und somit
+        jedem Zeitpunkt folgende Invariante gilt:
+
+        *Behauptung.* (i) $\gamma w$ ist eine gültige Wortform.
+        (ii) $\gamma$ ist ein Präfix von
+        $\front(\gamma w)$.
+
+        *Beweis.* Die Behauptung gilt offensichtlich am Anfang,
+        da $\gamma = \epsilon$ und $w\in L$ ist und somit
         $\gamma w = w$ eine gültige Wortform ist. Des weiteren
         ist der Stack leer, also $\gamma = \epsilon$, und
         daher sicherlich ein Präfix von $\front(w)$. Wir zeigen
@@ -373,6 +375,7 @@
         zwei Möglichkeiten.
 
         |> ol
+            class=outside-list
             |> li
                 Der Parser wendet Schritt 1 an, also
                 $\gamma \in \Front(G)$. Das heißt nach Definition

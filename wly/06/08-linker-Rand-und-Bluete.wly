@@ -212,9 +212,7 @@
     $\boxed{X}$ in den obigen Bäumen, wo also $N$ als
     Blatt vorkommt; das $\hat{X} \in \hat{N}$ entspricht
     dem 
-    |> img
-        class=circle-X-img
-        src=img/context-free/LR/circle-X.svg
+    |> CircleX
     , also wo $W$ als innerer Knoten vorkommt. Bevor ich
     $\hat{G}$ formal definiere, zeige ich den obigen Ableitungsbaum
     (ohne rechten Rand, weil der ja bei $\front(G)$ eh

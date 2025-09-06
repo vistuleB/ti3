@@ -42,34 +42,36 @@
       $f : A \rightarrow B$ gibt. Das $\leq$ schaut wie
       eine Partialordnung aus.
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          Es ist reflexiv, weil $A \leq A$ gilt: Die Identität
-          ${\rm id}_A: A \rightarrow A$ ist injektiv.
-        </p>
-      </li>
-      <li>
-        <p>
-          Es ist transitiv, weil aus $A \leq B$ und
-          $B \leq C$ folgt, dass
-          <span class="nowrap">$A \leq C$:</span>
-          Wenn
-          $f: A \rightarrow B$ und $g: B \rightarrow C$ injektiv
-          sind, dann ist
-          $g \circ f: A \rightarrow C, a \mapsto g(f(a))$ auch
-          injektiv.
-        </p>
-      </li>
-      <li>
-        <p>
-          Es ist (so gut wie) antisymmetrisch, weil aus
-          $A \leq B$ und $B \leq A$ zwar nicht $A = B$ folgt,
-          aber laut Schröder-Bernstein-Theorem immerhin
-          <span class="nowrap">$A \approx B$.</span>
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            Es ist reflexiv, weil $A \leq A$ gilt: Die Identität
+            ${\rm id}_A: A \rightarrow A$ ist injektiv.
+          </p>
+        </li>
+        <li>
+          <p>
+            Es ist transitiv, weil aus $A \leq B$ und
+            $B \leq C$ folgt, dass
+            <span class="nowrap">$A \leq C$:</span>
+            Wenn
+            $f: A \rightarrow B$ und $g: B \rightarrow C$ injektiv
+            sind, dann ist
+            $g \circ f: A \rightarrow C, a \mapsto g(f(a))$ auch
+            injektiv.
+          </p>
+        </li>
+        <li>
+          <p>
+            Es ist (so gut wie) antisymmetrisch, weil aus
+            $A \leq B$ und $B \leq A$ zwar nicht $A = B$ folgt,
+            aber laut Schröder-Bernstein-Theorem immerhin
+            <span class="nowrap">$A \approx B$.</span>
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Wenn wir also equipotente Mengen als identifisch betrachten,
       dann ist $\leq$ tatsächlich eine Partialordnung. Ist
@@ -92,7 +94,7 @@
         Es gilt also immer genau einer
         der drei folgenden Fälle:
       </p>
-      <ol>
+      <ol class="outside-list">
         <li>
           <p>
             <span class="nowrap">$A \lt B$,</span>
@@ -133,7 +135,7 @@
           <b>Definition</b>
           Eine Relation $R \subseteq A \times B$ heißt
         </p>
-        <ul>
+        <ul class="outside-list">
           <li>
             <p>
               <i>Funktion</i>, wenn es für jedes $a \in A$ genau ein
@@ -209,7 +211,7 @@
           <span class="nowrap">$B \leq A$.</span>
         </p>
       </div>
-      <div class="well highlight">
+      <div class="well remark">
         <p>
           <b>Beweis.</b>
           Nehmen wir an, dass es weder $A$ noch $B$ sättigt.
@@ -220,7 +222,7 @@
           <span class="nowrap">$b \in B$,</span>
           das mit keinem $a' \in A$ gepaart ist. Also ist
           $R \cup \{(a,b)\}$ auch ein Matching, und $R$ ist
-          nicht maximal.<span class="qed">\(\square\)</span>
+          nicht maximal.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
@@ -329,7 +331,7 @@
           erhalten ein maximales Matching. Dies sättigt $A$
           oder $B$ und gibt uns somit eine injektive Funktion
           $A \rightarrow B$ oder
-          <span class="nowrap">$B \rightarrow A$.</span><span class="qed">\(\square\)</span>
+          <span class="nowrap">$B \rightarrow A$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
     </div>

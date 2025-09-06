@@ -94,14 +94,14 @@
         <i>Zertifikat</i>. Hier ist unser Code:
       </p>
 <pre class="listing">
-def is_3_coloring(graph, c):
-    (V,E) = graph
-    for (u,v) in E:
-    if c[u] == c[v]:
-    return False
-    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
-    return False
-    return True
+<span class="listing-bol"></span><span>def is_3_coloring(graph, c):</span>
+<span class="listing-bol"></span><span>    (V,E) = graph</span>
+<span class="listing-bol"></span><span>    for (u,v) in E:</span>
+<span class="listing-bol"></span><span>    if c[u] == c[v]:</span>
+<span class="listing-bol"></span><span>    return False</span>
+<span class="listing-bol"></span><span>    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:</span>
+<span class="listing-bol"></span><span>        return False</span>
+<span class="listing-bol"></span><span>    return True</span>
 </pre>
       <p>
         Falls nun $G$
@@ -117,12 +117,7 @@ def is_3_coloring(graph, c):
         ausgibt, dann
         ist $c$ tatsächlich eine gültige 3-Färbung und $G$
         ist
-        <span class="nowrap">$3$-färbbar.</span><span class="qed">\(\square\)Das obige Beispiel verdeutlicht die Essenz der Klasse
-          NP: es ist nicht klar, wie wir einen effizienten Algorithmus
-          für
-          <span style="font-variant:small-caps;">3-Colorability</span>schreiben können; aber
-          <i>überprüfen</i>, ob eine gegebene
-          Färbung eine 3-Färbung von $G$ ist, das ist einfach.</span>
+        <span class="nowrap">$3$-färbbar.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
       <div
         id="_26_hgi_"

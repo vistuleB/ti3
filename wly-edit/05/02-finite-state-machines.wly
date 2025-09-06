@@ -24,7 +24,6 @@
         |> img
             style=height:13em
             src=img/finite-state-automata/finite-state-machine-example-01.svg
-            loading=lazy
 
     Um zu zeigen, wie der Automat ein Eingabewort verarbeitet,
     nehmen wir das Beispiel $\alpha = yxzxxyy$.
@@ -107,7 +106,6 @@
             |> img
                 style=height:10em
                 src=img/finite-state-automata/finite-state-machine-example-01.svg
-                loading=lazy
 
         und stellen ihn gemäß Definition >>definition-finite-state-machine
         als Quintupel
@@ -168,7 +166,6 @@
             |> img
                 style=height:10em
                 src=img/finite-state-automata/finite-state-machine-example-01.svg
-                loading=lazy
 
         Das ist eine völlig legitime Notation für eine Funktion
         $\delta: Q \times \Sigma \rightarrow Q$ und genau
@@ -216,7 +213,6 @@
             |> img
                 style=height:10em
                 src=img/finite-state-automata/finite-state-machine-example-01.svg
-                loading=lazy
 
         akzeptiert die Sprache aller
         $\alpha \in \{x,y,z\}$, die auf $x$ enden und nicht
@@ -249,7 +245,6 @@
         |> img
             style=height:10em
             src=img/finite-state-automata/finite-state-machine-example-01.svg
-            loading=lazy
 
     würde dies beispielsweise die folgenden Produktionen
     ergeben:
@@ -322,9 +317,10 @@
         |> Remark
             title=*Beweis.*
             Wir verwenden Induktion über die Länge des Wortes
-            $\alpha$. *Induktionsbasis.* Wenn
-            $\alpha = \epsilon$ gilt, also $\alpha$ die Länge
-            0 hat, dann gilt
+            $\alpha$.
+
+            *Induktionsbasis.* Wenn $\alpha = \epsilon$ gilt,
+            also $\alpha$ die Länge 0 hat, dann gilt
             $q \stackrel{\epsilon}{\rightarrow} q'$ genau dann,
             wenn $q = q'$ ist. Wie kann nun
             $q \Rightarrow^* \epsilon q'$ in $G'$ gelten? Beachten
@@ -333,6 +329,7 @@
             gelten, wenn _keine_ Produktion erfolgt ist und somit
             $q = q'$ gilt. Wir sehen: beide Aussagen sind äquivalent
             zu $q = q'$ und somit auch äquivalent zueinander.
+
             *Induktionsschritt*. Wenn $\alpha$ die Länge $n+1$
             hat, so schreiben wir $\alpha = x \beta$ für ein Wort
             $\beta \in \Sigma^*$ der Länge $n$. Per Induktionshypothese
@@ -344,6 +341,7 @@
             äquivalent sind:
 
             |> ol
+                class=outside-list
                 |> li
                     $q \stackrel{x \beta}{\rightarrow} q'$ im endlichen
                     Automaten $M$,
@@ -352,6 +350,7 @@
 
             Wir müssen beide Richtungen zeigen, also zeigen, dass
             aus Aussage (1) die Aussage (2) folgt und umgekehrt.
+
             *Aus (1) folgt (2).* Nehmen wir also an, dass
             $q \stackrel{x \beta}{\rightarrow} q'$ gilt und bezeichnen
             $q_1 := \delta(q,x)$. Es gilt also
@@ -375,8 +374,9 @@
             q \Rightarrow x q_1 \Rightarrow^* x \beta q' \ .
             $$
 
-            Dies zeigt die erste Richtung. *Aus (2) folgt (1).*
-            Nun nehmen wir an, dass
+            Dies zeigt die erste Richtung.
+
+            *Aus (2) folgt (1).* Nun nehmen wir an, dass
             $q \Rightarrow^* x \beta q'$ gilt. Untersuchen wir
             die erste Produktion, die in dieser Ableitung verwendet
             worden ist. Alle Produktionen in $G'$ erzeugen ein
@@ -423,6 +423,7 @@
         äquivalent sind:
 
         |> ol
+            class=outside-list
             |> li
                 $\qstart \stackrel{\alpha}{\rightarrow} q'$ für einen
                 Zustand $q' \in F$,
@@ -483,7 +484,6 @@
             |> img
                 style=height:13em
                 src=img/finite-state-automata/finite-state-machine-example-02.svg
-                loading=lazy
 
         und beschreiben Sie die Sprache in eigenen Worten.
 
@@ -520,7 +520,6 @@
             |> img
                 style=height:11em
                 src=img/finite-state-automata/finite-state-machine-example-03.svg
-                loading=lazy
 
         Wie Sie sehen, ist das nicht ganz korrekt. Als erstes
         fällt ins Auge, dass alle Zustände akzeptierende Endzustände
@@ -540,7 +539,6 @@
             |> img
                 style=height:12em
                 src=img/finite-state-automata/finite-state-machine-example-04.svg
-                loading=lazy
 
         Dies ist nun unser endlicher Automat $M$ mit
         $L(M) = L(G)$.
@@ -565,7 +563,6 @@
             |> img
                 style=height:7em
                 src=img/finite-state-automata/finite-state-machine-example-05.svg
-                loading=lazy
 
         Leider ist diese Lösung auch nicht korrekt: jetzt
         gibt es zu viele Pfeile! Aus dem Zustand $A$ gehen

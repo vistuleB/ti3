@@ -22,7 +22,7 @@
     wie sie die primitive Rekursion zulässt, und schreiben
     in Orange auch gleich die Funktionen $g$ und $h$ dazu:
 
-    ```orange-comment
+    ```orange-comments
     def mult(t,x):
         temp = 0 //= zero(x)
         for i in range(t):
@@ -56,7 +56,7 @@
     allerdings etwas interessanter, weil wir hier auf das
     Zwischenergebnis und die Laufvariable zugreifen müssen:
 
-    ```orange-comment
+    ```orange-comments
     def factorial(t):
         temp = 1 //= one()
     for i in range(t):
@@ -75,7 +75,7 @@
     $\pred(0)$? Wir definieren das als 0. So können wir
     pred implementieren:
 
-    ```orange-comment
+    ```orange-comments
     def pred(t):
         temp = 0 //= zero()
         for i in range(t):
@@ -113,7 +113,7 @@
     1 und `False` als 0. Unser erstes Prädikat, also Funktion
     mit Booleschem Ausgabewert, ist `isPositive`:
 
-    ```orange-comment
+    ```orange-comments
     def pred(t):
         temp = 0 //= zero()
         for i in range(t):
@@ -157,7 +157,7 @@
     und damit können wir die ganzzahlige Wurzel schreiben
     als
 
-    ```orange-comment
+    ```orange-comments
     def largestIbelowTwithISquareLessEqualX(t,x):
         temp = 0 //= zero(x)
         for i in range(t):
@@ -262,7 +262,7 @@
     es gilt ${n \choose 2} = 1 + 2 + \cdots + (n-1)$ und
     somit
 
-    ```orange-comment
+    ```orange-comments
     def choose2(t):
         temp = 0 //= zero()
         for i in range(t):
@@ -354,8 +354,7 @@
     implementieren, also beispielsweise in meiner Datei
     `stockpile.py`:
 
-    |> pre
-        class=listing
-        style=counter-set:listing 62;
-        def pair(x,y):
-        \    return int(((x+y+1) * (x+y)) / 2 + x )
+    ```listing@63
+    def pair(xy):
+        return int(((x+y+1) * (x+y)) / 2 + x )
+    ```

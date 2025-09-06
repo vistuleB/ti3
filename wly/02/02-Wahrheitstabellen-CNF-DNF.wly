@@ -88,20 +88,22 @@
     Können wir das mit beliebigen Funktionen machen? Ja
     klar! Wir gehen wie folgt vor:
 
-    |> ol
-        |> li
-            Teile die Tabelle in die oberen $2^{n-1}$ Zeilen (für
-            die $x_1 = 0$ gilt) und die unteren $2^{n-1}$ Zeilen
-            (für die $x_1 = 1$ gilt) auf.
-        |> li
-            Jede Hälfte kann als Boolesche Funktion mit $n-1$
-            Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise
-            $C_0$ für die obere und $C_1$ für die untere Hälfte,
-            beide mit Input-Variablen $x_2,\dots,x_n$.
-        |> li
-            Kombinieren Sie diese via `if` $x_1$ `then` $C_1$
-            `else` $C_0$, zu einem Schaltkreis für $f$ mit insgesamt
-            $n$ Input-Variablen.
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Teile die Tabelle in die oberen $2^{n-1}$ Zeilen (für
+                die $x_1 = 0$ gilt) und die unteren $2^{n-1}$ Zeilen
+                (für die $x_1 = 1$ gilt) auf.
+            |> li
+                Jede Hälfte kann als Boolesche Funktion mit $n-1$
+                Variablen betrachtet werden. Bauen Sie rekursiv Schaltkreise
+                $C_0$ für die obere und $C_1$ für die untere Hälfte,
+                beide mit Input-Variablen $x_2,\dots,x_n$.
+            |> li
+                Kombinieren Sie diese via `if` $x_1$ `then` $C_1$
+                `else` $C_0$, zu einem Schaltkreis für $f$ mit insgesamt
+                $n$ Input-Variablen.
 
     An dieser Stelle zahlt es sich aus, eine formale Notation
     einzuführen:
@@ -324,28 +326,30 @@
     in dem Sinne). Die genaue Komplexität dieser Optimierungsprobleme
     ist in der Tat Gegenstand aktiver Forschung,
 
-    |> ol
-        |> li
-            Wenn die Funktion (1) bereits als _Boolesche Formel_
-            vorliegt (also Schaltkreise, in denen außer den Eingabe-Gates
-            alle Gates nur eine ausgehende Kante haben), so ist
-            das Minimierungsproblem $Sigma_2^{P}$-vollständig,
-            siehe 
-            |> a
-                href=http://users.cms.caltech.edu/~umans/papers/BU07.pdf
-                Buchfuhrer, David; Umans, Christopher (January 2011),
-                The complexity of Boolean formula minimization (JCSS
-                2011).
-        |> li
-            Wenn die Funktion (2) als Tabelle gegeben ist, dann
-            ist die genaue Komplexität nicht genau bekannt. Es
-            hat in den letzten Jahren Fortschritte gegeben (die
-            nahelegen, dass das Problem tatsächlich schwierig ist),
-            z.B. 
-            |> a
-                href=https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf
-                Ilango, Loff, and Oliveira. NP-Hardness of Circuit
-                Minimization for Multi-Output Functions, (CCC 2020).
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Wenn die Funktion (1) bereits als _Boolesche Formel_
+                vorliegt (also Schaltkreise, in denen außer den Eingabe-Gates
+                alle Gates nur eine ausgehende Kante haben), so ist
+                das Minimierungsproblem $Sigma_2^{P}$-vollständig,
+                siehe 
+                |> a
+                    href=http://users.cms.caltech.edu/~umans/papers/BU07.pdf
+                    Buchfuhrer, David; Umans, Christopher (January 2011),
+                    The complexity of Boolean formula minimization (JCSS
+                    2011).
+            |> li
+                Wenn die Funktion (2) als Tabelle gegeben ist, dann
+                ist die genaue Komplexität nicht genau bekannt. Es
+                hat in den letzten Jahren Fortschritte gegeben (die
+                nahelegen, dass das Problem tatsächlich schwierig ist),
+                z.B. 
+                |> a
+                    href=https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf
+                    Ilango, Loff, and Oliveira. NP-Hardness of Circuit
+                    Minimization for Multi-Output Functions, (CCC 2020).
 
     Beachten Sie, dass (2) algorithmisch einfacher ist:
     durch die "verschwenderische" Darstellung der Funktion

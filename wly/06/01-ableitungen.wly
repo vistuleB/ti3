@@ -72,16 +72,16 @@
     als Zahlenfolge spiegeln also nur zwei verschiedene
     Weisen wieder, den Baum auszugeben.
 
-    |> pre
-        class=listing
-        def treeToLeftDerivation (tree):
-        \  print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
-        \  for child in tree.children (from left ro right):
-        \      treeToLeftDerivation(child)
-        def treeToRightDerivation (tree):
-        \  for child in tree.children (from left ro right):
-        \      treeToLeftDerivation(child)
-        \  print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+    ```listing
+    def treeToLeftDerivation (tree):
+        print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+        for child in tree.children (from left ro right):
+            treeToLeftDerivation(child)
+    def treeToRightDerivation (tree):
+        for child in tree.children (from left ro right):
+            treeToLeftDerivation(child)
+        print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+    ```
 
     Beachten Sie, dass wir in beiden Fällen die Liste
     Kinder von links nach rechts durchgehen.

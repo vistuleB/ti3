@@ -107,15 +107,15 @@
     es als Funktion mit einer `for`-Schleife vorstellen,
     in der nur eine lokale Variable erlaubt ist:
 
-    |> pre
-        class=listing
-        def PrimRec(g, h):
-        \    def f(t,*x):
-        \        temp = g(*x)
-        \        for i in range(t):
-        \          temp = h(temp, i, *x)
-        \        return temp
-        \    return f
+    ```listing
+    def PrimRec(g, h):
+        def f(t,*x):
+            temp = g(*x)
+            for i in range(t):
+                temp = h(temp, i, *x)
+            return temp
+        return f
+    ```
 
     Die Forderung, dass man nur _eine_ lokale Variable
     durch die Schleife führen darf, scheint sehr restriktiv;
@@ -181,11 +181,10 @@
         beiden Argumente addiert. Ich darf also nicht einfach
         python programmieren und
 
-        |> pre
-            style=color:red; background-color: yellow;
-            class=listing well
-            def add(x,y):
-            \    return x + y
+        ```redyellow-listing
+        def add(x, y)
+            return x + y
+        ```
 
         schreiben, denn unsere "Programmiersprache" ist Primitive
         Rekursion, nicht Python! Wir müssen uns `add` aus den
@@ -208,11 +207,10 @@
         Rekursion ist mit $g = \pi_0$ und
         $h = {\comp}(\succ, \pi_0)$, also
 
-        |> pre
-            class=listing
-
-            p0 = Proj(0)
-            add = PrimRec (p0, Comp(succ,p0))
+        ```listing
+        p0 = Proj(0)
+        add = PrimRec (p0, Comp(succ,p0))
+        ```
 
     |> Exercise
         Zeigen Sie, dass die folgenden Funktionen primitiv-rekursiv
@@ -221,6 +219,7 @@
         implementiert habe:
 
         |> ol
+            class=outside-list
             |> li
                 ${\rm mult}: (x,y) \mapsto x*y$
             |> li
@@ -247,6 +246,7 @@
         wie
 
         |> ul
+            class=outside-list
             |> li
                 `isPositive`
             |> li

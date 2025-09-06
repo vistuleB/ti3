@@ -294,7 +294,7 @@
     Eine Linksbewegung ist etwas schwieriger zu implementieren.
     Aus $\delta(q,x) = (r,y,\texttt{L})$ wird
 
-    ```orange-comment
+    ```orange-comments
     q,  x, _
     r', x, _, -, -
     r', _, c
@@ -687,7 +687,6 @@
             |> img
                 style=height: 10em
                 src=img/turing-machines/nondeterminism/two-to-det.svg
-                loading=lazy
 
         Falls wir auf dem zweiten Band einem anderen Zeichen
         begegnen ($\square$ oder sonst etwas, das weder 0

@@ -65,7 +65,6 @@
         |> img
             style=height:10em
             src=img/circuits/adder-ripple.svg
-            loading=lazy
 
     Wir numerieren unsere Variablen von $0, \dots,n-1$,
     damit wir die repräsentierte natürliche Zahl bequem
@@ -91,7 +90,6 @@
             |> img
                 style=height:10em
                 src=img/circuits/onebitadder.svg
-                loading=lazy
 
         Versuchen Sie, so wenig Gates wie möglich zu verwenden.
         Entscheiden Sie sich im Voraus, ob Sie beliebigen Fan-in
@@ -146,7 +144,6 @@
         |> img
             style=height:6em
             src=img/circuits/adder-ripple-only-carry.svg
-            loading=lazy
 
     Betrachten Sie $(x_i,y_i)$. Wenn dies $(1,1)$ ist,
     so ist $c_{i+1}=1$; wenn $(x_i,y_i) = (0,0)$, so ist
@@ -255,12 +252,10 @@
         |> img
             style=height:11em
             src=img/circuits/carry-generate-interval.svg
-            loading=lazy
         |> br
         |> img
             style=height:11em
             src=img/circuits/carry-propagate-interval.svg
-            loading=lazy
 
     Im Extremfall $a=b$ gilt
     $g_{[a,a]} = g_a, p_{[a,a]} = p_a$, also wie die "alten"
@@ -360,7 +355,6 @@
             |> img
                 style=height:10em
                 src=img/circuits/pg-gate.svg
-                loading=lazy
 
         Mit Hilfe dieses Gates können wir
         $p_{c0*^k}, g_{c0*^k}$ und $p_{c1*^k}, g_{c1*^k}$
@@ -374,7 +368,6 @@
             |> img
                 style=height:18em
                 src=img/circuits/pg-all-gates.svg
-                loading=lazy
 
         Jede Kante steht hier für zwei gebündelte Kanten,
         nämlich $p_I$ und $g_I$. Und dies ist unser Schaltkreis.
@@ -465,7 +458,6 @@
             |> img
                 style=height:5em
                 src=img/circuits/pg0k.svg
-                loading=lazy
 
         Der Wert $pg_{[l+1,k]}$ ist bereits ein Binärintervall,
         kann also direkt aus dem vorherigen Schaltkreis abgelesen
@@ -503,7 +495,6 @@
             |> img
                 style=height:18em
                 src=img/circuits/pg-0-30.svg
-                loading=lazy
 
         *Tiefe.* Jedes $pg$-Gate hat Tiefe 2, und somit erreichen
         $d-1$ solche Gates hintereinander zusammen eine Tiefe
@@ -538,7 +529,6 @@
             |> img
                 style=height:20em
                 src=img/circuits/pg-prefices-16.svg
-                loading=lazy
 
         Wir benötigen also (weniger als) $n$ viele $pg$-Gates;
         jedes davon besteht wiederum aus 4 Basis-Gates
@@ -554,7 +544,6 @@
             |> img
                 style=height:15em
                 src=img/circuits/pg-gadget-no-need-p.svg
-                loading=lazy
 
         Es reichen also in der Tat $2n$ Basis-Gates aus. 
         |> QED

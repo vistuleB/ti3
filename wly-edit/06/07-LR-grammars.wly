@@ -179,54 +179,56 @@
     möglich ist, ohne Betrachten von $w$ zu eintscheiden,
     ob $\alpha \beta w \rstep{} \alpha X w$ gültig ist.
 
-    |> ol
-        |> li
-            *Schlechter Fall 1:* Es gibt für eine Wortform
-            $\gamma$ zwei korrekte Linksreduktionsschritte:
-            $\gamma \rstep{} \gamma'$ und
-            $\gamma \rstep{} \gamma''$. In diesem Falle gäbe es
-            _zwei verschiedene_ Rechtsableitungen
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                *Schlechter Fall 1:* Es gibt für eine Wortform
+                $\gamma$ zwei korrekte Linksreduktionsschritte:
+                $\gamma \rstep{} \gamma'$ und
+                $\gamma \rstep{} \gamma''$. In diesem Falle gäbe es
+                _zwei verschiedene_ Rechtsableitungen
 
-            \begin{align*}
-            S \Steps{R} \gamma' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
-            S \Steps{R} \gamma'' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
-            \end{align*}
+                \begin{align*}
+                S \Steps{R} \gamma' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
+                S \Steps{R} \gamma'' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
+                \end{align*}
 
-            (wir nehmen an, dass man aus jedem Nichtterminal mindestens
-            ein Wort $u \in \Sigma^*$ ableiten kann; andernfalls
-            kann man solche _nutzlosen_ Nichtterminale eliminieren).
-            Das Wort $w$ hat also zwei verschiedene Ableitungsbäume.
-            Die Grammatik ist somit mehrdeutig. Mit uneindeutigen
-            Grammatiken beschäftigen wir uns zunächst gar nicht;
-            sie sind von einem praktischen Standpunkt aus auch
-            unattraktiv: wenn z.B. eine Programmiersprache eine
-            mehrdeutige Grammatik hätte, dann wäre ja für gewisse
-            Programme nicht eindeutig festzustellen, was damit
-            gemeint ist. Wir nehmen also an, dass die Grammatik
-            $G$ eindeutig ist und somit dieser Fall nicht eintreten
-            kann.
-        |> li
-            *Schlechter Fall 2:* Der Linksreduktionsschritt
+                (wir nehmen an, dass man aus jedem Nichtterminal mindestens
+                ein Wort $u \in \Sigma^*$ ableiten kann; andernfalls
+                kann man solche _nutzlosen_ Nichtterminale eliminieren).
+                Das Wort $w$ hat also zwei verschiedene Ableitungsbäume.
+                Die Grammatik ist somit mehrdeutig. Mit uneindeutigen
+                Grammatiken beschäftigen wir uns zunächst gar nicht;
+                sie sind von einem praktischen Standpunkt aus auch
+                unattraktiv: wenn z.B. eine Programmiersprache eine
+                mehrdeutige Grammatik hätte, dann wäre ja für gewisse
+                Programme nicht eindeutig festzustellen, was damit
+                gemeint ist. Wir nehmen also an, dass die Grammatik
+                $G$ eindeutig ist und somit dieser Fall nicht eintreten
+                kann.
+            |> li
+                *Schlechter Fall 2:* Der Linksreduktionsschritt
 
-            \begin{align*}
-            \alpha \beta w \rstep{} \alpha X w
-            \end{align*}
+                \begin{align*}
+                \alpha \beta w \rstep{} \alpha X w
+                \end{align*}
 
-            ist korrekt, aber für ein anderes
-            $w' \in \Sigma^*$ ist
+                ist korrekt, aber für ein anderes
+                $w' \in \Sigma^*$ ist
 
-            \begin{align*}
-            \alpha \beta w' \rstep{} \alpha X w'
-            \end{align*}
+                \begin{align*}
+                \alpha \beta w' \rstep{} \alpha X w'
+                \end{align*}
 
-            _nicht_ korrekt, obwohl $\alpha\beta w'$ eine gültige
-            Wortform ist. Dieser Fall ist schlecht, weil der Parser
-            nur $\alpha \beta$ gelesen hat und somit nicht weiß,
-            ob es sich bei der gesamten Wortform um
-            $\alpha \beta w$ oder um $\alpha \beta w'$ handelt.
-            Da beide gültig sind, können ja auch beide in einer
-            Linksreduktion auftreten. Korrektheit hängt also davon
-            ab, was weiter rechtskommt.
+                _nicht_ korrekt, obwohl $\alpha\beta w'$ eine gültige
+                Wortform ist. Dieser Fall ist schlecht, weil der Parser
+                nur $\alpha \beta$ gelesen hat und somit nicht weiß,
+                ob es sich bei der gesamten Wortform um
+                $\alpha \beta w$ oder um $\alpha \beta w'$ handelt.
+                Da beide gültig sind, können ja auch beide in einer
+                Linksreduktion auftreten. Korrektheit hängt also davon
+                ab, was weiter rechtskommt.
 
     |> Statement
         title=*Beispiel*
@@ -494,20 +496,22 @@
 
     Es stellen sich unmittelbar zwei zentrale Fragen:
 
-    |> ol
-        |> li
-            Wie können wir verifizieren, ob eine gegebene Grammatik
-            die $LR(0)$-Bedingung erfüllt?
-        |> li
-            Falls sie es tut, wie können wir für eine gegebene
-            gültige Wortform $\gamma$ den korrekten Reduktionsschritt
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Wie können wir verifizieren, ob eine gegebene Grammatik
+                die $LR(0)$-Bedingung erfüllt?
+            |> li
+                Falls sie es tut, wie können wir für eine gegebene
+                gültige Wortform $\gamma$ den korrekten Reduktionsschritt
 
-            \begin{align*}
-            \gamma = \alpha \beta w \rstep{} \alpha X w
-            \end{align*}
+                \begin{align*}
+                \gamma = \alpha \beta w \rstep{} \alpha X w
+                \end{align*}
 
-            finden? Insbesondere die Zerlegung in
-            $\gamma = \alpha \beta w$?
+                finden? Insbesondere die Zerlegung in
+                $\gamma = \alpha \beta w$?
 
     Beide Aufgaben können mit Hilfe eines _endlichen Automaten_,
     des DK-Automaten erledigt werden (DK steht als Abkürzung

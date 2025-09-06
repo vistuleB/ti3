@@ -103,7 +103,9 @@
 
             gilt, dann auch $\first_1(x) \ne \first_2(y)$ gilt.
             Offensichtlich ist $\first_2(y) =$ "$\texttt{(}$".
-            Was kann $\first_k(x)$ sein? *Behauptung.* Wenn
+            Was kann $\first_k(x)$ sein?
+            
+            *Behauptung.* Wenn
             $S \rightarrow \delta \in (\Sigma \cup N)^*$, dann
             steht jedes $S$ in $\delta$ entweder am Ende von
             $\delta$ oder unmittelbar vor einem "$\texttt{)}$".
@@ -198,11 +200,11 @@
 
         also Wörter, wo auf beliebig viele $a$'s eine Folge
         von _höchstens_ so vielen $b$'s folgt. Geben Sie diese
-        Grammatik in den
+        Grammatik in den 
         |> a
             href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html
             Parser-Simulator
-        ein und finden Wörter mit langen Sackgassen. Zeigen
+        \ ein und finden Wörter mit langen Sackgassen. Zeigen
         Sie, dass diese Grammatik nicht LL$(k)$ ist, für kein
         $k \in \N$.
 
@@ -216,7 +218,7 @@
 
         also die Wörter der Form $a^m b^n$ mit
         $n \leq m \leq n+t$. Schreiben Sie für $L_3$ eine
-        Grammatik, geben Sie diese im
+        Grammatik, geben Sie diese im 
         |> a
             href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html
             Parser-Simulator
@@ -331,59 +333,59 @@
     |> Highlight
         title=*Generischer Algorithmus zum Parsen von LL\((k)\)-Gramatiken*
         |> ol
-            class=nested
+            class=outside-list
             |> li
                 Lege \(S\texttt{\$}\) auf den Stack.
             |> li
-                `while` Stack nicht leer
+                `while` Stack nicht leer:
+                |> ol
+                    class=outside-list
+                    |> li
+                        Sei $y$ das Resteingabewort.
+                    |> li
+                        Wenn das oberste Symbol auf dem Stack ein Terminalsymbol
+                        $c$ ist:
+                        |> ul
+                            class=outside-list
+                            |> li
+                                Lies das nächste Eingabesymbol $c'$.
+                            |> li
+                                Wenn $c = c'$, poppe $c$ vom Stack;
+                            |> li
+                                ansonsten `Reject`.
+                    |> li
+                        Wenn das oberste Symbol auf dem Stack ein Nichtterminalsymbol
+                        $A$ ist:
 
-            |> ol
-                class=nested
-                |> li
-                    Sei $y$ das Resteingabewort.
-                |> li
-                    Wenn das oberste Symbol auf dem Stack ein Terminalsymbol
-                    $c$ ist:
+                        |> ol
+                            class=outside-list
+                            |> li
+                                Schreibe den Stack als $A \alpha$
+                            |> li
+                                Seien
+                                $A \rightarrow \beta_1, \dots, A \rightarrow \beta_l$
+                                alle Produktionen mit $A$ auf der linken Seite.
+                            |> li
+                                |> span
+                                    style=color:red; font-weight: bold;
+                                    Berechne $\First_k(\beta_i\alpha)$ für alle
+                                    $\beta_i$ und schaue, welches $\first_k(y)$ enthält
 
-                    |> ul
-                        |> li
-                            Lies das nächste Eingabesymbol $c'$.
-                        |> li
-                            Wenn $c = c'$, poppe $c$ vom Stack;
-                        |> li
-                            ansonsten `Reject`.
-                |> li
-                    Wenn das oberste Symbol auf dem Stack ein Nichtterminalsymbol
-                    $A$ ist:
-
-                    |> ol
-                        class=nested
-                        |> li
-                            Schreibe den Stack als $A \alpha$
-                        |> li
-                            Seien
-                            $A \rightarrow \beta_1, \dots, A \rightarrow \beta_l$
-                            alle Produktionen mit $A$ auf der linken Seite.
-                        |> li
-                            |> span
-                                style=color:red; font-weight: bold;
-                                Berechne $\First_k(\beta_i\alpha)$ für alle
-                                $\beta_i$ und schaue, welches $\first_k(y)$ enthält
-
-                            |> ul
-                                |> li
-                                    Wenn es genau eine solche Produktion
-                                    $A \rightarrow \beta_i$ gibt: wende Sie an; es ist
-                                    die richtige Produktion.
-                                |> li
-                                    Wenn es keine gibt: `Reject`. Das Wort kann nicht
-                                    abgeleitet werden.
-                                |> li
-                                    Wenn es mehrere gibt: ende mit einem Laufzeitfehler;
-                                    die Grammatik ist nicht LL$(k)$.
-                |> li
-                    Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
-                    Eingabewort zu Ende `Accept` ansonsten `Reject`
+                                |> ul
+                                    class=outside-list
+                                    |> li
+                                        Wenn es genau eine solche Produktion
+                                        $A \rightarrow \beta_i$ gibt: wende Sie an; es ist
+                                        die richtige Produktion.
+                                    |> li
+                                        Wenn es keine gibt: `Reject`. Das Wort kann nicht
+                                        abgeleitet werden.
+                                    |> li
+                                        Wenn es mehrere gibt: ende mit einem Laufzeitfehler;
+                                        die Grammatik ist nicht LL$(k)$.
+                    |> li
+                        Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
+                        Eingabewort zu Ende `Accept` ansonsten `Reject`
 
     Die rot und fett gedruckte Zeile ist das "Herz" dieses
     Algorithmus. Um den Algorithmus implementieren zu können,
@@ -564,7 +566,7 @@
             |> img
                 style=height:8em
                 src=./img/context-free/LL/tree-depth-2.svg
-                loading=lazy
+                
 
         ein Ableitungsbaum der Höhe 2 von $S \Step{}^* ca$,
         und somit gilt

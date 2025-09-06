@@ -202,11 +202,12 @@
         |> img
             style=height: 20em
             src=./img/infinite-sets/bijection-square-interval.png
-        Plot der (Fast-) Bijektion
-        $f : [0,1) \times [0,1) \rightarrow [0,1)$. Ausgabewerte
-        sind mit Farbwerten / Helligkeitswerten codiert. Grün/blass
-        steht für niedrige Werte (nahe der 0), rot/kräftig
-        für hohe (nahe der 1).
+        |> figcaption
+            Plot der (Fast-) Bijektion
+            $f : [0,1) \times [0,1) \rightarrow [0,1)$. Ausgabewerte
+            sind mit Farbwerten / Helligkeitswerten codiert. Grün/blass
+            steht für niedrige Werte (nahe der 0), rot/kräftig
+            für hohe (nahe der 1).
 
     Als nächstes versuche ich, die Umkehrfunktion
     $f^{-1} : [0,1) \mapsto [0,1) \times [0,1)$ zu skizzieren.

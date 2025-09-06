@@ -10,7 +10,6 @@
         |> img
             style=height: 10em
             src=./img/finite-state-automata/nfsm-example-01.svg
-            loading=lazy
 
     Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang,
     der _geschieht_, sondern einen, der _möglich_ ist.
@@ -24,6 +23,7 @@
         Automat besteht aus
 
         |> ul
+            class=outside-list
             |> li
                 einem endlichen Eingabealphaet $\Sigma$,
             |> li
@@ -151,7 +151,6 @@
             |> img
                 style=height: 10em
                 src=./img/finite-state-automata/finite-state-machine-example-03.svg
-                loading=lazy
 
         Wir sehen nun, dass dies genau der nichtdeterministische
         Automat ist, den wir nach Theorem >>#theorem-nfsm-regular
@@ -210,7 +209,6 @@
             |> img
                 style=height: 10em
                 src=./img/finite-state-automata/nfsm-example-02.svg
-                loading=lazy
 
     |> Exercise
         handle=exercise-divisibility
@@ -239,7 +237,6 @@
         |> img
             style=height: 10em
             src=./img/finite-state-automata/nfsm-example-01.svg
-            loading=lazy
 
     und das Eingabewort $\alpha = 1001100$ überprüfen
     können, ob $1001100 \in L(M)$ gilt. Einem determinischen
@@ -365,7 +362,6 @@
             |> img
                 style=height: 10em
                 src=./img/finite-state-automata/nfsm-example-04-third-from-right.svg
-                loading=lazy
 
         Der Potenzmengenautomat hat die Zustandsmenge
 

@@ -5,22 +5,24 @@
     $f : A \rightarrow B$ gibt. Das $\leq$ schaut wie
     eine Partialordnung aus.
 
-    |> ol
-        |> li
-            Es ist reflexiv, weil $A \leq A$ gilt: Die Identität
-            ${\rm id}_A: A \rightarrow A$ ist injektiv.
-        |> li
-            Es ist transitiv, weil aus $A \leq B$ und
-            $B \leq C$ folgt, dass $A \leq C$: Wenn
-            $f: A \rightarrow B$ und $g: B \rightarrow C$ injektiv
-            sind, dann ist
-            $g \circ f: A \rightarrow C, a \mapsto g(f(a))$ auch
-            injektiv.
-        |> li
-            Es ist (so gut wie) antisymmetrisch, weil aus
-            $A \leq B$ und $B \leq A$ zwar nicht $A = B$ folgt,
-            aber laut Schröder-Bernstein-Theorem immerhin
-            $A \approx B$.
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Es ist reflexiv, weil $A \leq A$ gilt: Die Identität
+                ${\rm id}_A: A \rightarrow A$ ist injektiv.
+            |> li
+                Es ist transitiv, weil aus $A \leq B$ und
+                $B \leq C$ folgt, dass $A \leq C$: Wenn
+                $f: A \rightarrow B$ und $g: B \rightarrow C$ injektiv
+                sind, dann ist
+                $g \circ f: A \rightarrow C, a \mapsto g(f(a))$ auch
+                injektiv.
+            |> li
+                Es ist (so gut wie) antisymmetrisch, weil aus
+                $A \leq B$ und $B \leq A$ zwar nicht $A = B$ folgt,
+                aber laut Schröder-Bernstein-Theorem immerhin
+                $A \approx B$.
 
     Wenn wir also equipotente Mengen als identifisch betrachten,
     dann ist $\leq$ tatsächlich eine Partialordnung. Ist
@@ -38,6 +40,7 @@
         der drei folgenden Fälle:
 
         |> ol
+            class=outside-list
             |> li
                 $A \lt B$,
             |> li
@@ -63,6 +66,7 @@
             Eine Relation $R \subseteq A \times B$ heißt
 
             |> ul
+                class=outside-list
                 |> li
                     _Funktion_, wenn es für jedes $a \in A$ genau ein
                     $b \in B$ mit $(a,b) \in R$ gibt; wir schreiben dann
@@ -105,7 +109,7 @@
             $R^{-1} := \{ (b,a) \ | \ (a,b) \in R\}$ eine injektive
             Funktion $B \rightarrow A$ und es gilt $B \leq A$.
 
-        |> Highlight
+        |> Remark
             title=*Beweis.*
             Nehmen wir an, dass es weder $A$ noch $B$ sättigt.
             Dann gibt es also ein $a \in A$, das mit keinem

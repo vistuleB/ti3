@@ -161,7 +161,6 @@
         |> img
             style=height:17em
             src=./img/finite-state-automata/nfsm-example-03-big.svg
-            loading=lazy
 
     Ich habe die Zeichen `.:-` rot unterlegt, weil man
     sie sonst kaum erkennen würde in dem Automaten.
@@ -193,7 +192,6 @@
         |> img
             style=height:10em
             src=./img/finite-state-automata/nfsm-example-03-big.svg
-            loading=lazy
         |> span
             Der deterministische Automat, Schritt für Schritt
             gebaut: 
@@ -268,7 +266,6 @@
             |> img
                 style=height:14em
                 src=./img/finite-state-automata/divisibility-automaton/divisibility.svg
-                loading=lazy
 
         Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat
         hätte also $2^{11} = 2048$ Zustände. Führen Sie die

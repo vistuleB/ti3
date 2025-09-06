@@ -53,10 +53,11 @@
             treffen:
 
             |> ol
+                class=outside-list
                 |> li
                     Für jedes der $s$ Gates, was es sein soll.
-
                     |> ul
+                        class=outside-list
                         |> li
                             Ein Input-Gate? Dann müssen wir es mit einer der
                             $n$ Input-Variablen beschriften.

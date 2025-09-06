@@ -51,44 +51,46 @@
     <p class="main-column">
       Diese besteht aus folgenden Teilen:
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          Dem Eingabefenster für die Grammatik links oben. Hier
-          können Sie Ihre eigene Grammatik eingeben.
-        </p>
-      </li>
-      <li>
-        <p>
-          Dem Eingabefenster für das Eingabewort.
-        </p>
-      </li>
-      <li>
-        <p>
-          Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
-          der Versuch, das Eingabewort aus den Grammatikregeln
-          per Linksableitung abzuleiten. Die Pfade, die in Sackgassen
-          enden, sind rot markiert.
-        </p>
-      </li>
-      <li>
-        <p>
-          Der Ableitungsbaum. Für jeden Knoten $w$ im Backtrack-Baum
-          stellt der Pfad von Wurzel nach $w$ eine Linksableitung
-          dar. Wenn Sie auf $w$ klicken, sehen Sie den entsprechenden
-          Ableitungsbaum. Per Default wird die erste erfolgreiche
-          Linksableitung in einen Ableitungsbaum umgewandelt
-          und angezeigt (wenn es denn überhaupt eine erfolgreiche
-          Ableitung gibt).
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            Dem Eingabefenster für die Grammatik links oben. Hier
+            können Sie Ihre eigene Grammatik eingeben.
+          </p>
+        </li>
+        <li>
+          <p>
+            Dem Eingabefenster für das Eingabewort.
+          </p>
+        </li>
+        <li>
+          <p>
+            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
+            der Versuch, das Eingabewort aus den Grammatikregeln
+            per Linksableitung abzuleiten. Die Pfade, die in Sackgassen
+            enden, sind rot markiert.
+          </p>
+        </li>
+        <li>
+          <p>
+            Der Ableitungsbaum. Für jeden Knoten $w$ im Backtrack-Baum
+            stellt der Pfad von Wurzel nach $w$ eine Linksableitung
+            dar. Wenn Sie auf $w$ klicken, sehen Sie den entsprechenden
+            Ableitungsbaum. Per Default wird die erste erfolgreiche
+            Linksableitung in einen Ableitungsbaum umgewandelt
+            und angezeigt (wenn es denn überhaupt eine erfolgreiche
+            Ableitung gibt).
+          </p>
+        </li>
+      </ol>
+    </div>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.3.1</b>
         Geben Sie folgende Grammatik in die App ein:
       </p>
-<pre>
+<pre language="">
 S -&gt;; ;
 S -&gt;; "("S")"S ;
 S -&gt;; "(" S "]" S;
@@ -133,7 +135,7 @@ S -&gt;; "(" S "]" S;
         Entwerfen Sie eine Grammatik für arithmetische Ausdrücke
         im Racket-Stil, also
       </p>
-<pre>
+<pre language="">
 (* (+ 2 3) (- 4 (* 2 4) 5)
 (+ 1 2 (* 2))
 </pre>
@@ -152,7 +154,7 @@ S -&gt;; "(" S "]" S;
         sollten die Konventionen Punkt-vor-Strich beachtet
         werden. Im Ableitungsbaum von
       </p>
-<pre>
+<pre language="">
 2+3*(5+4)
 </pre>
       <p>
@@ -165,7 +167,7 @@ S -&gt;; "(" S "]" S;
         <b>(Challenge)</b>
         Geben Sie die Grammatik hier ein:
       </p>
-<pre>
+<pre language="">
 S -&gt;; "("S")"S;
 S -&gt;; "["S"("S;
 S -&gt;; ;
@@ -191,7 +193,7 @@ S -&gt;; ;
         bei der Sie exponentiell große Backtrack-Bäume bekommen
         können:
       </p>
-<pre>
+<pre language="">
 S -&gt;;  "a" X "b" | "a" X "c";
 X -&gt;; "a" | "a" X | "a" X X;
 </pre>

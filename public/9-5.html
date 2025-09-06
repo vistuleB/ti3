@@ -141,16 +141,17 @@
         <code>is_3_colorable:</code>
       </p>
 <pre class="listing">
-def is_3_colorable(graph):
-    F = convert_to_CNF_formula(graph)
-    <span class="orange-comment"># F ist die oben beschriebene Formel mit 3n Variablen</span>    return is_satisfiable(F)
+<span class="listing-bol"></span><span>def is_3_colorable(graph):</span>
+<span class="listing-bol"></span><span>    F = convert_to_CNF_formula(graph)</span>
+<span class="listing-bol"></span><span class="orange-comment">    # F ist die oben beschriebene Formel mit 3n Variablen</span>
+<span class="listing-bol"></span><span>    return is_satisfiable(F)</span>
 </pre>
       <p>
         Falls Ihnen eine Funktion
         <code>find_satisying_assignment</code>
         zur Verfügung steht, so können Sie natürlich die erfüllende
         Belegung direkt in eine gültige 3-Färbung übersetzen.
-        <span class="qed">\(\square\)</span>
+        <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -348,17 +349,24 @@ def is_3_colorable(graph):
         in eine erfüllende Belegung übersetzen und umgekehrt.
         Hier ist also der Code:
       </p>
+<pre class="listing orange-comments">
+<span class="listing-bol"></span>def is_3CNF_satisfiable(the_3_cnf_formula):
+<span class="listing-bol"></span>    G = cOnvert_to_graph(the_3_cnf_formula)
+<span class="listing-bol"></span>    <span class="actual-orange-comment"># G ist der oben konstruierte Graph</span>
+<span class="listing-bol"></span>    return is_3_colorable(G)
+</pre>
 <pre class="listing">
-def is_3CNF_satisfiable(the_3_cnf_formula):
-    G = convert_to_graph(the_3_cnf_formula)<span class="orange-comment"></span>    # G ist der oben konstruierte Graph
-    return is_3_colorable(G)
+<span class="listing-bol"></span><span>def is_3CNF_satisfiable(the_3_cnf_formula):</span>
+<span class="listing-bol"></span><span>    G = convert_to_graph(the_3_cnf_formula)</span>
+<span class="listing-bol"></span><span class="orange-comment">    # G ist der oben konstruierte Graph</span>
+<span class="listing-bol"></span><span>    return is_3_colorable(G)</span>
 </pre>
       <p>
-        <span class="qed">\(\square\)</span>
+        <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Wir haben also gezeigt, wie man eine
+      Wir haben also gEzeigt, wie man eine
       <span class="nowrap">$3$-CNF</span>
       $F$ in
       einen Graphen $G$ umwandelt, so dass
@@ -492,7 +500,7 @@ def is_3CNF_satisfiable(the_3_cnf_formula):
         <span class="nowrap">$F_t$,</span>
         in der jede Klausel höchstens
         drei Literale hat. Dies ist unser
-        <span class="nowrap">$F'$.</span><span class="qed">\(\square\)</span>
+        <span class="nowrap">$F'$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -558,9 +566,9 @@ def is_3CNF_satisfiable(the_3_cnf_formula):
     </p>
     <div class="main-column">
 <pre class="listing">
-def is_in_L1(x):
-    y = convert_from_L1_instance_to_L2_instance(x)
-    return is_in_L2(y)
+<span class="listing-bol"></span>def is_in_L1(x):
+<span class="listing-bol"></span>    y = convert_from_L1_instance_to_L2_instance(x)
+<span class="listing-bol"></span>    return is_in_L2(y)
 </pre>
     </div>
     <p class="main-column">
@@ -751,7 +759,7 @@ def is_in_L1(x):
         <span class="nowrap">$\alpha(u) = 1$,</span>
         und
         $\alpha$ erfüllt
-        <span class="nowrap">$C$.</span><span class="qed">\(\square\)</span>
+        <span class="nowrap">$C$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well statement out">
@@ -957,13 +965,13 @@ def is_in_L1(x):
         (in der Tat: sogar mit zweien).
       </p>
 <pre class="listing container-fluid">
-<code>def has_hamilton_cycle(G):</code>
-    <code>u = ein beliebiger Knoten</code>
-    <code>for v in neighbors[u]:</code>
-    <code>H = G - {u,v} + {s,u} + {t,v}</code>
-    <code>if has_hamilton_path(H):</code>
-    <code>return True</code>
-    <code>return False</code>
+<span class="listing-bol"></span><code>def has_hamilton_cycle(G):</code>
+<span class="listing-bol"></span>    <code>u = ein beliebiger Knoten</code>
+<span class="listing-bol"></span>    <code>for v in neighbors[u]:</code>
+<span class="listing-bol"></span>    <code>H = G - {u,v} + {s,u} + {t,v}</code>
+<span class="listing-bol"></span>    <code>if has_hamilton_path(H):</code>
+<span class="listing-bol"></span>    <code>return True</code>
+<span class="listing-bol"></span>    <code>return False</code>
 </pre>
       <p>
         Falls nun
@@ -974,7 +982,7 @@ def is_in_L1(x):
         eine Laufzeit
         von
         <span class="nowrap">$O(n^{k+1})$,</span>
-        auch polynomiell.<span class="qed">\(\square\)</span>
+        auch polynomiell.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">

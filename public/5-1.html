@@ -391,7 +391,7 @@
         $\alpha = \epsilon$ ist, so ist die Regel bereits
         in einer in regulären Grammatiken erlaubten Form:
         $X \rightarrow Y$ oder
-        <span class="nowrap">$X \rightarrow \epsilon$.</span><span class="qed">\(\square\)</span>
+        <span class="nowrap">$X \rightarrow \epsilon$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -472,7 +472,7 @@
       </div>
       <p>
         als neue Menge von Produktionen, die keine Produktionen
-        von der Form $X \rightarrow Y$ enthalten.<span class="qed">\(\square\)</span>
+        von der Form $X \rightarrow Y$ enthalten.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -636,32 +636,34 @@
       zusammenzufügen. Formate wie beispielsweise Emailadressen
       sind oft aufgebaut nach Mustern wie
     </p>
-    <ul class="main-column">
-      <li>
-        <p>
-          Ding 1, dann Ding 2, wie beispielsweise
-          <i>Username,
-            dann
-            <code>@</code>, dann Domainname</i>
-        </p>
-      </li>
-      <li>
-        <p>
-          Ding, bliebig oft wiederholt, wie beispielsweise
-          <i>eine
-            beliebig lange Folge von Labels, mit
-            <code>.</code>
-            separiert.</i>
-        </p>
-      </li>
-      <li>
-        <p>
-          Ding 1 oder Ding 2. Beispielsweise
-          <i>Bindestrich oder
-            alphanumerisches Zeichen</i>.
-        </p>
-      </li>
-    </ul>
+    <div class="main-column">
+      <ul class="outside-list">
+        <li>
+          <p>
+            Ding 1, dann Ding 2, wie beispielsweise
+            <i>Username,
+              dann
+              <code>@</code>, dann Domainname</i>
+          </p>
+        </li>
+        <li>
+          <p>
+            Ding, bliebig oft wiederholt, wie beispielsweise
+            <i>eine
+              beliebig lange Folge von Labels, mit
+              <code>.</code>
+              separiert.</i>
+          </p>
+        </li>
+        <li>
+          <p>
+            Ding 1 oder Ding 2. Beispielsweise
+            <i>Bindestrich oder
+              alphanumerisches Zeichen</i>.
+          </p>
+        </li>
+      </ul>
+    </div>
     <div class="well statement out">
       <p>
         <b>Lemma</b>
@@ -712,7 +714,7 @@
         In einer Ableitung aus $G$ müssen wir uns also im
         ersten Schritt entscheiden, ob wir nach $S_1$ oder
         nach $S_2$ gehen und somit ein Wort in $L_1$ oder
-        eines in $L_2$ ableiten wollen.<span class="qed">\(\square\)</span>
+        eines in $L_2$ ableiten wollen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -806,7 +808,7 @@
         Regeln von
         <span class="nowrap">$G_2$.</span>
         Das Startsymbol von $G$ ist
-        <span class="nowrap">$S_1$.</span><span class="qed">\(\square\)</span>
+        <span class="nowrap">$S_1$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -899,7 +901,7 @@
       </div>
       <p>
         Um überhaupt eine Ableitung beenden zu können, fügen
-        wir $S \rightarrow \epsilon$ noch als Regel hinzu.<span class="qed">\(\square\)</span>
+        wir $S \rightarrow \epsilon$ noch als Regel hinzu.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
@@ -909,7 +911,7 @@
         <code>https://web1.hszg.de/modulkatalog/index.php?activTopic=3&amp;activNav=2&amp;stid=566&amp;frei=1&amp;kennz=suche&amp;activCont=1</code>
         Der URL besteht aus mehreren Teilen:
       </p>
-      <ol>
+      <ol class="outside-list">
         <li>
           <p>
             Dem Protokoll. Hier ist das
@@ -1023,7 +1025,7 @@
         in eine "richtig reguläre" umwandeln. In konkreten
         Anwendungne empfiehlt es dazu, die Nichtterminale von
         $G'$ umzubenennen, damit keien Verwechslungsgefahr
-        droht.<span class="qed">\(\square\)</span>
+        droht.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -1032,20 +1034,22 @@
       Kleenesche Hülle. Beispielsweise Umkehrung und Komplement,
       also beispielsweise
     </p>
-    <ul class="main-column">
-      <li>
-        <p>
-          Alle Emailadressen, von rechts nach links gelesen
-          (Umkehrung);
-        </p>
-      </li>
-      <li>
-        <p>
-          Die Menge aller syntaktisch inkorrekten Emailadressen
-          (Komplement).
-        </p>
-      </li>
-    </ul>
+    <div class="main-column">
+      <ul class="outside-list">
+        <li>
+          <p>
+            Alle Emailadressen, von rechts nach links gelesen
+            (Umkehrung);
+          </p>
+        </li>
+        <li>
+          <p>
+            Die Menge aller syntaktisch inkorrekten Emailadressen
+            (Komplement).
+          </p>
+        </li>
+      </ul>
+    </div>
     <p class="main-column">
       Mit den Werkzeugen, die wir uns bis jetzt erarbeitet
       haben, können wir eine Grammatik für das Komplement

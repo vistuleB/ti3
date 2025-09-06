@@ -264,7 +264,7 @@
         |> img
             style=height:15em
             src=img/pcp/reduction.svg
-            loading=lazy
+            
 
     Üben wir also Reduktionen:
 

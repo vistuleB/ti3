@@ -5,7 +5,7 @@
     korrekt sind, ungeachtet, ob ein Konto mit dieser Email-Adresse
     besteht.
 
-    ```orange-comment
+    ```orange-comments
     thomas.schmitz@hszg.de                              //Gültig
     dominik@cs.sjtu.edu.cn                              //Gültig
     raffaela@mayer@gmail.com                            //Ungültig: @ kommt zweimal vor
@@ -17,85 +17,46 @@
     Sie die typische hierarchisch-geschachtelte Struktur
     (sie müssen es nicht im Detail lesen):
 
-    |> pre
-        class=listing
-        |> span
-            <div class='carousel-inner' style='display:inline-block'>
-        |> br
-        |> span
-            \   <div class='item active'>
-        |> br
-        |> span
-            \       <p>$110 x + 794$</p><img loading="lazy" src='../img/hash/hashfunction_110_794.svg'>
-        |> br
-        |> span
-            \   </div>
-        |> br
-        |> span
-            \   <div class='item'>
-        |> br
-        |> span
-            \       <p>$502 x + 121$</p><img loading="lazy" src='../img/hash/hashfunction_502_121.svg'>
-        |> br
-        |> span
-            \    </div>
-        |> br
-        |> span
-            \   <div class='item'>
-        |> br
-        |> span
-            \       <p>$617 x + 5$</p><img loading="lazy" src='../img/hash/hashfunction_617_5.svg'>
-        |> br
-        |> span
-            \   </div>
-        |> br
-        |> span
-            \   <div class='item'>
-        |> br
-        |> span
-            \       <p>$815 x + 562$</p><img loading="lazy" src='../img/hash/hashfunction_851_562.svg'>
-        |> br
-        |> span
-            \   </div>
-        |> br
-        |> span
-            \   <div class='item'>
-        |> br
-        |> span
-            \       <p>$868 x + 858$</p><img loading="lazy" src='../img/hash/hashfunction_868_858.svg'>
-        |> br
-        |> span
-            \   </div>
-        |> br
-        |> span
-            \   <div class='item'>
-        |> br
-        |> span
-            \       <p>$915 x + 320$</p><img loading="lazy" src='../img/hash/hashfunction_915_320.svg'>
-        |> br
-        |> span
-            \   </div>
-        |> br
-        |> span
-            </div class='carousel-inner'> 
+    ```listing
+    <div class='carousel-inner' style='display:inline-block'>
+        <div class='item active'>
+            <p>$110 x + 794$</p><img loading="lazy" src='../img/hash/hashfunction_110_794.svg'>
+        </div>
+        <div class='item'>
+            <p>$502 x + 121$</p><img loading="lazy" src='../img/hash/hashfunction_502_121.svg'>
+            </div>
+        <div class='item'>
+            <p>$617 x + 5$</p><img loading="lazy" src='../img/hash/hashfunction_617_5.svg'>
+        </div>
+        <div class='item'>
+            <p>$815 x + 562$</p><img loading="lazy" src='../img/hash/hashfunction_851_562.svg'>
+        </div>
+        <div class='item'>
+            <p>$868 x + 858$</p><img loading="lazy" src='../img/hash/hashfunction_868_858.svg'>
+        </div>
+        <div class='item'>
+            <p>$915 x + 320$</p><img loading="lazy" src='../img/hash/hashfunction_915_320.svg'>
+        </div>
+    </div class='carousel-inner'>
+    ```
 
     Hier sehen Sie einen Ausschnitt aus einem Elm-Programm
     (auch diesen müssen Sie nicht im Detail lesen):
 
-    |> pre
-        class=listing
-        find : Bst -&gt; String -&gt; Maybe String
-        find tree key =
-        \    case tree of
-        \        Empty _ -&gt;
-        \            Nothing
-        \        Node ( keyHere, valueHere ) leftChild rightChild -&gt;
-        \            if key == keyHere then
-        \                Just valueHere
-        \            else if key&lt; keyHere then
-        \                find leftChild key
-        \            else
-        \                find rightChild key
+    ```listing
+    find : Bst -> String -> Maybe String
+    find tree key =
+        case tree of
+            Empty _ ->
+                Nothing
+            Node ( keyHere, valueHere ) leftChild rightChild ->
+                if key == keyHere then
+                    Just valueHere
+                else if key< keyHere then
+                    find leftChild key
+                else
+                    find rightChild key
+    ```
 
     Als letztes Beispiel sehen Sie hier eine svg-Datei.
     Dies ist ein Dateiformat für Vektorgrafiken. In diesem
@@ -106,46 +67,29 @@
             style=height:4em
             src=./img/svg-example.svg
 
-    |> pre
-        class=listing
-        |> span
-            <?xml version="1.0" encoding="UTF-8"?>
-        |> br
-        |> span
-            <svg xmlns="http://www.w3.org/2000/svg" 
-        |> br
-        |> span
-            \   xmlns:xlink="http://www.w3.org/1999/xlink" 
-        |> br
-        |> span
-            \   width="102pt" height="102pt"
-        |> br
-        |> span
-            \   viewBox="0 0 102 102"
-        |> br
-        |> span
-            \   version="1.1">
-        |> br
-        |> span
-            <g id="surface2322">
-        |> br
-        |> span
-            <circle style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"
-        |> br
-        |> span
-            \   cx="51" cy="51" r="40"/>
-        |> br
-        |> span
-            <path style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"
-        |> br
-        |> span
-            \   d="M 50 50 l 33.5 -22.5"/>
-        |> br
-        |> span
-            </g>
-        |> br
-        |> span
-            </svg>
+    ```listing
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="102pt" height="102pt"
+        viewBox="0 0 102 102"
+        version="1.1"
+    >
+        <g id="surface2322">
+            <circle
+                style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"
+                cx="51"
+                cy="51"
+                r="40"
+            />
+            <path
+                style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"
+                d="M 50 50 l 33.5 -22.5"
+            />
+        </g>
+    </svg>
+    ```
 
     Was haben diese vier Beispiele gemeinsam? Es handelt
     sich in allen Fällen um _Daten_, die in einem bestimmten
@@ -201,8 +145,9 @@
     Eine Emailadresse ist von der Form _Benutzername_`@`_Domainnname_.
     Dies können wir als _Ableitungsregel_ darstellen:
 
-    |> pre
-        <EmailAdress> -> <User> @ <Domain>
+    ```
+    <EmailAdress> -> <User> @ <Domain>
+    ```
 
     Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln
     für `&lt;Domain&gt;` erstellen? Eine `&lt;Domain&gt;`
@@ -215,9 +160,10 @@
     `.` separierten Labels_, also wiederum etwas, das wie
     ein Domainname aussieht. Daher:
 
-    |> pre
-        <Domain> -> <Label> . <Label>
-        <Domain> -> <Label> . <Domain>
+    ```
+    <Domain> -> <Label> . <Label>
+    <Domain> -> <Label> . <Domain>
+    ```
 
     Wir geben also _zwei_ Möglichkeiten an, wie mit einem
     `&lt;Domain&gt;` zu verfahren ist. Was ist nun `&lt;Label&gt;`?
@@ -234,21 +180,23 @@
     ). Wie formulieren wir _nichtleere Folge von ..._
     mit unserer `--&gt;`-Notation? Wieder mit dem Rekursionstrick:
 
-    |> pre
-        <Label> -> <AlphaNumOrDash>
-        <Label> -> <AlphaNumOrDash> <Label>
-        <AlphaNumOrDash> -> <AlphaNum>
-        <AlphaNumOrDash> -> -
+    ```
+    <Label> -> <AlphaNumOrDash>
+    <Label> -> <AlphaNumOrDash> <Label>
+    <AlphaNumOrDash> -> <AlphaNum>
+    <AlphaNumOrDash> -> -
+    ```
 
     Nun müssen wir noch Regeln für `&lt;AlphaNum&gt;`
     angeben. Hier führen wir eine weitere Konvention ein:
     nämlich, dass wir verschiedene Alternativen mit einem
     senkrechten Strich | separieren:
 
-    |> pre
-        <AlphaNum> -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
-        <AlphaNum> -> A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
-        <AlphaNum> -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+    ```
+    <AlphaNum> -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+    <AlphaNum> -> A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+    <AlphaNum> -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+    ```
 
     Beachten Sie: ich habe hier absichtlich nicht `&lt;AlphaNum&gt;
     *-&gt;* a *|* ... *|* z` geschrieben, weil ich in diesem
@@ -262,39 +210,25 @@
     die jeweils durch `.` separiert sind, wobei ein Namensblock
     eine nichtleere Folge alphanumerischer Zeichen ist.
 
-    |> pre
-        <User> -> <NameBlock> | <NameBlock> . <User>
-        <NameBlock> -> <AlphaNum> | <AlphaNum> <NameBlock>
+    ```
+    <User> -> <NameBlock> | <NameBlock> . <User>
+    <NameBlock> -> <AlphaNum> | <AlphaNum> <NameBlock>
+    ```
 
     Nun haben wir unser Emailformat vollständig beschrieben.
     Das gesamte Regelwerk sehen Sie hier noch einmal im
     Ganzen:
 
-    |> pre
-        class=listing
-        |> span
-            <EmailAddress>    ->    <User> @ <Domain>
-        |> br
-        |> span
-            <Domain>          ->    <Label> . <Label> | <Label> . <Domain>
-        |> br
-        |> span
-            <User>            ->    <NameBlock> | <NameBlock> . <User>
-        |> br
-        |> span
-            <NameBlock>       ->    <AlphaNum> | <AlphaNum> <NameBlock>
-        |> br
-        |> span
-            <Label>           ->    <AlphaNumOrDash> | <AlphaNumOrDash> <Label>
-        |> br
-        |> span
-            <AlphaNumOrDash>  ->    <AlphaNum> | - 
-        |> br
-        |> span
-            <AlphaNum>        ->    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
-        |> br
-        |> span
-            <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+    ```listing
+    <EmailAddress>    ->    <User> @ <Domain>
+    <Domain>          ->    <Label> . <Label> | <Label> . <Domain>
+    <User>            ->    <NameBlock> | <NameBlock> . <User>
+    <NameBlock>       ->    <AlphaNum> | <AlphaNum> <NameBlock>
+    <Label>           ->    <AlphaNumOrDash> | <AlphaNumOrDash> <Label>
+    <AlphaNumOrDash>  ->    <AlphaNum> | -
+    <AlphaNum>        ->    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+    <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+    ```
 
     |> Topic
         Ein Beispiel einer formalen Grammatik und einer Ableitung
@@ -302,35 +236,37 @@
     Was Sie hier sehen, nennt man eine _formale Grammatik_.
     Ihre Bestandteile sind:
 
-    |> ul
-        |> li
-            Das Alphabet $\Sigma$ aller verwendeten Zeichen, in
-            unserem Fall also
-            $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$. Wir nennen
-            $\Sigma$ die Menge der _terminalen Symbole_.
-        |> li
-            Eine Menge $N$ abstrakter Symbole, hier
+    |> div
+        |> ul
+            class=outside-list
+            |> li
+                Das Alphabet $\Sigma$ aller verwendeten Zeichen, in
+                unserem Fall also
+                $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$. Wir nennen
+                $\Sigma$ die Menge der _terminalen Symbole_.
+            |> li
+                Eine Menge $N$ abstrakter Symbole, hier
 
-            $$
-            N = \{\texttt{&lt;EmailAddress&gt;,&lt;Domain&gt;,
-            &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;}
-            \} \ .
-            $$
+                $$
+                N = \{\texttt{&lt;EmailAddress&gt;,&lt;Domain&gt;,
+                &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;}
+                \} \ .
+                $$
 
-            Diese Menge nennen wir die _nichtterminalen Symbole_.
-            Wir verlangen, dass $N \cap \Sigma = \emptyset$ gilt;
-            ein Symbol kann also nicht gleichzeitig Terminalsymbol
-            und Nichtterminalsymbol sein.
-        |> li
-            Eine Menge $P$ von Regeln, auch _Produktionen_ genannt,
-            wobei jede Regel die Form $X \rightarrow \alpha$ hat,
-            wobei $\alpha$ eine beliebig lange endliche Folge
-            von Symbolen in $\Sigma \cup N$ ist.
-        |> li
-            Ein Startsymbol $S \in N$, das angibt, wo wir mit
-            unserer Ableitung beginnen sollen. Im obigen Beispiel
-            sind wir ja an Emailadressen interessiert, also ist
-            `&lt;EmailAddress&gt;` das Startsymbol.
+                Diese Menge nennen wir die _nichtterminalen Symbole_.
+                Wir verlangen, dass $N \cap \Sigma = \emptyset$ gilt;
+                ein Symbol kann also nicht gleichzeitig Terminalsymbol
+                und Nichtterminalsymbol sein.
+            |> li
+                Eine Menge $P$ von Regeln, auch _Produktionen_ genannt,
+                wobei jede Regel die Form $X \rightarrow \alpha$ hat,
+                wobei $\alpha$ eine beliebig lange endliche Folge
+                von Symbolen in $\Sigma \cup N$ ist.
+            |> li
+                Ein Startsymbol $S \in N$, das angibt, wo wir mit
+                unserer Ableitung beginnen sollen. Im obigen Beispiel
+                sind wir ja an Emailadressen interessiert, also ist
+                `&lt;EmailAddress&gt;` das Startsymbol.
 
     Wenn wir nun so eine Grammatik gegeben haben, können
     wir Wörter _ableiten_; das heißt, wir beginnen mit
@@ -342,57 +278,25 @@
     ist ein Beispiel für eine Ableitung basierend auf der
     obigen Grammatik:
 
-    |> pre
-        |> span
-            <EmailAddress> -> <User>@<Domain>
-        |> br
-        |> span
-            \               -> <NameBlock>.<User>@<Domain>
-        |> br
-        |> span
-            \               -> <NameBlock>.<NameBlock>@<Domain>
-        |> br
-        |> span
-            \               -> <NameBlock>.<NameBlock>@<Label>.<Domain>
-        |> br
-        |> span
-            \               -> <NameBlock>.<NameBlock>@<Label>.<Label>.<Label>
-        |> br
-        |> span
-            \               -> <AlphaNum>.<NameBlock>@<Label>.<Label>.<Label>
-        |> br
-        |> span
-            \               -> <AlphaNum>.<AlphaNum>@<Label>.<Label>.<Label>
-        |> br
-        |> span
-            \               -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<Label>.<Label>
-        |> br
-        |> span
-            \               -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<Label>
-        |> br
-        |> span
-            \               -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><Label>
-        |> br
-        |> span
-            \               -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>
-        |> br
-        |> span
-            \               -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>
-        |> br
-        |> span
-            \               -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash>e
-        |> br
-        |> span
-            \               -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.de
-        |> br
-        |> span
-            \               -> d.s@<AlphaNumOrDash>.<AlphaNumOrDash>.de
-        |> br
-        |> span
-            \               -> d.s@<AlphaNumOrDash>.b.de
-        |> br
-        |> span
-            \               -> d.s@a.b.de
+    ```
+    <EmailAddress> -> <User>@<Domain>
+                -> <NameBlock>.<User>@<Domain>
+                -> <NameBlock>.<NameBlock>@<Domain>
+                -> <NameBlock>.<NameBlock>@<Label>.<Domain>
+                -> <NameBlock>.<NameBlock>@<Label>.<Label>.<Label>
+                -> <AlphaNum>.<NameBlock>@<Label>.<Label>.<Label>
+                -> <AlphaNum>.<AlphaNum>@<Label>.<Label>.<Label>
+                -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<Label>.<Label>
+                -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<Label>
+                -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><Label>
+                -> <AlphaNum>.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>
+                -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash><AlphaNumOrDash>
+                -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.<AlphaNumOrDash>e
+                -> d.<AlphaNum>@<AlphaNumOrDash>.<AlphaNumOrDash>.de
+                -> d.s@<AlphaNumOrDash>.<AlphaNumOrDash>.de
+                -> d.s@<AlphaNumOrDash>.b.de
+                -> d.s@a.b.de
+    ```
 
     Nach dem gleichen Schema könnten wir `d.s.@-.-.--`
     ableiten, was darauf schließen lässt, dass unsere Grammatik
@@ -454,43 +358,47 @@
     mit $L$ ab, was für _language_ steht. Beispiele für
     Sprachen wären
 
-    |> ol
-        |> li
-            Die Sprache aller syntaktisch korrekten Emailadressen.
-        |> li
-            Die Sprache aller Java-Programme, die ohne Fehlermeldung
-            kompilieren
-        |> li
-            Die Sprache aller Java-Programme, die kompilieren,
-            dann aber mit einem Laufzeitfehler abbrechen.
-        |> li
-            Die Sprache aller Java-Programme, die kompilieren
-            und nicht mit einem Laufzeitfehler abbrechen.
-        |> li
-            Die Sprache aller Wörter über $\{a,b\}$, die gleich
-            viele $a$'s wie $b$'s enthalten.
-        |> li
-            Die Sprache aller Palindrome über $\{a,b,c,d\}$, also
-            Wörter, die von vorne wie hinten gelesen gleich aussehen.
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Die Sprache aller syntaktisch korrekten Emailadressen.
+            |> li
+                Die Sprache aller Java-Programme, die ohne Fehlermeldung
+                kompilieren
+            |> li
+                Die Sprache aller Java-Programme, die kompilieren,
+                dann aber mit einem Laufzeitfehler abbrechen.
+            |> li
+                Die Sprache aller Java-Programme, die kompilieren
+                und nicht mit einem Laufzeitfehler abbrechen.
+            |> li
+                Die Sprache aller Wörter über $\{a,b\}$, die gleich
+                viele $a$'s wie $b$'s enthalten.
+            |> li
+                Die Sprache aller Palindrome über $\{a,b,c,d\}$, also
+                Wörter, die von vorne wie hinten gelesen gleich aussehen.
 
     Wir wollen herausfinden, welche Arten von Sprachen
     wir mit den im letzten Abschnitt eingeführen Regelwerk
     aus Ableitungen beschreiben können. Für die gerade
     aufgelisteten sechs Sprachen lautet die Antwort
 
-    |> ol
-        |> li
-            Ja, können wir.
-        |> li
-            Ja, wenn wir leicht komplexere Ableitungsregeln erlauben.
-        |> li
-            Ja, wenn wir leicht komplexere Ableitungsregeln erlaubten.
-        |> li
-            Nein, können wir nicht.
-        |> li
-            Ja, können wir.
-        |> li
-            Ja, können wir.
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                Ja, können wir.
+            |> li
+                Ja, wenn wir leicht komplexere Ableitungsregeln erlauben.
+            |> li
+                Ja, wenn wir leicht komplexere Ableitungsregeln erlaubten.
+            |> li
+                Nein, können wir nicht.
+            |> li
+                Ja, können wir.
+            |> li
+                Ja, können wir.
 
     |> SubTopic
         Grammatiken
@@ -501,6 +409,7 @@
         besteht aus
 
         |> ol
+            class=outside-list
             |> li
                 einem endlichen Alphabet $\Sigma$, den _terminalen
                 Symbolen_;
@@ -750,15 +659,18 @@
     *Die gute Nachricht:* Die gute Nachricht: wir kennen
     Algorithmen, die dieses Problem im effizient lösen,
     wenn wir den "theoretischen" Effizienzbegriff zugrund
-    legen. *Die schlechte Nachricht:* wir kennen keinen
-    Algorithmus, der das Parsing kontextfreier Sprachen
-    in seiner ganzen Allgemeinheit in _linearer Zeit_ erledigt,
-    dessen Laufzeit also proportional zur Länge des Zielwortes
-    $x$ ist. Dies ist aber, was wir in der Praxis, zum
-    Beispiel bei Compilern, erwarten. *Die gute Nachricht:*
-    in fast allen praktisch relevanten Fällen haben wir
-    es mit Grammatiken zu tun, die Parsing in linearer
-    Zeit ermöglichen. Und wenn wir Programmiersprachen,
+    legen.
+
+    *Die schlechte Nachricht:* wir kennen keinen Algorithmus,
+    der das Parsing kontextfreier Sprachen in seiner ganzen
+    Allgemeinheit in _linearer Zeit_ erledigt, dessen Laufzeit
+    also proportional zur Länge des Zielwortes $x$ ist.
+    Dies ist aber, was wir in der Praxis, zum Beispiel
+    bei Compilern, erwarten.
+
+    *Die gute Nachricht:* in fast allen praktisch relevanten
+    Fällen haben wir es mit Grammatiken zu tun, die Parsing
+    in linearer Zeit ermöglichen. Und wenn wir Programmiersprachen,
     Datenformate etc. entwerfen, haben wir es ja in der
     Hand, Sprache und Grammatik so anzulegen, dass effizientes
     Parsen möglich ist. Im nächsten Kapitel lernen wir

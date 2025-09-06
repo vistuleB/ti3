@@ -54,7 +54,7 @@ fn ti3_splitter(
 
   let #(chapters, list_list_subs) =
     chapters
-    |> list.map(infra.v_extract_children(_, fn(child) {infra.has_class(child, "subchapter")}))
+    |> list.map(infra.v_extract_children(_, fn(child) {infra.is_v_and_has_class(child, "subchapter")}))
     |> list.unzip
 
   let chapter_fragments =

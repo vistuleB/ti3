@@ -112,7 +112,7 @@
         |> img
             style=height:20em
             src=img/turing-machines/configuration.svg
-            loading=lazy
+            
 
     |> Statement
         title=*Definition*
@@ -180,7 +180,7 @@
             |> img
                 style=height:18em
                 src=img/turing-machines/configuration-two.svg
-                loading=lazy
+                
 
         können also beide mit der Konfiguration
         $aAAaq\#ba$ beschrieben werden, obwohl die Zellen
@@ -202,7 +202,7 @@
             |> img
                 style=height:18em
                 src=img/turing-machines/two-stacks.svg
-                loading=lazy
+                
 
         Alternativ können wir auch der Turingmaschine verbieten,
         das Blank-Symbol $\Box$ jemals zu schreiben. Dann

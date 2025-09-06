@@ -42,6 +42,7 @@
         Die "Bedeutung" dieser Zustände ist:
 
         |> ul
+            class=outside-list
             |> li
                 `findA`: gehe nach links, bis Du ein $a$ findest,
                 ersetze es durch $X$ und wechsle dann in `findB`.
@@ -76,7 +77,6 @@
             |> img
                 style=height:12em
                 src=img/turing-machines/exampe-2-aabbcc/delta-table.svg
-                loading=lazy
 
         Beachten Sie: manche Zellen sind leer. Damit meine
         ich, dass die Turingmaschine dort in den Zustand `reject`
@@ -107,8 +107,8 @@
             q, a
             r, b, D 
 
-        angeben, wobei die Richtung $D$ mit den Symbolen `&lt;,
-        -,&gt;` codiert wird.
+        angeben, wobei die Richtung $D$ mit den Symbolen `<`,
+        `-`, `>` codiert wird.
 
     |> Statement
         title=*Beispiel*
@@ -170,11 +170,10 @@
             |> img
                 style=height:15em
                 src=img/turing-machines/exampe-2-aabbcc/delta-table-palindromes.svg
-                loading=lazy
 
     |> Exercise
         Implementieren Sie die Turingmaschine für die Palindromsprache
-        auf
+        auf 
         |> a
             href=https://turingmachinesimulator.com
             turingmachinesimulator.com
@@ -199,7 +198,7 @@
         |> a
             href=https://turingmachinesimulator.com
             turingmachinesimulator.com
-        eine Turingmaschine für die Sprache
+        \ eine Turingmaschine für die Sprache
 
         \begin{align*}
         L := \{1^n \ | \ n = 2^d, d \geq 0\} \ .

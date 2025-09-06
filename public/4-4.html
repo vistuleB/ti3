@@ -40,20 +40,22 @@
       Primitive Rekursion erlaubt uns Schleifen, allerdings
       nur in einer sehr restriktiven Form:
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          Wir müssen anfangs bereits angeben, wie oft wir die
-          Schleife durchlaufen wollen;
-        </p>
-      </li>
-      <li>
-        <p>
-          wir dürfen nur eine lokale Variable mitführen (und
-          den Iterationsindex).
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            Wir müssen anfangs bereits angeben, wie oft wir die
+            Schleife durchlaufen wollen;
+          </p>
+        </li>
+        <li>
+          <p>
+            wir dürfen nur eine lokale Variable mitführen (und
+            den Iterationsindex).
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Der zweite Punkt ist keine echte Beschränkung, wie
       wir gesehen haben: wenn wir zwei lokale Variablen
@@ -106,7 +108,10 @@
       wir bei 1 (und somit in dieser Dreierschleife) gelandet
       sind. Es kann allerdings etwas länger dauern:
     </p>
-    <figure class="main-column">
+    <figure
+      style="padding:0 4em;"
+      class="main-column"
+    >
       7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16,
       8, 4, 2, 1.
     </figure>
@@ -114,7 +119,10 @@
       Oder noch länger. Wenn wir mit 27 beginnen, dann erhalten
       wir die Folge
     </p>
-    <figure class="main-column">
+    <figure
+      style="padding:0 4em;"
+      class="main-column"
+    >
       27, 82, 41, 124, 62, 31, 94, 47, 142, 71, 214, 107,
       322, 161, 484, 242, 121, 364, 182, 91, 274, 137, 412,
       206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263,
@@ -154,14 +162,17 @@
       <code>while</code>-Schleifen. Führen wir diese nun ein.
     </p>
     <div class="main-column">
-<pre class="listing">
-def While (condition, step):
-    def f(x):
-            temp = x
-            while (condition(temp)):
-                    temp = step(temp)
-            return temp
-    return f
+<pre
+  class="listing"
+  language=""
+>
+<span class="listing-bol"></span>def While (condition, step):
+<span class="listing-bol"></span>    def f(x):
+<span class="listing-bol"></span>        temp = x
+<span class="listing-bol"></span>        while (condition(temp)):
+<span class="listing-bol"></span>            temp = step(temp)
+<span class="listing-bol"></span>        return temp
+<span class="listing-bol"></span>    return f
 </pre>
     </div>
     <div class="well exercise out">

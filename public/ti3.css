@@ -280,34 +280,31 @@ pre span.pythonPrompt {
     color: #000;
 }
 
-/* pre span.pythonPrompt::before {
-    color: purple;
-    font-family: "courier";
-    content: ">>> ";
-    width: 8em;
-} */
-
-/* pre span.terminalPrompt::before {
-    color: gray;
-    font-family: "courier";
-    content: "user@home:~$ ";
-    width: 8em;
-}
-
-pre > span.terminalPrompt {
-    color: #000;
-} */
-
 pre.listing:before {
     counter-reset: listing;
 }
 
 pre.listing > span {
     counter-increment: listing;
-    color: var(--body-color);
 }
 
-pre.listing > span::before {
+pre.redyellow {
+    color:red;
+    background-color: yellow;
+}
+
+/* pre.listing > span::before {
+    color: gray;
+    content: counter(listing) ". ";
+    min-width: 4ch;
+    display: inline-block;
+}
+
+pre.listing > span.listing-bol {
+    counter-increment: listing;
+} */
+
+pre.listing > span.listing-bol::before {
     color: gray;
     content: counter(listing) ". ";
     min-width: 4ch;
@@ -318,16 +315,22 @@ pre.listing > span::before {
     color: blue;
 }
 
-.comment {
+/*.comment {
+    color: darkorange;
+    font-style: italic;
+    display: inline;
+} */
+
+.actual-orange-comment {
     color: darkorange;
     font-style: italic;
     display: inline;
 }
 
-.orange-comment {
-    color: darkorange;
-    font-style: italic;
-    display: inline;
+figcaption {
+    max-width: 70%;
+    margin: auto;
+    margin-top: 0.5em;
 }
 
 figure.main-column,
@@ -499,7 +502,7 @@ ul.outside-list,
 ol.outside-list {
     list-style-position: outside;
     padding-left: 0.5rem;
-    margin:0em 2em;
+    margin:0em 1em;
 }
 
 ul.outside-list:not(li > ul),
@@ -508,7 +511,7 @@ ol.outside-list:not(li > ol) {
 }
 
 li {
-    margin: 0em 0;
+    margin: 0.2em 0;
 }
 
 li > p:first-child {
@@ -540,4 +543,10 @@ hr {
     height: 1.4em;
     display: inline-block;
     vertical-align:middle;
+}
+
+.display {
+    padding: 1em 2em;
+    text-align: center;
+    margin: auto;
 }

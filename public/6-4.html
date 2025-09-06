@@ -195,6 +195,8 @@
           Offensichtlich ist $\first_2(y) =$
           <span class="nowrap">"$\texttt{(}$".</span>
           Was kann $\first_k(x)$ sein?
+        </p>
+        <p>
           <b>Behauptung.</b>
           Wenn
           <span class="nowrap">$S \rightarrow \delta \in (\Sigma \cup N)^*$,</span>
@@ -211,7 +213,7 @@
           <span class="nowrap">$S$,</span>
           die Behauptung gilt aber
           nach wie vor für alle anderen $S$ in
-          <span class="nowrap">$\delta$.</span><span class="qed">\(\square\)</span>Wir folgern also, dass für das $\alpha$ den beiden
+          <span class="nowrap">$\delta$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>Wir folgern also, dass für das $\alpha$ den beiden
           obigne Herleitungen
           $\first_k(\alpha) \in \{\epsilon, \texttt{)}\}$ gilt.
           Keines davon ist ein Nichtterminal, und so muss auch
@@ -344,7 +346,9 @@
         so vielen
         <span class="nowrap">$b$'s</span>
         folgt. Geben Sie diese
-        Grammatik in den<a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">Parser-Simulator</a>ein und finden Wörter mit langen Sackgassen. Zeigen
+        Grammatik in den
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">Parser-Simulator</a>
+        ein und finden Wörter mit langen Sackgassen. Zeigen
         Sie, dass diese Grammatik nicht
         <span class="nowrap">LL$(k)$</span>
         ist, für kein
@@ -368,7 +372,8 @@
         also die Wörter der Form $a^m b^n$ mit
         <span class="nowrap">$n \leq m \leq n+t$.</span>
         Schreiben Sie für $L_3$ eine
-        Grammatik, geben Sie diese im<a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">Parser-Simulator</a>
+        Grammatik, geben Sie diese im
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">Parser-Simulator</a>
         ein und schauen, wie lang die Sackgassen werden können.
         Zeigen Sie, dass $L_3$ eine
         <span class="nowrap">LL$(k)$-Grammatik</span>
@@ -546,7 +551,7 @@
         <b>Generischer Algorithmus zum Parsen von
           <span class="nowrap">LL$(k)$-Gramatiken</span></b>
       </p>
-      <ol class="nested">
+      <ol class="outside-list">
         <li>
           <p>
             Lege \(S\texttt{\$}\) auf den Stack.
@@ -555,101 +560,101 @@
         <li>
           <p>
             <code>while</code>
-            Stack nicht leer
+            Stack nicht leer:
           </p>
+          <ol class="outside-list">
+            <li>
+              <p>
+                Sei $y$ das Resteingabewort.
+              </p>
+            </li>
+            <li>
+              <p>
+                Wenn das oberste Symbol auf dem Stack ein Terminalsymbol
+                $c$ ist:
+              </p>
+              <ul class="outside-list">
+                <li>
+                  <p>
+                    Lies das nächste Eingabesymbol
+                    <span class="nowrap">$c'$.</span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Wenn
+                    <span class="nowrap">$c = c'$,</span>
+                    poppe $c$ vom Stack;
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    ansonsten
+                    <code>Reject</code>.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                Wenn das oberste Symbol auf dem Stack ein Nichtterminalsymbol
+                $A$ ist:
+              </p>
+              <ol class="outside-list">
+                <li>
+                  <p>
+                    Schreibe den Stack als $A \alpha$
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Seien
+                    $A \rightarrow \beta_1, \dots, A \rightarrow \beta_l$
+                    alle Produktionen mit $A$ auf der linken Seite.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span style="color:red; font-weight: bold;">Berechne $\First_k(\beta_i\alpha)$ für alle
+                      $\beta_i$ und schaue, welches $\first_k(y)$ enthält</span>
+                  </p>
+                  <ul class="outside-list">
+                    <li>
+                      <p>
+                        Wenn es genau eine solche Produktion
+                        $A \rightarrow \beta_i$ gibt: wende Sie an; es ist
+                        die richtige Produktion.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Wenn es keine gibt:
+                        <code>Reject</code>. Das Wort kann nicht
+                        abgeleitet werden.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Wenn es mehrere gibt: ende mit einem Laufzeitfehler;
+                        die Grammatik ist nicht
+                        <span class="nowrap">LL$(k)$.</span>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
+                Eingabewort zu Ende
+                <code>Accept</code>
+                ansonsten
+                <code>Reject</code>
+              </p>
+            </li>
+          </ol>
         </li>
-        <ol class="nested">
-          <li>
-            <p>
-              Sei $y$ das Resteingabewort.
-            </p>
-          </li>
-          <li>
-            <p>
-              Wenn das oberste Symbol auf dem Stack ein Terminalsymbol
-              $c$ ist:
-            </p>
-            <ul>
-              <li>
-                <p>
-                  Lies das nächste Eingabesymbol
-                  <span class="nowrap">$c'$.</span>
-                </p>
-              </li>
-              <li>
-                <p>
-                  Wenn
-                  <span class="nowrap">$c = c'$,</span>
-                  poppe $c$ vom Stack;
-                </p>
-              </li>
-              <li>
-                <p>
-                  ansonsten
-                  <code>Reject</code>.
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <p>
-              Wenn das oberste Symbol auf dem Stack ein Nichtterminalsymbol
-              $A$ ist:
-            </p>
-            <ol class="nested">
-              <li>
-                <p>
-                  Schreibe den Stack als $A \alpha$
-                </p>
-              </li>
-              <li>
-                <p>
-                  Seien
-                  $A \rightarrow \beta_1, \dots, A \rightarrow \beta_l$
-                  alle Produktionen mit $A$ auf der linken Seite.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <span style="color:red; font-weight: bold;">Berechne $\First_k(\beta_i\alpha)$ für alle
-                    $\beta_i$ und schaue, welches $\first_k(y)$ enthält</span>
-                </p>
-                <ul>
-                  <li>
-                    <p>
-                      Wenn es genau eine solche Produktion
-                      $A \rightarrow \beta_i$ gibt: wende Sie an; es ist
-                      die richtige Produktion.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Wenn es keine gibt:
-                      <code>Reject</code>. Das Wort kann nicht
-                      abgeleitet werden.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Wenn es mehrere gibt: ende mit einem Laufzeitfehler;
-                      die Grammatik ist nicht
-                      <span class="nowrap">LL$(k)$.</span>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <p>
-              Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
-              Eingabewort zu Ende
-              <code>Accept</code>
-              ansonsten
-              <code>Reject</code>
-            </p>
-          </li>
-        </ol>
       </ol>
     </div>
     <p class="main-column">
@@ -928,7 +933,6 @@
         <img
           style="height:8em"
           src="./img/context-free/LL/tree-depth-2.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >

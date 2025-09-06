@@ -120,7 +120,7 @@
             title=*Behauptung 1.*
             $g^{-1}(a)$ ist definiert für jedes $a \in A'$.
 
-        |> Highlight
+        |> Remark
             title=*Beweis.*
             Wenn $a \in A'$ gilt, dann gilt $a \in X_{2i+1}$,
             also für einen ungeraden Index. Nach Konstruktion gilt
@@ -137,7 +137,7 @@
             title=*Behauptung 2.*
             $h$ ist injektiv.
 
-        |> Highlight
+        |> Remark
             title=*Beweis.*
             Seien $a, a' \in A$ zwei verschiedene Elemente. Wir
             unterscheiden drei Fälle: (1) Wenn
@@ -168,7 +168,7 @@
             title=*Behauptung 3.*
             $h$ ist surjektiv.
 
-        |> Highlight
+        |> Remark
             title=*Beweis.*
             Wir unterscheiden zwei Fälle. (1) Wenn
             $b \in X_0 \cup X_2 \cup X_4 \cup \dots$ ist, also

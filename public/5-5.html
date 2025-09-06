@@ -53,45 +53,47 @@
       das Baukastenprinzip
       kennengelernt:
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          Wenn $L_1$ und $L_2$ reguläre Sprachen sind, dann
-          ist $L_1 \cup L_2$ auch regulär;
-        </p>
-      </li>
-      <li>
-        <p>
-          dann ist auch die Konkatenation
-        </p>
-        <div class="math-block">
-          $$
-          \begin{align*}
-          L_1 \circ L_2 := \{\alpha \beta \ | \alpha \in L_1, \beta \in L_2\}
-          \end{align*}
-          $$
-        </div>
-        <p>
-          regulär;
-        </p>
-      </li>
-      <li>
-        <p>
-          wenn $L$ regulär ist, dann ist auch ihre Kleenesche
-          Hülle
-        </p>
-        <div class="math-block">
-          $$
-          \begin{align*}
-          L^* := \{ \alpha_1 \dots \alpha_n \ | \ n \geq 0, \alpha_1,\dots,\alpha_n \in L\}
-          \end{align*}
-          $$
-        </div>
-        <p>
-          regulär.
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            Wenn $L_1$ und $L_2$ reguläre Sprachen sind, dann
+            ist $L_1 \cup L_2$ auch regulär;
+          </p>
+        </li>
+        <li>
+          <p>
+            dann ist auch die Konkatenation
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            L_1 \circ L_2 := \{\alpha \beta \ | \alpha \in L_1, \beta \in L_2\}
+            \end{align*}
+            $$
+          </div>
+          <p>
+            regulär;
+          </p>
+        </li>
+        <li>
+          <p>
+            wenn $L$ regulär ist, dann ist auch ihre Kleenesche
+            Hülle
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            L^* := \{ \alpha_1 \dots \alpha_n \ | \ n \geq 0, \alpha_1,\dots,\alpha_n \in L\}
+            \end{align*}
+            $$
+          </div>
+          <p>
+            regulär.
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Darüberhinaus haben wir Techniken kennengelernt, um
       aus den gegebenen regulären Grammatiken eine neue Grammatik
@@ -100,10 +102,7 @@
       $L_1 \circ L_2$ und $L$ konstruieren
       zu können. Sie sollten sich jetzt folgende Frage stellen:
     </p>
-    <div
-      style="text-align:center"
-      class="main-column"
-    >
+    <div class="display main-column">
       <p>
         <b>Frage:</b>
         Können
@@ -145,7 +144,7 @@
         Audrücke über $\Sigma$ sind induktiv definiert wie
         folgt und beschreiben folgende Sprachen:
       </p>
-      <ul>
+      <ul class="outside-list">
         <li>
           <p>
             <b>Atome.</b>
@@ -360,7 +359,7 @@
         <a href="./code/regular-expressions/TestRegex.java">TestRegex.java</a>
         herunter, kompilieren und starten Sie es.
       </p>
-<pre class="well highlight">
+<pre class="arbitrary-prompt-response">
 <span class="terminal-prompt">user@home:~$</span><span class="arbitrary-response"> java TestRegex</span>
 <span class="arbitrary-prompt">Please enter a regular expression: </span><span class="arbitrary-response">(a+)(:a+)*</span>
 <span class="arbitrary-prompt">Enter words to be matched, one per line</span><span class="arbitrary-response"></span>
@@ -390,7 +389,7 @@
         Wörter, die mindesten einen Vokal enthalten. Lesen
         Sie hierfür unter Anderem
       </p>
-      <div style="text-align:center">
+      <div class="display">
         <p>
           <a href="https://www.w3schools.com/java/java_regex.asp">W3Schools</a>
         </p>
@@ -398,7 +397,7 @@
       <p>
         und
       </p>
-      <div style="text-align:center">
+      <div class="display">
         <p>
           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">Patternl.html auf der Java-API</a>,
         </p>
@@ -416,11 +415,8 @@
       Einen regulären Ausdruck für jede reguläre Sprache
     </h1>
     <p class="main-column">
-      Wir beweisen nun das Gegenstück zu
-      <a
-        href="./5-5.html#_20_hgi_"
-        class=""
-      >Lemma 2</a>:
+      Wir beweisen nun das Gegenstück zu Lemma
+      <a href="./5-5.html#_20_hgi_">2</a>:
     </p>
     <div class="well statement out">
       <p>
@@ -670,19 +666,21 @@
         hat, muss $\alpha$ in der von $R$ beschriebenen Sprache
         liegen. $R$ ist der gesuchte reguläre Ausdruck: er
         beschreibt die Sprache
-        <span class="nowrap">$L$.</span><span class="qed">\(\square\)</span>
+        <span class="nowrap">$L$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
       Hier sehen Sie den ganzen Ablauf an unserer
       <code>aaaa:a:aaa.aa-aa</code>-Sprache:
     </p>
-    <div class="main-column">
-      <figure style="overflow-x: auto; margin: 0 center;">
+    <div
+      style="padding:1em 0 0.5em;"
+      class="main-column"
+    >
+      <figure style="overflow-x:auto;margin:0 center;">
         <img
           style="height:20em"
           src="./img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -698,7 +696,6 @@
         <img
           style="height:10em"
           src="./img/finite-state-automata/nfsm-example-02.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >

@@ -293,80 +293,82 @@
       möglich ist, ohne Betrachten von $w$ zu eintscheiden,
       ob $\alpha \beta w \rstep{} \alpha X w$ gültig ist.
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          <b>Schlechter Fall 1:</b>
-          Es gibt für eine Wortform
-          $\gamma$ zwei korrekte Linksreduktionsschritte:
-          $\gamma \rstep{} \gamma'$ und
-          <span class="nowrap">$\gamma \rstep{} \gamma''$.</span>
-          In diesem Falle gäbe es
-          <i>zwei verschiedene</i>
-          Rechtsableitungen
-        </p>
-        <div class="math-block">
-          $$
-          \begin{align*}
-          S \Steps{R} \gamma' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
-          S \Steps{R} \gamma'' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
-          \end{align*}
-          $$
-        </div>
-        <p>
-          (wir nehmen an, dass man aus jedem Nichtterminal mindestens
-          ein Wort $u \in \Sigma^*$ ableiten kann; andernfalls
-          kann man solche
-          <i>nutzlosen</i>
-          Nichtterminale eliminieren).
-          Das Wort $w$ hat also zwei verschiedene Ableitungsbäume.
-          Die Grammatik ist somit mehrdeutig. Mit uneindeutigen
-          Grammatiken beschäftigen wir uns zunächst gar nicht;
-          sie sind von einem praktischen Standpunkt aus auch
-          unattraktiv: wenn z.B. eine Programmiersprache eine
-          mehrdeutige Grammatik hätte, dann wäre ja für gewisse
-          Programme nicht eindeutig festzustellen, was damit
-          gemeint ist. Wir nehmen also an, dass die Grammatik
-          $G$ eindeutig ist und somit dieser Fall nicht eintreten
-          kann.
-        </p>
-      </li>
-      <li>
-        <p>
-          <b>Schlechter Fall 2:</b>
-          Der Linksreduktionsschritt
-        </p>
-        <div class="math-block">
-          $$
-          \begin{align*}
-          \alpha \beta w \rstep{} \alpha X w
-          \end{align*}
-          $$
-        </div>
-        <p>
-          ist korrekt, aber für ein anderes
-          $w' \in \Sigma^*$ ist
-        </p>
-        <div class="math-block">
-          $$
-          \begin{align*}
-          \alpha \beta w' \rstep{} \alpha X w'
-          \end{align*}
-          $$
-        </div>
-        <p>
-          <i>nicht</i>
-          korrekt, obwohl $\alpha\beta w'$ eine gültige
-          Wortform ist. Dieser Fall ist schlecht, weil der Parser
-          nur $\alpha \beta$ gelesen hat und somit nicht weiß,
-          ob es sich bei der gesamten Wortform um
-          $\alpha \beta w$ oder um $\alpha \beta w'$ handelt.
-          Da beide gültig sind, können ja auch beide in einer
-          Linksreduktion auftreten. Korrektheit hängt also davon
-          ab, was weiter rechtskommt.
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            <b>Schlechter Fall 1:</b>
+            Es gibt für eine Wortform
+            $\gamma$ zwei korrekte Linksreduktionsschritte:
+            $\gamma \rstep{} \gamma'$ und
+            <span class="nowrap">$\gamma \rstep{} \gamma''$.</span>
+            In diesem Falle gäbe es
+            <i>zwei verschiedene</i>
+            Rechtsableitungen
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            S \Steps{R} \gamma' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
+            S \Steps{R} \gamma'' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
+            \end{align*}
+            $$
+          </div>
+          <p>
+            (wir nehmen an, dass man aus jedem Nichtterminal mindestens
+            ein Wort $u \in \Sigma^*$ ableiten kann; andernfalls
+            kann man solche
+            <i>nutzlosen</i>
+            Nichtterminale eliminieren).
+            Das Wort $w$ hat also zwei verschiedene Ableitungsbäume.
+            Die Grammatik ist somit mehrdeutig. Mit uneindeutigen
+            Grammatiken beschäftigen wir uns zunächst gar nicht;
+            sie sind von einem praktischen Standpunkt aus auch
+            unattraktiv: wenn z.B. eine Programmiersprache eine
+            mehrdeutige Grammatik hätte, dann wäre ja für gewisse
+            Programme nicht eindeutig festzustellen, was damit
+            gemeint ist. Wir nehmen also an, dass die Grammatik
+            $G$ eindeutig ist und somit dieser Fall nicht eintreten
+            kann.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Schlechter Fall 2:</b>
+            Der Linksreduktionsschritt
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            \alpha \beta w \rstep{} \alpha X w
+            \end{align*}
+            $$
+          </div>
+          <p>
+            ist korrekt, aber für ein anderes
+            $w' \in \Sigma^*$ ist
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            \alpha \beta w' \rstep{} \alpha X w'
+            \end{align*}
+            $$
+          </div>
+          <p>
+            <i>nicht</i>
+            korrekt, obwohl $\alpha\beta w'$ eine gültige
+            Wortform ist. Dieser Fall ist schlecht, weil der Parser
+            nur $\alpha \beta$ gelesen hat und somit nicht weiß,
+            ob es sich bei der gesamten Wortform um
+            $\alpha \beta w$ oder um $\alpha \beta w'$ handelt.
+            Da beide gültig sind, können ja auch beide in einer
+            Linksreduktion auftreten. Korrektheit hängt also davon
+            ab, was weiter rechtskommt.
+          </p>
+        </li>
+      </ol>
+    </div>
     <div class="well statement out">
       <p>
         <b>Beispiel</b>
@@ -576,7 +578,7 @@
           w'$
           gar kein Linksreduktionsschritt, geschweige denn ein
           korrekter.
-          <span class="qed">\(\square\)</span>
+          <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <div class="well remark">
@@ -677,12 +679,12 @@
           2 der Schlussfolgerung des Lemmas $\varphi$ mindestens
           ein Nichtterminal enthalten. Das kann aber nicht sein,
           da $\varphi$ ein Präfix von $w'$ ist. (3) kann aus
-          dem gleichen Grund nicht gelten.<span class="qed">\(\square\)</span>
+          dem gleichen Grund nicht gelten.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
         Wir haben nun beide Richtungen gezeigt und somit das
-        Lemma bewiesen.<span class="qed">\(\square\)</span>
+        Lemma bewiesen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
@@ -757,33 +759,35 @@
     <p class="main-column">
       Es stellen sich unmittelbar zwei zentrale Fragen:
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          Wie können wir verifizieren, ob eine gegebene Grammatik
-          die
-          <span class="nowrap">$LR(0)$-Bedingung</span>
-          erfüllt?
-        </p>
-      </li>
-      <li>
-        <p>
-          Falls sie es tut, wie können wir für eine gegebene
-          gültige Wortform $\gamma$ den korrekten Reduktionsschritt
-        </p>
-        <div class="math-block">
-          $$
-          \begin{align*}
-          \gamma = \alpha \beta w \rstep{} \alpha X w
-          \end{align*}
-          $$
-        </div>
-        <p>
-          finden? Insbesondere die Zerlegung in
-          <span class="nowrap">$\gamma = \alpha \beta w$?</span>
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            Wie können wir verifizieren, ob eine gegebene Grammatik
+            die
+            <span class="nowrap">$LR(0)$-Bedingung</span>
+            erfüllt?
+          </p>
+        </li>
+        <li>
+          <p>
+            Falls sie es tut, wie können wir für eine gegebene
+            gültige Wortform $\gamma$ den korrekten Reduktionsschritt
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            \gamma = \alpha \beta w \rstep{} \alpha X w
+            \end{align*}
+            $$
+          </div>
+          <p>
+            finden? Insbesondere die Zerlegung in
+            <span class="nowrap">$\gamma = \alpha \beta w$?</span>
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Beide Aufgaben können mit Hilfe eines
       <i>endlichen Automaten</i>,

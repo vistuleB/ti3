@@ -17,7 +17,6 @@
         |> img
             style=height:10em
             src=img/circuits/hasse-diagram.svg
-            loading=lazy
 
     Diese Darstellung einer Partialordnung als gerichteter
     Graph bezeichnet man auch als _Hasse-Diagramm_ (ich
@@ -59,7 +58,6 @@
         |> img
             style=height:10em
             src=img/circuits/hasse-clouds.svg
-            loading=lazy
 
     Wir sehen nun, dass es im Bild von $\wedge$ keinen
     roten Punkt gibt, der oberhalb eines blauen Punktes
@@ -84,7 +82,6 @@
         |> img
             style=height:10em
             src=img/circuits/monotone-or-not.svg
-            loading=lazy
 
     ist nicht monoton (beachten Sie hinter der
     $\bar{y}$-Schreibweise versteckte NOT-Gate), ist aber
@@ -114,7 +111,6 @@
             |> img
                 style=height:10em
                 src=img/circuits/hasse-diagram.svg
-                loading=lazy
 
         und überlegen sich, wie Sie die vier bzw. acht Knoten
         auf monotone Weise in einen 1-Bereich und einen 0-Bereich
@@ -131,7 +127,6 @@
             |> img
                 style=height:10em
                 src=img/circuits/triple-negator.svg
-                loading=lazy
 
     |> Topic
         Lösungen zu den Übungsaufgaben
@@ -153,15 +148,17 @@
     _Beweismethoden_ zu illustrieren. Unter Beweismethoden
     verstehe ich hier formale Methoden wie
 
-    |> ul
-        |> li
-            Beweis durch Induktion,
-        |> li
-            Beweis durch Widerspruch,
-        |> li
-            Beweis durch vollständige Fallunterscheidung,
-        |> li
-            ...
+    |> div
+        |> ul
+            class=outside-list
+            |> li
+                Beweis durch Induktion,
+            |> li
+                Beweis durch Widerspruch,
+            |> li
+                Beweis durch vollständige Fallunterscheidung,
+            |> li
+                ...
 
     wie sie zum Beispiel auf 
     |> a
@@ -172,14 +169,16 @@
     die sich oft aus persönlicher Erfahrung speisen, wie
     zum Beispiel
 
-    |> ul
-        |> li
-            kleine Beispiele untersuchen und dann verallgemeinern,
-        |> li
-            bereits Bekanntes abwandeln und hoffen, dass es funktioniert,
-        |> li
-            local change: ein Objekt schrittweise in die gewünschte
-            Richtung verändern;
+    |> div
+        |> ul
+            class=outside-list
+            |> li
+                kleine Beispiele untersuchen und dann verallgemeinern,
+            |> li
+                bereits Bekanntes abwandeln und hoffen, dass es funktioniert,
+            |> li
+                local change: ein Objekt schrittweise in die gewünschte
+                Richtung verändern;
 
     da bei den Beweistechniken Erfahrung, Intuition und
     Kreativität mit ins Spiel kommen, ist es unmöglich,
@@ -233,6 +232,7 @@
                 Bei einem Beweis durch Induktion zeigen wir nun,
 
                 |> ol
+                    class=outside-list
                     |> li
                         dass $P(0)$ gilt (*Induktionsbasis*),
                     |> li
@@ -625,6 +625,7 @@
         *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*
         Als Beweisstrategie verwende ich wieder _Bekanntes
         abwandeln._
+
         *Das Bekannte.* Erinnern Sie sich an die Konstruktion
         einer DNF-Formel auf Basis der gegebenen Wahrheitstabelle.
         Für jedes $n$-Tupel
@@ -765,6 +766,7 @@
             beide Ungleichungen $\leq$ und $\geq$ zu zeigen, also:
 
             |> ol
+                class=outside-list
                 |> li
                     $F(\mathbf{x}) \leq F'(\mathbf{x})$ und
                 |> li

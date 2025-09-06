@@ -46,14 +46,29 @@
 
         |> pre
             class=listing
-            def is_3_coloring(graph, c):
-            \    (V,E) = graph
-            \    for (u,v) in E:
-            \    if c[u] == c[v]:
-            \    return False
-            \    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
-            \    return False
-            \    return True
+            |> span
+                def is_3_coloring(graph, c):
+            |> br
+            |> span
+                \    (V,E) = graph
+            |> br
+            |> span
+                \    for (u,v) in E:
+            |> br
+            |> span
+                \    if c[u] == c[v]:
+            |> br
+            |> span
+                \    return False
+            |> br
+            |> span
+                \    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
+            |> br
+            |> span
+                \        return False
+            |> br
+            |> span
+                \    return True
 
         Falls nun $G$ $3$-färbbar ist, wenn es also eine solche
         Färbung $c: V \rightarrow \{1,2,3\}$ gibt, dann wird

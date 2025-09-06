@@ -44,6 +44,7 @@
         nun viele äquivalente Modelle gefunden haben:
 
         |> ol
+            class=outside-list
             |> li
                 Reguläre Grammatiken.
             |> li
@@ -126,7 +127,7 @@
         Da wir dieses Argument ganz allgemein für einen endlichen
         Automaten $M$ geführt haben, schließen wir:
         |> div
-            style=text-align:center
+            class=display
             Wenn $M$ ein endlicher Automat ist, dann gilt
             $L(M) \ne L$. Daher ist $L$ keine reguläre Sprache.
         Zusammenfassend lautet unser Argument: wenn der Automat

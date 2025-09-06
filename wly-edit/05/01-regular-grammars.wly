@@ -408,16 +408,18 @@
     zusammenzufügen. Formate wie beispielsweise Emailadressen
     sind oft aufgebaut nach Mustern wie
 
-    |> ul
-        |> li
-            Ding 1, dann Ding 2, wie beispielsweise _Username,
-            dann `@`, dann Domainname_
-        |> li
-            Ding, bliebig oft wiederholt, wie beispielsweise _eine
-            beliebig lange Folge von Labels, mit `.` separiert._
-        |> li
-            Ding 1 oder Ding 2. Beispielsweise _Bindestrich oder
-            alphanumerisches Zeichen_.
+    |> div
+        |> ul
+            class=outside-list
+            |> li
+                Ding 1, dann Ding 2, wie beispielsweise _Username,
+                dann `@`, dann Domainname_
+            |> li
+                Ding, bliebig oft wiederholt, wie beispielsweise _eine
+                beliebig lange Folge von Labels, mit `.` separiert._
+            |> li
+                Ding 1 oder Ding 2. Beispielsweise _Bindestrich oder
+                alphanumerisches Zeichen_.
 
     |> Statement
         title=*Lemma*
@@ -588,6 +590,7 @@
         Der URL besteht aus mehreren Teilen:
 
         |> ol
+            class=outside-list
             |> li
                 Dem Protokoll. Hier ist das `https`; es kann aber
                 auch `http` oder `ftp` sein.
@@ -659,13 +662,15 @@
     Kleenesche Hülle. Beispielsweise Umkehrung und Komplement,
     also beispielsweise
 
-    |> ul
-        |> li
-            Alle Emailadressen, von rechts nach links gelesen
-            (Umkehrung);
-        |> li
-            Die Menge aller syntaktisch inkorrekten Emailadressen
-            (Komplement).
+    |> div
+        |> ul
+            class=outside-list
+            |> li
+                Alle Emailadressen, von rechts nach links gelesen
+                (Umkehrung);
+            |> li
+                Die Menge aller syntaktisch inkorrekten Emailadressen
+                (Komplement).
 
     Mit den Werkzeugen, die wir uns bis jetzt erarbeitet
     haben, können wir eine Grammatik für das Komplement

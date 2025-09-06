@@ -519,7 +519,7 @@ carry1, 0, 1, 0,&lt;,&lt;,&lt;
         sie alle Symbole, die nicht zum Ausgabeband gehören,
         durch $\square$ ersetzt. Dann wechselt sie in ihren
         eigenen akzeptierenden Zustand
-        <code>accept'</code>.<span class="qed">\(\square\)</span>
+        <code>accept'</code>.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <h1 class="main-column">
@@ -535,18 +535,18 @@ carry1, 0, 1, 0,&lt;,&lt;,&lt;
     </p>
     <div class="main-column">
 <pre class="listing">
-name: replace_b_by_c
-init: init
-accept: accept
- 
-init, a
-init, a, &gt;
- 
-init, b
-init, c, &gt;
- 
-init, _
-accept, _, &gt;
+<span class="listing-bol"></span>name: replace_b_by_c
+<span class="listing-bol"></span>init: init
+<span class="listing-bol"></span>accept: accept
+<span class="listing-bol"></span> 
+<span class="listing-bol"></span>init, a
+<span class="listing-bol"></span>init, a, &gt;
+<span class="listing-bol"></span> 
+<span class="listing-bol"></span>init, b
+<span class="listing-bol"></span>init, c, &gt;
+<span class="listing-bol"></span> 
+<span class="listing-bol"></span>init, _
+<span class="listing-bol"></span>accept, _, &gt;
 </pre>
     </div>
     <p class="main-column">
@@ -609,11 +609,11 @@ r, _, x, &gt;, &gt;
       Aus $\delta(q,x) = (r,y,\texttt{L})$ wird
     </p>
     <div class="main-column">
-<pre>
+<pre class="orange-comments">
 q,  x, _
 r', x, _, -, -
 r', _, c
-r,  c, _   <span class="orange-comment">// für jedes Zeichen c</span>
+r,  c, _   <span class="actual-orange-comment">// für jedes Zeichen c</span>
 </pre>
     </div>
     <p class="main-column">
@@ -637,11 +637,11 @@ r,  c, _   <span class="orange-comment">// für jedes Zeichen c</span>
       wird
     </p>
     <div class="main-column">
-<pre>
+<pre class="orange-comments">
 q,   x, _
 r'', _, z, &gt;, &gt;
 r'', c, _
-r,   c, y, -, &gt;  <span class="orange-comment">// für jedes Zeichen c</span>
+r,   c, y, -, &gt;  <span class="actual-orange-comment">// für jedes Zeichen c</span>
 </pre>
     </div>
     <p class="main-column">
@@ -1029,20 +1029,20 @@ r,   c, y, -, &gt;  <span class="orange-comment">// für jedes Zeichen c</span>
     </p>
     <div class="main-column">
 <pre class="listing">
-module SubsetSum exposing (..)
- 
- 
-subsetSum : List Int -&gt;; Int -&gt;; Bool
-subsetSum prices amount =
-    case ( prices, amount ) of
-    ( [], 0 ) -&gt;;
-        True
- 
-    ( x :: rest, _ ) -&gt;;
-        subsetSum rest amount || subsetSum rest (amount - x)
- 
-    ( [], _ ) -&gt;;
-        False
+<span class="listing-bol"></span>module SubsetSum exposing (..)
+<span class="listing-bol"></span> 
+<span class="listing-bol"></span> 
+<span class="listing-bol"></span>subsetSum : List Int -&gt;; Int -&gt;; Bool
+<span class="listing-bol"></span>subsetSum prices amount =
+<span class="listing-bol"></span>    case ( prices, amount ) of
+<span class="listing-bol"></span>    ( [], 0 ) -&gt;;
+<span class="listing-bol"></span>        True
+<span class="listing-bol"></span> 
+<span class="listing-bol"></span>    ( x :: rest, _ ) -&gt;;
+<span class="listing-bol"></span>        subsetSum rest amount || subsetSum rest (amount - x)
+<span class="listing-bol"></span> 
+<span class="listing-bol"></span>    ( [], _ ) -&gt;;
+<span class="listing-bol"></span>        False
 </pre>
     </div>
     <p class="main-column">
@@ -1130,7 +1130,6 @@ subsetSum prices amount =
         <img
           style="height: 10em"
           src="img/turing-machines/nondeterminism/two-to-det.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -1285,7 +1284,7 @@ subsetSum prices amount =
         und $M''$ neustartet. Geht das? Wir können zum Beispiel
         $i = 1,2,3,4,\dots$ hochzählen, binär schreiben und
         die führende 1 löschen. Überzeugen Sie sich, dass in
-        dieser Reihe wirklich alle $z \in \{0,1\}^*$ vorkommen.<span class="qed">\(\square\)</span>
+        dieser Reihe wirklich alle $z \in \{0,1\}^*$ vorkommen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
   </div>

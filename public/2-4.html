@@ -60,7 +60,6 @@
       <img
         style="height:10em"
         src="img/circuits/hasse-diagram.svg"
-        loading="lazy"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -125,7 +124,6 @@
       <img
         style="height:10em"
         src="img/circuits/hasse-clouds.svg"
-        loading="lazy"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -158,7 +156,6 @@
       <img
         style="height:10em"
         src="img/circuits/monotone-or-not.svg"
-        loading="lazy"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -206,7 +203,6 @@
         <img
           style="height:10em"
           src="img/circuits/hasse-diagram.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -235,7 +231,6 @@
         <img
           style="height:10em"
           src="img/circuits/triple-negator.svg"
-          loading="lazy"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -271,28 +266,30 @@
       zu illustrieren. Unter Beweismethoden
       verstehe ich hier formale Methoden wie
     </p>
-    <ul class="main-column">
-      <li>
-        <p>
-          Beweis durch Induktion,
-        </p>
-      </li>
-      <li>
-        <p>
-          Beweis durch Widerspruch,
-        </p>
-      </li>
-      <li>
-        <p>
-          Beweis durch vollständige Fallunterscheidung,
-        </p>
-      </li>
-      <li>
-        <p>
-          ...
-        </p>
-      </li>
-    </ul>
+    <div class="main-column">
+      <ul class="outside-list">
+        <li>
+          <p>
+            Beweis durch Induktion,
+          </p>
+        </li>
+        <li>
+          <p>
+            Beweis durch Widerspruch,
+          </p>
+        </li>
+        <li>
+          <p>
+            Beweis durch vollständige Fallunterscheidung,
+          </p>
+        </li>
+        <li>
+          <p>
+            ...
+          </p>
+        </li>
+      </ul>
+    </div>
     <p class="main-column">
       wie sie zum Beispiel auf
       <a href="https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden">Wikipedia</a>
@@ -301,24 +298,26 @@
       Beweisstrategien, die sich oft aus persönlicher Erfahrung
       speisen, wie zum Beispiel
     </p>
-    <ul class="main-column">
-      <li>
-        <p>
-          kleine Beispiele untersuchen und dann verallgemeinern,
-        </p>
-      </li>
-      <li>
-        <p>
-          bereits Bekanntes abwandeln und hoffen, dass es funktioniert,
-        </p>
-      </li>
-      <li>
-        <p>
-          local change: ein Objekt schrittweise in die gewünschte
-          Richtung verändern;
-        </p>
-      </li>
-    </ul>
+    <div class="main-column">
+      <ul class="outside-list">
+        <li>
+          <p>
+            kleine Beispiele untersuchen und dann verallgemeinern,
+          </p>
+        </li>
+        <li>
+          <p>
+            bereits Bekanntes abwandeln und hoffen, dass es funktioniert,
+          </p>
+        </li>
+        <li>
+          <p>
+            local change: ein Objekt schrittweise in die gewünschte
+            Richtung verändern;
+          </p>
+        </li>
+      </ul>
+    </div>
     <p class="main-column">
       da bei den Beweistechniken Erfahrung, Intuition und
       Kreativität mit ins Spiel kommen, ist es unmöglich,
@@ -381,7 +380,7 @@
             eine Aussage ist, in der die Zahl $n$ irgendwo vorkommt.
             Bei einem Beweis durch Induktion zeigen wir nun,
           </p>
-          <ol>
+          <ol class="outside-list">
             <li>
               <p>
                 dass $P(0)$ gilt (<b>Induktionsbasis</b>),
@@ -447,12 +446,12 @@
             warum? In Java hätten Sie bestimmt kein Problem mit
           </p>
 <pre class="listing">
-public boolean constantFalse() {
-    return false;
-}
-public boolean constantTrue() {
-    return true;
-}
+<span class="listing-bol"></span>public boolean constantFalse() {
+<span class="listing-bol"></span>    return false;
+<span class="listing-bol"></span>}
+<span class="listing-bol"></span>public boolean constantTrue() {
+<span class="listing-bol"></span>    return true;
+<span class="listing-bol"></span>}
 </pre>
           <p>
             und dies sind ja offensichtlich Boolesche Funktionen
@@ -483,9 +482,9 @@ public boolean constantTrue() {
             Java-Compiler werden Probleme mit der Funktion
           </p>
 <pre class="listing">
-public boolean constantFalse(boolean x) {
-    return false;
-}
+<span class="listing-bol"></span>public boolean constantFalse(boolean x) {
+<span class="listing-bol"></span>    return false;
+<span class="listing-bol"></span>}
 </pre>
           <p>
             haben. Ja in der Tat, Java toleriert es, dass Sie
@@ -637,7 +636,7 @@ public boolean constantFalse(boolean x) {
           Wir haben also erfolgreich einen Schaltkreis für
           $f: \{0,1\}^n \rightarrow \{0,1\}$ konstruiert. Unser
           Induktionsbeweis von Theorem 2 ist nun abgeschlossen.
-          <span class="qed">\(\square\)</span>
+          <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
     </div>
@@ -890,7 +889,7 @@ public boolean constantFalse(boolean x) {
             </div>
             <p>
               Und somit sind linke und rechte Seite gleich, wie
-              behauptet.<span class="qed">\(\square\)</span>
+              behauptet.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
             </p>
           </li>
         </ul>
@@ -923,7 +922,7 @@ public boolean constantFalse(boolean x) {
       </figure>
       <p>
         ein monotoner Schaltkreis für
-        <span class="nowrap">$f$.</span><span class="qed">\(\square\)</span>
+        <span class="nowrap">$f$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well highlight out">
@@ -1085,7 +1084,7 @@ public boolean constantFalse(boolean x) {
           schreiben. Und jetzt ist
           $T'_{\mathbf{a}} \wedge T''_{\mathbf{a}} \leq T'_{\mathbf{a}}$
           offensichtlich, weil $g \wedge h \leq g$ ganz allgemein
-          gilt (überzeugen Sie sich davon).<span class="qed">\(\square\)</span>
+          gilt (überzeugen Sie sich davon).<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
@@ -1126,7 +1125,7 @@ public boolean constantFalse(boolean x) {
           Eine Möglichkeit, eine Gleichheit $=$ zu zeigen, ist,
           beide Ungleichungen $\leq$ und $\geq$ zu zeigen, also:
         </p>
-        <ol>
+        <ol class="outside-list">
           <li>
             <p>
               $F(\mathbf{x}) \leq F'(\mathbf{x})$ und
@@ -1258,7 +1257,7 @@ public boolean constantFalse(boolean x) {
           Wir können zwar nicht genau mit dem Finger auf einen
           Term von $F$ zeigen, der 1 wird, wissen aber
           <i>per
-            Monotonie</i>, dass es so einen geben muss.<span class="qed">\(\square\)</span>
+            Monotonie</i>, dass es so einen geben muss.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
@@ -1266,7 +1265,7 @@ public boolean constantFalse(boolean x) {
         $F'$ dieselbe Boolesche Funktion berechnen, nämlich
         <span class="nowrap">$f$.</span>
         Die Formel $F'$ enthält keine negativen Literale
-        und ist somit ein monotoner Schaltkreis von Tiefe 2.<span class="qed">\(\square\)</span>
+        und ist somit ein monotoner Schaltkreis von Tiefe 2.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
