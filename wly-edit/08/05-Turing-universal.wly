@@ -62,6 +62,7 @@
         $U$ mit Eingabewort $x \in \Lambda^*$ folgendes tut:
 
         |> ul
+            class=outside-list
             |> li
                 Falls $x$ nicht die Form $\enc(M) w$ mit
                 $w \in \Sigma^*$ hat, lehnt sie ab;
@@ -70,6 +71,7 @@
                 $M$ und ein Wort $w \in \Sigma^*$ ist:
 
                 |> ul
+                    class=outside-list
                     |> li
                         Falls $M$ mit Eingabewort $w$ nicht terminiert, dann
                         terminiert $U$ mit Eingabewort $x$ auch nicht.

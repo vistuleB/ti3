@@ -475,14 +475,14 @@
         Wir können dies schön der Reihe nach tun:
 
         |> ol
-            class=nested
+            class=outside-list
             |> li
                 Initialisiere $K := \{\epsilon\}$
             |> li
                 `for` $i=n$ `down to` 1 `do:`
 
                 |> ul
-                    class=nested
+                    class=outside-list
                     |> li
                         $K := \First_k(\sigma_i) \circ_k K$
                         |> span
@@ -568,6 +568,7 @@
             |> img
                 style=height:8em
                 src=./img/context-free/LL/tree-depth-2.svg
+                loading=lazy
 
         ein Ableitungsbaum der Höhe 2 von $S \Step{}^* ca$,
         und somit gilt

@@ -296,7 +296,7 @@
     |> Statement
         handle=lemma-characterization-LR0
         title=*Lemma*
-        *(LR(0), äquivalente Formulierung).* Eine Grammatik
+        *(LR(0), äquivalente Formulierung).* Eine GrAmmatik
         $G$ ist LR(0) genau dann, wenn für alle korrekten
         Linksreduktionsschritte
         $\alpha \beta w \rstep{} \alpha Xw$ und

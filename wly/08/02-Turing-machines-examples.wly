@@ -77,7 +77,7 @@
             |> img
                 style=height:12em
                 src=img/turing-machines/exampe-2-aabbcc/delta-table.svg
-                
+                loading=lazy
 
         Beachten Sie: manche Zellen sind leer. Damit meine
         ich, dass die Turingmaschine dort in den Zustand `reject`
@@ -104,9 +104,10 @@
 
         auf turingmachinesimulator.com als
 
-        |> pre
-            q, a
-            r, b, D 
+        ```
+        q, a
+        r, b, D 
+        ```
 
         angeben, wobei die Richtung $D$ mit den Symbolen 
         `<`, `-`, `>` codiert wird.
@@ -143,6 +144,7 @@
         \end{align*}
 
         |> ul
+            class=outside-list
             |> li
                 `next`: ist der Anfangszustand. Die Maschine steht
                 am linkesten Zeichen. Ist dieses $\square$, so haben
@@ -171,7 +173,7 @@
             |> img
                 style=height:15em
                 src=img/turing-machines/exampe-2-aabbcc/delta-table-palindromes.svg
-                
+                loading=lazy
 
     |> Exercise
         Implementieren Sie die Turingmaschine für die Palindromsprache

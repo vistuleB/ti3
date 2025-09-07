@@ -14,7 +14,7 @@
         |> a
             href=./2-2.html
             Kapitel 2.2
-        als _eine_ natürliche Zahl $\bar{\alpha}$ codieren
+        \ als _eine_ natürliche Zahl $\bar{\alpha}$ codieren
         können. Mittels dieser Codierung wird eine Sprache
         $L \subseteq \Sigma^*$ zu einer Funktion
 

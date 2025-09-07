@@ -381,6 +381,9 @@ const onKeyDown = (e) => {
       e.preventDefault();
       navigateToChapter("next-page");
       break;
+    case "0":
+      window.location.href = "index.html";
+      break;
   }
 };
 

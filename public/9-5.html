@@ -23,7 +23,10 @@
         >&lt;&lt; Kapitel 9.4</a>
       </div>
       <div class="menu-right">
-        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+          id="next-page"
+          href="./9-6.html"
+        >Kapitel 9.6  &gt;&gt;</a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -54,7 +57,7 @@
       Sie sind gewissermaßen gleich schwer.
     </p>
     <div
-      id="_31_hgi_"
+      id="_32_hgi_"
       class="well statement out"
     >
       <p>
@@ -178,13 +181,14 @@
       die wir im Beweis
       von
       <a
-        href="./9-5.html#_31_hgi_"
+        href="./9-5.html#_32_hgi_"
         class=""
-      >Theorem 1</a>
-      erstellt haben, eine solche 3-CNF ist.
+      >Theorem 9.5.1</a>
+      erstellt haben,
+      eine solche 3-CNF ist.
     </p>
     <div
-      id="_32_hgi_"
+      id="_33_hgi_"
       class="well statement out"
     >
       <p>
@@ -205,9 +209,13 @@
         irgendwie in seiner 3-Färbbarkeit
         oder eben Nicht-3-Färbbarkeit codiert. Dies ist schwieriger.
         Als ersten Schritt legen wir fest, dass die drei Farben
-        nicht $1, 2, 3$ sein sollen, sondern
-        <code>True, False,
-          Neutral</code>.
+        nicht
+        <span class="nowrap">$1$,</span>
+        <span class="nowrap">$2$,</span>
+        $3$ sein sollen, sondern
+        <code>True</code>,
+        <code>False</code>,
+        <code>Neutral</code>.
       </p>
       <div class="carousel__container">
         <div class="carousel">
@@ -355,18 +363,12 @@
 <span class="listing-bol"></span>    <span class="actual-orange-comment"># G ist der oben konstruierte Graph</span>
 <span class="listing-bol"></span>    return is_3_colorable(G)
 </pre>
-<pre class="listing">
-<span class="listing-bol"></span><span>def is_3CNF_satisfiable(the_3_cnf_formula):</span>
-<span class="listing-bol"></span><span>    G = convert_to_graph(the_3_cnf_formula)</span>
-<span class="listing-bol"></span><span class="orange-comment">    # G ist der oben konstruierte Graph</span>
-<span class="listing-bol"></span><span>    return is_3_colorable(G)</span>
-</pre>
       <p>
         <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Wir haben also gEzeigt, wie man eine
+      Wir haben also gezeigt, wie man eine
       <span class="nowrap">$3$-CNF</span>
       $F$ in
       einen Graphen $G$ umwandelt, so dass
@@ -379,14 +381,14 @@
       $$
     </div>
     <p class="main-column">
-      gilt. Allerdings ging das nur unter der Annahme,
-      dass $F$ eine
+      gilt. Allerdings ging das nur unter der Annahme, dass
+      $F$ eine
       <span class="nowrap">$3$-CNF</span>
       ist. Wie verhält es sich, wenn
       $F$ eine allgemeine CNF-Formel ist?
     </p>
     <div
-      id="_33_hgi_"
+      id="_34_hgi_"
       class="well statement out"
     >
       <p>
@@ -514,7 +516,7 @@
             <span style="font-variant:small-caps;">CNF-Satisfiability</span>
             in P, dann auch
             <span style="font-variant:small-caps;">3-Colorability</span>(Theorem
-            <a href="./9-5.html#_31_hgi_">1</a>).
+            <a href="./9-5.html#_32_hgi_">9.5.1</a>).
           </p>
         </li>
         <li>
@@ -523,7 +525,7 @@
             <span style="font-variant:small-caps;">3-Colorability</span>
             in P, dann auch
             <span style="font-variant:small-caps;">3-SAT</span>(Theorem
-            <a href="./9-5.html#_32_hgi_">2</a>).
+            <a href="./9-5.html#_33_hgi_">9.5.2</a>).
           </p>
         </li>
         <li>
@@ -531,7 +533,7 @@
             Wenn
             <span style="font-variant:small-caps;">3-SAT</span>
             in P, dann auch<span style="font-variant:small-caps;">CNF-Satisfiability</span>(Theorem
-            <a href="./9-5.html#_33_hgi_">3</a>).
+            <a href="./9-5.html#_34_hgi_">9.5.3</a>).
           </p>
         </li>
       </ul>
@@ -573,11 +575,10 @@
     </div>
     <p class="main-column">
       Dies ist eine
-      <i>Reduktion</i>, wie wir sie schon in
-      Definition
-      <a href="./8-8.html#_24_hgi_">4</a>
-      kennengelernt haben, nun
-      aber mit einer Aussage über die Laufzeit.
+      <i>Reduktion</i>, wie wir sie schon in Definition
+      <a href="./8-8.html#_24_hgi_">8.8.4</a>
+      kennengelernt haben, nun aber
+      mit einer Aussage über die Laufzeit.
     </p>
     <div class="well statement out">
       <p>
@@ -625,7 +626,8 @@
         <b>9.5.5</b>
         Wenn $L_1 \leq_p L_2$ ist und
         <span class="nowrap">$L_2 \in {\rm P}$,</span>
-        dann auch
+        dann
+        auch
         <span class="nowrap">$L_1 \in {\rm P}$.</span>
       </p>
     </div>
@@ -633,23 +635,25 @@
       Wir haben die folgenden Polynomialzeitreduktionen
       bereits kennengelernt:
     </p>
-    <ol class="main-column">
-      <li>
-        <p>
-          <span style="font-variant:small-caps;">3-Colorability $\leq_p$ CNF-Satisfiability</span>
-        </p>
-      </li>
-      <li>
-        <p>
-          <span style="font-variant:small-caps;">CNF-Satisfiability $\leq_p$ 3-SAT</span>
-        </p>
-      </li>
-      <li>
-        <p>
-          <span style="font-variant:small-caps;">3-SAT $\leq_p$ 3-Colorability</span>
-        </p>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            <span style="font-variant:small-caps;">3-Colorability $\leq_p$ CNF-Satisfiability</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span style="font-variant:small-caps;">CNF-Satisfiability $\leq_p$ 3-SAT</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span style="font-variant:small-caps;">3-SAT $\leq_p$ 3-Colorability</span>
+          </p>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Erinnern Sie sich an
       <span style="font-variant:small-caps;">Independent Set</span>: gegeben ein Graph $G$ und eine Zahl
@@ -699,35 +703,37 @@
         dann gibt es folgende unabhängige Menge der Größe
         <span class="nowrap">$k$:</span>
       </p>
-      <ul>
-        <li>
-          <p>
-            Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
-            $\alpha(x)=1$ ist, ansonsten
-            <span class="nowrap">$\bar{x}$.</span>
-          </p>
-        </li>
-        <li>
-          <p>
-            Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
-            erfülltes Literal, sagen wir
-            <span class="nowrap">$u$.</span>
-            Dieser entspricht
-            dem Klauselknoten
-            <span class="nowrap">$u_C$,</span>
-            der mit mit dem Literalknoten
-            $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
-            $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
-            wir können $u_C$ in $I$ aufnehmen.
-          </p>
-        </li>
-        <li>
-          <p>
-            Unsere Menge $I$ enthält $n$ Literalknoten und $m$
-            Klauselknoten, also insgesamt $k$ Knoten.
-          </p>
-        </li>
-      </ul>
+      <div>
+        <ul class="outside-list">
+          <li>
+            <p>
+              Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
+              $\alpha(x)=1$ ist, ansonsten
+              <span class="nowrap">$\bar{x}$.</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
+              erfülltes Literal, sagen wir
+              <span class="nowrap">$u$.</span>
+              Dieser entspricht
+              dem Klauselknoten
+              <span class="nowrap">$u_C$,</span>
+              der mit mit dem Literalknoten
+              $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
+              $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
+              wir können $u_C$ in $I$ aufnehmen.
+            </p>
+          </li>
+          <li>
+            <p>
+              Unsere Menge $I$ enthält $n$ Literalknoten und $m$
+              Klauselknoten, also insgesamt $k$ Knoten.
+            </p>
+          </li>
+        </ul>
+      </div>
       <p>
         Für die Gegenrichtung nehmen wir an, dass $I$ eine
         unabhängige Menge von $G$ ist und $|I| = n+m$ gilt.
@@ -964,14 +970,17 @@
         einen Kreis gibt, dann klappt es auch mit einem Nachbarn
         (in der Tat: sogar mit zweien).
       </p>
-<pre class="listing container-fluid">
-<span class="listing-bol"></span><code>def has_hamilton_cycle(G):</code>
-<span class="listing-bol"></span>    <code>u = ein beliebiger Knoten</code>
-<span class="listing-bol"></span>    <code>for v in neighbors[u]:</code>
-<span class="listing-bol"></span>    <code>H = G - {u,v} + {s,u} + {t,v}</code>
-<span class="listing-bol"></span>    <code>if has_hamilton_path(H):</code>
-<span class="listing-bol"></span>    <code>return True</code>
-<span class="listing-bol"></span>    <code>return False</code>
+<pre
+  class="listing"
+  language=""
+>
+<span class="listing-bol"></span>def has_hamilton_cycle(G):
+<span class="listing-bol"></span>    u = ein beliebiger Knoten
+<span class="listing-bol"></span>    for v in neighbors[u]:
+<span class="listing-bol"></span>    H = G - {u,v} + {s,u} + {t,v}
+<span class="listing-bol"></span>    if has_hamilton_path(H):
+<span class="listing-bol"></span>    return True
+<span class="listing-bol"></span>    return False
 </pre>
       <p>
         Falls nun

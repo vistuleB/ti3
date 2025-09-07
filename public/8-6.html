@@ -156,9 +156,9 @@
         $$
       </div>
       <p>
-        entscheidbar. Warum? Wir können einfach schauen,
-        ob das Eingabewort $c$ die Form $\enc(M)$ hat und
-        in diesem Fall das Wort $\enc(M) \enc(M)$ der Maschine
+        entscheidbar. Warum? Wir können einfach schauen, ob
+        das Eingabewort $c$ die Form $\enc(M)$ hat und in
+        diesem Fall das Wort $\enc(M) \enc(M)$ der Maschine
         $H$ übergeben. Die Sprache $\diag$ ist, salopp ausgedrückt,
         die Menge aller Turingmaschinen, die ihre eigene Codierung
         als Inputwort akzeptieren. Ebenso wäre auch
@@ -214,7 +214,7 @@
         wir nämlich ein Eingabewort $z \in \Sigma^*$ konstruieren,
         auf dem $M$ scheitert, also entweder
       </p>
-      <ol>
+      <ol class="outside-list">
         <li>
           <p>
             $f_H(z) = \texttt{accept}$ aber
@@ -249,7 +249,7 @@
         <span class="nowrap">$y := \enc(D)$,</span>
         so dass entweder
       </p>
-      <ol>
+      <ol class="outside-list">
         <li>
           <p>
             $f_H(yy) = \texttt{accept}$ aber
@@ -277,12 +277,15 @@
         liefert $H$ zwar eine Antwort, aber die falsche. Der
         Code für $D$ ist sehr einfach:
       </p>
-<pre class="listing">
-<span class="listing-bol"></span><code>def D(x):</code>
-<span class="listing-bol"></span> <code>if H(xx) == accept then</code>
-<span class="listing-bol"></span> <code>reject</code>
-<span class="listing-bol"></span> <code>else</code>
-<span class="listing-bol"></span> <code>accept</code>
+<pre
+  class="listing"
+  language=""
+>
+<span class="listing-bol"></span>def D(x):
+<span class="listing-bol"></span>    if H(xx) == accept then
+<span class="listing-bol"></span>    reject
+<span class="listing-bol"></span>    else
+<span class="listing-bol"></span>    accept
 </pre>
       <p>
         Zur Erinnerung:
@@ -290,7 +293,7 @@
         Wir unterscheiden
         drei Fälle.
       </p>
-      <ul>
+      <ul class="outside-list">
         <li>
           <p>
             <span class="nowrap">$H(yy) = \texttt{reject}$.</span>

@@ -127,6 +127,7 @@
         auf dem $M$ scheitert, also entweder
 
         |> ol
+            class=outside-list
             |> li
 
                 $f_H(z) = \texttt{accept}$ aber $z \not \in \halt$,
@@ -147,6 +148,7 @@
         als $y := \enc(D)$, so dass entweder
 
         |> ol
+            class=outside-list
             |> li
 
                 $f_H(yy) = \texttt{accept}$ aber
@@ -164,18 +166,19 @@
         liefert $H$ zwar eine Antwort, aber die falsche. Der
         Code für $D$ ist sehr einfach:
 
-        |> pre
-            class=listing
-            `def D(x):`
-            \ `if H(xx) == accept then`
-            \ `reject`
-            \ `else`
-            \ `accept`
+        ```listing
+        def D(x):
+            if H(xx) == accept then
+            reject
+            else
+            accept
+        ```
 
         Zur Erinnerung: $y := \enc(D)$. Wir unterscheiden
         drei Fälle.
 
         |> ul
+            class=outside-list
             |> li
 
                 $H(yy) = \texttt{reject}$. Dann geht der Aufruf von

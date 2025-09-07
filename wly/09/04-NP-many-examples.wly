@@ -44,31 +44,16 @@
         $G$ (im Turingmaschinenkontext also das Eingabewort
         $x$) und ein _Zertifikat_. Hier ist unser Code:
 
-        |> pre
-            class=listing
-            |> span
-                def is_3_coloring(graph, c):
-            |> br
-            |> span
-                \    (V,E) = graph
-            |> br
-            |> span
-                \    for (u,v) in E:
-            |> br
-            |> span
-                \    if c[u] == c[v]:
-            |> br
-            |> span
-                \    return False
-            |> br
-            |> span
-                \    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
-            |> br
-            |> span
-                \        return False
-            |> br
-            |> span
-                \    return True
+        ```listing
+        def is_3_coloring(graph, c):
+            (V,E) = graph
+            for (u,v) in E:
+            if c[u] == c[v]:
+            return False
+            if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
+                return False
+            return True
+        ```
 
         Falls nun $G$ $3$-färbbar ist, wenn es also eine solche
         Färbung $c: V \rightarrow \{1,2,3\}$ gibt, dann wird
@@ -173,6 +158,7 @@
             existiert!
 
             |> ul
+                class=outside-list
                 |> li
                     |> span
                         style=font-variant:small-caps;
@@ -218,13 +204,10 @@
         nicht das entsprechende Entscheidungsproblem, weil
         es uns nicht erlaubt, den Faktor auch zu finden.
 
-        |> div
-            class=well well-lg numbered-exercise
-            |> span
-                data-label-title=Problem
-                id=problem-small-factor
-                class=numbered-title
-                Problem
+        |> Statement
+            title=*Problem*
+            handle=problem-small-factor
+
             (
             |> span
                 style=font-variant:small-caps;
@@ -249,7 +232,7 @@
         |> span
             style=font-variant:small-caps;
             Small Factor
-        ist offensichtlich in NP: das Zertifikat $z$ ist jener
+        \ ist offensichtlich in NP: das Zertifikat $z$ ist jener
         Faktor (so er denn existiert), und die Zertifikatmaschine
         $M$ muss nun $z$ mit $K$ multiplizieren und schauen,
         ob auch $X$ herauskommt. Nicht so offensichtlich jedoch
@@ -260,7 +243,7 @@
             |> span
                 style=font-variant:small-caps;
                 No Small Factor
-            das Komplement von 
+            \ das Komplement von 
             |> span
                 style=font-variant:small-caps;
                 Small Factor

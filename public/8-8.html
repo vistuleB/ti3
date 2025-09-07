@@ -36,7 +36,7 @@
       </p>
     </div>
     <p class="main-column">
-      Erinnerin Sie sich an kontextfreie Grammatiken? Das
+      ERinnerin Sie sich an kontextfreie Grammatiken? Das
       waren formale Grammatiken wie zum Beispiel
     </p>
     <div class="math-block main-column">
@@ -49,8 +49,8 @@
       $$
     </div>
     <p class="main-column">
-      Diese Grammatiken erlauben uns, gewisse Sprachen
-      zu beschreiben, indem Sie Regeln festlegen - hier
+      Diese Grammatiken erlauben uns, gewisse Sprachen zu
+      beschreiben, indem Sie Regeln festlegen - hier
       <i>Produktionen</i>
       genannt, nach welchen man aus dem Startsymbol $S$
       Wörter über dem Alphabet (hier:
@@ -126,11 +126,11 @@
         $$
       </div>
       <p>
-        wobei $\beta^R$ das Wort $\beta$ von rechts nach
-        links gelesen bedeutet, also
+        wobei $\beta^R$ das Wort $\beta$ von rechts nach links
+        gelesen bedeutet, also
         <span class="nowrap">$(xyz)^R = zyx$.</span>
-        Wir
-        fügen noch eine weitere Regel hinzu:
+        Wir fügen
+        noch eine weitere Regel hinzu:
       </p>
       <div class="math-block">
         $$
@@ -257,39 +257,41 @@
       "echten" Leben verwenden wir Reduktionen, um bereits
       gefundene Lösungen zu "recyceln". Beispielsweise:
     </p>
-    <ul class="main-column">
-      <li>
-        <p>
-          <b>Aufgabe:</b>
-          Zeigen Sie, dass die Funktion
-          $n \mapsto n!$ im
-          <span class="nowrap">$\lambda$-Kalkül</span>
-          berechenbar ist.
-        </p>
-      </li>
-      <li>
-        <p>
-          Wir wissen bereits, wie man $n \mapsto n!$ als primitiv-rekursive
-          Funktion schreibt.
-        </p>
-      </li>
-      <li>
-        <p>
-          Wir wissen bereits, wie man eine allgemeine primitiv
-          rekursive Funktion im
-          <span class="nowrap">$\lambda$-Kalkül</span>
-          implementiert.
-        </p>
-      </li>
-      <li>
-        <p>
-          Wir schließen nun, dass $n \mapsto n!$ im
-          <span class="nowrap">$\lambda$-Kalkül</span>
-          implementierbar ist, und ersparen
-          uns die Details.
-        </p>
-      </li>
-    </ul>
+    <div class="main-column">
+      <ul class="outside-list">
+        <li>
+          <p>
+            <b>Aufgabe:</b>
+            Zeigen Sie, dass die Funktion
+            $n \mapsto n!$ im
+            <span class="nowrap">$\lambda$-Kalkül</span>
+            berechenbar ist.
+          </p>
+        </li>
+        <li>
+          <p>
+            Wir wissen bereits, wie man $n \mapsto n!$ als primitiv-rekursive
+            Funktion schreibt.
+          </p>
+        </li>
+        <li>
+          <p>
+            Wir wissen bereits, wie man eine allgemeine primitiv
+            rekursive Funktion im
+            <span class="nowrap">$\lambda$-Kalkül</span>
+            implementiert.
+          </p>
+        </li>
+        <li>
+          <p>
+            Wir schließen nun, dass $n \mapsto n!$ im
+            <span class="nowrap">$\lambda$-Kalkül</span>
+            implementierbar ist, und ersparen
+            uns die Details.
+          </p>
+        </li>
+      </ul>
+    </div>
     <p class="main-column">
       Im Kontext der Turing-Berechenbarkeit können wir dieses
       Prinzip wie folgt formalisieren:
@@ -342,8 +344,8 @@
       <p>
         <b>Beobachtung</b>
         <b>8.8.5</b>
-        Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist
-        und $L_2$ entscheidbar ist, dann ist auch $L_1$ entscheidbar.
+        Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und
+        $L_2$ entscheidbar ist, dann ist auch $L_1$ entscheidbar.
       </p>
     </div>
     <div class="well highlight out">
@@ -394,9 +396,8 @@
       <p>
         <b>Beobachtung</b>
         <b>8.8.6</b>
-        Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist
-        und $L_1$ unentscheidbar ist, dann ist auch $L_2$
-        unentscheidbar.
+        Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und
+        $L_1$ unentscheidbar ist, dann ist auch $L_2$ unentscheidbar.
       </p>
     </div>
     <div class="well highlight out">
@@ -473,21 +474,20 @@
         $$
       </div>
       <p>
-        Die Grammatik $G'$ erzeugt genau die Sprache der
-        Palindromwörter über
+        Die Grammatik $G'$ erzeugt genau die Sprache der Palindromwörter
+        über
         <span class="nowrap">$\Sigma$.</span>
-        Unsere Reduktion
-        $f$ nimmt nun als Eingabe eine kontextfreie Grammatik
-        $G$ (bzw. deren Codierung) und gibt das Paar
-        $(G,G')$ aus (bzw. deren Codierungen). Wir stellen
-        fest: $G$ kann ein Palindromwort ableiten genau dann,
-        wenn
+        Unsere Reduktion $f$ nimmt nun als
+        Eingabe eine kontextfreie Grammatik $G$ (bzw. deren
+        Codierung) und gibt das Paar $(G,G')$ aus (bzw. deren
+        Codierungen). Wir stellen fest: $G$ kann ein Palindromwort
+        ableiten genau dann, wenn
         <span class="nowrap">$L(G) \cap L(G') \ne \emptyset$,</span>
-        wenn es also
-        ein Wort $\alpha$ gibt, dass aus $G$ und aus $G'$
-        abgeleitet werden kann. Die Funktion $f$ ist also
-        eine Reduktion vom Palindromwortproblem auf das Schnittproblem.
-        Mit Behauptung 4.6.9 zusammen heißt das, dass das Schnittproblem
+        wenn es also ein
+        Wort $\alpha$ gibt, dass aus $G$ und aus $G'$ abgeleitet
+        werden kann. Die Funktion $f$ ist also eine Reduktion
+        vom Palindromwortproblem auf das Schnittproblem. Mit
+        Behauptung 4.6.9 zusammen heißt das, dass das Schnittproblem
         unentscheidbar ist.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>

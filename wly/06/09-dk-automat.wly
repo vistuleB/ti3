@@ -4,7 +4,7 @@
         Von der Grammatik $\hat{G}$ zu einem nichtdeterministischen
         endlichen Automaten
 
-    Um den $LR(0)$-Parser gemäß  Algorithmus >>algorithm-LR-parser
+    Um den $LR(0)$-Parser gemäß Algorithmus >>algorithm-LR-parser
     zu implementieren, müssen wir den Test
     $\gamma \stackrel{?}\in \Front(G)$ durchführen und,
     falls die Antwort _ja_ ist, die Blüte finden. Dies
@@ -158,6 +158,7 @@
         wie folgt konstruieren:
 
         |> ol
+            class=outside-list
             |> li
                 Für jede Produktion $X \rightarrow \beta$ gibt es
                 einen Zustandsübergang
@@ -262,6 +263,7 @@
         genau dann, wenn folgende zwei Bedingungen gelten:
 
         |> ul
+            class=outside-list
             |> li
                 (DK.1) Ein akzeptierender Zustand von $M$ (der ja
                 eine Menge von Zuständen des NDK-Automaten ist) enthält
@@ -283,13 +285,14 @@
 
         |> Remark
             *Lemma >>lemma-characterization-LR0, noch einmal
-            (LR(0), äquIvalente Formulierung).* Eine Grammatik
+            (LR(0), äquivalente Formulierung).* Eine Grammatik
             $G$ ist LR(0) genau dann, wenn für alle korrekten
             Linksreduktionsschritte
             $\alpha \beta w \rstep{} \alpha Xw$ und
             $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
 
             |> ol
+                class=outside-list
                 |> li
                     Falls $\alpha \beta = \alpha' \beta'$ dann auch
                     $\beta = \beta'$ und $X= X'$; in Worten: wenn die

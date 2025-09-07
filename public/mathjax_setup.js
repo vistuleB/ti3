@@ -97,19 +97,20 @@ window.MathJax = {
       state: "\\textnormal{state}",
       lsr: "\\{\\texttt{L}, \\texttt{S}, \\texttt{R}\\}",
       enc: "\\textnormal{enc}",
-      writelambda:
-        "\\Sigma \\cup \\{0, 1, \\texttt{#}, \\texttt{,}, \\texttt{L}, \\texttt{S}, \\texttt{R}, \\texttt{;}\\}\\}",
+      writelambda: "\\Sigma \\cup \\{0, 1, \\texttt{#}, \\texttt{,}, \\texttt{L}, \\texttt{S}, \\texttt{R}, \\texttt{;}\\}\\}",
       halt: "{\\rm H{\\small ALT}}",
       tm: "\\textnormal{TM}",
       diag: "\\textnormal{Diag}",
       negdiag: "\\textnormal{NegDiag}",
       top: "\\textnormal{top}",
       bottom: "\\textnormal{bottom}",
-      TIME: "\\textnormal{TIME}",
       bnegdiag: "\\textnormal{TimedNegDiag}",
       bhalt: "{\\rm T{\\small IMED}H{\\small ALT}}",
       rls: "\\{\\texttt{L}, \\texttt{S}, \\texttt{R}\\}",
-      NTIME: "\\textnormal{NTIME}"
-    },
+      TIME: "\\textnormal{TIME}",
+      NTIME: "\\textnormal{NTIME}",
+      SPACE: "\\textnormal{SPACE}",
+      NSPACE: "\\textnormal{NSPACE}}",
+    }
   }
 }

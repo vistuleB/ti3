@@ -55,6 +55,7 @@
         $L \subseteq \Sigma^*$ in Zeit $t$ wenn
 
         |> ul
+            class=outside-list
             |> li
                 sie die Sprache entscheidet, also
                 $x \in L \Longleftrightarrow f_M(x) = \texttt{accept}$

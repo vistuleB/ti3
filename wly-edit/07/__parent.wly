@@ -524,8 +524,9 @@
         mit $w, w_1, \dots, w_n \in \{a,b\}^*$. Sie implementiert
         also im Prinzip die Funktion
 
-        |> pre
-            List.member x list
+        ```
+        List.member x list
+        ```
 
         die überprüft, ob $x$ in der angegebenen Liste enthalten
         ist:

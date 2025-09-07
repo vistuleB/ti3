@@ -394,7 +394,6 @@
                 |> img
                     style=height:15em
                     src=img/circuits/top-down-if-then-else.svg
-                    loading=lazy
 
             Ich behaupte, dass obiger Schaltkreis tatsächlich
             $f$ berechnet. Falls dies noch nicht klar sein sollte,
@@ -403,6 +402,7 @@
             nun also ein konkreter Input $x_1,\dots,x_n$ gegeben.
 
             |> ul
+                class=outside-list
                 |> li
                     Der Fall $x_1 = 1$. Dann gibt der obige Schaltkreis
                     den Wert $f_1(x_2,\dots,x_n$ aus, was per Definition
@@ -465,7 +465,6 @@
             |> img
                 style=height:15em
                 src=img/circuits/top-down-if-then-else-2.svg
-                loading=lazy
 
         Die "durchgetrichenen" Kabel bedeuten, dass hier mehrere
         Kabel parallel laufen (also hier $n-1$ viele). Erkennen
@@ -477,7 +476,6 @@
             |> img
                 style=height:18em
                 src=img/circuits/top-down-if-then-else-3.svg
-                loading=lazy
 
         und enthält ein NOT-Gate. Aber klar: wir können natürlich
         nicht die Konstruktion aus dem vorherigen Beweis wiederholen
@@ -493,7 +491,6 @@
             |> img
                 style=height:18em
                 src=img/circuits/top-down-if-then-else-4.svg
-                loading=lazy
 
         Der linke Schaltkreis gibt uns, als Formel geschrieben,
 
@@ -520,7 +517,6 @@
             |> img
                 style=height:18em
                 src=img/circuits/top-down-if-then-else-monotone.svg
-                loading=lazy
 
         bzw. als Formel:
 
@@ -543,6 +539,7 @@
             $x_1$.
 
             |> ul
+                class=outside-list
                 |> li
                     Der Fall $x_1 = 0$. Dann gilt
 
@@ -616,7 +613,6 @@
             |> img
                 style=height:18em
                 src=img/circuits/top-down-if-then-else-monotone-finished.svg
-                loading=lazy
 
         ein monotoner Schaltkreis für $f$.
         |> QED

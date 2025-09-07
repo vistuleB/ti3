@@ -93,15 +93,18 @@
         und ein
         <i>Zertifikat</i>. Hier ist unser Code:
       </p>
-<pre class="listing">
-<span class="listing-bol"></span><span>def is_3_coloring(graph, c):</span>
-<span class="listing-bol"></span><span>    (V,E) = graph</span>
-<span class="listing-bol"></span><span>    for (u,v) in E:</span>
-<span class="listing-bol"></span><span>    if c[u] == c[v]:</span>
-<span class="listing-bol"></span><span>    return False</span>
-<span class="listing-bol"></span><span>    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:</span>
-<span class="listing-bol"></span><span>        return False</span>
-<span class="listing-bol"></span><span>    return True</span>
+<pre
+  class="listing"
+  language=""
+>
+<span class="listing-bol"></span>def is_3_coloring(graph, c):
+<span class="listing-bol"></span>    (V,E) = graph
+<span class="listing-bol"></span>    for (u,v) in E:
+<span class="listing-bol"></span>    if c[u] == c[v]:
+<span class="listing-bol"></span>    return False
+<span class="listing-bol"></span>    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
+<span class="listing-bol"></span>        return False
+<span class="listing-bol"></span>    return True
 </pre>
       <p>
         Falls nun $G$
@@ -229,7 +232,7 @@
           der das entsprechende Objekt findet, falls es denn
           existiert!
         </p>
-        <ul>
+        <ul class="outside-list">
           <li>
             <p>
               <span style="font-variant:small-caps;">Subset Sum</span>
@@ -275,13 +278,14 @@
         bzw.<span style="font-variant:small-caps;">NonPrimes</span>nicht das entsprechende Entscheidungsproblem, weil
         es uns nicht erlaubt, den Faktor auch zu finden.
       </p>
-      <div class="well well-lg numbered-exercise">
+      <div
+        id="_30_hgi_"
+        class="well statement"
+      >
         <p>
-          <span
-            data-label-title="Problem"
-            id="problem-small-factor"
-            class="numbered-title"
-          >Problem</span>(<span style="font-variant:small-caps;">Small Factor</span>) Gegeben eine Zahl
+          <b>Problem</b>
+          <b>9.4.6</b>
+          (<span style="font-variant:small-caps;">Small Factor</span>) Gegeben eine Zahl
           <span class="nowrap">$X \in \N$,</span>
           binär codiert als
           <span class="nowrap">$x \in \{0,1\}^n$,</span>
@@ -293,7 +297,7 @@
         </p>
       </div>
       <div
-        id="_30_hgi_"
+        id="_31_hgi_"
         class="well exercise"
       >
         <p>
@@ -317,8 +321,9 @@
       </div>
       <p>
         Das Entscheidungsproblem
-        <span style="font-variant:small-caps;">Small Factor</span>ist offensichtlich in NP: das Zertifikat $z$ ist jener
-        Faktor (so er denn existiert), und die Zertifikatmaschine
+        <span style="font-variant:small-caps;">Small Factor</span>
+        ist offensichtlich in NP: das Zertifikat $z$ ist
+        jener Faktor (so er denn existiert), und die Zertifikatmaschine
         $M$ muss nun $z$ mit $K$ multiplizieren und schauen,
         ob auch $X$ herauskommt. Nicht so offensichtlich jedoch
         ist folgendes:
@@ -327,7 +332,8 @@
         <p>
           <b>Übungsaufgabe 9.4.4</b>
           Sei
-          <span style="font-variant:small-caps;">No Small Factor</span>das Komplement von
+          <span style="font-variant:small-caps;">No Small Factor</span>
+          das Komplement von
           <span style="font-variant:small-caps;">Small Factor</span>, also
         </p>
         <div class="math-block">

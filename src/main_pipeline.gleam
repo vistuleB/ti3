@@ -34,26 +34,18 @@ pub fn main_pipeline()  -> List(Pipe) {
     "CarouselContainer",
   ]
 
-  let qed_replacer = [
+  let qed = [
     vxml.V(
       our_blame,
       "span",
-      [
-        vxml.Attribute(our_blame, "style", "color:#0000;visibility:none;"),
-      ],
-      [
-        vxml.T(our_blame, [vxml.TextLine(our_blame, "A")]),
-      ]
+      [vxml.Attribute(our_blame, "style", "color:#0000;visibility:none;")],
+      [vxml.T(our_blame, [vxml.TextLine(our_blame, "A")])],
     ),
     vxml.V(
       our_blame,
       "span",
-      [
-        vxml.Attribute(our_blame, "class", "qed"),
-      ],
-      [
-        vxml.T(our_blame, [vxml.TextLine(our_blame, "\\(\\square\\)")]),
-      ]
+      [vxml.Attribute(our_blame, "class", "qed")],
+      [vxml.T(our_blame, [vxml.TextLine(our_blame, "\\(\\square\\)")])],
     ),
   ]
 
@@ -69,21 +61,19 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("Sub", "counter", "ExerciseCounter"),
         #("Sub", "counter", "StatementCounter")
       ]),
-      dl.append_value_to_handle_attribute_if_has_ancestor_else(#("Statement", "Sub", "::øøChapterCounter.::øøSubCounter.::øøStatementCounter", "::øøChapterCounter.::øøStatementCounter")),
-      dl.append_value_to_handle_attribute_if_has_ancestor_else(#("Exercise", "Sub", "::øøChapterCounter.::øøSubCounter.::øøExerciseCounter", "::øøChapterCounter.::øøExerciseCounter")),
-      dl.append_value_to_handle_attribute_if_has_ancestor_else(#("Topic", "Sub", "::øøChapterCounter.::øøSubCounter", "::øøChapterCounter")),
-      dl.associate_counter_by_prepending_incrementing_attribute__batch([
-        #("Chapter", "ChapterCounter", infra.GoBack),
-        #("Exercise", "ExerciseCounter", infra.Continue),
-        #("Sub", "SubCounter", infra.GoBack),
-        #("Statement", "StatementCounter", infra.Continue)
-      ]),
+      dl.prepend_attribute(#("Chapter", "path", "./::øøChapterCounter-0.html", infra.GoBack)),
+      dl.prepend_attribute(#("Sub", "path", "./::øøChapterCounter-::øøSubCounter.html", infra.GoBack)),
+      dl.prepend_counter_incrementing_attribute(#("Chapter", "ChapterCounter", infra.GoBack)),
+      dl.prepend_counter_incrementing_attribute(#("Sub", "SubCounter", infra.GoBack)),
+      dl.prepend_counter_incrementing_attribute(#("Exercise", "ExerciseCounter", infra.Continue)),
+      dl.prepend_counter_incrementing_attribute(#("Statement", "StatementCounter", infra.Continue)),
+      dl.set_handle_value_if_has_ancestor_else(#("Statement", "Sub", "::øøChapterCounter.::øøSubCounter.::øøStatementCounter", "::øøChapterCounter.::øøStatementCounter")),
+      dl.set_handle_value_if_has_ancestor_else(#("Exercise", "Sub", "::øøChapterCounter.::øøSubCounter.::øøExerciseCounter", "::øøChapterCounter.::øøExerciseCounter")),
+      dl.set_handle_value_if_has_ancestor_else(#("Topic", "Sub", "::øøChapterCounter.::øøSubCounter", "::øøChapterCounter")),
       dl.auto_generate_child_if_missing_from_attribute(#("Chapter", "ChapterTitle", "title")),
       dl.auto_generate_child_if_missing_from_attribute(#("Sub", "SubTitle", "title")),
       dl.prepend_text_node(#("ChapterTitle","::øøChapterCounter. ")), 
       dl.prepend_text_node(#("SubTitle", "::øøChapterCounter.::øøSubCounter ")),
-      dl.append_attribute__outside(#("Chapter", "path", "./::øøChapterCounter-0.html"), []),
-      dl.append_attribute__outside(#("Sub", "path", "./::øøChapterCounter-::øøSubCounter.html"), []),
       dl.prepend_text_node_if_has_ancestor_else__batch([
         #(
           "Exercise",
@@ -152,8 +142,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.rearrange_links(#("Übungsaufgabe <a href=1>_1_</a>", "<a href=1>Übungsaufgabe _1_</a>")),
       dl.rearrange_links(#("Aufgabe <a href=1>_1_</a>", "<a href=1>Aufgabe _1_</a>")),
       dl.rearrange_links(#("Kapitel <a href=1>_1_</a>", "<a href=1>Kapitel _1_</a>")),
-      dl.rearrange_links(#("Lemma <a href=1>_1_</a>.<a href=2>_2_</a>.<a href=3>_3_</a>", "<a href=3>Lemma _1_._2_._3_</a>")),    
-      // dl.rearrange_links(#("Lemma <a href=1>_1_</a>", "<a href=1>Lemma _1_</a>")),    
+      dl.rearrange_links(#("Lemma <a href=1>_1_</a>", "<a href=1>Lemma _1_</a>")),    
       dl.rearrange_links(#("Algorithmus <a href=1>_1_</a>", "<a href=1>Algorithmus _1_</a>")),
     ],
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
@@ -198,7 +187,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.append_class_to_child_if_is_not_one_of(#("Index", "main-column", ["nav"])),
       dl.append_attribute__outside(#("img", "class", "constrained transition-all"), ["CarouselContainer"]),
       dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), ["CarouselContainer"]),
-      dl.replace_with_arbitrary(#("QED", qed_replacer)),
+      dl.replace_with_arbitrary(#("QED", qed)),
       dl.rename_with_attributes(#("CircleX", "img", [#("class", "circle-X-img"), #("src", "img/context-free/LR/circle-X.svg")])),
       dl.rename(#("MathBlock", "div")),
       dl.rename(#("Index", "div")),
@@ -222,7 +211,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.rename(#("SubTheorem", "div")),
       dl.rename(#("NoWrap", "span")),
       dl.delete_attribute__batch([".", "counter", "title"]),
-      dl.check_tags(#(post_transformation_approved_tags,"post-transformation"))
+      dl.check_tags(#(post_transformation_approved_tags,"post-transformation")),
     ]
   ]
   |> list.flatten

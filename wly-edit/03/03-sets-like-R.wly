@@ -29,6 +29,7 @@
         Mit etwas reeller Analysis kann man nun zeigen:
 
         |> ul
+            class=outside-list
             |> li
                 $f$ ist stetig.
             |> li
@@ -232,6 +233,7 @@
         Die Funktion $f^{-1}$ bildet
 
         |> ul
+            class=outside-list
             |> li
                 $\left[0,\frac{1}{4}\right)$ auf
                 $\left[0,\frac{1}{2}\right) \times \left[0,\frac{1}{2}\right)$

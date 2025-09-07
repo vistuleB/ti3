@@ -78,7 +78,6 @@
             |> img
                 style=height:15em
                 src=./img/primitive-rekursion/composition.svg
-                loading=lazy
 
     Um aber komplexere Operationen implementieren zu können,
     brauchen wir eine Art von Schleife. Was ist die einfachste
@@ -143,6 +142,7 @@
         Regeln der primitiven Rekursion neue Funktionen erstellt:
 
         |> ul
+            class=outside-list
             |> li
                 `Proj(k)`: erzeugt die Funktion
 

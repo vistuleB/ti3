@@ -144,8 +144,8 @@
         _$F$ ist erfüllbar_ irgendwie in seiner 3-Färbbarkeit
         oder eben Nicht-3-Färbbarkeit codiert. Dies ist schwieriger.
         Als ersten Schritt legen wir fest, dass die drei Farben
-        nicht $1, 2, 3$ sein sollen, sondern `True, False,
-        Neutral`.
+        nicht $1$, $2$, $3$ sein sollen, sondern `True`, `False`,
+        `Neutral`.
 
         |> Carousel
             src=img/09-complexity-theory/sat-to-col/sat-to-col-01-01.svg
@@ -187,24 +187,9 @@
             return is_3_colorable(G)
         ```
 
-        |> pre
-            class=listing
-            |> span
-                def is_3CNF_satisfiable(the_3_cnf_formula):
-            |> br
-            |> span
-                \    G = convert_to_graph(the_3_cnf_formula)
-            |> br
-            |> span
-                class=orange-comment
-                \    # G ist der oben konstruierte Graph
-            |> br
-            |> span
-                \    return is_3_colorable(G)
-
         |> QED
 
-    Wir haben also gEzeigt, wie man eine $3$-CNF $F$ in
+    Wir haben also gezeigt, wie man eine $3$-CNF $F$ in
     einen Graphen $G$ umwandelt, so dass
 
     \begin{align*}
@@ -376,19 +361,21 @@
     Wir haben die folgenden Polynomialzeitreduktionen
     bereits kennengelernt:
 
-    |> ol
-        |> li
-            |> span
-                style=font-variant:small-caps;
-                3-Colorability $\leq_p$ CNF-Satisfiability
-        |> li
-            |> span
-                style=font-variant:small-caps;
-                CNF-Satisfiability $\leq_p$ 3-SAT
-        |> li
-            |> span
-                style=font-variant:small-caps;
-                3-SAT $\leq_p$ 3-Colorability
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                |> span
+                    style=font-variant:small-caps;
+                    3-Colorability $\leq_p$ CNF-Satisfiability
+            |> li
+                |> span
+                    style=font-variant:small-caps;
+                    CNF-Satisfiability $\leq_p$ 3-SAT
+            |> li
+                |> span
+                    style=font-variant:small-caps;
+                    3-SAT $\leq_p$ 3-Colorability
 
     Erinnern Sie sich an 
     |> span
@@ -426,20 +413,22 @@
         dann gibt es folgende unabhängige Menge der Größe
         $k$:
 
-        |> ul
-            |> li
-                Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
-                $\alpha(x)=1$ ist, ansonsten $\bar{x}$.
-            |> li
-                Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
-                erfülltes Literal, sagen wir $u$. Dieser entspricht
-                dem Klauselknoten $u_C$, der mit mit dem Literalknoten
-                $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
-                $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
-                wir können $u_C$ in $I$ aufnehmen.
-            |> li
-                Unsere Menge $I$ enthält $n$ Literalknoten und $m$
-                Klauselknoten, also insgesamt $k$ Knoten.
+        |> div
+            |> ul
+                class=outside-list
+                |> li
+                    Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
+                    $\alpha(x)=1$ ist, ansonsten $\bar{x}$.
+                |> li
+                    Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
+                    erfülltes Literal, sagen wir $u$. Dieser entspricht
+                    dem Klauselknoten $u_C$, der mit mit dem Literalknoten
+                    $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
+                    $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
+                    wir können $u_C$ in $I$ aufnehmen.
+                |> li
+                    Unsere Menge $I$ enthält $n$ Literalknoten und $m$
+                    Klauselknoten, also insgesamt $k$ Knoten.
 
         Für die Gegenrichtung nehmen wir an, dass $I$ eine
         unabhängige Menge von $G$ ist und $|I| = n+m$ gilt.
@@ -575,15 +564,15 @@
         einen Kreis gibt, dann klappt es auch mit einem Nachbarn
         (in der Tat: sogar mit zweien).
 
-        |> pre
-            class=listing container-fluid
-            `def has_hamilton_cycle(G):`
-            \    `u = ein beliebiger Knoten`
-            \    `for v in neighbors[u]:`
-            \    `H = G - {u,v} + {s,u} + {t,v}`
-            \    `if has_hamilton_path(H):`
-            \    `return True`
-            \    `return False`
+        ```listing
+        def has_hamilton_cycle(G):
+            u = ein beliebiger Knoten
+            for v in neighbors[u]:
+            H = G - {u,v} + {s,u} + {t,v}
+            if has_hamilton_path(H):
+            return True
+            return False
+        ```
 
         Falls nun `has_hamilton_path` polynomielle Laufzeit
         $O(n^k)$ hat, so hat `has_hamilton_cycle` eine Laufzeit

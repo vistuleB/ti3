@@ -106,8 +106,8 @@
       $$
     </div>
     <p class="main-column">
-      codieren. Codierung ist im Prinzip kein Problem,
-      wir werden aber ein paar Subtilitäten ansprechen. Punkt
+      codieren. Codierung ist im Prinzip kein Problem, wir
+      werden aber ein paar Subtilitäten ansprechen. Punkt
       2 ist schwieriger. Können wir eine Maschine bauen,
       die als eingabe (1) die Codierung $\enc(M)$ einer
       Turingmaschine und (2) ein Eingabewort
@@ -141,39 +141,41 @@
     <p class="main-column">
       entgegennimmt und dann
     </p>
-    <ol class="nested main-column">
-      <li>
-        <p>
-          <b>ablehnt</b>, falls $c$ keine gültige Codierung einer
-          Turingmaschine $M$ ist,
-        </p>
-      </li>
-      <li>
-        <p>
-          ansonsten, falls also
-          <span class="nowrap">$c = \enc(M)$,</span>
-          dann
-        </p>
-        <ol class="nested">
-          <li>
-            <p>
-              <b>akzeptiert</b>
-              falls $M(x)$ akzeptiert;
-            </p>
-          </li>
-          <li>
-            <p>
-              <b>ablehnt</b>, falls $M(x)$ ablehnt
-            </p>
-          </li>
-          <li>
-            <p>
-              <b>nicht terminiert</b>, falls $M(x)$ nicht terminiert.
-            </p>
-          </li>
-        </ol>
-      </li>
-    </ol>
+    <div class="main-column">
+      <ol class="outside-list">
+        <li>
+          <p>
+            <b>ablehnt</b>, falls $c$ keine gültige Codierung einer
+            Turingmaschine $M$ ist,
+          </p>
+        </li>
+        <li>
+          <p>
+            ansonsten, falls also
+            <span class="nowrap">$c = \enc(M)$,</span>
+            dann
+          </p>
+          <ol class="outside-list">
+            <li>
+              <p>
+                <b>akzeptiert</b>
+                falls $M(x)$ akzeptiert;
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>ablehnt</b>, falls $M(x)$ ablehnt
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>nicht terminiert</b>, falls $M(x)$ nicht terminiert.
+              </p>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
     <p class="main-column">
       Falls wir bei $M$ nicht nur an Akzeptieren / Ablehnen
       interessiert sind, sondern am Ergebnis der Berechnung,
@@ -276,6 +278,7 @@
       <img
         style="height:10em"
         src="img/turing-machines/exampe-2-aabbcc/delta-table.svg"
+        loading="lazy"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -287,6 +290,7 @@
       <img
         style="height:10em"
         src="img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg"
+        loading="lazy"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -349,11 +353,11 @@
       <p>
         <b>Definition</b>
         <b>8.4.1</b>
-        Zu einem Eingabealphabet $\Sigma$ definieren wir
-        das
+        Zu einem Eingabealphabet $\Sigma$ definieren wir das
         <i>Codierungsalphabet</i>
         <span class="nowrap">$\Lambda := \writelambda$,</span>
-        wobei wir annehmen, dass
+        wobei
+        wir annehmen, dass
         <span class="nowrap">$\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
           \texttt{;} \not \in \Sigma$.</span>
         Wir können nun jede Turingmaschine $M$ mit Eingabealphabet

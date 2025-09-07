@@ -95,22 +95,23 @@
 
     entgegennimmt und dann
 
-    |> ol
-        class=nested
-        |> li
-            *ablehnt*, falls $c$ keine gültige Codierung einer
-            Turingmaschine $M$ ist,
-        |> li
-            ansonsten, falls also $c = \enc(M)$, dann
+    |> div
+        |> ol
+            class=outside-list
+            |> li
+                *ablehnt*, falls $c$ keine gültige Codierung einer
+                Turingmaschine $M$ ist,
+            |> li
+                ansonsten, falls also $c = \enc(M)$, dann
 
-            |> ol
-                class=nested
-                |> li
-                    *akzeptiert* falls $M(x)$ akzeptiert;
-                |> li
-                    *ablehnt*, falls $M(x)$ ablehnt
-                |> li
-                    *nicht terminiert*, falls $M(x)$ nicht terminiert.
+                |> ol
+                    class=outside-list
+                    |> li
+                        *akzeptiert* falls $M(x)$ akzeptiert;
+                    |> li
+                        *ablehnt*, falls $M(x)$ ablehnt
+                    |> li
+                        *nicht terminiert*, falls $M(x)$ nicht terminiert.
 
     Falls wir bei $M$ nicht nur an Akzeptieren / Ablehnen
     interessiert sind, sondern am Ergebnis der Berechnung,
@@ -174,7 +175,7 @@
         |> img
             style=height:10em
             src=img/turing-machines/exampe-2-aabbcc/delta-table.svg
-            
+            loading=lazy
 
     würde dann zu folgender Tabelle:
 
@@ -182,7 +183,7 @@
         |> img
             style=height:10em
             src=img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg
-            
+            loading=lazy
 
     Wenn wir dies nun als _ein_ Wort in obigen Schema
     schreiben, können wir für eine Tabellenzelle
