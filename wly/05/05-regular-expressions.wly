@@ -38,10 +38,12 @@
     aus den gegebenen regulären Grammatiken eine neue Grammatik
     für $L_1 \cup L_2$, $L_1 \circ L_2$ und $L$ konstruieren
     zu können. Sie sollten sich jetzt folgende Frage stellen:
+
     |> div
         class=display
         *Frage:* Können _alle_ regulären Sprachen nach diesem
         Baukastenprinzip erstellt werden?
+
     Damit diese Frage überhaupt die Chance hat, mit _ja_
     beantwortet zu werden, müssen wir "Atome" zur Verfügung
     stellen, mit denen wir beginnen können. Daher:
@@ -207,18 +209,22 @@
         `[a-z]*[aeiuoy][a-z]*` beschreibt also die Menge aller
         Wörter, die mindesten einen Vokal enthalten. Lesen
         Sie hierfür unter Anderem
+
         |> div
             class=display
             |> a
                 href=https://www.w3schools.com/java/java_regex.asp
                 W3Schools
+
         und
+
         |> div
             class=display
             |> a
                 href=https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
                 Patternl.html auf der Java-API
             ,
+
         lassen sich aber bitte nicht von der Menge an Details
         erschlagen. Schreiben Sie nun in der Java-Regex-Syntax
         einen regulären Ausdruck für unsere obige Sprache
@@ -403,7 +409,7 @@
         |> QED
 
     Hier sehen Sie den ganzen Ablauf an unserer `aaaa:a:aaa.aa-aa`-Sprache:
-    
+
     |> div
         style=padding:1em 0 0.5em;
         |> figure

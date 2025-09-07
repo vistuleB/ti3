@@ -263,9 +263,8 @@
             |> ol
                 class=outside-list
                 |> li
-                    !! careful this was parsing as a key-value pair:
 
-                    \(\#_{A,a}(\beta) = \#_{B,b}(\beta) = \#_{C,c}(\beta)\)
+                    $\#_{A,a}(\beta) = \#_{B,b}(\beta) = \#_{C,c}(\beta)$
                 |> li
                     Außer $A,a,B,b,C,c$ enthält $\beta$ höchstens ein
                     weiteres Symbol, und dies ist in $\{S,X,Y,Z\}$.

@@ -126,10 +126,12 @@
         $a^j b^i \not \in L$. Der Automat ist also fehlerhaft.
         Da wir dieses Argument ganz allgemein für einen endlichen
         Automaten $M$ geführt haben, schließen wir:
+
         |> div
             class=display
             Wenn $M$ ein endlicher Automat ist, dann gilt
             $L(M) \ne L$. Daher ist $L$ keine reguläre Sprache.
+
         Zusammenfassend lautet unser Argument: wenn der Automat
         die Präfixe $\alpha$ und $\alpha'$ nicht unterscheiden
         kann, dann kann er die Wörter $\alpha \beta$ und

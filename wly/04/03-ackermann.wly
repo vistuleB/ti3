@@ -203,11 +203,10 @@
     für $A_m$ irgendwie implizit produziert und dann mit
     $n$ aufruft. Jedenfalls nicht in der Programmiersprache
     der primitiven Rekursion.
-    
-    *Beweisidee.* Für jedes feste
-    $m$ ist die ein-parametrige Funktion
-    $A_m := n \mapsto A(m,n)$ primitiv rekursiv und kann
-    als Funktion mit $m$ verschachtelten `for`-Schleifen
+
+    *Beweisidee.* Für jedes feste $m$ ist die ein-parametrige
+    Funktion $A_m := n \mapsto A(m,n)$ primitiv rekursiv
+    und kann als Funktion mit $m$ verschachtelten `for`-Schleifen
     betrachtet werden. Es wird sich herausstellen, dass
     $A_m$ in gewisser Weise die am schnellsten wachsende
     aller solcher Funktionen ist. Wäre also $A(m,n)$ primitiv-rekursiv,

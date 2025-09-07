@@ -375,9 +375,8 @@
             $$
 
             Dies zeigt die erste Richtung.
-            
-            *Aus (2) folgt (1).*
-            Nun nehmen wir an, dass
+
+            *Aus (2) folgt (1).* Nun nehmen wir an, dass
             $q \Rightarrow^* x \beta q'$ gilt. Untersuchen wir
             die erste Produktion, die in dieser Ableitung verwendet
             worden ist. Alle Produktionen in $G'$ erzeugen ein

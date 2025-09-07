@@ -1,6 +1,5 @@
 |> Sub
     title=Allgemeines Parsing
-
     Wir haben drei Methoden kennengelernt, kontextfreie
     Sprachen zu parsen: rekursiver Abstieg (mit Demoseite 
     |> a
@@ -249,11 +248,13 @@
                 ist eine Produktion in $G$}\}\)
             |> li
                 `for l = 2 .. n`
+
                 |> ol
                     type=I
                     class=outside-list
                     |> li
                         `for i = 0 .. n-l`
+
                         |> ol
                             type=i
                             class=outside-list

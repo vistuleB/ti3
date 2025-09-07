@@ -53,7 +53,6 @@
     dann sehr wohl.
 
     |> Highlight
-
         *Eingabe und Ausgabe:* wenn Sie ein C-Programm schreiben
         und auf `stdout` schreiben, dann entspricht diese Operation
         in gewisser Weise der Turingmaschine, die auf das Ausgabeband
@@ -64,17 +63,17 @@
         auf dem Eingabeband zwar nicht schreiben darf, aber
         dennoch beliebig nach rechts und links gehen darf.
         Das können Sie auf `stdin` in der Regel nicht.
-        
-        *Streaming-Modell:*
-        wenn wir der Turingmaschine verbieten, auf dem Eingabe-Band
-        nach links zu laufen, wenn sie also jedes Eingabezeichen
-        nur einmal lesen darf, dann erhalten wir das sogenannte
-        Streaming-Modell, das in den letzten Jahren an Popularität
-        gewonnen hat, weil wir es heutzutage in vielen Anwendungen
-        mit Datenmengen zu tun haben, die nicht in den Speicher
-        des Rechners passen und auch nur einmal gelesen werden
-        können (z.B. Sensordaten). Im Kurs _Effiziente Algorithmen_
-        gibt es ein 
+
+        *Streaming-Modell:* wenn wir der Turingmaschine verbieten,
+        auf dem Eingabe-Band nach links zu laufen, wenn sie
+        also jedes Eingabezeichen nur einmal lesen darf, dann
+        erhalten wir das sogenannte Streaming-Modell, das in
+        den letzten Jahren an Popularität gewonnen hat, weil
+        wir es heutzutage in vielen Anwendungen mit Datenmengen
+        zu tun haben, die nicht in den Speicher des Rechners
+        passen und auch nur einmal gelesen werden können (z.B.
+        Sensordaten). Im Kurs _Effiziente Algorithmen_ gibt
+        es ein 
         |> a
             href=../../EffizienteAlgorithmen/lecture-notes/04-00-big-data.html
             Kapitel zu Streaming-Algorithmen

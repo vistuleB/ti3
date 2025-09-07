@@ -64,8 +64,8 @@
     \texttt{,}, \texttt{_}, \texttt{\n}, \dots\}
     \end{align*}
 
-    codieren. Codierung ist im Prinzip kein Problem,
-    wir werden aber ein paar Subtilitäten ansprechen. Punkt
+    codieren. Codierung ist im Prinzip kein Problem, wir
+    werden aber ein paar Subtilitäten ansprechen. Punkt
     2 ist schwieriger. Können wir eine Maschine bauen,
     die als eingabe (1) die Codierung $\enc(M)$ einer
     Turingmaschine und (2) ein Eingabewort
@@ -224,9 +224,9 @@
 
     |> Statement
         title=*Definition*
-        Zu einem Eingabealphabet $\Sigma$ definieren wir
-        das _Codierungsalphabet_ $\Lambda := \writelambda$,
-        wobei wir annehmen, dass
+        Zu einem Eingabealphabet $\Sigma$ definieren wir das
+        _Codierungsalphabet_ $\Lambda := \writelambda$, wobei
+        wir annehmen, dass
         $\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
         \texttt{;} \not \in \Sigma$.
         Wir können nun jede Turingmaschine $M$ mit Eingabealphabet

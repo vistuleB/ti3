@@ -69,15 +69,15 @@
 
     ```listing
     <?xml version="1.0" encoding="UTF-8"?>
-    <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        xmlns:xlink="http://www.w3.org/1999/xlink" 
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
         width="102pt" height="102pt"
         viewBox="0 0 102 102"
         version="1.1"
     >
         <g id="surface2322">
-            <circle 
+            <circle
                 style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"
                 cx="51"
                 cy="51"
@@ -225,7 +225,7 @@
     <User>            ->    <NameBlock> | <NameBlock> . <User>
     <NameBlock>       ->    <AlphaNum> | <AlphaNum> <NameBlock>
     <Label>           ->    <AlphaNumOrDash> | <AlphaNumOrDash> <Label>
-    <AlphaNumOrDash>  ->    <AlphaNum> | - 
+    <AlphaNumOrDash>  ->    <AlphaNum> | -
     <AlphaNum>        ->    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
     <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
     ```
@@ -660,18 +660,17 @@
     Algorithmen, die dieses Problem im effizient lösen,
     wenn wir den "theoretischen" Effizienzbegriff zugrund
     legen.
-    
-    *Die schlechte Nachricht:* wir kennen keinen
-    Algorithmus, der das Parsing kontextfreier Sprachen
-    in seiner ganzen Allgemeinheit in _linearer Zeit_ erledigt,
-    dessen Laufzeit also proportional zur Länge des Zielwortes
-    $x$ ist. Dies ist aber, was wir in der Praxis, zum
-    Beispiel bei Compilern, erwarten.
-    
-    *Die gute Nachricht:*
-    in fast allen praktisch relevanten Fällen haben wir
-    es mit Grammatiken zu tun, die Parsing in linearer
-    Zeit ermöglichen. Und wenn wir Programmiersprachen,
+
+    *Die schlechte Nachricht:* wir kennen keinen Algorithmus,
+    der das Parsing kontextfreier Sprachen in seiner ganzen
+    Allgemeinheit in _linearer Zeit_ erledigt, dessen Laufzeit
+    also proportional zur Länge des Zielwortes $x$ ist.
+    Dies ist aber, was wir in der Praxis, zum Beispiel
+    bei Compilern, erwarten.
+
+    *Die gute Nachricht:* in fast allen praktisch relevanten
+    Fällen haben wir es mit Grammatiken zu tun, die Parsing
+    in linearer Zeit ermöglichen. Und wenn wir Programmiersprachen,
     Datenformate etc. entwerfen, haben wir es ja in der
     Hand, Sprache und Grammatik so anzulegen, dass effizientes
     Parsen möglich ist. Im nächsten Kapitel lernen wir

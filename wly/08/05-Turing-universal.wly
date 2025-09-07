@@ -1,6 +1,5 @@
 |> Sub
     title=Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
-
     Im letzten Teilkapitel haben wir gesehen, wie wir
     jede Turingmaschine $M$ mit Eingabealphabet
     $\Sigma$ codieren können als
@@ -54,7 +53,6 @@
 
     |> Statement
         title=*Theorem*
-
         *(Universelle Turingmaschine).* Zu jedem endlichen
         Eingabealphabet $\Sigma$ sei
         $\Lambda := \writelambda$ das Codierungsalphabet.
@@ -93,7 +91,6 @@
 
     |> div
         class=alert-info well
-
         *Ein technischer aber letztendlich irrelevanter Punkt:
         * die Mengen $Q$ und $\Gamma$ der Turingmaschine
         $M$ können ja beliebige (endliche) Mengen sein, und
@@ -123,8 +120,8 @@
 
     |> Highlight
         title=*Beweis.*
-        Den Beweis in allen Details zu führen hieße,
-        die Maschine $U$ konkret als Turingmaschine zu implementieren.
+        Den Beweis in allen Details zu führen hieße, die Maschine
+        $U$ konkret als Turingmaschine zu implementieren.
         Wir tun dies nicht. Wir beschränken uns auf eine High-Level-Beschreibung
         ihrer Arbeitsweise.
 

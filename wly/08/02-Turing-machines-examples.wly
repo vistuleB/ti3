@@ -106,11 +106,11 @@
 
         ```
         q, a
-        r, b, D 
+        r, b, D
         ```
 
-        angeben, wobei die Richtung $D$ mit den Symbolen 
-        `<`, `-`, `>` codiert wird.
+        angeben, wobei die Richtung $D$ mit den Symbolen `<`,
+        `-`, `>` codiert wird.
 
     |> Statement
         title=*Beispiel*

@@ -284,10 +284,9 @@
         Charakterisierung von LR(0)-Sprachen, nämlich :
 
         |> Remark
-            *Lemma >>lemma-characterization-LR0, noch einmal
-            (LR(0), äquivalente Formulierung).* Eine Grammatik
-            $G$ ist LR(0) genau dann, wenn für alle korrekten
-            Linksreduktionsschritte
+            *Lemma >>lemma-characterization-LR0, noch einmal (LR(0),
+            äquivalente Formulierung).* Eine Grammatik $G$ ist
+            LR(0) genau dann, wenn für alle korrekten Linksreduktionsschritte
             $\alpha \beta w \rstep{} \alpha Xw$ und
             $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
 

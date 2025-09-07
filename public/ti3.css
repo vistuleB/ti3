@@ -171,6 +171,32 @@ body {
     margin-bottom: 0;
 }
 
+ol,
+ul {
+    list-style-position: inside;
+    padding:0em 2em;
+}
+
+ul.outside-list,
+ol.outside-list {
+    list-style-position: outside;
+    padding-left: 0.5rem;
+    margin:0em 1em;
+}
+
+ul.outside-list:not(li > ul),
+ol.outside-list:not(li > ol) {
+    margin: 0.7em 2em;
+}
+
+li {
+    margin: 0.2em 0;
+}
+
+li > p:first-child {
+    display: inline;
+}
+
 pre {
     line-height: 1.6;
     color: var(--body-color);
@@ -293,17 +319,6 @@ pre.redyellow {
     background-color: yellow;
 }
 
-/* pre.listing > span::before {
-    color: gray;
-    content: counter(listing) ". ";
-    min-width: 4ch;
-    display: inline-block;
-}
-
-pre.listing > span.listing-bol {
-    counter-increment: listing;
-} */
-
 pre.listing > span.listing-bol::before {
     color: gray;
     content: counter(listing) ". ";
@@ -314,12 +329,6 @@ pre.listing > span.listing-bol::before {
 .terminalOutput {
     color: blue;
 }
-
-/*.comment {
-    color: darkorange;
-    font-style: italic;
-    display: inline;
-} */
 
 .actual-orange-comment {
     color: darkorange;
@@ -490,32 +499,6 @@ p + h2 {
 code {
     font-size: 0.85em;
     /* color: #c7254e; */
-}
-
-ol,
-ul {
-    list-style-position: inside;
-    padding:0em 2em;
-}
-
-ul.outside-list,
-ol.outside-list {
-    list-style-position: outside;
-    padding-left: 0.5rem;
-    margin:0em 1em;
-}
-
-ul.outside-list:not(li > ul),
-ol.outside-list:not(li > ol) {
-    margin: 0.7em 2em;
-}
-
-li {
-    margin: 0.2em 0;
-}
-
-li > p:first-child {
-    display: inline;
 }
 
 a {

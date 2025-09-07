@@ -56,6 +56,7 @@
                 class=outside-list
                 |> li
                     Für jedes der $s$ Gates, was es sein soll.
+
                     |> ul
                         class=outside-list
                         |> li

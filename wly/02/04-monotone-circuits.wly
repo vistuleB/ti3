@@ -164,10 +164,10 @@
     |> a
         href=https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden
         Wikipedia
-    \ aufgeführt sind. Diesen zur Seite stehen die
-    nicht wirklich formalisierbaren Beweistechniken oder
-    Beweisstrategien, die sich oft aus persönlicher Erfahrung
-    speisen, wie zum Beispiel
+    \ aufgeführt sind. Diesen zur Seite stehen die nicht
+    wirklich formalisierbaren Beweistechniken oder Beweisstrategien,
+    die sich oft aus persönlicher Erfahrung speisen, wie
+    zum Beispiel
 
     |> div
         |> ul
@@ -222,6 +222,7 @@
             title=*Beweis.*
             Als _Beweismethode_ verwenden wir Induktion über
             $n$, die Anzahl der Variablen.
+
             |> div
                 class=well alert-info
                 Zur Erinnerung: bei einem Beweis per Induktion wollen
@@ -268,6 +269,7 @@
             gibt es einen Schaltkreis, nämlich bestehend aus einem
             Input-Gate (mit der Konstant 0 bzw. 1 beschriftet),
             das gleichzeitig auch Output-Gate ist.
+
             |> div
                 class=well alert-warning
                 Vielleicht fühlen Sie sich unwohl bei der Idee, es
@@ -334,6 +336,7 @@
                 nicht ganz korrekt anwenden, aber davon ausgehen, dass
                 Leser oder Leserin (die ja Menschen sind und keine
                 Compiler), verstehen, was gemeint ist.
+
             Wir haben nun also die Induktionsbasis erfolgreich
             gezeigt. Als nächstes kommt nun der Schritt. In diesem
             nehmen wir an, dass die Aussage $P(n)$ bereits gilt,
@@ -615,7 +618,6 @@
         |> QED
 
     |> Highlight
-
         *Zweiter Beweis. Bottom-Up, Konstruktion einer DNF-Formel.*
         Als Beweisstrategie verwende ich wieder _Bekanntes
         abwandeln._

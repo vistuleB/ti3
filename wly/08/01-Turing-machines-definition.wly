@@ -156,6 +156,7 @@
     \end{align*}
 
     die _Startkonfiguration_.
+
     |> div
         class=well alert-info
         *Die Rolle des $\square$-Symbols*. Das Band der Turingmaschine
@@ -215,6 +216,7 @@
         leben damit, dass $uqv$ und $\Box \Box u q v \Box$
         formal zwei verschiedene Konfigurationen sind, auch
         wenn beide irgendwie das selbe beschreiben.
+
     Formal definiert $\delta$ nun auch eine Funktion auf
     der Menge der Konfigurationen:
 

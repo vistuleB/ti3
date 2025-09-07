@@ -199,9 +199,9 @@
         \delta: Q \times \Gamma^k \rightarrow \mathcal{P} (Q \times \Gamma^k \times \{L,S,R\}^k)
         \end{align*}
 
-        Nun bezeichnet $\delta(q, x_1, \dots, x_k)$ also
-        die _Menge_ der Aktionen, die die Turingmaschine nun
-        ausführen könnte. Wie im Beweis von 
+        Nun bezeichnet $\delta(q, x_1, \dots, x_k)$ also die
+        _Menge_ der Aktionen, die die Turingmaschine nun ausführen
+        könnte. Wie im Beweis von 
         |> span
             data-ref=nondet-tm-to-det
             class=reference

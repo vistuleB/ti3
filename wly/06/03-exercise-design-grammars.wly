@@ -135,7 +135,6 @@
         $R \gt 1$ wachsen.
 
     |> Exercise
-
         *(Super-Challenge; ich hab selbst keine Lösung)*.
         Finden Sie eine kontextfreie Sprache $L$, für die
         _jede_ Grammatik, die $L$ erzeugt, unter exponentiell

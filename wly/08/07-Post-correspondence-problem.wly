@@ -130,8 +130,7 @@
     k_3 &:= (bba : bb) \ .
     \end{align*}
 
-    Oben sehen wir eine Kachelung $s := k_3 k_2 k_3$
-    und
+    Oben sehen wir eine Kachelung $s := k_3 k_2 k_3$ und
 
     \begin{align*}
     \top(s) &= bbaabbba \\

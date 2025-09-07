@@ -360,14 +360,13 @@
         Sei $\gamma$ der Stackinhalt und $w$ der ungelesene
         Teil des Eingabewortes. Wir werden beweisen, dass zu
         jedem Zeitpunkt folgende Invariante gilt:
-        
-        *Behauptung.*
-        (i) $\gamma w$ ist eine gültige Wortform. (ii)
-        $\gamma$ ist ein Präfix von  $\front(\gamma w)$.
-        
-        *Beweis.*
-        Die Behauptung gilt offensichtlich am Anfang, da
-        $\gamma = \epsilon$ und $w\in L$ ist und somit
+
+        *Behauptung.* (i) $\gamma w$ ist eine gültige Wortform.
+        (ii) $\gamma$ ist ein Präfix von
+        $\front(\gamma w)$.
+
+        *Beweis.* Die Behauptung gilt offensichtlich am Anfang,
+        da $\gamma = \epsilon$ und $w\in L$ ist und somit
         $\gamma w = w$ eine gültige Wortform ist. Des weiteren
         ist der Stack leer, also $\gamma = \epsilon$, und
         daher sicherlich ein Präfix von $\front(w)$. Wir zeigen

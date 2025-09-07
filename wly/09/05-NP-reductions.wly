@@ -93,7 +93,6 @@
                 def is_3_colorable(graph):
             |> br
             |> span
-
                 \    F = convert_to_CNF_formula(graph)
             |> br
             |> span
@@ -122,8 +121,8 @@
     \ mit der Einschränkung, dass $F$ eine $3$-CNF-Formel
     ist, dass also jede Klausel nur drei Literale enthält.
     Beachten Sie, dass die Formel $F$, die wir im Beweis
-    von Theorem >>theorem-3-col-to-sat
-    erstellt haben, eine solche 3-CNF ist.
+    von Theorem >>theorem-3-col-to-sat erstellt haben,
+    eine solche 3-CNF ist.
 
     |> Statement
         handle=theorem-3-sat-to-3-col
@@ -173,7 +172,6 @@
             src=img/09-complexity-theory/sat-to-col/sat-to-col-01-22.svg
             src=img/09-complexity-theory/sat-to-col/sat-to-col-01-23.svg
             src=img/09-complexity-theory/sat-to-col/sat-to-col-01-24.svg
-            !! style=width:100%
 
         Wir wiederholen die beschriebene Konstruktion für
         jede Klausel in $F$. Wir erhalten einen Graphen
@@ -198,8 +196,8 @@
     F \textnormal{ ist erfüllbar } \Longleftrightarrow G \textnormal{ ist $3$-färbbar}
     \end{align*}
 
-    gilt. Allerdings ging das nur unter der Annahme,
-    dass $F$ eine $3$-CNF ist. Wie verhält es sich, wenn
+    gilt. Allerdings ging das nur unter der Annahme, dass
+    $F$ eine $3$-CNF ist. Wie verhält es sich, wenn
     $F$ eine allgemeine CNF-Formel ist?
 
     |> Statement
@@ -217,8 +215,7 @@
         gibt, dann also auch einen für CNF-SAT.
 
     |> Highlight
-        *Beweis.*
-        Wir starten mit $F_0 := F$ und definieren
+        *Beweis.* Wir starten mit $F_0 := F$ und definieren
         eine Folge $F_0, F_1, \dots$ von CNF-Formeln. Sei
         $F_i$ die derzeit letzte erzeugte CNF-Formel. Falls
         $F_i$ eine Klausel $C$ mit vier oder mehr Literalen
@@ -327,9 +324,9 @@
         \    y = convert_from_L1_instance_to_L2_instance(x)
         \    return is_in_L2(y)
 
-    Dies ist eine _Reduktion_, wie wir sie schon in
-    Definition >>definition-reduction kennengelernt haben, nun
-    aber mit einer Aussage über die Laufzeit.
+    Dies ist eine _Reduktion_, wie wir sie schon in Definition
+    >>definition-reduction kennengelernt haben, nun aber
+    mit einer Aussage über die Laufzeit.
 
     |> Statement
         title=*Definition*
@@ -358,8 +355,8 @@
 
     |> Statement
         title=*Beobachtung*
-        Wenn $L_1 \leq_p L_2$ ist und $L_2 \in {\rm P}$,
-        dann auch $L_1 \in {\rm P}$.
+        Wenn $L_1 \leq_p L_2$ ist und $L_2 \in {\rm P}$, dann
+        auch $L_1 \in {\rm P}$.
 
     Wir haben die folgenden Polynomialzeitreduktionen
     bereits kennengelernt:

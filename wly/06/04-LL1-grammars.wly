@@ -104,7 +104,7 @@
             gilt, dann auch $\first_1(x) \ne \first_2(y)$ gilt.
             Offensichtlich ist $\first_2(y) =$ "$\texttt{(}$".
             Was kann $\first_k(x)$ sein?
-            
+
             *Behauptung.* Wenn
             $S \rightarrow \delta \in (\Sigma \cup N)^*$, dann
             steht jedes $S$ in $\delta$ entweder am Ende von
@@ -338,6 +338,7 @@
                 Lege \(S\texttt{\$}\) auf den Stack.
             |> li
                 `while` Stack nicht leer:
+
                 |> ol
                     class=outside-list
                     |> li
@@ -345,6 +346,7 @@
                     |> li
                         Wenn das oberste Symbol auf dem Stack ein Terminalsymbol
                         $c$ ist:
+
                         |> ul
                             class=outside-list
                             |> li

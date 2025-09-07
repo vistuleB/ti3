@@ -9,8 +9,8 @@
     T&\rightarrow \epsilon
     \end{align*}
 
-    Diese Grammatiken erlauben uns, gewisse Sprachen
-    zu beschreiben, indem Sie Regeln festlegen - hier _Produktionen_
+    Diese Grammatiken erlauben uns, gewisse Sprachen zu
+    beschreiben, indem Sie Regeln festlegen - hier _Produktionen_
     genannt, nach welchen man aus dem Startsymbol $S$
     Wörter über dem Alphabet (hier: $\{a,b,c\}$) ableiten
     kann. Beispielsweise:
@@ -63,9 +63,9 @@
         S&\rightarrow \alpha S \beta^R \ ,
         \end{align*}
 
-        wobei $\beta^R$ das Wort $\beta$ von rechts nach
-        links gelesen bedeutet, also $(xyz)^R = zyx$. Wir
-        fügen noch eine weitere Regel hinzu:
+        wobei $\beta^R$ das Wort $\beta$ von rechts nach links
+        gelesen bedeutet, also $(xyz)^R = zyx$. Wir fügen
+        noch eine weitere Regel hinzu:
 
         \begin{align*}
         S&\rightarrow \$ \ ,
@@ -76,7 +76,7 @@
 
         |> Statement
             title=*Behauptung*
-            \ Wenn die Grammatik $G$ ein Palindromwort ableiten
+            Wenn die Grammatik $G$ ein Palindromwort ableiten
             kann, dann hat das PCP-Puzzle $P$ eine Lösung.
 
         |> Remark
@@ -103,7 +103,7 @@
 
         |> Statement
             title=*Behauptung*
-            \ Wenn das PCP-Puzzle $P$ eine Lösung hat, dann kann
+            Wenn das PCP-Puzzle $P$ eine Lösung hat, dann kann
             die Grammatik $G$ ein Palindromwort ableiten.
 
         |> Remark
@@ -203,8 +203,8 @@
 
     |> Statement
         title=*Beobachtung*
-        Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist
-        und $L_2$ entscheidbar ist, dann ist auch $L_1$ entscheidbar.
+        Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und
+        $L_2$ entscheidbar ist, dann ist auch $L_1$ entscheidbar.
 
     |> Highlight
         *Beweis.* Sei $M_2$ eine Turingmaschine, die $L_2$
@@ -239,9 +239,8 @@
 
     |> Statement
         title=*Beobachtung*
-        Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist
-        und $L_1$ unentscheidbar ist, dann ist auch $L_2$
-        unentscheidbar.
+        Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und
+        $L_1$ unentscheidbar ist, dann ist auch $L_2$ unentscheidbar.
 
     |> Highlight
         *Beweis.* Angenommen, $L_2$ wäre entscheidbar. Dann
@@ -266,14 +265,12 @@
         |> img
             style=height:15em
             src=img/pcp/reduction.svg
-            
 
     Üben wir also Reduktionen:
 
     |> Statement
         title=*Theorem*
-        *(Schnittproblem kontextfreier Sprachen)*
-        Gegeben
+        *(Schnittproblem kontextfreier Sprachen)* Gegeben
         zwei kontextfreie Grammatiken $G_1, G_2$. Es ist unentscheidbar,
         ob $L(G_1) \cap L(G_2)$ nichtleer ist, ob es also
         ein Wort $x$ mit $x \in G_1$ und $x \in G_2$ gibt.
@@ -281,8 +278,7 @@
         Sprachen_ bekannt.
 
     |> Highlight
-        *Beweis.*
-        Wir reduzieren das Palindromwortproblem
+        *Beweis.* Wir reduzieren das Palindromwortproblem
         (bereits bekannt) auf das Schnittproblem (neues Problem).
         Sei $G$ eine Grammatik und $\Sigma$ die Menge der
         Terminalsymbole. Sei $G'$ die folgende Grammatik:
@@ -293,17 +289,17 @@
         S'&\rightarrow \epsilon
         \end{align*}
 
-        Die Grammatik $G'$ erzeugt genau die Sprache der
-        Palindromwörter über $\Sigma$. Unsere Reduktion
-        $f$ nimmt nun als Eingabe eine kontextfreie Grammatik
-        $G$ (bzw. deren Codierung) und gibt das Paar
-        $(G,G')$ aus (bzw. deren Codierungen). Wir stellen
-        fest: $G$ kann ein Palindromwort ableiten genau dann,
-        wenn $L(G) \cap L(G') \ne \emptyset$, wenn es also
-        ein Wort $\alpha$ gibt, dass aus $G$ und aus $G'$
-        abgeleitet werden kann. Die Funktion $f$ ist also
-        eine Reduktion vom Palindromwortproblem auf das Schnittproblem.
-        Mit Behauptung 4.6.9 zusammen heißt das, dass das Schnittproblem
+        Die Grammatik $G'$ erzeugt genau die Sprache der Palindromwörter
+        über $\Sigma$. Unsere Reduktion $f$ nimmt nun als
+        Eingabe eine kontextfreie Grammatik $G$ (bzw. deren
+        Codierung) und gibt das Paar $(G,G')$ aus (bzw. deren
+        Codierungen). Wir stellen fest: $G$ kann ein Palindromwort
+        ableiten genau dann, wenn
+        $L(G) \cap L(G') \ne \emptyset$, wenn es also ein
+        Wort $\alpha$ gibt, dass aus $G$ und aus $G'$ abgeleitet
+        werden kann. Die Funktion $f$ ist also eine Reduktion
+        vom Palindromwortproblem auf das Schnittproblem. Mit
+        Behauptung 4.6.9 zusammen heißt das, dass das Schnittproblem
         unentscheidbar ist.
         |> QED
 
@@ -379,8 +375,7 @@
     to the Theory of Computation_, third edition.
 
     |> Highlight
-        *Beweis.*
-        Sei ein PCP-Puzzle
+        *Beweis.* Sei ein PCP-Puzzle
         $P = \{ (\alpha_1:\beta_1), \dots, (\alpha_n : \beta_n)\}$
         gegeben. Wir erstellen nun eine kontextfreie Gramatik,
         die es dem "User" erlaubt, zu entscheiden, ob er das

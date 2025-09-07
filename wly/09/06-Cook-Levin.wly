@@ -181,7 +181,6 @@
 
     |> Statement
         title=*Lemma*
-        \ 
         |> span
             style=font-variant:small-caps;
             Circuit-SAT
@@ -250,10 +249,10 @@
         &(g_{11})
         \end{align*}
 
-        Die ersten 11 Teilausdrücke stellen sicher, dass
-        jedes $g_i$ den "richtigen" Wert annimmt. Mit dem
-        letzten Teilausdruck $(g_{11})$ drücken wir aus, dass
-        wir wollen, dass der Schaltkreis $1$ ausgibt. Es gilt
+        Die ersten 11 Teilausdrücke stellen sicher, dass jedes
+        $g_i$ den "richtigen" Wert annimmt. Mit dem letzten
+        Teilausdruck $(g_{11})$ drücken wir aus, dass wir
+        wollen, dass der Schaltkreis $1$ ausgibt. Es gilt
         nun:
 
         |> ol

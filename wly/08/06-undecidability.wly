@@ -71,7 +71,6 @@
     Falls das ihnen zu schnell ging, lesen Sie den zweiten
     Beweis, in dem ich mir mehr Zeit nehme.
 
-
     |> Highlight
         *Kurzer Beweis per Wiederspruch.* Nehmen wir an, es
         gäbe eine Maschine $H$, die $\halt$ entscheidet. Dann
@@ -81,9 +80,9 @@
         \diag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$} \}
         \end{align*}
 
-        entscheidbar. Warum? Wir können einfach schauen,
-        ob das Eingabewort $c$ die Form $\enc(M)$ hat und
-        in diesem Fall das Wort $\enc(M) \enc(M)$ der Maschine
+        entscheidbar. Warum? Wir können einfach schauen, ob
+        das Eingabewort $c$ die Form $\enc(M)$ hat und in
+        diesem Fall das Wort $\enc(M) \enc(M)$ der Maschine
         $H$ übergeben. Die Sprache $\diag$ ist, salopp ausgedrückt,
         die Menge aller Turingmaschinen, die ihre eigene Codierung
         als Inputwort akzeptieren. Ebenso wäre auch
@@ -114,7 +113,6 @@
         ein Widerspruch. Unsere Annahme, dass $\halt$ entscheidbar
         sei, ist also falsch.
         |> QED
-
 
     |> Highlight
         *Ausführlicher Beweis.* Ich finde Beweise durch Widerspruch

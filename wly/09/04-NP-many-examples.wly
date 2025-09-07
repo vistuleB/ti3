@@ -1,7 +1,7 @@
 |> Sub
     title=Viele Beispiele aus NP
     |> Statement
-        title=*Problem* 
+        title=*Problem*
         handle=problem-3-colorability
         (
         |> span
@@ -113,15 +113,18 @@
         Sei $G = (V,E)$ ein Graph. Eine Menge
         $I \subseteq V$ heißt _unabhängig_, wenn es keine
         Kante $\{u,v\} \in E$ gibt mit $u,v \in I$.
+
         |> Statement
             title=*Problem*
             handle=blabla
             Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$. Finde
             eine unabhängige Menge in $I$ in $G$ mit
             $|I| \geq k$, falls es eine solche gibt.
+
         Ist dies in NP? Schon syntaktisch nicht! Es ist ja
         gar kein Entscheidungsproblem. Wir können aber eine
         Entscheidungsvariante definieren:
+
         |> Statement
             title=*Problem*
             handle=problem-max-independent-set
@@ -133,6 +136,7 @@
             ) Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$. Gibt
             es eine unabhängige Menge in $I$ in $G$ mit
             $|I| \geq k$?
+
         Das Entscheidungsproblem 
         |> span
             style=font-variant:small-caps;
@@ -207,7 +211,6 @@
         |> Statement
             title=*Problem*
             handle=problem-small-factor
-
             (
             |> span
                 style=font-variant:small-caps;
@@ -232,8 +235,8 @@
         |> span
             style=font-variant:small-caps;
             Small Factor
-        \ ist offensichtlich in NP: das Zertifikat $z$ ist jener
-        Faktor (so er denn existiert), und die Zertifikatmaschine
+        \ ist offensichtlich in NP: das Zertifikat $z$ ist
+        jener Faktor (so er denn existiert), und die Zertifikatmaschine
         $M$ muss nun $z$ mit $K$ multiplizieren und schauen,
         ob auch $X$ herauskommt. Nicht so offensichtlich jedoch
         ist folgendes:

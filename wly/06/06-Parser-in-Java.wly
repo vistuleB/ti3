@@ -8,6 +8,7 @@
             href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/code/parsing/arithmetic-in-class/ArithmeticGrammar.java
             ArithmeticGrammar.java
         .
+
     Ich möchte nun eine kontextfreie Grammatik für arithmetische
     Ausdrücke der Form `((31+402)*83)` entwerfen. Der Einfachheit
     halber bestehe ich auf strenger Klammerung, so wäre
@@ -65,6 +66,7 @@
             class=outside-list
             |> li
                 `interface Expression` wird implementiert von
+
                 |> ul
                     class=outside-list
                     |> li
