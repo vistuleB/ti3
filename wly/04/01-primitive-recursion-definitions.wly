@@ -142,7 +142,6 @@
         Regeln der primitiven Rekursion neue Funktionen erstellt:
 
         |> ul
-            class=outside-list
             |> li
                 `Proj(k)`: erzeugt die Funktion
 
@@ -219,7 +218,6 @@
         implementiert habe:
 
         |> ol
-            class=outside-list
             |> li
                 ${\rm mult}: (x,y) \mapsto x*y$
             |> li
@@ -246,7 +244,6 @@
         wie
 
         |> ul
-            class=outside-list
             |> li
                 `isPositive`
             |> li

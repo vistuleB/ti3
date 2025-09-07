@@ -154,22 +154,20 @@
     "echten" Leben verwenden wir Reduktionen, um bereits
     gefundene Lösungen zu "recyceln". Beispielsweise:
 
-    |> div
-        |> ul
-            class=outside-list
-            |> li
-                *Aufgabe:* Zeigen Sie, dass die Funktion
-                $n \mapsto n!$ im $\lambda$-Kalkül berechenbar ist.
-            |> li
-                Wir wissen bereits, wie man $n \mapsto n!$ als primitiv-rekursive
-                Funktion schreibt.
-            |> li
-                Wir wissen bereits, wie man eine allgemeine primitiv
-                rekursive Funktion im $\lambda$-Kalkül implementiert.
-            |> li
-                Wir schließen nun, dass $n \mapsto n!$ im
-                $\lambda$-Kalkül implementierbar ist, und ersparen
-                uns die Details.
+    |> ul
+        |> li
+            *Aufgabe:* Zeigen Sie, dass die Funktion
+            $n \mapsto n!$ im $\lambda$-Kalkül berechenbar ist.
+        |> li
+            Wir wissen bereits, wie man $n \mapsto n!$ als primitiv-rekursive
+            Funktion schreibt.
+        |> li
+            Wir wissen bereits, wie man eine allgemeine primitiv
+            rekursive Funktion im $\lambda$-Kalkül implementiert.
+        |> li
+            Wir schließen nun, dass $n \mapsto n!$ im
+            $\lambda$-Kalkül implementierbar ist, und ersparen
+            uns die Details.
 
     Im Kontext der Turing-Berechenbarkeit können wir dieses
     Prinzip wie folgt formalisieren:

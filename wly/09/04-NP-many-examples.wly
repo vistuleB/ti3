@@ -162,7 +162,6 @@
             existiert!
 
             |> ul
-                class=outside-list
                 |> li
                     |> span
                         style=font-variant:small-caps;

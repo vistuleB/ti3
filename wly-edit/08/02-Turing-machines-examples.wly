@@ -42,7 +42,6 @@
         Die "Bedeutung" dieser Zustände ist:
 
         |> ul
-            class=outside-list
             |> li
                 `findA`: gehe nach links, bis Du ein $a$ findest,
                 ersetze es durch $X$ und wechsle dann in `findB`.
@@ -144,7 +143,6 @@
         \end{align*}
 
         |> ul
-            class=outside-list
             |> li
                 `next`: ist der Anfangszustand. Die Maschine steht
                 am linkesten Zeichen. Ist dieses $\square$, so haben

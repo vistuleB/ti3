@@ -10,29 +10,27 @@
     bereits in Kapitel >>baukasten das Baukastenprinzip
     kennengelernt:
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                Wenn $L_1$ und $L_2$ reguläre Sprachen sind, dann
-                ist $L_1 \cup L_2$ auch regulär;
-            |> li
-                dann ist auch die Konkatenation
+    |> ol
+        |> li
+            Wenn $L_1$ und $L_2$ reguläre Sprachen sind, dann
+            ist $L_1 \cup L_2$ auch regulär;
+        |> li
+            dann ist auch die Konkatenation
 
-                \begin{align*}
-                L_1 \circ L_2 := \{\alpha \beta \ | \alpha \in L_1, \beta \in L_2\}
-                \end{align*}
+            \begin{align*}
+            L_1 \circ L_2 := \{\alpha \beta \ | \alpha \in L_1, \beta \in L_2\}
+            \end{align*}
 
-                regulär;
-            |> li
-                wenn $L$ regulär ist, dann ist auch ihre Kleenesche
-                Hülle
+            regulär;
+        |> li
+            wenn $L$ regulär ist, dann ist auch ihre Kleenesche
+            Hülle
 
-                \begin{align*}
-                L^* := \{ \alpha_1 \dots \alpha_n \ | \ n \geq 0, \alpha_1,\dots,\alpha_n \in L\}
-                \end{align*}
+            \begin{align*}
+            L^* := \{ \alpha_1 \dots \alpha_n \ | \ n \geq 0, \alpha_1,\dots,\alpha_n \in L\}
+            \end{align*}
 
-                regulär.
+            regulär.
 
     Darüberhinaus haben wir Techniken kennengelernt, um
     aus den gegebenen regulären Grammatiken eine neue Grammatik
@@ -66,7 +64,6 @@
         folgt und beschreiben folgende Sprachen:
 
         |> ul
-            class=outside-list
             |> li
                 *Atome.* $\emptyset$ ist ein regulärer Ausdruck und
                 beschreibt die Sprache $\emptyset$. $\epsilon$ ist

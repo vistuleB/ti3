@@ -333,14 +333,12 @@
     |> Highlight
         title=*Generischer Algorithmus zum Parsen von LL\((k)\)-Gramatiken*
         |> ol
-            class=outside-list
             |> li
                 Lege \(S\texttt{\$}\) auf den Stack.
             |> li
                 `while` Stack nicht leer:
 
                 |> ol
-                    class=outside-list
                     |> li
                         Sei $y$ das Resteingabewort.
                     |> li
@@ -348,7 +346,6 @@
                         $c$ ist:
 
                         |> ul
-                            class=outside-list
                             |> li
                                 Lies das nächste Eingabesymbol $c'$.
                             |> li
@@ -360,7 +357,6 @@
                         $A$ ist:
 
                         |> ol
-                            class=outside-list
                             |> li
                                 Schreibe den Stack als $A \alpha$
                             |> li
@@ -374,7 +370,6 @@
                                     $\beta_i$ und schaue, welches $\first_k(y)$ enthält
 
                                 |> ul
-                                    class=outside-list
                                     |> li
                                         Wenn es genau eine solche Produktion
                                         $A \rightarrow \beta_i$ gibt: wende Sie an; es ist
@@ -475,14 +470,12 @@
         Wir können dies schön der Reihe nach tun:
 
         |> ol
-            class=outside-list
             |> li
                 Initialisiere $K := \{\epsilon\}$
             |> li
                 `for` $i=n$ `down to` 1 `do:`
 
                 |> ul
-                    class=outside-list
                     |> li
                         $K := \First_k(\sigma_i) \circ_k K$
                         |> span

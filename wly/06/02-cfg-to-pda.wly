@@ -208,7 +208,6 @@
         durch:
 
         |> ol
-            class=outside-list
             |> li
                 Der Automat hat einen einzigen akzeptierenden Zustand
                 $\qend$. Dies können wir einfach durch $\epsilon$-Übergänge
@@ -260,7 +259,6 @@
         ist. Dies kann auf zwei Weisen geschehen:
 
         |> ol
-            class=outside-list
             |> li
                 Fall 1: in der Konfigurationsfolge von
                 $(p, \epsilon) \Step{w}^* (q,\epsilon)$ wird der Stack

@@ -7,23 +7,21 @@
     zu entscheiden sind. Da stellen sich die folgenden
     Fragen:
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                Wie mann man die Definition kontextfreier Grammatiken
-                sinnvoll erweitern, so dass sie beispielsweise auch
-                Sprachen wie $\{a^n b^n c^n \ | \ n \geq 0\}$ umfassen?
-            |> li
-                Gibt es eine natürliche Barriere, jenseits derer es
-                keinen vernünftigen Begriff des "Beschreiben könnens"
-                gibt? Oder kann man immer noch allgemeinere Regelwerke
-                zulassen?
-            |> li
-                Gibt es für die (noch zu definierende) allgemeinere
-                Art von Grammatiken auch eine Art Automat, so wie die
-                endlichen Automaten für die regulären Grammatiken und
-                die Kellerautomaten für die kontextfreien?
+    |> ol
+        |> li
+            Wie mann man die Definition kontextfreier Grammatiken
+            sinnvoll erweitern, so dass sie beispielsweise auch
+            Sprachen wie $\{a^n b^n c^n \ | \ n \geq 0\}$ umfassen?
+        |> li
+            Gibt es eine natürliche Barriere, jenseits derer es
+            keinen vernünftigen Begriff des "Beschreiben könnens"
+            gibt? Oder kann man immer noch allgemeinere Regelwerke
+            zulassen?
+        |> li
+            Gibt es für die (noch zu definierende) allgemeinere
+            Art von Grammatiken auch eine Art Automat, so wie die
+            endlichen Automaten für die regulären Grammatiken und
+            die Kellerautomaten für die kontextfreien?
 
     Punkt 1 werden wir in diesem Kapitel diskutieren.
     Punkt 2 und 3 werden Gegenstand des nächsten Kapitels
@@ -198,7 +196,6 @@
         Die Nichtterminale $X,Y,Z$ stehen für folgendes:
 
         |> ul
-            class=outside-list
             |> li
                 $X$: will $A$ in $a$ umwandeln:
 
@@ -261,7 +258,6 @@
             gilt
 
             |> ol
-                class=outside-list
                 |> li
 
                     $\#_{A,a}(\beta) = \#_{B,b}(\beta) = \#_{C,c}(\beta)$
@@ -451,7 +447,6 @@
         hat.
 
         |> ul
-            class=outside-list
             |> li
                 Wir können $R$ nur loswerden, indem wir es in das
                 Killersymbol $K$ umwandeln. Das Killersymbol kann

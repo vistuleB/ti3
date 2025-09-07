@@ -125,7 +125,6 @@
         auf dem $M$ scheitert, also entweder
 
         |> ol
-            class=outside-list
             |> li
 
                 $f_H(z) = \texttt{accept}$ aber $z \not \in \halt$,
@@ -146,7 +145,6 @@
         als $y := \enc(D)$, so dass entweder
 
         |> ol
-            class=outside-list
             |> li
 
                 $f_H(yy) = \texttt{accept}$ aber
@@ -176,7 +174,6 @@
         drei Fälle.
 
         |> ul
-            class=outside-list
             |> li
 
                 $H(yy) = \texttt{reject}$. Dann geht der Aufruf von

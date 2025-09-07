@@ -311,7 +311,6 @@
         Sei $\gamma$ der Inhalt des Stacks zu einem Zeitpunkt.
 
         |> ol
-            class=outside-list
             |> li
                 Wenn $\gamma \in \Front(G)$, dann betrachte die letzte
                 angewandte $\hat{G}$-Produktion
@@ -375,7 +374,6 @@
         zwei Möglichkeiten.
 
         |> ol
-            class=outside-list
             |> li
                 Der Parser wendet Schritt 1 an, also
                 $\gamma \in \Front(G)$. Das heißt nach Definition

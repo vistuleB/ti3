@@ -158,7 +158,6 @@
         wie folgt konstruieren:
 
         |> ol
-            class=outside-list
             |> li
                 Für jede Produktion $X \rightarrow \beta$ gibt es
                 einen Zustandsübergang
@@ -263,7 +262,6 @@
         genau dann, wenn folgende zwei Bedingungen gelten:
 
         |> ul
-            class=outside-list
             |> li
                 (DK.1) Ein akzeptierender Zustand von $M$ (der ja
                 eine Menge von Zuständen des NDK-Automaten ist) enthält
@@ -291,7 +289,6 @@
             $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
 
             |> ol
-                class=outside-list
                 |> li
                     Falls $\alpha \beta = \alpha' \beta'$ dann auch
                     $\beta = \beta'$ und $X= X'$; in Worten: wenn die

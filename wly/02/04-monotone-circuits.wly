@@ -148,17 +148,15 @@
     _Beweismethoden_ zu illustrieren. Unter Beweismethoden
     verstehe ich hier formale Methoden wie
 
-    |> div
-        |> ul
-            class=outside-list
-            |> li
-                Beweis durch Induktion,
-            |> li
-                Beweis durch Widerspruch,
-            |> li
-                Beweis durch vollständige Fallunterscheidung,
-            |> li
-                ...
+    |> ul
+        |> li
+            Beweis durch Induktion,
+        |> li
+            Beweis durch Widerspruch,
+        |> li
+            Beweis durch vollständige Fallunterscheidung,
+        |> li
+            ...
 
     wie sie zum Beispiel auf 
     |> a
@@ -169,16 +167,14 @@
     die sich oft aus persönlicher Erfahrung speisen, wie
     zum Beispiel
 
-    |> div
-        |> ul
-            class=outside-list
-            |> li
-                kleine Beispiele untersuchen und dann verallgemeinern,
-            |> li
-                bereits Bekanntes abwandeln und hoffen, dass es funktioniert,
-            |> li
-                local change: ein Objekt schrittweise in die gewünschte
-                Richtung verändern;
+    |> ul
+        |> li
+            kleine Beispiele untersuchen und dann verallgemeinern,
+        |> li
+            bereits Bekanntes abwandeln und hoffen, dass es funktioniert,
+        |> li
+            local change: ein Objekt schrittweise in die gewünschte
+            Richtung verändern;
 
     da bei den Beweistechniken Erfahrung, Intuition und
     Kreativität mit ins Spiel kommen, ist es unmöglich,
@@ -232,7 +228,6 @@
                 Bei einem Beweis durch Induktion zeigen wir nun,
 
                 |> ol
-                    class=outside-list
                     |> li
                         dass $P(0)$ gilt (*Induktionsbasis*),
                     |> li
@@ -402,7 +397,6 @@
             nun also ein konkreter Input $x_1,\dots,x_n$ gegeben.
 
             |> ul
-                class=outside-list
                 |> li
                     Der Fall $x_1 = 1$. Dann gibt der obige Schaltkreis
                     den Wert $f_1(x_2,\dots,x_n$ aus, was per Definition
@@ -539,7 +533,6 @@
             $x_1$.
 
             |> ul
-                class=outside-list
                 |> li
                     Der Fall $x_1 = 0$. Dann gilt
 
@@ -762,7 +755,6 @@
             beide Ungleichungen $\leq$ und $\geq$ zu zeigen, also:
 
             |> ol
-                class=outside-list
                 |> li
                     $F(\mathbf{x}) \leq F'(\mathbf{x})$ und
                 |> li

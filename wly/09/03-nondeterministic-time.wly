@@ -18,7 +18,6 @@
         $L \subseteq \Sigma^*$ in Zeit $t$ wenn
 
         |> ul
-            class=outside-list
             |> li
                 $x \in L$ genau dann, wenn es eine Folge von Konfigurationen
 

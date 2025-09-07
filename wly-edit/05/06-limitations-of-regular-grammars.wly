@@ -44,7 +44,6 @@
         nun viele äquivalente Modelle gefunden haben:
 
         |> ol
-            class=outside-list
             |> li
                 Reguläre Grammatiken.
             |> li

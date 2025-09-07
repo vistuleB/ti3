@@ -341,7 +341,6 @@
             äquivalent sind:
 
             |> ol
-                class=outside-list
                 |> li
                     $q \stackrel{x \beta}{\rightarrow} q'$ im endlichen
                     Automaten $M$,
@@ -423,7 +422,6 @@
         äquivalent sind:
 
         |> ol
-            class=outside-list
             |> li
                 $\qstart \stackrel{\alpha}{\rightarrow} q'$ für einen
                 Zustand $q' \in F$,

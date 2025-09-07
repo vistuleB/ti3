@@ -27,7 +27,6 @@ pub fn formatter_pipeline() -> List(Pipe) {
   [
     [
       dl.identity(),
-      // dl.normalize_spaces__outside(["pre, Math, MathBlock, WriterlyCodeBlock"]),
       dl.trim_spaces_around_newlines__outside(["pre", "Math", "MathBlock", "WriterlyCodeBlock"]),
       dl.trim_ending_spaces_except_last_line(),
       dl.find_replace__outside(#("&amp;", "&"), []),
@@ -94,7 +93,7 @@ pub fn formatter_pipeline() -> List(Pipe) {
       dl.add_before_but_not_before_first_child(#("Highlight", "WriterlyBlankLine", [])),
       dl.unwrap("p"),
       dl.unwrap("MathBlock"),
-      dl.delete_attribute__batch(["test"]),
+      dl.delete_attribute__batch(["test", "t"]),
     ]
   ]
   |> list.flatten

@@ -239,59 +239,54 @@
     $k-j, j-i \lt k-i$, diese Bereiche also kleinere Unterwörter
     darstellen.
 
-    |> div
-        |> ul
-            class=outside-list
-            |> li
-                Initialisiere für alle $0 \leq i \lt n$ die Mengen
-                \(N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{
-                ist eine Produktion in $G$}\}\)
-            |> li
-                `for l = 2 .. n`
+    |> ul
+        |> li
+            Initialisiere für alle $0 \leq i \lt n$ die Mengen
+            \(N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{
+            ist eine Produktion in $G$}\}\)
+        |> li
+            `for l = 2 .. n`
 
-                |> ol
-                    type=I
-                    class=outside-list
-                    |> li
-                        `for i = 0 .. n-l`
+            |> ol
+                type=I
+                |> li
+                    `for i = 0 .. n-l`
 
-                        |> ol
-                            type=i
-                            class=outside-list
-                            |> li
-                                `k := i+l` 
-                                |> span
-                                    class=comment
-                                    # wir betrachten das Interval w[i:k] der Länge l
-                            |> li
-                                Berechne $N_{i,k}$ wie in $(\ref{equation-Nij})$.
-                                Konkret heißt das:
-                            |> li
-                                Initialisiere $N_{i,k} := \emptyset$
-                            |> li
-                                `for j = i+1 .. k-1:`
+                    |> ol
+                        type=i
+                        |> li
+                            `k := i+l` 
+                            |> span
+                                class=comment
+                                # wir betrachten das Interval w[i:k] der Länge l
+                        |> li
+                            Berechne $N_{i,k}$ wie in $(\ref{equation-Nij})$.
+                            Konkret heißt das:
+                        |> li
+                            Initialisiere $N_{i,k} := \emptyset$
+                        |> li
+                            `for j = i+1 .. k-1:`
 
-                                |> ol
-                                    type=1
-                                    class=outside-list
-                                    |> li
-                                        `for all productions` $X \rightarrow YZ$:
+                            |> ol
+                                type=1
+                                |> li
+                                    `for all productions` $X \rightarrow YZ$:
 
-                                        |> ol
-                                            type=a
-                                            |> li
-                                                füge $X$ zu $N_{i,k}$ hinzu, falls $Y \in N_{i,j}$
-                                                und $Z \in N_{j,k}$ gilt.
-                                    |> li
-                                        `end for all productions`
-                            |> li
-                                `end for j`
-                    |> li
-                        `end for k`
-            |> li
-                `end for i`
-            |> li
-                `return True if` $S \in N_{0,n}$ `else return False`
+                                    |> ol
+                                        type=a
+                                        |> li
+                                            füge $X$ zu $N_{i,k}$ hinzu, falls $Y \in N_{i,j}$
+                                            und $Z \in N_{j,k}$ gilt.
+                                |> li
+                                    `end for all productions`
+                        |> li
+                            `end for j`
+                |> li
+                    `end for k`
+        |> li
+            `end for i`
+        |> li
+            `return True if` $S \in N_{0,n}$ `else return False`
 
     Was ist die Laufzeit des Algorithmus? Sei $g$ die
     Anzahl der Produktionen in $G$ der Form

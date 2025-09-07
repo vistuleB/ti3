@@ -23,7 +23,6 @@
         Automat besteht aus
 
         |> ul
-            class=outside-list
             |> li
                 einem endlichen Eingabealphaet $\Sigma$,
             |> li

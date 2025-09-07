@@ -16,27 +16,25 @@
 
     Diese besteht aus folgenden Teilen:
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                Dem Eingabefenster für die Grammatik links oben. Hier
-                können Sie Ihre eigene Grammatik eingeben.
-            |> li
-                Dem Eingabefenster für das Eingabewort.
-            |> li
-                Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
-                der Versuch, das Eingabewort aus den Grammatikregeln
-                per Linksableitung abzuleiten. Die Pfade, die in Sackgassen
-                enden, sind rot markiert.
-            |> li
-                Der Ableitungsbaum. Für jeden Knoten $w$ im Backtrack-Baum
-                stellt der Pfad von Wurzel nach $w$ eine Linksableitung
-                dar. Wenn Sie auf $w$ klicken, sehen Sie den entsprechenden
-                Ableitungsbaum. Per Default wird die erste erfolgreiche
-                Linksableitung in einen Ableitungsbaum umgewandelt
-                und angezeigt (wenn es denn überhaupt eine erfolgreiche
-                Ableitung gibt).
+    |> ol
+        |> li
+            Dem Eingabefenster für die Grammatik links oben. Hier
+            können Sie Ihre eigene Grammatik eingeben.
+        |> li
+            Dem Eingabefenster für das Eingabewort.
+        |> li
+            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
+            der Versuch, das Eingabewort aus den Grammatikregeln
+            per Linksableitung abzuleiten. Die Pfade, die in Sackgassen
+            enden, sind rot markiert.
+        |> li
+            Der Ableitungsbaum. Für jeden Knoten $w$ im Backtrack-Baum
+            stellt der Pfad von Wurzel nach $w$ eine Linksableitung
+            dar. Wenn Sie auf $w$ klicken, sehen Sie den entsprechenden
+            Ableitungsbaum. Per Default wird die erste erfolgreiche
+            Linksableitung in einen Ableitungsbaum umgewandelt
+            und angezeigt (wenn es denn überhaupt eine erfolgreiche
+            Ableitung gibt).
 
     |> Exercise
         Geben Sie folgende Grammatik in die App ein:

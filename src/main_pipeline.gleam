@@ -180,6 +180,8 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("NoWrap", "class", "nowrap"),
       ]),
       dl.wrap_with_if_child_of(#("pre", "div", ["Sub", "Chapter"])),
+      dl.wrap_with_if_child_of(#("ol", "div", ["Sub", "Chapter"])),
+      dl.wrap_with_if_child_of(#("ul", "div", ["Sub", "Chapter"])),
       dl.append_class_to_child_if_has_class(#("Chapter", "out", "well")),
       dl.append_class_to_child_if_has_class(#("Sub", "out", "well")),
       dl.append_class_to_child_if_is_one_of(#("Chapter", "main-column", possible_outer_elements)),

@@ -509,7 +509,7 @@
       Wir haben nun also eine Kette von Implikationen erschaffen:
     </p>
     <div class="main-column">
-      <ul class="outside-list">
+      <ul>
         <li>
           <p>
             Wenn
@@ -636,7 +636,7 @@
       bereits kennengelernt:
     </p>
     <div class="main-column">
-      <ol class="outside-list">
+      <ol>
         <li>
           <p>
             <span style="font-variant:small-caps;">3-Colorability $\leq_p$ CNF-Satisfiability</span>
@@ -703,37 +703,35 @@
         dann gibt es folgende unabhängige Menge der Größe
         <span class="nowrap">$k$:</span>
       </p>
-      <div>
-        <ul class="outside-list">
-          <li>
-            <p>
-              Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
-              $\alpha(x)=1$ ist, ansonsten
-              <span class="nowrap">$\bar{x}$.</span>
-            </p>
-          </li>
-          <li>
-            <p>
-              Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
-              erfülltes Literal, sagen wir
-              <span class="nowrap">$u$.</span>
-              Dieser entspricht
-              dem Klauselknoten
-              <span class="nowrap">$u_C$,</span>
-              der mit mit dem Literalknoten
-              $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
-              $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
-              wir können $u_C$ in $I$ aufnehmen.
-            </p>
-          </li>
-          <li>
-            <p>
-              Unsere Menge $I$ enthält $n$ Literalknoten und $m$
-              Klauselknoten, also insgesamt $k$ Knoten.
-            </p>
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>
+          <p>
+            Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
+            $\alpha(x)=1$ ist, ansonsten
+            <span class="nowrap">$\bar{x}$.</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
+            erfülltes Literal, sagen wir
+            <span class="nowrap">$u$.</span>
+            Dieser entspricht
+            dem Klauselknoten
+            <span class="nowrap">$u_C$,</span>
+            der mit mit dem Literalknoten
+            $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
+            $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
+            wir können $u_C$ in $I$ aufnehmen.
+          </p>
+        </li>
+        <li>
+          <p>
+            Unsere Menge $I$ enthält $n$ Literalknoten und $m$
+            Klauselknoten, also insgesamt $k$ Knoten.
+          </p>
+        </li>
+      </ul>
       <p>
         Für die Gegenrichtung nehmen wir an, dass $I$ eine
         unabhängige Menge von $G$ ist und $|I| = n+m$ gilt.

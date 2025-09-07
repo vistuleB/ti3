@@ -3,33 +3,31 @@
     Hier eine kurze Übersicht über die Reduktionen, die
     Sie im vorherigen Kapitel kennengelernt haben.
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    3-Colorability $\leq_p$ CNF-Satisfiability
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    CNF-Satisfiability $\leq_p$ 3-SAT
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    3-SAT $\leq_p$ 3-Colorability
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    3-SAT $\leq_p$ Independent Set
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    Hamilton Path $\leq_p$ Hamilton Cycle
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    Hamilton Cycle $\leq_p$ Hamilton Path
+    |> ol
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                3-Colorability $\leq_p$ CNF-Satisfiability
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                CNF-Satisfiability $\leq_p$ 3-SAT
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                3-SAT $\leq_p$ 3-Colorability
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                3-SAT $\leq_p$ Independent Set
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                Hamilton Path $\leq_p$ Hamilton Cycle
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                Hamilton Cycle $\leq_p$ Hamilton Path
 
     Mit etwas Anstrengung würden wir auch
     |> span
@@ -256,7 +254,6 @@
         nun:
 
         |> ol
-            class=outside-list
             |> li
                 Wenn eine Belegung der Variablen
                 $(x, y, z, w, g_1, \dots, g_{11})$ die Formel $F$

@@ -171,21 +171,15 @@ body {
     margin-bottom: 0;
 }
 
-ol,
-ul {
-    list-style-position: inside;
-    padding:0em 2em;
-}
-
-ul.outside-list,
-ol.outside-list {
+ul,
+ol {
     list-style-position: outside;
     padding-left: 0.5rem;
     margin:0em 1em;
 }
 
-ul.outside-list:not(li > ul),
-ol.outside-list:not(li > ol) {
+ul:not(li > ul),
+ol:not(li > ol) {
     margin: 0.7em 2em;
 }
 

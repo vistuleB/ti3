@@ -3,15 +3,13 @@
     Primitive Rekursion erlaubt uns Schleifen, allerdings
     nur in einer sehr restriktiven Form:
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                Wir müssen anfangs bereits angeben, wie oft wir die
-                Schleife durchlaufen wollen;
-            |> li
-                wir dürfen nur eine lokale Variable mitführen (und
-                den Iterationsindex).
+    |> ol
+        |> li
+            Wir müssen anfangs bereits angeben, wie oft wir die
+            Schleife durchlaufen wollen;
+        |> li
+            wir dürfen nur eine lokale Variable mitführen (und
+            den Iterationsindex).
 
     Der zweite Punkt ist keine echte Beschränkung, wie
     wir gesehen haben: wenn wir zwei lokale Variablen

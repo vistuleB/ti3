@@ -34,17 +34,15 @@
     über Platzbedarf sprechen, dann gehen wir von einer
     Turingmaschine aus, die
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                ein Eingabeband hat, auf dem sie nur lesen darf;
-            |> li
-                beliebig viele _Arbeitsbänder_, auf denen sie lesen
-                und schreiben darf;
-            |> li
-                ein Ausgabeband, auf dem sie schreiben darf, aber
-                nur nach rechts laufen darf.
+    |> ol
+        |> li
+            ein Eingabeband hat, auf dem sie nur lesen darf;
+        |> li
+            beliebig viele _Arbeitsbänder_, auf denen sie lesen
+            und schreiben darf;
+        |> li
+            ein Ausgabeband, auf dem sie schreiben darf, aber
+            nur nach rechts laufen darf.
 
     Wenn wir eine Sprache $L \subseteq \Sigma^*$ entscheiden
     wollen, dann brauchen das Ausgabeband nicht wirklich.
@@ -91,7 +89,6 @@
         $M$ läuft in Platz $s$, falls
 
         |> ol
-            class=outside-list
             |> li
                 sie für jedes $x \in \Sigma^*$ terminiert und
             |> li

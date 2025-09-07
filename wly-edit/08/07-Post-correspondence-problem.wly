@@ -84,7 +84,6 @@
         Sei $\Sigma$ ein endliches Alphabet.
 
         |> ul
-            class=outside-list
             |> li
                 Eine _Kachel_ (auch _Kärtchen_ genannt) ist ein Paar
                 $(\alpha : \beta) \in \Sigma^* \times \Sigma^*$. Hier

@@ -98,9 +98,8 @@
         $f : \N \rightarrow \Z$ wie folgt definieren:
 
         \begin{align*}
-        f : \N&\rightarrow \Z \\ n&\mapsto \begin{cases}
-        \frac{n}{2}&\textnormal{ wenn $n$ gerade ist,} \\ - \frac{n+1}{2}&
-        \textnormal{ wenn $n$ ungerade ist.} \end{cases}
+        f : \N&\rightarrow \Z \\ n&\mapsto \begin{cases} \frac{n}{2} & \textnormal{ wenn $n$ gerade ist,} \\
+        - \frac{n+1}{2} & \textnormal{ wenn $n$ ungerade ist.} \end{cases}
         \end{align*}
 
     |> Exercise

@@ -269,39 +269,37 @@
 
     Wir haben nun also eine Kette von Implikationen erschaffen:
 
-    |> div
-        |> ul
-            class=outside-list
-            |> li
-                Wenn 
-                |> span
-                    style=font-variant:small-caps;
-                    CNF-Satisfiability
-                \ in P, dann auch 
-                |> span
-                    style=font-variant:small-caps;
-                    3-Colorability
-                (Theorem >>theorem-3-col-to-sat).
-            |> li
-                Wenn 
-                |> span
-                    style=font-variant:small-caps;
-                    3-Colorability
-                \ in P, dann auch 
-                |> span
-                    style=font-variant:small-caps;
-                    3-SAT
-                (Theorem >>theorem-3-sat-to-3-col).
-            |> li
-                Wenn 
-                |> span
-                    style=font-variant:small-caps;
-                    3-SAT
-                \ in P, dann auch
-                |> span
-                    style=font-variant:small-caps;
-                    CNF-Satisfiability
-                (Theorem >>theorem-sat-to-3-sat).
+    |> ul
+        |> li
+            Wenn 
+            |> span
+                style=font-variant:small-caps;
+                CNF-Satisfiability
+            \ in P, dann auch 
+            |> span
+                style=font-variant:small-caps;
+                3-Colorability
+            (Theorem >>theorem-3-col-to-sat).
+        |> li
+            Wenn 
+            |> span
+                style=font-variant:small-caps;
+                3-Colorability
+            \ in P, dann auch 
+            |> span
+                style=font-variant:small-caps;
+                3-SAT
+            (Theorem >>theorem-3-sat-to-3-col).
+        |> li
+            Wenn 
+            |> span
+                style=font-variant:small-caps;
+                3-SAT
+            \ in P, dann auch
+            |> span
+                style=font-variant:small-caps;
+                CNF-Satisfiability
+            (Theorem >>theorem-sat-to-3-sat).
 
     Beachten Sie, dass alle Beweise eine ähnliche Form
     haben: um die Aussage _wenn $L_1 \in P$, dann auch
@@ -361,21 +359,19 @@
     Wir haben die folgenden Polynomialzeitreduktionen
     bereits kennengelernt:
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    3-Colorability $\leq_p$ CNF-Satisfiability
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    CNF-Satisfiability $\leq_p$ 3-SAT
-            |> li
-                |> span
-                    style=font-variant:small-caps;
-                    3-SAT $\leq_p$ 3-Colorability
+    |> ol
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                3-Colorability $\leq_p$ CNF-Satisfiability
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                CNF-Satisfiability $\leq_p$ 3-SAT
+        |> li
+            |> span
+                style=font-variant:small-caps;
+                3-SAT $\leq_p$ 3-Colorability
 
     Erinnern Sie sich an 
     |> span
@@ -413,22 +409,20 @@
         dann gibt es folgende unabhängige Menge der Größe
         $k$:
 
-        |> div
-            |> ul
-                class=outside-list
-                |> li
-                    Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
-                    $\alpha(x)=1$ ist, ansonsten $\bar{x}$.
-                |> li
-                    Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
-                    erfülltes Literal, sagen wir $u$. Dieser entspricht
-                    dem Klauselknoten $u_C$, der mit mit dem Literalknoten
-                    $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
-                    $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
-                    wir können $u_C$ in $I$ aufnehmen.
-                |> li
-                    Unsere Menge $I$ enthält $n$ Literalknoten und $m$
-                    Klauselknoten, also insgesamt $k$ Knoten.
+        |> ul
+            |> li
+                Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
+                $\alpha(x)=1$ ist, ansonsten $\bar{x}$.
+            |> li
+                Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
+                erfülltes Literal, sagen wir $u$. Dieser entspricht
+                dem Klauselknoten $u_C$, der mit mit dem Literalknoten
+                $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
+                $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
+                wir können $u_C$ in $I$ aufnehmen.
+            |> li
+                Unsere Menge $I$ enthält $n$ Literalknoten und $m$
+                Klauselknoten, also insgesamt $k$ Knoten.
 
         Für die Gegenrichtung nehmen wir an, dass $I$ eine
         unabhängige Menge von $G$ ist und $|I| = n+m$ gilt.

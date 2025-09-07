@@ -81,7 +81,6 @@
         zusammen:
 
         |> ol
-            class=outside-list
             |> li
                 Ein XOR-Gate $x \oplus y$. Es gibt 1 aus, wenn einer
                 der beiden Inputs 1 ist und der andere 0.
@@ -176,7 +175,6 @@
         acyclic graph, kurz DAG), in welchem jeder Knoten entweder
 
         |> ul
-            class=outside-list
             |> li
                 ein Input-Gate ist und mit einer Input-Variable oder
                 eine Booleschen Konstant (0 oder 1) beschriftet ist

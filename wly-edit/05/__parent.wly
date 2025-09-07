@@ -236,37 +236,35 @@
     Was Sie hier sehen, nennt man eine _formale Grammatik_.
     Ihre Bestandteile sind:
 
-    |> div
-        |> ul
-            class=outside-list
-            |> li
-                Das Alphabet $\Sigma$ aller verwendeten Zeichen, in
-                unserem Fall also
-                $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$. Wir nennen
-                $\Sigma$ die Menge der _terminalen Symbole_.
-            |> li
-                Eine Menge $N$ abstrakter Symbole, hier
+    |> ul
+        |> li
+            Das Alphabet $\Sigma$ aller verwendeten Zeichen, in
+            unserem Fall also
+            $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$. Wir nennen
+            $\Sigma$ die Menge der _terminalen Symbole_.
+        |> li
+            Eine Menge $N$ abstrakter Symbole, hier
 
-                $$
-                N = \{\texttt{&lt;EmailAddress&gt;,&lt;Domain&gt;,
-                &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;}
-                \} \ .
-                $$
+            $$
+            N = \{\texttt{&lt;EmailAddress&gt;,&lt;Domain&gt;,
+            &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;}
+            \} \ .
+            $$
 
-                Diese Menge nennen wir die _nichtterminalen Symbole_.
-                Wir verlangen, dass $N \cap \Sigma = \emptyset$ gilt;
-                ein Symbol kann also nicht gleichzeitig Terminalsymbol
-                und Nichtterminalsymbol sein.
-            |> li
-                Eine Menge $P$ von Regeln, auch _Produktionen_ genannt,
-                wobei jede Regel die Form $X \rightarrow \alpha$ hat,
-                wobei $\alpha$ eine beliebig lange endliche Folge
-                von Symbolen in $\Sigma \cup N$ ist.
-            |> li
-                Ein Startsymbol $S \in N$, das angibt, wo wir mit
-                unserer Ableitung beginnen sollen. Im obigen Beispiel
-                sind wir ja an Emailadressen interessiert, also ist
-                `&lt;EmailAddress&gt;` das Startsymbol.
+            Diese Menge nennen wir die _nichtterminalen Symbole_.
+            Wir verlangen, dass $N \cap \Sigma = \emptyset$ gilt;
+            ein Symbol kann also nicht gleichzeitig Terminalsymbol
+            und Nichtterminalsymbol sein.
+        |> li
+            Eine Menge $P$ von Regeln, auch _Produktionen_ genannt,
+            wobei jede Regel die Form $X \rightarrow \alpha$ hat,
+            wobei $\alpha$ eine beliebig lange endliche Folge
+            von Symbolen in $\Sigma \cup N$ ist.
+        |> li
+            Ein Startsymbol $S \in N$, das angibt, wo wir mit
+            unserer Ableitung beginnen sollen. Im obigen Beispiel
+            sind wir ja an Emailadressen interessiert, also ist
+            `&lt;EmailAddress&gt;` das Startsymbol.
 
     Wenn wir nun so eine Grammatik gegeben haben, können
     wir Wörter _ableiten_; das heißt, wir beginnen mit
@@ -358,47 +356,43 @@
     mit $L$ ab, was für _language_ steht. Beispiele für
     Sprachen wären
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                Die Sprache aller syntaktisch korrekten Emailadressen.
-            |> li
-                Die Sprache aller Java-Programme, die ohne Fehlermeldung
-                kompilieren
-            |> li
-                Die Sprache aller Java-Programme, die kompilieren,
-                dann aber mit einem Laufzeitfehler abbrechen.
-            |> li
-                Die Sprache aller Java-Programme, die kompilieren
-                und nicht mit einem Laufzeitfehler abbrechen.
-            |> li
-                Die Sprache aller Wörter über $\{a,b\}$, die gleich
-                viele $a$'s wie $b$'s enthalten.
-            |> li
-                Die Sprache aller Palindrome über $\{a,b,c,d\}$, also
-                Wörter, die von vorne wie hinten gelesen gleich aussehen.
+    |> ol
+        |> li
+            Die Sprache aller syntaktisch korrekten Emailadressen.
+        |> li
+            Die Sprache aller Java-Programme, die ohne Fehlermeldung
+            kompilieren
+        |> li
+            Die Sprache aller Java-Programme, die kompilieren,
+            dann aber mit einem Laufzeitfehler abbrechen.
+        |> li
+            Die Sprache aller Java-Programme, die kompilieren
+            und nicht mit einem Laufzeitfehler abbrechen.
+        |> li
+            Die Sprache aller Wörter über $\{a,b\}$, die gleich
+            viele $a$'s wie $b$'s enthalten.
+        |> li
+            Die Sprache aller Palindrome über $\{a,b,c,d\}$, also
+            Wörter, die von vorne wie hinten gelesen gleich aussehen.
 
     Wir wollen herausfinden, welche Arten von Sprachen
     wir mit den im letzten Abschnitt eingeführen Regelwerk
     aus Ableitungen beschreiben können. Für die gerade
     aufgelisteten sechs Sprachen lautet die Antwort
 
-    |> div
-        |> ol
-            class=outside-list
-            |> li
-                Ja, können wir.
-            |> li
-                Ja, wenn wir leicht komplexere Ableitungsregeln erlauben.
-            |> li
-                Ja, wenn wir leicht komplexere Ableitungsregeln erlaubten.
-            |> li
-                Nein, können wir nicht.
-            |> li
-                Ja, können wir.
-            |> li
-                Ja, können wir.
+    |> ol
+        |> li
+            Ja, können wir.
+        |> li
+            Ja, wenn wir leicht komplexere Ableitungsregeln erlauben.
+        |> li
+            Ja, wenn wir leicht komplexere Ableitungsregeln erlaubten.
+        |> li
+            Nein, können wir nicht.
+        |> li
+            Ja, können wir.
+        |> li
+            Ja, können wir.
 
     |> SubTopic
         Grammatiken
@@ -409,7 +403,6 @@
         besteht aus
 
         |> ol
-            class=outside-list
             |> li
                 einem endlichen Alphabet $\Sigma$, den _terminalen
                 Symbolen_;

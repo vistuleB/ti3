@@ -62,7 +62,6 @@
         drei einfachen und kurzen Phasen:
 
         |> ol
-            class=outside-list
             |> li
                 `copy`: kopiert das $w$ auf das zweite Band
             |> li
@@ -268,7 +267,6 @@
     zwei Fragen stellen:
 
     |> ol
-        class=outside-list
         |> li
             Ist das immer noch ein plausibles Modell einer Rechenmaschine?
             Ist also unser neue Funktionalität physikalisch realisierbar?

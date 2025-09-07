@@ -49,7 +49,6 @@
         folgenden Elementen:
 
         |> ol
-            class=outside-list
             |> li
                 Einem endlichen Eingabe-Alphabet $\Sigma$. Dies sind
                 die Symbole, die für das Eingabewort in Frage kommen.

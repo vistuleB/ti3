@@ -214,7 +214,6 @@
         Zahlen. Die Werte $p_I$ und $g_I$ sind wie folgt definiert:
 
         |> ul
-            class=outside-list
             |> li
                 Wenn für alle $i \in I$ das Paar $x_i, y_i$ den Wert
                 $(0,1)$ oder $(1,0)$ hat, dann ist $p_I = 1$ und
@@ -225,7 +224,6 @@
                 (1,1)\} \}$.
 
                 |> ul
-                    class=outside-list
                     |> li
                         Falls $(x_{i^*}, y_{i^*}) = (1,1)$, dann sind
                         $p_I = g_I = 1$.
