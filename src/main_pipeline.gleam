@@ -110,6 +110,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti3_parse_orange_comments_pre(),
       dl.ti3_parse_arbitrary_prompt_response_pre(),
       dl.ti3_parse_redyellow_pre(),
+      dl.ti3_parse_xml_pre(),
       dl.normalize_br_in_pre(),
       dl.ti3_add_listing_bol_spans(),
       dl.generate_ti3_index(),

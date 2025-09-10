@@ -527,3 +527,38 @@ hr {
     text-align: center;
     margin: auto;
 }
+
+.xml-0 {
+    /* '<' '/>' etc */
+    color:#913d3d;
+}
+
+.xml-1 {
+    /* tag names */
+    color:#913d3d;
+}
+
+.xml-2 {
+    /* attribute keys */
+    color:#f78080;
+}
+
+.xml-3 {
+    /* attribute assignment '=' */
+    color:#913d3d;
+}
+
+.xml-4 {
+    /* attribute values including the quotes */
+    color:#826cc4;
+}
+
+.xml-5 {
+    /* text */
+    color:#333;
+}
+
+.xml-6 {
+    /* comments */
+    color:#70b470;
+}

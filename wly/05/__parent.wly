@@ -17,27 +17,27 @@
     Sie die typische hierarchisch-geschachtelte Struktur
     (sie müssen es nicht im Detail lesen):
 
-    ```listing
-    <div class='carousel-inner' style='display:inline-block'>
-        <div class='item active'>
-            <p>$110 x + 794$</p><img loading="lazy" src='../img/hash/hashfunction_110_794.svg'>
+    ```xml-listing
+    <div class="carousel-inner" style="display:inline-block">
+        <div class="item active">
+            <p>$110 x + 794$</p><img loading="lazy" src="img/hash/hashfunction_110_794.svg">
         </div>
-        <div class='item'>
-            <p>$502 x + 121$</p><img loading="lazy" src='../img/hash/hashfunction_502_121.svg'>
+        <div class="item">
+            <p>$502 x + 121$</p><img loading="lazy" src="img/hash/hashfunction_502_121.svg">
             </div>
-        <div class='item'>
-            <p>$617 x + 5$</p><img loading="lazy" src='../img/hash/hashfunction_617_5.svg'>
+        <div class="item">
+            <p>$617 x + 5$</p><img loading="lazy" src="img/hash/hashfunction_617_5.svg">
         </div>
-        <div class='item'>
-            <p>$815 x + 562$</p><img loading="lazy" src='../img/hash/hashfunction_851_562.svg'>
+        <div class="item">
+            <p>$815 x + 562$</p><img loading="lazy" src="img/hash/hashfunction_851_562.svg">
         </div>
-        <div class='item'>
-            <p>$868 x + 858$</p><img loading="lazy" src='../img/hash/hashfunction_868_858.svg'>
+        <div class="item">
+            <p>$868 x + 858$</p><img loading="lazy" src="img/hash/hashfunction_868_858.svg">
         </div>
-        <div class='item'>
-            <p>$915 x + 320$</p><img loading="lazy" src='../img/hash/hashfunction_915_320.svg'>
+        <div class="item">
+            <p>$915 x + 320$</p><img loading="lazy" src="img/hash/hashfunction_915_320.svg">
         </div>
-    </div class='carousel-inner'>
+    </div class="carousel-inner">
     ```
 
     Hier sehen Sie einen Ausschnitt aus einem Elm-Programm
@@ -67,7 +67,7 @@
             style=height:4em
             src=./img/svg-example.svg
 
-    ```listing
+    ```xml-listing
     <?xml version="1.0" encoding="UTF-8"?>
     <svg
         xmlns="http://www.w3.org/2000/svg"
