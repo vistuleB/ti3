@@ -16,7 +16,7 @@ pub fn main_pipeline()  -> List(Pipe) {
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   
-  let post_transformation_document_tags = ["Document", "marker", "WriterlyCodeBlock"]
+  let post_transformation_document_tags = ["Document", "marker", "WriterlyCodeBlock", "AnnotatedBackticks"]
   let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
 
@@ -146,6 +146,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.rearrange_links(#("Lemma <a href=1>_1_</a>", "<a href=1>Lemma _1_</a>")),    
       dl.rearrange_links(#("Algorithmus <a href=1>_1_</a>", "<a href=1>Algorithmus _1_</a>")),
     ],
+    pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math", "pre", "code"]),

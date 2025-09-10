@@ -304,13 +304,8 @@ pre.listing:before {
     counter-reset: listing;
 }
 
-pre.listing > span {
+pre.listing > span.listing-bol {
     counter-increment: listing;
-}
-
-pre.redyellow {
-    color:red;
-    background-color: yellow;
 }
 
 pre.listing > span.listing-bol::before {
@@ -318,7 +313,14 @@ pre.listing > span.listing-bol::before {
     content: counter(listing) ". ";
     min-width: 4ch;
     display: inline-block;
+    text-align: right;
+    /* background-color: #000; */
 }
+
+pre.redyellow {
+    color:red;
+    background-color: yellow;
+}    
 
 .terminalOutput {
     color: blue;
@@ -561,4 +563,29 @@ hr {
 .xml-6 {
     /* comments */
     color:#70b470;
+}
+
+.elm-0 {
+    /* punctuation */
+    color: rgb(34, 39, 45);
+}
+.elm-1 {
+    /* thing-being-defined */
+    color: rgb(28, 94, 173);
+}
+.elm-2 {
+    /* type */
+    color: rgb(207, 103, 191);
+}
+.elm-3 {
+    /* variable */
+    color: rgb(192, 169, 54);
+}
+.elm-4 {
+    /* keyword */
+    color: rgb(164, 94, 101);
+}
+.elm-5 {
+    /* variant + function application */
+    color: rgb(62, 66, 71);
 }
