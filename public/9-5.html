@@ -18,14 +18,14 @@
     <div class="menu">
       <div class="menu-left">
         <a href="./index.html">Inhaltsverzeichnis</a><a
-          id="prev-page"
           href="./9-4.html"
+          id="prev-page"
         >&lt;&lt; Kapitel 9.4</a>
       </div>
       <div class="menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
-          id="next-page"
           href="./9-6.html"
+          id="next-page"
         >Kapitel 9.6  &gt;&gt;</a>
       </div>
     </div>
@@ -57,7 +57,7 @@
       Sie sind gewissermaßen gleich schwer.
     </p>
     <div
-      id="_32_hgi_"
+      id="_35_hgi_"
       class="well statement out"
     >
       <p>
@@ -74,7 +74,8 @@
         <b>Beweis.</b>
         Wir nehmen an, wir hätten einen effizienten
         AlgorithmUs
-        <code><span class="nowrap">is_satisfiable($F$)</span></code>. Wir verwenden diesen,
+        <span class="nowrap"><code>is_satisfiable($F$)</code>.</span>
+        Wir verwenden diesen,
         um einen Algorithmus
         <code>is_3_colorable</code>
         zu entwerfen.
@@ -179,16 +180,11 @@
       Beachten Sie, dass die Formel
       <span class="nowrap">$F$,</span>
       die wir im Beweis
-      von
-      <a
-        href="./9-5.html#_32_hgi_"
-        class=""
-      >Theorem 9.5.1</a>
-      erstellt haben,
+      von Theorem &gt;&gt;theorem-3-col-to-sat erstellt haben,
       eine solche 3-CNF ist.
     </p>
     <div
-      id="_33_hgi_"
+      id="_36_hgi_"
       class="well statement out"
     >
       <p>
@@ -205,8 +201,8 @@
         Wir gehen konzeptuell ähnlich vor wie oben.
         Uns ist eine 3-CNF-Formel $F$ gegeben. Wir müssen
         jetzt einen Graphen $G = (V,E)$ bauen, der die Aussage
-        <i>$F$ ist erfüllbar</i>
-        irgendwie in seiner 3-Färbbarkeit
+        <span class="nowrap">_$F$</span>
+        ist erfüllbar_ irgendwie in seiner 3-Färbbarkeit
         oder eben Nicht-3-Färbbarkeit codiert. Dies ist schwieriger.
         Als ersten Schritt legen wir fest, dass die drei Farben
         nicht
@@ -388,7 +384,7 @@
       $F$ eine allgemeine CNF-Formel ist?
     </p>
     <div
-      id="_34_hgi_"
+      id="_37_hgi_"
       class="well statement out"
     >
       <p>
@@ -515,8 +511,7 @@
             Wenn
             <span style="font-variant:small-caps;">CNF-Satisfiability</span>
             in P, dann auch
-            <span style="font-variant:small-caps;">3-Colorability</span>(Theorem
-            <a href="./9-5.html#_32_hgi_">9.5.1</a>).
+            <span style="font-variant:small-caps;">3-Colorability</span>(Theorem &gt;&gt;theorem-3-col-to-sat).
           </p>
         </li>
         <li>
@@ -524,27 +519,24 @@
             Wenn
             <span style="font-variant:small-caps;">3-Colorability</span>
             in P, dann auch
-            <span style="font-variant:small-caps;">3-SAT</span>(Theorem
-            <a href="./9-5.html#_33_hgi_">9.5.2</a>).
+            <span style="font-variant:small-caps;">3-SAT</span>(Theorem &gt;&gt;theorem-3-sat-to-3-col).
           </p>
         </li>
         <li>
           <p>
             Wenn
             <span style="font-variant:small-caps;">3-SAT</span>
-            in P, dann auch<span style="font-variant:small-caps;">CNF-Satisfiability</span>(Theorem
-            <a href="./9-5.html#_34_hgi_">9.5.3</a>).
+            in P, dann auch<span style="font-variant:small-caps;">CNF-Satisfiability</span>(Theorem &gt;&gt;theorem-sat-to-3-sat).
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
       Beachten Sie, dass alle Beweise eine ähnliche Form
-      haben: um die Aussage
-      <i>wenn
-        <span class="nowrap">$L_1 \in P$,</span>
-        dann auch
-        $L_2 \in P$</i>
+      haben: um die Aussage _wenn
+      <span class="nowrap">$L_1 \in P$,</span>
+      dann auch
+      <span class="nowrap">$L_2 \in P$_</span>
       zu zeigen, nehmen wir eine beliebiges
       $x \in \Sigma_1$ (eine
       <span class="nowrap">$L_1$-Instanz)</span>
@@ -576,8 +568,7 @@
     <p class="main-column">
       Dies ist eine
       <i>Reduktion</i>, wie wir sie schon in Definition
-      <a href="./8-8.html#_24_hgi_">8.8.4</a>
-      kennengelernt haben, nun aber
+      &gt;&gt;definition-reduction kennengelernt haben, nun aber
       mit einer Aussage über die Laufzeit.
     </p>
     <div class="well statement out">
@@ -587,9 +578,9 @@
         <b>(Polynomialzeitreduktion)</b>. Seien
         $L_1 \subseteq \Sigma_1^*$ und
         $L_2 \subseteq \Sigma_2^*$ zwei Sprachen. Eine Funktion
-        $f: \Sigma_1^* \rightarrow \Sigma_2^*$ heißt
-        <i>Polynomialzeitreduktion
-          von $L_1$ auf $L_2$</i>
+        $f: \Sigma_1^* \rightarrow \Sigma_2^*$ heißt _Polynomialzeitreduktion
+        von $L_1$ auf
+        <span class="nowrap">$L_2$_</span>
         wenn
       </p>
       <div class="math-block">
@@ -679,8 +670,8 @@
       </p>
       <figure>
         <img
-          style="height:20em"
           src="img/09-complexity-theory/sat-to-independent-set/3sat-to-IS.svg"
+          style="height:20em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -774,20 +765,23 @@
         <span style="font-variant:small-caps;">Independent Set $\leq_p$ SAT</span>. Also: Gegeben einen Graphen $G$ und eine Zahl
         <span class="nowrap">$k \in \N$,</span>
         zeigen Sie, wie man die Aussage
-        <i>$G$ hat
-          eine unabhängige Menge der Größe $k$</i>
+        <span class="nowrap">_$G$</span>
+        hat
+        eine unabhängige Menge der Größe
+        <span class="nowrap">$k$_</span>
         als aussagenlogische
         Formel in CNF darstellen kann.
         <b>Hinweis:</b>
         Die Aussage
-        <i><span class="nowrap">"$I$</span>
-          ist eine unabhängige Menge von $G$</i>
+        <span class="nowrap">_"$I$</span>
+        ist eine unabhängige Menge von
+        <span class="nowrap">$G$_</span>
         ist leicht
         darzustellen als CNF-Formeln. Die Aussage
-        <i><span class="nowrap">"$I$</span>
-          hat
-          Größe
-          <span class="nowrap">$k$"</span></i>
+        <span class="nowrap">_"$I$</span>
+        hat
+        Größe
+        <span class="nowrap">$k$"_</span>
         ist schwieriger. Sie müssen quasi
         <i>zählen</i>.
       </p>
@@ -812,16 +806,16 @@
           <div class="carousel__item">
             <p>
               <img
-                src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-01-01.svg"
                 style="height: 20em;"
+                src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-01-01.svg"
               >
             </p>
           </div>
           <div class="carousel__item">
             <p>
               <img
-                src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-01-02.svg"
                 style="height: 20em;"
+                src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-01-02.svg"
               >
             </p>
           </div>
@@ -840,8 +834,8 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:20em"
         src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-02-01.svg"
+        style="height:20em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -932,16 +926,16 @@
             <div class="carousel__item">
               <p>
                 <img
-                  src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-03-01.svg"
                   style="height: 20em;"
+                  src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-03-01.svg"
                 >
               </p>
             </div>
             <div class="carousel__item">
               <p>
                 <img
-                  src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-03-02.svg"
                   style="height: 20em;"
+                  src="img/09-complexity-theory/hamilton-path-and-cycle/hamilton-03-02.svg"
                 >
               </p>
             </div>
@@ -954,9 +948,8 @@
         $\{u,v\}$ geht? Vielleicht gibt es ja einen, aber
         keinen durch
         <span class="nowrap">$\{u,v\}$,</span>
-        so dass dann
-        <code>has_hamilton_path(
-          <span class="nowrap">$G''$)</span></code>
+        so dass dann `has<i>hamilton</i>path(
+        <span class="nowrap">$G''$)`</span>
         mit
         <code>False</code>
         antwortet, obwohl wir gerne ein
@@ -969,8 +962,8 @@
         (in der Tat: sogar mit zweien).
       </p>
 <pre
-  class="listing"
   language=""
+  class="listing"
 >
 <span class="listing-bol"></span>def has_hamilton_cycle(G):
 <span class="listing-bol"></span>    u = ein beliebiger Knoten
@@ -1018,8 +1011,8 @@
       Reduktion, die dem strengen Reduktionsbegriff folgt,
       also
       <span
-        data-ref="definition-polynomial-reduction"
         class="reference"
+        data-ref="definition-polynomial-reduction"
       ></span>, nennt man in Abgrenzung dazu
       <i>Karp-Reduktion</i>
       nach
@@ -1030,8 +1023,8 @@
         <b>Übungsaufgabe</b>
         <b>9.5.11</b>
         Geben Sie einen "richtigen" Beweis für<span
-          data-ref="theorem-ham-cycle-to-path"
           class="reference"
+          data-ref="theorem-ham-cycle-to-path"
         ></span>, also eine Karp-Reduktion.
       </p>
     </div>

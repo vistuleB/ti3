@@ -43,23 +43,20 @@
     Hier sehen Sie einen Ausschnitt aus einem Elm-Programm
     (auch diesen müssen Sie nicht im Detail lesen):
 
-    |> div
-        t=t
-
-        ```listing
-        `find`{elm-1} `:`{elm-0} `Bst`{elm-2} `->`{elm-0} `String`{elm-2} `->`{elm-0} `Maybe`{elm-2} `String`{elm-2}
-        `find`{elm-1} `tree`{elm-3} `key`{elm-3} =
-            `case`{elm-4} `tree`{elm-3} `of`{elm-4}
-                `Empty`{elm-5} `_`{elm-3} `->`{elm-0}
-                    `Nothing`{elm-5}
-                `Node`{elm-5} `(`{elm-0} `keyHere`{elm-3}, `valueHere`{elm-3} `)`{elm-0} `leftChild`{elm-3} `rightChild`{elm-3} `->`{elm-0}
-                    `if`{elm-4} `key`{elm-3} `==`{elm-0} `keyHere`{elm-3} `then`{elm-4}
-                        `Just`{elm-5} `valueHere`{elm-3}
-                    `else`{elm-4} `if`{elm-4} `key`{elm-3} < `keyHere`{elm-3} `then`{elm-4}
-                        `find`{elm-5} `leftChild`{elm-3} `key`{elm-3}
-                    `else`{elm-4}
-                        `find`{elm-5} `rightChild`{elm-3} `key`{elm-3}
-        ```
+    ```listing
+    `find`{elm-1} `:`{elm-0} `Bst`{elm-2} `->`{elm-0} `String`{elm-2} `->`{elm-0} `Maybe`{elm-2} `String`{elm-2}
+    `find`{elm-1} `tree`{elm-3} `key`{elm-3} =
+        `case`{elm-4} `tree`{elm-3} `of`{elm-4}
+            `Empty`{elm-5} `_`{elm-3} `->`{elm-0}
+                `Nothing`{elm-5}
+            `Node`{elm-5} `(`{elm-0} `keyHere`{elm-3}, `valueHere`{elm-3} `)`{elm-0} `leftChild`{elm-3} `rightChild`{elm-3} `->`{elm-0}
+                `if`{elm-4} `key`{elm-3} `==`{elm-0} `keyHere`{elm-3} `then`{elm-4}
+                    `Just`{elm-5} `valueHere`{elm-3}
+                `else`{elm-4} `if`{elm-4} `key`{elm-3} < `keyHere`{elm-3} `then`{elm-4}
+                    `find`{elm-5} `leftChild`{elm-3} `key`{elm-3}
+                `else`{elm-4}
+                    `find`{elm-5} `rightChild`{elm-3} `key`{elm-3}
+    ```
 
     Als letztes Beispiel sehen Sie hier eine svg-Datei.
     Dies ist ein Dateiformat für Vektorgrafiken. In diesem
@@ -245,6 +242,7 @@
             unserem Fall also
             $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$. Wir nennen
             $\Sigma$ die Menge der _terminalen Symbole_.
+
         |> li
             Eine Menge $N$ abstrakter Symbole, hier
 
@@ -258,11 +256,13 @@
             Wir verlangen, dass $N \cap \Sigma = \emptyset$ gilt;
             ein Symbol kann also nicht gleichzeitig Terminalsymbol
             und Nichtterminalsymbol sein.
+
         |> li
             Eine Menge $P$ von Regeln, auch _Produktionen_ genannt,
             wobei jede Regel die Form $X \rightarrow \alpha$ hat,
             wobei $\alpha$ eine beliebig lange endliche Folge
             von Symbolen in $\Sigma \cup N$ ist.
+
         |> li
             Ein Startsymbol $S \in N$, das angibt, wo wir mit
             unserer Ableitung beginnen sollen. Im obigen Beispiel

@@ -12,20 +12,21 @@
 </head>
 <body class="page-sub chapter-2 sub-4">
   <div
+    id="_2_hgi_"
     path="./2-4.html"
     class="subchapter"
   >
     <div class="menu">
       <div class="menu-left">
         <a href="./index.html">Inhaltsverzeichnis</a><a
-          id="prev-page"
           href="./2-3.html"
+          id="prev-page"
         >&lt;&lt; Kapitel 2.3</a>
       </div>
       <div class="menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
-          id="next-page"
           href="./2-5.html"
+          id="next-page"
         >Kapitel 2.5  &gt;&gt;</a>
       </div>
     </div>
@@ -58,8 +59,8 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:10em"
         src="img/circuits/hasse-diagram.svg"
+        style="height:10em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -122,8 +123,8 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:10em"
         src="img/circuits/hasse-clouds.svg"
+        style="height:10em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -154,8 +155,8 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:10em"
         src="img/circuits/monotone-or-not.svg"
+        style="height:10em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -168,7 +169,10 @@
       <span class="nowrap">$x$.</span>
       Allerdings können wir folgendes beweisen:
     </p>
-    <div class="well statement out">
+    <div
+      id="_1_hgi_"
+      class="well statement out"
+    >
       <p>
         <b>Theorem</b>
         <b>2.4.2</b>
@@ -201,8 +205,8 @@
       </p>
       <figure>
         <img
-          style="height:10em"
           src="img/circuits/hasse-diagram.svg"
+          style="height:10em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -229,8 +233,8 @@
       </p>
       <figure>
         <img
-          style="height:10em"
           src="img/circuits/triple-negator.svg"
+          style="height:10em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -332,8 +336,9 @@
         In diesem
         Beweis verwende ich die zweite oben erwähnte Technik:
         bereits bekanntes abwandeln. Was kennen wir denn bereits?
-        Wir kennen die
-        <a href="../index.html#truth-table-top-down">Top-Down-Methode</a>, wie wir aus einer Wahrheitstabelle einen Schaltkreis
+        Wir kennen die 
+        [Top-Down-Methode](index.html#truth-table-top-down),
+        wie wir aus einer Wahrheitstabelle einen Schaltkreis
         bauen:
       </p>
       <div class="well statement">
@@ -357,9 +362,8 @@
         monotone Boolesche Funktionen reden. Falls Sie sich
         noch gut an unseren Beweis von Theorem 2 in der Vorlesung
         erinnern können und eher an Theorem 1 als an allgemeinen
-        Beweismethoden interessiert sind, dürfen Sie gerne
-        <a href="#after-sub-proof">runterspringen.
-        </a>
+        Beweismethoden interessiert sind, dürfen Sie gerne 
+        [runterspringen](#after-sub-proof).
       </p>
       <div class="well highlight">
         <p>
@@ -373,9 +377,9 @@
         <div class="well alert-info">
           <p>
             Zur Erinnerung: bei einem Beweis per Induktion wollen
-            wir eine Aussage der Form
-            <i>Für alle natürlichen Zahlen
-              $n \in \N$ gilt $P(n)$</i>
+            wir eine Aussage der Form _Für alle natürlichen Zahlen
+            $n \in \N$ gilt
+            <span class="nowrap">$P(n)$_</span>
             beweisen, wobei $P(n)$ wiederum
             eine Aussage ist, in der die Zahl $n$ irgendwo vorkommt.
             Bei einem Beweis durch Induktion zeigen wir nun,
@@ -408,7 +412,9 @@
           Als erstes müssen wir nun unsere Aussage, die wir
           beweisen wollen (also die im Theorem) so formulieren,
           dass sie die Form
-          <i>$P(n)$ für alle $n \in \N$</i>
+          <span class="nowrap">_$P(n)$</span>
+          für alle
+          <span class="nowrap">$n \in \N$_</span>
           annimmt.
           Dies ist einfach, da die Zahl $n$ bereits im Theorem
           vorkommt. Wir formulieren sie also nun so um:
@@ -429,6 +435,8 @@
           formuliert, um die Abhängigkeit von $n$ zu verdeutlichen.
           Wir müssen nun Induktionsbasis und Induktionsschritt
           durchführen.
+        </p>
+        <p>
           <b>Induktionsbasis.</b>
           Wenn $n=0$ ist, dann
           gibt es nur zwei mögliche Boolesche Funktionen, nämlich
@@ -509,9 +517,9 @@
             dem Kontext die richtige Interpretation herausliest:
             ob $0$ nun eine Konstante ist, eine Funktion mit einer
             Input-Variablen, mit zwei Input-Variablen etc. In mathematischen
-            Papern lesen Sie in diesem Kontext manchmal
-            <a href="https://en.wikipedia.org/wiki/Abuse_of_notation"><i>with abuse of notation</i>
-              </a>, womit die Autoren andeuten, dass sie ihre Notation
+            Papern lesen Sie in diesem Kontext manchmal 
+            [<i>with abuse of notation</i>](https://en.wikipedia.org/wiki/Abuse<i>of</i>notation),
+            womit die Autoren andeuten, dass sie ihre Notation
             nicht ganz korrekt anwenden, aber davon ausgehen, dass
             Leser oder Leserin (die ja Menschen sind und keine
             Compiler), verstehen, was gemeint ist.
@@ -581,10 +589,10 @@
           $n-1$ Input-Variablen haben, können wir die Induktionshypothese
           anwenden und folgern, dass es Boolesche Schaltkreise
           für sie gibt. Nach
-          <i>Zerlegen in $f_0, f_1$</i>
-          und<i>Anwenden
-            der Induktionshypothese</i>
-          müssen wir nun die Teilergebnisse
+          <i>Zerlegen in
+            <span class="nowrap">$f_0, f_1$_</span>
+            und</i>Anwenden
+          der Induktionshypothese_ müssen wir nun die Teilergebnisse
           wieder
           <i>sinnvoll zusammenfügen</i>. Dies tun wir in diesem
           Falle mit einem
@@ -592,8 +600,8 @@
         </p>
         <figure>
           <img
-            style="height:15em"
             src="img/circuits/top-down-if-then-else.svg"
+            style="height:15em"
             class="constrained transition-all"
             onClick="onImgClick(event)"
           >
@@ -640,17 +648,15 @@
       </div>
     </div>
     <p class="main-column">
-      Diesen "hellblauen" Beweis haben wir ja bereits in
+      <span id="after-sub-proof"></span>Diesen "hellblauen" Beweis haben wir ja bereits in
       der Vorlesung geführt. Ich habe ihn hier wiederholt
       und in größerem Detail besprochen, um auf verschiedene
       formale Aspekte der Beweisführung einzugehen. Wenden
-      wir uns jetzt dem Beweis von
-      <a href="#theorem-1">Theorem 1.4.3</a>
-      zu.
+      wir uns jetzt dem Beweis von Theorem &gt;&gt;zu-jeder zu.
     </p>
     <div class="well highlight out">
       <p>
-        <b>Theorem 1.4.3, nochmals.</b>
+        <b>Theorem &gt;&gt;zu-jeder, nochmals.</b>
         Zu jeder monotonen Funktion
         $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.
@@ -691,8 +697,8 @@
       </p>
       <figure>
         <img
-          style="height:15em"
           src="img/circuits/top-down-if-then-else-2.svg"
+          style="height:15em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -707,8 +713,8 @@
       </p>
       <figure>
         <img
-          style="height:18em"
           src="img/circuits/top-down-if-then-else-3.svg"
+          style="height:18em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -728,8 +734,8 @@
       </p>
       <figure>
         <img
-          style="height:18em"
           src="img/circuits/top-down-if-then-else-4.svg"
+          style="height:18em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -765,8 +771,8 @@
       </p>
       <figure>
         <img
-          style="height:18em"
           src="img/circuits/top-down-if-then-else-monotone.svg"
+          style="height:18em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -908,8 +914,8 @@
       </p>
       <figure>
         <img
-          style="height:18em"
           src="img/circuits/top-down-if-then-else-monotone-finished.svg"
+          style="height:18em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >

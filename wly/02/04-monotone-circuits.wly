@@ -1,4 +1,5 @@
 |> Sub
+    handle=monotone-circuits
     title=Monotone Funktionen und monotone Schaltkreise
     Für zwei Tupel
     $\mathbf{x}, \mathbf{y} \in \{0,1\}^n$ schreiben wir
@@ -89,6 +90,7 @@
     $x$. Allerdings können wir folgendes beweisen:
 
     |> Statement
+        handle=zu-jeder
         title=*Theorem*
         Zu jeder monotonen Funktion
         $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
@@ -187,10 +189,8 @@
         Beweis verwende ich die zweite oben erwähnte Technik:
         bereits bekanntes abwandeln. Was kennen wir denn bereits?
         Wir kennen die 
-        |> a
-            href=../index.html#truth-table-top-down
-            Top-Down-Methode
-        , wie wir aus einer Wahrheitstabelle einen Schaltkreis
+        [Top-Down-Methode](index.html#truth-table-top-down),
+        wie wir aus einer Wahrheitstabelle einen Schaltkreis
         bauen:
 
         |> Statement
@@ -210,9 +210,7 @@
         noch gut an unseren Beweis von Theorem 2 in der Vorlesung
         erinnern können und eher an Theorem 1 als an allgemeinen
         Beweismethoden interessiert sind, dürfen Sie gerne 
-        |> a
-            href=#after-sub-proof
-            runterspringen. 
+        [runterspringen](#after-sub-proof).
 
         |> Highlight
             title=*Beweis.*
@@ -258,7 +256,9 @@
             Wir haben also im Prinzip Theorem 1.4.4 umständlicher
             formuliert, um die Abhängigkeit von $n$ zu verdeutlichen.
             Wir müssen nun Induktionsbasis und Induktionsschritt
-            durchführen. *Induktionsbasis.* Wenn $n=0$ ist, dann
+            durchführen.
+            
+            *Induktionsbasis.* Wenn $n=0$ ist, dann
             gibt es nur zwei mögliche Boolesche Funktionen, nämlich
             die konstanten Funktionen $0$ und $1$. Für beide Funktionen
             gibt es einen Schaltkreis, nämlich bestehend aus einem
@@ -324,10 +324,8 @@
                 ob $0$ nun eine Konstante ist, eine Funktion mit einer
                 Input-Variablen, mit zwei Input-Variablen etc. In mathematischen
                 Papern lesen Sie in diesem Kontext manchmal 
-                |> a
-                    href=https://en.wikipedia.org/wiki/Abuse_of_notation
-                    _with abuse of notation_ 
-                , womit die Autoren andeuten, dass sie ihre Notation
+                [_with abuse of notation_](https://en.wikipedia.org/wiki/Abuse_of_notation),
+                womit die Autoren andeuten, dass sie ihre Notation
                 nicht ganz korrekt anwenden, aber davon ausgehen, dass
                 Leser oder Leserin (die ja Menschen sind und keine
                 Compiler), verstehen, was gemeint ist.
@@ -415,18 +413,16 @@
             Induktionsbeweis von Theorem 2 ist nun abgeschlossen. 
             |> QED
 
+    |> span
+        id=after-sub-proof
     Diesen "hellblauen" Beweis haben wir ja bereits in
     der Vorlesung geführt. Ich habe ihn hier wiederholt
     und in größerem Detail besprochen, um auf verschiedene
     formale Aspekte der Beweisführung einzugehen. Wenden
-    wir uns jetzt dem Beweis von 
-    |> a
-        href=#theorem-1
-        Theorem 1.4.3
-    \ zu.
+    wir uns jetzt dem Beweis von Theorem >>zu-jeder zu.
 
     |> Highlight
-        title=*Theorem 1.4.3, nochmals.*
+        title=*Theorem >>zu-jeder, nochmals.*
         Zu jeder monotonen Funktion
         $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen monotonen
         Schaltkreis (also ohne NOT-Gates), der $f$ berechnet.

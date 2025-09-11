@@ -165,11 +165,9 @@
     Zahlen ungenutzt. Können wir $f$ und $g$ irgendwie
     kombinieren, um eine bijektive Funktion zu erschaffen?
     Die Antwort lautet _ja, das geht immer_, ist nicht
-    ganz trivial zu beweisen, heißt 
-    |> a
-        href=https://en.wikipedia.org/wiki/Schröder–Bernstein_theorem
-        Schröder-Bernstein-Theorem
-    , und wir werden das im Teilkapitel 
+    ganz trivial zu beweisen, heißt
+    [Schröder-Bernstein-Theorem](https://en.wikipedia.org/wiki/Schröder–Bernstein_theorem),
+    und wir werden das im Teilkapitel 
     |> a
         href=...
         ...

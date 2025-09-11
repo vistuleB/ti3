@@ -18,14 +18,14 @@
     <div class="menu">
       <div class="menu-left">
         <a href="./index.html">Inhaltsverzeichnis</a><a
-          id="prev-page"
           href="./2-4.html"
+          id="prev-page"
         >&lt;&lt; Kapitel 2.4</a>
       </div>
       <div class="menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
-          id="next-page"
           href="./2-6.html"
+          id="next-page"
         >Kapitel 2.6  &gt;&gt;</a>
       </div>
     </div>
@@ -41,9 +41,9 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:10em"
-        src="./img/circuits/majority.svg"
         loading="lazy"
+        src="./img/circuits/majority.svg"
+        style="height:10em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -64,9 +64,9 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:8em"
-        src="./img/circuits/maj3.svg"
         loading="lazy"
+        src="./img/circuits/maj3.svg"
+        style="height:8em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -265,7 +265,8 @@
     </h1>
     <p class="main-column">
       Wenden wir nun statt Wahrheitstabelle die Top-Down-Methode
-      an, modifiziert für monotone Funktionen wie in den<a href="../sub-pages/01-monotone.html">Lösungen zu den Übungsaufgaben</a>
+      an, modifiziert für monotone Funktionen wie in den
+      <a href="./2-4.html">Lösungen zu den Übungsaufgaben</a>
       dargestellt. Insbesondere definieren wir Verallgemeinerungen
       von $\maj_n$ wie folgt:
     </p>
@@ -302,9 +303,9 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:15em"
-        src="./img/circuits/majority-theta-recursive.svg"
         loading="lazy"
+        src="./img/circuits/majority-theta-recursive.svg"
+        style="height:15em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -349,9 +350,9 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:18em"
-        src="./img/circuits/majority-theta-dp.svg"
         loading="lazy"
+        src="./img/circuits/majority-theta-dp.svg"
+        style="height:18em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -431,9 +432,9 @@
     </p>
     <figure class="main-column">
       <img
-        style="height:12em"
-        src="./img/circuits/majority-by-adding.svg"
         loading="lazy"
+        src="./img/circuits/majority-by-adding.svg"
+        style="height:12em"
         class="constrained transition-all"
         onClick="onImgClick(event)"
       >
@@ -492,9 +493,9 @@
       </p>
       <figure>
         <img
-          style="height:10em"
-          src="./img/circuits/2-for-3-adder-example.svg"
           loading="lazy"
+          src="./img/circuits/2-for-3-adder-example.svg"
+          style="height:10em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -512,9 +513,9 @@
       </p>
       <figure>
         <img
-          style="height:15em"
-          src="./img/circuits/2-for-3-adder-binary.svg"
           loading="lazy"
+          src="./img/circuits/2-for-3-adder-binary.svg"
+          style="height:15em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         >
@@ -670,9 +671,8 @@
       durch einen Binärbaum aus normalen
       <span class="nowrap">$\vee$-Gates</span>
       von Fan-in 2 ersetzen. Dies gibt uns
-      zusätzlich Tiefe $O(\log n)$
-      <i>pro
-        <span class="nowrap">$\bigvee$-Gate</span></i>;
+      zusätzlich Tiefe $O(\log n)$ _pro
+      <span class="nowrap">$\bigvee$-Gate_;</span>
       wir erhalten also insgesamt eine Tiefe von
       <span class="nowrap">$O(\log^2 n)$.</span>
     </p>
@@ -739,8 +739,8 @@
           mit Input-Variablen
           <span class="nowrap">$x_1,\dots,x_n$.</span>
           Wir sagen, dass
-          $\mathcal{C}$
-          <i>Signalstärke mindestens $\delta$</i>
+          $\mathcal{C}$ _Signalstärke mindestens
+          <span class="nowrap">$\delta$_</span>
           hat,
           wenn
         </p>
@@ -983,9 +983,9 @@
         die knapp über $1/2$ liegen, sondern an solchen, die
         knapp unter $1$ liegen, führen wir einen Parameterwechsel
         durch: eine Verteilung $\mathcal{C}$ von Schaltkreisen
-        mit Inputs $x_1,\dots,x_n$ hat
-        <i>Fehlerwahrscheinlichkeit
-          $\epsilon$</i>, wenn
+        mit Inputs $x_1,\dots,x_n$ hat _Fehlerwahrscheinlichkeit
+        <span class="nowrap">$\epsilon$_,</span>
+        wenn
       </p>
       <div class="math-block">
         $$
@@ -1083,8 +1083,8 @@
       </p>
       <figure>
         <img
-          style="height:18em"
           src="./img/circuits/majority-probability-labeled.svg"
+          style="height:18em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         ><br>Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
@@ -1092,8 +1092,8 @@
       <hr>
       <figure>
         <img
-          style="height:18em"
           src="./img/circuits/majority-probability-close-to-half-labeled.svg"
+          style="height:18em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         ><br>Signalstärke $\delta$ wächst für
@@ -1102,8 +1102,8 @@
       <hr>
       <figure>
         <img
-          style="height:18em"
           src="./img/circuits/majority-probability-close-to-one-labeled.svg"
+          style="height:18em"
           class="constrained transition-all"
           onClick="onImgClick(event)"
         ><br>Fehlerwahrscheinlichkeit $\epsilon$ fällt für

@@ -18,14 +18,14 @@
     <div class="menu">
       <div class="menu-left">
         <a href="./index.html">Inhaltsverzeichnis</a><a
-          id="prev-page"
           href="./9-2.html"
+          id="prev-page"
         >&lt;&lt; Kapitel 9.2</a>
       </div>
       <div class="menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
-          id="next-page"
           href="./9-4.html"
+          id="next-page"
         >Kapitel 9.4  &gt;&gt;</a>
       </div>
     </div>
@@ -38,8 +38,8 @@
     <p class="main-column">
       In
       <span
-        data-ref="nondet-tm-to-det"
         class="reference"
+        data-ref="nondet-tm-to-det"
       ></span>
       haben wir gesehen, dass jede nichtdeterministische
       Turing-Maschine durch eine deterministische simuliert
@@ -186,9 +186,8 @@
         <span class="nowrap">$L$.</span>
         Sei
         <span class="nowrap">$t: \N \rightarrow \N$.</span>
-        $M$ entscheidet $L$
-        <i>in Zeit
-          $t$</i>
+        $M$ entscheidet $L$ _in Zeit
+        <span class="nowrap">$t$_</span>
         wenn für alle $x, z \in \Sigma^*$ die Berechnung
         $M(x,z)$ in maximal $O(t(|x|))$ Schritten terminiert.
         Die Konstante in der
@@ -370,8 +369,8 @@
         der Aktionen, die die Turingmaschine nun ausführen
         könnte. Wie im Beweis von
         <span
-          data-ref="nondet-tm-to-det"
           class="reference"
+          data-ref="nondet-tm-to-det"
         ></span>können wir $M$ so umprogrammieren, dass sie die selbe
         Sprache entscheidet, aber
         $|\delta(q,x_1,x_2,\dots,x_k)| = 2$ gilt, außer für
@@ -464,8 +463,8 @@
       es eine nichtdeterministische Turingmaschine mit polynomieller
       Laufzeit $t(n) = n^k$ gibt, die $L$ entscheidet. Nach
       <span
-        data-ref="theorem-certificate-simulates-nondet"
         class="reference"
+        data-ref="theorem-certificate-simulates-nondet"
       ></span>also, wenn es eine Zertifikatmaschine $M$ gibt, die
       $L$ in Zeit $t$ entscheidet. Wenn also
     </p>
