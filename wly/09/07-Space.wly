@@ -72,10 +72,7 @@
         passen und auch nur einmal gelesen werden können (z.B.
         Sensordaten). Im Kurs _Effiziente Algorithmen_ gibt
         es ein 
-        |> a
-            href=../../EffizienteAlgorithmen/lecture-notes/04-00-big-data.html
-            Kapitel zu Streaming-Algorithmen
-        .
+        [Kapitel zu Streaming-Algorithmen](https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html).
 
     |> Statement
         title=*Definition*

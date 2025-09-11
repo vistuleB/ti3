@@ -1,5 +1,6 @@
 |> Sub
     title=Wahrheitstabellen, CNF, DNF
+    handle=wahrheitstabellen
     Wir haben gesehen, dass jeder Schaltkreis eine Boolesche
     Funktion berechnet. In diesem Abschnitt wollen wir
     zeigen, dass es umgekehrt auch gilt: zu jeder Booleschen
