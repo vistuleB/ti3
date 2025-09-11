@@ -14,24 +14,17 @@
     können. Es liegt also Nahe, zu vermuten, dass primitive
     Rekursion bereits den Berechenbarkeitsbegriff zufriedenstellend
     formalisiert: das also alles "Berechenbare" auch primitiv
-    rekursiv sei. Der 
-    |> a
-        href=https://de.wikipedia.org/wiki/Ackermannfunktion
-        Wikipedia-Artikel über die Ackermann-Funktion
-    \ schreibt, dass der deutsche Mathematiker David Hilbert
-    dies auch vermutete. Im Jahre 1926 jedoch definierte 
-    |> a
-        href=https://de.wikipedia.org/wiki/Wilhelm_Ackermann_(Mathematiker)
-        Wilhelm Ackermann
-    \ eine Funktion, die "offensichtlich berechenbar",
+    rekursiv sei. Der
+    [Wikipedia-Artikel über die Ackermann-Funktion](https://de.wikipedia.org/wiki/Ackermannfunktion)
+    schreibt, dass der deutsche Mathematiker David Hilbert
+    dies auch vermutete. Im Jahre 1926 jedoch definierte
+    [Wilhelm Ackermann](https://de.wikipedia.org/wiki/Wilhelm_Ackermann_(Mathematiker\))
+    eine Funktion, die "offensichtlich berechenbar",
     jedoch nicht primitiv rekursiv ist. Die Funktion, die
     wir heute die Ackermann-Funktion nennen, ist allerdings
     eine vereinfachte Version, die 1935 von der ungarischen
-    Mathematikerin 
-    |> a
-        href=https://de.wikipedia.org/wiki/Rózsa_Péter
-        Rózsa Péter
-    \ gefunden wurde (obwohl der letztere Artikel das Jahr
+    Mathematikerin [Rózsa Péter](https://de.wikipedia.org/wiki/Rózsa_Péter)
+    gefunden wurde (obwohl der letztere Artikel das Jahr
     1955 nennt).
 
     |> Statement
@@ -184,9 +177,8 @@
         Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv.
 
     Mein Beweis paraphrasiert im Wesentlichen den auf
-    |> a
-        href=https://planetmath.org/ackermannfunctionisnotprimitiverecursive
-        planetmath.org
+    [planetmath.org](https://planetmath.org/ackermannfunctionisnotprimitiverecursive).
+        
     *Die Aussage verstehen*. Beachten Sie, dass Theorem
     3.3.3 nicht mit Theorem 3.3.2 im Widerspruch steht.
     Theorem 3.3.3 besagt, dass $A_m$ primitiv rekursiv

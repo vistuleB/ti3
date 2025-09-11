@@ -142,6 +142,9 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     pp.splitting_empty_lines_cleanup(),
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
+    [
+      dl.table_marker(),
+    ],
     pp.markdown_link_splitting(["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),

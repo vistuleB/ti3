@@ -150,8 +150,8 @@
     ```
 
     Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln
-    für `&lt;Domain&gt;` erstellen? Eine `&lt;Domain&gt;`
-    soll eine Folge aus mindestens zwei `&lt;Label&gt;`
+    für `<Domain>` erstellen? Eine `<Domain>`
+    soll eine Folge aus mindestens zwei `<Label>`
     sein, jeweils durch einen `.` separiert. Wir erreichen
     dies, indem wir einen an Rekursion erinnernden Trick
     anwenden: entweder gibt es genau zwei Labels oder die
@@ -166,7 +166,7 @@
     ```
 
     Wir geben also _zwei_ Möglichkeiten an, wie mit einem
-    `&lt;Domain&gt;` zu verfahren ist. Was ist nun `&lt;Label&gt;`?
+    `<Domain>` zu verfahren ist. Was ist nun `<Label>`?
     Dies ist eine nichtleere Folge von in Domainnamen erlaubten
     Zeichen. Diese sind alphanumerisch (Buchstaben und
     Zahlen) und der Strich `-` (in der Praxis sind eventuell
@@ -174,11 +174,9 @@
     davon ab, was die Domain Name Server des jeweiligen
     Landes / der jeweiligen Top-Level-Domain erlauben,
     siehe zum Beispiel 
-    |> a
-        href=https://en.wikipedia.org/wiki/Internationalized_domain_name
-        Wikipedia: Internationalized Domain Name
-    ). Wie formulieren wir _nichtleere Folge von ..._
-    mit unserer `--&gt;`-Notation? Wieder mit dem Rekursionstrick:
+    [Wikipedia: Internationalized Domain Name](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+    Wie formulieren wir _nichtleere Folge von ..._
+    mit unserer `-->;`-Notation? Wieder mit dem Rekursionstrick:
 
     ```
     <Label> -> <AlphaNumOrDash>
@@ -187,7 +185,7 @@
     <AlphaNumOrDash> -> -
     ```
 
-    Nun müssen wir noch Regeln für `&lt;AlphaNum&gt;`
+    Nun müssen wir noch Regeln für `<AlphaNum>`
     angeben. Hier führen wir eine weitere Konvention ein:
     nämlich, dass wir verschiedene Alternativen mit einem
     senkrechten Strich | separieren:
@@ -198,12 +196,12 @@
     <AlphaNum> -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
     ```
 
-    Beachten Sie: ich habe hier absichtlich nicht `&lt;AlphaNum&gt;
-    *-&gt;* a *|* ... *|* z` geschrieben, weil ich in diesem
+    Beachten Sie: ich habe hier absichtlich nicht `<AlphaNum>
+    *->* a *|* ... *|* z` geschrieben, weil ich in diesem
     Beispiel wirklich alles ausschreiben wollte und mit
     der ...-Notation schon wieder etwas menschen- aber
     nicht maschinenlesbares eingeführt hätte. Wir brauchen
-    noch Regeln für `&lt;User&gt;`. Dies ist ein nichtleerer
+    noch Regeln für `<User>`. Dies ist ein nichtleerer
     String aus alphanumerischen Zeichen und dem Punkt `.`,
     wobei der Punkt nicht am Anfang und nicht am Ende stehen
     darf. Also: eine nichtleere Folge von _Namensblöcken_,
@@ -247,8 +245,8 @@
             Eine Menge $N$ abstrakter Symbole, hier
 
             $$
-            N = \{\texttt{&lt;EmailAddress&gt;,&lt;Domain&gt;,
-            &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;}
+            N = \{\texttt{<EmailAddress>,<Domain>,
+            <User>,<NameBlock>,<Label>,<AlphaNumOrDash>,<AlphaNum>}
             \} \ .
             $$
 
@@ -267,7 +265,7 @@
             Ein Startsymbol $S \in N$, das angibt, wo wir mit
             unserer Ableitung beginnen sollen. Im obigen Beispiel
             sind wir ja an Emailadressen interessiert, also ist
-            `&lt;EmailAddress&gt;` das Startsymbol.
+            `<EmailAddress>` das Startsymbol.
 
     Wenn wir nun so eine Grammatik gegeben haben, können
     wir Wörter _ableiten_; das heißt, wir beginnen mit

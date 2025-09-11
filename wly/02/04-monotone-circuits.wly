@@ -161,10 +161,8 @@
             ...
 
     wie sie zum Beispiel auf 
-    |> a
-        href=https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden
-        Wikipedia
-    \ aufgeführt sind. Diesen zur Seite stehen die nicht
+    [Wikipedia](https://de.wikipedia.org/wiki/Beweis_(Mathematik\)#Beweismethoden)
+    aufgeführt sind. Diesen zur Seite stehen die nicht
     wirklich formalisierbaren Beweistechniken oder Beweisstrategien,
     die sich oft aus persönlicher Erfahrung speisen, wie
     zum Beispiel

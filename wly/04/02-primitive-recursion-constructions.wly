@@ -247,11 +247,8 @@
     zur Verfügung. Alles andere müssen wir nach einem selbst
     gewählten Schema codieren. Bei Booleschen Werten war
     es einfach. Wie steht es mit _Paaren_ von natürlichen
-    Zahlen? In 
-    |> a
-        href=02-00-infinite-sets.html
-        Kapitel 2: Unendliche Mengen
-    \ haben wir die bijektive Funktion
+    Zahlen? In [Kapitel 2: Unendliche Mengen](>>inf-sets:page)
+    haben wir die bijektive Funktion
 
     \begin{align*}
     \pair : \N^2&\rightarrow \N \\

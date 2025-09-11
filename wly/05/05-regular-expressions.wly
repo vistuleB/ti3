@@ -209,18 +209,13 @@
 
         |> div
             class=display
-            |> a
-                href=https://www.w3schools.com/java/java_regex.asp
-                W3Schools
+            [W3School](https://www.w3schools.com/java/java_regex.asp)
 
         und
 
         |> div
             class=display
-            |> a
-                href=https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
-                Patternl.html auf der Java-API
-            ,
+            [Patternl.html auf der Java-API](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html),
 
         lassen sich aber bitte nicht von der Menge an Details
         erschlagen. Schreiben Sie nun in der Java-Regex-Syntax
