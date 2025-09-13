@@ -45,6 +45,8 @@ pub fn formatter_pipeline() -> List(Pipe) {
       dl.fold_contents_into_text("tt"),
       dl.insert_text_start_end(#("code", #("`", "`"))),
       dl.fold_contents_into_text("code"),
+      dl.insert_text_start_end_if_unique_attr(#("span", "style", "font-variant:small-caps;", #("`", "`{sc}"))),
+      dl.fold_children_into_text_if(#("span", infra.v_has_key_value(_, "style", "font-variant:small-caps;"))),
       dl.line_rewrap_no1__outside(#(50, infra.is_v_and_tag_equals(_, "Math")), ["MathBlock", "pre", "WriterlyCodeBlock"]),
       dl.concatenate_text_nodes(),
       dl.fold_contents_into_text("Math"),

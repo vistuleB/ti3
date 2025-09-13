@@ -43,43 +43,45 @@
       <ol>
         <li>
           <p>
-            <span style="font-variant:small-caps;">3-Colorability $\leq_p$ CNF-Satisfiability</span>
+            <span class="sc">3-Colorability $\leq_p$ CNF-Satisfiability</span>
           </p>
         </li>
         <li>
           <p>
-            <span style="font-variant:small-caps;">CNF-Satisfiability $\leq_p$ 3-SAT</span>
+            <span class="sc">CNF-Satisfiability $\leq_p$ 3-SAT</span>
           </p>
         </li>
         <li>
           <p>
-            <span style="font-variant:small-caps;">3-SAT $\leq_p$ 3-Colorability</span>
+            <span class="sc">3-SAT $\leq_p$ 3-Colorability</span>
           </p>
         </li>
         <li>
           <p>
-            <span style="font-variant:small-caps;">3-SAT $\leq_p$ Independent Set</span>
+            <span class="sc">3-SAT $\leq_p$ Independent Set</span>
           </p>
         </li>
         <li>
           <p>
-            <span style="font-variant:small-caps;">Hamilton Path $\leq_p$ Hamilton Cycle</span>
+            <span class="sc">Hamilton Path $\leq_p$ Hamilton Cycle</span>
           </p>
         </li>
         <li>
           <p>
-            <span style="font-variant:small-caps;">Hamilton Cycle $\leq_p$ Hamilton Path</span>
+            <span class="sc">Hamilton Cycle $\leq_p$ Hamilton Path</span>
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      Mit etwas Anstrengung würden wir auch<span style="font-variant:small-caps;">Hamilton Path $\leq_p$ CNF-Satisfiability</span>hinkriegen. Alle erwähnten Probleme Mitglieder von
-      NP: wir können Ja-Instanzen effizient verifizieren.
-      Gibt es in NP "Allzweckwaffen", also Probleme, mit
-      deren Hilfe wir
+      Mit etwas Anstrengung würden wir auch<span class="sc">Hamilton Path
+        $\leq_p$ CNF-Satisfiability</span>hinkriegen. Alle erwähnten
+      Probleme Mitglieder von NP: wir können Ja-Instanzen
+      effizient verifizieren. Gibt es in NP "Allzweckwaffen",
+      also Probleme, mit deren Hilfe wir
       <i>alle anderen</i>
-      NP-Probleme lösen könnten?
+      NP-Probleme
+      lösen könnten?
     </p>
     <div class="well statement out">
       <p>
@@ -103,34 +105,40 @@
         3-SAT ist NP-vollständig.
         In anderen Worten: Sei $L$ ein beliebiges Entscheidgungsproblem
         aus NP. Dann gilt
-        <span style="font-variant:small-caps;">$L \leq_p$ 3-SAT</span>.
+        <span class="nowrap">`$L \leq_p$</span>
+        3-SAT`{sc}.
       </p>
     </div>
     <p class="main-column">
       Wir führen das Zwischenproblem
-      <span style="font-variant:small-caps;">Circuit-SAT</span>
-      ein und zeigen (1) dass $L \leq_p$
-      <span style="font-variant:small-caps;">Circuit-SAT</span>
-      und (2)
-      <span style="font-variant:small-caps;">Circuit-SAT $\leq_p$ 3-SAT</span>
+      <span class="sc">Circuit-SAT</span>
+      ein
+      und zeigen (1) dass $L \leq_p$
+      <span class="sc">Circuit-SAT</span>
+      und
+      (2)
+      <span class="sc">Circuit-SAT $\leq_p$ 3-SAT</span>
       gilt.
     </p>
     <div class="well statement out">
       <p>
         <b>Problem</b>
         <b>9.6.3</b>
-        (<span style="font-variant:small-caps;">Circuit-SAT</span>). Gegeben ein Boolescher Schaltkreis $C$ mit $n$
-        Eingabevariablen. Gibt es ein $x \in \{0,1\}^n$ mit
+        (<span class="sc">Circuit-SAT</span>). Gegeben ein Boolescher Schaltkreis
+        $C$ mit $n$ Eingabevariablen. Gibt es ein
+        $x \in \{0,1\}^n$ mit
         <span class="nowrap">$C(x) = 1$?</span>
       </p>
     </div>
     <p class="main-column">
       Offensichtlich gilt
-      <span style="font-variant:small-caps;">CNF-Satisfiability $\leq_p$ Circuit-SAT</span>
+      <span class="sc">CNF-Satisfiability $\leq_p$ Circuit-SAT</span>
       und
-      <span style="font-variant:small-caps;">3-SAT $\leq_p$ Circuit-SAT</span>, da CNF-Formeln (und somit auch
+      <span class="sc">3-SAT $\leq_p$ Circuit-SAT</span>, da CNF-Formeln
+      (und somit auch
       <span class="nowrap">$3$-CNF-Formeln)</span>
-      Spezialfälle Boolescher Schaltkreise sind.
+      Spezialfälle Boolescher
+      Schaltkreise sind.
     </p>
     <div class="well statement out">
       <p>
@@ -139,7 +147,8 @@
         Sei
         <span class="nowrap">$L \in {\rm NP}$.</span>
         Dann gilt
-        <span style="font-variant:small-caps;">$L \leq_p$ Circuit-SAT</span>.
+        <span class="nowrap">`$L \leq_p$</span>
+        Circuit-SAT`{sc}.
       </p>
     </div>
     <div class="well highlight out">
@@ -162,7 +171,7 @@
         $$
       </div>
       <p>
-        <span id="_44_hgi_"></span>besagt, dass wir eine Turingmaschine von Laufzeit
+        <span id="_46_hgi_"></span>besagt, dass wir eine Turingmaschine von Laufzeit
         $t(n)$ in einen Schaltkreis $C$ der Größe
         $O(t(n)^2)$ umformen können, so dass
       </p>
@@ -208,22 +217,24 @@
       </div>
       <p>
         Unsere Reduktion von $L$ auf
-        <span style="font-variant:small-caps;">Ciruit-SAT</span>
-        geht nun wie folgt: Bei Eingabewort
-        $x \in \{0,1\}^*$ setzen wir $n := |x|$ und
+        <span class="sc">Ciruit-SAT</span>
+        geht
+        nun wie folgt: Bei Eingabewort $x \in \{0,1\}^*$ setzen
+        wir $n := |x|$ und
         <span class="nowrap">$t := t(n)$.</span>
-        Wir führen die Umformung von $M$ in einen
-        Schaltkreis $C$ durch. Dieser $C$ hat $n + t$ Eingabevariablen,
-        $n$ viele für das Eingabeband von $M$ und $t$ viele
-        für das Zertifikatband. Da wir $x$ bereits kennen,
-        verkabeln wir es fest in
+        Wir führen die Umformung
+        von $M$ in einen Schaltkreis $C$ durch. Dieser $C$
+        hat $n + t$ Eingabevariablen, $n$ viele für das Eingabeband
+        von $M$ und $t$ viele für das Zertifikatband. Da wir
+        $x$ bereits kennen, verkabeln wir es fest in
         <span class="nowrap">$C$,</span>
         d.h. wir ersetzen die
         <span class="nowrap">$i$-te</span>
-        Eingabevariable von $C$ durch den Booleschen
-        Wert $x_i$ (dies ist eine Konstante, keine Variable,
-        da wir ein konkretes Eingabewort $x \in \{0,1\}^n$
-        gegebenen haben) und erhalten einen Schaltkreis
+        Eingabevariable von
+        $C$ durch den Booleschen Wert $x_i$ (dies ist eine
+        Konstante, keine Variable, da wir ein konkretes Eingabewort
+        $x \in \{0,1\}^n$ gegebenen haben) und erhalten einen
+        Schaltkreis
       </p>
       <div class="math-block">
         $$
@@ -244,16 +255,17 @@
       </div>
       <p>
         also genau dann, wenn
-        <span style="font-variant:small-caps;">$D \in$ Circuit-SAT</span>.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        <span class="nowrap">`$D \in$</span>
+        Circuit-SAT`{sc}.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well statement out">
       <p>
         <b>Lemma</b>
         <b>9.6.5</b>
-        <span style="font-variant:small-caps;">Circuit-SAT</span>
+        <span class="sc">Circuit-SAT</span>
         $\leq_p$
-        <span style="font-variant:small-caps;">3-SAT</span>.
+        <span class="sc">3-SAT</span>.
       </p>
     </div>
     <div class="well highlight out">
@@ -282,26 +294,27 @@
         obige Schaltkreis (so wie jeder) berechnet eine Funktion
         <span class="nowrap">$f_C: \{0,1\}^n \rightarrow \{0,1\}$.</span>
         Das Problem
-        <span style="font-variant:small-caps;">Circuit-SAT</span>
-        fragt nun, ob $f_C$ nicht die konstante Nullfunktion
-        ist. Wir können im Allgemeinen $f_C$
+        <span class="sc">Circuit-SAT</span>
+        fragt nun, ob $f_C$ nicht die konstante
+        Nullfunktion ist. Wir können im Allgemeinen $f_C$
         <i>nicht</i>
         als
         <span class="nowrap">$3$-CNF-Formel</span>
-        schreiben. Obigen Schaltkreis zum Beispiel
-        nicht. Wir können $f_C$ allgemein als CNF-Formel schreiben
-        mit der Wahrheitstabellenmethode. Hierfür brauchen
-        wir aber $2^n$ Schritte, und unsere Reduktion wäre
-        nicht mehr polynomiell. Allerdings muss die
+        schreiben. Obigen Schaltkreis
+        zum Beispiel nicht. Wir können $f_C$ allgemein als
+        CNF-Formel schreiben mit der Wahrheitstabellenmethode.
+        Hierfür brauchen wir aber $2^n$ Schritte, und unsere
+        Reduktion wäre nicht mehr polynomiell. Allerdings muss
+        die
         <span class="nowrap">$3$-CNF-Formel</span>
         <span class="nowrap">$F$,</span>
-        also das Ergebnis der Reduktion, auch nicht äquivalent
-        zu $C$ sein, sondern nur
-        <i>SAT-äquivalent</i>: $F$ muss
-        genau dann erfüllbar sein, wenn $C$ erfüllbar ist.
-        Wenden wir uns obigem Schaltkreis zu. Wir führen für
-        jedes Gate eine Variable ein, die seinen Output darstellen
-        soll. Hier sind das
+        also das Ergebnis der Reduktion,
+        auch nicht äquivalent zu $C$ sein, sondern nur
+        <i>SAT-äquivalent</i>:
+        $F$ muss genau dann erfüllbar sein, wenn $C$ erfüllbar
+        ist. Wenden wir uns obigem Schaltkreis zu. Wir führen
+        für jedes Gate eine Variable ein, die seinen Output
+        darstellen soll. Hier sind das
         <span class="nowrap">$g_1, g_2, \dots, g_{11}$:</span>
       </p>
       <figure>

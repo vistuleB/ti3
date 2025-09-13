@@ -589,3 +589,6 @@ hr {
     /* variant + function application */
     color: rgb(62, 66, 71);
 }
+.sc {
+    font-variant: small-caps;
+}

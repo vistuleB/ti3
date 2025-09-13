@@ -150,15 +150,15 @@
     ```
 
     Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln
-    für `<Domain>` erstellen? Eine `<Domain>`
-    soll eine Folge aus mindestens zwei `<Label>`
-    sein, jeweils durch einen `.` separiert. Wir erreichen
-    dies, indem wir einen an Rekursion erinnernden Trick
-    anwenden: entweder gibt es genau zwei Labels oder die
-    Domain beginnt mit einem Label, gefolgt von einem Punkt
-    und wiederum einer _Folge von mindestens zwei durch
-    `.` separierten Labels_, also wiederum etwas, das wie
-    ein Domainname aussieht. Daher:
+    für `<Domain>` erstellen? Eine `<Domain>` soll eine
+    Folge aus mindestens zwei `<Label>` sein, jeweils durch
+    einen `.` separiert. Wir erreichen dies, indem wir
+    einen an Rekursion erinnernden Trick anwenden: entweder
+    gibt es genau zwei Labels oder die Domain beginnt mit
+    einem Label, gefolgt von einem Punkt und wiederum einer
+    _Folge von mindestens zwei durch `.` separierten Labels_,
+    also wiederum etwas, das wie ein Domainname aussieht.
+    Daher:
 
     ```
     <Domain> -> <Label> . <Label>
@@ -173,10 +173,10 @@
     noch weitere Zeichen erlaubt; im Ernstfall hängt dies
     davon ab, was die Domain Name Server des jeweiligen
     Landes / der jeweiligen Top-Level-Domain erlauben,
-    siehe zum Beispiel 
-    [Wikipedia: Internationalized Domain Name](https://en.wikipedia.org/wiki/Internationalized_domain_name).
-    Wie formulieren wir _nichtleere Folge von ..._
-    mit unserer `-->;`-Notation? Wieder mit dem Rekursionstrick:
+    siehe zum Beispiel [Wikipedia: Internationalized Domain
+    Name](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+    Wie formulieren wir _nichtleere Folge von ..._ mit
+    unserer `-->;`-Notation? Wieder mit dem Rekursionstrick:
 
     ```
     <Label> -> <AlphaNumOrDash>
@@ -185,10 +185,10 @@
     <AlphaNumOrDash> -> -
     ```
 
-    Nun müssen wir noch Regeln für `<AlphaNum>`
-    angeben. Hier führen wir eine weitere Konvention ein:
-    nämlich, dass wir verschiedene Alternativen mit einem
-    senkrechten Strich | separieren:
+    Nun müssen wir noch Regeln für `<AlphaNum>` angeben.
+    Hier führen wir eine weitere Konvention ein: nämlich,
+    dass wir verschiedene Alternativen mit einem senkrechten
+    Strich | separieren:
 
     ```
     <AlphaNum> -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
@@ -240,7 +240,6 @@
             unserem Fall also
             $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$. Wir nennen
             $\Sigma$ die Menge der _terminalen Symbole_.
-
         |> li
             Eine Menge $N$ abstrakter Symbole, hier
 
@@ -254,13 +253,11 @@
             Wir verlangen, dass $N \cap \Sigma = \emptyset$ gilt;
             ein Symbol kann also nicht gleichzeitig Terminalsymbol
             und Nichtterminalsymbol sein.
-
         |> li
             Eine Menge $P$ von Regeln, auch _Produktionen_ genannt,
             wobei jede Regel die Form $X \rightarrow \alpha$ hat,
             wobei $\alpha$ eine beliebig lange endliche Folge
             von Symbolen in $\Sigma \cup N$ ist.
-
         |> li
             Ein Startsymbol $S \in N$, das angibt, wo wir mit
             unserer Ableitung beginnen sollen. Im obigen Beispiel

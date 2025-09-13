@@ -159,10 +159,10 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.rearrange_links(#("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>")),
       dl.rearrange_links(#("Übungsaufgabe <a href=1>_1_</a>", "<a href=1>Übungsaufgabe _1_</a>")),
       dl.rearrange_links(#("Aufgabe <a href=1>_1_</a>", "<a href=1>Aufgabe _1_</a>")),
-      dl.rearrange_links(#("Kapitel <a href=1>_1_</a>", "<a href=1>Kapitel _1_</a>")),
       dl.rearrange_links(#("Lemma <a href=1>_1_</a>", "<a href=1>Lemma _1_</a>")),    
       dl.rearrange_links(#("Algorithmus <a href=1>_1_</a>", "<a href=1>Algorithmus _1_</a>")),
       dl.rearrange_links(#("Kapitel <a href=1>_1_</a>", "<a href=1>Kapitel _1_</a>")),
+      dl.rearrange_links(#("Teilkapitel <a href=1>_1_</a>", "<a href=1>Teilkapitel _1_</a>")),
     ],
     [
       dl.fold_contents_into_text("Math"),

@@ -71,8 +71,7 @@
         zu tun haben, die nicht in den Speicher des Rechners
         passen und auch nur einmal gelesen werden können (z.B.
         Sensordaten). Im Kurs _Effiziente Algorithmen_ gibt
-        es ein 
-        [Kapitel zu Streaming-Algorithmen](https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html).
+        es ein [Kapitel zu Streaming-Algorithmen](https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html).
 
     |> Statement
         title=*Definition*
@@ -140,29 +139,19 @@
     |> Statement
         title=*Übungsaufgabe*
         Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$
-        gilt. Fangen Sie zum Beispiel an,
-        |> span
-            style=font-variant:small-caps;
-            3-Colorability $\in$ PSPACE
-        \ zu zeigen.
+        gilt. Fangen Sie zum Beispiel an,`3-Colorability
+        $\in$ PSPACE`{sc} zu zeigen.
 
     |> Statement
         title=*Übungsaufgabe*
-        Sei 
-        |> span
-            style=font-variant:small-caps;
-            Palindrome
-        \ die Sprache aller Palindromwörter mit Trennungszeichen
-        in der Mitte, also
+        Sei `Palindrome`{sc} die Sprache aller Palindromwörter
+        mit Trennungszeichen in der Mitte, also
 
         \begin{align*}
         \{ucu^{R} \ | \ u \in \{a,b\}^* \} \ .
         \end{align*}
 
-        Zeigen Sie, dass 
-        |> span
-            style=font-variant:small-caps;
-            Palindrome $\in$ L
+        Zeigen Sie, dass `Palindrome $\in$ L`{sc}
 
     |> Statement
         title=*Übungsaufgabe*

@@ -1,7 +1,6 @@
 |> Sub
     title=Rechnerübung: Gute kontextfreie Grammatiken entwerfen
-    Benutzen Sie die App 
-    [drawManualGrammar.html](https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html),
+    Benutzen Sie die App [drawManualGrammar.html](https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html),
     um mit kontextfreien Grammatik zu experimentieren:
 
     |> figure

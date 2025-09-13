@@ -299,8 +299,8 @@
 
     |> Statement
         title=*Beispiel*
-        Im [Teilkapitel](>>limitations-of-context-free-grammars)
-        gab es Übungsaufgabe >>exercise-power-2, in der zu 
+        Im Teilkapitel >>limitations-of-context-free-grammars
+        gab es Übungsaufgabe >>exercise-power-2: in der zu
         zeigen war, dass
 
         \begin{align*}

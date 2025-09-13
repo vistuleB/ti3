@@ -331,10 +331,9 @@
             vorliegt (also Schaltkreise, in denen außer den Eingabe-Gates
             alle Gates nur eine ausgehende Kante haben), so ist
             das Minimierungsproblem $Sigma_2^{P}$-vollständig,
-            siehe [Buchfuhrer, David; Umans, Christopher (January 2011),
-            The complexity of Boolean formula minimization (JCSS
-            2011)](http://users.cms.caltech.edu/~umans/papers/BU07.pdf).
-                
+            siehe [Buchfuhrer, David; Umans, Christopher (January
+            2011), The complexity of Boolean formula minimization
+            (JCSS 2011)](http://users.cms.caltech.edu/~umans/papers/BU07.pdf).
         |> li
             Wenn die Funktion (2) als Tabelle gegeben ist, dann
             ist die genaue Komplexität nicht genau bekannt. Es

@@ -1,5 +1,5 @@
 |> Sub
-    handle=monotone-circuits
+    handle=monotone-circuits:page
     title=Monotone Funktionen und monotone Schaltkreise
     Für zwei Tupel
     $\mathbf{x}, \mathbf{y} \in \{0,1\}^n$ schreiben wir
@@ -160,8 +160,7 @@
         |> li
             ...
 
-    wie sie zum Beispiel auf 
-    [Wikipedia](https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden)
+    wie sie zum Beispiel auf [Wikipedia](https://de.wikipedia.org/wiki/Beweis_(Mathematik)#Beweismethoden)
     aufgeführt sind. Diesen zur Seite stehen die nicht
     wirklich formalisierbaren Beweistechniken oder Beweisstrategien,
     die sich oft aus persönlicher Erfahrung speisen, wie
@@ -186,8 +185,7 @@
         *Erster Beweis. Top-Down mit `if-then-else`.* In diesem
         Beweis verwende ich die zweite oben erwähnte Technik:
         bereits bekanntes abwandeln. Was kennen wir denn bereits?
-        Wir kennen die 
-        [Top-Down-Methode](index.html#truth-table-top-down),
+        Wir kennen die [Top-Down-Methode](index.html#truth-table-top-down),
         wie wir aus einer Wahrheitstabelle einen Schaltkreis
         bauen:
 
@@ -207,7 +205,7 @@
         monotone Boolesche Funktionen reden. Falls Sie sich
         noch gut an unseren Beweis von Theorem 2 in der Vorlesung
         erinnern können und eher an Theorem 1 als an allgemeinen
-        Beweismethoden interessiert sind, dürfen Sie gerne 
+        Beweismethoden interessiert sind, dürfen Sie gerne
         [runterspringen](#after-sub-proof).
 
         |> Highlight
@@ -255,13 +253,13 @@
             formuliert, um die Abhängigkeit von $n$ zu verdeutlichen.
             Wir müssen nun Induktionsbasis und Induktionsschritt
             durchführen.
-            
-            *Induktionsbasis.* Wenn $n=0$ ist, dann
-            gibt es nur zwei mögliche Boolesche Funktionen, nämlich
-            die konstanten Funktionen $0$ und $1$. Für beide Funktionen
-            gibt es einen Schaltkreis, nämlich bestehend aus einem
-            Input-Gate (mit der Konstant 0 bzw. 1 beschriftet),
-            das gleichzeitig auch Output-Gate ist.
+
+            *Induktionsbasis.* Wenn $n=0$ ist, dann gibt es nur
+            zwei mögliche Boolesche Funktionen, nämlich die konstanten
+            Funktionen $0$ und $1$. Für beide Funktionen gibt
+            es einen Schaltkreis, nämlich bestehend aus einem Input-Gate
+            (mit der Konstant 0 bzw. 1 beschriftet), das gleichzeitig
+            auch Output-Gate ist.
 
             |> div
                 class=well alert-warning
@@ -321,8 +319,8 @@
                 dem Kontext die richtige Interpretation herausliest:
                 ob $0$ nun eine Konstante ist, eine Funktion mit einer
                 Input-Variablen, mit zwei Input-Variablen etc. In mathematischen
-                Papern lesen Sie in diesem Kontext manchmal 
-                [_with abuse of notation_](https://en.wikipedia.org/wiki/Abuse_of_notation),
+                Papern lesen Sie in diesem Kontext manchmal [_with
+                abuse of notation_](https://en.wikipedia.org/wiki/Abuse_of_notation),
                 womit die Autoren andeuten, dass sie ihre Notation
                 nicht ganz korrekt anwenden, aber davon ausgehen, dass
                 Leser oder Leserin (die ja Menschen sind und keine

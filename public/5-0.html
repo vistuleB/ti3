@@ -227,19 +227,21 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       <code>&lt;Domain&gt;</code>
       erstellen? Eine
       <code>&lt;Domain&gt;</code>
-      soll eine Folge aus mindestens zwei
+      soll eine
+      Folge aus mindestens zwei
       <code>&lt;Label&gt;</code>
-      sein, jeweils durch einen
+      sein, jeweils durch
+      einen
       <code>.</code>
-      separiert. Wir erreichen
-      dies, indem wir einen an Rekursion erinnernden Trick
-      anwenden: entweder gibt es genau zwei Labels oder die
-      Domain beginnt mit einem Label, gefolgt von einem Punkt
-      und wiederum einer
+      separiert. Wir erreichen dies, indem wir
+      einen an Rekursion erinnernden Trick anwenden: entweder
+      gibt es genau zwei Labels oder die Domain beginnt mit
+      einem Label, gefolgt von einem Punkt und wiederum einer
       <i>Folge von mindestens zwei durch
         <code>.</code>
-        separierten Labels</i>, also wiederum etwas, das wie
-      ein Domainname aussieht. Daher:
+        separierten Labels</i>,
+      also wiederum etwas, das wie ein Domainname aussieht.
+      Daher:
     </p>
     <div class="main-column">
 <pre language="">
@@ -263,10 +265,12 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       davon ab, was die Domain Name Server des jeweiligen
       Landes / der jeweiligen Top-Level-Domain erlauben,
       siehe zum Beispiel
-      <a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">Wikipedia: Internationalized Domain Name</a>.
+      <a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">Wikipedia: Internationalized Domain
+        Name</a>.
       Wie formulieren wir
       <i>nichtleere Folge von ...</i>
-      mit unserer
+      mit
+      unserer
       <code>--&gt;;</code>-Notation? Wieder mit dem Rekursionstrick:
     </p>
     <div class="main-column">
@@ -280,9 +284,10 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     <p class="main-column">
       Nun müssen wir noch Regeln für
       <code>&lt;AlphaNum&gt;</code>
-      angeben. Hier führen wir eine weitere Konvention ein:
-      nämlich, dass wir verschiedene Alternativen mit einem
-      senkrechten Strich | separieren:
+      angeben.
+      Hier führen wir eine weitere Konvention ein: nämlich,
+      dass wir verschiedene Alternativen mit einem senkrechten
+      Strich | separieren:
     </p>
     <div class="main-column">
 <pre language="">

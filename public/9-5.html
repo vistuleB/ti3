@@ -36,9 +36,9 @@
       </p>
     </div>
     <p class="main-column">
-      <span style="font-variant:small-caps;">3-Colorability</span>
+      <span class="sc">3-Colorability</span>
       und
-      <span style="font-variant:small-caps;">CNF-Satisfiability</span>
+      <span class="sc">CNF-Satisfiability</span>
       sind in NP: gegeben ein Graph $G$ und eine Färbung
       <span class="nowrap">$c$,</span>
       so können wir effizient feststellen, ob $c$ eine
@@ -49,24 +49,24 @@
       wir effizient überprüfen, ob $F$ unter $\alpha$ zu
       <code>True</code>
       auswertet. Können wir
-      <span style="font-variant:small-caps;">3-Colorability</span>
-      und<span style="font-variant:small-caps;">CNF-Satisfiability</span>
+      <span class="sc">3-Colorability</span>
+      und<span class="sc">CNF-Satisfiability</span>
       auch effizient entscheiden? Sind sie in P? Das ist
       (Stand: 2025) nicht bekannt. Was wir aber sagen können:
       entweder sind beide effizient lösbar oder beide nicht.
       Sie sind gewissermaßen gleich schwer.
     </p>
     <div
-      id="_41_hgi_"
+      id="_43_hgi_"
       class="well statement out"
     >
       <p>
         <b>Theorem</b>
         <b>9.5.1</b>
         Falls
-        <span style="font-variant:small-caps;">CNF-Satisfiability</span>
+        <span class="sc">CNF-Satisfiability</span>
         in P ist, dann auch
-        <span style="font-variant:small-caps;">3-Colorability</span>.
+        <span class="sc">3-Colorability</span>.
       </p>
     </div>
     <div class="well highlight out">
@@ -173,7 +173,7 @@
       Algorithmus für
       <span class="nowrap">$3$-SAT;</span>
       dies ist
-      <span style="font-variant:small-caps;">CNF-Satisfiability</span>
+      <span class="sc">CNF-Satisfiability</span>
       mit der Einschränkung, dass $F$ eine
       <span class="nowrap">$3$-CNF-Formel</span>
       ist, dass also jede Klausel nur drei Literale enthält.
@@ -182,22 +182,22 @@
       die wir im Beweis
       von
       <a
-        href="./9-5.html#_41_hgi_"
+        href="./9-5.html#_43_hgi_"
         class=""
       >Theorem 9.5.1</a>
       erstellt haben,
       eine solche 3-CNF ist.
     </p>
     <div
-      id="_42_hgi_"
+      id="_44_hgi_"
       class="well statement out"
     >
       <p>
         <b>Theorem</b>
         <b>9.5.2</b>
         Falls
-        <span style="font-variant:small-caps;">3-Colorability</span>
-        in P ist, dann auch<span style="font-variant:small-caps;">3-SAT</span>.
+        <span class="sc">3-Colorability</span>
+        in P ist, dann auch<span class="sc">3-SAT</span>.
       </p>
     </div>
     <div class="well highlight out">
@@ -389,7 +389,7 @@
       $F$ eine allgemeine CNF-Formel ist?
     </p>
     <div
-      id="_43_hgi_"
+      id="_45_hgi_"
       class="well statement out"
     >
       <p>
@@ -514,27 +514,27 @@
         <li>
           <p>
             Wenn
-            <span style="font-variant:small-caps;">CNF-Satisfiability</span>
+            <span class="sc">CNF-Satisfiability</span>
             in P, dann auch
-            <span style="font-variant:small-caps;">3-Colorability</span>(Theorem
-            <a href="./9-5.html#_41_hgi_">9.5.1</a>).
+            <span class="sc">3-Colorability</span>(Theorem
+            <a href="./9-5.html#_43_hgi_">9.5.1</a>).
           </p>
         </li>
         <li>
           <p>
             Wenn
-            <span style="font-variant:small-caps;">3-Colorability</span>
+            <span class="sc">3-Colorability</span>
             in P, dann auch
-            <span style="font-variant:small-caps;">3-SAT</span>(Theorem
-            <a href="./9-5.html#_42_hgi_">9.5.2</a>).
+            <span class="sc">3-SAT</span>(Theorem
+            <a href="./9-5.html#_44_hgi_">9.5.2</a>).
           </p>
         </li>
         <li>
           <p>
             Wenn
-            <span style="font-variant:small-caps;">3-SAT</span>
-            in P, dann auch<span style="font-variant:small-caps;">CNF-Satisfiability</span>(Theorem
-            <a href="./9-5.html#_43_hgi_">9.5.3</a>).
+            <span class="sc">3-SAT</span>
+            in P, dann auch<span class="sc">CNF-Satisfiability</span>(Theorem
+            <a href="./9-5.html#_45_hgi_">9.5.3</a>).
           </p>
         </li>
       </ul>
@@ -576,7 +576,7 @@
     <p class="main-column">
       Dies ist eine
       <i>Reduktion</i>, wie wir sie schon in Definition
-      <a href="./8-8.html#_32_hgi_">8.8.4</a>
+      <a href="./8-8.html#_34_hgi_">8.8.4</a>
       kennengelernt haben, nun aber
       mit einer Aussage über die Laufzeit.
     </p>
@@ -639,34 +639,35 @@
       <ol>
         <li>
           <p>
-            <span style="font-variant:small-caps;">3-Colorability $\leq_p$ CNF-Satisfiability</span>
+            <span class="sc">3-Colorability $\leq_p$ CNF-Satisfiability</span>
           </p>
         </li>
         <li>
           <p>
-            <span style="font-variant:small-caps;">CNF-Satisfiability $\leq_p$ 3-SAT</span>
+            <span class="sc">CNF-Satisfiability $\leq_p$ 3-SAT</span>
           </p>
         </li>
         <li>
           <p>
-            <span style="font-variant:small-caps;">3-SAT $\leq_p$ 3-Colorability</span>
+            <span class="sc">3-SAT $\leq_p$ 3-Colorability</span>
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
       Erinnern Sie sich an
-      <span style="font-variant:small-caps;">Independent Set</span>: gegeben ein Graph $G$ und eine Zahl
+      <span class="sc">Independent Set</span>: gegeben
+      ein Graph $G$ und eine Zahl
       <span class="nowrap">$k$,</span>
-      gibt es
-      eine unabhängige Menge $X \subseteq V$ mit
+      gibt es eine unabhängige
+      Menge $X \subseteq V$ mit
       <span class="nowrap">$|X| \geq k$?</span>
     </p>
     <div class="well statement out">
       <p>
         <b>Theorem</b>
         <b>9.5.6</b>
-        <span style="font-variant:small-caps;">3-SAT $\leq_p$ Independent Set</span>.
+        <span class="sc">3-SAT $\leq_p$ Independent Set</span>.
       </p>
     </div>
     <div class="well highlight out">
@@ -771,33 +772,33 @@
         <b>Übungsaufgabe</b>
         <b>9.5.7</b>
         Zeigen Sie
-        <span style="font-variant:small-caps;">Independent Set $\leq_p$ SAT</span>. Also: Gegeben einen Graphen $G$ und eine Zahl
+        <span class="sc">Independent Set $\leq_p$ SAT</span>. Also:
+        Gegeben einen Graphen $G$ und eine Zahl
         <span class="nowrap">$k \in \N$,</span>
         zeigen Sie, wie man die Aussage
         <span class="nowrap">_$G$</span>
-        hat
-        eine unabhängige Menge der Größe
+        hat eine unabhängige
+        Menge der Größe
         <span class="nowrap">$k$_</span>
-        als aussagenlogische
-        Formel in CNF darstellen kann.
+        als aussagenlogische Formel in
+        CNF darstellen kann.
         <b>Hinweis:</b>
         Die Aussage
         <span class="nowrap">_"$I$</span>
         ist eine unabhängige Menge von
         <span class="nowrap">$G$_</span>
-        ist leicht
-        darzustellen als CNF-Formeln. Die Aussage
+        ist leicht darzustellen
+        als CNF-Formeln. Die Aussage
         <span class="nowrap">_"$I$</span>
-        hat
-        Größe
+        hat Größe
         <span class="nowrap">$k$"_</span>
         ist schwieriger. Sie müssen quasi
         <i>zählen</i>.
       </p>
     </div>
     <h2 class="main-column">
-      <span style="font-variant:small-caps;">Hamilton Path</span>und
-      <span style="font-variant:small-caps;">Hamilton Cycle</span>
+      <span class="sc">Hamilton Path</span>und
+      <span class="sc">Hamilton Cycle</span>
     </h2>
     <p class="main-column">
       Sei $G = (V,E)$ ein Graph. Ein
@@ -856,35 +857,32 @@
       <p>
         <b>Problem</b>
         <b>9.5.8</b>
-        <span style="font-variant:small-caps;">(Hamilton Cycle).</span>
+        <span class="sc">(Hamilton Cycle).</span>
         Gegeben ein Graph
         <span class="nowrap">$G=(V,E)$,</span>
-        gibt es in $G$ einen
-        Kreis der Länge
+        gibt es in $G$ einen Kreis der Länge
         <span class="nowrap">$|V|$,</span>
-        der also durch alle Knoten
-        geht?
+        der also durch alle Knoten geht?
       </p>
     </div>
     <div class="well statement out">
       <p>
         <b>Problem</b>
         <b>9.5.9</b>
-        <span style="font-variant:small-caps;">(Hamilton Path).</span>
+        <span class="sc">(Hamilton Path).</span>
         Gegeben ein Graph
         <span class="nowrap">$G=(V,E)$,</span>
-        gibt es in $G$ einen
-        Pfad der Länge
+        gibt es in $G$ einen Pfad der Länge
         <span class="nowrap">$|V|-1$,</span>
-        der also alle $|V|$ Knoten
-        enthält?
+        der also
+        alle $|V|$ Knoten enthält?
       </p>
     </div>
     <div class="well statement out">
       <p>
         <b>Theorem</b>
         <b>9.5.10</b>
-        <span style="font-variant:small-caps;">Hamilton Cycle $\leq_p$ Hamilton Path</span>
+        <span class="sc">Hamilton Cycle $\leq_p$ Hamilton Path</span>
       </p>
     </div>
     <div class="well highlight out">
@@ -1010,15 +1008,15 @@
       zu.
       Aber ganz wertlos ist der obige Beweis dennoch nicht,
       zeigt er doch, dass, falls
-      <span style="font-variant:small-caps;">Hamilton Path $\in$ P</span>
+      <span class="sc">Hamilton Path $\in$ P</span>
       ist, dann auch
-      <span style="font-variant:small-caps;">Hamilton Cycle $\in$ P</span>. Der Fachbegriff für das, was unsere obige Funktion
+      <span class="sc">Hamilton Cycle $\in$ P</span>. Der Fachbegriff
+      für das, was unsere obige Funktion
       <code>has_hamilton_cycle</code>
       tut, nennt sich
-      <i>Cook-Reduktion</i>,
-      nach Stephen Cook, einem der Väter der Klasse NP. Eine
-      Reduktion, die dem strengen Reduktionsbegriff folgt,
-      also
+      <i>Cook-Reduktion</i>, nach Stephen Cook,
+      einem der Väter der Klasse NP. Eine Reduktion, die
+      dem strengen Reduktionsbegriff folgt, also
       <span
         class="reference"
         data-ref="definition-polynomial-reduction"
@@ -1042,8 +1040,9 @@
         <b>Übungsaufgabe</b>
         <b>9.5.12</b>
         Zeigen Sie
-        <span style="font-variant:small-caps;">Hamilton Path $\leq_p$ Hamilton Cycle</span>. Wenn es Ihnen einfacher scheint, geben Sie erst
-        einmal eine Cook-Reduktion.
+        <span class="sc">Hamilton Path $\leq_p$ Hamilton Cycle</span>.
+        Wenn es Ihnen einfacher scheint, geben Sie erst einmal
+        eine Cook-Reduktion.
       </p>
     </div>
   </div>

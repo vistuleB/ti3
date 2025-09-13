@@ -86,10 +86,7 @@
         Dies bedeutet, dass die Turingmaschine ihren Zustand
         nicht wechselt und einfach das gelesene Zeichen in
         die Zelle wieder reinschreibt. Dies ist reiner Syntaxzucker.
-        Auf der Webseite
-        |> a
-            href=https://turingmachinesimulator.com
-            turingmachinesimulator.com
+        Auf der Webseite [turingmachinesimulator.com](https://turingmachinesimulator.com)
         können Sie Ihre Turingmaschine eingeben und simulieren.
         Den Text für die gerade beschriebene finden in 
         |> a

@@ -48,18 +48,18 @@
         href="./8-5.html"
         class=""
       >Kapitel 8.5</a>
-      Unsere Implementierung hatte insgesamt fünf Bänder
-      verwendet: (1) ein Band, um die Regeln von $M$ zu
-      speichern (also die Funktion
+      Unsere
+      Implementierung hatte insgesamt fünf Bänder verwendet:
+      (1) ein Band, um die Regeln von $M$ zu speichern (also
+      die Funktion
       <span class="nowrap">$\delta$);</span>
-      (2) ein Band,
-      um den Zustand von $M$ zu speichern; (3) um den akzeptierenden
-      Zustand $\qaccept$ von $M$ zu speichern; (4) und (5)
-      um das Band von $M$ zu simulieren. Für letzteres hatten
-      wir
+      (2) ein Band, um den Zustand
+      von $M$ zu speichern; (3) um den akzeptierenden Zustand
+      $\qaccept$ von $M$ zu speichern; (4) und (5) um das
+      Band von $M$ zu simulieren. Für letzteres hatten wir
       <i>zwei</i>
-      Bänder verwendet, weil das uns erlaubte,
-      effizient Zeichen
+      Bänder verwendet, weil das uns erlaubte, effizient
+      Zeichen
       <i>einzufügen</i>
       statt einfach zu überschreiben.
       Wie wir aber gesehen hatten, können wir (4) und (5)
@@ -89,11 +89,10 @@
         href="./8-6.html"
         class=""
       >Kapitel 8.6</a>
-      gesehen, dass wir als 
-      Codierungsalphabet $\Sigma$ selbst nehmen können, also
+      gesehen, dass wir als Codierungsalphabet $\Sigma$
+      selbst nehmen können, also
       <span class="nowrap">$\enc(M) \in \Sigma^*$,</span>
-      solange $\Sigma$ mindestens zwei 
-      Zeichen enthält.
+      solange $\Sigma$ mindestens zwei Zeichen enthält.
     </p>
     <div class="well statement out">
       <p>
@@ -409,11 +408,12 @@
         Eingabewort $x1^m$ innerhalb von $s(n)$ Schritten.
         Wenn $U$ die Maschine $M$ simuliert, braucht sie nach
         <a
-          href="./8-5.html#_29_hgi_"
+          href="./8-5.html#_31_hgi_"
           class=""
         >Theorem 8.5.1</a>
-        höchstens $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte.
-        Da $s(n) \geq n$ gilt, sind dies höchstens
+        höchstens
+        $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte. Da
+        $s(n) \geq n$ gilt, sind dies höchstens
         $2C \cdot |\enc(M)| \cdot s(n) = 2C \cdot |\enc(M)|
         \cdot s(|x|+m)$
         Schritte. Da

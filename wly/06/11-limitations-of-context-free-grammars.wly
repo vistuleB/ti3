@@ -1,6 +1,6 @@
 |> Sub
     title=Die Grenzen kontextfreier Sprachen
-    id=limitations-of-context-free-grammars
+    handle=limitations-of-context-free-grammars:page
     Im letzten Teilkapitel haben wir den CYK-Algorithmus
     kennengelernt. Dieser verwendet das Prinzip des _Dynamic
     Programming_, um für eine allgemeine kontextfreie Grammatik
@@ -100,8 +100,8 @@
         uv^i w x^i y
         \end{align*}
 
-        ableiten, für jedes $i \geq 0$. Selbst für
-        $i = 0$ geht das:
+        ableiten, für jedes $i \geq 0$. Selbst für $i = 0$
+        geht das:
 
         |> figure
             |> img
@@ -156,8 +156,8 @@
         u v^i w x^i y \in L(G)
         \end{align*}
 
-        gilt, für alle $i \geq 0$. Die Zahl $p$ kann zum
-        Beispiel als $2^{N_{\rm CNF}}$ gewählt werden, wobei
+        gilt, für alle $i \geq 0$. Die Zahl $p$ kann zum Beispiel
+        als $2^{N_{\rm CNF}}$ gewählt werden, wobei
         $N_{\rm CNF}$ die Anzahl der Nichtterminale in einer
         zu $G$ äquivalenten Chomsky-Normalform ist.
 
@@ -169,10 +169,9 @@
         \{\alpha c \alpha \ | \ \alpha \in \{a,b\}^* \} \ .
         \end{align*}
 
-        In Worten: rechts und links vom $c$ in der Mitte
-        muss das gleiche Teilwort stehen. Zeigen Sie analog
-        zu dem vorherigen Beweis, dass $L$ nicht kontextfrei
-        ist.
+        In Worten: rechts und links vom $c$ in der Mitte muss
+        das gleiche Teilwort stehen. Zeigen Sie analog zu dem
+        vorherigen Beweis, dass $L$ nicht kontextfrei ist.
 
     |> Statement
         title=*Übungsaufgabe*

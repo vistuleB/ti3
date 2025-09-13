@@ -170,7 +170,7 @@
 
     Wenden wir nun statt Wahrheitstabelle die Top-Down-Methode
     an, modifiziert für monotone Funktionen wie in den
-    [Lösungen zu den Übungsaufgaben](>>monotone-circuits:page)
+    [Lösungen zu den Übungsaufgaben](>>monotone-circuits)
     dargestellt. Insbesondere definieren wir Verallgemeinerungen
     von $\maj_n$ wie folgt:
 

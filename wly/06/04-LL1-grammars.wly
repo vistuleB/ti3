@@ -200,8 +200,7 @@
 
         also Wörter, wo auf beliebig viele $a$'s eine Folge
         von _höchstens_ so vielen $b$'s folgt. Geben Sie diese
-        Grammatik in den
-        [Parser-Simulator](href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html)
+        Grammatik in den [Parser-Simulator](href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html)
         ein und finden Wörter mit langen Sackgassen. Zeigen
         Sie, dass diese Grammatik nicht LL$(k)$ ist, für kein
         $k \in \N$.
@@ -216,8 +215,7 @@
 
         also die Wörter der Form $a^m b^n$ mit
         $n \leq m \leq n+t$. Schreiben Sie für $L_3$ eine
-        Grammatik, geben Sie diese im
-        [Parser-Simulator](https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html)
+        Grammatik, geben Sie diese im [Parser-Simulator](https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html)
         ein und schauen, wie lang die Sackgassen werden können.
         Zeigen Sie, dass $L_3$ eine LL$(k)$-Grammatik ist.
         Für welchen Wert von $k$? Ist $L_t$ (für im Voraus

@@ -1,4 +1,5 @@
 |> Sub
+    handle=turing-variants
     title=Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
     |> Topic
         Turingmaschinen mit mehreren Bändern

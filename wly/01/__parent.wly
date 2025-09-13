@@ -1,21 +1,20 @@
 |> Chapter
     title=Einleitung
-
     Im Kurs [Theoretische Informatik I](href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1)
-    haben allerhand Problemstellungen und Algorithmen
-    kennengelernt und können nun (hoffentlich) auch für
-    manche Ihnen noch unbekannten Probleme neue Algorithmen
-    entwickeln. In diesem Kurs stellen wir uns abstrakter
-    die Frage, was denn ein Algorithmus ist; was es denn
-    heißt, etwas zu berechnen. Ein Algorithmus, beispielsweise
-    ein Sortieralgorithmus, kann ja prinzipiell Arrays
-    beliebiger Länge sorteren. Es gibt also unendlich viele
-    potentielle Eingaben. Dennoch ist der Algorithmus selbst
-    ein endliches Objekt - der Programmcode beispielsweise
-    besteht aus endlich vielen Zeichen. Noch dazu kann
-    ein Algorithmus nur beschränkt die ihm gegebenen Daten
-    manipulieren; in jedem Schritt immer nur an einer bestimmten
-    Stelle und nach festen Regeln.
+    haben allerhand Problemstellungen und Algorithmen kennengelernt
+    und können nun (hoffentlich) auch für manche Ihnen
+    noch unbekannten Probleme neue Algorithmen entwickeln.
+    In diesem Kurs stellen wir uns abstrakter die Frage,
+    was denn ein Algorithmus ist; was es denn heißt, etwas
+    zu berechnen. Ein Algorithmus, beispielsweise ein Sortieralgorithmus,
+    kann ja prinzipiell Arrays beliebiger Länge sorteren.
+    Es gibt also unendlich viele potentielle Eingaben.
+    Dennoch ist der Algorithmus selbst ein endliches Objekt
+    - der Programmcode beispielsweise besteht aus endlich
+    vielen Zeichen. Noch dazu kann ein Algorithmus nur
+    beschränkt die ihm gegebenen Daten manipulieren; in
+    jedem Schritt immer nur an einer bestimmten Stelle
+    und nach festen Regeln.
 
     |> Topic
         Emailadressen und Arithmetische Ausdrücke
@@ -77,8 +76,8 @@
 
     Das klassische Beispiel, wie sehr einfache Regeln
     ein extrem komplexes Verhalten erzeugen können, ist
-    Conways Game of Life. Hier ist der 
-    [Wikipedia-Artikel dazu](href=https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens).
+    Conways Game of Life. Hier ist der [Wikipedia-Artikel
+    dazu](href=https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens).
     Die Welt von Conways Game of Life ist ein unendliches
     Schachbrett, in jedem jedes Feld entweder leer ist
     oder von einem Einzeller bevölkert ist.

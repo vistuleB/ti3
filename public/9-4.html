@@ -36,13 +36,13 @@
       </p>
     </div>
     <div
-      id="_34_hgi_"
+      id="_36_hgi_"
       class="well statement out"
     >
       <p>
         <b>Problem</b>
         <b>9.4.1</b>
-        (<span style="font-variant:small-caps;">3-Colorability</span>). Gegeben ein Graph
+        (<span class="sc">3-Colorability</span>). Gegeben ein Graph
         <span class="nowrap">$G= (V,E)$,</span>
         gibt es eine Färbung
         $c : V \rightarrow \{1,2,3\}$ mit
@@ -77,7 +77,7 @@
       <p>
         <b>Beobachtung</b>
         <b>9.4.2</b>
-        <span style="font-variant:small-caps;">3-Colorability</span>
+        <span class="sc">3-Colorability</span>
         ist in NP.
       </p>
     </div>
@@ -123,13 +123,14 @@
         <span class="nowrap">$3$-färbbar.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
       <div
-        id="_35_hgi_"
+        id="_37_hgi_"
         class="well exercise"
       >
         <p>
           <b>Übungsaufgabe 9.4.1</b>
-          (<span style="font-variant:small-caps;">CNF-Satisfiability</span>). Gegeben eine Formel $F$ in konjunktiver Normalform.
-          Gibt es eine Belegung der Variablen, so dass $F$ zu
+          (<span class="sc">CNF-Satisfiability</span>). Gegeben eine Formel
+          $F$ in konjunktiver Normalform. Gibt es eine Belegung
+          der Variablen, so dass $F$ zu
           <code>True</code>
           wird?
         </p>
@@ -139,21 +140,20 @@
         die eine Formel $F$ und eine Belegung $\alpha$ entgegennimmt,
         dann jede Klausel auswertet und schaut, ob immer
         <code>True</code>
-        rauskommt. Somit gilt: auch<span style="font-variant:small-caps;">CNF-Satisfiability</span>
+        rauskommt. Somit gilt: auch<span class="sc">CNF-Satisfiability</span>
         ist in NP.
       </p>
       <div
-        id="_36_hgi_"
+        id="_38_hgi_"
         class="well statement"
       >
         <p>
           <b>Problem</b>
           <b>9.4.3</b>
-          (<span style="font-variant:small-caps;">Subset Sum</span>). Gegeben eine Liste $p_1, \dots, p_n \in \N$ von
-          "Preisen" und ein "Guthaben"
+          (<span class="sc">Subset Sum</span>). Gegeben eine Liste
+          $p_1, \dots, p_n \in \N$ von "Preisen" und ein "Guthaben"
           <span class="nowrap">$g \in \N$,</span>
-          gibt es eine
-          Menge $I \subseteq [n]$ mit
+          gibt es eine Menge $I \subseteq [n]$ mit
         </p>
         <div class="math-block">
           $$
@@ -177,7 +177,7 @@
         <span class="nowrap">$u,v \in I$.</span>
       </p>
       <div
-        id="_37_hgi_"
+        id="_39_hgi_"
         class="well statement"
       >
         <p>
@@ -197,30 +197,32 @@
         Entscheidungsvariante definieren:
       </p>
       <div
-        id="_38_hgi_"
+        id="_40_hgi_"
         class="numbered-title"
         class="well statement"
       >
         <p>
           <b>Problem</b>
           <b>9.4.5</b>
-          (<span style="font-variant:small-caps;">Independent Set</span>) Gegeben ein Graph $G=(V,E)$ und eine Zahl
+          (<span class="sc">Independent Set</span>) Gegeben ein Graph
+          $G=(V,E)$ und eine Zahl
           <span class="nowrap">$k$.</span>
-          Gibt
-          es eine unabhängige Menge in $I$ in $G$ mit
+          Gibt es eine unabhängige
+          Menge in $I$ in $G$ mit
           <span class="nowrap">$|I| \geq k$?</span>
         </p>
       </div>
       <p>
         Das Entscheidungsproblem
-        <span style="font-variant:small-caps;">Independent Set</span>ist offensichtlich in NP. Als Zertifikat kommt z.B.
-        einfach die Menge $I$ in Frage. Für alle Entscheidungsprobleme,
+        <span class="sc">Independent Set</span>ist
+        offensichtlich in NP. Als Zertifikat kommt z.B. einfach
+        die Menge $I$ in Frage. Für alle Entscheidungsprobleme,
         die wir oben als Beispiele aufgelistet haben, kann
         man ganz natürlich das zugehörige Suchproblem definieren:
         gegeben ein Graph, finde eine 3-Färbung (falls es sie
         gibt); gegeben eine CNF-Formel, finde eine erfüllende
         Belegung (falls es sie gibt); gegeben ein Instanz von
-        <span style="font-variant:small-caps;">Subset Sum</span>, finde eine Menge $I$ mit
+        <span class="sc">Subset Sum</span>, finde eine Menge $I$ mit
         <span class="nowrap">$\sum_{i \in I} p_i = g$.</span>
       </p>
       <div class="well exercise">
@@ -235,25 +237,25 @@
         <ul>
           <li>
             <p>
-              <span style="font-variant:small-caps;">Subset Sum</span>
+              <span class="sc">Subset Sum</span>
               (das ist einfach),
             </p>
           </li>
           <li>
             <p>
-              <span style="font-variant:small-caps;">Independent Set</span>
+              <span class="sc">Independent Set</span>
               (das ist auch recht einfach),
             </p>
           </li>
           <li>
             <p>
-              <span style="font-variant:small-caps;">CNF-Satisfiability</span>
+              <span class="sc">CNF-Satisfiability</span>
               (auch),
             </p>
           </li>
           <li>
             <p>
-              <span style="font-variant:small-caps;">3-Colorability</span>
+              <span class="sc">3-Colorability</span>
               (das ist trickreicher).
             </p>
           </li>
@@ -261,7 +263,8 @@
       </div>
       <p>
         Dies geht nicht immer! Erinnern Sie sich an
-        <span style="font-variant:small-caps;">Primes</span>. Der Agrawal–Kayal–Saxena-Algorithmus lässt uns entscheiden,
+        <span class="sc">Primes</span>.
+        Der Agrawal–Kayal–Saxena-Algorithmus lässt uns entscheiden,
         ob eine gegebene Zahl $n$ prim ist; also auch, ob
         $n$ zusammengesetzt ist; allerdings geht daraus kein
         Algorithmus hervor, der einen Faktor auch findet. Wo
@@ -274,37 +277,38 @@
         Entscheidungsproblem formulieren? Es sollte gelten:
         wenn wir das Entscheidungsproblem lösen können, dann
         auch das Suchproblem. Wie wir gesehen haben, ist
-        <span style="font-variant:small-caps;">Primes</span>
-        bzw.<span style="font-variant:small-caps;">NonPrimes</span>nicht das entsprechende Entscheidungsproblem, weil
-        es uns nicht erlaubt, den Faktor auch zu finden.
+        <span class="sc">Primes</span>
+        bzw.<span class="sc">NonPrimes</span>nicht das entsprechende Entscheidungsproblem,
+        weil es uns nicht erlaubt, den Faktor auch zu finden.
       </p>
       <div
-        id="_39_hgi_"
+        id="_41_hgi_"
         class="well statement"
       >
         <p>
           <b>Problem</b>
           <b>9.4.6</b>
-          (<span style="font-variant:small-caps;">Small Factor</span>) Gegeben eine Zahl
+          (<span class="sc">Small Factor</span>) Gegeben eine Zahl
           <span class="nowrap">$X \in \N$,</span>
           binär codiert als
           <span class="nowrap">$x \in \{0,1\}^n$,</span>
           und eine Zahl
           <span class="nowrap">$K \in \N$:</span>
-          gibt
-          es einen echten Teiler $Z$ von $\N$ mit
+          gibt es einen echten Teiler $Z$ von
+          $\N$ mit
           <span class="nowrap">$Z \leq K$?</span>
         </p>
       </div>
       <div
-        id="_40_hgi_"
+        id="_42_hgi_"
         class="well exercise"
       >
         <p>
           <b>Übungsaufgabe 9.4.3</b>
           Zeigen Sie: wenn man
-          <span style="font-variant:small-caps;">Small Factor</span>
-          effizient lösen kann, dann kann man auch die Primzahlfaktorisierung
+          <span class="sc">Small Factor</span>
+          effizient
+          lösen kann, dann kann man auch die Primzahlfaktorisierung
           von $X$ effizient finden.
           <b>Hinweis:</b>
           <i>Effizient</i>
@@ -321,20 +325,22 @@
       </div>
       <p>
         Das Entscheidungsproblem
-        <span style="font-variant:small-caps;">Small Factor</span>
-        ist offensichtlich in NP: das Zertifikat $z$ ist
-        jener Faktor (so er denn existiert), und die Zertifikatmaschine
-        $M$ muss nun $z$ mit $K$ multiplizieren und schauen,
-        ob auch $X$ herauskommt. Nicht so offensichtlich jedoch
-        ist folgendes:
+        <span class="sc">Small Factor</span>
+        ist offensichtlich
+        in NP: das Zertifikat $z$ ist jener Faktor (so er
+        denn existiert), und die Zertifikatmaschine $M$ muss
+        nun $z$ mit $K$ multiplizieren und schauen, ob auch
+        $X$ herauskommt. Nicht so offensichtlich jedoch ist
+        folgendes:
       </p>
       <div class="well exercise">
         <p>
           <b>Übungsaufgabe 9.4.4</b>
           Sei
-          <span style="font-variant:small-caps;">No Small Factor</span>
+          <span class="sc">No Small Factor</span>
           das Komplement von
-          <span style="font-variant:small-caps;">Small Factor</span>, also
+          <span class="sc">Small
+            Factor</span>, also
         </p>
         <div class="math-block">
           $$
