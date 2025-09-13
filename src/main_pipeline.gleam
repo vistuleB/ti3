@@ -153,9 +153,9 @@ pub fn main_pipeline()  -> List(Pipe) {
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "pre", "code"]),
     pp.splitting_empty_lines_cleanup(),
     [
-      dl.handles_generate_ids(),
-      dl.handles_generate_dictionary("path"),
-      dl.handles_substitute(#("path", "a", "a", [], [])),
+      dl.handles_add_ids(),
+      dl.handles_generate_dictionary_and_id_list("path"),
+      dl.handles_substitute_and_fix_nonlocal_id_links(#("path", "a", "a", [], [])),
       dl.rearrange_links(#("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>")),
       dl.rearrange_links(#("Übungsaufgabe <a href=1>_1_</a>", "<a href=1>Übungsaufgabe _1_</a>")),
       dl.rearrange_links(#("Aufgabe <a href=1>_1_</a>", "<a href=1>Aufgabe _1_</a>")),

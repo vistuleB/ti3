@@ -299,14 +299,11 @@
 
     |> Statement
         title=*Beispiel*
-        Im 
-        |> a
-            href=./05-10-not-context-free.html
-            Teilkapitel 5.10
-        \ gab es 
+        Im [Teilkapitel](#limitations-of-regular-grammars:page)
+        gab es Übungsaufgabe >>exercise-power-2
         |> a
             href=./05-10-not-context-free.html#exericse-power-2
-            Übungsaufgabe 5.10.2
+            5.10.2
         , in der zu zeigen war, dass
 
         \begin{align*}

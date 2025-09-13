@@ -9,8 +9,8 @@
     Zeit möglich.
 
     |> Statement
-        handle=def-regular
         title=*Definition*
+        handle=def-regular
         Eine kontextfreie Sprache $G = (\Sigma, N, P, S)$
         heißt _regulär_, wenn jede Produktion eine der folgenden
         vier Formen hat:
@@ -155,7 +155,7 @@
         für diese Sprache.
 
     |> Exercise
-        Unsere 
+        Unsere
         |> a
             href=./04-00-formal-languages.html#email-context-free-grammar
             Grammatik für korrekte Emailadressen
@@ -247,7 +247,7 @@
     regulären Grammatiken zu verwenden, die uns mehr erlaubt.
     Im Folgenden zeigen wir, wie man die Form der Grammatiken
     noch stärker einschränken kann, ohne dass Sie an Mächtigkeit
-    einbüßen. Per Definition >>def-regular   hat jede Produktion
+    einbüßen. Per Definition >>def-regular hat jede Produktion
     in einer regulären Grammatik eine der folgenden vier
     Formen:
 

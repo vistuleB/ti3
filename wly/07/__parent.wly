@@ -299,15 +299,9 @@
 
     |> Statement
         title=*Beispiel*
-        Im 
-        |> a
-            href=./05-10-not-context-free.html
-            Teilkapitel 5.10
-        \ gab es 
-        |> a
-            href=./05-10-not-context-free.html#exericse-power-2
-            Übungsaufgabe 5.10.2
-        , in der zu zeigen war, dass
+        Im [Teilkapitel](>>limitations-of-context-free-grammars)
+        gab es Übungsaufgabe >>exercise-power-2, in der zu 
+        zeigen war, dass
 
         \begin{align*}
         L = \{ 1^n \ | \ n = 2^d \textnormal{ für ein $d \in \N$ }\}

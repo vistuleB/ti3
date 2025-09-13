@@ -17,45 +17,45 @@
     Sie die typische hierarchisch-geschachtelte Struktur
     (sie müssen es nicht im Detail lesen):
 
-    ```listing
-    <div class='carousel-inner' style='display:inline-block'>
-        <div class='item active'>
-            <p>$110 x + 794$</p><img loading="lazy" src='../img/hash/hashfunction_110_794.svg'>
+    ```xml-listing
+    <div class="carousel-inner" style="display:inline-block">
+        <div class="item active">
+            <p>$110 x + 794$</p><img loading="lazy" src="img/hash/hashfunction_110_794.svg">
         </div>
-        <div class='item'>
-            <p>$502 x + 121$</p><img loading="lazy" src='../img/hash/hashfunction_502_121.svg'>
+        <div class="item">
+            <p>$502 x + 121$</p><img loading="lazy" src="img/hash/hashfunction_502_121.svg">
             </div>
-        <div class='item'>
-            <p>$617 x + 5$</p><img loading="lazy" src='../img/hash/hashfunction_617_5.svg'>
+        <div class="item">
+            <p>$617 x + 5$</p><img loading="lazy" src="img/hash/hashfunction_617_5.svg">
         </div>
-        <div class='item'>
-            <p>$815 x + 562$</p><img loading="lazy" src='../img/hash/hashfunction_851_562.svg'>
+        <div class="item">
+            <p>$815 x + 562$</p><img loading="lazy" src="img/hash/hashfunction_851_562.svg">
         </div>
-        <div class='item'>
-            <p>$868 x + 858$</p><img loading="lazy" src='../img/hash/hashfunction_868_858.svg'>
+        <div class="item">
+            <p>$868 x + 858$</p><img loading="lazy" src="img/hash/hashfunction_868_858.svg">
         </div>
-        <div class='item'>
-            <p>$915 x + 320$</p><img loading="lazy" src='../img/hash/hashfunction_915_320.svg'>
+        <div class="item">
+            <p>$915 x + 320$</p><img loading="lazy" src="img/hash/hashfunction_915_320.svg">
         </div>
-    </div class='carousel-inner'>
+    </div class="carousel-inner">
     ```
 
     Hier sehen Sie einen Ausschnitt aus einem Elm-Programm
     (auch diesen müssen Sie nicht im Detail lesen):
 
     ```listing
-    find : Bst -> String -> Maybe String
-    find tree key =
-        case tree of
-            Empty _ ->
-                Nothing
-            Node ( keyHere, valueHere ) leftChild rightChild ->
-                if key == keyHere then
-                    Just valueHere
-                else if key< keyHere then
-                    find leftChild key
-                else
-                    find rightChild key
+    `find`{elm-1} `:`{elm-0} `Bst`{elm-2} `->`{elm-0} `String`{elm-2} `->`{elm-0} `Maybe`{elm-2} `String`{elm-2}
+    `find`{elm-1} `tree`{elm-3} `key`{elm-3} =
+        `case`{elm-4} `tree`{elm-3} `of`{elm-4}
+            `Empty`{elm-5} `_`{elm-3} `->`{elm-0}
+                `Nothing`{elm-5}
+            `Node`{elm-5} `(`{elm-0} `keyHere`{elm-3}, `valueHere`{elm-3} `)`{elm-0} `leftChild`{elm-3} `rightChild`{elm-3} `->`{elm-0}
+                `if`{elm-4} `key`{elm-3} `==`{elm-0} `keyHere`{elm-3} `then`{elm-4}
+                    `Just`{elm-5} `valueHere`{elm-3}
+                `else`{elm-4} `if`{elm-4} `key`{elm-3} < `keyHere`{elm-3} `then`{elm-4}
+                    `find`{elm-5} `leftChild`{elm-3} `key`{elm-3}
+                `else`{elm-4}
+                    `find`{elm-5} `rightChild`{elm-3} `key`{elm-3}
     ```
 
     Als letztes Beispiel sehen Sie hier eine svg-Datei.
@@ -67,7 +67,7 @@
             style=height:4em
             src=./img/svg-example.svg
 
-    ```listing
+    ```xml-listing
     <?xml version="1.0" encoding="UTF-8"?>
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -150,15 +150,15 @@
     ```
 
     Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln
-    für `&lt;Domain&gt;` erstellen? Eine `&lt;Domain&gt;`
-    soll eine Folge aus mindestens zwei `&lt;Label&gt;`
-    sein, jeweils durch einen `.` separiert. Wir erreichen
-    dies, indem wir einen an Rekursion erinnernden Trick
-    anwenden: entweder gibt es genau zwei Labels oder die
-    Domain beginnt mit einem Label, gefolgt von einem Punkt
-    und wiederum einer _Folge von mindestens zwei durch
-    `.` separierten Labels_, also wiederum etwas, das wie
-    ein Domainname aussieht. Daher:
+    für `<Domain>` erstellen? Eine `<Domain>` soll eine
+    Folge aus mindestens zwei `<Label>` sein, jeweils durch
+    einen `.` separiert. Wir erreichen dies, indem wir
+    einen an Rekursion erinnernden Trick anwenden: entweder
+    gibt es genau zwei Labels oder die Domain beginnt mit
+    einem Label, gefolgt von einem Punkt und wiederum einer
+    _Folge von mindestens zwei durch `.` separierten Labels_,
+    also wiederum etwas, das wie ein Domainname aussieht.
+    Daher:
 
     ```
     <Domain> -> <Label> . <Label>
@@ -166,19 +166,17 @@
     ```
 
     Wir geben also _zwei_ Möglichkeiten an, wie mit einem
-    `&lt;Domain&gt;` zu verfahren ist. Was ist nun `&lt;Label&gt;`?
+    `<Domain>` zu verfahren ist. Was ist nun `<Label>`?
     Dies ist eine nichtleere Folge von in Domainnamen erlaubten
     Zeichen. Diese sind alphanumerisch (Buchstaben und
     Zahlen) und der Strich `-` (in der Praxis sind eventuell
     noch weitere Zeichen erlaubt; im Ernstfall hängt dies
     davon ab, was die Domain Name Server des jeweiligen
     Landes / der jeweiligen Top-Level-Domain erlauben,
-    siehe zum Beispiel 
-    |> a
-        href=https://en.wikipedia.org/wiki/Internationalized_domain_name
-        Wikipedia: Internationalized Domain Name
-    ). Wie formulieren wir _nichtleere Folge von ..._
-    mit unserer `--&gt;`-Notation? Wieder mit dem Rekursionstrick:
+    siehe zum Beispiel [Wikipedia: Internationalized Domain
+    Name](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+    Wie formulieren wir _nichtleere Folge von ..._ mit
+    unserer `-->;`-Notation? Wieder mit dem Rekursionstrick:
 
     ```
     <Label> -> <AlphaNumOrDash>
@@ -187,10 +185,10 @@
     <AlphaNumOrDash> -> -
     ```
 
-    Nun müssen wir noch Regeln für `&lt;AlphaNum&gt;`
-    angeben. Hier führen wir eine weitere Konvention ein:
-    nämlich, dass wir verschiedene Alternativen mit einem
-    senkrechten Strich | separieren:
+    Nun müssen wir noch Regeln für `<AlphaNum>` angeben.
+    Hier führen wir eine weitere Konvention ein: nämlich,
+    dass wir verschiedene Alternativen mit einem senkrechten
+    Strich | separieren:
 
     ```
     <AlphaNum> -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
@@ -198,12 +196,12 @@
     <AlphaNum> -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
     ```
 
-    Beachten Sie: ich habe hier absichtlich nicht `&lt;AlphaNum&gt;
-    *-&gt;* a *|* ... *|* z` geschrieben, weil ich in diesem
+    Beachten Sie: ich habe hier absichtlich nicht `<AlphaNum>
+    *->* a *|* ... *|* z` geschrieben, weil ich in diesem
     Beispiel wirklich alles ausschreiben wollte und mit
     der ...-Notation schon wieder etwas menschen- aber
     nicht maschinenlesbares eingeführt hätte. Wir brauchen
-    noch Regeln für `&lt;User&gt;`. Dies ist ein nichtleerer
+    noch Regeln für `<User>`. Dies ist ein nichtleerer
     String aus alphanumerischen Zeichen und dem Punkt `.`,
     wobei der Punkt nicht am Anfang und nicht am Ende stehen
     darf. Also: eine nichtleere Folge von _Namensblöcken_,
@@ -246,8 +244,8 @@
             Eine Menge $N$ abstrakter Symbole, hier
 
             $$
-            N = \{\texttt{&lt;EmailAddress&gt;,&lt;Domain&gt;,
-            &lt;User&gt;,&lt;NameBlock&gt;,&lt;Label&gt;,&lt;AlphaNumOrDash&gt;,&lt;AlphaNum&gt;}
+            N = \{\texttt{<EmailAddress>,<Domain>,
+            <User>,<NameBlock>,<Label>,<AlphaNumOrDash>,<AlphaNum>}
             \} \ .
             $$
 
@@ -264,7 +262,7 @@
             Ein Startsymbol $S \in N$, das angibt, wo wir mit
             unserer Ableitung beginnen sollen. Im obigen Beispiel
             sind wir ja an Emailadressen interessiert, also ist
-            `&lt;EmailAddress&gt;` das Startsymbol.
+            `<EmailAddress>` das Startsymbol.
 
     Wenn wir nun so eine Grammatik gegeben haben, können
     wir Wörter _ableiten_; das heißt, wir beginnen mit

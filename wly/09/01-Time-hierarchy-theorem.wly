@@ -7,11 +7,8 @@
     entscheiden kann, aber nicht deutlich schneller. Was
     "vernünftig" bedeutet, wird weiter unten klar werden.
     Wir betrachten noch einmal genauer die universelle
-    Turingmaschine aus
-    |> a
-        href=07-03-Turing-universal.html
-        Kapitel 7.5.
-    \ Unsere Implementierung hatte insgesamt fünf Bänder
+    Turingmaschine aus Kapitel >>turing-universal:page
+    Unsere Implementierung hatte insgesamt fünf Bänder
     verwendet: (1) ein Band, um die Regeln von $M$ zu
     speichern (also die Funktion $\delta$); (2) ein Band,
     um den Zustand von $M$ zu speichern; (3) um den akzeptierenden
@@ -36,13 +33,11 @@
     durchführen kann. Die entsprechende Turingmaschine
     hat dann allerdings $k+2$ Bänder: $k$ Arbeitsbänder,
     eins für den Zustand von $M$ und eins für
-    $\enc(M)$. Darüberhinaus hatten wir in
-    |> a
-        href=07-05-undecidability.html
-        Kapitel 7.7
-    \ gesehen, dass wir als Codierungsalphabet $\Sigma$
-    selbst nehmen können, also $\enc(M) \in \Sigma^*$,
-    solange $\Sigma$ mindestens zwei Zeichen enthält.
+    $\enc(M)$. Darüberhinaus hatten wir in 
+    Kapitel >>undecidability:page gesehen, dass wir als 
+    Codierungsalphabet $\Sigma$ selbst nehmen können, also 
+    $\enc(M) \in \Sigma^*$, solange $\Sigma$ mindestens zwei 
+    Zeichen enthält.
 
     |> Statement
         title=*Theorem*
@@ -242,10 +237,7 @@
         Wortes $x1^m$. Nach Annahme terminiert $M$ auf dem
         Eingabewort $x1^m$ innerhalb von $s(n)$ Schritten.
         Wenn $U$ die Maschine $M$ simuliert, braucht sie nach 
-        |> a
-            href=#theorem-universal
-            Theorem 8.1.1
-        \ höchstens $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte.
+        Theorem >>theorem-universal höchstens $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte.
         Da $s(n) \geq n$ gilt, sind dies höchstens
         $2C \cdot |\enc(M)| \cdot s(n) = 2C \cdot |\enc(M)|
         \cdot s(|x|+m)$

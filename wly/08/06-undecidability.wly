@@ -1,5 +1,6 @@
 |> Sub
     title=Unentscheidbarkeit
+    handle=undecidability
     Im vorherigen Teilkapitel haben wir die _universelle
     Turingmaschine_ $U$ konstruiert, die eine andere Turingmaschine,
     deren Codierung und Inputwort sie als Input gegeben

@@ -123,7 +123,7 @@
         verschiedene Darstellung als gekürzter Bruch, und somit
         gilt auch $f_1(q) \ne f_1(q')$. Wir haben nun also
         eine Injektion $f_1 : \Q \rightarrow \Z \times \N$.
-        Mit Übungsaufgabe >>exercise-cartesian-product  und
+        Mit Übungsaufgabe >>exercise-cartesian-product und
         Theorem >>theorem-N-N^2 gilt
         $\Z \times \N \approx \N \times \N \approx \N$, und
         somit gibt es eine Bijektion
@@ -165,11 +165,8 @@
     Zahlen ungenutzt. Können wir $f$ und $g$ irgendwie
     kombinieren, um eine bijektive Funktion zu erschaffen?
     Die Antwort lautet _ja, das geht immer_, ist nicht
-    ganz trivial zu beweisen, heißt 
-    |> a
-        href=https://en.wikipedia.org/wiki/Schröder–Bernstein_theorem
-        Schröder-Bernstein-Theorem
-    , und wir werden das im Teilkapitel 
+    ganz trivial zu beweisen, heißt [Schröder-Bernstein-Theorem](https://en.wikipedia.org/wiki/Schröder–Bernstein_theorem),
+    und wir werden das im Teilkapitel 
     |> a
         href=...
         ...

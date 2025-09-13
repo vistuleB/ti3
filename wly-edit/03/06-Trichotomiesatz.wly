@@ -207,14 +207,9 @@
     definieren, welche Rechen- und Beweisschritte in der
     Mathematik erlaubt seien. In moderner Sprache: wann
     wollte die gesamte Mathematik _axiomatisieren_. Treibende
-    Kraft hinter diesem Vorhaben war der deutsche Mathematiker 
-    |> a
-        href=https://de.wikipedia.org/wiki/David_Hilbert
-        David Hilbert
-    , und somit ist es auch als 
-    |> a
-        href=https://de.wikipedia.org/wiki/Hilbertprogramm
-        Hilbertprogramm
-    \ bekannt. Das Bestreben, mathematisches Beweisen und
+    Kraft hinter diesem Vorhaben war der deutsche Mathematiker
+    [David Hilbert](https://de.wikipedia.org/wiki/David_Hilbert),
+    und somit ist es auch als [Hilbertprogramm](https://de.wikipedia.org/wiki/Hilbertprogramm)
+    bekannt. Das Bestreben, mathematisches Beweisen und
     somit auch Rechnen zu mechanisieren, trug maßgeblich
     zur Entwicklung der Informatik und des Computers bei.

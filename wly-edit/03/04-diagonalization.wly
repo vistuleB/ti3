@@ -73,13 +73,11 @@
     Weil in dem Beweis die Diagonale der Tabelle eine
     entscheidende Rolle spielt, nennt man diese Beweistechnik
     auch das Cantorsche Diagonalisierungsverfahren. Dies
-    wird später, in Kapitel 
-    |> a
-        href=./7-0.html
-        7
-    \ über Turingmaschinen und in Kapitel ? über Komplexitätstheorie
-    eine Rolle spielen, wenn wir z.B. zeigen wollen, dass
-    es Probleme gibt, an denen jedes Computerprogram versagt.
+    wird später, in Kapitel >>turing-machines:page über
+    Turingmaschinen und in Kapitel >>complexity-theory:page
+    über Komplexitätstheorie eine Rolle spielen, wenn wir
+    z.B. zeigen wollen, dass es Probleme gibt, an denen
+    jedes Computerprogram versagt.
 
     |> Exercise
         Zeigen Sie, dass es zu der Funktion

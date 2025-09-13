@@ -43,7 +43,11 @@
       entscheiden kann, aber nicht deutlich schneller. Was
       "vernünftig" bedeutet, wird weiter unten klar werden.
       Wir betrachten noch einmal genauer die universelle
-      Turingmaschine aus<a href="07-03-Turing-universal.html">Kapitel 7.5.</a>
+      Turingmaschine aus
+      <a
+        href="./8-5.html"
+        class=""
+      >Kapitel 8.5</a>
       Unsere Implementierung hatte insgesamt fünf Bänder
       verwendet: (1) ein Band, um die Regeln von $M$ zu
       speichern (also die Funktion
@@ -80,11 +84,16 @@
       hat dann allerdings $k+2$ Bänder: $k$ Arbeitsbänder,
       eins für den Zustand von $M$ und eins für
       <span class="nowrap">$\enc(M)$.</span>
-      Darüberhinaus hatten wir in<a href="07-05-undecidability.html">Kapitel 7.7</a>
-      gesehen, dass wir als Codierungsalphabet $\Sigma$
-      selbst nehmen können, also
+      Darüberhinaus hatten wir in
+      <a
+        href="./8-6.html"
+        class=""
+      >Kapitel 8.6</a>
+      gesehen, dass wir als 
+      Codierungsalphabet $\Sigma$ selbst nehmen können, also
       <span class="nowrap">$\enc(M) \in \Sigma^*$,</span>
-      solange $\Sigma$ mindestens zwei Zeichen enthält.
+      solange $\Sigma$ mindestens zwei 
+      Zeichen enthält.
     </p>
     <div class="well statement out">
       <p>
@@ -399,7 +408,10 @@
         Nach Annahme terminiert $M$ auf dem
         Eingabewort $x1^m$ innerhalb von $s(n)$ Schritten.
         Wenn $U$ die Maschine $M$ simuliert, braucht sie nach
-        <a href="#theorem-universal">Theorem 8.1.1</a>
+        <a
+          href="./8-5.html#_29_hgi_"
+          class=""
+        >Theorem 8.5.1</a>
         höchstens $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte.
         Da $s(n) \geq n$ gilt, sind dies höchstens
         $2C \cdot |\enc(M)| \cdot s(n) = 2C \cdot |\enc(M)|

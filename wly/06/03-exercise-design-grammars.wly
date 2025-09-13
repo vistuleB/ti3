@@ -109,11 +109,8 @@
 
     |> Exercise
         *(Challenge)* Die folgende Grammatik hat User _babou_
-        auf 
-        |> a
-            href=https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo
-            StackExchange
-        \ vorgeschlagen als Beispiel für eine eindeutige Grammatik,
+        auf [StackExchange](https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo)
+        vorgeschlagen als Beispiel für eine eindeutige Grammatik,
         bei der Sie exponentiell große Backtrack-Bäume bekommen
         können:
 

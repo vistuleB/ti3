@@ -3,11 +3,7 @@
     |> div
         class=well alert-info
         Den vollständigen Quelltext, den wir in der Vorlesung
-        geschrieben haben, finden Sie in der Datei 
-        |> a
-            href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/code/parsing/arithmetic-in-class/ArithmeticGrammar.java
-            ArithmeticGrammar.java
-        .
+        geschrieben haben, finden Sie in der Datei [ArithmeticGrammar.java](https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/code/parsing/arithmetic-in-class/ArithmeticGrammar.java).
 
     Ich möchte nun eine kontextfreie Grammatik für arithmetische
     Ausdrücke der Form `((31+402)*83)` entwerfen. Der Einfachheit

@@ -123,7 +123,7 @@
         verschiedene Darstellung als gekürzter Bruch, und somit
         gilt auch $f_1(q) \ne f_1(q')$. Wir haben nun also
         eine Injektion $f_1 : \Q \rightarrow \Z \times \N$.
-        Mit Übungsaufgabe >>exercise-cartesian-product  und
+        Mit Übungsaufgabe >>exercise-cartesian-product und
         Theorem >>theorem-N-N^2 gilt
         $\Z \times \N \approx \N \times \N \approx \N$, und
         somit gibt es eine Bijektion
