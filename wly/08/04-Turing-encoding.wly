@@ -9,19 +9,15 @@
     nun in die Lage der Menschen vor ungefähr 100 Jahren.
     Damals gab es durchaus Rechenmaschinen. Maschinen zum
     Addieren und sogar zum Multiplizieren gibt es schon
-    seit dem 17. Jahrhunder (
-    |> a
-        href=https://en.wikipedia.org/wiki/Mechanical_calculator
-        Wikipedia: Mechanical calculator
-    ). Leider musste man für jede Aufgabe eine neue Maschine
+    seit dem 17. Jahrhunder ([Wikipedia: Mechanical 
+    calculator](https://en.wikipedia.org/wiki/Mechanical_calculator)). 
+    Leider musste man für jede Aufgabe eine neue Maschine
     erfinden und auch bauen. Zahlen addieren? Maschine
     bauen. Multiplizieren? Neue Maschine bauen. Verschlüsselung
     brechen? Neue Maschine bauen. Und so weiter. Die Idee
     einer 
-    |> a
-        href=https://en.wikipedia.org/wiki/Mechanical_calculator#Programmable_mechanical_calculators
-        programmierbaren Maschine
-    , die erstmals circa 1834 mit Charles Babbage aufkam,
+    [programmierbaren Maschine](https://en.wikipedia.org/wiki/Mechanical_calculator#Programmable_mechanical_calculators),
+    die erstmals circa 1834 mit Charles Babbage aufkam,
     ist, dass man neben den Eingabedaten (z.B. die zu multiplizierenden
     Zahlen) auch die Rechenvorschrift (das Programm) als
     Eingabe übergibt. Hätte man so eine Maschine, dann
@@ -50,10 +46,8 @@
     Turingmaschine $M$ implementieren. Diese können wir
     über einem Alphabet codieren und erhalten ein Wort
     $\enc(M)$. Wie tun wir das? Nun ja, auf 
-    |> a
-        href=https://turingmachinesimulator.com
-        turingmachinesimulator.com
-    \ haben wir das bereits getan: eine Turingmaschine
+    [turingmachinesimulator.com](ttps://turingmachinesimulator.com)
+    haben wir das bereits getan: eine Turingmaschine
     mit Alphabet $\Sigma$ können wir dort als String über
     dem Alphabet
 
@@ -71,10 +65,8 @@
     $M(x)$ simuliert bzw. zu dem Ergebnis gelangt, zu
     dem auch $M(x)$ gelangen würde? Die Programmierer
     von 
-    |> a
-        href=https://turingmachinesimulator.com
-        turingmachinesimulator.com
-    \ haben dies offensichtlich geschafft: sie haben eine
+    [turingmachinesimulator.com](https://turingmachinesimulator.com)
+    haben dies offensichtlich geschafft: sie haben eine
     Maschine "gebaut" (also wohl einen Server gemietet
     und eine Webseite mit viel Javascript programmiert),
     der eine Turingmaschine in einer spezifischen Codierung

@@ -109,6 +109,7 @@
         `-`, `>` codiert wird.
 
     |> Statement
+        handle=example-palindromes
         title=*Beispiel*
         Als zweites Beispiel nehmen wir die Palindromsprache
 
@@ -172,20 +173,14 @@
 
     |> Exercise
         Implementieren Sie die Turingmaschine für die Palindromsprache
-        auf 
-        |> a
-            href=https://turingmachinesimulator.com
-            turingmachinesimulator.com
-        .
+        auf [turingmachinesimulator.com](https://turingmachinesimulator.com).
 
     Jetzt sind Sie dran.
 
     |> Exercise
         Schreiben Sie eine Turingmaschine (auf 
-        |> a
-            href=https://turingmachinesimulator.com
-            turingmachinesimulator.com
-        ), die die folgende Sprache
+        [turingmachinesimulator.com](https://turingmachinesimulator.com)), 
+        die die folgende Sprache
         $L \subseteq \{a,b,c\}$ entscheidet:
 
         \begin{align*}
@@ -193,11 +188,8 @@
         \end{align*}
 
     |> Exercise
-        Schreiben Sie auf 
-        |> a
-            href=https://turingmachinesimulator.com
-            turingmachinesimulator.com
-        \ eine Turingmaschine für die Sprache
+        Schreiben Sie auf [turingmachinesimulator.com](https://turingmachinesimulator.com)
+        eine Turingmaschine für die Sprache
 
         \begin{align*}
         L := \{1^n \ | \ n = 2^d, d \geq 0\} \ .
