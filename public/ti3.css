@@ -26,6 +26,7 @@ body {
     min-width: 2500px;
     color: var(--body-color);
     padding-bottom: 2rem;
+    touch-action: pinch-zoom;
 }
 
 /* Index page
@@ -513,6 +514,13 @@ a:hover {
 
 hr {
     color: #eeeeee40;
+}
+
+button img {
+  -webkit-user-select: none;        /* prevent selection */
+  -webkit-touch-callout: none;      /* prevent long-press callout */
+  -webkit-user-drag: none;          /* prevent dragging the image */
+  user-select: none;
 }
 
 .math-block {
