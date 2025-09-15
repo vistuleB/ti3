@@ -168,11 +168,9 @@
         $w$ betrachten zu müssen.
 
     Wir haben allerdings bereits gesehen, dass das nicht
-    immer möglich ist. Bei der Implementierung von 
-    |> a
-        href=../code/parsing/arithmetic-in-class/ArithmeticGrammar.java
-        ArithmeticGrammar.java
-    \ zum Beispiel haben wir manchmal das erste Zeichen
+    immer möglich ist. Bei der Implementierung von
+    [ArithmeticGrammar.java](./code/parsing/arithmetic-in-class/ArithmeticGrammar.java)
+    zum Beispiel haben wir manchmal das erste Zeichen
     von $w$ betrachten müssen. Allerdings behalten wir
     erst einmal obigen Wunsch als Idealziel. Um ihn zu
     formalisieren, fragen wir uns, wann es denn _nicht_

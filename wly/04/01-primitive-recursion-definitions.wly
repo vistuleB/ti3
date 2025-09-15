@@ -124,10 +124,8 @@
     |> Statement
         title=*Demo*
         Speichern Sie die Datei 
-        |> a
-            href=../code/primitive-recursion/primrec.py
-            primrec.py
-        \ auf Ihrem Rechner. Diese Datei stellt ein Framework
+        [`primrec.py`{codelink}](./code/primitive-recursion/primrec.py)
+        auf Ihrem Rechner. Diese Datei stellt ein Framework
         für die Implementierung primitiv rekursiver Funktionen
         zur Verfügung. Insbesondere implementiert sie die folgenden
         Funktion $\N^k \rightarrow \N$:
@@ -234,10 +232,8 @@
     |> Exercise
         Wenn Sie die vorherige Übungsaufgabe gelöst (oder
         darüber aufgegeben) haben, sehen Sie sich die Datei 
-        |> a
-            href=../code/primitive-recursion/stockpile.py
-            stockpile.py
-        \ an, in der ich diese Funktionen zum Großteil implementiert
+        [`stockpile.py`{codelink}](code/primitive-recursion/stockpile.py)
+        an, in der ich diese Funktionen zum Großteil implementiert
         habe (basierend auf den Übungen, die wir direkt in
         der Vorlesung gemacht haben). Experimentieren Sie weiter
         und implementieren Sie "Boolesche" Prädikate und Funktionen

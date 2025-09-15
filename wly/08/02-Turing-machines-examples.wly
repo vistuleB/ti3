@@ -88,11 +88,9 @@
         die Zelle wieder reinschreibt. Dies ist reiner Syntaxzucker.
         Auf der Webseite [turingmachinesimulator.com](https://turingmachinesimulator.com)
         können Sie Ihre Turingmaschine eingeben und simulieren.
-        Den Text für die gerade beschriebene finden in 
-        |> a
-            href=../code/turing machines/aabbcc.txt
-            aabbcc.txt
-        . Generell können Sie Regeln der Form
+        Den Text für die gerade beschriebene finden in
+        [aabbcc.txt](./code/turing%20machines/aabbcc.txt). 
+        Generell können Sie Regeln der Form
 
         \begin{align*}
         \delta(q,a) = (r, b, D)

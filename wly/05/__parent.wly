@@ -217,16 +217,18 @@
     Das gesamte Regelwerk sehen Sie hier noch einmal im
     Ganzen:
 
-    ```listing
-    <EmailAddress>    ->    <User> @ <Domain>
-    <Domain>          ->    <Label> . <Label> | <Label> . <Domain>
-    <User>            ->    <NameBlock> | <NameBlock> . <User>
-    <NameBlock>       ->    <AlphaNum> | <AlphaNum> <NameBlock>
-    <Label>           ->    <AlphaNumOrDash> | <AlphaNumOrDash> <Label>
-    <AlphaNumOrDash>  ->    <AlphaNum> | -
-    <AlphaNum>        ->    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
-    <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
-    ```
+    |> div
+        id=email-context-free-grammar
+        ```listing
+        <EmailAddress>    ->    <User> @ <Domain>
+        <Domain>          ->    <Label> . <Label> | <Label> . <Domain>
+        <User>            ->    <NameBlock> | <NameBlock> . <User>
+        <NameBlock>       ->    <AlphaNum> | <AlphaNum> <NameBlock>
+        <Label>           ->    <AlphaNumOrDash> | <AlphaNumOrDash> <Label>
+        <AlphaNumOrDash>  ->    <AlphaNum> | -
+        <AlphaNum>        ->    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+        <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+        ```
 
     |> Topic
         Ein Beispiel einer formalen Grammatik und einer Ableitung

@@ -2,10 +2,8 @@
     title=Primitive Rekursion: Konstruktionen und Tricks
     Ich beginne dieses Teilkapitel, manche der primitiv-rekursive
     Implementierungen in 
-    |> a
-        href=../code/primitive-recursion/stockpile.py
-        stockpile.py
-    \ zu erklären und werde dann weitere, weniger offensichtliche
+    [`stockpile.py`{codelink}](code/primitive-recursion/stockpile.py)
+    zu erklären und werde dann weitere, weniger offensichtliche
     Konstruktionen diskutieren.
 
     |> Topic

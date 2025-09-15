@@ -179,11 +179,8 @@
         \end{align*}
 
     |> Exercise
-        Laden Sie sich 
-        |> a
-            href=./code/regular-expressions/TestRegex.java
-            TestRegex.java
-        \ herunter, kompilieren und starten Sie es.
+        Laden Sie sich [TextRegex.java](./code/regular-expressions/TestRegex.java)
+        herunter, kompilieren und starten Sie es.
 
         ```arbitrary-prompt-response
         user@home:~$ java TestRegex
