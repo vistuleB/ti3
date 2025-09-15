@@ -110,6 +110,11 @@ class Carousel {
     this.totalCarouselItems = this.carouselItems.length - 1;
     this.currentCarouselItem = 0;
 
+    // mobile navigation button on hold properties
+    this.holdInterval = null;
+    this.holdTimeout = null;
+    this.isHolding = false;
+
     // buttons
     this.prevBtn = (() => {
       const prevBtn = document.createElement("button");
@@ -179,13 +184,16 @@ class Carousel {
       const mobileNextBtn = this.nextBtn.cloneNode(true);
 
       // add event listeners to cloned buttons
-      mobilePrevBtn.addEventListener("click", () => {
-        this.changeCarouselItem(-1);
-      });
+      this.addHoldFunctionality(mobilePrevBtn, -1);
+      this.addHoldFunctionality(mobileNextBtn, 1);
 
-      mobileNextBtn.addEventListener("click", () => {
-        this.changeCarouselItem(1);
-      });
+      // mobilePrevBtn.addEventListener("click", () => {
+      //   this.changeCarouselItem(-1);
+      // });
+
+      // mobileNextBtn.addEventListener("click", () => {
+      //   this.changeCarouselItem(1);
+      // });
 
       mobileNav.appendChild(this.firstBtn);
       mobileNav.appendChild(mobilePrevBtn);
@@ -315,6 +323,64 @@ class Carousel {
       this.currentCarouselItem = carouselItemIndex;
       this.showCurrentItem();
     }
+  }
+
+  addHoldFunctionality(button, direction) {
+    const startHold = () => {
+      if (this.isHolding) return;
+
+      this.isHolding = true;
+
+      // initial touch - immediate response
+      this.changeCarouselItem(direction);
+
+      // start continuous navigation after a delay
+      this.holdTimeout = setTimeout(() => {
+        this.holdInterval = setInterval(() => {
+          this.changeCarouselItem(direction);
+        }, 200); // change slide every 200ms while holding
+      }, 500); // wait 500ms before starting continuous navigation
+    };
+
+    const stopHold = () => {
+      this.isHolding = false;
+
+      if (this.holdTimeout) {
+        clearTimeout(this.holdTimeout);
+        this.holdTimeout = null;
+      }
+
+      if (this.holdInterval) {
+        clearInterval(this.holdInterval);
+        this.holdInterval = null;
+      }
+    };
+
+    // mouse events
+    button.addEventListener("mousedown", startHold);
+    button.addEventListener("mouseup", stopHold);
+    button.addEventListener("mouseleave", stopHold);
+
+    // touch events for mobile
+    button.addEventListener(
+      "touchstart",
+      (e) => {
+        e.preventDefault();
+        startHold();
+      },
+      { passive: false },
+    );
+
+    button.addEventListener(
+      "touchend",
+      (e) => {
+        e.preventDefault();
+        stopHold();
+      },
+      { passive: false },
+    );
+
+    button.addEventListener("touchcancel", stopHold);
   }
 
   handleResize() {

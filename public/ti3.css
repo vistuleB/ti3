@@ -390,6 +390,13 @@ figure.main-column img.constrained,
     justify-content: space-around;
 }
 
+.carousel__mobile-nav span {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 .carousel__nav-button {
     flex-shrink: 0;
     border: none;
