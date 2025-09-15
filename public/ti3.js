@@ -110,12 +110,38 @@ class Carousel {
     this.totalCarouselItems = this.carouselItems.length - 1;
     this.currentCarouselItem = 0;
 
+    // buttons
+    this.prevBtn = (() => {
+      const prevBtn = document.createElement("button");
+      prevBtn.className = "carousel__nav-button carousel__nav-item--prev";
+      prevBtn.innerHTML =
+        '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
+      prevBtn.setAttribute("aria-label", "Previous slide");
+      prevBtn.addEventListener("click", () => {
+        this.changeCarouselItem(-1);
+      });
+
+      return prevBtn;
+    })();
+
+    this.nextBtn = (() => {
+      const nextBtn = document.createElement("button");
+      nextBtn.className = "carousel__nav-button carousel__nav-item--next";
+      nextBtn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
+      nextBtn.setAttribute("aria-label", "Next slide");
+      nextBtn.addEventListener("click", () => {
+        this.changeCarouselItem(1);
+      });
+
+      return nextBtn;
+    })();
+
     this.init();
   }
 
   init() {
     onMobile(() => {
-      this.createNavigationButtons();
+      this.createMobileNavigationButtons();
       this.showCurrentItem();
     });
 
@@ -129,21 +155,12 @@ class Carousel {
   }
 
   createNavigationButtons() {
-    // prev button
-    const prevBtn = document.createElement("button");
-    prevBtn.className = "carousel__nav-button carousel__nav-item--prev";
-    prevBtn.innerHTML =
-      '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
-    prevBtn.setAttribute("aria-label", "Previous slide");
+    this.carousel.prepend(this.prevBtn);
+    this.carousel.append(this.nextBtn);
+  }
 
-    // next button
-    const nextBtn = document.createElement("button");
-    nextBtn.className = "carousel__nav-button carousel__nav-item--next";
-    nextBtn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
-    nextBtn.setAttribute("aria-label", "Next slide");
-
-    this.carousel.prepend(prevBtn);
-    this.carousel.append(nextBtn);
+  createMobileNavigationButtons() {
+    return;
   }
 
   createIndicators() {
@@ -170,6 +187,15 @@ class Carousel {
       this.container.removeChild(this.indicators);
       this.indicators = null;
       this.hasIndicators = false;
+    }
+  }
+
+  removeNavigationButtons() {
+    if (this.carousel.contains(this.prevBtn)) {
+      this.carousel.removeChild(this.prevBtn);
+    }
+    if (this.carousel.contains(this.nextBtn)) {
+      this.carousel.removeChild(this.nextBtn);
     }
   }
 
@@ -216,22 +242,17 @@ class Carousel {
   }
 
   handleResize() {
-    onMobile(() => this.removeIndicators());
-    onWideScreen(() => this.createIndicators());
+    onMobile(() => {
+      this.removeNavigationButtons();
+      this.removeIndicators();
+    });
+    onWideScreen(() => {
+      this.createNavigationButtons();
+      this.createIndicators();
+    });
   }
 
   attachEventListeners() {
-    const prevBtn = this.container.querySelector(".carousel__nav-item--prev");
-    const nextBtn = this.container.querySelector(".carousel__nav-item--next");
-
-    prevBtn.addEventListener("click", () => {
-      this.changeCarouselItem(-1);
-    });
-
-    nextBtn.addEventListener("click", () => {
-      this.changeCarouselItem(1);
-    });
-
     window.addEventListener("resize", () => this.handleResize());
   }
 }
