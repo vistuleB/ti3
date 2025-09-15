@@ -384,6 +384,11 @@ figure.main-column img.constrained,
     margin: 0 auto;
 }
 
+.carousel__mobile-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
 .carousel__nav-button {
     flex-shrink: 0;
     border: none;

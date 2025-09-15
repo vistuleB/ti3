@@ -136,6 +136,66 @@ class Carousel {
       return nextBtn;
     })();
 
+    this.firstBtn = (() => {
+      const firstBtn = document.createElement("button");
+      firstBtn.className = "carousel__nav-button carousel__nav-item--first";
+      firstBtn.innerHTML =
+        '<img src="./img/carousel-jump-to-start.svg" alt="First">';
+      firstBtn.setAttribute("aria-label", "First slide");
+      firstBtn.addEventListener("click", () => {
+        // show first slide
+        this.goToCarouselItem(0);
+      });
+
+      return firstBtn;
+    })();
+
+    this.lastBtn = (() => {
+      const lastBtn = document.createElement("button");
+      lastBtn.className = "carousel__nav-button carousel__nav-item--last";
+      lastBtn.innerHTML =
+        '<img src="./img/carousel-jump-to-end.svg" alt="Last">';
+      lastBtn.setAttribute("aria-label", "Last slide");
+      lastBtn.addEventListener("click", () => {
+        // show last slide
+        this.goToCarouselItem(this.totalCarouselItems);
+      });
+
+      return lastBtn;
+    })();
+
+    this.progressCounter = (() => {
+      const container = document.createElement("span");
+      container.textContent = `${this.currentCarouselItem + 1} / ${this.totalCarouselItems + 1}`;
+      return container;
+    })();
+
+    // mobile navigation
+    this.mobileNav = (() => {
+      const mobileNav = document.createElement("div");
+      mobileNav.className = "carousel__mobile-nav";
+
+      const mobilePrevBtn = this.prevBtn.cloneNode(true);
+      const mobileNextBtn = this.nextBtn.cloneNode(true);
+
+      // add event listeners to cloned buttons
+      mobilePrevBtn.addEventListener("click", () => {
+        this.changeCarouselItem(-1);
+      });
+
+      mobileNextBtn.addEventListener("click", () => {
+        this.changeCarouselItem(1);
+      });
+
+      mobileNav.appendChild(this.firstBtn);
+      mobileNav.appendChild(mobilePrevBtn);
+      mobileNav.appendChild(this.progressCounter);
+      mobileNav.appendChild(mobileNextBtn);
+      mobileNav.appendChild(this.lastBtn);
+
+      return mobileNav;
+    })();
+
     this.init();
   }
 
@@ -146,21 +206,29 @@ class Carousel {
     });
 
     onWideScreen(() => {
-      this.createNavigationButtons();
-      this.createIndicators();
+      this.createWideScreenNavigationButtons();
       this.showCurrentItem();
     });
 
     this.attachEventListeners();
   }
 
-  createNavigationButtons() {
+  createWideScreenNavigationButtons() {
     this.carousel.prepend(this.prevBtn);
     this.carousel.append(this.nextBtn);
+    this.createIndicators();
   }
 
   createMobileNavigationButtons() {
-    return;
+    if (!this.container.contains(this.mobileNav)) {
+      this.container.appendChild(this.mobileNav);
+    }
+  }
+
+  removeMobileNavigationButtons() {
+    if (this.container.contains(this.mobileNav)) {
+      this.container.removeChild(this.mobileNav);
+    }
   }
 
   createIndicators() {
@@ -180,6 +248,8 @@ class Carousel {
 
     this.container.appendChild(this.indicators);
     this.hasIndicators = true;
+
+    this.updateIndicators();
   }
 
   removeIndicators() {
@@ -190,13 +260,15 @@ class Carousel {
     }
   }
 
-  removeNavigationButtons() {
+  removeWideScreenNavigationButtons() {
     if (this.carousel.contains(this.prevBtn)) {
       this.carousel.removeChild(this.prevBtn);
     }
     if (this.carousel.contains(this.nextBtn)) {
       this.carousel.removeChild(this.nextBtn);
     }
+
+    this.removeIndicators();
   }
 
   showCurrentItem() {
@@ -207,6 +279,10 @@ class Carousel {
         item.classList.add("active");
       }
     });
+
+    if (this.progressCounter) {
+      this.progressCounter.textContent = `${this.currentCarouselItem + 1} / ${this.totalCarouselItems + 1}`;
+    }
 
     this.updateIndicators();
   }
@@ -243,12 +319,12 @@ class Carousel {
 
   handleResize() {
     onMobile(() => {
-      this.removeNavigationButtons();
-      this.removeIndicators();
+      this.removeWideScreenNavigationButtons();
+      this.createMobileNavigationButtons();
     });
     onWideScreen(() => {
-      this.createNavigationButtons();
-      this.createIndicators();
+      this.removeMobileNavigationButtons();
+      this.createWideScreenNavigationButtons();
     });
   }
 
