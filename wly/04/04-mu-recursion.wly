@@ -71,11 +71,9 @@
         61, 184, 92, 46, 23, 70, 35, 106, 53, 160, 80, 40,
         20, 10, 5, 16, 8, 4, 2, 1
 
-    Experimentieren Sie! Ich habe dafür die Html-Seite 
-    |> a
-        href=../code/primitive-recursion/collatz.html
-        collatz.html
-    \ erstellt. Es scheint: egal, wo Sie anfangen, Sie
+    Experimentieren Sie! Ich habe dafür die Html-Seite
+    [collatz.html](./code/primitive-recursion/collatz.html)
+    erstellt. Es scheint: egal, wo Sie anfangen, Sie
     enden immer bei 1. Allerdings wissen wir nicht im Voraus,
     _wie oft_ wir die Funktion $f$ anwenden müssen. Und
     wir wissen nicht einmal, ob man immer bei 1 ankommt,

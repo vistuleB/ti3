@@ -592,3 +592,7 @@ hr {
 .sc {
     font-variant: small-caps;
 }
+.codelink {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}

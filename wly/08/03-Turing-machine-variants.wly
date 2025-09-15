@@ -70,10 +70,7 @@
 
         Den "Quelltext" für [turingmachinesimulator.com](https://turingmachinesimulator.com)
         finden Sie in 
-        |> a
-            href=../code/turing machines/palindrome-multiple-tapes.txt
-            palindrome-multiple-tapes.txt
-        .
+        [palindrome-multiple-tapes.txt](./code/turing%20machines/palindrome-multiple-tapes.txt).
 
     |> Exercise
         Schreiben Sie eine Mehrband-Turingmaschine, die Binärzahlen
@@ -246,10 +243,8 @@
     für jedes $b$ alles, was rechts davon kommt, um eine
     Zelle nach rechts verschieben. Meinen Quelltext finden
     sie in 
-    |> a
-        href=../code/turing machines/replace-b-by-bc.txt
-        replace-b-by-bc.txt
-    \ Können wir unserer Turingmaschine die Funktionalität
+    [replace-b-by-bc.txt](./code/turing%20machines/replace-b-by-bc.txt).
+    Können wir unserer Turingmaschine die Funktionalität
     geben, eine Zelle _einzufügen_ und alles von Kopf bis
     zum linken Ende um eins nach links zu verschieben bzw.
     das analoge, aber nach rechts? Wir sind freie Menschen,
@@ -292,11 +287,9 @@
     r,  c, _   //// für jedes Zeichen c
     ```
 
-    Nehmen Sie die Beispielmaschine 
-    |> a
-        href=../code/turing machines/go-left-go-right.txt
-        go-left-go-right.txt
-    , geben Sie sie auf [turingmachinesimulator.com](https://turingmachinesimulator.com)
+    Nehmen Sie die Beispielmaschine
+    [go-left-go-right.txt](./code/turing%20machines/go-left-go-right.txt), 
+    geben Sie sie auf [turingmachinesimulator.com](https://turingmachinesimulator.com)
     ein und starten Sie sie mit dem Eingabewort $xxx$.
     Ein neues Zeichen links vom Kopf einfügen ist nun einfach:
     aus
@@ -315,11 +308,9 @@
     r,   c, y, -, >  //// für jedes Zeichen c
     ```
 
-    Sie können sich meine Implementierung in 
-    |> a
-        href=../code/turing machines/insert-z-before-y.txt
-        insert-z-before-y.txt
-    \ ansehen. Geben Sie beispielsweise `xxyxyyxx` als
+    Sie können sich meine Implementierung in
+    [insert-z-before-y.txt](./code/turing%20machines/insert-z-before-y.txt)
+    ansehen. Geben Sie beispielsweise `xxyxyyxx` als
     Eingabewort ein. Wir können von nun an also so tun,
     als hätten unsere Turingmaschinen die Möglichkeit,
     zusätzliche Zellen einzufügen. In einer konkreten Implementierung

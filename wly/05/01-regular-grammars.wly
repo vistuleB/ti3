@@ -156,10 +156,8 @@
 
     |> Exercise
         Unsere
-        |> a
-            href=./04-00-formal-languages.html#email-context-free-grammar
-            Grammatik für korrekte Emailadressen
-        \ im letzten Abschnitt war _nicht_ regulär. Allerdings
+        [Grammatik für korrekte Emailadressen](#email-context-free-grammar)
+        im letzten Abschnitt war _nicht_ regulär. Allerdings
         können wir eine reguläre Grammatik angeben, die die
         gleiche Sprache erzeugt. Entwerfen Sie eine reguläre
         Grammatik für die Sprache aller korrekter Emailadressen
