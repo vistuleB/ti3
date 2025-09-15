@@ -26,7 +26,6 @@ body {
     min-width: 2500px;
     color: var(--body-color);
     padding-bottom: 2rem;
-    touch-action: pinch-zoom;
 }
 
 /* Index page
@@ -388,6 +387,7 @@ figure.main-column img.constrained,
 .carousel__mobile-nav {
     display: flex;
     justify-content: space-around;
+    touch-action: pinch-zoom;
 }
 
 .carousel__mobile-nav span {

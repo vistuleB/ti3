@@ -187,14 +187,6 @@ class Carousel {
       this.addHoldFunctionality(mobilePrevBtn, -1);
       this.addHoldFunctionality(mobileNextBtn, 1);
 
-      // mobilePrevBtn.addEventListener("click", () => {
-      //   this.changeCarouselItem(-1);
-      // });
-
-      // mobileNextBtn.addEventListener("click", () => {
-      //   this.changeCarouselItem(1);
-      // });
-
       mobileNav.appendChild(this.firstBtn);
       mobileNav.appendChild(mobilePrevBtn);
       mobileNav.appendChild(this.progressCounter);
