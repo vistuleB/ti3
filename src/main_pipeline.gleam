@@ -133,7 +133,7 @@ pub fn main_pipeline()  -> List(Pipe) {
             "figure"
           ]
         ),
-        ["MathBlock", "p", "Index", "Menu", "Topic", "SubTopic", "code", "pre", "span", "NoWrap", "Math", "QED", "CarouselContainer", "figure"]
+        ["MathBlock", "p", "Index", "Menu", "Topic", "SubTopic", "code", "pre", "span", "NoWrap", "Math", "QED", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem", "figure"]
       ),
       dl.unwrap("WriterlyBlankLine"),      
       dl.trim("p"),
