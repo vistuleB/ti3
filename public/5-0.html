@@ -86,10 +86,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       (auch diesen müssen Sie nicht im Detail lesen):
     </p>
     <div class="main-column">
-<pre
-  language=""
-  class="listing"
->
+<pre class="listing">
 <span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-0">:</span> <span class="elm-2">Bst</span> <span class="elm-0">-&gt;</span> <span class="elm-2">String</span> <span class="elm-0">-&gt;</span> <span class="elm-2">Maybe</span> <span class="elm-2">String</span>
 <span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-3">tree</span> <span class="elm-3">key</span> =
 <span class="listing-bol"></span>    <span class="elm-4">case</span> <span class="elm-3">tree</span> <span class="elm-4">of</span>
@@ -217,7 +214,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       darstellen:
     </p>
     <div class="main-column">
-<pre language="">
+<pre>
 &lt;EmailAdress&gt; -&gt; &lt;User&gt; @ &lt;Domain&gt;
 </pre>
     </div>
@@ -244,7 +241,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       Daher:
     </p>
     <div class="main-column">
-<pre language="">
+<pre>
 &lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Label&gt;
 &lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Domain&gt;
 </pre>
@@ -277,7 +274,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       <code>--&gt;;</code>-Notation? Wieder mit dem Rekursionstrick:
     </p>
     <div class="main-column">
-<pre language="">
+<pre>
 &lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt;
 &lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt; &lt;Label&gt;
 &lt;AlphaNumOrDash&gt; -&gt; &lt;AlphaNum&gt;
@@ -293,7 +290,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       Strich | separieren:
     </p>
     <div class="main-column">
-<pre language="">
+<pre>
 &lt;AlphaNum&gt; -&gt; a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
 &lt;AlphaNum&gt; -&gt; A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
 &lt;AlphaNum&gt; -&gt; 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
@@ -320,7 +317,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       eine nichtleere Folge alphanumerischer Zeichen ist.
     </p>
     <div class="main-column">
-<pre language="">
+<pre>
 &lt;User&gt; -&gt; &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;
 &lt;NameBlock&gt; -&gt; &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;
 </pre>
@@ -334,10 +331,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       id="email-context-free-grammar"
       class="main-column"
     >
-<pre
-  language=""
-  class="listing"
->
+<pre class="listing">
 <span class="listing-bol"></span>&lt;EmailAddress&gt;    -&gt;    &lt;User&gt; @ &lt;Domain&gt;
 <span class="listing-bol"></span>&lt;Domain&gt;          -&gt;    &lt;Label&gt; . &lt;Label&gt; | &lt;Label&gt; . &lt;Domain&gt;
 <span class="listing-bol"></span>&lt;User&gt;            -&gt;    &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;
@@ -423,7 +417,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       obigen Grammatik:
     </p>
     <div class="main-column">
-<pre language="">
+<pre>
 &lt;EmailAddress&gt; -&gt; &lt;User&gt;@&lt;Domain&gt;
             -&gt; &lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;
             -&gt; &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;
