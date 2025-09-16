@@ -6,6 +6,7 @@
     --body-top-margin: 80px;
     --carousel-indicator-size: 10px;
     --carousel-indicator-padding: 12px;
+    --progress-counter-font-size: 1em;
     --max-carousel-indicators-per-line: 30;
 }
 
@@ -386,15 +387,20 @@ figure.main-column img.constrained,
 
 .carousel__mobile-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 16px;
     touch-action: pinch-zoom;
 }
 
-.carousel__mobile-nav span {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+.carousel__progress-counter {
+    width: 100px;
+    text-align: center;
+    font-size: var(--progress-counter-font-size);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .carousel__nav-button {

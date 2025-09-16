@@ -171,6 +171,7 @@ class Carousel {
 
     this.progressCounter = (() => {
       const container = document.createElement("span");
+      container.className = "carousel__progress-counter";
       container.textContent = `${this.currentCarouselItem + 1} / ${this.totalCarouselItems + 1}`;
       return container;
     })();
