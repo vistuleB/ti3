@@ -1,8 +1,11 @@
+import gleam/string
 import desugarer_library as dl
 import infrastructure.{type Pipe} as infra
 import gleam/list
 import prefabricated_pipelines as pp
 import selector_library as sl
+
+const minimum_line_wrap_length = 40
 
 const p_cannot_contain = [
   "CentralDisplay", "CentralDisplayItalic", "Chapter", 
@@ -23,6 +26,15 @@ const p_cannot_be_contained_in = [
   "Topic", "SubTopic"
 ]
 
+fn ends_with_dollar_starts_with_punctuation(s1: String, s2: String) {
+  string.ends_with(s1, "$") && {
+    string.starts_with(s2, ".") ||
+    string.starts_with(s2, ",") ||
+    string.starts_with(s2, ":") ||
+    string.starts_with(s2, ";")
+  }
+}
+
 pub fn formatter_pipeline(cols: Int) -> List(Pipe) {
   [
     [
@@ -32,6 +44,9 @@ pub fn formatter_pipeline(cols: Int) -> List(Pipe) {
       dl.find_replace__outside(#("&amp;", "&"), []),
     ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BackslashSquareBracket, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
+    [
+      dl.concatenate_consecutive_lines_if(ends_with_dollar_starts_with_punctuation),
+    ],
     pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
     [
       dl.strip_delimiters_inside_if(#(
@@ -47,8 +62,11 @@ pub fn formatter_pipeline(cols: Int) -> List(Pipe) {
       dl.fold_contents_into_text("code"),
       dl.insert_text_start_end_if_unique_attr(#("span", "style", "font-variant:small-caps;", #("`", "`{sc}"))),
       dl.fold_children_into_text_if(#("span", infra.v_has_key_value(_, "style", "font-variant:small-caps;"))),
-      dl.line_rewrap_no1__outside(#(cols, infra.is_v_and_tag_equals(_, "Math")), ["MathBlock", "pre", "WriterlyCodeBlock"]),
+      dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
+      dl.line_rewrap_no2__outside(#(["Chapter", "Sub"], cols, minimum_line_wrap_length, 2, infra.is_v_and_tag_is_one_of(_, ["Math", "NoWrap"])), ["MathBlock", "pre", "WriterlyCodeBlock"]),
       dl.concatenate_text_nodes(),
+      dl.unwrap("NoWrap"),
+      dl.last_to_first_concatenate_text_nodes(),
       dl.fold_contents_into_text("Math"),
       dl.delete_empty_lines(),
       dl.split_first_line_after_prefix(#("MathBlock", "\\begin{align}")),
@@ -60,6 +78,8 @@ pub fn formatter_pipeline(cols: Int) -> List(Pipe) {
       dl.trim("p"),
       dl.delete_if_empty("p"),
       dl.unwrap_if_unique_child_is(#("Highlight", "pre")),
+      dl.prepend(#("Chapter", "WriterlyBlankLine", [])),
+      dl.prepend(#("Sub", "WriterlyBlankLine", [])),
       dl.add_between(#("p", "p", "WriterlyBlankLine", [])),
       dl.add_between(#("WriterlyCodeBlock", "p", "WriterlyBlankLine", [])),
       dl.add_before(#("WriterlyCodeBlock", "WriterlyBlankLine", [])),
@@ -88,6 +108,7 @@ pub fn formatter_pipeline(cols: Int) -> List(Pipe) {
       dl.add_before_but_not_before_first_child(#("h2", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("ol", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("ul", "WriterlyBlankLine", [])),
+      dl.add_before_but_not_before_first_child(#("li", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("figure", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("Carousel", "WriterlyBlankLine", [])),
       dl.add_before_but_not_before_first_child(#("pre", "WriterlyBlankLine", [])),

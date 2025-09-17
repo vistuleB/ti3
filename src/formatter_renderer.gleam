@@ -106,7 +106,7 @@ pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
     ds.default_renderer_debug_options()
     |> ds.amend_renderer_debug_options_by_command_line_amendments(amendments)
 
-  let _ = simplifile.delete("./wly-edit/*")
+  let _ = simplifile.delete(parameters.output_dir <> "/*")
 
   case ds.run_renderer(renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
