@@ -13,7 +13,7 @@ fn cli_usage_supplementary() {
   io.println("Format Writerly to Writerly")
   io.println("Make sure there exists wly-edit directory where formatted source will be saved")
   io.println("")
-  io.println("gleam run -- --fmt")
+  io.println("gleam run -- --fmt <cols>")
 }
 
 pub fn main() {

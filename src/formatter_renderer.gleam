@@ -1,12 +1,16 @@
+import gleam/int
 import simplifile
 import gleam/io
 import gleam/list
+import gleam/dict
 import gleam/string.{inspect as ins}
 import desugaring as ds
 import infrastructure as infra
 import vxml.{type VXML, V}
 import blame.{Src}
 import formatter_pipeline.{formatter_pipeline}
+
+const default_line_wrap_length = 70
 
 type FragmentType {
   Root
@@ -62,7 +66,20 @@ fn splitter(
 }
 
 pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
-  let pipeline = formatter_pipeline()
+  let assert Ok(fmt_args) = dict.get(amendments.user_args, "--fmt")
+
+  let cols = case fmt_args {
+    [first, ..] -> case int.parse(first) {
+      Ok(val) -> int.max(val, 40)
+      Error(_) -> {
+        io.println("\ncannot parse '" <> first <> "' as an integer value; reverting to default line length")
+        default_line_wrap_length
+      }
+    }
+    _ -> default_line_wrap_length
+  }
+
+  let pipeline = formatter_pipeline(cols)
 
   let renderer =
     ds.Renderer(
