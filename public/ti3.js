@@ -459,22 +459,23 @@ const adjustMathAlignment = () => {
 };
 
 const onImgClick = (e) => {
-  const screenWidth = window.innerWidth;
-  const image = e.srcElement;
-  if (image.classList.contains("constrained")) {
-    image.classList.remove("constrained");
-    if (image.naturalWidth < WELL_100VW_MAX_WIDTH) {
-      image.style.width = "150%";
-      image.style.maxWidth = "150%";
+  onMobile(() => {
+    const image = e.srcElement;
+    if (image.classList.contains("constrained")) {
+      image.classList.remove("constrained");
+      if (image.naturalWidth < WELL_100VW_MAX_WIDTH) {
+        image.style.width = "150%";
+        image.style.maxWidth = "150%";
+      } else {
+        image.style.width = image.naturalWidth + "px";
+        image.style.maxWidth = image.naturalWidth + "px";
+      }
     } else {
-      image.style.width = image.naturalWidth + "px";
-      image.style.maxWidth = image.naturalWidth + "px";
+      image.classList.add("constrained");
+      image.style.width = "100%";
+      image.style.maxWidth = "100%";
     }
-  } else {
-    image.classList.add("constrained");
-    image.style.width = "100%";
-    image.style.maxWidth = "100%";
-  }
+  });
 };
 
 const handleMenuOnScroll = () => {
