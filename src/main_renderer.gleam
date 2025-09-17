@@ -236,7 +236,7 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
   let renderer =
     ds.Renderer(
       assembler: ds.default_assembler(amendments.only_paths),
-      parser: ds.default_writerly_parser(echo amendments.only_key_values),
+      parser: ds.default_writerly_parser(amendments.only_key_values),
       pipeline: main_pipeline(),
       splitter: ti3_splitter,
       emitter: our_emitter,

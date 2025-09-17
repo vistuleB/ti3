@@ -96,7 +96,7 @@ pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
   let parameters =
     ds.RendererParameters(
       input_dir: "./wly",
-      output_dir: "./wly-edit",
+      output_dir: "./wly",
       prettifier_behavior: ds.PrettifierOff,
       table: True,
     )

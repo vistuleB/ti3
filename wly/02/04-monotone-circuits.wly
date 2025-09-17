@@ -441,7 +441,7 @@
             title=*Behauptung*
             Für alle $x_1,\dots,x_n$ gilt
             $f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee f_0(x_2,\dots,x_n)
-            \ .$
+            .$
 
         |> Remark
             title=*Beweis.*
@@ -563,8 +563,8 @@
         \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge \bar{x}_5$.
         Das gibt den gleichen Term wie zuvor, nur mit den Literalen in anderer
         Reihenfolge aufgelistet (was keine Rolle spielt, da $\wedge$ kommutativ
-        ist). Gegen eine Boolesche Funktion
-        $f: \{0,1\}^n \rightarrow \{0,1\}$, definieren wir
+        ist). Gegen eine Boolesche Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$,
+        definieren wir
 
         $$
         \sat(f) := \{\mathbf{a} \in \{0,1\}^n \ | \ f(\mathbf{a}) = 1 \} \ .
