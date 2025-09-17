@@ -36,32 +36,40 @@
       </p>
     </div>
     <p class="main-column">
-      In den vorhergehenden Teilkapiteln haben wir gesehen, dass Sie allerhand
-      mit primitiv rekursiven Funktionen implementieren können. Darunter Dinge,
-      die komplexere Rekursion oder Schleifen mit mehreren lokalen Variablen
-      zu brauchen scheinen (wie die Fibonacci-Zahlen), ja sogar Dinge, die über
-      den Bereich der natürlichen Zahlen hinausgehen, wie zum Beispiel das Sortieren
-      eines beliebig langen Arrays. Kernpunkt war die Erkenntnis, dass wir komplexere
-      "Datenstrukturen" wie
-      <i>Paare von natürlichen Zahlen</i>
+      In den vorhergehenden Teilkapiteln haben wir gesehen,
+      dass Sie allerhand mit primitiv rekursiven Funktionen
+      implementieren können. Darunter Dinge, die komplexere
+      Rekursion oder Schleifen mit mehreren lokalen Variablen
+      zu brauchen scheinen (wie die Fibonacci-Zahlen), ja sogar
+      Dinge, die über den Bereich der natürlichen Zahlen
+      hinausgehen, wie zum Beispiel das Sortieren eines
+      beliebig langen Arrays. Kernpunkt war die Erkenntnis,
+      dass wir komplexere "Datenstrukturen" wie
+      <i>Paare von
+        natürlichen Zahlen</i>
       als
       <i>eine</i>
-      natürliche
-      Zahl codieren können und somit der primitiven Rekursion zugänglich machen
-      können. Es liegt also Nahe, zu vermuten, dass primitive Rekursion bereits
-      den Berechenbarkeitsbegriff zufriedenstellend formalisiert: das also alles
+      natürliche Zahl codieren
+      können und somit der primitiven Rekursion zugänglich
+      machen können. Es liegt also Nahe, zu vermuten, dass
+      primitive Rekursion bereits den Berechenbarkeitsbegriff
+      zufriedenstellend formalisiert: das also alles
       "Berechenbare" auch primitiv rekursiv sei. Der
-      <a href="https://de.wikipedia.org/wiki/Ackermannfunktion">Wikipedia-Artikel über
-        die Ackermann-Funktion</a>
-      schreibt, dass der deutsche Mathematiker David Hilbert dies auch vermutete.
-      Im Jahre 1926 jedoch definierte
-      <a href="https://de.wikipedia.org/wiki/Wilhelm_Ackermann_(Mathematiker)">Wilhelm Ackermann</a>
-      eine Funktion, die "offensichtlich berechenbar", jedoch nicht primitiv
-      rekursiv ist. Die Funktion, die wir heute die Ackermann-Funktion nennen,
-      ist allerdings eine vereinfachte Version, die 1935 von der ungarischen
+      <a href="https://de.wikipedia.org/wiki/Ackermannfunktion">Wikipedia-Artikel über die
+        Ackermann-Funktion</a>
+      schreibt, dass der deutsche Mathematiker David Hilbert
+      dies auch vermutete. Im Jahre 1926 jedoch definierte
+      <a href="https://de.wikipedia.org/wiki/Wilhelm_Ackermann_(Mathematiker)">Wilhelm
+        Ackermann</a>
+      eine Funktion, die "offensichtlich berechenbar", jedoch
+      nicht primitiv rekursiv ist. Die Funktion, die wir heute
+      die Ackermann-Funktion nennen, ist allerdings eine
+      vereinfachte Version, die 1935 von der ungarischen
       Mathematikerin
-      <a href="https://de.wikipedia.org/wiki/Rózsa_Péter">Rózsa Péter</a>
-      gefunden wurde (obwohl der letztere Artikel das Jahr 1955 nennt).
+      <a href="https://de.wikipedia.org/wiki/Rózsa_Péter">Rózsa
+        Péter</a>
+      gefunden wurde (obwohl der letztere Artikel das Jahr 1955
+      nennt).
     </p>
     <div class="well statement out">
       <p>
@@ -81,8 +89,8 @@
         $$
       </div>
       <p>
-        Manchmal sehen Sie in der Literatur auch die äquivalente, vielleicht lesbarere
-        Definition:
+        Manchmal sehen Sie in der Literatur auch die
+        äquivalente, vielleicht lesbarere Definition:
       </p>
       <div class="math-block">
         $$
@@ -94,8 +102,8 @@
         $$
       </div>
       <p>
-        Für festes $m\in \N$ schreiben wir auch $A_m$ für die ein-parametrige
-        Funktion
+        Für festes $m\in \N$ schreiben wir auch $A_m$ für die
+        ein-parametrige Funktion
       </p>
       <div class="math-block">
         $$
@@ -107,9 +115,10 @@
       </div>
     </div>
     <p class="main-column">
-      Es lohnt sich, diese Funktion für kleine Werte von $m$ zu untersuchen.
-      Aus der Definition geht unmittelbar hervor, dass $A_0(n) = n+1$ ist. Für
-      $A_1 (n)$ rechnen wir
+      Es lohnt sich, diese Funktion für kleine Werte von $m$
+      zu untersuchen. Aus der Definition geht unmittelbar
+      hervor, dass $A_0(n) = n+1$ ist. Für $A_1 (n)$ rechnen
+      wir
     </p>
     <div class="math-block main-column">
       $$
@@ -125,8 +134,8 @@
       $$
     </div>
     <p class="main-column">
-      Soweit schaut die Funktion nicht besonders beindruckend aus. $A_2$ bekommen
-      iwr nach dem gleichen Schema:
+      Soweit schaut die Funktion nicht besonders beindruckend
+      aus. $A_2$ bekommen iwr nach dem gleichen Schema:
     </p>
     <div class="math-block main-column">
       $$
@@ -136,7 +145,8 @@
       $$
     </div>
     <p class="main-column">
-      wir fangen also mit $1$ an und zählen $n+1$ mal eine 2 drauf. Wir erhalten
+      wir fangen also mit $1$ an und zählen $n+1$ mal eine 2
+      drauf. Wir erhalten
       <span class="nowrap">$2n + 3$,</span>
       also
     </p>
@@ -148,10 +158,11 @@
       $$
     </div>
     <p class="main-column">
-      $A_3$ wird etwas unangenehmer, weil wir keine gute Intuition haben, was
+      $A_3$ wird etwas unangenehmer, weil wir keine gute
+      Intuition haben, was
       <span class="nowrap">"$n+1$</span>
-      mal verdoppeln und jedes Mal 3 draufzählen" ergibt. Mit 1 beginnend
-      erhalten wir also
+      mal verdoppeln und jedes Mal
+      3 draufzählen" ergibt. Mit 1 beginnend erhalten wir also
     </p>
     <div class="math-block main-column">
       $$
@@ -166,7 +177,8 @@
     </div>
     <p class="main-column">
       Das ist schon genug, um eine Vermutung zu formulieren:
-      $A_3(n) = 2^{n+3} - 3$ und diese dann per Indution zu beweisen.
+      $A_3(n) = 2^{n+3} - 3$ und diese dann per Indution zu
+      beweisen.
     </p>
     <h1 class="main-column">
       Die Péter-Ackermann-Funktion ist berechenbar
@@ -175,7 +187,8 @@
       <p>
         <b>Theorem</b>
         <b>4.3.2</b>
-        Sei $m \in \N$ gegeben. Die Funktion $A_m$ ist primitiv rekursiv.
+        Sei $m \in \N$ gegeben. Die Funktion $A_m$ ist
+        primitiv rekursiv.
       </p>
     </div>
     <div class="well highlight out">
@@ -183,7 +196,8 @@
         <b>Beweis.</b>
         Wir verwenden Induktion über
         <span class="nowrap">$m$.</span>
-        Für $m=0$ gilt $A_0(n)= n+1$ und somit
+        Für $m=0$ gilt
+        $A_0(n)= n+1$ und somit
         <span class="nowrap">$A_0 = \succ$.</span>
         Sei nun also
         <span class="nowrap">$m \geq 1$.</span>
@@ -197,9 +211,10 @@
         $$
       </div>
       <p>
-        Ich schreibe nun $t$ anstatt $n$ als Parameter, um mich der Notation der
-        primitiven Rekursion anzunähern. Wir wissen bereits, dass $A_{m-1}$ primitiv
-        rekursiv ist. Wir können $A_m(t)$ also schreiben als
+        Ich schreibe nun $t$ anstatt $n$ als Parameter, um
+        mich der Notation der primitiven Rekursion anzunähern.
+        Wir wissen bereits, dass $A_{m-1}$ primitiv rekursiv
+        ist. Wir können $A_m(t)$ also schreiben als
       </p>
       <div class="math-block">
         $$
@@ -212,22 +227,25 @@
         $$
       </div>
       <p>
-        Wir können also $h = \comp (A_{m-1}, \pi^3_1)$ wählen. Was ist
+        Wir können also $h = \comp (A_{m-1}, \pi^3_1)$ wählen.
+        Was ist
         <span class="nowrap">$g$?</span>
-        Der
-        Startwert soll $g(\vec{x})$ sein, wir haben aber kein
+        Der Startwert soll $g(\vec{x})$ sein, wir
+        haben aber kein
         <span class="nowrap">$\vec{x}$,</span>
-        bzw.
-        dies ist der "leere Vektor". Wir brauchen eine Funktion
+        bzw. dies ist der "leere
+        Vektor". Wir brauchen eine Funktion
         <span class="nowrap">$C$,</span>
         die null
         Argumente nimmt und $A_{m-1}(1)$ zurückgibt. Also:
-        <span class="nowrap">$g = \comp(A_{m-1}, {\rm one})$.</span>
-        Wir könnten sogar noch frecher sein und
-        $g = \comp(\succ, \comp(\succ, \comp(... \comp(\succ, \zero))))$ schreiben,
-        einfach $A_{m-1}(1)$ mal hintereinander; diesen Wert also
-        <i>hard-coden</i>.
-        Allerdings ist die erste Variante einfacher, und somit
+        $g = \comp(A_{m-1}, {\rm one})$ . Wir könnten sogar
+        noch frecher sein und
+        $g = \comp(\succ, \comp(\succ, \comp(...
+        \comp(\succ, \zero))))$
+        schreiben, einfach $A_{m-1}(1)$ mal hintereinander;
+        diesen Wert also
+        <i>hard-coden</i>. Allerdings ist die erste
+        Variante einfacher, und somit
       </p>
       <div class="math-block">
         $$
@@ -239,25 +257,30 @@
       <p>
         Wir sehen also: jedes
         <span class="nowrap">$A_m$,</span>
-        betrachtet als Funktion mit einem Eingabeparameter,
-        ist primitiv rekursiv.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        betrachtet als Funktion
+        mit einem Eingabeparameter, ist primitiv rekursiv.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Wir haben also gezeigt, dass jedes $A_m$ primitiv rekursiv ist. Heißt
-      das auch, dass die zwei-parametrige Funktion $A(m,n)$
+      Wir haben also gezeigt, dass jedes $A_m$ primitiv
+      rekursiv ist. Heißt das auch, dass die zwei-parametrige
+      Funktion $A(m,n)$
       <i>berechenbar</i>
-      ist?
-      In der primitiven Rekursion haben wir keine Möglichkeit, den Index $m$
-      als Eingabewert zu lesen und dann aus dem unendlichen Array primitiv rekursiver
-      Funktionen $[A_0, A_1, A_2, \dots]$ den Eintrag $A_m$ auszulesen. Aber
+      ist? In der primitiven
+      Rekursion haben wir keine Möglichkeit, den Index $m$ als
+      Eingabewert zu lesen und dann aus dem unendlichen Array
+      primitiv rekursiver Funktionen $[A_0, A_1, A_2, \dots]$
+      den Eintrag $A_m$ auszulesen. Aber
       <i>berechenbar</i>
-      in einem ganz allgemeinen Sinn? Diese Frage können wir zu
-      diesem Zeitpunkt nicht formal beantworten, weil wir den Begriff allgemeiner
-      Berechenbarkeit noch gar nicht definiert haben. Es ist allerdings an der
-      Definition von $A(m,n)$ nichts magisches, und intuitiv würden wir sagen,
-      dass es klar berechenbar ist; so wie wir ja auch leicht eine Funktion implementieren
-      könnten, die $A(m,n)$ berechnet.
+      in
+      einem ganz allgemeinen Sinn? Diese Frage können wir zu
+      diesem Zeitpunkt nicht formal beantworten, weil wir den
+      Begriff allgemeiner Berechenbarkeit noch gar nicht
+      definiert haben. Es ist allerdings an der Definition von
+      $A(m,n)$ nichts magisches, und intuitiv würden wir
+      sagen, dass es klar berechenbar ist; so wie wir ja auch
+      leicht eine Funktion implementieren könnten, die $A(m,n)$
+      berechnet.
     </p>
     <h1 class="main-column">
       Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv
@@ -266,7 +289,8 @@
       <p>
         <b>Theorem</b>
         <b>4.3.3</b>
-        Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv.
+        Die Ackermann-Péter-Funktion ist nicht primitiv
+        rekursiv.
       </p>
     </div>
     <p class="main-column">
@@ -274,46 +298,56 @@
       <a href="https://planetmath.org/ackermannfunctionisnotprimitiverecursive">planetmath.org</a>.
     </p>
     <p class="main-column">
-      <b>Die Aussage verstehen</b>. Beachten Sie, dass Theorem 3.3.3 nicht mit Theorem
-      3.3.2 im Widerspruch steht. Theorem 3.3.3 besagt, dass $A_m$ primitiv
-      rekursiv ist, für jedes
+      <b>Die Aussage verstehen</b>. Beachten Sie, dass Theorem
+      3.3.3 nicht mit Theorem 3.3.2 im Widerspruch steht.
+      Theorem 3.3.3 besagt, dass $A_m$ primitiv rekursiv ist,
+      für jedes
       <span class="nowrap">$m$.</span>
       Die Zahl $m$ ist hier also
-      <i>Teil der Aussage</i>,
-      nicht Eingabeparameter der Funktion; die Funktion $A_m$ hat nur
+      <i>Teil der
+        Aussage</i>, nicht Eingabeparameter der Funktion; die
+      Funktion $A_m$ hat nur
       <i>einen</i>
-      Eingabeparameter. Theorem 3.3.3 hingegen macht eine Aussage über
+      Eingabeparameter. Theorem
+      3.3.3 hingegen macht eine Aussage über
       <i>eine</i>
-      Funktion $A(m,n)$ mit
+      Funktion
+      $A(m,n)$ mit
       <i>zwei</i>
-      Eingabeparametern, und $m$ ist nun einer
-      dieser beiden. Anders ausgedrückt: sie können zwar jedes einzelne
-      $A_m$ in der "Programmiersprache" der primitiven Rekursion implementieren,
-      allerdings brauchen Sie für jedes  $m$ neuen Code. Sie können keinen Code
+      Eingabeparametern, und $m$ ist nun
+      einer dieser beiden. Anders ausgedrückt: sie können zwar
+      jedes einzelne $A_m$ in der "Programmiersprache" der
+      primitiven Rekursion implementieren, allerdings brauchen
+      Sie für jedes  $m$ neuen Code. Sie können keinen Code
       schreiben, der, gegeben
       <span class="nowrap">$m$,</span>
-      den Code für $A_m$ irgendwie implizit produziert
-      und dann mit $n$ aufruft. Jedenfalls nicht in der Programmiersprache der
-      primitiven Rekursion.
+      den Code für $A_m$
+      irgendwie implizit produziert und dann mit $n$ aufruft.
+      Jedenfalls nicht in der Programmiersprache der primitiven
+      Rekursion.
     </p>
     <p class="main-column">
       <b>Beweisidee.</b>
-      Für jedes feste $m$ ist die ein-parametrige Funktion
-      $A_m := n \mapsto A(m,n)$ primitiv rekursiv und kann als Funktion mit
-      $m$ verschachtelten
-      <code>for</code>-Schleifen betrachtet werden. Es wird sich herausstellen,
-      dass $A_m$ in gewisser Weise die am schnellsten wachsende aller solcher
-      Funktionen ist. Wäre also $A(m,n)$ primitiv-rekursiv, dann könnten wir
-      es mit $d$ verschachtelten
-      <code>for</code>-Schleifen berechnen; was ein Widerspruch
-      ist, weil bereits $A_{d+1}$ schneller wächst als jede primitiv-rekursive
+      Für jedes feste $m$ ist die
+      ein-parametrige Funktion $A_m := n \mapsto A(m,n)$
+      primitiv rekursiv und kann als Funktion mit $m$
+      verschachtelten
+      <code>for</code>-Schleifen betrachtet werden. Es
+      wird sich herausstellen, dass $A_m$ in gewisser Weise
+      die am schnellsten wachsende aller solcher Funktionen
+      ist. Wäre also $A(m,n)$ primitiv-rekursiv, dann könnten
+      wir es mit $d$ verschachtelten
+      <code>for</code>-Schleifen
+      berechnen; was ein Widerspruch ist, weil bereits
+      $A_{d+1}$ schneller wächst als jede primitiv-rekursive
       Funktion mit $d$ verschachtelten Schleifen.
     </p>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir brauchen eine robuste Definition, was es heißt, dass eine Funktion
-        $f: \N \rightarrow \N$ schneller wächst als
+        Wir brauchen eine robuste Definition, was es heißt,
+        dass eine Funktion $f: \N \rightarrow \N$ schneller
+        wächst als
         <span class="nowrap">$g: \N^k \rightarrow \N$.</span>
       </p>
       <div class="well statement">
@@ -322,8 +356,7 @@
           <b>4.3.4</b>
           Sei $f: \N \rightarrow \N$ und
           <span class="nowrap">$g: \N^k \rightarrow \N$.</span>
-          Die Funktion
-          $f$
+          Die Funktion $f$
           <i>majorisiert</i>
           <span class="nowrap">$g$,</span>
           wenn
@@ -336,44 +369,51 @@
           $$
         </div>
         <p>
-          für alle $x_1,\dots,x_k \in \N$ gilt. Wir schreiben auch kurzerhand
+          für alle $x_1,\dots,x_k \in \N$ gilt. Wir schreiben
+          auch kurzerhand
           <span class="nowrap">$f \gt g$.</span>
         </p>
       </div>
       <p>
         Sei zum Beispiel $g(x,y) = x \cdot y$ und
         <span class="nowrap">$f(x) = 2^x$.</span>
-        Dann majorisiert
-        $2^x$ die Funktion $x \cdot y$ nicht; sei beispielsweise
+        Dann majorisiert $2^x$ die Funktion $x \cdot y$ nicht;
+        sei beispielsweise
         <span class="nowrap">$(x,y) = (3,2)$,</span>
-        dann ist $g(x,y)=6$ aber
+        dann ist $g(x,y)=6$
+        aber
         <span class="nowrap">$f(\max(3,2)) = 2^3 = 8$.</span>
-        Allerdings
-        majorisiert $2^x + 2$ die Funktion
+        Allerdings majorisiert
+        $2^x + 2$ die Funktion
         <span class="nowrap">$x+y$,</span>
         ganz allgemein weil
-        $2^x + 2 \gt x^2$ für alle $x \in \N$ gilt. Wir werden nun zeigen, dass
-        jede primitiv rekursive Funktion $g: \N^k \rightarrow \N$ von einem
-        $A_r$ majorisiert wird; hierbei ist wichtig, dass der Index $r$ als Konstante
-        betrachtet wird, also von der "Bauweise" von $g$ abhängen darf, nicht
-        aber von den Eingabewerten, die $g$ bekommt.
+        $2^x + 2 \gt x^2$ für alle $x \in \N$ gilt. Wir werden
+        nun zeigen, dass jede primitiv rekursive Funktion
+        $g: \N^k \rightarrow \N$ von einem $A_r$ majorisiert
+        wird; hierbei ist wichtig, dass der Index $r$ als
+        Konstante betrachtet wird, also von der "Bauweise" von
+        $g$ abhängen darf, nicht aber von den Eingabewerten,
+        die $g$ bekommt.
       </p>
       <div class="well statement">
         <p>
           <b>Lemma</b>
           <b>4.3.5</b>
-          Für jede primitiv rekursive Funktion $f: \N^k \rightarrow \N$ gibt es
-          ein
+          Für jede primitiv rekursive Funktion
+          $f: \N^k \rightarrow \N$ gibt es ein
           <span class="nowrap">$r \in \N$,</span>
-          so dass $f$ von $A_r$ majorisiert wird.
+          so
+          dass $f$ von $A_r$ majorisiert wird.
         </p>
       </div>
       <p>
-        Aus diesem Lemma folgt dann, dass $A(m,n)$ selbst nicht primitiv rekursiv
-        sein kann. Wäre es dies, dann gäbe es ja ein
+        Aus diesem Lemma folgt dann, dass $A(m,n)$ selbst
+        nicht primitiv rekursiv sein kann. Wäre es dies, dann
+        gäbe es ja ein
         <span class="nowrap">$r$,</span>
-        so dass das ein-parametrige
-        $A_r$ die zwei-parametrige Funktion $A(m,n)$ majorisieren würde:
+        so dass das ein-parametrige $A_r$
+        die zwei-parametrige Funktion $A(m,n)$ majorisieren
+        würde:
       </p>
       <div class="math-block">
         $$
@@ -393,27 +433,28 @@
         $$
       </div>
       <p>
-        was offensichtlich ein Widerspruch ist, da beide Seiten gleich sind. Wir
-        werden nun das Lemma beweisen. Wir verwenden Induktion über die Weise,
-        in der die Funktion $f$ konstruiert worden ist, also über die Anzahl der
-        Comp- und PrimRec-Kombinatoren, die wir zum Bau von $f$ gebraucht haben.
-        Im folgenden schreiben wir, wenn wir einen Vektor
-        $\vec{x} = (x_1,\dots,x_n)$ aus natürlichen Zahlen haben, oft
+        was offensichtlich ein Widerspruch ist, da beide
+        Seiten gleich sind. Wir werden nun das Lemma beweisen.
+        Wir verwenden Induktion über die Weise, in der die
+        Funktion $f$ konstruiert worden ist, also über die
+        Anzahl der Comp- und PrimRec-Kombinatoren, die wir zum
+        Bau von $f$ gebraucht haben. Im folgenden schreiben
+        wir, wenn wir einen Vektor $\vec{x} = (x_1,\dots,x_n)$
+        aus natürlichen Zahlen haben, oft
         <span class="nowrap">$x := \max(x_1,\dots,x_n)$.</span>
         <b>Induktionsbasis.</b>
-        Wir betrachten wir die
-        Basisfunktionen
+        Wir
+        betrachten wir die Basisfunktionen
         <span class="nowrap">$\zero, \succ, \pi^n_k$.</span>
         Wir wissen bereits, dass
         $A_0(n) = n+1$ ist, also
         <span class="nowrap">$A_0 = \succ$.</span>
-        Leider majorisiert $A_0$ also
-        $\succ$ nicht. Wie steht es mit
+        Leider
+        majorisiert $A_0$ also $\succ$ nicht. Wie steht es mit
         <span class="nowrap">$A_1$?</span>
         Es gilt
         <span class="nowrap">$A_1(n) = n+2$,</span>
-        und somit
-        ist
+        und somit ist
       </p>
       <div class="math-block">
         $$
@@ -425,24 +466,27 @@
         $$
       </div>
       <p>
-        wobei wir die Schreibweise $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$ verwenden.
-        Wir schlussfolgern: $A_2$ majorisiert jede Basisfunktion.
+        wobei wir die Schreibweise
+        $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$ verwenden.
+        Wir schlussfolgern: $A_2$ majorisiert jede
+        Basisfunktion.
         <b>Induktionsschritt.</b>
-        Wenn $f$ keine Basisfunktion ist, dann wurde $f$ mittels Komposition oder
-        primitiver Rekursion konstruiert. Für jeden Fall führen wir eine getrennte
-        Rechnung durch.
+        Wenn $f$ keine
+        Basisfunktion ist, dann wurde $f$ mittels Komposition
+        oder primitiver Rekursion konstruiert. Für jeden Fall
+        führen wir eine getrennte Rechnung durch.
         <b>Komposition:</b>
-        <span class="nowrap">$f(\vec{x}) = g(h_1(\vec{x}), \dots, h_k(\vec{x}))$,</span>
-        für primitiv rekursive
-        Funktionen
+        $f(\vec{x}) = g(h_1(\vec{x}), \dots, h_k(\vec{x}))$ ,
+        für primitiv rekursive Funktionen
         <span class="nowrap">$g, h_1, \dots, h_k$.</span>
         Jede dieser Funktionen wurde mit
         <i>weniger</i>
-        Kombinatoren konstruiert; somit wird jede dieser Funktionen von einem
-        $A_r$ majorisiert:
-        <span class="nowrap">$A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k$.</span>
-        Für einen Eingabevektor
-        $\vec{x}$ schreiben wir $x := \max(x_1,\dots,x_n)$ und rechnen:
+        Kombinatoren
+        konstruiert; somit wird jede dieser Funktionen von
+        einem $A_r$ majorisiert:
+        $A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k$ .
+        Für einen Eingabevektor $\vec{x}$ schreiben wir
+        $x := \max(x_1,\dots,x_n)$ und rechnen:
       </p>
       <div class="math-block">
         $$
@@ -457,8 +501,8 @@
       <p>
         Wir setzen nun
         <span class="nowrap">$q := \max(r, s_1, \dots, s_k)$.</span>
-        Dann ist der obige Wert
-        höchstens:
+        Dann
+        ist der obige Wert höchstens:
       </p>
       <div class="math-block">
         $$
@@ -469,7 +513,8 @@
         $$
       </div>
       <p>
-        Schlussendlich behaupte ich, dass $A_{q+1}(x+1) \leq A_{q+2}(x)$ gilt:
+        Schlussendlich behaupte ich, dass
+        $A_{q+1}(x+1) \leq A_{q+2}(x)$ gilt:
       </p>
       <div class="math-block">
         $$
@@ -481,7 +526,8 @@
       <p>
         Also: $A_{q+2}$ majorisiert
         <span class="nowrap">$f$.</span>
-        <b>Primitive Rekursion:</b>
+        <b>Primitive
+          Rekursion:</b>
         <span class="nowrap">$f = \primrec (g,h)$,</span>
         also
       </p>
@@ -497,8 +543,9 @@
         $$
       </div>
       <p>
-        wobei $g, h$ bereits mit weniger Kombinatoren konstruierte primitiv rekursive
-        Funktionen sind. Daher gibt es ein $q \in \N$ mit $A_q \gt g$ und
+        wobei $g, h$ bereits mit weniger Kombinatoren
+        konstruierte primitiv rekursive Funktionen sind. Daher
+        gibt es ein $q \in \N$ mit $A_q \gt g$ und
         <span class="nowrap">$A_q \gt h$.</span>
       </p>
       <div class="well statement">
@@ -515,7 +562,8 @@
           <b>Beweis.</b>
           Wir verwenden Induktion über
           <span class="nowrap">$t$.</span>
-          Wenn $t=0$ ist, dann gilt
+          Wenn $t=0$ ist,
+          dann gilt
         </p>
         <div class="math-block">
           $$
@@ -548,11 +596,12 @@
         </p>
       </div>
       <p>
-        Die Behauptung reicht aber noch nicht, da die rechte Seite der Ungleichung
-        $f(t,\vec{x}) \lt A_{q+1}(t+x)$ eine Funktion in zwei Parametern ist:
-        $t$ und
+        Die Behauptung reicht aber noch nicht, da die rechte
+        Seite der Ungleichung $f(t,\vec{x}) \lt A_{q+1}(t+x)$
+        eine Funktion in zwei Parametern ist: $t$ und
         <span class="nowrap">$x$,</span>
-        wir aber für das zu beweisende Lemma aber eine Funktion in
+        wir
+        aber für das zu beweisende Lemma aber eine Funktion in
         einem Parameter brauchen, nämlich
         <span class="nowrap">$\max(t, \vec{x})$.</span>
         Sei also
@@ -570,18 +619,21 @@
         $$
       </div>
       <p>
-        Es gilt also $A_{q+2} \gt f$ und das Lemma ist bewiesen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Es gilt also $A_{q+2} \gt f$ und das Lemma ist
+        bewiesen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
       In der Vorlesung am 7. Mai 2024 hatte ich den
       <i>Grad</i>
-      einer primitiv-rekursiven
-      Funktion definiert. Das ist in etwa die "Verschachtelungstiefe" von
+      einer primitiv-rekursiven Funktion definiert. Das ist in
+      etwa die "Verschachtelungstiefe" von
       <span class="nowrap">$f$.</span>
-      Betrachten wir beispielsweise die Funktion
-      $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln auf, wie wir diese
-      als primitiv-rekursive Funktion konstruiert haben:
+      Betrachten wir
+      beispielsweise die Funktion
+      $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln
+      auf, wie wir diese als primitiv-rekursive Funktion
+      konstruiert haben:
     </p>
     <div class="main-column">
 <pre>

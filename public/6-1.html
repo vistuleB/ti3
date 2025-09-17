@@ -41,16 +41,18 @@
         <b>6.1.1</b>
         Sei $G$ eine Grammatik mit Startsymbol
         <span class="nowrap">$S$.</span>
-        Die Ableitung eines Wortes
-        $\alpha$ ist eine Sequenz von Wortformen $w_0, w_1, \dots, w_n$ mit
+        Die
+        Ableitung eines Wortes $\alpha$ ist eine Sequenz von
+        Wortformen $w_0, w_1, \dots, w_n$ mit
         $w_0 = S, w_n = \alpha$ und
         <span class="nowrap">$w_{i-1} \Longrightarrow w_i$.</span>
       </p>
     </div>
     <p class="main-column">
-      Das folgende Beispiel ist Beispiel 3.22 aus dem Buch von Aho und Ullman.
-      Wir betrachten die klassische kontextfreie Grammatik für arithmetische
-      Ausdrücke mit Klammerung:
+      Das folgende Beispiel ist Beispiel 3.22 aus dem Buch von
+      Aho und Ullman. Wir betrachten die klassische
+      kontextfreie Grammatik für arithmetische Ausdrücke mit
+      Klammerung:
     </p>
     <div class="math-block main-column">
       $$
@@ -62,8 +64,9 @@
       $$
     </div>
     <p class="main-column">
-      wobei $E$ das Startsymbol ist. Hier ist ein Beispiel einer Ableitung von
-      $a * (a+a)$ von der obigen Grammatik.
+      wobei $E$ das Startsymbol ist. Hier ist ein Beispiel
+      einer Ableitung von $a * (a+a)$ von der obigen
+      Grammatik.
     </p>
     <div class="math-block main-column">
       $$
@@ -81,15 +84,18 @@
     </div>
     <p class="main-column">
       Insbesondere ist es eine
-      <i>Linksableitung</i>, das heißt, in jedem Schritt
-      wird das am weitesten links stehende Nichtterminal expandiert. In der Tat
-      reicht es, nur die Nummer der angewandten Regel anzugeben (da ja klar ist,
-      welches Nichtterminal expandiert werden muss). Die obige Ableitung kann
-      also kompakt durch die Zahlenfolge 23465124646 repräsentiert werden. Betrachten
-      wir im Folgenden ein weiteres Beispiel einer Ableitung, in diesem Falle
-      eine
-      <i>Rechtsableitung</i>, in der in jedem Schritt das am weitesten rechts
-      stehende Nichtterminal expandiert wird:
+      <i>Linksableitung</i>, das heißt, in
+      jedem Schritt wird das am weitesten links stehende
+      Nichtterminal expandiert. In der Tat reicht es, nur die
+      Nummer der angewandten Regel anzugeben (da ja klar ist,
+      welches Nichtterminal expandiert werden muss). Die obige
+      Ableitung kann also kompakt durch die Zahlenfolge
+      23465124646 repräsentiert werden. Betrachten wir im
+      Folgenden ein weiteres Beispiel einer Ableitung, in
+      diesem Falle eine
+      <i>Rechtsableitung</i>, in der in jedem
+      Schritt das am weitesten rechts stehende Nichtterminal
+      expandiert wird:
     </p>
     <div class="math-block main-column">
       $$
@@ -106,11 +112,13 @@
       $$
     </div>
     <p class="main-column">
-      Rechtsableitungen können auch kompakt als Zahlenfolge repräsentiert werden.
-      Allerdings geben wir Rechtsableitungen immer in umgekehrter Reihenfolge
-      an, also von hinten nach vorne, in diesem Falle also nicht 2351... sondern
-      64642641532. Beachten Sie, dass wir es hier mit einer eindeutigen Grammatik
-      zu tun haben, es also nur einen Syntaxbaum gibt:
+      Rechtsableitungen können auch kompakt als Zahlenfolge
+      repräsentiert werden. Allerdings geben wir
+      Rechtsableitungen immer in umgekehrter Reihenfolge an,
+      also von hinten nach vorne, in diesem Falle also nicht
+      2351... sondern 64642641532. Beachten Sie, dass wir es
+      hier mit einer eindeutigen Grammatik zu tun haben, es
+      also nur einen Syntaxbaum gibt:
     </p>
     <figure class="main-column">
       <img
@@ -122,8 +130,9 @@
       >
     </figure>
     <p class="main-column">
-      Rechtsableitung und Linksableitung sowie deren Codierung als Zahlenfolge
-      spiegeln also nur zwei verschiedene Weisen wieder, den Baum auszugeben.
+      Rechtsableitung und Linksableitung sowie deren Codierung
+      als Zahlenfolge spiegeln also nur zwei verschiedene
+      Weisen wieder, den Baum auszugeben.
     </p>
     <div class="main-column">
 <pre class="listing">
@@ -138,8 +147,8 @@
 </pre>
     </div>
     <p class="main-column">
-      Beachten Sie, dass wir in beiden Fällen die Liste Kinder von links nach
-      rechts durchgehen.
+      Beachten Sie, dass wir in beiden Fällen die Liste Kinder
+      von links nach rechts durchgehen.
     </p>
   </div>
 </body>

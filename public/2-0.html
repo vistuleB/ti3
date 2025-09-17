@@ -36,15 +36,17 @@
       </p>
     </div>
     <p class="main-column">
-      Boolesche Schaltkreise sind ein idealisiertes Modell echter elektronischer
-      Schaltkreise. Als primitive Bausteine haben wir Boolesche Operatoren, auch
+      Boolesche Schaltkreise sind ein idealisiertes Modell
+      echter elektronischer Schaltkreise. Als primitive
+      Bausteine haben wir Boolesche Operatoren, auch
       <i>Gatter</i>
       (englisch
-      <i>gates</i>) genannt, die mehrere (typischerweise ein oder
-      zwei) Signale zu einem Ausgabe-Signal kombinieren. Die Signale können nur
-      zwei Werte annehmen: wahr/falsch bzw. 1/0 bzw.
-      <code>true/false</code>. Hier sehen
-      Sie die drei üblichsten Gatter:
+      <i>gates</i>) genannt, die mehrere (typischerweise
+      ein oder zwei) Signale zu einem Ausgabe-Signal
+      kombinieren. Die Signale können nur zwei Werte annehmen:
+      wahr/falsch bzw. 1/0 bzw.
+      <code>true/false</code>. Hier sehen Sie
+      die drei üblichsten Gatter:
     </p>
     <figure class="main-column">
       <img
@@ -55,18 +57,20 @@
       >
     </figure>
     <p class="main-column">
-      Von links nach rechts sind dies: das Und-Gatter (<i>and-gate</i>), Oder-Gatter
-      (<i>or-gate</i>) und das Nicht-Gatter (<i>not-gate</i>). In C, C++ und Java kennen
-      Sie diese Booleschen Operatoren als
+      Von links nach rechts sind dies: das Und-Gatter
+      (<i>and-gate</i>), Oder-Gatter (<i>or-gate</i>) und das
+      Nicht-Gatter (<i>not-gate</i>). In C, C++ und Java kennen Sie
+      diese Booleschen Operatoren als
       <code>&amp;&amp;</code>,
       <code>||</code>
       und
-      <code>!</code>. Was diese Operatoren
+      <code>!</code>. Was
+      diese Operatoren
       <i>tun</i>, können wir als
       <i>Wahrheitstabelle</i>
-      darstellen. Wir listen alle Kombinationen
-      für $x,y$ auf und schreiben in jede Zeile auch den Wert, den der Operator
-      ausgibt.
+      darstellen. Wir listen alle Kombinationen für $x,y$ auf
+      und schreiben in jede Zeile auch den Wert, den der
+      Operator ausgibt.
     </p>
     <div class="math-block main-column">
       $$
@@ -94,13 +98,14 @@
       $$
     </div>
     <p class="main-column">
-      Die dritte Zeile der mittleren Tabelle sagt beispielsweise aus, dass
-      $1 \vee 0 = 1$ gilt. Vielleicht wünschen Sie sich noch mehr Gates, zum
-      Beispiel ein if-then-else-Gate mit drei Inputs
+      Die dritte Zeile der mittleren Tabelle sagt
+      beispielsweise aus, dass $1 \vee 0 = 1$ gilt. Vielleicht
+      wünschen Sie sich noch mehr Gates, zum Beispiel ein
+      if-then-else-Gate mit drei Inputs
       <span class="nowrap">$x,y,z$,</span>
-      welches $y$ ausgibt,
-      wenn $x$ wahr ist und ansonsten $z$ ausgibt. So ein Gate können Sie sich
-      einfach aus And, Or, Not bauen:
+      welches $y$
+      ausgibt, wenn $x$ wahr ist und ansonsten $z$ ausgibt. So
+      ein Gate können Sie sich einfach aus And, Or, Not bauen:
     </p>
     <figure class="main-column">
       <img
@@ -121,11 +126,12 @@
     <p class="main-column">
       Jeder Schaltkreis
       <i>berechnet</i>
-      eine Funktion (formale Definition weiter
-      unten). Informell gesprochen, wenn wir Wahrheitswerte (0/1) in die Input-Gates
-      reinstecken, dann fließen diese durch den Schaltkreis und werden von den
-      AND/OR/NOT-Gates entsprechend ihrer Funktion kombiniert und werden schließlich
-      an den Output-Gates ausgegeben:
+      eine Funktion (formale
+      Definition weiter unten). Informell gesprochen, wenn wir
+      Wahrheitswerte (0/1) in die Input-Gates reinstecken, dann
+      fließen diese durch den Schaltkreis und werden von den
+      AND/OR/NOT-Gates entsprechend ihrer Funktion kombiniert
+      und werden schließlich an den Output-Gates ausgegeben:
     </p>
     <figure class="main-column">
       <img
@@ -136,28 +142,30 @@
       >
       <figcaption>
       </figcaption>
-      Das if-then-else-Gate mit einer konkreten Belegung und einem Ausgabewert
+      Das if-then-else-Gate mit einer konkreten Belegung und
+      einem Ausgabewert
     </figure>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 2.1</b>
-        Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
+        Bauen Sie folgende Gates aus And-, Or- und Not-Gates
+        zusammen:
       </p>
       <ol>
         <li>
           <p>
             Ein XOR-Gate
             <span class="nowrap">$x \oplus y$.</span>
-            Es gibt 1 aus, wenn einer der beiden Inputs
-            1 ist und der andere 0.
+            Es gibt 1 aus, wenn
+            einer der beiden Inputs 1 ist und der andere 0.
           </p>
         </li>
         <li>
           <p>
             Ein Majority-Gate
             <span class="nowrap">$Maj(x,y,z)$.</span>
-            Es gibt 1 aus, wenn mindestens zwei seiner
-            Inputs 1 ist.
+            Es gibt 1 aus,
+            wenn mindestens zwei seiner Inputs 1 ist.
           </p>
         </li>
         <li>
@@ -175,7 +183,8 @@
             >
           </figure>
           <p>
-            welches 1 ausgibt, wenn eine ungerade Anzahl seiner Inputs auf 1 stehen.
+            welches 1 ausgibt, wenn eine ungerade Anzahl
+            seiner Inputs auf 1 stehen.
           </p>
         </li>
         <li>
@@ -184,19 +193,22 @@
             <span class="nowrap">$n$-faches</span>
             Majority-Gate
             <span class="nowrap">$\mathrm{Maj}(x_1,\ldots,x_n)$,</span>
-            welches 1
-            ausgibt, wenn mehr als $n/2$ der Inputs auf 1 stehen. Sie können annehmen,
-            dass $n$ ungerade ist, wenn es Ihnen hilft. Können Sie vermeiden, dass
-            Ihr Schaltkreis riesengroß wird? Kriegen Sie beispielsweise für einen Schaltkreis
-            hin, den man realistischerweise herstellen kann?
+            welches 1 ausgibt,
+            wenn mehr als $n/2$ der Inputs auf 1 stehen. Sie
+            können annehmen, dass $n$ ungerade ist, wenn es
+            Ihnen hilft. Können Sie vermeiden, dass Ihr
+            Schaltkreis riesengroß wird? Kriegen Sie
+            beispielsweise für einen Schaltkreis hin, den man
+            realistischerweise herstellen kann?
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      Je nach Kontext kann es hilfreich sein, Gatter mit beliebig vielen Inputs
-      zuzulassen, beispielsweise $x_1 \land x_2 \land \ldots \land x_n$ als
-      ein Gate darzustellen:
+      Je nach Kontext kann es hilfreich sein, Gatter mit
+      beliebig vielen Inputs zuzulassen, beispielsweise
+      $x_1 \land x_2 \land \ldots \land x_n$ als ein Gate
+      darzustellen:
     </p>
     <figure class="main-column">
       <img
@@ -209,16 +221,15 @@
     <p class="main-column">
       Man bezeichnet dies als AND-Gate mit einem Fan-in von
       <span class="nowrap">$n$.</span>
-      Das "normale"
-      AND-Gate hat einen Fan-in von 2. Mit
+      Das "normale" AND-Gate hat einen Fan-in von 2. Mit
       <span class="nowrap">$\lor$-</span>
       und
       <span class="nowrap">$\oplus$-Gates</span>
-      geht das
-      ganz analog. Für andere Gates (wie zum Beispiel ein if-then-else-Gate)
-      würde das keinen Sinn machen. Größerer Fan-in ist aber nicht wirklich etwas
-      neues unter der Sonne: Sie können jederzeit großen Fan-in durch kleinen
-      simulieren:
+      geht das ganz analog. Für
+      andere Gates (wie zum Beispiel ein if-then-else-Gate)
+      würde das keinen Sinn machen. Größerer Fan-in ist aber
+      nicht wirklich etwas neues unter der Sonne: Sie können
+      jederzeit großen Fan-in durch kleinen simulieren:
     </p>
     <figure class="main-column">
       <img
@@ -229,7 +240,8 @@
       >
     </figure>
     <p class="main-column">
-      Also als geschachteltes AND, oder aber in Form eines Binärbaums:
+      Also als geschachteltes AND, oder aber in Form eines
+      Binärbaums:
     </p>
     <figure class="main-column">
       <img
@@ -240,9 +252,10 @@
       >
     </figure>
     <p class="main-column">
-      Schaltkreise, wie wir sie in diesem Kapitel betrachten, sind immer azyklisch.
-      Das heißt insbesondere, das Dinge mit "Feedback-Schleifen" wie Flipflops
-      eben keine Schaltkreis in unserem Sinn sind:
+      Schaltkreise, wie wir sie in diesem Kapitel betrachten,
+      sind immer azyklisch. Das heißt insbesondere, das Dinge
+      mit "Feedback-Schleifen" wie Flipflops eben keine
+      Schaltkreis in unserem Sinn sind:
     </p>
     <figure class="main-column">
       <img
@@ -255,11 +268,12 @@
     <p class="main-column">
       Das Flipflop zeigt ein interessantes Verhalten: wenn
       <span class="nowrap">$\text{Reset} = 0$,</span>
-      $\text{Set} = 1$ ist, so ist der Ausgabe-Wert des
-      unteren OR-Gates auf jeden Fall 1, und somit ist
+      $\text{Set} = 1$ ist, so ist der
+      Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1, und
+      somit ist
       <span class="nowrap">$\bar{Q} = 0$;</span>
-      somit
-      sind wiederum beide Input-Werte des oberen OR-Gates 0 und
+      somit sind wiederum beide
+      Input-Werte des oberen OR-Gates 0 und
       <span class="nowrap">$Q = 1$.</span>
       Wenn
       <span class="nowrap">$\text{Reset} = 1$,</span>
@@ -270,33 +284,38 @@
       Wenn
       <span class="nowrap">$\text{Reset} = \text{Set} = 0$,</span>
       dann leiten beide
-      OR-Gates einfach die Werte der anderen, von rechts kommenden Kabel durch,
-      und somit gilt $Q = \neg{\bar{Q}}$ und
+      OR-Gates einfach die Werte der anderen, von rechts
+      kommenden Kabel durch, und somit gilt $Q = \neg{\bar{Q}}$
+      und
       <span class="nowrap">$\bar{Q} = \neg{Q}$;</span>
-      das heißt,
-      die Werte, die zuvor bestanden, bestehen weiter. Das Flipflop implementiert
+      das heißt, die Werte, die zuvor
+      bestanden, bestehen weiter. Das Flipflop implementiert
       somit einen 1-Bit-Speicher (die Kombination
-      $\text{Set} = \text{Reset} = 1$ würde $Q = \bar{Q} = 0$ erzeugen und gilt
-      als illegale Eingabe). Ein Flipflop hat somit einen inneren Zustand. Die
-      Schaltkreise in diesem Kapitel haben keinen inneren Zustand: die Werte
-      der Ausgabe-Gates sind vollständig durch die Werte der Input-Gates determiniert.
-      Wir sind nun bereit für eine formale Definition von Schaltkreisen.
+      $\text{Set} = \text{Reset} = 1$ würde $Q = \bar{Q} = 0$
+      erzeugen und gilt als illegale Eingabe). Ein Flipflop hat
+      somit einen inneren Zustand. Die Schaltkreise in diesem
+      Kapitel haben keinen inneren Zustand: die Werte der
+      Ausgabe-Gates sind vollständig durch die Werte der
+      Input-Gates determiniert. Wir sind nun bereit für eine
+      formale Definition von Schaltkreisen.
     </p>
     <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>2.1</b>
         <b>(Boolesche Schaltkreise)</b>
-        Ein Boolescher Schaltkreis ist ein gerichteter,
-        azyklischer Graph (englisch directed acyclic graph, kurz DAG), in welchem
-        jeder Knoten entweder
+        Ein Boolescher Schaltkreis
+        ist ein gerichteter, azyklischer Graph (englisch
+        directed acyclic graph, kurz DAG), in welchem jeder
+        Knoten entweder
       </p>
       <ul>
         <li>
           <p>
-            ein Input-Gate ist und mit einer Input-Variable oder eine Booleschen Konstant
-            (0 oder 1) beschriftet ist und keine eingehenden Kanten hat (in-degree
-            0), oder
+            ein Input-Gate ist und mit einer Input-Variable
+            oder eine Booleschen Konstant (0 oder 1)
+            beschriftet ist und keine eingehenden Kanten hat
+            (in-degree 0), oder
           </p>
         </li>
         <li>
@@ -306,49 +325,56 @@
         </li>
       </ul>
       <p>
-        wobei die mit NOT beschrifteten Knoten genau eine eingehende Kante haben
-        und die mit AND oder OR beschrifteten Knoten mindestens zwei eingehende
-        Kanten haben. Mindestens ein Knoten ist als Output-Gate gekennzeichnet.
-        Die Output-Gates sind ihrerseits mit Output-Variablen
-        $y_1, \ldots, y_m$ beschriftet.
+        wobei die mit NOT beschrifteten Knoten genau eine
+        eingehende Kante haben und die mit AND oder OR
+        beschrifteten Knoten mindestens zwei eingehende Kanten
+        haben. Mindestens ein Knoten ist als Output-Gate
+        gekennzeichnet. Die Output-Gates sind ihrerseits mit
+        Output-Variablen $y_1, \ldots, y_m$ beschriftet.
       </p>
     </div>
     <p class="main-column">
-      Oft haben wir es mit Schaltkreisen mit nur einem Output-Gate zu tun; in
-      diesem Falle lassen wir die Beschriftung auch gerne weg, weil sie keine
-      zusätzliche Information bringt. Wenn wir allen Input-Variablen eines Schaltkreises
-      $C$ einen Wahrheitswert zugewiesen bekommen haben, dann können wir den
-      Schaltkreis von "unten" (Input-Gates) nach "oben" (Output-Gates) auswerten,
-      indem eben jeder mit OR/AND/NOT beschriftete Knoten den ihm zugeordnete
-      Booleschen Operator auswertet. Es ist klar, dass der Schaltkreis $C$ eine
+      Oft haben wir es mit Schaltkreisen mit nur einem
+      Output-Gate zu tun; in diesem Falle lassen wir die
+      Beschriftung auch gerne weg, weil sie keine zusätzliche
+      Information bringt. Wenn wir allen Input-Variablen eines
+      Schaltkreises $C$ einen Wahrheitswert zugewiesen
+      bekommen haben, dann können wir den Schaltkreis von
+      "unten" (Input-Gates) nach "oben" (Output-Gates)
+      auswerten, indem eben jeder mit OR/AND/NOT beschriftete
+      Knoten den ihm zugeordnete Booleschen Operator auswertet.
+      Es ist klar, dass der Schaltkreis $C$ eine
       <i>Funktion</i>
-      $f_C : \{0,1\}^n \to \{0,1\}^m$ berechnet. Oft schreiben wir
-      einfach
+      $f_C : \{0,1\}^n \to \{0,1\}^m$ berechnet. Oft schreiben
+      wir einfach
       <span class="nowrap">$C : \{0,1\}^n \to \{0,1\}^m$.</span>
     </p>
     <div class="well statement out">
       <p>
         <b>Beobachtung</b>
         <b>2.2</b>
-        Ein Schaltkreis $C$ mit $n$ Input-Gates und $m$ Output-Gates berechnet
-        eine Funktion $f_C : \{0,1\}^n \to \{0,1\}^m$
+        Ein Schaltkreis $C$ mit $n$ Input-Gates und $m$
+        Output-Gates berechnet eine Funktion
+        $f_C : \{0,1\}^n \to \{0,1\}^m$
       </p>
     </div>
     <p class="main-column">
-      Es ist auch nicht weiter überraschend, dass es Schaltkreise für die gleiche
-      Funktion geben kann (sie haben für die Funktion
-      $x_1 \land \ldots \land x_n$ auch bereits drei verschiedene Schaltkreise
-      gesehen, und im Rahmen der obigen Übungsaufgabe wohl auch mehrere Schaltkreise,
-      die das gleiche tun, entwickelt.
+      Es ist auch nicht weiter überraschend, dass es
+      Schaltkreise für die gleiche Funktion geben kann (sie
+      haben für die Funktion $x_1 \land \ldots \land x_n$ auch
+      bereits drei verschiedene Schaltkreise gesehen, und im
+      Rahmen der obigen Übungsaufgabe wohl auch mehrere
+      Schaltkreise, die das gleiche tun, entwickelt.
     </p>
     <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>2.3</b>
-        Zwei Boolesche Schaltkreise $C, C^{\prime}$ heißen äquivalent, wenn
+        Zwei Boolesche Schaltkreise $C, C^{\prime}$ heißen
+        äquivalent, wenn
         <span class="nowrap">$f_C = f_{C^{\prime}}$,</span>
-        wenn sie also die gleiche Funktion berechnen.
-        Wir schreiben
+        wenn sie also
+        die gleiche Funktion berechnen. Wir schreiben
         <span class="nowrap">$C \equiv C^{\prime}$.</span>
       </p>
     </div>

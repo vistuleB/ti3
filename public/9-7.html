@@ -36,20 +36,19 @@
       </p>
     </div>
     <p class="main-column">
-      In den vergangen Kapiteln haben wir die Laufzeit einer Turingmaschine
-      beschränkt und die Komplexitätsklassen studiert, die sich daraus ergeben,
-      allen voran P und NP. Die neben Zeit wohl wichtigste Resource beim Rechnen
-      ist der Platz. Turingmaschinen erlauben uns auch, präzise über den benötigten
-      Speicherplatz zu sprechen. Der
+      In den vergangen Kapiteln haben wir die Laufzeit einer
+      Turingmaschine beschränkt und die Komplexitätsklassen
+      studiert, die sich daraus ergeben, allen voran P und NP.
+      Die neben Zeit wohl wichtigste Resource beim Rechnen ist
+      der Platz. Turingmaschinen erlauben uns auch, präzise
+      über den benötigten Speicherplatz zu sprechen. Der
       <i>Platz</i>
       einer Konfiguration
-      $C = uqv \in \Gamma^* \times Q \times \Gamma^*$ ist die Anzahl der belegten
-      Speicherzellen, also beispielsweise
+      $C = uqv \in \Gamma^* \times Q \times \Gamma^*$ ist die
+      Anzahl der belegten Speicherzellen, also beispielsweise
       <span class="nowrap">$|uv|$.</span>
-      Bei
-      <span class="nowrap">$k$-Band-Maschinen</span>
-      müssen
-      wir das über alle Bänder aufsummieren. Wir können eine Konfiguration also
+      Bei $k$ -Band-Maschinen müssen wir das über alle
+      Bänder aufsummieren. Wir können eine Konfiguration also
       als Tupel in
     </p>
     <div class="math-block main-column">
@@ -61,20 +60,24 @@
     </div>
     <p class="main-column">
       darstellen. Eine Konfiguration
-      $C = (q, (u_1, v_1), \dots, (u_k, v_k))$ besagt dann beispielsweise, dass
-      auf Band $i$ das Wort $u_iv_i$ steht, wobei der Kopf auf dem ersten Zeichen
-      von $v_i$ steht. Die Größe von $C$ ist dann
+      $C = (q, (u_1, v_1), \dots, (u_k, v_k))$ besagt dann
+      beispielsweise, dass auf Band $i$ das Wort $u_iv_i$
+      steht, wobei der Kopf auf dem ersten Zeichen von $v_i$
+      steht. Die Größe von $C$ ist dann
       <span class="nowrap">$|C| := |u_1| + |v_1| + \cdots + |u_k| + |v_k|$.</span>
-      Eine Turingmaschine läuft
-      in Platz
+      Eine
+      Turingmaschine läuft in Platz
       <span class="nowrap">$s(n)$,</span>
-      wenn für alle $x \in \Sigma^*$ alle erreichten Konfigurationen
-      höchstens die Größe $s(|x|)$ haben. Diese Definition hat den Nachteil,
-      dass der Platzbedarf immer mindestens $n$ ist: bereits die Startkonfiguration
-      $\qstart x_1 x_2 \dots x_n$ besteht ja aus $n$ Zeichen. Das ist aber irgendwie
-      unfair. Wir wollen nur den Platz zählen, der über das Eingabewort hinausgeht.
-      Wenn wir über Platzbedarf sprechen, dann gehen wir von einer Turingmaschine
-      aus, die
+      wenn für alle
+      $x \in \Sigma^*$ alle erreichten Konfigurationen
+      höchstens die Größe $s(|x|)$ haben. Diese Definition hat
+      den Nachteil, dass der Platzbedarf immer mindestens $n$
+      ist: bereits die Startkonfiguration
+      $\qstart x_1 x_2 \dots x_n$ besteht ja aus $n$ Zeichen.
+      Das ist aber irgendwie unfair. Wir wollen nur den Platz
+      zählen, der über das Eingabewort hinausgeht. Wenn wir
+      über Platzbedarf sprechen, dann gehen wir von einer
+      Turingmaschine aus, die
     </p>
     <div class="main-column">
       <ol>
@@ -86,51 +89,62 @@
         <li>
           <p>
             beliebig viele
-            <i>Arbeitsbänder</i>, auf denen sie lesen und schreiben darf;
+            <i>Arbeitsbänder</i>, auf denen sie lesen
+            und schreiben darf;
           </p>
         </li>
         <li>
           <p>
-            ein Ausgabeband, auf dem sie schreiben darf, aber nur nach rechts laufen
-            darf.
+            ein Ausgabeband, auf dem sie schreiben darf, aber
+            nur nach rechts laufen darf.
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      Wenn wir eine Sprache $L \subseteq \Sigma^*$ entscheiden wollen, dann
-      brauchen das Ausgabeband nicht wirklich. Wenn wir eine Funktion
-      $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnen wollen, dann sehr wohl.
+      Wenn wir eine Sprache $L \subseteq \Sigma^*$ entscheiden
+      wollen, dann brauchen das Ausgabeband nicht wirklich.
+      Wenn wir eine Funktion
+      $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnen wollen,
+      dann sehr wohl.
     </p>
     <div class="well highlight out">
       <p>
         <b>Eingabe und Ausgabe:</b>
-        wenn Sie ein C-Programm schreiben und auf
+        wenn Sie ein C-Programm
+        schreiben und auf
         <code>stdout</code>
-        schreiben, dann entspricht diese Operation in gewisser Weise der Turingmaschine,
-        die auf das Ausgabeband schreibt; sie können ja sich den Output auch nicht
-        irgendwie zurückholen. Das lesen von
+        schreiben, dann entspricht
+        diese Operation in gewisser Weise der Turingmaschine,
+        die auf das Ausgabeband schreibt; sie können ja sich
+        den Output auch nicht irgendwie zurückholen. Das lesen
+        von
         <code>stdin</code>
-        entspricht allerdings nicht
-        ganz dem Eingabeband der Turingmaschine. Ein bedeutender Unterschied ist,
-        dass die Turingmaschine auf dem Eingabeband zwar nicht schreiben darf,
-        aber dennoch beliebig nach rechts und links gehen darf. Das können Sie
-        auf
+        entspricht allerdings nicht ganz dem
+        Eingabeband der Turingmaschine. Ein bedeutender
+        Unterschied ist, dass die Turingmaschine auf dem
+        Eingabeband zwar nicht schreiben darf, aber dennoch
+        beliebig nach rechts und links gehen darf. Das können
+        Sie auf
         <code>stdin</code>
         in der Regel nicht.
       </p>
       <p>
         <b>Streaming-Modell:</b>
-        wenn wir der Turingmaschine verbieten, auf dem Eingabe-Band
-        nach links zu laufen, wenn sie also jedes Eingabezeichen nur einmal lesen
-        darf, dann erhalten wir das sogenannte Streaming-Modell, das in den letzten
-        Jahren an Popularität gewonnen hat, weil wir es heutzutage in vielen Anwendungen
-        mit Datenmengen zu tun haben, die nicht in den Speicher des Rechners passen
-        und auch nur einmal gelesen werden können (z.B. Sensordaten). Im Kurs
-        <i>Effiziente
-          Algorithmen</i>
+        wenn wir der Turingmaschine
+        verbieten, auf dem Eingabe-Band nach links zu laufen,
+        wenn sie also jedes Eingabezeichen nur einmal lesen
+        darf, dann erhalten wir das sogenannte
+        Streaming-Modell, das in den letzten Jahren an
+        Popularität gewonnen hat, weil wir es heutzutage in
+        vielen Anwendungen mit Datenmengen zu tun haben, die
+        nicht in den Speicher des Rechners passen und auch nur
+        einmal gelesen werden können (z.B. Sensordaten). Im
+        Kurs
+        <i>Effiziente Algorithmen</i>
         gibt es ein
-        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html">Kapitel zu Streaming-Algorithmen</a>.
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html">Kapitel zu
+          Streaming-Algorithmen</a>.
       </p>
     </div>
     <div class="well statement out">
@@ -138,8 +152,8 @@
         <b>Definition</b>
         <b>9.7.1</b>
         <span class="nowrap"><b>($\SPACE(s)$).</b></span>
-        Sei $M$ eine Turingmaschine mit dezidiertem Eingabeband
-        1 und Ausgabeband
+        Sei $M$ eine Turingmaschine mit
+        dezidiertem Eingabeband 1 und Ausgabeband
         <span class="nowrap">$k$.</span>
         Die
         <i>Größe einer Konfiguration</i>
@@ -149,7 +163,8 @@
         <span class="nowrap">$|u_2| + |v_2| + \cdots + |u_{k-1}| + |v_{k-1}|$.</span>
         Sei
         <span class="nowrap">$s : \N \rightarrow \N$.</span>
-        Die Turingmaschine $M$ läuft in Platz
+        Die Turingmaschine $M$ läuft
+        in Platz
         <span class="nowrap">$s$,</span>
         falls
       </p>
@@ -161,15 +176,17 @@
         </li>
         <li>
           <p>
-            jede erreichte Konfiguration höchstens Größe $O(s(|x|))$ hat.
+            jede erreichte Konfiguration höchstens Größe
+            $O(s(|x|))$ hat.
           </p>
         </li>
       </ol>
       <p>
         Eine Sprache ist in
         <span class="nowrap">$\SPACE(s)$,</span>
-        wenn es eine Turingmaschine gibt, die
-        in Platz $s$ läuft und sie entscheidet.
+        wenn es eine
+        Turingmaschine gibt, die in Platz $s$ läuft und sie
+        entscheidet.
       </p>
     </div>
     <div class="well statement out">
@@ -183,10 +200,11 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Für gegebenes $n$ sei $S \in O(s(n))$ der maximale Platzbedarf
-        der Turingmaschine. Es gibt maximal
-        $T := |Q| \cdot \left(|\Gamma|+1\right)^{kS}$ Konfigurationen (warum?).
-        Da $M$ terminiert, kann die Berechnung nicht mehr $T$ Schritte dauern.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Für gegebenes $n$ sei $S \in O(s(n))$ der
+        maximale Platzbedarf der Turingmaschine. Es gibt
+        maximal $T := |Q| \cdot \left(|\Gamma|+1\right)^{kS}$
+        Konfigurationen (warum?). Da $M$ terminiert, kann die
+        Berechnung nicht mehr $T$ Schritte dauern.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well statement out">
@@ -197,7 +215,8 @@
           class="reference"
           data-ref="definition-space-bounded"
         ></span>
-        weglassen können, zumindest wenn $s(n)$ zeitkonstruierbar ist.
+        weglassen können, zumindest wenn $s(n)$
+        zeitkonstruierbar ist.
       </p>
     </div>
     <h2 class="main-column">
@@ -214,8 +233,8 @@
       $$
     </div>
     <p class="main-column">
-      also die Menge aller Probleme, die man mit polynomiellem Speicherplatz
-      entscheiden kann, und
+      also die Menge aller Probleme, die man mit polynomiellem
+      Speicherplatz entscheiden kann, und
     </p>
     <div class="math-block main-column">
       $$
@@ -226,15 +245,18 @@
     </div>
     <p class="main-column">
       die Menge aller Probleme, die man mit
-      <i>logarithmischem Speicherplatz</i>
-      entscheiden kann. Man nennt $L$ auch LogSpace.
+      <i>logarithmischem
+        Speicherplatz</i>
+      entscheiden kann. Man nennt $L$ auch
+      LogSpace.
     </p>
     <div class="well statement out">
       <p>
         <b>Übungsaufgabe</b>
         <b>9.7.4</b>
-        Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$ gilt. Fangen Sie zum
-        Beispiel an,<span class="sc">3-Colorability $\in$ PSPACE</span>
+        Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$
+        gilt. Fangen Sie zum Beispiel an,<span class="sc">3-Colorability $\in$
+          PSPACE</span>
         zu zeigen.
       </p>
     </div>
@@ -244,8 +266,8 @@
         <b>9.7.5</b>
         Sei
         <span class="sc">Palindrome</span>
-        die Sprache aller Palindromwörter mit Trennungszeichen
-        in der Mitte, also
+        die Sprache aller Palindromwörter
+        mit Trennungszeichen in der Mitte, also
       </p>
       <div class="math-block">
         $$
@@ -263,8 +285,9 @@
       <p>
         <b>Übungsaufgabe</b>
         <b>9.7.6</b>
-        Zeigen Sie, dass die Sprache aller wohlgeformten Klammerausdrücke in L
-        ist, also die Sprache über $\{a,b\}$ mit
+        Zeigen Sie, dass die Sprache aller wohlgeformten
+        Klammerausdrücke in L ist, also die Sprache über
+        $\{a,b\}$ mit
       </p>
       <div class="math-block">
         $$
@@ -279,13 +302,13 @@
         <b>Übungsaufgabe</b>
         <b>9.7.7</b>
         Seien $f: \Sigma_1 \rightarrow \Sigma_2$ und
-        $g: \Sigma_2 \rightarrow \Sigma_3$ zwei Funktionen. Zeigen Sie, dass,
-        falls $f$ und $g$ in logarithmischem Platz berechnet werden können, dann
-        auch
+        $g: \Sigma_2 \rightarrow \Sigma_3$ zwei Funktionen.
+        Zeigen Sie, dass, falls $f$ und $g$ in logarithmischem
+        Platz berechnet werden können, dann auch
         <span class="nowrap">$g \circ f: \Sigma_1 \rightarrow \Sigma_3$.</span>
         <b>Hinweis:</b>
-        der "offensichtliche"
-        Ansatz funktioniert nicht. Warum nicht?
+        der "offensichtliche" Ansatz funktioniert nicht. Warum
+        nicht?
       </p>
     </div>
   </div>

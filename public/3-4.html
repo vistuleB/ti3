@@ -36,13 +36,13 @@
       </p>
     </div>
     <p class="main-column">
-      Vielleicht war es überraschend zu sehen, dass $\N = \Q$ gilt, dass also
-      das "diskrete" $\N$ und das "dichte" $\Q$ sicht hinsichtlich ihrer Größe
-      (Fachsprache: Kardinalität) nicht unterscheiden. Könnte es denn sein, dass
-      jede unendliche Menge $A$ abzählbar ist, also
+      Vielleicht war es überraschend zu sehen, dass $\N = \Q$
+      gilt, dass also das "diskrete" $\N$ und das "dichte" $\Q$
+      sicht hinsichtlich ihrer Größe (Fachsprache:
+      Kardinalität) nicht unterscheiden. Könnte es denn sein,
+      dass jede unendliche Menge $A$ abzählbar ist, also
       <span class="nowrap">$A \approx \N$?</span>
-      Die Antwort
-      ist ein klares
+      Die Antwort ist ein klares
       <i>Nein</i>.
     </p>
     <div class="well statement out">
@@ -50,37 +50,43 @@
         <b>Theorem</b>
         <b>3.4.1</b>
         <b>(Überabzählbarkeit der reellen Zahlen).</b>
-        <span class="nowrap">$\N \not \approx \R$.</span>
+        $\N \not \approx \R$ .
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Da wir bereits $\R \approx \{0,1\}^{\N}$ gesehen haben, reicht es,
-        $\N \not \approx \{0,1\}^{\N}$ zu zeigen. Wir müssen also zeigen, dass
-        es keine Bijektion $f : \N \rightarrow \{0,1\}^{\N}$ gibt. Wie gehen wir
+        Da wir bereits $\R \approx \{0,1\}^{\N}$ gesehen
+        haben, reicht es, $\N \not \approx \{0,1\}^{\N}$ zu
+        zeigen. Wir müssen also zeigen, dass es keine Bijektion
+        $f : \N \rightarrow \{0,1\}^{\N}$ gibt. Wie gehen wir
         vor? Wir nehmen an, man hätte uns eine Funktion
-        $f : \N \rightarrow \cuben$ gegeben, und müssen nun zeigen, dass $f$ nicht
-        bijektiv ist. Nicht bijektiv kann zwei Ding heißen: nicht injektiv und
-        nicht surjekiv. Injektiv kann eine solche Funktion natürlich sein, beispielsweise
-        die Funktion
+        $f : \N \rightarrow \cuben$ gegeben, und müssen nun
+        zeigen, dass $f$ nicht bijektiv ist. Nicht bijektiv
+        kann zwei Ding heißen: nicht injektiv und nicht
+        surjekiv. Injektiv kann eine solche Funktion natürlich
+        sein, beispielsweise die Funktion
         <span class="nowrap">$n \mapsto 0^n 111111\dots$.</span>
-        Also ist unsere einzige Chance,
-        zu zeigen, dass $f$ nicht surjektiv ist. Wir müssen also eine 0/1-Folge
-        $\mathbf{b} = b_0 b_1 b_2 b_3 \dots \in \{0,1\}^{\N}$ finden, die nicht
-        im Wertebereich (Englisch:
-        <i>image</i>) von $f$ liegt:
+        Also ist unsere einzige
+        Chance, zu zeigen, dass $f$ nicht surjektiv ist. Wir
+        müssen also eine 0/1-Folge
+        $\mathbf{b} = b_0 b_1 b_2 b_3 \dots \in
+        \{0,1\}^{\N}$
+        finden, die nicht im Wertebereich (Englisch:
+        <i>image</i>)
+        von $f$ liegt:
         <span class="nowrap">$\mathbf{b} \not \in {\rm img}(f)$.</span>
-        Was wiederum bedeutet, dass für jedes
-        $n \in \N$ sich die unendliche 0/1-Folge $f(n)$ von $\mathbf{b}$ unterscheidet,
-        also an mindestens einer Stelle. Wie können wir die Funktion $f$ darstellen?
-        Jedes  $f(n)$ ist eine unendliche
+        Was
+        wiederum bedeutet, dass für jedes $n \in \N$ sich die
+        unendliche 0/1-Folge $f(n)$ von $\mathbf{b}$
+        unterscheidet, also an mindestens einer Stelle. Wie
+        können wir die Funktion $f$ darstellen? Jedes $f(n)$
+        ist eine unendliche
         <span class="nowrap">$0/1$-Folge.</span>
-        Also können wir uns $f$
-        als nach rechts und nach unten unendliche Tabelle vorstellen. Hierbei schreiben
-        wir $f_i$ für  $f(i)$ und $f_{i,j}$ für das
-        <span class="nowrap">$j$-te</span>
-        Glied der unendlichen
+        Also können wir uns
+        $f$ als nach rechts und nach unten unendliche Tabelle
+        vorstellen. Hierbei schreiben wir $f_i$ für  $f(i)$
+        und $f_{i,j}$ für das $j$ -te Glied der unendlichen
         Folge
         <span class="nowrap">$f_i$.</span>
       </p>
@@ -93,10 +99,12 @@
         >
       </figure>
       <p>
-        Für ein Bit $b \in \{0,1\}$ bezeichnen wir mit $\bar{b}$ seine Negation:
+        Für ein Bit $b \in \{0,1\}$ bezeichnen wir mit
+        $\bar{b}$ seine Negation:
         <span class="nowrap">$\bar{b} = 1 - b$.</span>
-        Wir betrachten jetzt die Diagonale der Tabelle und
-        negieren sie:
+        Wir
+        betrachten jetzt die Diagonale der Tabelle und negieren
+        sie:
       </p>
       <figure>
         <img
@@ -108,57 +116,66 @@
       </figure>
       <p>
         und erhalten eine Folge:
-        <span class="nowrap">$\mathbf{d} := \overline{f_{0,0}}\ \overline{f_{1,1}}\ \overline{f_{2,2}}
-          \overline{f_{3,3}}\dots$.</span>
-        Vergleichen wir nun $\mathbf{d}$ mit einer Zeile $f_n$ der obigen Tabelle.
-        Insbesondere, die
+        $\mathbf{d} := \overline{f_{0,0}}\
+        \overline{f_{1,1}}\ \overline{f_{2,2}}
+        \overline{f_{3,3}}\dots$
+        .
+        Vergleichen wir nun $\mathbf{d}$ mit einer Zeile $f_n$
+        der obigen Tabelle. Insbesondere, die
         <span class="nowrap">$n$-ten</span>
-        Stellen der beiden Folgen. Die
+        Stellen
+        der beiden Folgen. Die
         <span class="nowrap">$n$-te</span>
-        Stelle
-        von $\mathbf{d}$ ist
+        Stelle von $\mathbf{d}$
+        ist
         <span class="nowrap">$\overline{f_{n,n}}$;</span>
         die
         <span class="nowrap">$n$-te</span>
         Stelle von $f_n$
         ist
         <span class="nowrap">$f_{n,n}$.</span>
-        Wir sehen also: $\mathbf{d}$ und $f_n$ unterscheiden sich
-        an der
+        Wir sehen also: $\mathbf{d}$ und $f_n$
+        unterscheiden sich an der
         <span class="nowrap">$n$-ten</span>
-        Stelle (und womöglich auch noch anderswo), und daher gilt:
+        Stelle (und
+        womöglich auch noch anderswo), und daher gilt:
         <span class="nowrap">$\mathbf{d} \ne f_n$.</span>
-        Da dies für jedes $n$ gilt, folgern wir: die Folge
-        $\mathbf{d}$ kommt nicht als Zeile der Tabelle vor, und damit
+        Da dies für jedes $n$ gilt,
+        folgern wir: die Folge $\mathbf{d}$ kommt nicht als
+        Zeile der Tabelle vor, und damit
         <span class="nowrap">$\mathbf{d} \not \in {\rm img}(f)$.</span>
-        Die Funktion $f$ ist nicht surjektiv.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Die Funktion $f$
+        ist nicht surjektiv.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Weil in dem Beweis die Diagonale der Tabelle eine entscheidende Rolle
-      spielt, nennt man diese Beweistechnik auch das Cantorsche Diagonalisierungsverfahren.
-      Dies wird später, in
+      Weil in dem Beweis die Diagonale der Tabelle eine
+      entscheidende Rolle spielt, nennt man diese Beweistechnik
+      auch das Cantorsche Diagonalisierungsverfahren. Dies wird
+      später, in
       <a
         href="./8-0.html"
         class=""
       >Kapitel 8</a>
-      über Turingmaschinen und
-      in
+      über Turingmaschinen
+      und in
       <a
         href="./9-0.html"
         class=""
       >Kapitel 9</a>
-      über Komplexitätstheorie eine Rolle spielen,
-      wenn wir z.B. zeigen wollen, dass es Probleme gibt, an denen jedes Computerprogram
-      versagt.
+      über
+      Komplexitätstheorie eine Rolle spielen, wenn wir z.B.
+      zeigen wollen, dass es Probleme gibt, an denen jedes
+      Computerprogram versagt.
     </p>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 3.4.1</b>
-        Zeigen Sie, dass es zu der Funktion $f: \N \rightarrow \cuben$ eine Folge
-        $\mathbf{d}$ gibt, die nicht nur nicht in ${\rm img}(f)$ ist, sondern
-        noch mehr: jede Folge $f_n$ unterscheidet sich von $\mathbf{d}$ in unendlich
-        vielen Stellen.
+        Zeigen Sie, dass es zu der Funktion
+        $f: \N \rightarrow \cuben$ eine Folge $\mathbf{d}$
+        gibt, die nicht nur nicht in ${\rm img}(f)$ ist,
+        sondern noch mehr: jede Folge $f_n$ unterscheidet sich
+        von $\mathbf{d}$ in unendlich vielen Stellen.
       </p>
     </div>
     <div class="well exercise out">
@@ -166,25 +183,28 @@
         <b>Übungsaufgabe 3.4.2</b>
         Zeigen Sie ganz allgemein: für jede Menge $A$ gilt
         <span class="nowrap">$A \not \approx 2^A$.</span>
-        Erinnerin Sie sich: $2^A$ ist die Potenzmenge von
+        Erinnerin Sie sich: $2^A$ ist
+        die Potenzmenge von
         <span class="nowrap">$A$,</span>
-        also die Menge aller Untermengen.
+        also die Menge aller
+        Untermengen.
         <b>Tipp:</b>
-        Sie müssen den obigen Beweis
-        auf die richtige Weise abstrahieren, dann geht es ganz einfach.
+        Sie müssen den obigen Beweis auf
+        die richtige Weise abstrahieren, dann geht es ganz
+        einfach.
       </p>
     </div>
     <p class="main-column">
-      Die letzte Übung zeigt also: es gibt immer größere Mengen, ein oberes
-      Ende wird nie erreicht.
+      Die letzte Übung zeigt also: es gibt immer größere
+      Mengen, ein oberes Ende wird nie erreicht.
     </p>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 3.4.3</b>
         Erinnern Sie sich an die Partialordnung
         <span class="nowrap">$(2^\N, \subseteq)$.</span>
-        Zeigen Sie,
-        dass es in dieser Ordnung eine Antikette $X$ mit $X \approx \R$ gibt.
+        Zeigen Sie, dass es in dieser
+        Ordnung eine Antikette $X$ mit $X \approx \R$ gibt.
       </p>
     </div>
     <div class="well exercise out">
@@ -192,8 +212,7 @@
         <b>Übungsaufgabe 3.4.4</b>
         Zeigen Sie, dass es in $(2^\N, \subseteq)$ eine
         <i>Kette</i>
-        $X$ mit
-        $X \approx \R$ gibt.
+        $X$ mit $X \approx \R$ gibt.
       </p>
     </div>
   </div>

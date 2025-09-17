@@ -39,22 +39,23 @@
       <span class="sc">3-Colorability</span>
       und
       <span class="sc">CNF-Satisfiability</span>
-      sind in NP: gegeben
-      ein Graph $G$ und eine Färbung
-      <span class="nowrap">$c$,</span>
-      so können wir effizient feststellen,
-      ob $c$ eine gültige 3-Färbung von $G$ darstellt; gegeben eine CNF-Formel
-      $F$ und eine Belegung
+      sind
+      in NP: gegeben ein Graph $G$ und eine Färbung $c$ , so
+      können wir effizient feststellen, ob $c$ eine gültige
+      3-Färbung von $G$ darstellt; gegeben eine CNF-Formel $F$
+      und eine Belegung
       <span class="nowrap">$\alpha$,</span>
-      so können wir effizient überprüfen, ob
-      $F$ unter $\alpha$ zu
+      so können wir effizient
+      überprüfen, ob $F$ unter $\alpha$ zu
       <code>True</code>
-      auswertet. Können wir
+      auswertet.
+      Können wir
       <span class="sc">3-Colorability</span>
       und<span class="sc">CNF-Satisfiability</span>
-      auch effizient entscheiden? Sind sie in P?
-      Das ist (Stand: 2025) nicht bekannt. Was wir aber sagen können: entweder
-      sind beide effizient lösbar oder beide nicht. Sie sind gewissermaßen gleich
+      auch effizient entscheiden?
+      Sind sie in P? Das ist (Stand: 2025) nicht bekannt. Was
+      wir aber sagen können: entweder sind beide effizient
+      lösbar oder beide nicht. Sie sind gewissermaßen gleich
       schwer.
     </p>
     <div
@@ -73,18 +74,22 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir nehmen an, wir hätten einen effizienten AlgorithmUs `is_satisfiable(
+        Wir nehmen an, wir hätten einen effizienten
+        AlgorithmUs `is_satisfiable(
         <span class="nowrap">$F$)`.</span>
-        Wir verwenden diesen, um einen Algorithmus
+        Wir verwenden
+        diesen, um einen Algorithmus
         <code>is_3_colorable</code>
         zu
-        entwerfen. Sei nun $G = (V,E)$ ein Graph und $v_1, \dots, v_n$ seine Knoten.
-        Wir führen $3n$ Boolesche Variable ein:
-        <span class="nowrap">$r_1, \dots, r_n, g_1, \dots, g_n, b_1, \dots, b_n$.</span>
-        Die Intention hierbei
-        ist, dass $r_i$ anzeigt, ob $v_i$ rot ist und so weiter. Wir müssen jetzt
-        Klauseln erschaffen, die die Aussage "das ist eine gültige 3-Färbung" als
-        CNF-Formel codieren. Wir erschaffen folgende Klauseln:
+        entwerfen. Sei nun $G = (V,E)$ ein Graph und
+        $v_1, \dots, v_n$ seine Knoten. Wir führen $3n$
+        Boolesche Variable ein:
+        $r_1, \dots, r_n, g_1, \dots, g_n, b_1, \dots, b_n$ .
+        Die Intention hierbei ist, dass $r_i$ anzeigt, ob $v_i$
+        rot ist und so weiter. Wir müssen jetzt Klauseln
+        erschaffen, die die Aussage "das ist eine gültige
+        3-Färbung" als CNF-Formel codieren. Wir erschaffen
+        folgende Klauseln:
       </p>
       <div class="math-block">
         $$
@@ -98,12 +103,14 @@
       <p>
         Dies tun wir für jedes
         <span class="nowrap">$i$.</span>
-        Wir sehen nun: jede Belegung, die die obigen
-        Klauseln erfüllt, entspricht einer
-        <span class="nowrap">$3$-Färbung</span>
+        Wir sehen nun: jede
+        Belegung, die die obigen Klauseln erfüllt, entspricht
+        einer $3$ -Färbung
         <span class="nowrap">$c: V \rightarrow \{1,2,3\}$,</span>
-        und umgekehrt. Nun müssen wir die Aussage
-        <i>Kante $\{v_i,v_j\}$ ist gültig gefärbt</i>
+        und
+        umgekehrt. Nun müssen wir die Aussage
+        <i>Kante
+          $\{v_i,v_j\}$ ist gültig gefärbt</i>
         formulieren:
       </p>
       <div class="math-block">
@@ -136,8 +143,8 @@
       <p>
         Es gilt nun: $G$ ist genau dann
         <span class="nowrap">$3$-färbbar,</span>
-        wenn $F$ erfüllbar ist. Und
-        hier ist nun unser Code für
+        wenn $F$
+        erfüllbar ist. Und hier ist nun unser Code für
         <code>is_3_colorable:</code>
       </p>
 <pre class="listing">
@@ -149,39 +156,40 @@
       <p>
         Falls Ihnen eine Funktion
         <code>find_satisying_assignment</code>
-        zur Verfügung steht,
-        so können Sie natürlich die erfüllende Belegung direkt in eine gültige
-        3-Färbung übersetzen.
+        zur Verfügung steht, so können Sie natürlich die
+        erfüllende Belegung direkt in eine gültige 3-Färbung
+        übersetzen.
         <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Das ging recht schnell und direkt, weil die Aussagenlogik allgemein genug
-      ist, um Aussagen über endliche Objekte (hier: Graphen) effizient zu codieren.
+      Das ging recht schnell und direkt, weil die
+      Aussagenlogik allgemein genug ist, um Aussagen über
+      endliche Objekte (hier: Graphen) effizient zu codieren.
       Geht es auch andersrum? Wenn uns eine Funktion
       <code>is_3_colorable</code>
-      zur Verfügung
-      steht, können wir dann auch eine Funktion
+      zur Verfügung steht, können wir dann
+      auch eine Funktion
       <code>is_satisfiable</code>
-      schreiben? Wir
-      machen einen Zwischenschritt und schreiben mithilfe von
+      schreiben? Wir machen
+      einen Zwischenschritt und schreiben mithilfe von
       <code>is_3_colorable</code>
       einen effizienten Algorithmus für
       <span class="nowrap">$3$-SAT;</span>
       dies ist
       <span class="sc">CNF-Satisfiability</span>
-      mit der Einschränkung, dass $F$ eine
-      <span class="nowrap">$3$-CNF-Formel</span>
-      ist, dass also jede
-      Klausel nur drei Literale enthält. Beachten Sie, dass die Formel
+      mit der
+      Einschränkung, dass $F$ eine $3$ -CNF-Formel ist, dass
+      also jede Klausel nur drei Literale enthält. Beachten
+      Sie, dass die Formel
       <span class="nowrap">$F$,</span>
       die wir im Beweis von
       <a
         href="./9-5.html#_44_hgi_"
         class=""
       >Theorem 9.5.1</a>
-      erstellt haben, eine
-      solche 3-CNF ist.
+      erstellt haben, eine solche 3-CNF
+      ist.
     </p>
     <div
       id="_45_hgi_"
@@ -192,21 +200,25 @@
         <b>9.5.2</b>
         Falls
         <span class="sc">3-Colorability</span>
-        in P ist, dann auch<span class="sc">3-SAT</span>.
+        in P ist, dann
+        auch<span class="sc">3-SAT</span>.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir gehen konzeptuell ähnlich vor wie oben. Uns ist eine 3-CNF-Formel
-        $F$ gegeben. Wir müssen jetzt einen Graphen $G = (V,E)$ bauen, der die
-        Aussage
+        Wir gehen konzeptuell ähnlich vor wie oben.
+        Uns ist eine 3-CNF-Formel $F$ gegeben. Wir müssen
+        jetzt einen Graphen $G = (V,E)$ bauen, der die Aussage
         <span class="nowrap">_$F$</span>
-        ist erfüllbar_ irgendwie in seiner 3-Färbbarkeit oder eben
-        Nicht-3-Färbbarkeit codiert. Dies ist schwieriger. Als ersten Schritt legen
-        wir fest, dass die drei Farben nicht
+        ist erfüllbar_ irgendwie in seiner 3-Färbbarkeit
+        oder eben Nicht-3-Färbbarkeit codiert. Dies ist
+        schwieriger. Als ersten Schritt legen wir fest, dass
+        die drei Farben nicht
         <span class="nowrap">$1$,</span>
         <span class="nowrap">$2$,</span>
+      </p>
+      <p>
         $3$ sein sollen, sondern
         <code>True</code>,
         <code>False</code>,
@@ -291,17 +303,20 @@
         </div>
       </div>
       <p>
-        Wir wiederholen die beschriebene Konstruktion für jede Klausel in
+        Wir wiederholen die beschriebene Konstruktion für jede
+        Klausel in
         <span class="nowrap">$F$.</span>
         Wir erhalten einen Graphen
         <span class="nowrap">$G$,</span>
-        der genau dann
+        der
+        genau dann
         <span class="nowrap">$3$-färbbar</span>
-        ist, wenn
-        $F$ erfüllbar ist. Auch können wir direkt eine gültige
+        ist, wenn $F$ erfüllbar ist.
+        Auch können wir direkt eine gültige
         <span class="nowrap">$3$-Färbung</span>
         in
-        eine erfüllende Belegung übersetzen und umgekehrt. Hier ist also der Code:
+        eine erfüllende Belegung übersetzen und umgekehrt. Hier
+        ist also der Code:
       </p>
 <pre class="listing orange-comments">
 <span class="listing-bol"></span>def is_3CNF_satisfiable(the_3_cnf_formula):
@@ -316,8 +331,8 @@
     <p class="main-column">
       Wir haben also gezeigt, wie man eine
       <span class="nowrap">$3$-CNF</span>
-      $F$ in einen Graphen $G$
-      umwandelt, so dass
+      $F$ in
+      einen Graphen $G$ umwandelt, so dass
     </p>
     <div class="math-block main-column">
       $$
@@ -327,9 +342,9 @@
       $$
     </div>
     <p class="main-column">
-      gilt. Allerdings ging das nur unter der Annahme, dass $F$ eine
-      <span class="nowrap">$3$-CNF</span>
-      ist. Wie verhält es sich, wenn $F$ eine allgemeine CNF-Formel ist?
+      gilt. Allerdings ging das nur unter der Annahme, dass $F$
+      eine $3$ -CNF ist. Wie verhält es sich, wenn $F$ eine
+      allgemeine CNF-Formel ist?
     </p>
     <div
       id="_46_hgi_"
@@ -338,8 +353,9 @@
       <p>
         <b>Theorem</b>
         <b>9.5.3</b>
-        Es gibt einen effizienten Algorithmus, der als Input eine CNF-Formel
-        $F$ nimmt und eine 3-CNF-Formel $F'$ ausgibt, so dass gilt:
+        Es gibt einen effizienten Algorithmus, der als Input
+        eine CNF-Formel $F$ nimmt und eine 3-CNF-Formel $F'$
+        ausgibt, so dass gilt:
       </p>
       <div class="math-block">
         $$
@@ -349,20 +365,19 @@
         $$
       </div>
       <p>
-        Falls es einen effizienten Algorithmus für
-        <span class="nowrap">$3$-SAT</span>
-        gibt, dann also auch
-        einen für CNF-SAT.
+        Falls es einen effizienten Algorithmus für $3$ -SAT
+        gibt, dann also auch einen für CNF-SAT.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir starten mit $F_0 := F$ und definieren eine Folge
-        $F_0, F_1, \dots$ von CNF-Formeln. Sei $F_i$ die derzeit letzte erzeugte
-        CNF-Formel. Falls $F_i$ eine Klausel $C$ mit vier oder mehr Literalen
-        enthält, führen wir eine Operation durch, die $C$ durch zwei neue, kleinere
-        Klauseln ersetzt: sei
+        Wir starten mit $F_0 := F$ und definieren
+        eine Folge $F_0, F_1, \dots$ von CNF-Formeln. Sei $F_i$
+        die derzeit letzte erzeugte CNF-Formel. Falls $F_i$
+        eine Klausel $C$ mit vier oder mehr Literalen enthält,
+        führen wir eine Operation durch, die $C$ durch zwei
+        neue, kleinere Klauseln ersetzt: sei
       </p>
       <div class="math-block">
         $$
@@ -374,8 +389,9 @@
       <p>
         mit
         <span class="nowrap">$k \geq 4$.</span>
-        Wir führen eine neue, bisher nicht verwendete Variable
-        $z$ ein und erschaffen die Klauseln
+        Wir führen eine neue, bisher nicht
+        verwendete Variable $z$ ein und erschaffen die
+        Klauseln
       </p>
       <div class="math-block">
         $$
@@ -386,39 +402,47 @@
         $$
       </div>
       <p>
-        Wir entfernen nun $C$ und fügen $C_1$ und $C_2$ ein und erhalten eine
-        neue CNF-Formel
+        Wir entfernen nun $C$ und fügen $C_1$ und $C_2$ ein
+        und erhalten eine neue CNF-Formel
         <span class="nowrap">$F_{i+1}$.</span>
-        Wir sehen nun: wenn $\alpha$ die Formel
-        $F_{i+1}$ erfüllt, dann erfüllt sie auch
+        Wir sehen
+        nun: wenn $\alpha$ die Formel $F_{i+1}$ erfüllt, dann
+        erfüllt sie auch
         <span class="nowrap">$F_i$;</span>
         umgekehrt wenn die Belegung
-        $\beta$ die Formel $F_i$ erfüllt, dann erfüllt $\beta$ insbesondere
+        $\beta$ die Formel $F_i$ erfüllt, dann erfüllt $\beta$
+        insbesondere
         <span class="nowrap">$C$;</span>
-        wir bauen nun eine neue Belegung, die auch $z$ einen Wert zuweist
-        und dann $C_1$ und $C_2$ erfüllt: falls (1) $\beta$ die Klausel
+        wir bauen nun eine neue Belegung,
+        die auch $z$ einen Wert zuweist und dann $C_1$ und
+        $C_2$ erfüllt: falls (1) $\beta$ die Klausel
         $(u_1 \vee u_2)$ erfüllt, dann setzen wir $z$ auf
         <span class="nowrap">$1$,</span>
         also
         <span class="nowrap">$\alpha := \beta \cup [z \mapsto 1]$.</span>
-        Die Belegung $\alpha$ erfüllt nun
+        Die
+        Belegung $\alpha$ erfüllt nun
         <span class="nowrap">$C_1$,</span>
-        weil $\beta$ das bereits tut, und
+        weil $\beta$ das
+        bereits tut, und
         <span class="nowrap">$C_2$,</span>
-        weil $\alpha(z)=1$ ist;
-        falls jedoch (2) $\beta$ die Klausel $(u_1 \vee u_2)$ nicht erfüllt, dann
-        muss sie, da sie ja $C$ erfüllt, die Klausel
-        $(u_3 \vee \dots \vee u_k)$ erfüllen und erfüllt somit
+        weil $\alpha(z)=1$ ist; falls
+        jedoch (2) $\beta$ die Klausel $(u_1 \vee u_2)$ nicht
+        erfüllt, dann muss sie, da sie ja $C$ erfüllt, die
+        Klausel $(u_3 \vee \dots \vee u_k)$ erfüllen und
+        erfüllt somit
         <span class="nowrap">$C_2$,</span>
-        auch ohne
-        Verwendung von
+        auch ohne Verwendung von
         <span class="nowrap">$z$.</span>
-        Wir setzen nun $z$ auf
+        Wir
+        setzen nun $z$ auf
         <span class="nowrap">$0$,</span>
         also
-        $\alpha := \beta \cup [z \mapsto 0]$ und erfüllen sowohl $C_1$ als auch
+        $\alpha := \beta \cup [z \mapsto 0]$ und erfüllen
+        sowohl $C_1$ als auch
         <span class="nowrap">$C_2$.</span>
-        Alle anderen Klauseln sind sowieso erfüllt, weil $\beta$ sie bereits
+        Alle anderen Klauseln
+        sind sowieso erfüllt, weil $\beta$ sie bereits
         erfüllt. Wir sehen:
       </p>
       <div class="math-block">
@@ -429,17 +453,20 @@
         $$
       </div>
       <p>
-        Die beiden neuen Klauseln $C_1$ und $C_2$ sind jeweils echt kleiner als
+        Die beiden neuen Klauseln $C_1$ und $C_2$ sind jeweils
+        echt kleiner als
         <span class="nowrap">$C$.</span>
-        Der Prozess endet irgendwann mit einer Formel
+        Der Prozess endet irgendwann mit
+        einer Formel
         <span class="nowrap">$F_t$,</span>
-        in der jede
-        Klausel höchstens drei Literale hat. Dies ist unser
+        in der jede Klausel höchstens drei
+        Literale hat. Dies ist unser
         <span class="nowrap">$F'$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Wir haben nun also eine Kette von Implikationen erschaffen:
+      Wir haben nun also eine Kette von Implikationen
+      erschaffen:
     </p>
     <div class="main-column">
       <ul>
@@ -465,23 +492,24 @@
           <p>
             Wenn
             <span class="sc">3-SAT</span>
-            in P, dann auch<span class="sc">CNF-Satisfiability</span>(Theorem
+            in P, dann
+            auch<span class="sc">CNF-Satisfiability</span>(Theorem
             <a href="./9-5.html#_46_hgi_">9.5.3</a>).
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      Beachten Sie, dass alle Beweise eine ähnliche Form haben: um die Aussage
-      _wenn
+      Beachten Sie, dass alle Beweise eine ähnliche Form
+      haben: um die Aussage _wenn
       <span class="nowrap">$L_1 \in P$,</span>
       dann auch
       <span class="nowrap">$L_2 \in P$_</span>
       zu zeigen, nehmen wir eine beliebiges
       $x \in \Sigma_1$ (eine
       <span class="nowrap">$L_1$-Instanz)</span>
-      und wandeln es um in ein
-      $y \in \Sigma_2$ (eine
+      und wandeln es um
+      in ein $y \in \Sigma_2$ (eine
       <span class="nowrap">$L_2$-Instanz),</span>
       so dass
     </p>
@@ -493,9 +521,11 @@
       $$
     </div>
     <p class="main-column">
-      garantiert ist. Wenn es also einen effizienten Algorithmus
+      garantiert ist. Wenn es also einen effizienten
+      Algorithmus
       <code>is_in_L2</code>
-      gibt, dann können wir mit folgendem Code auch $L_1$ effizient entscheiden:
+      gibt, dann können wir mit
+      folgendem Code auch $L_1$ effizient entscheiden:
     </p>
     <div class="main-column">
 <pre class="listing">
@@ -506,20 +536,21 @@
     </div>
     <p class="main-column">
       Dies ist eine
-      <i>Reduktion</i>, wie wir sie schon in Definition
+      <i>Reduktion</i>, wie wir sie schon in
+      Definition
       <a href="./8-8.html#_35_hgi_">8.8.4</a>
-      kennengelernt haben, nun aber mit einer Aussage über die Laufzeit.
+      kennengelernt haben,
+      nun aber mit einer Aussage über die Laufzeit.
     </p>
     <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>9.5.4</b>
-        <b>(Polynomialzeitreduktion)</b>. Seien $L_1 \subseteq \Sigma_1^*$ und
-        $L_2 \subseteq \Sigma_2^*$ zwei Sprachen. Eine Funktion
-        $f: \Sigma_1^* \rightarrow \Sigma_2^*$ heißt _Polynomialzeitreduktion
-        von $L_1$ auf
-        <span class="nowrap">$L_2$_</span>
-        wenn
+        <b>(Polynomialzeitreduktion)</b>. Seien
+        $L_1 \subseteq \Sigma_1^*$ und
+        $L_2 \subseteq \Sigma_2^*$ zwei Sprachen. Eine
+        Funktion $f: \Sigma_1^* \rightarrow \Sigma_2^*$ heißt
+        _Polynomialzeitreduktion von $L_1$ auf $L_2$ _ wenn
       </p>
       <div class="math-block">
         $$
@@ -530,21 +561,23 @@
         $$
       </div>
       <p>
-        und $f$ in Zeit $\poly(n)$ berechnet werden kann. Wenn es also ein Polynom
-        $p: \N \rightarrow \N$ und eine Turingmaschine $M$ mit Eingabealphabet
-        $\Sigma_1$ und Ausgabealphabet $\Sigma_2$ gibt, die Laufzeit $p$ hat und
-        $f$ berechnet. Wir schreiben dann
+        und $f$ in Zeit $\poly(n)$ berechnet werden kann. Wenn
+        es also ein Polynom $p: \N \rightarrow \N$ und eine
+        Turingmaschine $M$ mit Eingabealphabet $\Sigma_1$ und
+        Ausgabealphabet $\Sigma_2$ gibt, die Laufzeit $p$ hat
+        und $f$ berechnet. Wir schreiben dann
         <span class="nowrap">$L_1 \leq_p L_2$.</span>
       </p>
     </div>
     <p class="main-column">
-      Wenn wir eine Reduktion von $L_1$ auf $L_2$ haben und einen effizienten
-      Algorithmus für
+      Wenn wir eine Reduktion von $L_1$ auf $L_2$ haben und
+      einen effizienten Algorithmus für
       <span class="nowrap">$L_2$,</span>
-      dann können wir wie in
+      dann können wir
+      wie in
       <code>is_in_L1(x)</code>
-      oben skizziert
-      $L_1$ effizient entscheiden. Formal:
+      oben skizziert $L_1$ effizient
+      entscheiden. Formal:
     </p>
     <div class="well statement out">
       <p>
@@ -552,12 +585,14 @@
         <b>9.5.5</b>
         Wenn $L_1 \leq_p L_2$ ist und
         <span class="nowrap">$L_2 \in {\rm P}$,</span>
-        dann auch
+        dann
+        auch
         <span class="nowrap">$L_1 \in {\rm P}$.</span>
       </p>
     </div>
     <p class="main-column">
-      Wir haben die folgenden Polynomialzeitreduktionen bereits kennengelernt:
+      Wir haben die folgenden Polynomialzeitreduktionen
+      bereits kennengelernt:
     </p>
     <div class="main-column">
       <ol>
@@ -580,10 +615,11 @@
     </div>
     <p class="main-column">
       Erinnern Sie sich an
-      <span class="sc">Independent Set</span>: gegeben ein Graph $G$ und
-      eine Zahl
+      <span class="sc">Independent Set</span>: gegeben ein
+      Graph $G$ und eine Zahl
       <span class="nowrap">$k$,</span>
-      gibt es eine unabhängige Menge $X \subseteq V$ mit
+      gibt es eine unabhängige
+      Menge $X \subseteq V$ mit
       <span class="nowrap">$|X| \geq k$?</span>
     </p>
     <div class="well statement out">
@@ -596,8 +632,9 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Gegeben sei eine 3-CNF-Formel $F$ mit $n$ Variablen und $m$
-        Klauseln. Wir bauen folgenden Graphen
+        Gegeben sei eine 3-CNF-Formel $F$ mit $n$
+        Variablen und $m$ Klauseln. Wir bauen folgenden
+        Graphen
         <span class="nowrap">$G$:</span>
       </p>
       <figure>
@@ -622,64 +659,68 @@
         $$
       </div>
       <p>
-        Falls $\alpha$ eine erfüllende Belegung von $F$ ist, dann gibt es folgende
-        unabhängige Menge der Größe
+        Falls $\alpha$ eine erfüllende Belegung von $F$ ist,
+        dann gibt es folgende unabhängige Menge der Größe
         <span class="nowrap">$k$:</span>
       </p>
       <ul>
         <li>
           <p>
-            Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls $\alpha(x)=1$ ist,
-            ansonsten
+            Für jede Variable $x$ nehmen wir $x$ in $I$ auf,
+            falls $\alpha(x)=1$ ist, ansonsten
             <span class="nowrap">$\bar{x}$.</span>
           </p>
         </li>
         <li>
           <p>
-            Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein erfülltes Literal,
-            sagen wir
+            Für jede Klausel $C = (u \vee v \vee w)$ gibt es
+            ein erfülltes Literal, sagen wir
             <span class="nowrap">$u$.</span>
-            Dieser entspricht dem Klauselknoten
+            Dieser
+            entspricht dem Klauselknoten
             <span class="nowrap">$u_C$,</span>
             der mit mit
-            dem Literalknoten $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
-            $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und wir können $u_C$ in
-            $I$ aufnehmen.
+            dem Literalknoten $\bar{u}$ verbunden. Da
+            $\alpha(u) = 1$ und $\alpha(\bar{u}) = 0$ ist, ist
+            $u \not \in I$ und wir können $u_C$ in $I$
+            aufnehmen.
           </p>
         </li>
         <li>
           <p>
-            Unsere Menge $I$ enthält $n$ Literalknoten und $m$ Klauselknoten, also
-            insgesamt $k$ Knoten.
+            Unsere Menge $I$ enthält $n$ Literalknoten und $m$
+            Klauselknoten, also insgesamt $k$ Knoten.
           </p>
         </li>
       </ul>
       <p>
-        Für die Gegenrichtung nehmen wir an, dass $I$ eine unabhängige Menge von
-        $G$ ist und $|I| = n+m$ gilt. Da $I$ pro Literalpaar und pro Klauseldreieck
-        höchstens einen Knoten enthalten kann, enthält $I$
+        Für die Gegenrichtung nehmen wir an, dass $I$ eine
+        unabhängige Menge von $G$ ist und $|I| = n+m$ gilt. Da
+        $I$ pro Literalpaar und pro Klauseldreieck höchstens
+        einen Knoten enthalten kann, enthält $I$
         <i>genau</i>
-        einen pro Literalpaar
-        und Klauseldreieck. Wir definieren nun eine Belegung $\alpha$ wie folgt:
-        wenn für eine Variable $x$ der Literalknoten $x$ in $I$ ist, setzen wir
+        einen
+        pro Literalpaar und Klauseldreieck. Wir definieren nun
+        eine Belegung $\alpha$ wie folgt: wenn für eine
+        Variable $x$ der Literalknoten $x$ in $I$ ist, setzen
+        wir
         <span class="nowrap">$\alpha(x)=1$;</span>
-        falls $\bar{x}$ in $I$ ist, setzen wir
+        falls $\bar{x}$ in $I$ ist, setzen
+        wir
         <span class="nowrap">$\alpha(x)=0$.</span>
-        Wir
-        behaupten nun, dass $\alpha$ die Formel $F$ erfüllt. Sei
-        $C= (u \vee v \vee w)$ eine beliebige Klausel von
+        Wir behaupten nun, dass $\alpha$
+        die Formel $F$ erfüllt. Sei $C= (u \vee v \vee w)$
+        eine beliebige Klausel von
         <span class="nowrap">$F$.</span>
         Nach obiger Überlegung
         enthält $I$ genau einen Klauselknoten von
         <span class="nowrap">$C$,</span>
-        sagen wir
-        <span class="nowrap">$u_C$.</span>
-        Das heißt
-        somit, dass der Literalknoten $\bar{u}$ nicht in $I$ ist - sonst wäre
-        $I$ ja nicht unabhängig. Somit muss $u \in I$ gelten und
+        sagen
+        wir $u_C$ . Das heißt somit, dass der Literalknoten
+        $\bar{u}$ nicht in $I$ ist - sonst wäre $I$ ja nicht
+        unabhängig. Somit muss $u \in I$ gelten und
         <span class="nowrap">$\alpha(u) = 1$,</span>
-        und $\alpha$ erfüllt
-        <span class="nowrap">$C$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        und $\alpha$ erfüllt $C$ .<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well statement out">
@@ -687,29 +728,26 @@
         <b>Übungsaufgabe</b>
         <b>9.5.7</b>
         Zeigen Sie
-        <span class="sc">Independent Set $\leq_p$ SAT</span>. Also: Gegeben einen Graphen
-        $G$ und eine Zahl
+        <span class="sc">Independent Set $\leq_p$ SAT</span>. Also:
+        Gegeben einen Graphen $G$ und eine Zahl
         <span class="nowrap">$k \in \N$,</span>
         zeigen Sie, wie man die Aussage
         <span class="nowrap">_$G$</span>
-        hat
-        eine unabhängige Menge der Größe
-        <span class="nowrap">$k$_</span>
-        als aussagenlogische Formel in CNF
-        darstellen kann.
+        hat eine
+        unabhängige Menge der Größe $k$ _ als aussagenlogische
+        Formel in CNF darstellen kann.
         <b>Hinweis:</b>
         Die Aussage
         <span class="nowrap">_"$I$</span>
-        ist eine unabhängige Menge
-        von
+        ist eine unabhängige Menge von
         <span class="nowrap">$G$_</span>
-        ist leicht darzustellen als CNF-Formeln. Die Aussage
-        <span class="nowrap">_"$I$</span>
-        hat
-        Größe
-        <span class="nowrap">$k$"_</span>
-        ist schwieriger. Sie müssen quasi
-        <i>zählen</i>.
+        ist leicht
+        darzustellen als CNF-Formeln. Die Aussage
+        <i>" $I$ hat
+          Größe
+          <span class="nowrap">$k$"_</span>
+          ist schwieriger. Sie müssen quasi
+        </i>zählen_.
       </p>
     </div>
     <h2 class="main-column">
@@ -719,12 +757,12 @@
     <p class="main-column">
       Sei $G = (V,E)$ ein Graph. Ein
       <i>Hamiltonscher Kreis</i>
-      ist ein Kreis, der
-      durch alle Knoten geht. Es muss ein
+      ist
+      ein Kreis, der durch alle Knoten geht. Es muss ein
       <i>Kreis</i>
-      sein; Kantenzüge, die einen
-      Knoten mehrmals durchlaufen, sind also nicht erlaubt. Hier sehen Sie einen
-      Graphen mit Hamiltonschem Kreis:
+      sein; Kantenzüge, die einen Knoten mehrmals
+      durchlaufen, sind also nicht erlaubt. Hier sehen Sie
+      einen Graphen mit Hamiltonschem Kreis:
     </p>
     <div class="carousel__container main-column">
       <div class="carousel">
@@ -747,10 +785,11 @@
     <p class="main-column">
       Ein
       <i>Hamiltonscher Pfad</i>
-      ist ein Pfad mit $|V|$ Knoten. Auch hier gilt:
-      kein Knoten darf mehrfach besucht werden. Der untere Graph, der
-      <i>Petersen-Graph</i>,
-      hat keinen Hamiltonschen Kreis, dafür aber einen Hamiltonschen Pfad:
+      ist ein Pfad mit $|V|$ Knoten.
+      Auch hier gilt: kein Knoten darf mehrfach besucht werden.
+      Der untere Graph, der
+      <i>Petersen-Graph</i>, hat keinen
+      Hamiltonschen Kreis, dafür aber einen Hamiltonschen Pfad:
     </p>
     <figure class="main-column">
       <img
@@ -761,7 +800,8 @@
       >
     </figure>
     <p class="main-column">
-      Wir definieren nun die zwei entsprechenden Entscheidungsprobleme:
+      Wir definieren nun die zwei entsprechenden
+      Entscheidungsprobleme:
     </p>
     <div class="well statement out">
       <p>
@@ -770,10 +810,10 @@
         <span class="sc">(Hamilton Cycle).</span>
         Gegeben ein Graph
         <span class="nowrap">$G=(V,E)$,</span>
-        gibt es in $G$ einen
-        Kreis der Länge
+        gibt es in $G$ einen Kreis der Länge
         <span class="nowrap">$|V|$,</span>
-        der also durch alle Knoten geht?
+        der also
+        durch alle Knoten geht?
       </p>
     </div>
     <div class="well statement out">
@@ -781,12 +821,11 @@
         <b>Problem</b>
         <b>9.5.9</b>
         <span class="sc">(Hamilton Path).</span>
-        Gegeben ein Graph
-        <span class="nowrap">$G=(V,E)$,</span>
-        gibt es in $G$ einen
-        Pfad der Länge
+        Gegeben ein Graph $G=(V,E)$ ,
+        gibt es in $G$ einen Pfad der Länge
         <span class="nowrap">$|V|-1$,</span>
-        der also alle $|V|$ Knoten enthält?
+        der also
+        alle $|V|$ Knoten enthält?
       </p>
     </div>
     <div class="well statement out">
@@ -799,39 +838,41 @@
     <div class="well highlight out">
       <p>
         <b>(Falscher) Beweis.</b>
-        Tasten wir uns langsam heran. Wir stellen uns vor,
-        eine Bibliotheksfunktion
+        Tasten wir uns langsam heran. Wir
+        stellen uns vor, eine Bibliotheksfunktion
         <code>has_hamilton_path(G)</code>
         zu haben und wollen mithilfe
         dieser eine neue Funktion
         <code>has_hamilton_cycle(G)</code>
-        schreiben. Sei $u$ ein
-        beliebiger Knoten. Wir wissen: wenn $G$ einen Hamiltonschen Kreis hat,
-        dann besucht dieser auch $u$ und im Anschluss einen Nachbarnknoten
+        schreiben. Sei $u$ ein beliebiger Knoten. Wir wissen:
+        wenn $G$ einen Hamiltonschen Kreis hat, dann besucht
+        dieser auch $u$ und im Anschluss einen Nachbarnknoten
         <span class="nowrap">$v$,</span>
         also mit
         <span class="nowrap">$\{u,v\} \in E$.</span>
         Der Graph
         <span class="nowrap">$G' := G - \{u,v\}$,</span>
-        in welchem wir
-        diese Kante löschen, besitzt somit einen Hamiltonschen Pfad. Allerdings
-        kann es sein, dass $G'$ sowieso einen Hamiltonschen Pfad besitzt, der
-        allerdings nicht $u$ und $v$ als Endknoten hat, so dass er sich mit
-        $\{u,v\}$ nicht zu einem Hamiltonschen Kreis schließt. Wir müssen irgendwie
-        die Frage beantworten können: besitzt $G'$ einen Hamiltonschen Pfad, der
-        $u$ und $v$ als Start- bzw. Endknoten hat? Dies ist einfach: wir können
-        neue Knoten $s$ und $t$ und die Kanten $\{s,u\}$ und $\{t,v\}$ einführen.
-        Da $s$ und $t$ nun Grad $1$ haben, muss ein Hamiltonscher Pfad, wenn er
-        denn existiert, $u$ und $v$ als Endknoten haben. Sei also
+        in welchem wir diese Kante
+        löschen, besitzt somit einen Hamiltonschen Pfad.
+        Allerdings kann es sein, dass $G'$ sowieso einen
+        Hamiltonschen Pfad besitzt, der allerdings nicht $u$
+        und $v$ als Endknoten hat, so dass er sich mit
+        $\{u,v\}$ nicht zu einem Hamiltonschen Kreis schließt.
+        Wir müssen irgendwie die Frage beantworten können:
+        besitzt $G'$ einen Hamiltonschen Pfad, der $u$ und $v$
+        als Start- bzw. Endknoten hat? Dies ist einfach: wir
+        können neue Knoten $s$ und $t$ und die Kanten $\{s,u\}$
+        und $\{t,v\}$ einführen. Da $s$ und $t$ nun Grad $1$
+        haben, muss ein Hamiltonscher Pfad, wenn er denn
+        existiert, $u$ und $v$ als Endknoten haben. Sei also
         <span class="nowrap">$G'' := G' + \{s,u\} + \{t,v\}$.</span>
       </p>
       <div class="well container-fluid subtheorem">
         <p>
           <b>Beobachtung:</b>
-          $G$ hat genau dann einen Hamiltonschen Kreis durch die
-          Kante
-          <span class="nowrap">$\{u,v\}$,</span>
-          wenn $G''$ einen Hamiltonschen Pfad hat.
+          $G$ hat genau dann einen
+          Hamiltonschen Kreis durch die Kante $\{u,v\}$ , wenn
+          $G''$ einen Hamiltonschen Pfad hat.
         </p>
       </div>
       <div class="carousel__container">
@@ -853,9 +894,9 @@
         </div>
       </div>
       <p>
-        Woher wollen wir allerdings wissen, ob der Kreis in $G$ (wenn es ihn denn
-        gibt) überhaupt durch $\{u,v\}$ geht? Vielleicht gibt es ja einen, aber
-        keinen durch
+        Woher wollen wir allerdings wissen, ob der Kreis in $G$
+        (wenn es ihn denn gibt) überhaupt durch $\{u,v\}$
+        geht? Vielleicht gibt es ja einen, aber keinen durch
         <span class="nowrap">$\{u,v\}$,</span>
         so dass dann `has<i>hamilton</i>path(
         <span class="nowrap">$G''$)`</span>
@@ -863,12 +904,12 @@
         <code>False</code>
         antwortet, obwohl wir gerne ein
         <code>True</code>
-        hätten. Um das zu verhindern, können
-        wir ja
+        hätten. Um das zu verhindern, können wir ja
         <i>alle</i>
-        Nachbarn von $u$ durchprobieren. Wenn einer klappt, dann
-        haben wir unseren Kreis; wenn es überhaupt einen Kreis gibt, dann klappt
-        es auch mit einem Nachbarn (in der Tat: sogar mit zweien).
+        Nachbarn von $u$ durchprobieren. Wenn einer klappt,
+        dann haben wir unseren Kreis; wenn es überhaupt einen
+        Kreis gibt, dann klappt es auch mit einem Nachbarn (in
+        der Tat: sogar mit zweien).
       </p>
 <pre class="listing">
 <span class="listing-bol"></span>def has_hamilton_cycle(G):
@@ -882,42 +923,46 @@
       <p>
         Falls nun
         <code>has_hamilton_path</code>
-        polynomielle Laufzeit $O(n^k)$ hat, so hat
+        polynomielle Laufzeit
+        $O(n^k)$ hat, so hat
         <code>has_hamilton_cycle</code>
-        eine Laufzeit von
+        eine
+        Laufzeit von
         <span class="nowrap">$O(n^{k+1})$,</span>
         auch polynomiell.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Was ist nun an diesem Beweis falsch? Nun, der Begriff der Reduktion, dem
-      wir uns ja mit der Notation $\leq_p$ verpflichten, verlangt, dass wir
-      auf Eingabe $G$
+      Was ist nun an diesem Beweis falsch? Nun, der Begriff
+      der Reduktion, dem wir uns ja mit der Notation $\leq_p$
+      verpflichten, verlangt, dass wir auf Eingabe $G$
       <i>einen</i>
-      Graphen $G'$ bauen, mit der Eigenschaft, dass
-      $G$ genau dann einen Hamiltonschen Kreis hat, wenn $G'$ einen Hamiltonschen
-      Pfad hat. Uns steht also genau
+      Graphen $G'$ bauen, mit der Eigenschaft, dass $G$ genau
+      dann einen Hamiltonschen Kreis hat, wenn $G'$ einen
+      Hamiltonschen Pfad hat. Uns steht also genau
       <i>ein</i>
-      Aufruf von
+      Aufruf
+      von
       <code>has_hamilton_path</code>
-      zu.
-      Aber ganz wertlos ist der obige Beweis dennoch nicht, zeigt er doch, dass,
-      falls
+      zu. Aber ganz wertlos ist der
+      obige Beweis dennoch nicht, zeigt er doch, dass, falls
       <span class="sc">Hamilton Path $\in$ P</span>
       ist, dann auch
-      <span class="sc">Hamilton Cycle $\in$
-        P</span>. Der Fachbegriff für das, was unsere obige Funktion
+      <span class="sc">Hamilton
+        Cycle $\in$ P</span>. Der Fachbegriff für das, was unsere
+      obige Funktion
       <code>has_hamilton_cycle</code>
       tut, nennt sich
       <i>Cook-Reduktion</i>, nach Stephen Cook, einem der Väter der
-      Klasse NP. Eine Reduktion, die dem strengen Reduktionsbegriff folgt, also
+      Klasse NP. Eine Reduktion, die dem strengen
+      Reduktionsbegriff folgt, also
       <span
         class="reference"
         data-ref="definition-polynomial-reduction"
       ></span>, nennt man in Abgrenzung dazu
       <i>Karp-Reduktion</i>
-      nach Richard Karp, ein
-      weiterer NP-Vater.
+      nach
+      Richard Karp, ein weiterer NP-Vater.
     </p>
     <div class="well statement out">
       <p>
@@ -934,8 +979,9 @@
         <b>Übungsaufgabe</b>
         <b>9.5.12</b>
         Zeigen Sie
-        <span class="sc">Hamilton Path $\leq_p$ Hamilton Cycle</span>. Wenn es Ihnen
-        einfacher scheint, geben Sie erst einmal eine Cook-Reduktion.
+        <span class="sc">Hamilton Path $\leq_p$ Hamilton
+          Cycle</span>. Wenn es Ihnen einfacher scheint, geben Sie
+        erst einmal eine Cook-Reduktion.
       </p>
     </div>
   </div>

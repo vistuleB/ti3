@@ -37,23 +37,26 @@
     </div>
     <div class="well alert-info out main-column">
       <p>
-        Den vollständigen Quelltext, den wir in der Vorlesung geschrieben haben,
-        finden Sie in der Datei
+        Den vollständigen Quelltext, den wir in der Vorlesung
+        geschrieben haben, finden Sie in der Datei
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/code/parsing/arithmetic-in-class/ArithmeticGrammar.java">ArithmeticGrammar.java</a>.
       </p>
     </div>
     <p class="main-column">
-      Ich möchte nun eine kontextfreie Grammatik für arithmetische Ausdrücke
-      der Form
+      Ich möchte nun eine kontextfreie Grammatik für
+      arithmetische Ausdrücke der Form
       <code>((31+402)*83)</code>
-      entwerfen. Der Einfachheit halber bestehe ich
-      auf strenger Klammerung, so wäre
+      entwerfen. Der Einfachheit halber bestehe ich auf
+      strenger Klammerung, so wäre
       <code>(2*(1+2+3))</code>
-      zum Beispiel nicht erlaubt.
-      Unsere Grammatik soll allgemeine Dezimalzahlen darstellen können. Das Alphabet
-      ist somit
-      <span class="nowrap">$\Sigma = \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4}, \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
-        \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$.</span>
+      zum Beispiel
+      nicht erlaubt. Unsere Grammatik soll allgemeine
+      Dezimalzahlen darstellen können. Das Alphabet ist somit
+      $\Sigma =
+      \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
+      \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
+      \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$
+      .
       Die Produktionsregeln sind:
     </p>
     <div class="math-block main-column">
@@ -70,12 +73,12 @@
       $$
     </div>
     <p class="main-column">
-      Die Nichtterminale sind also $E$ (Expression), $N$ (Number) und $D$ (Digit).
-      Wir haben auch den einzelnen Produktionen Namen gegeben, bis auf die der
-      Form
+      Die Nichtterminale sind also $E$ (Expression), $N$
+      (Number) und $D$ (Digit). Wir haben auch den einzelnen
+      Produktionen Namen gegeben, bis auf die der Form
       <span class="nowrap">$D \rightarrow i$.</span>
-      Was soll nun unser Parser tun? Er soll, gegeben
-      ein Eingabewort
+      Was soll nun unser Parser tun? Er
+      soll, gegeben ein Eingabewort
       <span class="nowrap">$w \in L$,</span>
       den
       <i>Ableitungsbaum</i>
@@ -92,24 +95,27 @@
       >
     </figure>
     <p class="main-column">
-      Wie wir diesen Baum in Java repräsentieren, darüber sprechen wir in einer
-      Minute. Zuerst aber: wir wollen mit diesem Baum etwas Sinnvolles tun. Zum
-      Beispiel
-      <i>auswerten</i>, so dass am Ende eine Zahl rauskommt, im obigen Beispiel
-      also
+      Wie wir diesen Baum in Java repräsentieren, darüber
+      sprechen wir in einer Minute. Zuerst aber: wir wollen mit
+      diesem Baum etwas Sinnvolles tun. Zum Beispiel
+      <i>auswerten</i>, so dass am Ende eine Zahl rauskommt, im
+      obigen Beispiel also
       <span class="nowrap">$(31 + 402) \cdot 83 = 35939$.</span>
-      Oder den Ausdruck umformen von Infix-Notation
-      zu Präfixnotation, also<code>(* (+ 31 402) 83)</code>. All dies wird sehr einfach
-      sein, sobald wir den Ableitungsbaum als Datenstruktur vorliegen haben.
+      Oder
+      den Ausdruck umformen von Infix-Notation zu
+      Präfixnotation, also<code>(* (+ 31 402) 83)</code>. All dies wird
+      sehr einfach sein, sobald wir den Ableitungsbaum als
+      Datenstruktur vorliegen haben.
     </p>
     <h1 class="main-column">
       Eine Datenstruktur für Ableitungsbäume
     </h1>
     <p class="main-column">
-      Für meine Implementierung in Java erschaffe ich für jedes Nichtterminal
-      $X$ ein Interface und für jede Produktionsregel $X \rightarrow \alpha$
-      eine Klasse, die das Interface $X$ implementiert und $\alpha$ als Klassenvariable
-      enthält.
+      Für meine Implementierung in Java erschaffe ich für
+      jedes Nichtterminal $X$ ein Interface und für jede
+      Produktionsregel $X \rightarrow \alpha$ eine Klasse, die
+      das Interface $X$ implementiert und $\alpha$ als
+      Klassenvariable enthält.
     </p>
     <div class="main-column">
       <ul>
@@ -122,7 +128,8 @@
             <li>
               <p>
                 <code>class Sum</code>, die als Klassenvariable
-                <code>Exrepssion e1, e2</code>
+                <code>Exrepssion
+                  e1, e2</code>
                 enthält,
               </p>
             </li>
@@ -135,7 +142,8 @@
             </li>
             <li>
               <p>
-                <code>class JustNumber</code>, die als Klassenvariable nur eine
+                <code>class JustNumber</code>, die als Klassenvariable nur
+                eine
                 <code>Number number</code>enthält;
               </p>
             </li>
@@ -149,7 +157,8 @@
           <ul>
             <li>
               <p>
-                <code>class MultiDigitNumber</code>, die als Klassenvariable eine<code>Number</code>
+                <code>class MultiDigitNumber</code>, die als
+                Klassenvariable eine<code>Number</code>
                 und eine
                 <code>Digit</code>
                 erhält und
@@ -157,7 +166,8 @@
             </li>
             <li>
               <p>
-                <code>class SingleDigitNumber</code>, die als Klassenvariable ein
+                <code>class SingleDigitNumber</code>, die als
+                Klassenvariable ein
                 <code>Digit</code>enthält;
               </p>
             </li>
@@ -166,23 +176,26 @@
         <li>
           <p>
             <code>interface Digit</code>
-            wird implementiert von<code>class DigitOne</code>,`class DigitTwo<code>,`class
-              DigitThree</code>,`class DigitFour<code>,`class DigitFive</code>,`class DigitSix<code>,`class
+            wird implementiert von<code>class
+              DigitOne</code>,`class DigitTwo<code>,`class DigitThree</code>,`class
+            DigitFour<code>,`class DigitFive</code>,`class DigitSix<code>,`class
               DigitSeven</code>,`class DigitEight` und<code>class DigitNine</code>.
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      In unserem Anwendungsfall hat jedes Interface eine Methode<code>public int
-        toInt()</code>. Interface
+      In unserem Anwendungsfall hat jedes Interface eine
+      Methode<code>public int toInt()</code>. Interface
       <code>Expression</code>
-      hat zusätzlich noch die Methode
-      <code>String
-        toPrefixNotation()</code>. Ich schreibe auch ein Über-Interface
-      <code>ParseObject</code>,
-      das alle Interfaces zusammenfasst. Um uns das Debugging zu erleichtern,
-      überschreibe ich in jeder Klasse die Methode<code>public String toString()</code>.
+      hat
+      zusätzlich noch die Methode
+      <code>String toPrefixNotation()</code>.
+      Ich schreibe auch ein Über-Interface
+      <code>ParseObject</code>, das
+      alle Interfaces zusammenfasst. Um uns das Debugging zu
+      erleichtern, überschreibe ich in jeder Klasse die
+      Methode<code>public String toString()</code>.
     </p>
   </div>
 </body>
