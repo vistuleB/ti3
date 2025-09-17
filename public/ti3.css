@@ -358,7 +358,8 @@ figure.main-column img.constrained,
 }
 
 .transition-all {
-    transition-property: all;
+    will-change: max-width, width;
+    transition-property: max-width, width;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 500ms;
 }

@@ -90,6 +90,18 @@ const setCarouselArrowSize = (value) => {
   root.style.setProperty("--carousel-arrow-size", cssValue);
 };
 
+const setImgHeightToAuto = () => {
+  const images = document.querySelectorAll(
+    "figure.main-column img, .well figure img",
+  );
+
+  images.forEach((img) => {
+    if (img.style.height) {
+      img.style.height = "auto";
+    }
+  });
+};
+
 const add_line_number_to_numbered_pre = () => {
   document.querySelectorAll("pre.numbered-pre").forEach((pre) => {
     const lines = pre.textContent.split("\n");
@@ -447,11 +459,21 @@ const adjustMathAlignment = () => {
 };
 
 const onImgClick = (e) => {
+  const screenWidth = window.innerWidth;
   const image = e.srcElement;
   if (image.classList.contains("constrained")) {
     image.classList.remove("constrained");
+    if (image.naturalWidth < WELL_100VW_MAX_WIDTH) {
+      image.style.width = "150%";
+      image.style.maxWidth = "150%";
+    } else {
+      image.style.width = image.naturalWidth + "px";
+      image.style.maxWidth = image.naturalWidth + "px";
+    }
   } else {
     image.classList.add("constrained");
+    image.style.width = "100%";
+    image.style.maxWidth = "100%";
   }
 };
 
@@ -511,6 +533,7 @@ const onResize = () => {
   setMainColumnWidth(computeMainColumnWidth());
   setOuterWellWidth(computeOuterWellWidth());
   setCarouselArrowSize(computeCarouselArrowSize());
+  onMobile(() => setImgHeightToAuto());
   setTimeout(adjustMathAlignment, 60);
 };
 
