@@ -169,10 +169,30 @@ class Carousel {
       return lastBtn;
     })();
 
+    this.indexCounter = (() => {
+      const indexCounter = document.createElement("span");
+      indexCounter.textContent = `${this.currentCarouselItem + 1}`;
+      return indexCounter;
+    })();
+
     this.progressCounter = (() => {
-      const container = document.createElement("span");
+      const container = document.createElement("div");
       container.className = "carousel__progress-counter";
-      container.textContent = `${this.currentCarouselItem + 1} / ${this.totalCarouselItems + 1}`;
+      const slash = (() => {
+        const slash = document.createElement("span");
+        slash.textContent = "/";
+        return slash;
+      })();
+      const totalSlides = (() => {
+        const totalSlides = document.createElement("span");
+        totalSlides.textContent = `${this.totalCarouselItems + 1}`;
+        return totalSlides;
+      })();
+
+      container.appendChild(this.indexCounter);
+      container.appendChild(slash);
+      container.appendChild(totalSlides);
+
       return container;
     })();
 
@@ -281,8 +301,8 @@ class Carousel {
       }
     });
 
-    if (this.progressCounter) {
-      this.progressCounter.textContent = `${this.currentCarouselItem + 1} / ${this.totalCarouselItems + 1}`;
+    if (this.indexCounter) {
+      this.indexCounter.textContent = `${this.currentCarouselItem + 1}`;
     }
 
     this.updateIndicators();

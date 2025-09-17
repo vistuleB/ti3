@@ -394,13 +394,23 @@ figure.main-column img.constrained,
 }
 
 .carousel__progress-counter {
-    width: 100px;
+    width: 4em;
     text-align: center;
     font-size: var(--progress-counter-font-size);
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    transform: translate(0em, 0.05em);
+}
+
+.carousel__progress-counter > span {
+    display: inline-block;
+}
+
+.carousel__progress-counter > span:first-child,
+.carousel__progress-counter > span:last-child {
+    width: 1.8em;
 }
 
 .carousel__nav-button {
