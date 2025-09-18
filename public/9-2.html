@@ -37,12 +37,11 @@
     </div>
     <p class="main-column">
       Sei $L \subseteq \{0,1\}^*$ eine Sprache und $M$ eine
-      Turing-Maschine, die $L$ in Zeit $t(n)$ entscheidet. Das
-      heißt, für jedes $x \in \{0,1\}^*$ erreicht $M$ nach
-      maximal $t(|x|)$ Schritten einen Endzustand, und
-      $M(x) = \texttt{accept}$ genau dann, wenn $x \in L$ ist.
-      Für jedes $n \in \N$ sei $f_{L,n}$ die Boolesche
-      Funktion
+      Turing-Maschine, die $L$ in Zeit $t(n)$ entscheidet. Das heißt,
+      für jedes $x \in \{0,1\}^*$ erreicht $M$ nach maximal $t(|x|)$
+      Schritten einen Endzustand, und $M(x) = \texttt{accept}$ genau
+      dann, wenn $x \in L$ ist. Für jedes $n \in \N$ sei $f_{L,n}$ die
+      Boolesche Funktion
     </p>
     <div class="math-block main-column">
       $$
@@ -53,19 +52,18 @@
       $$
     </div>
     <p class="main-column">
-      Also $f(x)=1$ falls $M$ die Eingabe $x$ akzeptiert und
-      $f(x)=0$ falls $M$ die Eingabe ablehnt (falls $L$ und $n$
-      aus dem Kontext hervorgehen, schreiben wir einfach
+      Also $f(x)=1$ falls $M$ die Eingabe $x$ akzeptiert und $f(x)=0$
+      falls $M$ die Eingabe ablehnt (falls $L$ und $n$ aus dem Kontext
+      hervorgehen, schreiben wir einfach
       <span class="nowrap">$f$).</span>
     </p>
     <div class="well statement out">
       <p>
         <b>Theorem</b>
         <b>9.2.1</b>
-        Wenn $L$ in Zeit $t(n)$ entscheidbar ist und
-        $t(n) \geq n$ gilt, dann gibt es einen Booleschen
-        Schaltkreis $C$ mit $O(t(n)^2)$ Gates, der $f_{L,n}$
-        berechnet.
+        Wenn $L$ in Zeit $t(n)$ entscheidbar ist und $t(n) \geq n$ gilt,
+        dann gibt es einen Booleschen Schaltkreis $C$ mit $O(t(n)^2)$
+        Gates, der $f_{L,n}$ berechnet.
       </p>
     </div>
     <div class="well highlight out">
@@ -75,53 +73,47 @@
         <span class="nowrap">$k$-Band-Turingmaschine</span>
         <span class="nowrap">$M$,</span>
         die $L$
-        entscheidet, macht auf Eingabe $x$ höchstens
-        $T = t(|x|)$ Schritte. Es gibt also einen Bereich von
-        insgesamt $2Tk$ Zellen
+        entscheidet, macht auf Eingabe $x$ höchstens $T = t(|x|)$
+        Schritte. Es gibt also einen Bereich von insgesamt $2Tk$ Zellen
         <span class="nowrap">($2t$</span>
-        pro Band), den sie nie
-        verlässt. Das heißt, jede Konfiguration besteht aus
-        $O(t)$ Zeichen. Die Funktion
+        pro Band), den sie nie verlässt. Das heißt, jede
+        Konfiguration besteht aus $O(t)$ Zeichen. Die Funktion
         <span class="nowrap">$\hat{\delta}_M$,</span>
-        die für
-        jede Konfiguration $C$ die Nachfolgekonfiguration
-        $C' := \hat{\delta}_M(C)$ berechnet, ist sehr lokal
-        und sehr einfach; die
+        die für jede Konfiguration $C$ die
+        Nachfolgekonfiguration $C' := \hat{\delta}_M(C)$ berechnet, ist
+        sehr lokal und sehr einfach; die
         <span class="nowrap">$i$-te</span>
         Stelle von Konfiguration
         $C$ hat nur auf die Stellen
         <span class="nowrap">$i-2$,</span>
         <span class="nowrap">$i-1$,</span>
-        $i$ und $i+1$
-        von $C'$ Einfluss. Somit können wir bei geeigneter
-        binärer Codierung einen effizienten Schaltkreis bauen,
-        der $\hat{\delta}_{M}$ berechnet. Da wir wissen, dass
-        $M$ höchstens $T$ Schritte macht, wissen wir, dass
-        $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt; wir
-        können nun einfach $T$ Schaltkreise
-        hintereinanderschalten, um $\hat{\delta}^*(x)$ und
-        somit die Endkonfiguration zu berechnen; mit einem
-        weiteren einfachen Schaltkreis können wir nun den
-        erreichten Endzustand auslesen und entsprechen 0 oder 1
-        ausgeben.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        $i$ und $i+1$ von $C'$
+        Einfluss. Somit können wir bei geeigneter binärer Codierung einen
+        effizienten Schaltkreis bauen, der $\hat{\delta}_{M}$ berechnet.
+        Da wir wissen, dass $M$ höchstens $T$ Schritte macht, wissen
+        wir, dass $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt; wir
+        können nun einfach $T$ Schaltkreise hintereinanderschalten, um
+        $\hat{\delta}^*(x)$ und somit die Endkonfiguration zu berechnen;
+        mit einem weiteren einfachen Schaltkreis können wir nun den
+        erreichten Endzustand auslesen und entsprechen 0 oder 1 ausgeben.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir zeigen den Beweis schematisch anhand von
-        $1$ -Band-Turingmaschinen. Für $k$ -Bandmaschinen geht
-        es fast genau so. Erinnern Sie sich an die Definition
-        der
+        Wir zeigen den Beweis schematisch anhand von $1$
+        -Band-Turingmaschinen. Für $k$ -Bandmaschinen geht es fast genau
+        so. Erinnern Sie sich an die Definition der
         <i>Konfiguration</i>
-        einer Turing-Maschine (<span
+        einer
+        Turing-Maschine (<span
           class="reference"
           data-ref="def-TM-configuration"
         ></span>). Formal war das ein Wort
         <span class="nowrap">$C \in \Gamma^* \times Q \times \Gamma^*$.</span>
-        Ich zeige
-        hier schematisch, wie aus einer Konfiguration per
-        $\hat{\delta}$ die Folgekonfiguration wird:
+        Ich zeige hier
+        schematisch, wie aus einer Konfiguration per $\hat{\delta}$ die
+        Folgekonfiguration wird:
       </p>
       <figure>
         <img
@@ -132,48 +124,45 @@
         >
       </figure>
       <p>
-        Wenn also das Kopfsymbol an Stelle $i$ der
-        Konfiguration steht, dann können sich in der
-        Folgekonfiguration nur die Stellen
+        Wenn also das Kopfsymbol an Stelle $i$ der Konfiguration steht,
+        dann können sich in der Folgekonfiguration nur die Stellen
         <span class="nowrap">$i-1$,</span>
-        $i$ und $i+1$
-        ändern. Allerdings hat bei einer Linksbewegung das
+        $i$ und $i+1$ ändern. Allerdings hat bei einer Linksbewegung das
         gelesene Zeichen (an Stelle
         <span class="nowrap">$i+1$)</span>
-        auch Einfluss auf
-        den zukünftigen Inhalt von Zelle
+        auch Einfluss auf den
+        zukünftigen Inhalt von Zelle
         <span class="nowrap">$i-1$;</span>
-        Zelle $j$ kann
-        also Zellen $j-2, j-1, j, j+1$ im nächsten Schritt
-        beeinflussen. Lege wir zuerst eine globale Indizierung
-        der Stellen der Konfiguration fest. Der
-        Schreib-Lese-Kopf startet an Zelle $0$ des Bandes; das
+        Zelle $j$ kann also Zellen
+        $j-2, j-1, j, j+1$ im nächsten Schritt beeinflussen. Lege wir
+        zuerst eine globale Indizierung der Stellen der Konfiguration
+        fest. Der Schreib-Lese-Kopf startet an Zelle $0$ des Bandes; das
         Eingabewort belegt also die Zellen
         <span class="nowrap">$0, 1, \dots, n-1$.</span>
-        Da die Turingmaschine maximal $T$ Schritte läuft, ist
-        der Kopf immer auf einer Zelle in
+        Da die
+        Turingmaschine maximal $T$ Schritte läuft, ist der Kopf immer
+        auf einer Zelle in
         <span class="nowrap">$\{-T, \dots, T\}$.</span>
-        Wir können also jede Konfiguration mit $2T+1$ Zeichen
-        darstellen - nein, mit $S := 2T+2$ Zeichen, da der
-        Kopf selbst ja auch eine Stelle der Konfiguration
-        belegt. Somit ist also
+        Wir können also jede
+        Konfiguration mit $2T+1$ Zeichen darstellen - nein, mit
+        $S := 2T+2$ Zeichen, da der Kopf selbst ja auch eine Stelle der
+        Konfiguration belegt. Somit ist also
         <span class="nowrap">$C \in (Q \cup \Gamma)^{s}$.</span>
-        Unbenutzte Zellen links und rechts füllen wir mit
-        $\Box$ auf, so dass immer eine Länge von $s$ benutzt
-        wird. Sei $C^{(t)} = \hat{\delta}^{(t)}(\qstart, x)$
-        die Konfiguration nach $t$ Schritten. Sei $C^{(t)}_i$
-        das
+        Unbenutzte Zellen links und rechts füllen wir mit $\Box$ auf, so
+        dass immer eine Länge von $s$ benutzt wird. Sei
+        $C^{(t)} = \hat{\delta}^{(t)}(\qstart, x)$ die Konfiguration
+        nach $t$ Schritten. Sei $C^{(t)}_i$ das
         <span class="nowrap">$i$-te</span>
-        Zeichen darin. Den Wert von $C^{(t+1)}_i$
-        können wir bestimmen allein mit Kenntnis von
+        Zeichen darin.
+        Den Wert von $C^{(t+1)}_i$ können wir bestimmen allein mit
+        Kenntnis von
         <span class="nowrap">$C^{(t)}_{i-1}$,</span>
         <span class="nowrap">$C^{(t)}_{i}$,</span>
       </p>
       <p>
         $C^{(t)}_{i+1}$ und
         <span class="nowrap">$C^{(t)}_{i+2}$.</span>
-        Es gibt also eine
-        Funktion
+        Es gibt also eine Funktion
       </p>
       <div class="math-block">
         $$
@@ -194,8 +183,7 @@
         $$
       </div>
       <p>
-        Im Detail ist die Arbeitsweise von $\tilde{\delta}$
-        wie folgt:
+        Im Detail ist die Arbeitsweise von $\tilde{\delta}$ wie folgt:
       </p>
       <div class="math-block">
         $$
@@ -225,27 +213,22 @@
         Wenn wir $Q \cup \Gamma$ binär codieren mit
         $l := \ceil{\log_2 |Q \cup \Gamma|}$ Bits, so wird
         $\tilde{\delta}$ zu einer Booleschen Funktion
-        $\tilde{\delta} : \{0,1\}^{4l} \rightarrow
-        \{0,1\}^l$ .
-        Wir können dafür einen Schaltkreis der Größe
-        $O(2^l) = O(|\Gamma \cup Q|^4)$ bauen: per
-        Wahrheitstabelle wird er etwas größer; mit der
-        Lupanov-Schranke (<span
+        $\tilde{\delta} : \{0,1\}^{4l} \rightarrow \{0,1\}^l$ . Wir
+        können dafür einen Schaltkreis der Größe
+        $O(2^l) = O(|\Gamma \cup Q|^4)$ bauen: per Wahrheitstabelle wird
+        er etwas größer; mit der Lupanov-Schranke (<span
           class="reference"
           data-ref="theorem-lupanov"
         ></span>) kriegen Sie
         <span class="nowrap">$O(2^l)$.</span>
-        Wir haben nun also einen
-        Schaltkreis
+        Wir haben nun also einen Schaltkreis
         <span class="nowrap">$\Delta$,</span>
-        der $\tilde{\delta}$ berechnet.
-        Seine Größe ist $O(|\Gamma \cup Q|^4)$ . Da wir $|Q|$
-        und $|\Gamma|$ als konstant betrachten, da es nicht
-        von der Eingabegröße $n=|x|$ abhängt, können wir sogar
-        behaupten: die Größe von $\Delta$ ist
+        der $\tilde{\delta}$ berechnet. Seine Größe ist
+        $O(|\Gamma \cup Q|^4)$ . Da wir $|Q|$ und $|\Gamma|$ als
+        konstant betrachten, da es nicht von der Eingabegröße $n=|x|$
+        abhängt, können wir sogar behaupten: die Größe von $\Delta$ ist
         <span class="nowrap">$O(1)$.</span>
-        Wir
-        schalten jetzt $S$ Kopien von $\Delta$ parallel, um
+        Wir schalten jetzt $S$ Kopien von $\Delta$ parallel, um
         $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ zu
         berechnen, also aus einer gegebenen Konfiguration die
         Folgekonfiguration:
@@ -259,13 +242,12 @@
         >
       </figure>
       <p>
-        Jeder Pfeil steht hierbei für $l$ Boolesche Kabel.
-        Dies ergibt
+        Jeder Pfeil steht hierbei für $l$ Boolesche Kabel. Dies ergibt
         <i>einen</i>
         Schaltkreis $\Delta^S$ , der
-        $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$
-        berechnet (bzw. die Boolesche Codierung dieser
-        Funktion) und Größe $O(S) = O(t(n))$ hat:
+        $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ berechnet
+        (bzw. die Boolesche Codierung dieser Funktion) und Größe
+        $O(S) = O(t(n))$ hat:
       </p>
       <figure>
         <img
@@ -276,13 +258,12 @@
         >
       </figure>
       <p>
-        Die Inputs, die Zellen außerhalb des Bereichs lesen,
-        setzen wir einfach auf $\Box$ (Blank) bzw. dessen
-        binäre Codierung, weil wir ja wissen, dass der
-        Schreib-Lese-Kopf niemals dorthin gelangen wird. Jetzt
-        schalten wir $T$ Kopien von $\Delta^{S}$
-        hintereinander, um aus der Startkonfiguration $C^{(0)}$
-        die Endkonfiguration $C^{(T)}$ zu berechnen:
+        Die Inputs, die Zellen außerhalb des Bereichs lesen, setzen wir
+        einfach auf $\Box$ (Blank) bzw. dessen binäre Codierung, weil
+        wir ja wissen, dass der Schreib-Lese-Kopf niemals dorthin
+        gelangen wird. Jetzt schalten wir $T$ Kopien von $\Delta^{S}$
+        hintereinander, um aus der Startkonfiguration $C^{(0)}$ die
+        Endkonfiguration $C^{(T)}$ zu berechnen:
       </p>
       <figure>
         <img
@@ -293,13 +274,14 @@
         >
       </figure>
       <p>
-        Ganz zum Schluss bauen wir uns noch einen Schaltkreis,
-        der an jede Stelle von $C{^(T)}$ schaut und, falls
-        dort der Endzustand steht, liest, ob das
+        Ganz zum Schluss bauen wir uns noch einen Schaltkreis, der an
+        jede Stelle von $C{^(T)}$ schaut und, falls dort der Endzustand
+        steht, liest, ob das
         <code>accept</code>
         oder
         <code>reject</code>
-        ist und je nachdem $1$ oder $0$ ausgibt.
+        ist und je nachdem
+        $1$ oder $0$ ausgibt.
       </p>
       <figure>
         <img
@@ -310,8 +292,8 @@
         >
       </figure>
       <p>
-        Dieser endgültige Schaltkreis besteht im Wesentlichen
-        aus $T$ Kopien von $\Delta^S$ und hat somit Größe
+        Dieser endgültige Schaltkreis besteht im Wesentlichen aus $T$
+        Kopien von $\Delta^S$ und hat somit Größe
         <span class="nowrap">$O(t(n)^2)$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>

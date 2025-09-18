@@ -55,8 +55,8 @@
       <ol>
         <li>
           <p>
-            Dem Eingabefenster für die Grammatik links oben.
-            Hier können Sie Ihre eigene Grammatik eingeben.
+            Dem Eingabefenster für die Grammatik links oben. Hier können
+            Sie Ihre eigene Grammatik eingeben.
           </p>
         </li>
         <li>
@@ -66,21 +66,21 @@
         </li>
         <li>
           <p>
-            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
-            der Versuch, das Eingabewort aus den Grammatikregeln
-            per Linksableitung abzuleiten. Die Pfade, die in
-            Sackgassen enden, sind rot markiert.
+            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist der
+            Versuch, das Eingabewort aus den Grammatikregeln per
+            Linksableitung abzuleiten. Die Pfade, die in Sackgassen enden,
+            sind rot markiert.
           </p>
         </li>
         <li>
           <p>
-            Der Ableitungsbaum. Für jeden Knoten $w$ im
-            Backtrack-Baum stellt der Pfad von Wurzel nach $w$
-            eine Linksableitung dar. Wenn Sie auf $w$ klicken,
-            sehen Sie den entsprechenden Ableitungsbaum. Per
-            Default wird die erste erfolgreiche Linksableitung in
-            einen Ableitungsbaum umgewandelt und angezeigt (wenn
-            es denn überhaupt eine erfolgreiche Ableitung gibt).
+            Der Ableitungsbaum. Für jeden Knoten $w$ im Backtrack-Baum
+            stellt der Pfad von Wurzel nach $w$ eine Linksableitung dar.
+            Wenn Sie auf $w$ klicken, sehen Sie den entsprechenden
+            Ableitungsbaum. Per Default wird die erste erfolgreiche
+            Linksableitung in einen Ableitungsbaum umgewandelt und
+            angezeigt (wenn es denn überhaupt eine erfolgreiche Ableitung
+            gibt).
           </p>
         </li>
       </ol>
@@ -97,64 +97,60 @@ S -&gt;; "(" S "]" S;
 </pre>
       <p>
         Was ist die erzeugte Sprache? Können Sie sie in Worten
-        beschreiben? Erzeugen Sie Wörter in dieser Sprache, für
-        die der Backtrack-Baum viele rote Sackgassen enthält.
-        Schreiben Sie eine äquivalente Grammatik (d.h., die die
-        gleiche Sprache erzeugt), für die es keine oder nur
-        sehr kurze Sackgassen gibt. Testen Sie die beiden
-        Grammatiken mit "großen" Eingabewörtern und schauen
-        Sie, ob Sie Laufzeitunterschiede bemerken. (Hier
-        erweist sich mein ineffizienter Code als Vorteil: eine
-        schlechte Grammatik wird sofort bestraft).
+        beschreiben? Erzeugen Sie Wörter in dieser Sprache, für die der
+        Backtrack-Baum viele rote Sackgassen enthält. Schreiben Sie eine
+        äquivalente Grammatik (d.h., die die gleiche Sprache erzeugt),
+        für die es keine oder nur sehr kurze Sackgassen gibt. Testen Sie
+        die beiden Grammatiken mit "großen" Eingabewörtern und schauen
+        Sie, ob Sie Laufzeitunterschiede bemerken. (Hier erweist sich
+        mein ineffizienter Code als Vorteil: eine schlechte Grammatik
+        wird sofort bestraft).
       </p>
     </div>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.3.2</b>
-        Schreiben Sie eine kontextfreie Grammatik für die
-        Sprache aller "korrekten" URLs; also Folgen von
-        mindestens zwei
-        <i>Labels</i>, die durch
+        Schreiben Sie eine kontextfreie Grammatik für die Sprache aller
+        "korrekten" URLs; also Folgen von mindestens zwei
+        <span class="nowrap"><i>Labels</i>,</span>
+        die
+        durch
         <code>.</code>
-        separiert sind.
-        Sie können den "Regelvorschlag" ganz links unten in der
-        App reinkopieren, um automatisch Regeln für
-        alphanumerische Zeichen zu bekommen (allerdings
-        verschlechtert das die Laufzeit; ich habe erstmal gar
-        nicht auf Effizienz geachtet). Geben Sie das
-        Eingabewort
+        separiert sind. Sie können den "Regelvorschlag" ganz
+        links unten in der App reinkopieren, um automatisch Regeln für
+        alphanumerische Zeichen zu bekommen (allerdings verschlechtert
+        das die Laufzeit; ich habe erstmal gar nicht auf Effizienz
+        geachtet). Geben Sie das Eingabewort
         <code>a.aaaaa.aaaa.aaaa.aaaa.aaaa</code>
-        ein. Wie
-        sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen?
-        Können Sie Ihre Grammatik so abändern, dass sie zwar
-        noch die gleiche Sprache erzeugt, aber keine / nur
-        wenige Sackgassen hat?
+        ein. Wie sieht Ihr Backtrack-Baum
+        aus? Hat er viele Sackgassen? Können Sie Ihre Grammatik so
+        abändern, dass sie zwar noch die gleiche Sprache erzeugt, aber
+        keine / nur wenige Sackgassen hat?
       </p>
     </div>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.3.3</b>
-        Entwerfen Sie eine Grammatik für arithmetische
-        Ausdrücke im Racket-Stil, also
+        Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im
+        Racket-Stil, also
       </p>
 <pre>
 (* (+ 2 3) (- 4 (* 2 4) 5)
 (+ 1 2 (* 2))
 </pre>
       <p>
-        Leidet Ihre Grammatik an langen Sackgassen? Wenn ja,
-        können Sie die Grammatik abändern? Haben Sie
-        mittlerweile ein Schema erkannt, welche Konstrukte
-        lange Sackgassen begünstigen?
+        Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie
+        die Grammatik abändern? Haben Sie mittlerweile ein Schema
+        erkannt, welche Konstrukte lange Sackgassen begünstigen?
       </p>
     </div>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.3.4</b>
-        Wiederholen Sie die vorherige Übung für arithmetische
-        Ausdrücke in der uns geläufigen Infix-Notation. Hierbei
-        sollten die Konventionen Punkt-vor-Strich beachtet
-        werden. Im Ableitungsbaum von
+        Wiederholen Sie die vorherige Übung für arithmetische Ausdrücke
+        in der uns geläufigen Infix-Notation. Hierbei sollten die
+        Konventionen Punkt-vor-Strich beachtet werden. Im Ableitungsbaum
+        von
       </p>
 <pre>
 2+3*(5+4)
@@ -175,10 +171,9 @@ S -&gt;; "["S"("S;
 S -&gt;; ;
 </pre>
       <p>
-        Überlegen Sie, was diese "bedeutet". Sie sehen, die
-        Grammatik ist nicht eindeutig. Das Wort `[([()(` hat
-        zwei verschiedene Ableitungsbäume. Können Sie eine
-        äquivalente
+        Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik
+        ist nicht eindeutig. Das Wort `[([()(` hat zwei verschiedene
+        Ableitungsbäume. Können Sie eine äquivalente
         <i>eindeutige</i>
         Grammatik schreiben?
       </p>
@@ -191,35 +186,34 @@ S -&gt;; ;
         <i>babou</i>
         auf
         <a href="https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo">StackExchange</a>
-        vorgeschlagen als Beispiel für eine eindeutige
-        Grammatik, bei der Sie exponentiell große
-        Backtrack-Bäume bekommen können:
+        vorgeschlagen als Beispiel für eine eindeutige Grammatik, bei der
+        Sie exponentiell große Backtrack-Bäume bekommen können:
       </p>
 <pre>
 S -&gt;;  "a" X "b" | "a" X "c";
 X -&gt;; "a" | "a" X | "a" X X;
 </pre>
       <p>
-        Das ist aber keine Kunst, da die Grammatik uneindeutig
-        ist. Können Sie eine
+        Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
+        Können Sie eine
         <i>eindeutige</i>
-        Grammatik angebene,
-        die ähnlich exponentielles Verhalten zeigt?
-        Exponentiell heißt: mit jedem zusätlichen Zeichen des
-        Eingabewortes kann die Größe des Backtrack-Baumes um
-        einen Faktor $R \gt 1$ wachsen.
+        Grammatik angebene, die ähnlich
+        exponentielles Verhalten zeigt? Exponentiell heißt: mit jedem
+        zusätlichen Zeichen des Eingabewortes kann die Größe des
+        Backtrack-Baumes um einen Faktor $R \gt 1$ wachsen.
       </p>
     </div>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.3.7</b>
-        <b>(Super-Challenge; ich hab selbst keine Lösung)</b>.
-        Finden Sie eine kontextfreie Sprache
+        <span class="nowrap"><b>(Super-Challenge; ich hab selbst keine Lösung)</b>.</span>
+        Finden Sie
+        eine kontextfreie Sprache
         <span class="nowrap">$L$,</span>
         für die
         <i>jede</i>
-        Grammatik, die $L$ erzeugt, unter exponentiell
-        großen Backtrack-Bäumen leidet.
+        Grammatik, die $L$
+        erzeugt, unter exponentiell großen Backtrack-Bäumen leidet.
       </p>
     </div>
   </div>

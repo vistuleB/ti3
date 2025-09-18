@@ -36,29 +36,27 @@
       </p>
     </div>
     <p class="main-column">
-      Ich beginne dieses Teilkapitel, manche der
-      primitiv-rekursive Implementierungen in
+      Ich beginne dieses Teilkapitel, manche der primitiv-rekursive
+      Implementierungen in
       <a href="code/primitive-recursion/stockpile.py"><span class="codelink">stockpile.py</span></a>
-      zu erklären und werde dann weitere, weniger
-      offensichtliche Konstruktionen diskutieren.
+      zu erklären und werde dann weitere, weniger offensichtliche
+      Konstruktionen diskutieren.
     </p>
     <h1 class="main-column">
       Arithmetische Operationen
     </h1>
     <p class="main-column">
       Wir haben bereits gesehen, dass wir die Addition per
-      ${\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0))$
-      schreiben können. Beachten Sie, dass ich hier die
-      Indizierung immer bei 0 beginnen lasse, im Python-Code
-      sowie im Mathematik-Modus (in der Vorlesung hatte ich an
-      der Tafel das oft bei 1 beginnen lassen, entschuldigen
-      Sie die Inkonsistenz). Multiplikation geht nach dem
+      ${\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0))$ schreiben
+      können. Beachten Sie, dass ich hier die Indizierung immer bei 0
+      beginnen lasse, im Python-Code sowie im Mathematik-Modus (in der
+      Vorlesung hatte ich an der Tafel das oft bei 1 beginnen lassen,
+      entschuldigen Sie die Inkonsistenz). Multiplikation geht nach dem
       gleichen Schema. Wir schreiben
       <code>mult</code>
-      in der
-      Schleifenform, wie sie die primitive Rekursion zulässt,
-      und schreiben in Orange auch gleich die Funktionen $g$
-      und $h$ dazu:
+      in der Schleifenform, wie sie
+      die primitive Rekursion zulässt, und schreiben in Orange auch
+      gleich die Funktionen $g$ und $h$ dazu:
     </p>
     <div class="main-column">
 <pre class="orange-comments">
@@ -70,9 +68,9 @@ def mult(t,x):
 </pre>
     </div>
     <p class="main-column">
-      erinnern Sie sich daran: $h$ muss immer eine Funktion in
-      der lokalen Variable temp, der Laufvariable $i$ und
-      $\vec{x}$ sein. Daher:
+      erinnern Sie sich daran: $h$ muss immer eine Funktion in der
+      lokalen Variable temp, der Laufvariable $i$ und $\vec{x}$ sein.
+      Daher:
     </p>
     <div class="math-block main-column">
       $$
@@ -84,9 +82,8 @@ def mult(t,x):
     <p class="main-column">
       Genauso erhalten wir
       <span class="nowrap">$x^t$,</span>
-      indem wir statt bei 0 bei 1
-      beginnen und statt $x$ draufzuzählen, es
-      draufmultiplizieren:
+      indem wir statt bei 0 bei 1 beginnen
+      und statt $x$ draufzuzählen, es draufmultiplizieren:
     </p>
     <div class="math-block main-column">
       $$
@@ -99,8 +96,7 @@ def mult(t,x):
       Allerdings gibt uns das
       <span class="nowrap">$(t,x) \mapsto x^t$.</span>
       Für
-      ${\rm exp}(a,b) = a^b$ müssen wir die Argumente
-      umdrehen:
+      ${\rm exp}(a,b) = a^b$ müssen wir die Argumente umdrehen:
     </p>
     <div class="math-block main-column">
       $$
@@ -110,9 +106,9 @@ def mult(t,x):
       $$
     </div>
     <p class="main-column">
-      Die Fakultätsfunktion $t!$ ist konzeptuell ähnlich,
-      allerdings etwas interessanter, weil wir hier auf das
-      Zwischenergebnis und die Laufvariable zugreifen müssen:
+      Die Fakultätsfunktion $t!$ ist konzeptuell ähnlich, allerdings
+      etwas interessanter, weil wir hier auf das Zwischenergebnis und die
+      Laufvariable zugreifen müssen:
     </p>
     <div class="main-column">
 <pre class="orange-comments">
@@ -124,19 +120,18 @@ for i in range(t):
 </pre>
     </div>
     <p class="main-column">
-      Wir können nicht einfach $i+1$ schreiben! Wir müssen
-      dies via $\comp(\succ,\pi_1)$ konstruieren. Denn: die
-      Funktion $h$ bekommt ${\rm temp}, i, \vec{x}$ als Input;
-      $\pi_1$ gibt uns davon das $i$ zurück und
-      $\comp(\succ, \pi_1)$ gibt uns
+      Wir können nicht einfach $i+1$ schreiben! Wir müssen dies via
+      $\comp(\succ,\pi_1)$ konstruieren. Denn: die Funktion $h$ bekommt
+      ${\rm temp}, i, \vec{x}$ als Input; $\pi_1$ gibt uns davon das $i$
+      zurück und $\comp(\succ, \pi_1)$ gibt uns
       <span class="nowrap">$i+1$.</span>
       Operationen wie
-      $\pred: t \mapsto t-1$ und  ${\rm minus}$ sind
-      konzeptuell nur ein bisschen anders. Das liegt auch
-      daran, dass wir keine negativen Zahlen haben. Was ist
+      $\pred: t \mapsto t-1$ und  ${\rm minus}$ sind konzeptuell nur ein
+      bisschen anders. Das liegt auch daran, dass wir keine negativen
+      Zahlen haben. Was ist
       <span class="nowrap">$\pred(0)$?</span>
-      Wir definieren das als 0. So können wir pred
-      implementieren:
+      Wir definieren das als 0. So
+      können wir pred implementieren:
     </p>
     <div class="main-column">
 <pre class="orange-comments">
@@ -150,15 +145,14 @@ def pred(t):
     <p class="main-column">
       In Worten: wenn
       <span class="nowrap">$t=0$,</span>
-      dann geben wir einfach $\zero()$
-      zurück, also
+      dann geben wir einfach $\zero()$ zurück,
+      also
       <span class="nowrap">$0$.</span>
-      Ansonsten durchlaufen wir die Schleife
-      $t$ mal; der letzte Schleifenindex ist
+      Ansonsten durchlaufen wir die Schleife $t$ mal; der
+      letzte Schleifenindex ist
       <span class="nowrap">$t-1$,</span>
-      und das
-      ist dann auch der Wert von temp, der zurückgegeben wird.
-      Daher:
+      und das ist dann auch der Wert
+      von temp, der zurückgegeben wird. Daher:
     </p>
     <div class="math-block main-column">
       $$
@@ -170,8 +164,8 @@ def pred(t):
     <p class="main-column">
       Für minus schreiben wir uns erst mal
       <span class="nowrap">${\rm subtractFrom}: (t,x) \mapsto x-t$.</span>
-      Hierfür wenden
-      wir einfach pred $t$ mal auf $x$ an:
+      Hierfür wenden wir
+      einfach pred $t$ mal auf $x$ an:
     </p>
     <div class="math-block main-column">
       $$
@@ -185,17 +179,17 @@ def pred(t):
       Boolesche Werte
     </h1>
     <p class="main-column">
-      Die primitive Rekursion stellt uns als "Datentyp" nur
-      die natürlichen Zahlen zur Verfügung. Alles andere müssen
-      wir als natürliche Zahlen nach einem von uns selbst
-      gewählten Schema codieren. Für Boolesche Werte ist das
-      recht naheliegend. Wir codieren
+      Die primitive Rekursion stellt uns als "Datentyp" nur die
+      natürlichen Zahlen zur Verfügung. Alles andere müssen wir als
+      natürliche Zahlen nach einem von uns selbst gewählten Schema
+      codieren. Für Boolesche Werte ist das recht naheliegend. Wir
+      codieren
       <code>True</code>
       als 1 und
       <code>False</code>
-      als 0. Unser erstes Prädikat, also Funktion mit
-      Booleschem Ausgabewert, ist
-      <code>isPositive</code>:
+      als 0. Unser erstes Prädikat,
+      also Funktion mit Booleschem Ausgabewert, ist
+      <span class="nowrap"><code>isPositive</code>:</span>
     </p>
     <div class="main-column">
 <pre class="orange-comments">
@@ -217,26 +211,25 @@ def pred(t):
       $$
     </div>
     <p class="main-column">
-      Auf ähnliche Weise können wir uns nun lessThan,
-      lessEqual, and, or, not, ifThenElse konstruieren.
+      Auf ähnliche Weise können wir uns nun lessThan, lessEqual, and,
+      or, not, ifThenElse konstruieren.
     </p>
     <h1 class="main-column">
       Wurzel und Suchen im Allgemeinen
     </h1>
     <p class="main-column">
-      Eine größere Herausforderung stellt die ganzzahlige
-      Wurzel $x \mapsto \floor{\sqrt{x}}$ dar. Hierfür haben
-      wir keine Formel mit
+      Eine größere Herausforderung stellt die ganzzahlige Wurzel
+      $x \mapsto \floor{\sqrt{x}}$ dar. Hierfür haben wir keine Formel
+      mit
       <span class="nowrap">$+, *, -$,</span>
-      auch keine schöne
-      rekursive Formel zur Hand. Es handelt sich um ein
-      Suchproblem: $\floor{\sqrt{x}}$ ist die größte
+      auch keine schöne rekursive Formel zur Hand. Es
+      handelt sich um ein Suchproblem: $\floor{\sqrt{x}}$ ist die größte
       natürliche Zahl $i$ mit
       <span class="nowrap">$i^2 \leq x$.</span>
-      Wir können auch
-      den Suchraum begrenzen: da $\sqrt{x} \leq x$ für alle
-      natürlichen Zahlen, so gilt: $\floor{\sqrt{x}}$ ist die
-      größte natürliche Zahl $i \in \{0,1,\dots,x\}$ mit
+      Wir können auch den Suchraum
+      begrenzen: da $\sqrt{x} \leq x$ für alle natürlichen Zahlen, so
+      gilt: $\floor{\sqrt{x}}$ ist die größte natürliche Zahl
+      $i \in \{0,1,\dots,x\}$ mit
       <span class="nowrap">$i^2 \leq x$.</span>
       Das Prädikat
     </p>
@@ -258,8 +251,7 @@ def pred(t):
       $$
     </div>
     <p class="main-column">
-      und damit können wir die ganzzahlige Wurzel schreiben
-      als
+      und damit können wir die ganzzahlige Wurzel schreiben als
     </p>
     <div class="main-column">
 <pre class="orange-comments">
@@ -271,15 +263,13 @@ def largestIbelowTwithISquareLessEqualX(t,x):
 </pre>
     </div>
     <p class="main-column">
-      Was geht hier vor? Wenn ${\rm iSquareLessEqualX}(i,x))$
-      True ist, dann ersetzen wir temp durch
+      Was geht hier vor? Wenn ${\rm iSquareLessEqualX}(i,x))$ True ist,
+      dann ersetzen wir temp durch
       <span class="nowrap">$i$.</span>
-      Ansonsten
-      belassen wir es beim alten Wert; der endgültige Wert von
-      temp ist also das letzte
+      Ansonsten belassen wir es beim
+      alten Wert; der endgültige Wert von temp ist also das letzte
       <span class="nowrap">$i$,</span>
-      für das das Prädikat True
-      wahr.
+      für das das Prädikat True wahr.
     </p>
     <div class="math-block main-column">
       $$
@@ -300,14 +290,13 @@ def largestIbelowTwithISquareLessEqualX(t,x):
       $$
     </div>
     <p class="main-column">
-      da wir zum Suchen der Wurzel von $t$ gleich $t$ als
-      Obergrenze des Suchraumes angeben können. Ganz allgemein
-      können wir für ein Prädikat ${\rm predicate}(i,x)$ das
-      größte $i \in \{0,\dots,t\}$ finden, für das
-      ${\rm predicate}(i,x)$ True ergibt. Da wir wissen, wie
-      wir das primitiv rekursiv machen können, erlauben wir
-      uns, einen neuen Kombinator zu definieren, anstatt diese
-      Konstruktion jedes Mal "von Hand" durchzuführen:
+      da wir zum Suchen der Wurzel von $t$ gleich $t$ als Obergrenze des
+      Suchraumes angeben können. Ganz allgemein können wir für ein
+      Prädikat ${\rm predicate}(i,x)$ das größte $i \in \{0,\dots,t\}$
+      finden, für das ${\rm predicate}(i,x)$ True ergibt. Da wir wissen,
+      wie wir das primitiv rekursiv machen können, erlauben wir uns,
+      einen neuen Kombinator zu definieren, anstatt diese Konstruktion
+      jedes Mal "von Hand" durchzuführen:
     </p>
     <div class="main-column">
 <pre>
@@ -335,16 +324,14 @@ def LargestLessThan(upperBound, predicate):
       Paare und Listen
     </h1>
     <p class="main-column">
-      Eine recht stark anmutende Beschränkung primitiv
-      rekursiver Funktionen ist die Tatsache, dass wir in der
-      Schleife nur
+      Eine recht stark anmutende Beschränkung primitiv rekursiver
+      Funktionen ist die Tatsache, dass wir in der Schleife nur
       <i>eine</i>
-      lokale Variable führen dürfen, hier
-      meistens
+      lokale Variable führen dürfen, hier meistens
       <code>temp</code>
-      genannt. Manche Funktionen scheinen
-      inhärent mindestens zwei zu benötigen. Betrachten wir den
-      Fall der Fibonacci-Zahlen:
+      genannt. Manche
+      Funktionen scheinen inhärent mindestens zwei zu benötigen.
+      Betrachten wir den Fall der Fibonacci-Zahlen:
     </p>
     <div class="main-column">
 <pre>
@@ -361,8 +348,8 @@ def fibIterative(t):
     <p class="main-column">
       Wir führen hier zwei lokale Variable, $a$ und
       <span class="nowrap">$b$.</span>
-      Das
-      $c$ könnten wir mit diesem schönen Trick eliminieren:
+      Das $c$ könnten
+      wir mit diesem schönen Trick eliminieren:
     </p>
     <div class="main-column">
 <pre>
@@ -371,29 +358,27 @@ a = b-a
 </pre>
     </div>
     <p class="main-column">
-      Doch selbst dann hätten wir immer noch zwei lokale
-      Variable. Die Fibonacci-Zahlen rekursiv per
-      <code>return
-        F(n-1)+F(n-2)</code>
-      scheint noch weiter weg zu sein vom
-      Paradigma der primitiven Rekursion; primitive Rekursion
-      verzweigt sich nie. Dennoch ist es möglich,
+      Doch selbst dann hätten wir immer noch zwei lokale Variable. Die
+      Fibonacci-Zahlen rekursiv per
+      <code>return F(n-1)+F(n-2)</code>
+      scheint noch
+      weiter weg zu sein vom Paradigma der primitiven Rekursion;
+      primitive Rekursion verzweigt sich nie. Dennoch ist es möglich,
       <code>fib</code>
-      primitiv rekursiv zu implementieren. Hauptzutat hierbei
-      ist es, dass wir
+      primitiv rekursiv zu implementieren. Hauptzutat hierbei ist
+      es, dass wir
       <i>Paare</i>
-      als neue Datenstruktur
-      verwenden. Erinnern Sie sich: die primitive Rekursion
-      stellt uns als Datentyp von Haus aus nur die natürlichen
-      Zahlen zur Verfügung. Alles andere müssen wir nach einem
-      selbst gewählten Schema codieren. Bei Booleschen Werten
+      als neue Datenstruktur verwenden. Erinnern Sie
+      sich: die primitive Rekursion stellt uns als Datentyp von Haus aus
+      nur die natürlichen Zahlen zur Verfügung. Alles andere müssen wir
+      nach einem selbst gewählten Schema codieren. Bei Booleschen Werten
       war es einfach. Wie steht es mit
       <i>Paaren</i>
-      von natürlichen
-      Zahlen? In
-      <a href="./3-0.html">Kapitel 2: Unendliche
-        Mengen</a>
-      haben wir die bijektive Funktion
+      von natürlichen Zahlen?
+      In
+      <a href="./3-0.html">Kapitel 2: Unendliche Mengen</a>
+      haben wir die
+      bijektive Funktion
     </p>
     <div class="math-block main-column">
       $$
@@ -404,8 +389,8 @@ a = b-a
       $$
     </div>
     <p class="main-column">
-      kennengelernt. Diese Funktion ist primitiv rekursiv: es
-      gilt ${n \choose 2} = 1 + 2 + \cdots + (n-1)$ und somit
+      kennengelernt. Diese Funktion ist primitiv rekursiv: es gilt
+      ${n \choose 2} = 1 + 2 + \cdots + (n-1)$ und somit
     </p>
     <div class="main-column">
 <pre class="orange-comments">
@@ -427,11 +412,12 @@ def choose2(t):
       $$
     </div>
     <p class="main-column">
-      Um die Umkehrfunktionen $\first, \second$ zu
-      implementieren, die uns aus $\pair(x,y)$ wieder $x$ und
-      $y$ berechnen, bestimmen wir erst den Wert von
+      Um die Umkehrfunktionen $\first, \second$ zu implementieren, die
+      uns aus $\pair(x,y)$ wieder $x$ und $y$ berechnen, bestimmen wir
+      erst den Wert von
       <span class="nowrap">$x+y$.</span>
-      Wenn $\pair(x,y) = n$ gilt und $x+y=i)$ ist, dann ist
+      Wenn $\pair(x,y) = n$ gilt und $x+y=i)$
+      ist, dann ist
     </p>
     <div class="math-block main-column">
       $$
@@ -445,9 +431,8 @@ def choose2(t):
       und somit ist $x+y$ der größte Wert von
       <span class="nowrap">$i$,</span>
       so dass
-      $n \geq \pair(0,i)$ ist. Aus $x+y$ und
-      ${x+y+1 \choose 2} + x$ können wir dann leicht $x$ und
-      $y$ berechnen:
+      $n \geq \pair(0,i)$ ist. Aus $x+y$ und ${x+y+1 \choose 2} + x$
+      können wir dann leicht $x$ und $y$ berechnen:
     </p>
     <div class="math-block main-column">
       $$
@@ -460,8 +445,8 @@ def choose2(t):
       $$
     </div>
     <p class="main-column">
-      Listen können wir implementieren, indem wir Paare
-      verschachtelt zusammenhängen, z.B. $[5,7,9]$ wird zu
+      Listen können wir implementieren, indem wir Paare verschachtelt
+      zusammenhängen, z.B. $[5,7,9]$ wird zu
       <span style="color:red">$\pair(5, \pair(7, 9))$</span>. Das ist natürlich inkorrekt:
     </p>
     <div class="main-column">
@@ -475,10 +460,10 @@ def choose2(t):
 </pre>
     </div>
     <p class="main-column">
-      Das Problem ist, dass wir das Ende der Liste nicht
-      kennen. Wir lösen das Problem, indem wir die leere Liste
-      mit $0$ codieren und dann aber beim Davorhängen eines
-      Elements 1 draufaddieren müssen, also
+      Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir
+      lösen das Problem, indem wir die leere Liste mit $0$ codieren und
+      dann aber beim Davorhängen eines Elements 1 draufaddieren müssen,
+      also
     </p>
     <div class="math-block main-column">
       $$
@@ -506,23 +491,21 @@ def choose2(t):
     </div>
     <p class="main-column">
       <b>Native Implementierung.</b>
-      Die primitive Rekursion ist
-      ein theoretischer Berechenbarkeitsbegriff für Funktionen
-      auf natürlichen Zahlen. Es ist definitiv keine
-      ernstzunehmende Programmiersprache. Ich finde allerdings,
-      dass es hilfreich ist, sie als Programmiersprache zu
-      begreifen und zu verwenden, rein experimentell. Leider
-      ist sie extrem ineffizient: selbst Subtraktion hat
-      quadratische Komplexität. Längere Listen wie die gerade
-      werden Sie in vertretbarer Zeit nicht behandeln können.
-      Bei meinen eigenen Experimenten mit meinem
-      Python-Framework bin ich daher dazu übergegangen, dass
-      ich, sobald ich gezeigt habe, dass eine Funktion $f$
-      primitiv rekursiv ist, sie
+      Die primitive Rekursion ist ein
+      theoretischer Berechenbarkeitsbegriff für Funktionen auf
+      natürlichen Zahlen. Es ist definitiv keine ernstzunehmende
+      Programmiersprache. Ich finde allerdings, dass es hilfreich ist,
+      sie als Programmiersprache zu begreifen und zu verwenden, rein
+      experimentell. Leider ist sie extrem ineffizient: selbst
+      Subtraktion hat quadratische Komplexität. Längere Listen wie die
+      gerade werden Sie in vertretbarer Zeit nicht behandeln können. Bei
+      meinen eigenen Experimenten mit meinem Python-Framework bin ich
+      daher dazu übergegangen, dass ich, sobald ich gezeigt habe, dass
+      eine Funktion $f$ primitiv rekursiv ist, sie
       <i>nativ</i>
       in Python zu
       implementieren, also beispielsweise in meiner Datei
-      <code>stockpile.py</code>:
+      <span class="nowrap"><code>stockpile.py</code>:</span>
     </p>
     <div class="main-column">
 <pre

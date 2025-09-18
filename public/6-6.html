@@ -43,14 +43,13 @@
       </p>
     </div>
     <p class="main-column">
-      Ich möchte nun eine kontextfreie Grammatik für
-      arithmetische Ausdrücke der Form
+      Ich möchte nun eine kontextfreie Grammatik für arithmetische
+      Ausdrücke der Form
       <code>((31+402)*83)</code>
-      entwerfen. Der Einfachheit halber bestehe ich auf
-      strenger Klammerung, so wäre
+      entwerfen. Der Einfachheit
+      halber bestehe ich auf strenger Klammerung, so wäre
       <code>(2*(1+2+3))</code>
-      zum Beispiel
-      nicht erlaubt. Unsere Grammatik soll allgemeine
+      zum Beispiel nicht erlaubt. Unsere Grammatik soll allgemeine
       Dezimalzahlen darstellen können. Das Alphabet ist somit
       $\Sigma =
       \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
@@ -73,12 +72,12 @@
       $$
     </div>
     <p class="main-column">
-      Die Nichtterminale sind also $E$ (Expression), $N$
-      (Number) und $D$ (Digit). Wir haben auch den einzelnen
-      Produktionen Namen gegeben, bis auf die der Form
+      Die Nichtterminale sind also $E$ (Expression), $N$ (Number) und $D$
+      (Digit). Wir haben auch den einzelnen Produktionen Namen gegeben,
+      bis auf die der Form
       <span class="nowrap">$D \rightarrow i$.</span>
-      Was soll nun unser Parser tun? Er
-      soll, gegeben ein Eingabewort
+      Was soll nun unser Parser
+      tun? Er soll, gegeben ein Eingabewort
       <span class="nowrap">$w \in L$,</span>
       den
       <i>Ableitungsbaum</i>
@@ -95,27 +94,26 @@
       >
     </figure>
     <p class="main-column">
-      Wie wir diesen Baum in Java repräsentieren, darüber
-      sprechen wir in einer Minute. Zuerst aber: wir wollen mit
-      diesem Baum etwas Sinnvolles tun. Zum Beispiel
-      <i>auswerten</i>, so dass am Ende eine Zahl rauskommt, im
-      obigen Beispiel also
+      Wie wir diesen Baum in Java repräsentieren, darüber sprechen wir
+      in einer Minute. Zuerst aber: wir wollen mit diesem Baum etwas
+      Sinnvolles tun. Zum Beispiel
+      <span class="nowrap"><i>auswerten</i>,</span>
+      so dass am Ende eine Zahl
+      rauskommt, im obigen Beispiel also
       <span class="nowrap">$(31 + 402) \cdot 83 = 35939$.</span>
-      Oder
-      den Ausdruck umformen von Infix-Notation zu
-      Präfixnotation, also<code>(* (+ 31 402) 83)</code>. All dies wird
-      sehr einfach sein, sobald wir den Ableitungsbaum als
-      Datenstruktur vorliegen haben.
+      Oder den Ausdruck umformen von Infix-Notation zu Präfixnotation,
+      <span class="nowrap">also<code>(* (+ 31 402) 83)</code>.</span>
+      All dies wird sehr einfach sein, sobald
+      wir den Ableitungsbaum als Datenstruktur vorliegen haben.
     </p>
     <h1 class="main-column">
       Eine Datenstruktur für Ableitungsbäume
     </h1>
     <p class="main-column">
-      Für meine Implementierung in Java erschaffe ich für
-      jedes Nichtterminal $X$ ein Interface und für jede
-      Produktionsregel $X \rightarrow \alpha$ eine Klasse, die
-      das Interface $X$ implementiert und $\alpha$ als
-      Klassenvariable enthält.
+      Für meine Implementierung in Java erschaffe ich für jedes
+      Nichtterminal $X$ ein Interface und für jede Produktionsregel
+      $X \rightarrow \alpha$ eine Klasse, die das Interface $X$
+      implementiert und $\alpha$ als Klassenvariable enthält.
     </p>
     <div class="main-column">
       <ul>
@@ -127,24 +125,26 @@
           <ul>
             <li>
               <p>
-                <code>class Sum</code>, die als Klassenvariable
-                <code>Exrepssion
-                  e1, e2</code>
-                enthält,
-              </p>
-            </li>
-            <li>
-              <p>
-                <code>class Product</code>, die als Klassenvariable
+                <span class="nowrap"><code>class Sum</code>,</span>
+                die als Klassenvariable
                 <code>Exrepssion e1, e2</code>
                 enthält,
               </p>
             </li>
             <li>
               <p>
-                <code>class JustNumber</code>, die als Klassenvariable nur
-                eine
-                <code>Number number</code>enthält;
+                <span class="nowrap"><code>class Product</code>,</span>
+                die als Klassenvariable
+                <code>Exrepssion e1,
+                  e2</code>
+                enthält,
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="nowrap"><code>class JustNumber</code>,</span>
+                die als Klassenvariable nur eine
+                <span class="nowrap"><code>Number number</code>enthält;</span>
               </p>
             </li>
           </ul>
@@ -157,8 +157,9 @@
           <ul>
             <li>
               <p>
-                <code>class MultiDigitNumber</code>, die als
-                Klassenvariable eine<code>Number</code>
+                <span class="nowrap"><code>class MultiDigitNumber</code>,</span>
+                die als Klassenvariable
+                <span class="nowrap">eine<code>Number</code></span>
                 und eine
                 <code>Digit</code>
                 erhält und
@@ -166,9 +167,9 @@
             </li>
             <li>
               <p>
-                <code>class SingleDigitNumber</code>, die als
-                Klassenvariable ein
-                <code>Digit</code>enthält;
+                <span class="nowrap"><code>class SingleDigitNumber</code>,</span>
+                die als Klassenvariable ein
+                <span class="nowrap"><code>Digit</code>enthält;</span>
               </p>
             </li>
           </ul>
@@ -176,26 +177,35 @@
         <li>
           <p>
             <code>interface Digit</code>
-            wird implementiert von<code>class
-              DigitOne</code>,`class DigitTwo<code>,`class DigitThree</code>,`class
-            DigitFour<code>,`class DigitFive</code>,`class DigitSix<code>,`class
-              DigitSeven</code>,`class DigitEight` und<code>class DigitNine</code>.
+            wird implementiert
+            <span class="nowrap">von<code>class
+                DigitOne</code>,`class</span>
+            <span class="nowrap">DigitTwo<code>,`class DigitThree</code>,`class</span>
+            <span class="nowrap">DigitFour<code>,`class DigitFive</code>,`class</span>
+            <span class="nowrap">DigitSix<code>,`class
+                DigitSeven</code>,`class</span>
+            DigitEight`
+            <span class="nowrap">und<code>class DigitNine</code>.</span>
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
       In unserem Anwendungsfall hat jedes Interface eine
-      Methode<code>public int toInt()</code>. Interface
+      <span class="nowrap">Methode<code>public
+          int toInt()</code>.</span>
+      Interface
       <code>Expression</code>
-      hat
-      zusätzlich noch die Methode
-      <code>String toPrefixNotation()</code>.
-      Ich schreibe auch ein Über-Interface
-      <code>ParseObject</code>, das
-      alle Interfaces zusammenfasst. Um uns das Debugging zu
-      erleichtern, überschreibe ich in jeder Klasse die
-      Methode<code>public String toString()</code>.
+      hat zusätzlich noch die
+      Methode
+      <span class="nowrap"><code>String toPrefixNotation()</code>.</span>
+      Ich schreibe auch ein
+      Über-Interface
+      <span class="nowrap"><code>ParseObject</code>,</span>
+      das alle Interfaces zusammenfasst. Um
+      uns das Debugging zu erleichtern, überschreibe ich in jeder Klasse
+      die
+      <span class="nowrap">Methode<code>public String toString()</code>.</span>
     </p>
   </div>
 </body>

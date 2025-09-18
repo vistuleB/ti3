@@ -41,12 +41,12 @@
         <b>Definition</b>
         <b>6.4.1</b>
         <b>Grenzform</b>
-        Sei $G = (\Sigma, N, S, P)$ eine
-        kontextfreie Grammatik. Eine Wortform $A \alpha$ -
-        also eine Wortform, die mit einem Nichtterminal beginnt
-        - heißt
-        <i>Grenzform</i>, wenn es ein $w \in \Sigma^*$
-        gibt, so dass es eine Linksableitung
+        Sei $G = (\Sigma, N, S, P)$ eine kontextfreie
+        Grammatik. Eine Wortform $A \alpha$ - also eine Wortform, die
+        mit einem Nichtterminal beginnt - heißt
+        <span class="nowrap"><i>Grenzform</i>,</span>
+        wenn es ein
+        $w \in \Sigma^*$ gibt, so dass es eine Linksableitung
       </p>
       <div class="math-block">
         $$
@@ -56,26 +56,25 @@
         $$
       </div>
       <p>
-        gibt. In anderen Worten: eine Grenzform ist das, was
-        bei einem Kellerautomaten auf dem Stack liegt, wenn ein
-        Nichtterminal ganz oben liegt.
+        gibt. In anderen Worten: eine Grenzform ist das, was bei einem
+        Kellerautomaten auf dem Stack liegt, wenn ein Nichtterminal ganz
+        oben liegt.
       </p>
     </div>
     <p class="main-column">
-      Grenzformen sind also diejenigen Wortformen, bei denen
-      der Kellerautomat eine Entscheidung treffen muss, weil er
-      eventuell mehrere Produktionen $A \rightarrow \beta$ zur
-      Auswahl hat. In diesem Teilkapitel wollen wir
-      herausarbeiten, unter welchen Umständen wir die richtige
-      Auswahl treffen können, auch wenn wir nur wenige weitere
-      Zeichen unseres Inputwortes lesen dürfen.
+      Grenzformen sind also diejenigen Wortformen, bei denen der
+      Kellerautomat eine Entscheidung treffen muss, weil er eventuell
+      mehrere Produktionen $A \rightarrow \beta$ zur Auswahl hat. In
+      diesem Teilkapitel wollen wir herausarbeiten, unter welchen
+      Umständen wir die richtige Auswahl treffen können, auch wenn wir
+      nur wenige weitere Zeichen unseres Inputwortes lesen dürfen.
     </p>
     <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>6.4.2</b>
-        Für ein Wort $w \in \Sigma^*$ und eine natürliche Zahl
-        $k \in \N$ sei $\first_k(w)$ wie folgt definiert:
+        Für ein Wort $w \in \Sigma^*$ und eine natürliche Zahl $k \in \N$
+        sei $\first_k(w)$ wie folgt definiert:
       </p>
       <div class="math-block">
         $$
@@ -88,23 +87,22 @@
         $$
       </div>
       <p>
-        In Worten: $\first_{k}(w)$ besteht aus den ersten $k$
-        Zeichen von $w$ (oder aus ganz
+        In Worten: $\first_{k}(w)$ besteht aus den ersten $k$ Zeichen
+        von $w$ (oder aus ganz
         <span class="nowrap">$w$,</span>
-        falls es weniger
-        als $k$ lang ist).
+        falls es weniger als $k$ lang ist).
       </p>
     </div>
     <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>6.4.3</b>
-        <span class="nowrap"><b>LL($k$)-Grammatiken</b></span>
+        <b><span class="nowrap">LL($k$)-Grammatiken</span></b>
         Eine kontextfreie Grammatik
         $G = (\Sigma, N, S, P)$ ist eine
         <span class="nowrap">LL($k$</span>
-        )-Grammatik,
-        wenn für jede Grenzform $A \alpha$ und für jedes Paar
+        )-Grammatik, wenn für
+        jede Grenzform $A \alpha$ und für jedes Paar
       </p>
       <div class="math-block">
         $$
@@ -117,7 +115,8 @@
       <p>
         verschiedener Produktionen (also
         <span class="nowrap">$\beta \ne \gamma$)</span>
-        folgendes gilt: wenn
+        folgendes
+        gilt: wenn
       </p>
       <div class="math-block">
         $$
@@ -140,20 +139,19 @@
       </div>
     </div>
     <p class="main-column">
-      Intuitiv gesprochen: wenn wir bereits eine ersten Teil
-      $w$ unseres Zielwortes abgeleitet haben, dann können wir
-      die nächste anzuwendende Produktion eindeutig bestimmen,
-      indem wir die nächsten $k$ Zeichen des Zielwortes lesen.
+      Intuitiv gesprochen: wenn wir bereits eine ersten Teil $w$ unseres
+      Zielwortes abgeleitet haben, dann können wir die nächste
+      anzuwendende Produktion eindeutig bestimmen, indem wir die nächsten
+      $k$ Zeichen des Zielwortes lesen.
     </p>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.4.1</b>
-        Negieren Sie die Definition, d.h., schreiben Sie eine
-        Aussage der Form
+        Negieren Sie die Definition, d.h., schreiben Sie eine Aussage
+        der Form
         <i>Wenn $G$ nicht
           <span class="nowrap">LL($k$)</span>
-          ist, dann
-          gibt es...</i>
+          ist, dann gibt es...</i>
       </p>
     </div>
     <div class="well statement out">
@@ -177,9 +175,9 @@
         <p>
           <b>Beweis.</b>
           Folgen wir der Definition von LL(1): für jedes Paar
-          verschiedener Regeln muss etwas gelten. Wir haben
-          hier keine Auswahl, denn es gibt ja nur ein Paar.
-          Also müssen wir zeigen, dass, falls
+          verschiedener Regeln muss etwas gelten. Wir haben hier keine
+          Auswahl, denn es gibt ja nur ein Paar. Also müssen wir zeigen,
+          dass, falls
         </p>
         <div class="math-block">
           $$
@@ -193,32 +191,31 @@
           gilt, dann auch $\first_1(x) \ne \first_2(y)$ gilt.
           Offensichtlich ist $\first_2(y) =$ "
           <span class="nowrap">$\texttt{(}$".</span>
-          Was kann $\first_k(x)$ sein?
+          Was kann
+          $\first_k(x)$ sein?
         </p>
         <p>
           <b>Behauptung.</b>
           Wenn
           <span class="nowrap">$S \rightarrow \delta \in (\Sigma \cup N)^*$,</span>
-          dann
-          steht jedes $S$ in $\delta$ entweder am Ende von
-          $\delta$ oder unmittelbar vor einem "
+          dann steht jedes
+          $S$ in $\delta$ entweder am Ende von $\delta$ oder unmittelbar
+          vor einem "
           <span class="nowrap">$\texttt{)}$".</span>
-          Das folgt per Induktion über die Länge der Ableitung.
-          Wenn es also für $\delta$ gilt und wir die
-          Produktion $S \rightarrow (S)S$ auf $\delta$
-          anwenden, dann gilt es für jedes "alte" $S$ und auch
-          für die beiden neu erzeugten; wenn wir
-          $S \rightarrow \epsilon$ anwenden, dann verschwindet
-          ein
+          Das folgt per Induktion über die
+          Länge der Ableitung. Wenn es also für $\delta$ gilt und wir
+          die Produktion $S \rightarrow (S)S$ auf $\delta$ anwenden,
+          dann gilt es für jedes "alte" $S$ und auch für die beiden neu
+          erzeugten; wenn wir $S \rightarrow \epsilon$ anwenden, dann
+          verschwindet ein
           <span class="nowrap">$S$,</span>
-          die Behauptung gilt aber nach wie vor für
-          alle anderen $S$ in
-          <span class="nowrap">$\delta$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>Wir folgern also, dass für das $\alpha$ den beiden
-          obigne Herleitungen
-          $\first_k(\alpha) \in \{\epsilon, \texttt{)}\}$
-          gilt. Keines davon ist ein Nichtterminal, und so muss
-          auch $\first_k(\alpha) = \first_k(x)$ gelten.
-          Zusammenfassend gesagt:
+          die Behauptung gilt aber nach wie vor
+          für alle anderen $S$ in
+          <span class="nowrap">$\delta$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>Wir folgern also, dass für das $\alpha$ den beiden obigne
+          Herleitungen $\first_k(\alpha) \in \{\epsilon, \texttt{)}\}$
+          gilt. Keines davon ist ein Nichtterminal, und so muss auch
+          $\first_k(\alpha) = \first_k(x)$ gelten. Zusammenfassend
+          gesagt:
         </p>
         <div class="math-block">
           $$
@@ -229,8 +226,8 @@
           $$
         </div>
         <p>
-          und somit sind sie verschieden. Wir folgern, dass $G$
-          eine LL(1)-Grammatik ist.
+          und somit sind sie verschieden. Wir folgern, dass $G$ eine
+          LL(1)-Grammatik ist.
         </p>
       </div>
     </div>
@@ -238,25 +235,25 @@
       Sehen Sie, dass die
       <span class="nowrap">LL($k$)-Bedingung</span>
       der Aussage "der
-      Backtrack-Baum hat keine langen Sackgassen" ähnelt (aber
-      nicht völlig äquivalent dazu ist). Wenn $G$ eine LL(
+      Backtrack-Baum hat keine langen Sackgassen" ähnelt (aber nicht
+      völlig äquivalent dazu ist). Wenn $G$ eine LL(
       <span class="nowrap">$k$)-Grammatik</span>
-      ist und wir den Backtrack-Baum für ein
-      Wort bauen, dann gilt: sobald wir in einer Sackgasse $k$
-      neue Terminalsymbole am "Terminalpräfix" der Wortform
-      hergeleitet haben, merken wir, dass wir in einer
-      Sackgasse sind. Mit Terminalpräfix meine ich den längsten
-      Präfix einer Wortform, der ausschließlich aus Terminalen
-      besteht. Allerdings muss nicht jeder Ableitungsschritt
-      den Terminalpräfix wachsen lassen (Regeln wie
-      $X \rightarrow YbZ$ zum Beispiel ersetzen einfach das
-      erste Nichtterminal), aber "moralisch" geschieht etwas
-      ähnliches). Wenn umgekehrt eine Grammatik
+      ist
+      und wir den Backtrack-Baum für ein Wort bauen, dann gilt: sobald
+      wir in einer Sackgasse $k$ neue Terminalsymbole am
+      "Terminalpräfix" der Wortform hergeleitet haben, merken wir, dass
+      wir in einer Sackgasse sind. Mit Terminalpräfix meine ich den
+      längsten Präfix einer Wortform, der ausschließlich aus Terminalen
+      besteht. Allerdings muss nicht jeder Ableitungsschritt den
+      Terminalpräfix wachsen lassen (Regeln wie $X \rightarrow YbZ$ zum
+      Beispiel ersetzen einfach das erste Nichtterminal), aber
+      "moralisch" geschieht etwas ähnliches). Wenn umgekehrt eine
+      Grammatik
       <i>nicht</i>
       LL(
       <span class="nowrap">$k$)</span>
-      ist, dann muss der Backtrack-Baum beiden
-      Ableitungen
+      ist, dann muss der Backtrack-Baum
+      beiden Ableitungen
     </p>
     <div class="math-block main-column">
       $$
@@ -267,18 +264,18 @@
       $$
     </div>
     <p class="main-column">
-      mindestens so lange weiterverfolgen, bis der
-      Terminalpräfix $k$ weitere Zeichen dazugewonnen hat. Der
-      Baum bekommt also dementsprechend lange Sackgassen.
+      mindestens so lange weiterverfolgen, bis der Terminalpräfix $k$
+      weitere Zeichen dazugewonnen hat. Der Baum bekommt also
+      dementsprechend lange Sackgassen.
     </p>
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.4.2</b>
         (Beispiel 5.3 aus
-        <i>The Theory of Parsing, Translation,
-          and Compiling</i>
-        von Alfred V. Aho und Jeffrey D.
-        Ullman). Betrachten wir die Grammatik
+        <i>The Theory of Parsing, Translation, and
+          Compiling</i>
+        von Alfred V. Aho und Jeffrey D. Ullman). Betrachten
+        wir die Grammatik
       </p>
       <div class="math-block">
         $$
@@ -291,13 +288,11 @@
         $$
       </div>
       <p>
-        Zeigen Sie, dass diese Grammatik LL(2) ist, aber nicht
-        LL(1).
+        Zeigen Sie, dass diese Grammatik LL(2) ist, aber nicht LL(1).
         <b>Tip.</b>
-        Leiten Sie erst einmal ein Dutzend
-        verschiedene Wörter ab und finden dann eine
-        "normalsprachliche" Beschreibung dieser Sprache.
-        Beschreiben Sie dann alle möglichen Wortformen $\alpha$
+        Leiten Sie erst einmal ein Dutzend verschiedene Wörter ab
+        und finden dann eine "normalsprachliche" Beschreibung dieser
+        Sprache. Beschreiben Sie dann alle möglichen Wortformen $\alpha$
         mit
         <span class="nowrap">$S \Step{}^* \alpha$.</span>
       </p>
@@ -305,9 +300,9 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.4.3</b>
-        Schreiben Sie eine äquivalente Grammatik zu der
-        vorherigen Sprache, die LL(1) ist. (Warnung: Ich weiß
-        nicht, ob das überhaupt geht).
+        Schreiben Sie eine äquivalente Grammatik zu der vorherigen
+        Sprache, die LL(1) ist. (Warnung: Ich weiß nicht, ob das
+        überhaupt geht).
       </p>
     </div>
     <div
@@ -341,16 +336,15 @@
       <p>
         also Wörter, wo auf beliebig viele
         <span class="nowrap">$a$'s</span>
-        eine Folge
-        von
+        eine Folge von
         <i>höchstens</i>
         so vielen
         <span class="nowrap">$b$'s</span>
-        folgt. Geben Sie diese
-        Grammatik in den
+        folgt. Geben Sie diese Grammatik in
+        den
         <a href="href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">Parser-Simulator</a>
-        ein und finden Wörter mit langen Sackgassen. Zeigen
-        Sie, dass diese Grammatik nicht
+        ein und finden Wörter mit langen Sackgassen. Zeigen Sie, dass
+        diese Grammatik nicht
         <span class="nowrap">LL$(k)$</span>
         ist, für kein
         <span class="nowrap">$k \in \N$.</span>
@@ -359,8 +353,8 @@
     <div class="well exercise out">
       <p>
         <b>Übungsaufgabe 6.4.5</b>
-        Sei $t \in \N$ eine feste, im Voraus bekannte Zahl.
-        Betrachten wir die Sprache
+        Sei $t \in \N$ eine feste, im Voraus bekannte Zahl. Betrachten
+        wir die Sprache
       </p>
       <div class="math-block">
         $$
@@ -372,20 +366,17 @@
       <p>
         also die Wörter der Form $a^m b^n$ mit
         <span class="nowrap">$n \leq m \leq n+t$.</span>
-        Schreiben Sie für $L_3$ eine
-        Grammatik, geben Sie diese im
+        Schreiben Sie für $L_3$ eine Grammatik, geben Sie diese im
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">Parser-Simulator</a>
-        ein und schauen, wie lang die Sackgassen werden können.
-        Zeigen Sie, dass $L_3$ eine
+        ein und schauen, wie lang die Sackgassen werden können. Zeigen
+        Sie, dass $L_3$ eine
         <span class="nowrap">LL$(k)$</span>
-        -Grammatik ist.
-        Für welchen Wert von
+        -Grammatik ist. Für welchen Wert
+        von
         <span class="nowrap">$k$?</span>
-        Ist $L_t$ (für im Voraus
-        bekanntes $t$ ) eine
+        Ist $L_t$ (für im Voraus bekanntes $t$ ) eine
         <span class="nowrap">LL$(k)$</span>
-        -Grammatik? Für welchen
-        Wert von
+        -Grammatik? Für welchen Wert von
         <span class="nowrap">$k$?</span>
       </p>
     </div>
@@ -394,21 +385,21 @@
       parsen
     </h1>
     <p class="main-column">
-      Wir wollen nun erarbeiten, wie wir für eine LL $(k)$
-      -Grammatik einen Parser, also im Prinzip einen
-      deterministischen Pushdown-Automaten schreiben können.
-      Wir tasten uns langsam voran. Wir beginnen mit einer
-      Verallgemeinerung von $\first_k$ von Wörtern auf
+      Wir wollen nun erarbeiten, wie wir für eine LL $(k)$ -Grammatik
+      einen Parser, also im Prinzip einen deterministischen
+      Pushdown-Automaten schreiben können. Wir tasten uns langsam voran.
+      Wir beginnen mit einer Verallgemeinerung von $\first_k$ von
+      Wörtern auf
       <i>Wortformen</i>
-      (die also Nichtterminale beinhalten können).
+      (die also Nichtterminale beinhalten
+      können).
     </p>
     <div class="well statement out">
       <p>
         <b>Definition</b>
         <b>6.4.5</b>
-        Sei eine kontextfreie Grammatik $G = (\Sigma, N, S, P)$
-        und eine Wortform $\alpha \in (\Sigma \cup N)^*$
-        gegeben. Wir definieren
+        Sei eine kontextfreie Grammatik $G = (\Sigma, N, S, P)$ und eine
+        Wortform $\alpha \in (\Sigma \cup N)^*$ gegeben. Wir definieren
       </p>
       <div class="math-block">
         $$
@@ -421,8 +412,7 @@
     <p class="main-column">
       Wir können nun die
       <span class="nowrap">LL$(k)$-Bedingung</span>
-      äquivalent
-      formulieren:
+      äquivalent formulieren:
     </p>
     <div class="well statement out">
       <p>
@@ -430,9 +420,9 @@
         <b>6.4.6</b>
         Eine Grammatik $G$ ist
         <span class="nowrap">LL$(k)$</span>
-        genau dann, wenn für
-        alle Grenzformen $A \alpha$ und alle Produktionen mit
-        $A$ auf der linken Seite, also
+        genau dann, wenn für alle
+        Grenzformen $A \alpha$ und alle Produktionen mit $A$ auf der
+        linken Seite, also
       </p>
       <div class="math-block">
         $$
@@ -445,15 +435,14 @@
         $$
       </div>
       <p>
-        die Mengen $\First(\beta_i \alpha)$ paarweise disjunkt
-        sind (wenn also keine zwei dieser Mengen ein
-        gemeinsames Element enthalten).
+        die Mengen $\First(\beta_i \alpha)$ paarweise disjunkt sind
+        (wenn also keine zwei dieser Mengen ein gemeinsames Element
+        enthalten).
       </p>
     </div>
     <p class="main-column">
-      Nehmen wir eine Momentaufnahme unseres Kellerautomaten.
-      Er hat den Präfix $x$ des Eingabewortes $xy$ gelesen und
-      eine Linksableitung
+      Nehmen wir eine Momentaufnahme unseres Kellerautomaten. Er hat den
+      Präfix $x$ des Eingabewortes $xy$ gelesen und eine Linksableitung
     </p>
     <div class="math-block main-column">
       $$
@@ -463,22 +452,20 @@
       $$
     </div>
     <p class="main-column">
-      durchgeführt. Die Wortform $\alpha$ ist genau das, was
-      im Moment auf dem Stack des Automaten liegt (um ganz
-      genau zu sein: \(\alpha\texttt{\$}\) liegt auf dem
-      Stack). Wenn $\alpha$ mit einem Terminalsymbol $c$
-      beginnt, so ist klar, was wir machen müssen: wir schauen,
-      ob $y$ mit $c$ beginnt. Wenn ja, lesen wir $c$ und
-      poppen es vom Stack. Der schwierige Fall ist, wenn
-      $\alpha$ mit einem Nichtterminal beginnt. Nochmal von
-      vorn: im schwierigen Fall liegt auf dem Stack (oberhalb
-      vom
+      durchgeführt. Die Wortform $\alpha$ ist genau das, was im Moment
+      auf dem Stack des Automaten liegt (um ganz genau zu sein:
+      \(\alpha\texttt{\$}\) liegt auf dem Stack). Wenn $\alpha$ mit
+      einem Terminalsymbol $c$ beginnt, so ist klar, was wir machen
+      müssen: wir schauen, ob $y$ mit $c$ beginnt. Wenn ja, lesen wir $c$
+      und poppen es vom Stack. Der schwierige Fall ist, wenn $\alpha$
+      mit einem Nichtterminal beginnt. Nochmal von vorn: im schwierigen
+      Fall liegt auf dem Stack (oberhalb vom
       <span class="nowrap">\(\$\))</span>
-      eine Wortform, die mit einem Nichtterminal
-      beginnt, also
+      eine Wortform, die
+      mit einem Nichtterminal beginnt, also
       <span class="nowrap">$A \alpha$.</span>
-      Das bedeutet, dass der Automat
-      per Linksableitung bis jetzt
+      Das bedeutet,
+      dass der Automat per Linksableitung bis jetzt
     </p>
     <div class="math-block main-column">
       $$
@@ -488,8 +475,8 @@
       $$
     </div>
     <p class="main-column">
-      hergeleitet hat. Der Automat muss sich nun zwischen
-      allen Regeln für $A$ entscheiden:
+      hergeleitet hat. Der Automat muss sich nun zwischen allen Regeln
+      für $A$ entscheiden:
     </p>
     <div class="math-block main-column">
       $$
@@ -502,15 +489,14 @@
       $$
     </div>
     <p class="main-column">
-      Der Automat betrachtet nun die nächsten $k$
-      Eingabesymbole, also $\first_k(y)$ (wir gehen mal davon
-      aus, dass er das kann; programmieren könnten wir das auf
-      jeden Fall; ob man es im strengen Framework des
-      Kellerautomaten hinkriegt, werden wir später sehen). Wenn
-      $G$ eine
+      Der Automat betrachtet nun die nächsten $k$ Eingabesymbole, also
+      $\first_k(y)$ (wir gehen mal davon aus, dass er das kann;
+      programmieren könnten wir das auf jeden Fall; ob man es im strengen
+      Framework des Kellerautomaten hinkriegt, werden wir später sehen).
+      Wenn $G$ eine
       <span class="nowrap">LL$(k)$-Grammatik</span>
-      ist, dann gibt es höchstens
-      eine Regel $A \rightarrow \beta_i$ mit
+      ist, dann gibt es höchstens eine
+      Regel $A \rightarrow \beta_i$ mit
     </p>
     <div class="math-block main-column">
       $$
@@ -520,36 +506,33 @@
       $$
     </div>
     <p class="main-column">
-      da ja nach obiger Beobachtung diese Mengen disjunkt
-      sind. Wenn $\first_k(y)$ in
+      da ja nach obiger Beobachtung diese Mengen disjunkt sind. Wenn
+      $\first_k(y)$ in
       <i>keiner</i>
-      dieser Mengen
-      enthalten ist, so kann die Ableitung offensichtlich nicht
-      vervollständigt werden, und wir schließen, dass
-      $xy \not \in L(G)$ ist. Wenn es
+      dieser Mengen enthalten ist, so kann die
+      Ableitung offensichtlich nicht vervollständigt werden, und wir
+      schließen, dass $xy \not \in L(G)$ ist. Wenn es
       <i>genau ein</i>
-      $\beta_i$
-      gibt mit
+      $\beta_i$ gibt mit
       <span class="nowrap">$\first_k(y) \in \first_k(\beta_i \alpha)$,</span>
-      dann ist $A \rightarrow \beta_i$ die "richtige"
-      Produktion. Wir wenden sie an, ersetzen also $A$ auf dem
-      Stack durch
+      dann ist $A \rightarrow \beta_i$ die "richtige" Produktion. Wir
+      wenden sie an, ersetzen also $A$ auf dem Stack durch
       <span class="nowrap">$\beta_i$.</span>
-      Falls es zwei oder mehr
-      Produktionen $A \rightarrow \beta_i$ gibt mit
+      Falls es zwei oder mehr Produktionen $A \rightarrow \beta_i$ gibt
+      mit
       <span class="nowrap">$\first_k(y) \in \first_k(\beta_i \alpha)$,</span>
       dann ist die
       Grammatik nicht
       <span class="nowrap">LL$(k)$;</span>
-      wir beenden den Parsing-Prozess
-      mit einer Laufzeitfehlermeldung. Hier ist ein Entwurf
-      eines allgemeinen Algorithmus für LL
+      wir beenden den Parsing-Prozess mit einer
+      Laufzeitfehlermeldung. Hier ist ein Entwurf eines allgemeinen
+      Algorithmus für LL
       <span class="nowrap">$(k)$-Grammatiken:</span>
     </p>
     <div class="well highlight out">
       <p>
-        *Generischer Algorithmus zum Parsen von
-        <span class="nowrap">LL$(k)$-Gramatiken*</span>
+        <b>Generischer Algorithmus zum Parsen von
+          <span class="nowrap">LL$(k)$-Gramatiken</span></b>
       </p>
       <ol>
         <li>
@@ -570,8 +553,8 @@
             </li>
             <li>
               <p>
-                Wenn das oberste Symbol auf dem Stack ein
-                Terminalsymbol $c$ ist:
+                Wenn das oberste Symbol auf dem Stack ein Terminalsymbol
+                $c$ ist:
               </p>
               <ul>
                 <li>
@@ -590,7 +573,7 @@
                 <li>
                   <p>
                     ansonsten
-                    <code>Reject</code>.
+                    <span class="nowrap"><code>Reject</code>.</span>
                   </p>
                 </li>
               </ul>
@@ -609,31 +592,31 @@
                 <li>
                   <p>
                     Seien
-                    $A \rightarrow \beta_1, \dots, A
-                    \rightarrow \beta_l$
-                    alle Produktionen mit $A$ auf der linken
-                    Seite.
+                    $A \rightarrow \beta_1, \dots, A \rightarrow
+                    \beta_l$
+                    alle Produktionen mit $A$ auf der linken Seite.
                   </p>
                 </li>
                 <li>
                   <p>
-                    <span style="color:red; font-weight: bold;">Berechne $\First_k(\beta_i\alpha)$ für
-                      alle $\beta_i$ und schaue, welches
-                      $\first_k(y)$ enthält</span>
+                    <span style="color:red; font-weight: bold;">Berechne $\First_k(\beta_i\alpha)$ für alle
+                      $\beta_i$ und schaue, welches $\first_k(y)$
+                      enthält</span>
                   </p>
                   <ul>
                     <li>
                       <p>
                         Wenn es genau eine solche Produktion
-                        $A \rightarrow \beta_i$ gibt: wende Sie
-                        an; es ist die richtige Produktion.
+                        $A \rightarrow \beta_i$ gibt: wende Sie an; es
+                        ist die richtige Produktion.
                       </p>
                     </li>
                     <li>
                       <p>
                         Wenn es keine gibt:
-                        <code>Reject</code>. Das Wort
-                        kann nicht abgeleitet werden.
+                        <span class="nowrap"><code>Reject</code>.</span>
+                        Das Wort kann
+                        nicht abgeleitet werden.
                       </p>
                     </li>
                     <li>
@@ -649,8 +632,8 @@
             </li>
             <li>
               <p>
-                Wenn das oberste Symbol \(\texttt{\$}\) ist:
-                wenn Eingabewort zu Ende
+                Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
+                Eingabewort zu Ende
                 <code>Accept</code>
                 ansonsten
                 <code>Reject</code>
@@ -662,9 +645,8 @@
     </div>
     <p class="main-column">
       Die rot und fett gedruckte Zeile ist das "Herz" dieses
-      Algorithmus. Um den Algorithmus implementieren zu können,
-      müssen wir es schaffen, die Menge
-      $\First_k(\beta_i\alpha)$ zu berechnen.
+      Algorithmus. Um den Algorithmus implementieren zu können, müssen
+      wir es schaffen, die Menge $\First_k(\beta_i\alpha)$ zu berechnen.
     </p>
     <h1 class="main-column">
       $\First_k(A)$ und $\First_k(\alpha)$ berechnen.
@@ -673,8 +655,8 @@
       <p>
         <b>Definition</b>
         <b>6.4.7</b>
-        Seien $K, L \subseteq \Sigma^*$ zwei Mengen. Mit
-        $K \circ L$ bezeichnen wir die Menge
+        Seien $K, L \subseteq \Sigma^*$ zwei Mengen. Mit $K \circ L$
+        bezeichnen wir die Menge
       </p>
       <div class="math-block">
         $$
@@ -684,9 +666,9 @@
         $$
       </div>
       <p>
-        (Diese Definition haben Sie schon im Kapitel über
-        reguläre Sprachen kennengelernt). Für eine natürliche
-        Zahl $k$ definieren wir
+        (Diese Definition haben Sie schon im Kapitel über reguläre
+        Sprachen kennengelernt). Für eine natürliche Zahl $k$ definieren
+        wir
       </p>
       <div class="math-block">
         $$
@@ -709,14 +691,14 @@
     </div>
     <p class="main-column">
       Im Allgemeinen gilt
-      $\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k
-      S_2 \circ_k \dots \circ_k S_l$
+      $\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k S_2 \circ_k
+      \dots \circ_k S_l$
       .
       In Worten: der
       <span class="nowrap">$\circ_k$-Operator</span>
       bildet alle möglichen
-      Kombinationen von Wörtern und nimmt von jedem die ersten
-      $k$ Zeichen.
+      Kombinationen von Wörtern und nimmt von jedem die ersten $k$
+      Zeichen.
     </p>
     <div class="well statement out">
       <p>
@@ -759,10 +741,11 @@
         <b>Beobachtung</b>
         <b>6.4.9</b>
         <b>- Wie man $\First_k(\alpha)$ berechnet.</b>
-        Sei eine
-        Wortform $\alpha$ gegeben, also
+        Sei eine Wortform
+        $\alpha$ gegeben, also
         <span class="nowrap">$\alpha \in (\Sigma \cup N)^*$.</span>
-        Wir berechnen
+        Wir
+        berechnen
         <span class="nowrap">$\First_k(\alpha)$,</span>
         indem wir als erstes $\alpha$
         aussschreiben als
@@ -776,8 +759,8 @@
       </div>
       <p>
         wobei jedes $\sigma_i$ ein Terminalsymbol oder ein
-        Nichtterminalsymbol ist, und berechnen dann
-        $\First_k(\alpha)$ wie folgt:
+        Nichtterminalsymbol ist, und berechnen dann $\First_k(\alpha)$
+        wie folgt:
       </p>
       <div class="math-block">
         $$
@@ -823,20 +806,18 @@
         </li>
       </ol>
       <p>
-        Wir müssen nur noch herausfinden, wie wir
-        $\First_k(\sigma)$ für einzelne Zeichen $\sigma$
-        berechnen.
+        Wir müssen nur noch herausfinden, wie wir $\First_k(\sigma)$ für
+        einzelne Zeichen $\sigma$ berechnen.
       </p>
     </div>
     <p class="main-column">
-      Für ein Terminalsymbol $c$ ist es trivial, $\First_k(c)$
-      zu berechnen: es ist
+      Für ein Terminalsymbol $c$ ist es trivial, $\First_k(c)$ zu
+      berechnen: es ist
       <span class="nowrap">$\{c\}$,</span>
-      da sich aus $c$ natürlich
-      nur das Wort $c$ ableiten lässt. Für Nichtterminale
-      müssen wir uns anstrengen. Die erste Idee ist, dass wir
-      für $\First_k(X)$ eine Gleichung schreiben können, die
-      $(\ref{first-k-wortform})$ verwendet.
+      da sich aus $c$ natürlich nur das Wort
+      $c$ ableiten lässt. Für Nichtterminale müssen wir uns anstrengen.
+      Die erste Idee ist, dass wir für $\First_k(X)$ eine Gleichung
+      schreiben können, die $(\ref{first-k-wortform})$ verwendet.
     </p>
     <div class="well statement out">
       <p>
@@ -855,8 +836,8 @@
         $$
       </div>
       <p>
-        die Produktionen der Grammatik mit $X$ auf der linken
-        Seite. Dann gilt
+        die Produktionen der Grammatik mit $X$ auf der linken Seite.
+        Dann gilt
       </p>
       <div class="math-block">
         $$
@@ -867,9 +848,9 @@
         $$
       </div>
       <p>
-        Was ja eigentlich offensichtlich ist: wenn sich ein
-        Wort $X \Step{}^* w$ aus $X$ ableiten lässt, dann muss
-        dies mittels einer der obigen Produktionen geschehen:
+        Was ja eigentlich offensichtlich ist: wenn sich ein Wort
+        $X \Step{}^* w$ aus $X$ ableiten lässt, dann muss dies mittels
+        einer der obigen Produktionen geschehen:
         <span class="nowrap">$X \Step{} \alpha_i \Step{}^* w$,</span>
         und somit gilt
         <span class="nowrap">$\first_k(w)\in \First_k(\alpha_i)$.</span>
@@ -877,26 +858,25 @@
     </div>
     <p class="main-column">
       Die Gleichungen $(\ref{first-k-wortform})$ und
-      $(\ref{first-k-nonterminal})$ leuchten zwar ein,
-      scheinen aber erstmal nicht hilfreich, diese Mengen auch
-      tatsächlich zu berechnen. Denn eventuell taucht $X$
-      selbst wieder auf einer rechten Seite auf, sagen wir
+      $(\ref{first-k-nonterminal})$ leuchten zwar ein, scheinen aber
+      erstmal nicht hilfreich, diese Mengen auch tatsächlich zu
+      berechnen. Denn eventuell taucht $X$ selbst wieder auf einer
+      rechten Seite auf, sagen wir
       <span class="nowrap">$\alpha_1$.</span>
-      Um $\First_k(X)$ zu berechnen, müssen wir
-      also laut $(\ref{first-k-nonterminal})$ die Menge
-      $\First_k(\alpha_1)$ kennen; um diese zu berechnen,
-      brauchen wir laut $(\ref{first-k-wortform})$ allerdings
-      zuerst unter Anderem die Menge
+      Um $\First_k(X)$ zu
+      berechnen, müssen wir also laut $(\ref{first-k-nonterminal})$ die
+      Menge $\First_k(\alpha_1)$ kennen; um diese zu berechnen, brauchen
+      wir laut $(\ref{first-k-wortform})$ allerdings zuerst unter
+      Anderem die Menge
       <span class="nowrap">$\First_k(X)$.</span>
-      Wo sollen
-      wir also anfangen? In solchen Situationen, wo sich "die
-      Katze in den Schwanz beißt", hilft es oft, die Definition
-      vorerst
+      Wo sollen wir also anfangen? In
+      solchen Situationen, wo sich "die Katze in den Schwanz beißt",
+      hilft es oft, die Definition vorerst
       <i>komplexere</i>
       un
       <i>genauer</i>
-      zu machen. Wir führen
-      nun, zusätzlich zu $\First_k(X)$ und
+      zu
+      machen. Wir führen nun, zusätzlich zu $\First_k(X)$ und
       <span class="nowrap">$\First_k(\alpha)$,</span>
       noch eine feinere Unterteilung an:
     </p>
@@ -944,8 +924,8 @@
         >
       </figure>
       <p>
-        ein Ableitungsbaum der Höhe 2 von $S \Step{}^* ca$ ,
-        und somit gilt
+        ein Ableitungsbaum der Höhe 2 von $S \Step{}^* ca$ , und somit
+        gilt
       </p>
       <div class="math-block">
         $$
@@ -955,9 +935,8 @@
         $$
       </div>
       <p>
-        Ein Baum der Höhe 1, der mit $S$ beginnt, könnte ja
-        nur $Xa$ ableiten und somit gar kein Wort. Es gilt
-        also
+        Ein Baum der Höhe 1, der mit $S$ beginnt, könnte ja nur $Xa$
+        ableiten und somit gar kein Wort. Es gilt also
       </p>
       <div class="math-block">
         $$
@@ -968,8 +947,8 @@
       </div>
       <p>
         Für eine Wortform
-        $\alpha = \sigma_1 \sigma_2 \dots \sigma_n \in
-        (\Sigma \cup N)^*$
+        $\alpha = \sigma_1 \sigma_2 \dots \sigma_n \in (\Sigma \cup
+        N)^*$
         definieren wir
       </p>
       <div class="math-block">
@@ -981,16 +960,14 @@
         $$
       </div>
       <p>
-        Eine Ableitung $\alpha \Step{}^* w$ der Höhe maximal
-        $d$ entspricht also einer Folge von $n$
-        Ableitungsbäumen, von denen jeder Höhe maximal $d$
-        hat.
+        Eine Ableitung $\alpha \Step{}^* w$ der Höhe maximal $d$
+        entspricht also einer Folge von $n$ Ableitungsbäumen, von denen
+        jeder Höhe maximal $d$ hat.
       </p>
     </div>
     <p class="main-column">
       Mit dieser Definition können wir nun Gleichungen für
-      $\First_k^{(d)}(X)$ und $\First_k^{(d)}(\alpha)$
-      angeben. Seien
+      $\First_k^{(d)}(X)$ und $\First_k^{(d)}(\alpha)$ angeben. Seien
       $X \rightarrow \alpha_1 \ | \ \dots \ | \ \alpha_k$ die
       Produktionen mit $X$ auf der linken Seite. Dann gilt für
       <span class="nowrap">$k \geq 1$:</span>
@@ -1032,25 +1009,21 @@
       </div>
     </div>
     <p class="main-column">
-      Die Gleichungen sagen, dass wir, falls wir
-      $\First_{k}^{(d-1)}(X)$ für alle Nichtterminale kennen,
-      dann auch $\First_{k}^{(d)}(X)$ berechnen können. Daraus
-      folgt auch: wenn
+      Die Gleichungen sagen, dass wir, falls wir $\First_{k}^{(d-1)}(X)$
+      für alle Nichtterminale kennen, dann auch $\First_{k}^{(d)}(X)$
+      berechnen können. Daraus folgt auch: wenn
       $\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$ für alle
       <span class="nowrap">$X \in N$,</span>
-      dann auch
-      $\First_{k}^{(d)}(X)=\First_{k}^{(d+1)}(X)$ für alle
+      dann auch $\First_{k}^{(d)}(X)=\First_{k}^{(d+1)}(X)$ für alle
       <span class="nowrap">$X \in N$,</span>
-      und somit werden die Mengen
-      $\First_{k}^{(d)}(X)$ für alle $d$ von nun an gleich
-      bleiben.
+      und somit werden die Mengen $\First_{k}^{(d)}(X)$ für
+      alle $d$ von nun an gleich bleiben.
     </p>
     <div class="well statement out">
       <p>
         <b>Beobachtung</b>
         <b>6.4.14</b>
-        Falls $\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$ für
-        alle
+        Falls $\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$ für alle
         <span class="nowrap">$X \in N$,</span>
         dann gilt
       </p>
@@ -1070,10 +1043,9 @@
       <p>
         <b>Demo.</b>
         <b>6.4.15</b>
-        <b>- Berechnung der Menge $\First_k(A)$ für die
-          Nichtterminale einer Sprache.</b>
-        Wir betrachten die
-        Grammatik
+        <b>- Berechnung der Menge $\First_k(A)$ für die Nichtterminale
+          einer Sprache.</b>
+        Wir betrachten die Grammatik
       </p>
       <div class="math-block">
         $$
