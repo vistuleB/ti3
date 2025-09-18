@@ -10,7 +10,7 @@ const BODY_TOP_MARGIN_MOBILE = 140;
 const BODY_TOP_MARGIN_DESKTOP = 80;
 
 window.history.scrollRestoration = "manual";
-// menu scroll behavior
+
 let lastScrollY = 0;
 let menuElement = null;
 
@@ -114,6 +114,7 @@ const add_line_number_to_numbered_pre = () => {
 
 class Carousel {
   constructor(container) {
+    container.carousel = this;
     this.container = container;
     this.carousel = container.querySelector(".carousel");
     this.carouselItems = container.querySelectorAll(".carousel__item");
@@ -126,7 +127,6 @@ class Carousel {
     this.holdInterval = null;
     this.holdTimeout = null;
     this.isHolding = false;
-
     // buttons
     this.prevBtn = (() => {
       const prevBtn = document.createElement("button");
@@ -424,12 +424,53 @@ class Carousel {
   }
 }
 
+function getClosestVisibleCarousel() {
+  var y0 = window.innerHeight / 2;
+  var closestDistance = Infinity;
+  var closestContainer = null;
+  for (c of visibleCarouselContainers) {
+    let r = c.getBoundingClientRect();
+    let y = r.y + r.height / 2;
+    if (Math.abs(y - y0) < closestDistance) {
+      closestDistance = Math.abs(y - y0);
+      closestContainer = c;
+    }
+  }
+  return (closestContainer != null) ? closestContainer.carousel : null;
+}
+
+function createCarouselObserver() {
+  const options = {
+    root: null,
+    rootMargin: "0% 0% 0% 0%",
+    threshold: 1.0,
+  };
+  
+  const callback = (entries, _) => {
+    entries.forEach((entry) => {
+      let index = visibleCarouselContainers.indexOf(entry.target);
+      if (entry.isIntersecting) {
+        if(index === -1) {
+          visibleCarouselContainers.push(entry.target);
+        }
+      } else {
+        if(index !== -1) {
+          visibleCarouselContainers.splice(index, 1);
+        }
+      }
+    });
+  };
+
+  return new IntersectionObserver(callback, options);
+}
+
 const setupCarousels = () => {
+  let carouselObserver = createCarouselObserver();
   const carousels = document.querySelectorAll(".carousel__container");
   carousels.forEach((container) => {
     new Carousel(container);
+    carouselObserver.observe(container);
   });
-
   setCarouselArrowSize(computeCarouselArrowSize());
 };
 
@@ -521,6 +562,8 @@ const onMobile = (callback) => {
   return;
 };
 
+const visibleCarouselContainers = new Array();
+
 const onLoad = () => {
   setupCarousels();
   add_line_number_to_numbered_pre();
@@ -575,11 +618,21 @@ const onKeyDown = (e) => {
   switch (e.key) {
     case "ArrowLeft":
       e.preventDefault();
-      navigateToChapter("prev-page");
+      var carousel = getClosestVisibleCarousel();
+      if (carousel != null) {
+        carousel.changeCarouselItem(-1);
+      } else {
+        navigateToChapter("prev-page");
+      }
       break;
     case "ArrowRight":
       e.preventDefault();
-      navigateToChapter("next-page");
+      var carousel = getClosestVisibleCarousel();
+      if (carousel != null) {
+        carousel.changeCarouselItem(1);
+      } else {
+        navigateToChapter("next-page");
+      }
       break;
     case "0":
       window.location.href = "index.html";
