@@ -13,6 +13,7 @@
 <body class="page-sub chapter-2 sub-4">
   <div
     id="_3_hgi_"
+    should-be-number="4"
     path="./2-4.html"
     class="subchapter"
   >
@@ -947,9 +948,8 @@
       </div>
       <p>
         Für $\mathbf{a} = (10010)$ gibt das also
-        $x_1 \wedge x_4 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge
-        \bar{x}_5$
-        .
+        <span class="nowrap">$x_1 \wedge x_4 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge
+          \bar{x}_5$.</span>
         Noch kompakter kann man es hinschreiben, wenn man für eine
         Variable $x$ und einen Wert $b \in \{0,1\}$ folgendes definiert:
       </p>
@@ -975,10 +975,9 @@
       </div>
       <p>
         definieren, für $\mathbf{a} = (10010)$ also
-        $x_1^1 \wedge x_2^0 \wedge x_3^0 \wedge x_4^1 \wedge x_5^0 =
-        x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge
-        \bar{x}_5$
-        .
+        <span class="nowrap">$x_1^1 \wedge x_2^0 \wedge x_3^0 \wedge x_4^1 \wedge x_5^0 =
+          x_1 \wedge \bar{x}_2 \wedge \bar{x}_3 \wedge x_4 \wedge
+          \bar{x}_5$.</span>
         Das gibt den gleichen Term wie zuvor, nur mit den Literalen in
         anderer Reihenfolge aufgelistet (was keine Rolle spielt, da
         $\wedge$ kommutativ ist). Gegen eine Boolesche Funktion
@@ -1046,9 +1045,8 @@
         <p>
           <b>Beweis.</b>
           Definieren wir zusätzlich noch
-          $T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
-          \bar{x}_i$
-          ,
+          <span class="nowrap">$T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
+            \bar{x}_i$,</span>
           dann können wir
           $T_{\mathbf{a}} = T'_{\mathbf{a}} \wedge T''_{\mathbf{a}}$
           schreiben. Und jetzt ist

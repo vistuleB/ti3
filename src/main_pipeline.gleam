@@ -52,6 +52,8 @@ pub fn main_pipeline()  -> List(Pipe) {
   [
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
+      dl.ti3_add_should_be_numbers(),
+      dl.ti3_backfill(),
       dl.rename(#("WriterlyCodeBlock","CodeBlock")),
       dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
