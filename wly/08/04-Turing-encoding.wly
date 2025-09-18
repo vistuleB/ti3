@@ -202,8 +202,7 @@
         _Codierungsalphabet_ $\Lambda := \writelambda$ , wobei wir
         annehmen, dass
         $\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S}, \texttt{R},
-        \texttt{;} \not \in \Sigma$
-        .
+        \texttt{;} \not \in \Sigma$.
         Wir können nun jede Turingmaschine $M$ mit Eingabealphabet
         $\Sigma$ als String $\enc(M) \in \Lambda^*$ codieren. Per
         Konvention kommt `;` in $\enc(M)$ genau einmal vor, nämlich am

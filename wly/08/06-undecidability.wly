@@ -103,8 +103,7 @@
 
         Also
         $\enc(D) \in \negdiag \Longleftrightarrow \enc(M) \not \in
-        \negdiag$
-        ,
+        \negdiag$,
         ein Widerspruch. Unsere Annahme, dass $\halt$ entscheidbar sei,
         ist also falsch.
         |> QED

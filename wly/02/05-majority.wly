@@ -575,8 +575,7 @@
             und zwar _unabhängig_, weil wir $C_1, C_2, C-3$ auch
             unabhängig gesampelt haben. Wir wissen:
             $\Pr[U=1] = \Pr[V=1] = \Pr[W=1] \geq \frac{1+\delta}{2} =:
-            p$
-            .
+            p$.
             Was ist nun $\Pr[\maj_3(U,V,W) = 1]$?
 
             \begin{align*}

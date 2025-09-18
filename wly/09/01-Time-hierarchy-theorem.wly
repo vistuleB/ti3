@@ -250,8 +250,7 @@
 
         und da ist er, der Widerspruch:
         $x1^m \in \bnegdiag \Longleftrightarrow f_M(x1^m) =
-        \texttt{reject}$
-        ,
+        \texttt{reject}$,
         entgegen unserer Annahme, dass $M$ die Sprache $\bnegdiag$
         entscheidet.
         |> QED

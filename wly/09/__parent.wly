@@ -241,8 +241,7 @@
             `CNF-Satisfiability`{sc}: Gegeben eine Boolesche Formel in
             konjunktiver Normalform, also beispielsweise
             $(x \vee \bar{y}) \wedge (\bar{x} \vee y \vee z) \wedge (x
-            \vee \bar{z})$
-            ,
+            \vee \bar{z})$,
             gibt es eine Belegung ihrer Variablen, so dass die Formel zu
             `True` auswertet?
 

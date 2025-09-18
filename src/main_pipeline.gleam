@@ -152,10 +152,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "pre", "code"]),
     pp.splitting_empty_lines_cleanup(),
     [
-      dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
-      dl.wrap_adjacent_non_whitespace_text_with(#("i", "NoWrap")),
-      dl.wrap_adjacent_non_whitespace_text_with(#("b", "NoWrap")),
-      dl.wrap_adjacent_non_whitespace_text_with(#("code", "NoWrap")),
+      dl.wrap_adjacent_non_whitespace_text_with(#(["Math", "i", "b", "code"], "NoWrap")),
     ],
     pp.splitting_empty_lines_cleanup(),
     [

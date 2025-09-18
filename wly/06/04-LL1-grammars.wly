@@ -405,8 +405,7 @@
 
     Im Allgemeinen gilt
     $\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k S_2 \circ_k
-    \dots \circ_k S_l$
-    .
+    \dots \circ_k S_l$.
     In Worten: der $\circ_k$-Operator bildet alle möglichen
     Kombinationen von Wörtern und nimmt von jedem die ersten $k$
     Zeichen.

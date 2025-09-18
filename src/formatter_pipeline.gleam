@@ -62,7 +62,7 @@ pub fn formatter_pipeline(cols: Int) -> List(Pipe) {
       dl.fold_contents_into_text("code"),
       dl.insert_text_start_end_if_unique_attr(#("span", "style", "font-variant:small-caps;", #("`", "`{sc}"))),
       dl.fold_children_into_text_if(#("span", infra.v_has_key_value(_, "style", "font-variant:small-caps;"))),
-      dl.wrap_adjacent_non_whitespace_text_with(#("Math", "NoWrap")),
+      dl.wrap_adjacent_non_whitespace_text_with(#(["Math"], "NoWrap")),
       dl.line_rewrap_no2__outside(#(["Chapter", "Sub"], cols, minimum_line_wrap_length, 2, infra.is_v_and_tag_is_one_of(_, ["Math", "NoWrap"])), ["MathBlock", "pre", "WriterlyCodeBlock"]),
       dl.concatenate_text_nodes(),
       dl.unwrap("NoWrap"),

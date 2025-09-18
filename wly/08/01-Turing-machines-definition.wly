@@ -199,8 +199,7 @@
         Alternativ können wir auch der Turingmaschine verbieten, das
         Blank-Symbol $\Box$ jemals zu schreiben. Dann wäre also
         $\delta: Q \times \Gamma \rightarrow Q \times (\Gamma
-        \setminus \{\Box\}) \times \lsr$
-        .
+        \setminus \{\Box\}) \times \lsr$.
         All diese Betrachtungsweisen unterscheiden sich nicht wesentlich.
         Wir bleiben bei unserem "alten" $\delta$, erlauben also, $\Box$
         zu schreiben, und leben damit, dass $uqv$ und

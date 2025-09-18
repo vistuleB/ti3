@@ -36,8 +36,7 @@
 
         erzeugt die Sprache
         $\{\epsilon, 11, 1111, 111111, \dots \}= \{1^n | n
-        \textnormal{ ist gerade}\}$
-        .
+        \textnormal{ ist gerade}\}$.
 
     |> Statement
         handle=example-aaabb
