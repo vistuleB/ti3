@@ -379,6 +379,10 @@ pre.redyellow {
   background-color: yellow;
 }
 
+pre.listing.redyellow > span.listing-bol::before{
+  color: #777;
+}
+
 .terminalOutput {
   color: blue;
 }
