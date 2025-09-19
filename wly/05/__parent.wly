@@ -52,7 +52,7 @@
 
     ```listing
     `find`{elm-1} `:`{elm-0} `Bst`{elm-2} `->`{elm-0} `String`{elm-2} `->`{elm-0} `Maybe`{elm-2} `String`{elm-2}
-    `find`{elm-1} `tree`{elm-3} `key`{elm-3} =
+    `find`{elm-1} `tree`{elm-3} `key`{elm-3} `=`{elm-0}
         `case`{elm-4} `tree`{elm-3} `of`{elm-4}
             `Empty`{elm-5} `_`{elm-3} `->`{elm-0}
                 `Nothing`{elm-5}

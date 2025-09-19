@@ -5,7 +5,7 @@
   --progress-counter-font-size: 1em;
   --max-carousel-indicators-per-line: 30;
 
-  /* the following are set by ti3.js resetAll: */
+  /* the following are set by ti3.js resetScreenWidthDependentVars: */
   --body-margin-top: 80px;
   --body-padding-bottom: 2rem;
   --page-title-font-size: 2.25rem;
@@ -25,6 +25,29 @@
   --nested-ul-ol-margin-left: 2rem;
   --nested-ul-ol-margin-right: 2rem;
   --textfigure-padding-x: 4rem;
+  --math-block-max-width: 100vw;
+
+  /* light mode code block colors */
+  /* --python-prompt-carets: purple; */
+  /* --python-prompt-ok-response: blue; */
+  /* --python-prompt-error-response: red; */
+  /* --listing-numbers: gray; */
+  /* --xml-tags: burgundy; */
+  /* --xml-attributes: #826cc4; */
+  
+  /* dark code block mode */
+  --python-prompt-carets: rgb(244, 154, 235);
+  --python-prompt-ok-response: rgb(19, 169, 234);
+  --python-prompt-error-response: rgb(255, 142, 142);
+  --listing-numbers: rgb(220, 220, 220);
+  --xml-tags: rgb(220, 200, 180);
+  --xml-attributes: #9781da;
+  --elm-punctuation: rgb(119, 177, 247);
+  --elm-defined-symbol: rgb(119, 177, 247);
+  --elm-type: rgb(207, 103, 191);
+  --elm-variable: rgb(235, 217, 128);
+  --elm-keyword: rgb(114, 234, 140);
+  --elm-function: rgb(119, 177, 247);
 }
 
 * {
@@ -259,7 +282,7 @@ p:has(> mjx-container) {
 
 .statement,
 .remark {
-  background-color: rgb(207, 244, 227);
+  background-color: rgb(206, 236, 219);
 }
 
 .highlight {
@@ -270,6 +293,10 @@ p:has(> mjx-container) {
 .statement .statement,
 .highlight > .highlight {
   background-color: #f0ffff;
+}
+
+.highlight .highlight .statement {
+  background-color: #d9edf7;
 }
 
 .exercise {
@@ -316,15 +343,15 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
 }
 
 .python-prompt-carets {
-  color: purple;
+  color: var(--python-prompt-carets);
 }
 
 .python-prompt-ok-response {
-  color: blue;
+  color: var(--python-prompt-ok-response);
 }
 
 .python-prompt-error-response {
-  color: red;
+  color: var(--python-prompt-error-response);
 }
 
 pre span.pythonPrompt {
@@ -340,12 +367,11 @@ pre.listing > span.listing-bol {
 }
 
 pre.listing > span.listing-bol::before {
-  color: gray;
+  color: var(--listing-numbers);
   content: counter(listing) ". ";
   min-width: 4ch;
   display: inline-block;
   text-align: right;
-  /* background-color: #000; */
 }
 
 pre.redyellow {
@@ -580,6 +606,7 @@ button img {
 }
 
 .math-block {
+  max-width: var(--math-block-max-width);
   position: relative;
   display: block;
   width: 100%;
@@ -601,12 +628,12 @@ button img {
 
 .xml-0 {
   /* '<' '/>' etc */
-  color: #913d3d;
+  color: var(--xml-tags);
 }
 
 .xml-1 {
   /* tag names */
-  color: #913d3d;
+  color: var(--xml-tags);
 }
 
 .xml-2 {
@@ -621,7 +648,7 @@ button img {
 
 .xml-4 {
   /* attribute values including the quotes */
-  color: #826cc4;
+  color: var(--xml-attributes);
 }
 
 .xml-5 {
@@ -636,27 +663,33 @@ button img {
 
 .elm-0 {
   /* punctuation */
-  color: rgb(34, 39, 45);
+  /* color: rgb(34, 39, 45); */
+  color: var(--elm-punctuation);
 }
 .elm-1 {
   /* thing-being-defined */
-  color: rgb(28, 94, 173);
+  /* color: rgb(28, 94, 173); */
+  color: var(--elm-defined-symbol)
 }
 .elm-2 {
   /* type */
-  color: rgb(207, 103, 191);
+  /* color: rgb(207, 103, 191); */
+  color: var(--elm-type);
 }
 .elm-3 {
   /* variable */
-  color: rgb(192, 169, 54);
+  /* color: rgb(192, 169, 54); */
+  color: var(--elm-variable);
 }
 .elm-4 {
   /* keyword */
-  color: rgb(164, 94, 101);
+  /* color: rgb(164, 94, 101); */
+  color: var(--elm-keyword));
 }
 .elm-5 {
   /* variant + function application */
-  color: rgb(62, 66, 71);
+  /* color: rgb(62, 66, 71); */
+  color: var(--elm-function);
 }
 
 .sc {

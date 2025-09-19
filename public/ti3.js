@@ -84,10 +84,12 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return screenWidth - 1.5 * remToPx;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
       return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
     return (
       mainColumnWidthInPx() -
       2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET
     );
+    return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remToPx;
   };
   
   let pageTitleFontSizeInRem = () => {
@@ -148,6 +150,11 @@ const resetScreenWidthDependentVars = () => {
     return 4;
   }
   
+  const mathBlockMaxWidthInPx = () => {
+    if (screenWidth > MAIN_COLUMN_100VW_MAX_WIDTH) return Infinity;
+    return mainColumnWidthInPx();
+  }
+  
   set("--body-margin-top", bodyMarginTopInPx, "px");
   set("--body-padding-bottom", bodyPaddingBottomInRem, "rem");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
@@ -165,6 +172,7 @@ const resetScreenWidthDependentVars = () => {
   set("--nested-ul-ol-margin-left", nestedUlOlMarginLeftInRem, "rem");
   set("--nested-ul-ol-margin-right", nestedUlOlMarginRightInRem, "rem");
   set("--textfigure-padding-x", textfigurePaddingXInRem, "rem");
+  set("--math-block-max-width", mathBlockMaxWidthInPx, "px");
 };
 
 const setImgHeightToAuto = () => {

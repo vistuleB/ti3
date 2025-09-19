@@ -333,6 +333,6 @@
     implementieren, also beispielsweise in meiner Datei `stockpile.py`:
 
     ```listing@63
-    def pair(xy):
+    def pair(x,y):
         return int(((x+y+1) * (x+y)) / 2 + x )
     ```
