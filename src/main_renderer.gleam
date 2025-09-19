@@ -247,7 +247,10 @@ fn filename_shorthand_to_path_fragment(
   case regexp.scan(filename_shorthand_regexp, shorthand) {
     [one] -> {
       let assert [Some(ch_no), Some(sub_no)] = one.submatches
-      zero_pad(ch_no) <> "/" <> zero_pad(sub_no)
+      zero_pad(ch_no) <> "/" <> case zero_pad(sub_no) {
+        "00" -> "__parent.wly"
+        x -> x
+      }
     }
     _ -> shorthand
   }
