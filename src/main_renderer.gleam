@@ -1,6 +1,7 @@
 import blame.{Ext}
 import gleam/io
 import gleam/list
+import gleam/option.{Some}
 import gleam/result
 import gleam/string.{inspect as ins}
 import infrastructure as infra
@@ -9,6 +10,7 @@ import main_pipeline.{main_pipeline}
 import simplifile
 import vxml.{type VXML}
 import desugaring as ds
+import gleam/regexp.{type Regexp}
 
 pub type FragmentType {
   Chapter(Int)
@@ -232,7 +234,53 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
   }
 }
 
+fn filename_shorthand_to_path_fragment(
+  shorthand: String,
+  filename_shorthand_regexp: Regexp,
+) -> String {
+  let zero_pad = fn(s) -> String {
+    case string.length(s) < 2 {
+      True -> "0" <> s
+      False -> s
+    }
+  }
+  case regexp.scan(filename_shorthand_regexp, shorthand) {
+    [one] -> {
+      let assert [Some(ch_no), Some(sub_no)] = one.submatches
+      zero_pad(ch_no) <> "/" <> zero_pad(sub_no)
+    }
+    _ -> shorthand
+  }
+}
+
+fn expand_filename_shorthands_to_path_fragments(
+  amendments: ds.CommandLineAmendments,
+) -> ds.CommandLineAmendments {
+  let assert Ok(filename_shorthand_regexp) = regexp.from_string("^([\\d]{1,2})[\\.\\-]([\\d]{1,2})$")
+
+  let only_paths = list.map(
+    amendments.only_paths,
+    filename_shorthand_to_path_fragment(_, filename_shorthand_regexp),
+  )
+
+  let only_key_values = list.map(
+    amendments.only_key_values,
+    fn(x) {
+      let #(path, k, v) = x
+      #(filename_shorthand_to_path_fragment(path, filename_shorthand_regexp), k, v)
+    }
+  )
+
+  ds.CommandLineAmendments(
+    ..amendments,
+    only_paths: only_paths,
+    only_key_values: only_key_values,
+  )
+}
+
 pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
+  let amendments = expand_filename_shorthands_to_path_fragments(amendments)
+
   let renderer =
     ds.Renderer(
       assembler: ds.default_assembler(amendments.only_paths),
