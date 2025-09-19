@@ -34,11 +34,10 @@
     $LR(0)$ ist. Ich interessiere mich gerade nur für Ableitungsbäume
     von Wortformen.
 
-    |> Highlight
-        |> Carousel
-            src=./img/context-free/LR/G-right-derivation.svg
-            src=./img/context-free/LR/G-left-derivation.svg
-            src=./img/context-free/LR/G-messy-derivation.svg
+    |> Carousel
+        src=./img/context-free/LR/G-right-derivation.svg
+        src=./img/context-free/LR/G-left-derivation.svg
+        src=./img/context-free/LR/G-messy-derivation.svg
 
     Fällt Ihnen etwas auf? Schauen Sie sich bitte noch ein weiteres
     Beispiel an für den Ableitungsbaum einer in einer gültigen
@@ -125,18 +124,17 @@
     Ableitungsbaum von $\gamma$ zeichnen und immer wieder die Blüte
     abschneiden:
 
-    |> Highlight
-        |> Carousel
-            src=./img/context-free/LR/tree-destruction/01.svg
-            src=./img/context-free/LR/tree-destruction/02.svg
-            src=./img/context-free/LR/tree-destruction/03.svg
-            src=./img/context-free/LR/tree-destruction/04.svg
-            src=./img/context-free/LR/tree-destruction/05.svg
-            src=./img/context-free/LR/tree-destruction/06.svg
-            src=./img/context-free/LR/tree-destruction/07.svg
-            src=./img/context-free/LR/tree-destruction/08.svg
-            src=./img/context-free/LR/tree-destruction/09.svg
-            src=./img/context-free/LR/tree-destruction/10.svg
+    |> Carousel
+        src=./img/context-free/LR/tree-destruction/01.svg
+        src=./img/context-free/LR/tree-destruction/02.svg
+        src=./img/context-free/LR/tree-destruction/03.svg
+        src=./img/context-free/LR/tree-destruction/04.svg
+        src=./img/context-free/LR/tree-destruction/05.svg
+        src=./img/context-free/LR/tree-destruction/06.svg
+        src=./img/context-free/LR/tree-destruction/07.svg
+        src=./img/context-free/LR/tree-destruction/08.svg
+        src=./img/context-free/LR/tree-destruction/09.svg
+        src=./img/context-free/LR/tree-destruction/10.svg
 
     Um für eine Wortform $\gamma$ den korrekten Reduktionsschritt zu
     finden, reicht es also aus, linken Rand und Blüte zu bestimmen,

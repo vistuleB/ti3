@@ -1,13 +1,16 @@
 const WELL_100VW_MAX_WIDTH = 550;
 const WELL_100VW_MINUS_PADDING_MAX_WIDTH = 900;
 const MAIN_COLUMN_100VW_MAX_WIDTH = 1400;
-const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1100;
+const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1050;
 const TOTAL_X_PADDING_IN_PX = 64;
-const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 100;
+const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 150;
 const CAROUSEL_ARROW_MAX_SIZE = 48;
 const CAROUSEL_ARROW_MIN_SIZE = 28;
 const BODY_TOP_MARGIN_MOBILE = 140;
 const BODY_TOP_MARGIN_DESKTOP = 80;
+
+const root = document.documentElement;
+const remToPx = 16;
 
 window.history.scrollRestoration = "manual";
 
@@ -33,66 +36,140 @@ const instantRecenter = () => {
   recenter("instant");
 };
 
-const computeBodyTopMargin = () => {
+const resetScreenWidthDependentVars = () => {
   const screenWidth = window.innerWidth;
-  if (screenWidth <= WELL_100VW_MAX_WIDTH) return BODY_TOP_MARGIN_MOBILE;
-  return BODY_TOP_MARGIN_DESKTOP;
-};
 
-const computeMainColumnWidth = () => {
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return screenWidth;
-  return WIDE_SCREEN_MAIN_COLUMN_WIDTH;
-};
+  let set = (key, val, unit) => {
+    root.style.setProperty(key, `${val()}` + unit);
+  }
 
-const computeOuterWellWidth = () => {
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= WELL_100VW_MAX_WIDTH) return screenWidth;
-  if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
-    return screenWidth - TOTAL_X_PADDING_IN_PX;
-  return (
-    computeMainColumnWidth() -
-    2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET
-  );
-};
+  let bodyMarginTopInPx = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return BODY_TOP_MARGIN_MOBILE;
+    return BODY_TOP_MARGIN_DESKTOP;
+  };
 
-const computeCarouselArrowSize = () => {
-  const screenWidth = window.innerWidth;
-  const size = (6 / 100) * window.innerWidth; // 6vw
-  const clampedSize = Math.min(
-    CAROUSEL_ARROW_MAX_SIZE,
-    Math.max(CAROUSEL_ARROW_MIN_SIZE, size),
-  );
-  return clampedSize;
-};
+  let bodyPaddingBottomInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
+    return 0;
+  };
+  
+  const carouselArrowSizeInPx = () => {
+    const size = (6 / 100) * screenWidth; // 6vw
+    const clampedSize = Math.min(
+      CAROUSEL_ARROW_MAX_SIZE,
+      Math.max(CAROUSEL_ARROW_MIN_SIZE, size)
+    );
+    return clampedSize;
+  };
+  
+  let mainColumnWidthInPx = () => {
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return screenWidth;
+    return WIDE_SCREEN_MAIN_COLUMN_WIDTH;
+  };
+  
+  let mainColumnPaddingXInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.5;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.8;
+    return 2;
+  };
+  
+  let mainColumnToWellMarginInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.8;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 1.7;
+    return 1.8;
+  };
+  
+  let outerWellWidthInPx = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return screenWidth - 1.5 * remToPx;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+      return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
+    return (
+      mainColumnWidthInPx() -
+      2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET
+    );
+  };
+  
+  let pageTitleFontSizeInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.9;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2.1;
+    return 2.25;
+  };
 
-const setBodyTopMargin = (value) => {
-  const root = document.documentElement;
-  const cssValue = `${value}px`;
-  root.style.setProperty("--body-top-margin", cssValue);
-};
+  const wellMarginYInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
+    return 2;
+  }
 
-const setMainColumnWidth = (value) => {
-  const root = document.documentElement;
-  const cssValue = `${value}px`;
-  root.style.setProperty("--main-column-width", cssValue);
-};
+  const endOfPageWellMarginBottomInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.8;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.9;
+    return 2.2;
+  }
 
-const setOuterWellWidth = (value) => {
-  const root = document.documentElement;
-  const cssValue = `${value}px`;
-  root.style.setProperty("--outer-well-width", cssValue);
-};
-
-const setCarouselArrowSize = (value) => {
-  const root = document.documentElement;
-  const cssValue = `${value}px`;
-  root.style.setProperty("--carousel-arrow-size", cssValue);
+  const wellPaddingXInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.3;
+    return 2;
+  }
+  
+  const wellPaddingYInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.2;
+    return 1.6;
+  }
+  
+  const ulOlMarginLeftInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.5;
+    return 2;
+  }
+  
+  const ulOlMarginRightInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.5;
+    return 2;
+  }
+  
+  const nestedUlOlMarginLeftInRem = () => {
+    return ulOlMarginLeftInRem();
+  }
+  
+  const nestedUlOlMarginRightInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1;
+    return 2;
+  }
+  
+  const textfigurePaddingXInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2.5;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
+    return 4;
+  }
+  
+  set("--body-margin-top", bodyMarginTopInPx, "px");
+  set("--body-padding-bottom", bodyPaddingBottomInRem, "rem");
+  set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
+  set("--main-column-width", mainColumnWidthInPx, "px");
+  set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
+  set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
+  set("--outer-well-width", outerWellWidthInPx, "px");
+  set("--page-title-font-size", pageTitleFontSizeInRem, "rem");
+  set("--well-margin-y", wellMarginYInRem, "rem");
+  set("--end-of-page-well-margin-bottom", endOfPageWellMarginBottomInRem, "rem");
+  set("--well-padding-x", wellPaddingXInRem, "rem");
+  set("--well-padding-y", wellPaddingYInRem, "rem");
+  set("--ul-ol-margin-left", ulOlMarginLeftInRem, "rem");
+  set("--ul-ol-margin-right", ulOlMarginRightInRem, "rem");
+  set("--nested-ul-ol-margin-left", nestedUlOlMarginLeftInRem, "rem");
+  set("--nested-ul-ol-margin-right", nestedUlOlMarginRightInRem, "rem");
+  set("--textfigure-padding-x", textfigurePaddingXInRem, "rem");
 };
 
 const setImgHeightToAuto = () => {
   const images = document.querySelectorAll(
-    "figure.main-column img, .well figure img",
+    "figure.main-column img, .well figure img"
   );
 
   images.forEach((img) => {
@@ -393,7 +470,7 @@ class Carousel {
         e.preventDefault();
         startHold();
       },
-      { passive: false },
+      { passive: false }
     );
 
     button.addEventListener(
@@ -402,7 +479,7 @@ class Carousel {
         e.preventDefault();
         stopHold();
       },
-      { passive: false },
+      { passive: false }
     );
 
     button.addEventListener("touchcancel", stopHold);
@@ -420,7 +497,7 @@ class Carousel {
   }
 
   attachEventListeners() {
-    window.addEventListener("resize", () => this.handleResize());
+    window.addEventListener("resize", this.handleResize);
   }
 }
 
@@ -436,7 +513,7 @@ function getClosestVisibleCarousel() {
       closestContainer = c;
     }
   }
-  return (closestContainer != null) ? closestContainer.carousel : null;
+  return closestContainer != null ? closestContainer.carousel : null;
 }
 
 function createCarouselObserver() {
@@ -445,16 +522,16 @@ function createCarouselObserver() {
     rootMargin: "0% 0% 0% 0%",
     threshold: 1.0,
   };
-  
+
   const callback = (entries, _) => {
     entries.forEach((entry) => {
       let index = visibleCarouselContainers.indexOf(entry.target);
       if (entry.isIntersecting) {
-        if(index === -1) {
+        if (index === -1) {
           visibleCarouselContainers.push(entry.target);
         }
       } else {
-        if(index !== -1) {
+        if (index !== -1) {
           visibleCarouselContainers.splice(index, 1);
         }
       }
@@ -471,7 +548,6 @@ const setupCarousels = () => {
     new Carousel(container);
     carouselObserver.observe(container);
   });
-  setCarouselArrowSize(computeCarouselArrowSize());
 };
 
 const adjustMathAlignment = () => {
@@ -573,10 +649,7 @@ const onLoad = () => {
 // event listeners
 const onResize = () => {
   instantRecenter();
-  setBodyTopMargin(computeBodyTopMargin());
-  setMainColumnWidth(computeMainColumnWidth());
-  setOuterWellWidth(computeOuterWellWidth());
-  setCarouselArrowSize(computeCarouselArrowSize());
+  resetScreenWidthDependentVars();
   onMobile(() => setImgHeightToAuto());
   setTimeout(adjustMathAlignment, 60);
 };
