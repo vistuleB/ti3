@@ -41,7 +41,7 @@ const resetScreenWidthDependentVars = () => {
 
   let set = (key, val, unit) => {
     root.style.setProperty(key, `${val()}` + unit);
-  }
+  };
 
   let bodyMarginTopInPx = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return BODY_TOP_MARGIN_MOBILE;
@@ -52,46 +52,46 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
     return 0;
   };
-  
+
   const carouselArrowSizeInPx = () => {
     const size = (6 / 100) * screenWidth; // 6vw
     const clampedSize = Math.min(
       CAROUSEL_ARROW_MAX_SIZE,
-      Math.max(CAROUSEL_ARROW_MIN_SIZE, size)
+      Math.max(CAROUSEL_ARROW_MIN_SIZE, size),
     );
     return clampedSize;
   };
-  
+
   let mainColumnWidthInPx = () => {
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return screenWidth;
     return WIDE_SCREEN_MAIN_COLUMN_WIDTH;
   };
-  
+
   let mainColumnPaddingXInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.5;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.8;
     return 2;
   };
-  
+
   let mainColumnToWellMarginInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.8;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 1.7;
     return 1.8;
   };
-  
+
   let outerWellWidthInPx = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return screenWidth - 1.5 * remToPx;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
       return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
-    return (
-      mainColumnWidthInPx() -
-      2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET
-    );
+      return (
+        mainColumnWidthInPx() -
+        2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET
+      );
     return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remToPx;
   };
-  
+
   let pageTitleFontSizeInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.9;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2.1;
@@ -102,59 +102,59 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
     return 2;
-  }
+  };
 
   const endOfPageWellMarginBottomInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.8;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.9;
     return 2.2;
-  }
+  };
 
   const wellPaddingXInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.3;
     return 2;
-  }
-  
+  };
+
   const wellPaddingYInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.2;
     return 1.6;
-  }
-  
+  };
+
   const ulOlMarginLeftInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.5;
     return 2;
-  }
-  
+  };
+
   const ulOlMarginRightInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.5;
     return 2;
-  }
-  
+  };
+
   const nestedUlOlMarginLeftInRem = () => {
     return ulOlMarginLeftInRem();
-  }
-  
+  };
+
   const nestedUlOlMarginRightInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1;
     return 2;
-  }
-  
+  };
+
   const textfigurePaddingXInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2.5;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
     return 4;
-  }
-  
+  };
+
   const mathBlockMaxWidthInPx = () => {
     if (screenWidth > MAIN_COLUMN_100VW_MAX_WIDTH) return Infinity;
     return mainColumnWidthInPx();
-  }
-  
+  };
+
   set("--body-margin-top", bodyMarginTopInPx, "px");
   set("--body-padding-bottom", bodyPaddingBottomInRem, "rem");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
@@ -164,7 +164,11 @@ const resetScreenWidthDependentVars = () => {
   set("--outer-well-width", outerWellWidthInPx, "px");
   set("--page-title-font-size", pageTitleFontSizeInRem, "rem");
   set("--well-margin-y", wellMarginYInRem, "rem");
-  set("--end-of-page-well-margin-bottom", endOfPageWellMarginBottomInRem, "rem");
+  set(
+    "--end-of-page-well-margin-bottom",
+    endOfPageWellMarginBottomInRem,
+    "rem",
+  );
   set("--well-padding-x", wellPaddingXInRem, "rem");
   set("--well-padding-y", wellPaddingYInRem, "rem");
   set("--ul-ol-margin-left", ulOlMarginLeftInRem, "rem");
@@ -177,7 +181,7 @@ const resetScreenWidthDependentVars = () => {
 
 const setImgHeightToAuto = () => {
   const images = document.querySelectorAll(
-    "figure.main-column img, .well figure img"
+    "figure.main-column img, .well figure img",
   );
 
   images.forEach((img) => {
@@ -478,7 +482,7 @@ class Carousel {
         e.preventDefault();
         startHold();
       },
-      { passive: false }
+      { passive: false },
     );
 
     button.addEventListener(
@@ -487,7 +491,7 @@ class Carousel {
         e.preventDefault();
         stopHold();
       },
-      { passive: false }
+      { passive: false },
     );
 
     button.addEventListener("touchcancel", stopHold);
@@ -505,7 +509,7 @@ class Carousel {
   }
 
   attachEventListeners() {
-    window.addEventListener("resize", this.handleResize);
+    window.addEventListener("resize", () => this.handleResize());
   }
 }
 
