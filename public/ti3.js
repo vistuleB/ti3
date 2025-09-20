@@ -606,7 +606,9 @@ const onImgClick = (e) => {
       } else {
         image.classList.add("constrained");
         image.style.width = "100%";
-        image.style.maxWidth = "100%";
+        image.style.maxWidth = getComputedStyle(root)
+          .getPropertyValue("--main-column-width")
+          .trim();
       }
     });
   }
