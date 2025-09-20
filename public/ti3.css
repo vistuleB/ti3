@@ -688,7 +688,7 @@ button img {
 .elm-4 {
   /* keyword */
   /* color: rgb(164, 94, 101); */
-  color: var(--elm-keyword));
+  color: var(--elm-keyword);
 }
 .elm-5 {
   /* variant + function application */
