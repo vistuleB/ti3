@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23pt" height="35pt" viewBox="0 0 23 35" version="1.1">
-<g id="surface16118">
-<path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 192 704 L 208 688 L 192 672 " transform="matrix(1,0,0,-1,-191,705)"/>
-<path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 212.207031 704 L 212.207031 672 " transform="matrix(1,0,0,-1,-191,705)"/>
-</g>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="23" height="34" viewBox="0 0 22 34" version="1.1"
+>
+  <style>
+    .round {
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: black;
+    }
+    .thin {
+      fill: none;
+      stroke-width: 0.2;
+      stroke: red;
+    }
+  </style>
+  <path class="thin" d="M0 0 H 22 V 34 H 0 V 0"/>
+  <path class="round" d="M 1 1 L 17 17 L 1 33"/>
+  <path class="round" d="M 21 1 V 33"/>
 </svg>
