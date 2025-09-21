@@ -67,8 +67,10 @@ const resetScreenWidthDependentVars = () => {
 
   const carouselNavButtonMarginXInPx = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+      return carouselArrowSizeInPx() * 0.7;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
+      return carouselArrowSizeInPx() * 0.4;
     return carouselArrowSizeInPx();
   };
 
@@ -517,8 +519,8 @@ class Carousel {
       () => {
         this.removeMobileNavigationButtons();
         this.createWideScreenNavigationButtons();
-      }
-    )
+      },
+    );
   }
 
   attachEventListeners() {
