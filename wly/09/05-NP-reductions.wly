@@ -64,20 +64,12 @@
         Es gilt nun: $G$ ist genau dann $3$-färbbar, wenn $F$ erfüllbar
         ist. Und hier ist nun unser Code für `is_3_colorable:`
 
-        |> pre
-            class=listing
-            |> span
-                def is_3_colorable(graph):
-            |> br
-            |> span
-                \    F = convert_to_CNF_formula(graph)
-            |> br
-            |> span
-                class=orange-comment
-                \    # F ist die oben beschriebene Formel mit 3n Variablen
-            |> br
-            |> span
-                \    return is_satisfiable(F)
+        ```orange-comments-listing
+        def is_3_colorable(graph):
+            F = convert_to_CNF_formula(graph)
+            //# F ist die oben beschriebene Formel mit 3n Variablen
+            return is_satisfiable(F)
+        ```
 
         Falls Ihnen eine Funktion `find_satisying_assignment` zur
         Verfügung steht, so können Sie natürlich die erfüllende Belegung

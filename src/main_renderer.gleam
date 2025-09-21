@@ -119,7 +119,7 @@ fn index_emitter(
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body class=\"page-index\">"),
       ],
-      vxml.vxml_to_html_output_lines(fragment.payload, 2, 2),
+      vxml.vxmls_to_html_output_lines(fragment.payload |> infra.v_get_children, 2, 2),
       [
         OutputLine(blame, 0, "</body>"),
         OutputLine(blame, 0, "</html>"),
@@ -152,7 +152,7 @@ fn chapter_emitter(
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body class=\"page-chapter chapter-" <> string.inspect(n) <> "\">"),
       ],
-      vxml.vxml_to_html_output_lines(fragment.payload, 2, 2),
+      vxml.vxmls_to_html_output_lines(fragment.payload |> infra.v_get_children, 2, 2),
       [
         OutputLine(blame, 0, "</body>"),
         OutputLine(blame, 0, "</html>"),
@@ -185,7 +185,7 @@ fn subchapter_emitter(
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body class=\"page-sub chapter-" <> string.inspect(chapter_n) <> " sub-" <> string.inspect(sub_n) <> "\">"),
       ],
-      vxml.vxml_to_html_output_lines(fragment.payload, 2, 2),
+      vxml.vxmls_to_html_output_lines(fragment.payload |> infra.v_get_children, 2, 2),
       [
         OutputLine(blame, 0, "</body>"),
         OutputLine(blame, 0, "</html>"),

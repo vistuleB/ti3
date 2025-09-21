@@ -167,10 +167,10 @@ body {
 /* Chapters and Subchapters
 */
 
-.chapter,
+/* .chapter,
 .subchapter {
   margin-top: 2rem;
-}
+} */
 
 .page-title {
   width: inherit;
