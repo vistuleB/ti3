@@ -18,7 +18,7 @@
 
     Diese Codierungsschema enthält implizit Codierungsfunktionen
     $\enc_Q : Q \rightarrow \{0,1\}^+$ und
-    $\enc_\Gamma: \Gamma \rightarrow \Sigma \cup \{0,1\}^+$ , die wir
+    $\enc_\Gamma: \Gamma \rightarrow \Sigma \cup \{0,1\}^+$, die wir
     verwenden, um die Zustände und Arbeitszeichen von $M$ in $\Lambda$
     -Zeichen zu übersetzen. Für eine Konfiguration
 

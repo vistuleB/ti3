@@ -81,7 +81,7 @@
         |> ul
             |> li
                 Eine _Kachel_ (auch _Kärtchen_ genannt) ist ein Paar
-                $(\alpha : \beta) \in \Sigma^* \times \Sigma^*$ . Hier
+                $(\alpha : \beta) \in \Sigma^* \times \Sigma^*$. Hier
                 bezeichnet $\alpha$ das Wort auf der oberen Hälfte der
                 Kachel und $\beta$ das auf der unteren.
 

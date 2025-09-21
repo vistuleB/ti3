@@ -129,7 +129,7 @@
         \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \
         \end{align*}
 
-        und entwerfen Sie eine reguläre Grammatik für $L$ .
+        und entwerfen Sie eine reguläre Grammatik für $L$.
 
     |> Exercise
         Sei $\Sigma = \{a,b,.\}$ und $L \subseteq \Sigma^*$ die Sprache

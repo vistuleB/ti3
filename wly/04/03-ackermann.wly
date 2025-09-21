@@ -181,7 +181,7 @@
     _zwei_ Eingabeparametern, und $m$ ist nun einer dieser beiden.
     Anders ausgedrückt: sie können zwar jedes einzelne $A_m$ in der
     "Programmiersprache" der primitiven Rekursion implementieren,
-    allerdings brauchen Sie für jedes  $m$ neuen Code. Sie können
+    allerdings brauchen Sie für jedes $m$ neuen Code. Sie können
     keinen Code schreiben, der, gegeben $m$, den Code für $A_m$
     irgendwie implizit produziert und dann mit $n$ aufruft. Jedenfalls
     nicht in der Programmiersprache der primitiven Rekursion.
@@ -273,11 +273,11 @@
         wurde $f$ mittels Komposition oder primitiver Rekursion
         konstruiert. Für jeden Fall führen wir eine getrennte Rechnung
         durch. *Komposition:*
-        $f(\vec{x}) = g(h_1(\vec{x}), \dots, h_k(\vec{x}))$ , für
+        $f(\vec{x}) = g(h_1(\vec{x}), \dots, h_k(\vec{x}))$, für
         primitiv rekursive Funktionen $g, h_1, \dots, h_k$. Jede dieser
         Funktionen wurde mit _weniger_ Kombinatoren konstruiert; somit
         wird jede dieser Funktionen von einem $A_r$ majorisiert:
-        $A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k$ . Für einen
+        $A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k$. Für einen
         Eingabevektor $\vec{x}$ schreiben wir $x := \max(x_1,\dots,x_n)$
         und rechnen:
 

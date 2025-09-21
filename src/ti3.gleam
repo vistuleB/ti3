@@ -46,7 +46,7 @@ pub fn main() {
 
         Error(_) -> {
           io.println("")
-          io.println("wly -> html")
+          io.println("wly -> html renderer")
           main_renderer.main_renderer(amendments)
         }
       }

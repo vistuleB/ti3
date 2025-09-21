@@ -420,7 +420,7 @@
         Automaten $M$ ein akzeptierender Endzustand ist. Sei nun also
         $q' \rightarrow \epsilon$ die Produktion, die im letzten
         Ableitungsschritt angewendet worden ist. Es gilt also
-        $\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$ . Beachten
+        $\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$. Beachten
         Sie nun weiter, dass all jene Produktionen, die in $G$ aber
         nicht in $G'$ sind, die Form $q' \rightarrow \epsilon$ haben,
         also das Nichtterminalsymbol verschwinden lassen; es kann in

@@ -121,7 +121,7 @@
         Wenn wir $Q \cup \Gamma$ binär codieren mit
         $l := \ceil{\log_2 |Q \cup \Gamma|}$ Bits, so wird
         $\tilde{\delta}$ zu einer Booleschen Funktion
-        $\tilde{\delta} : \{0,1\}^{4l} \rightarrow \{0,1\}^l$ . Wir
+        $\tilde{\delta} : \{0,1\}^{4l} \rightarrow \{0,1\}^l$. Wir
         können dafür einen Schaltkreis der Größe
         $O(2^l) = O(|\Gamma \cup Q|^4)$ bauen: per Wahrheitstabelle wird
         er etwas größer; mit der Lupanov-Schranke (
@@ -130,10 +130,10 @@
             class=reference
         ) kriegen Sie $O(2^l)$. Wir haben nun also einen Schaltkreis
         $\Delta$, der $\tilde{\delta}$ berechnet. Seine Größe ist
-        $O(|\Gamma \cup Q|^4)$ . Da wir $|Q|$ und $|\Gamma|$ als
-        konstant betrachten, da es nicht von der Eingabegröße $n=|x|$
-        abhängt, können wir sogar behaupten: die Größe von $\Delta$ ist
-        $O(1)$. Wir schalten jetzt $S$ Kopien von $\Delta$ parallel, um
+        $O(|\Gamma \cup Q|^4)$. Da wir $|Q|$ und $|\Gamma|$ als konstant
+        betrachten, da es nicht von der Eingabegröße $n=|x|$ abhängt,
+        können wir sogar behaupten: die Größe von $\Delta$ ist $O(1)$.
+        Wir schalten jetzt $S$ Kopien von $\Delta$ parallel, um
         $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ zu
         berechnen, also aus einer gegebenen Konfiguration die
         Folgekonfiguration:
@@ -144,7 +144,7 @@
                 src=img/09-complexity-theory/to-circuits/to-circuits-02-01.svg
 
         Jeder Pfeil steht hierbei für $l$ Boolesche Kabel. Dies ergibt
-        _einen_ Schaltkreis $\Delta^S$ , der
+        _einen_ Schaltkreis $\Delta^S$, der
         $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ berechnet
         (bzw. die Boolesche Codierung dieser Funktion) und Größe
         $O(S) = O(t(n))$ hat:

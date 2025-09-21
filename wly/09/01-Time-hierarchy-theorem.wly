@@ -196,7 +196,7 @@
         title=*Lemma*
         Sei $s: \N \rightarrow \N$ eine Funktion mit $s(n) \geq n$ und
         $s = o(t)$, also
-        $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$ . Dann gilt
+        $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$. Dann gilt
         $\bnegdiag \not \in \TIME_k(s)$.
 
     |> Highlight

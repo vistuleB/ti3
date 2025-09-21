@@ -82,8 +82,8 @@
     Wortform $\gamma w$. Solange es eine Rechtsableitung
     $S \Pets{} \gamma w \Pets{} v$ gibt, sind wir auf dem richtigen
     Weg. Am Besten betrachten wir ein Beispiel für
-    $L_2 = \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0\}$ . Die Farbe
-    grau bedeutet hier, dass wir das Eingabezeichen noch nicht gelesen
+    $L_2 = \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0\}$. Die Farbe grau
+    bedeutet hier, dass wir das Eingabezeichen noch nicht gelesen
     haben.
 
     |> Highlight

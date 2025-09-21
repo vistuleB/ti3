@@ -49,6 +49,9 @@ pub fn main_pipeline()  -> List(Pipe) {
     ),
   ]
 
+  // use 'dl.table_marker()' desugarer to mark a line 
+  // in the table; (with '--table' printout)
+
   [
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
@@ -144,7 +147,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     [
-      dl.table_marker(),
+      // dl.table_marker(),
     ],
     pp.markdown_link_splitting(["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),

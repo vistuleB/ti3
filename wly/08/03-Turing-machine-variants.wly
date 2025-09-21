@@ -345,7 +345,7 @@
         \end{align*}
 
         entgegennimmt, für
-        $k, k_1, \dots, k_n, v_1, \dots, v_n \in \{0,1\}^n$ , also
+        $k, k_1, \dots, k_n, v_1, \dots, v_n \in \{0,1\}^n$, also
         $\Sigma = \{0,1, \texttt{:}, \texttt{;}, \texttt{[},
         \texttt{]}\}$
         und akzeptiert, wenn es ein $i$ gibt mit $k = k_i$ und in diesem

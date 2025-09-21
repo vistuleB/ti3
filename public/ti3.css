@@ -14,6 +14,7 @@
   --main-column-to-well-margin: 0.9rem;
   --outer-well-width: 100vw;
   --carousel-arrow-size: 48px;
+  --carousel-nav-{button-margin-x: 2em;
   --well-after-main-column-margin-top: 0.9rem;
   --well-before-main-column-margin-bottom: 0.9rem;
   --well-margin-y: 0.75rem;
@@ -498,7 +499,7 @@ figure.main-column img.constrained,
   color: #333;
   transition: background-color 0.3s ease;
   z-index: 100;
-  margin: 0 1em;
+  margin: 0 var(--carousel-nav-button-margin-x);
 }
 
 .carousel__nav-button > img {
@@ -521,6 +522,7 @@ figure.main-column img.constrained,
   flex: 1 0 0%;
   display: flex;
   text-align: center;
+  margin: 0 var(--carousel-nav-button-margin-x);
 }
 
 .carousel__item {

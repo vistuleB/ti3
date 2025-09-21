@@ -128,8 +128,8 @@
         \end{align*}
 
         Nun geht $M'$ auf dem zweiten Band wieder zum linken Rand und
-        wechselt in wechselt in $\qstart$ , den Startzustand von $M$.
-        Nun beginnt Phase 3, in der sie genau so arbeitet wie $M$ . Wir
+        wechselt in wechselt in $\qstart$, den Startzustand von $M$. Nun
+        beginnt Phase 3, in der sie genau so arbeitet wie $M$ . Wir
         müssen nun zeigen, dass für alle Eingabewörter $w \in \Sigma^*$
 
         \begin{align*}

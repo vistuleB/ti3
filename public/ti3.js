@@ -65,6 +65,13 @@ const resetScreenWidthDependentVars = () => {
     return clampedSize;
   };
 
+  const carouselNavButtonMarginXInPx = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
+    return carouselArrowSizeInPx();
+  };
+
   let mainColumnWidthInPx = () => {
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return screenWidth;
     return WIDE_SCREEN_MAIN_COLUMN_WIDTH;
@@ -161,6 +168,7 @@ const resetScreenWidthDependentVars = () => {
   set("--body-margin-top", bodyMarginTopInPx, "px");
   set("--body-padding-bottom", bodyPaddingBottomInRem, "rem");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
+  set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
   set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
@@ -325,16 +333,16 @@ class Carousel {
   }
 
   init() {
-    onMobile(() => {
-      this.createMobileNavigationButtons();
-      this.showCurrentItem();
-    });
-
-    onWideScreen(() => {
-      this.createWideScreenNavigationButtons();
-      this.showCurrentItem();
-    });
-
+    onTouchScreenElse(
+      () => {
+        this.createMobileNavigationButtons();
+        this.showCurrentItem();
+      },
+      () => {
+        this.createWideScreenNavigationButtons();
+        this.showCurrentItem();
+      },
+    );
     this.attachEventListeners();
   }
 
@@ -501,14 +509,16 @@ class Carousel {
   }
 
   handleResize() {
-    onMobile(() => {
-      this.removeWideScreenNavigationButtons();
-      this.createMobileNavigationButtons();
-    });
-    onWideScreen(() => {
-      this.removeMobileNavigationButtons();
-      this.createWideScreenNavigationButtons();
-    });
+    onTouchScreenElse(
+      () => {
+        this.removeWideScreenNavigationButtons();
+        this.createMobileNavigationButtons();
+      },
+      () => {
+        this.removeMobileNavigationButtons();
+        this.createWideScreenNavigationButtons();
+      }
+    )
   }
 
   attachEventListeners() {
@@ -659,6 +669,12 @@ const onMobile = (callback) => {
   return;
 };
 
+const onTouchScreenElse = (callback1, callback2) => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return callback1();
+  return callback2();
+};
+
 const visibleCarouselContainers = new Array();
 
 const onLoad = () => {
@@ -734,9 +750,8 @@ const onKeyDown = (e) => {
   }
 };
 
-// event listeners
-document.addEventListener("DOMContentLoaded", onLoad);
 window.addEventListener("resize", onResize);
+document.addEventListener("DOMContentLoaded", onLoad);
 document.addEventListener("click", smoothRecenter);
 document.addEventListener("scroll", onScroll);
 document.addEventListener("scrollend", onScrollEnd);

@@ -318,7 +318,7 @@
         \step{x} q'\}
         \end{align*}
 
-        der _Potenzmengenautomat_. Es gilt $L(M) = L(M')$ .
+        der _Potenzmengenautomat_. Es gilt $L(M) = L(M')$.
 
     Wir folgern also
 

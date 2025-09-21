@@ -113,7 +113,7 @@
         title=*Definition*
         Zwei Mengen $A$ und $B$ heißen _gleichmächtig_, wenn es eine
         Bijektion $f : A \rightarrow B$ gibt. Wir schreiben in diesem
-        Falle $A \approx B$ . Es gilt trivialerweise immer $A \approx A$,
+        Falle $A \approx B$. Es gilt trivialerweise immer $A \approx A$,
         da wir ja die Identitätsfunktion $x \mapsto x$ als Bijektion
         nehmen können. Wenn es eine Bijektion $f : A \rightarrow B$
         gibt, dann natürlich auch eine Umkehrfunktion

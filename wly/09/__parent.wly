@@ -246,7 +246,7 @@
             `True` auswertet?
 
         |> li
-            `Hamilton Cycle`{sc}: Gegeben ein Graph $G=(V,E)$ , gibt es
+            `Hamilton Cycle`{sc}: Gegeben ein Graph $G=(V,E)$, gibt es
             einen Kreis der Länge $n$? Gibt es also einen geschlossenen
             Kantenzug, der jeden Knoten genau einmal besucht (wobei der
             Endknoten gleich der Startknoten ist)?

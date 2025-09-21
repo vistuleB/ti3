@@ -24,7 +24,7 @@
         einen Algorithmus `is_3_colorable` zu entwerfen. Sei nun
         $G = (V,E)$ ein Graph und $v_1, \dots, v_n$ seine Knoten. Wir
         führen $3n$ Boolesche Variable ein:
-        $r_1, \dots, r_n, g_1, \dots, g_n, b_1, \dots, b_n$ . Die
+        $r_1, \dots, r_n, g_1, \dots, g_n, b_1, \dots, b_n$. Die
         Intention hierbei ist, dass $r_i$ anzeigt, ob $v_i$ rot ist und
         so weiter. Wir müssen jetzt Klauseln erschaffen, die die Aussage
         "das ist eine gültige 3-Färbung" als CNF-Formel codieren. Wir

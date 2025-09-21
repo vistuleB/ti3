@@ -347,7 +347,7 @@
         die entstandene Grammatik mit der, die wir per Hand aus der
         obigen Sprachbeschreibung bauen würden. Unser Automat hat einen
         Zustand $q_1$, in welchem er führenden $a$ 's auf den Stack legt
-        und einen Zustand  $q_3$, in welchem er die $a$'s am Ende liest
+        und einen Zustand $q_3$, in welchem er die $a$'s am Ende liest
         und vom Stack poppt. Zwischen den beiden $b$'s in der Mitte ist
         er in einem Zustand $q_2$, in welchem er die Eingabesymbole mehr
         oder weniger ignoriert. Der Automat muss nichtdeterministisch

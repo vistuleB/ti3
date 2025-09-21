@@ -625,7 +625,7 @@
         \end{align*}
 
         Eine Signalstärke von $\delta$ entspricht einer
-        Fehlerwahrscheinlichkeit von $\frac{1-\delta}{2}$ . Die
+        Fehlerwahrscheinlichkeit von $\frac{1-\delta}{2}$. Die
         Verteilung $\mathcal{C}_{i^*}$ hat also eine
         Fehlerwahrscheinlichkeit von höchstens $\frac{1 - 1/2}{2} = 1/4$.
         Das obige Lemma, nun aus der Sicht der Fehlerwahrscheinlichkeit,
@@ -652,12 +652,12 @@
             |> QED
 
         Für $i^* := \log_{5/4} n$ hat $\mathcal{C}_{i^*}$ eine
-        Fehlerwahrscheinlichkeit von höchstens $1/4$ . Für $i^* + 1$
-        wird das zu $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und für $i^* + 2$
-        zu $3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$ . Wenn
-        nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt
+        Fehlerwahrscheinlichkeit von höchstens $1/4$. Für $i^* + 1$ wird
+        das zu $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und für $i^* + 2$ zu
+        $3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$. Wenn nun
+        $\epsilon \leq \frac{1}{9}$ ist, dann gilt
         $3 \epsilon^2 \leq \epsilon^{3/2}$. Wir definieren
-        $\epsilon_i := \frac{1 - \delta_i}{2}$ , also die
+        $\epsilon_i := \frac{1 - \delta_i}{2}$, also die
         Fehlerwahrscheinlichkeit von $\mathcal{C}_i$. Es gilt also
         $\epsilon_{i+1} \leq (\epsilon_i)^{3/2}$ für alle $i \geq i^*+2$
         und somit
@@ -715,7 +715,7 @@
         Das geht ungefähr so: wenn für jedes feste $\b \in \cube^n$ ein
         Schaltkreis $C \mathcal{C}_k$ mit Wahrscheinlichkeit $\epsilon_k$
         irrt, dann ist die Wahrscheinlichkeit, dass $C$ sich für
-        irgendein $\x \in \cube^n$ irrt, höchstens $2^n \epsilon_k$ .
+        irgendein $\x \in \cube^n$ irrt, höchstens $2^n \epsilon_k$.
         Formal: für jedes $\b \in \cube^n$ definieren wir $E_{\b}$ als
         die Menge der Schaltkreise mit Input-Variablen $x_1,\dots,x_n$,
         die sich auf $\b$ irren, also

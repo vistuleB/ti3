@@ -164,7 +164,7 @@
         \end{align*}
 
         Dies ist die gewünschte Bijektion
-        $\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N$ .
+        $\{0,1\}^\N \times \{0,1\}^\N \rightarrow \{0,1\}^\N$.
         |> QED
 
     Aus der Funktion

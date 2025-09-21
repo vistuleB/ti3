@@ -35,7 +35,10 @@ fn ends_with_dollar_starts_with_punctuation(s1: String, s2: String) {
   }
 }
 
-pub fn formatter_pipeline(cols: Int) -> List(Pipe) {
+pub fn formatter_pipeline(
+  line_length: Int,
+  indentation_line_length_penalty: Int, // amount subtracted from the line_length at each new level of indentation (with Sub, Chapter)
+) -> List(Pipe) {
   [
     [
       dl.identity(),
@@ -63,7 +66,13 @@ pub fn formatter_pipeline(cols: Int) -> List(Pipe) {
       dl.insert_text_start_end_if_unique_attr(#("span", "style", "font-variant:small-caps;", #("`", "`{sc}"))),
       dl.fold_children_into_text_if(#("span", infra.v_has_key_value(_, "style", "font-variant:small-caps;"))),
       dl.wrap_adjacent_non_whitespace_text_with(#(["Math"], "NoWrap")),
-      dl.line_rewrap_no2__outside(#(["Chapter", "Sub"], cols, minimum_line_wrap_length, 2, infra.is_v_and_tag_is_one_of(_, ["Math", "NoWrap"])), ["MathBlock", "pre", "WriterlyCodeBlock"]),
+      dl.line_rewrap_no2__outside(
+        #(["Chapter", "Sub"],
+        line_length,
+        minimum_line_wrap_length,
+        indentation_line_length_penalty,
+        infra.is_v_and_tag_is_one_of(_, ["Math", "NoWrap"])), ["MathBlock", "pre", "WriterlyCodeBlock"],
+      ),
       dl.concatenate_text_nodes(),
       dl.unwrap("NoWrap"),
       dl.last_to_first_concatenate_text_nodes(),

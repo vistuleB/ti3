@@ -170,15 +170,14 @@
             |> img
                 src=./img/infinite-sets/Z-times-N-removed.svg
 
-        Die Punkte sind die Elemente von $\Z \times \N^+$ . Die
-        schwarzen Punkte sind jene Punkte $(x,y)$ mit $\gcd(x,y)=1$.
-        Diese stehen nun in Bijektion mit den rationalen Zahlen. Die
-        entsprechenden rationalen Zahlen habe ich daneben geschrieben -
-        die negativen habe ich aus Gründen der Übersichtlichkeit
-        weggelassen. Sie befinden sich spiegelverkehrt auf der linken
-        Seite. Wir müssen nun eine Aufzählung der schwarzen Punkte
-        finden, also eine Bijektion von $\N$ in die Menge der schwarzen
-        Punkte:
+        Die Punkte sind die Elemente von $\Z \times \N^+$. Die schwarzen
+        Punkte sind jene Punkte $(x,y)$ mit $\gcd(x,y)=1$. Diese stehen
+        nun in Bijektion mit den rationalen Zahlen. Die entsprechenden
+        rationalen Zahlen habe ich daneben geschrieben - die negativen
+        habe ich aus Gründen der Übersichtlichkeit weggelassen. Sie
+        befinden sich spiegelverkehrt auf der linken Seite. Wir müssen
+        nun eine Aufzählung der schwarzen Punkte finden, also eine
+        Bijektion von $\N$ in die Menge der schwarzen Punkte:
 
         |> figure
             |> img

@@ -10,7 +10,8 @@ import vxml.{type VXML, V}
 import blame.{Src}
 import formatter_pipeline.{formatter_pipeline}
 
-const default_line_wrap_length = 70
+const default_line_length = 70
+const default_indentation_penalty = 2
 
 type FragmentType {
   Root
@@ -68,18 +69,27 @@ fn splitter(
 pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
   let assert Ok(fmt_args) = dict.get(amendments.user_args, "--fmt")
 
-  let cols = case fmt_args {
-    [first, ..] -> case int.parse(first) {
-      Ok(val) -> int.max(val, 40)
+  let #(line_length, indentation_penalty) = case fmt_args {
+    [first, ..rest] -> case int.parse(first) {
+      Ok(val) -> case rest {
+        [] -> #(int.max(val, 40), default_indentation_penalty)
+        [second, ..] -> case int.parse(second) {
+          Ok(val2) -> #(int.max(val, 40), int.min(int.max(val2, 0), 4))
+          Error(_) -> {
+            io.println("\ncannot parse '" <> second <> "' as an integer value; reverting to default indentation penalty")
+            #(val, default_indentation_penalty)
+          }
+        }
+      }
       Error(_) -> {
-        io.println("\ncannot parse '" <> first <> "' as an integer value; reverting to default line length")
-        default_line_wrap_length
+        io.println("\ncannot parse '" <> first <> "' as an integer value; reverting to default line length & indentation penalty")
+        #(default_line_length, default_indentation_penalty)
       }
     }
-    _ -> default_line_wrap_length
+    _ -> #(default_line_length, default_indentation_penalty)
   }
 
-  let pipeline = formatter_pipeline(cols)
+  let pipeline = formatter_pipeline(line_length, indentation_penalty)
 
   let renderer =
     ds.Renderer(

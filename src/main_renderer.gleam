@@ -207,6 +207,7 @@ fn our_emitter(
 }
 
 fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
+  io.println("• rm " <> output_dir <> "/**.html")
   case simplifile.read_directory(output_dir) {
     Ok(files) -> {
       files
@@ -214,10 +215,7 @@ fn cleanup_html_files(output_dir: String) -> Result(Nil, String) {
       |> list.map(fn(file) { 
         let file_path = output_dir <> "/" <> file
         case simplifile.delete(file_path) {
-          Ok(_) -> {
-            // io.println("Deleted: " <> file_path)
-            Ok(Nil)
-          }
+          Ok(_) -> Ok(Nil)
           Error(error) -> {
             io.println("Warning: Could not delete " <> file_path <> ": " <> string.inspect(error))
             Ok(Nil)  // continue even if some files can't be deleted
@@ -301,7 +299,7 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
       input_dir: "./wly",
       output_dir: "./public",
       prettifier_behavior: ds.PrettifierOff,
-      table: False,
+      table: True,
     )
     |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
@@ -311,7 +309,7 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
 
   // clean up HTML files before rendering
   case cleanup_html_files(parameters.output_dir) {
-    Ok(_) -> io.println("HTML cleanup completed")
+    Ok(_) -> Nil
     Error(error) -> io.println("HTML cleanup failed: " <> error)
   }
   
