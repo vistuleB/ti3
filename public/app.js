@@ -15,6 +15,7 @@ const remToPx = 16;
 window.history.scrollRestoration = "manual";
 
 let lastScrollY = 0;
+let ticking = false;
 let menuElement = null;
 let isPageCentered = true;
 
@@ -188,11 +189,7 @@ const resetScreenWidthDependentVars = () => {
     endOfPageWellMarginBottomInRem,
     "rem",
   );
-  set(
-    "--last-child-well-margin-bottom",
-    lastChildWellMarginBottomInRem,
-    "rem",
-  );
+  set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
   set("--well-padding-x", wellPaddingXInRem, "rem");
   set("--well-padding-y", wellPaddingYInRem, "rem");
   set("--ul-ol-margin-left", ulOlMarginLeftInRem, "rem");
@@ -213,6 +210,11 @@ const setImgHeightToAuto = () => {
       img.style.height = "auto";
     }
   });
+};
+
+const setMenuBorder = () => {
+  const menuLeftRight = document.querySelectorAll(".menu-right, .menu-left");
+  menuLeftRight.forEach((menu) => (menu.style.borderRadius = "0px"));
 };
 
 const add_line_number_to_numbered_pre = () => {
@@ -640,7 +642,25 @@ const onImgClick = (e) => {
   }
 };
 
-const handleMenuOnScroll = () => {
+// requestAnimationFrame based throttle
+const rafThrottle = (func) => {
+  let rafId = null;
+  let lastArgs = null;
+
+  return (...args) => {
+    lastArgs = args;
+
+    if (rafId === null) {
+      rafId = requestAnimationFrame(() => {
+        func.apply(this, lastArgs);
+        rafId = null;
+      });
+    }
+  };
+};
+
+const onScrollMenuDisplay = () => {
+  console.log("onScrollMenuDisplay");
   if (!menuElement) {
     menuElement = document.querySelector(".menu");
     if (!menuElement) return;
@@ -658,7 +678,10 @@ const handleMenuOnScroll = () => {
   }
 
   lastScrollY = currentScrollY;
+  ticking = false;
 };
+
+const menuHandler = rafThrottle(onScrollMenuDisplay);
 
 const smoothRecenterMaybe = (e) => {
   let theoretical_left = marginWidth();
@@ -697,6 +720,7 @@ const onLoad = () => {
   setupCarousels();
   add_line_number_to_numbered_pre();
   onResize();
+  console.log("onLoad triggered");
 };
 
 // event listeners
@@ -704,16 +728,14 @@ const onResize = () => {
   instantRecenter();
   resetScreenWidthDependentVars();
   onMobile(() => setImgHeightToAuto());
+  onMobile(() => setMenuBorder());
   setTimeout(adjustMathAlignment, 60);
-};
-
-const onScroll = (e) => {
-  handleMenuOnScroll();
 };
 
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();
   setTimeout(adjustMathAlignment, 60);
+  // console.log("onScrollEnd");
 };
 
 const onTouchEnd = (e) => {
@@ -768,7 +790,7 @@ const onKeyDown = (e) => {
 window.addEventListener("resize", onResize);
 document.addEventListener("DOMContentLoaded", onLoad);
 document.addEventListener("click", smoothRecenter);
-document.addEventListener("scroll", onScroll);
+document.addEventListener("scroll", menuHandler, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd, { passive: true });
 document.addEventListener("keydown", onKeyDown);

@@ -142,6 +142,7 @@ body {
   justify-content: space-between;
   transform: translateY(0);
   transition: transform 0.5s ease-in-out;
+  will-change: transform;
 }
 
 .menu--hidden {
