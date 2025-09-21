@@ -2,7 +2,7 @@
   --body-color: #333333;
   --carousel-indicator-size: 10px;
   --carousel-indicator-padding: 12px;
-  --progress-counter-font-size: 0.85em;
+  --progress-counter-font-size: 0.8em;
   --max-carousel-indicators-per-line: 30;
 
   /* the following are set by ti3.js resetScreenWidthDependentVars: */
@@ -207,7 +207,7 @@ body {
   padding: var(--well-padding-y) var(--well-padding-x);
   line-height: 1.8rem;
   border-radius: 12px;
-  border: 0.2px #555 solid;
+  border: 0px #555 solid;
 }
 
 .well.out {
@@ -282,7 +282,7 @@ p:has(> mjx-container) {
 
 .statement,
 .remark {
-  background-color: rgb(206, 236, 219);
+  background-color: rgb(214, 239, 225);
 }
 
 .highlight {
@@ -429,6 +429,10 @@ figure.main-column img.constrained,
   padding: 0 0.1rem;
 }
 
+.carousel__container:last-child {
+  margin-bottom: 2rem;
+}
+
 .carousel__container {
   max-width: fit-content;
   width: fit-content;
@@ -450,7 +454,7 @@ figure.main-column img.constrained,
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 8px;
   touch-action: pinch-zoom;
 }
 
@@ -494,6 +498,7 @@ figure.main-column img.constrained,
   color: #333;
   transition: background-color 0.3s ease;
   z-index: 100;
+  margin: 0 1em;
 }
 
 .carousel__nav-button > img {
