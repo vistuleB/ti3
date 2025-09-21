@@ -409,12 +409,19 @@ figure.main-column,
   margin: 20px auto;
   text-align: center;
   overflow: visible;
+  background-color: inherit;
 }
 
 figure.main-column img,
 .well figure img {
   max-width: var(--main-column-width);
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
+  background-color: inherit;
+}
+
+figure.main-column img:not(.constrained),
+.well figure img:not(.constrained) {
+  border-radius: 6px;
 }
 
 figure.main-column img.constrained,
