@@ -1,6 +1,6 @@
 :root {
   --body-color: #333333;
-  --carousel-indicator-size: 10px;
+  --carousel-indicator-size: 7px;
   --carousel-indicator-padding: 12px;
   --progress-counter-font-size: 0.8em;
   --max-carousel-indicators-per-line: 30;
