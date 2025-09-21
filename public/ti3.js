@@ -703,7 +703,6 @@ const onScrollEnd = (e) => {
 };
 
 const onTouchEnd = (e) => {
-  console.log("here's your event:", e);
   smoothRecenterMaybe();
   setTimeout(adjustMathAlignment, 60);
 };
