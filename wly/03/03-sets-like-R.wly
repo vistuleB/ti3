@@ -349,10 +349,11 @@
         title=*Zweiter Beweis.*
         Um zu zeigen, dass $\R^\N \approx \R$ gilt, rechnen wir:
 
-        \begin{align}
-        \R^\N&\approx \left(\cuben\right)^{\N} \\&\approx
-        \cube^{\N \times \N} \\&\approx \cube^{\N} \\&\approx \R \ .
-        \end{align}
+        \begin{align*}
+        \R^\N &\approx \left(\cuben\right)^{\N} \\
+        \     &\approx \cube^{\N \times \N} \\
+        \     &\approx \cube^{\N} \\&\approx \R \vphantom{\cube^{\N}} \ .
+        \end{align*}
 
         |> QED
 
@@ -436,9 +437,11 @@
     |> Exercise
         Beweisen Sie so viele Punkte von Theorem
         >>calculating-with-cardinals und Theorem
-        >>replacing-equipotent-cardinals, wie Sie wollen. *Hinweis.* Die
-        Beweise sind alle nicht wirklich schwierig. Sie müssen nur
-        aufpassen, dass Sie sich nicht in der Notation verlieren.
+        >>replacing-equipotent-cardinals, wie Sie wollen.
+
+        *Hinweis.* Die Beweise sind alle nicht wirklich schwierig. Sie
+        müssen nur aufpassen, dass Sie sich nicht in der Notation
+        verlieren.
 
     |> Topic
         Die Partialordnung $2^{\N}$.

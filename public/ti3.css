@@ -1,7 +1,8 @@
 :root {
   --body-color: #333333;
-  --carousel-indicator-size: 7px;
-  --carousel-indicator-padding: 12px;
+  --carousel-indicator-gap: 4px;
+  --carousel-indicator-box-size: 14px;
+  --carousel-indicator-dot-size: 7.5px;
   --progress-counter-font-size: 0.8em;
   --max-carousel-indicators-per-line: 30;
 
@@ -451,7 +452,7 @@ figure.main-column img.constrained,
   max-width: fit-content;
   width: fit-content;
   padding: 0 0;
-  margin: 1rem auto;
+  margin: 1rem auto 1.5rem;
 }
 
 .carousel {
@@ -535,7 +536,6 @@ figure.main-column img.constrained,
   flex: 1 0 0%;
   display: flex;
   text-align: center;
-  margin: 0 var(--carousel-nav-button-margin-x);
 }
 
 .carousel__item {
@@ -571,32 +571,38 @@ figure.main-column img.constrained,
 .carousel__indicators {
   max-width: min(
     calc(
-      (var(--carousel-indicator-size) + var(--carousel-indicator-padding)) * 30
+      (var(--carousel-indicator-box-size) + var(--carousel-indicator-gap)) * 30
     ),
     calc(100% - (2 * var(--carousel-arrow-size)))
   );
   display: flex;
   flex-wrap: wrap;
-  gap: 8px var(--carousel-indicator-padding);
+  gap: 0px var(--carousel-indicator-gap);
   justify-content: center;
   margin-top: 4px;
   padding: 0;
   margin: 1rem auto;
 }
 
-.carousel__indicator {
-  width: var(--carousel-indicator-size);
-  height: var(--carousel-indicator-size);
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.3);
+.carousel__indicator_box {
+  width: var(--carousel-indicator-box-size);
+  height: var(--carousel-indicator-box-size);
+  background-color: #0000;
   cursor: pointer;
-  padding: 0;
+  border: none;
 }
 
-.carousel__indicator.active {
+.carousel__indicator_dot {
+  width: var(--carousel-indicator-dot-size);
+  height: var(--carousel-indicator-dot-size);
+  background-color: #d3d3d3ff;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.carousel__indicator_dot.active {
   background-color: #333;
-  transform: scale(1.3);
+  transform: scale(1.35);
 }
 
 h1 {

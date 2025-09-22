@@ -385,10 +385,13 @@ class Carousel {
 
     for (let i = 0; i <= this.totalCarouselItems; i++) {
       const indicator = document.createElement("button");
-      indicator.className = "carousel__indicator";
-      if (i === 0) indicator.classList.add("active");
+      indicator.className = "carousel__indicator_box";
       indicator.setAttribute("aria-label", `Go to slide ${i + 1}`);
       indicator.addEventListener("click", () => this.goToCarouselItem(i));
+      const circle = document.createElement("div");
+      circle.className = "carousel__indicator_dot";
+      if (i === 0) circle.classList.add("active");
+      indicator.appendChild(circle);
       this.indicators.appendChild(indicator);
     }
 
@@ -434,8 +437,8 @@ class Carousel {
   }
 
   updateIndicators() {
-    const indicators = this.container.querySelectorAll(".carousel__indicator");
-    indicators.forEach((indicator, index) => {
+    const dots = this.container.querySelectorAll(".carousel__indicator_dot");
+    dots.forEach((indicator, index) => {
       indicator.classList.toggle("active", index === this.currentCarouselItem);
     });
   }
