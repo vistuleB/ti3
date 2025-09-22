@@ -19,6 +19,7 @@
   --well-before-main-column-margin-bottom: 0.9rem;
   --well-margin-y: 0.75rem;
   --end-of-page-well-margin-bottom: 0.9rem;
+  --last-child-well-margin-bottom: 0rem;
   --well-padding-y: 0.75rem;
   --well-padding-x: 0.75rem;
   --ul-ol-margin-left: 2rem;
@@ -229,10 +230,8 @@ body {
 }
 
 .well > .well:last-child {
-  margin-bottom: 0;
+  margin-bottom: var(--last-child-well-margin-bottom);
 }
-
-
 
 ul,
 ol {

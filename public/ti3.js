@@ -122,6 +122,12 @@ const resetScreenWidthDependentVars = () => {
     return 2.2;
   };
 
+  const lastChildWellMarginBottomInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.2;
+    return 0.5;
+  };
+
   const wellPaddingXInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.3;
@@ -180,6 +186,11 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
+    "rem",
+  );
+  set(
+    "--last-child-well-margin-bottom",
+    lastChildWellMarginBottomInRem,
     "rem",
   );
   set("--well-padding-x", wellPaddingXInRem, "rem");
