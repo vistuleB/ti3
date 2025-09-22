@@ -642,22 +642,18 @@ const onImgClick = (e) => {
   }
 };
 
-// requestAnimationFrame based throttle
-const rafThrottle = (func) => {
-  let rafId = null;
-  let lastArgs = null;
+function throttle(func, delay = 16) {
+  let lastExecTime = 0;
 
-  return (...args) => {
-    lastArgs = args;
+  return function (...args) {
+    const currentTime = Date.now();
 
-    if (rafId === null) {
-      rafId = requestAnimationFrame(() => {
-        func.apply(this, lastArgs);
-        rafId = null;
-      });
+    if (currentTime - lastExecTime >= delay) {
+      func.apply(this, args);
+      lastExecTime = currentTime;
     }
   };
-};
+}
 
 const onScrollMenuDisplay = () => {
   if (!menuElement) {
@@ -680,7 +676,7 @@ const onScrollMenuDisplay = () => {
   ticking = false;
 };
 
-const menuHandler = rafThrottle(onScrollMenuDisplay);
+const menuHandler = throttle(onScrollMenuDisplay, 200);
 
 const smoothRecenterMaybe = (e) => {
   let theoretical_left = marginWidth();
