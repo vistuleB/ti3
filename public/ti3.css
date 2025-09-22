@@ -43,13 +43,15 @@
   --python-prompt-error-response: rgb(255, 142, 142);
   --listing-numbers: rgb(220, 220, 220);
   --xml-tags: rgb(220, 200, 180);
-  --xml-attributes: #9781da;
-  --elm-punctuation: rgb(119, 177, 247);
-  --elm-defined-symbol: rgb(119, 177, 247);
-  --elm-type: rgb(207, 103, 191);
-  --elm-variable: rgb(235, 217, 128);
-  --elm-keyword: rgb(114, 234, 140);
-  --elm-function: rgb(119, 177, 247);
+  --xml-attributes: #9a83e0;
+  --elm-punctuation: #da7167ff;
+  --elm-defined-symbol: #abb66fff;
+  --elm-type: #cfa763ff;
+  --elm-variable: #e6dab5ff;
+  --elm-keyword: #da7167ff;
+  --elm-function: #e6dab5ff;
+  --elm-relation: #d58b58ff;
+  --elm-par: #cfa763ff;
 }
 
 * {
@@ -295,7 +297,8 @@ p:has(> mjx-container) {
   background-color: #f0ffff;
 }
 
-.highlight .highlight .statement {
+.highlight .highlight .statement,
+.highlight .highlight .remark {
   background-color: #d9edf7;
 }
 
@@ -312,8 +315,7 @@ p:has(> mjx-container) {
 }
 
 .alert-warning {
-  background-color: #fcf8e3;
-  color: #8a6d3b;
+  background-color: #fce1be;
 }
 
 .qed {
@@ -704,34 +706,28 @@ button img {
 }
 
 .elm-0 {
-  /* punctuation */
-  /* color: rgb(34, 39, 45); */
   color: var(--elm-punctuation);
 }
 .elm-1 {
-  /* thing-being-defined */
-  /* color: rgb(28, 94, 173); */
   color: var(--elm-defined-symbol)
 }
 .elm-2 {
-  /* type */
-  /* color: rgb(207, 103, 191); */
   color: var(--elm-type);
 }
 .elm-3 {
-  /* variable */
-  /* color: rgb(192, 169, 54); */
   color: var(--elm-variable);
 }
 .elm-4 {
-  /* keyword */
-  /* color: rgb(164, 94, 101); */
   color: var(--elm-keyword);
 }
 .elm-5 {
-  /* variant + function application */
-  /* color: rgb(62, 66, 71); */
   color: var(--elm-function);
+}
+.elm-6 {
+  color: var(--elm-relation);
+}
+.elm-7 {
+  color: var(--elm-par);
 }
 
 .sc {

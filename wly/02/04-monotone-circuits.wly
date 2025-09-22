@@ -645,7 +645,9 @@
         Tiefe 2; wir sehen, dass $F \equiv f$ ist, dieser Schaltkreis
         (diese Formel) also die Funktion $f$ berechnet. Dies ist genau
         die Konstruktion einer DNF, die wir in der Vorlesung bereits
-        besprochen haben. *Das Bekannte abwandeln.* Der Ausdruck
+        besprochen haben.
+
+        *Das Bekannte abwandeln.* Der Ausdruck
         $\bigvee_{\mathbf{a} \in \sat(f)} T_{\mathbf{a}}$ ist ja bereits
         ein Schaltkreis (der Tiefe 2), allerdings im Allgemeinen kein
         monotoner, da die Terme $T_{\mathbf{a}}$ negative Literale (und
@@ -736,9 +738,10 @@
             $F(\mathbf{x}) = 1$ gilt. Und das muss mindestens ein bisschen
             nicht-triviale Arbeit erfordern, weil wir ja irgendwo verwenden
             müssen, dass $f$ nicht monoton ist. Nehmen wir also an, dass
-            $F'(\mathbf{x}) = 1$ ist. *Strategie: was haben wir?* Es ist
-            immer gut, Dinge konkret "in der Hand zu haben". In diesem
-            Falle? Wir wissen ja, dass
+            $F'(\mathbf{x}) = 1$ ist.
+
+            *Strategie: was haben wir?* Es ist immer gut, Dinge konkret
+            "in der Hand zu haben". In diesem Falle? Wir wissen ja, dass
             $F' = \bigvee_{\mathbf{a} \in \sat(f)} T'_{\mathbf{a}}$ ist.
             Wenn nun also die linke Seite, $F'$, den Wert 1 annimmt, dann
             muss es auf der rechten Seite (mindestens) einen Term geben,

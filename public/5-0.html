@@ -89,15 +89,15 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
   </p>
   <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-0">:</span> <span class="elm-2">Bst</span> <span class="elm-0">-&gt;</span> <span class="elm-2">String</span> <span class="elm-0">-&gt;</span> <span class="elm-2">Maybe</span> <span class="elm-2">String</span>
+<span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-0">:</span> <span class="elm-2">Bst</span> <span class="elm-6">-&gt;</span> <span class="elm-2">String</span> <span class="elm-6">-&gt;</span> <span class="elm-2">Maybe</span> <span class="elm-2">String</span>
 <span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-3">tree</span> <span class="elm-3">key</span> <span class="elm-0">=</span>
 <span class="listing-bol"></span>    <span class="elm-4">case</span> <span class="elm-3">tree</span> <span class="elm-4">of</span>
-<span class="listing-bol"></span>        <span class="elm-5">Empty</span> <span class="elm-3">_</span> <span class="elm-0">-&gt;</span>
+<span class="listing-bol"></span>        <span class="elm-5">Empty</span> <span class="elm-4">_</span> <span class="elm-6">-&gt;</span>
 <span class="listing-bol"></span>            <span class="elm-5">Nothing</span>
-<span class="listing-bol"></span>        <span class="elm-5">Node</span> <span class="elm-0">(</span> <span class="elm-3">keyHere</span>, <span class="elm-3">valueHere</span> <span class="elm-0">)</span> <span class="elm-3">leftChild</span> <span class="elm-3">rightChild</span> <span class="elm-0">-&gt;</span>
-<span class="listing-bol"></span>            <span class="elm-4">if</span> <span class="elm-3">key</span> <span class="elm-0">==</span> <span class="elm-3">keyHere</span> <span class="elm-4">then</span>
+<span class="listing-bol"></span>        <span class="elm-5">Node</span> <span class="elm-7">(</span> <span class="elm-3">keyHere</span>, <span class="elm-3">valueHere</span> <span class="elm-7">)</span> <span class="elm-3">leftChild</span> <span class="elm-3">rightChild</span> <span class="elm-6">-&gt;</span>
+<span class="listing-bol"></span>            <span class="elm-4">if</span> <span class="elm-3">key</span> <span class="elm-6">==</span> <span class="elm-3">keyHere</span> <span class="elm-4">then</span>
 <span class="listing-bol"></span>                <span class="elm-5">Just</span> <span class="elm-3">valueHere</span>
-<span class="listing-bol"></span>            <span class="elm-4">else</span> <span class="elm-4">if</span> <span class="elm-3">key</span> &lt; <span class="elm-3">keyHere</span> <span class="elm-4">then</span>
+<span class="listing-bol"></span>            <span class="elm-4">else</span> <span class="elm-4">if</span> <span class="elm-3">key</span> <span class="elm-6">&lt;</span> <span class="elm-3">keyHere</span> <span class="elm-4">then</span>
 <span class="listing-bol"></span>                <span class="elm-5">find</span> <span class="elm-3">leftChild</span> <span class="elm-3">key</span>
 <span class="listing-bol"></span>            <span class="elm-4">else</span>
 <span class="listing-bol"></span>                <span class="elm-5">find</span> <span class="elm-3">rightChild</span> <span class="elm-3">key</span>
