@@ -464,14 +464,14 @@
 
     |> div
         class=well alert-warning
-        Oft wird händeringend versucht, zu erklären, was denn eine
+        ⚠⚠ Oft wird händeringend versucht, zu erklären, was denn eine
         nichtdeterministische Turingmaschine _tut_. Da lesen Sie dann
         beispielsweise, dass die _alle Möglichkeiten gleichzeitig
         ausprobiert_ oder den richtigen Pfad von einem _Engel_ gesagt
         bekommt oder _errät_. Ich stelle mir lieber vor, dass eine
         nichtdeterministische Turingmaschine gar nichts "tut" sondern
         _Spielregeln_ definiert, wie man "ziehen" kann. Man gewinnt, wenn
-        man in einer akzeptierenden Konfiguration landet.
+        man in einer akzeptierenden Konfiguration landet. ⚠⚠
 
     |> Statement
         title=*Beispiel*

@@ -37,10 +37,16 @@
   /* --listing-numbers: gray; */
   /* --xml-tags: burgundy; */
   /* --xml-attributes: #826cc4; */
+  /* --arbitrary-prompt: blue; */
   
   /* dark code block mode */
+  --terminal-prompt: rgb(219, 220, 218);
+  --terminal-prompt-content: rgb(191, 241, 141);
+  --arbitrary-prompt: rgb(120, 120, 255);
+  --arbitrary-prompt-reponse: rgb(255, 173, 251);
   --python-prompt-carets: rgb(244, 154, 235);
-  --python-prompt-ok-response: rgb(19, 169, 234);
+  --python-prompt-content: rgb(255, 255, 255);
+  --python-prompt-ok-response: rgb(48, 255, 120);
   --python-prompt-error-response: rgb(255, 142, 142);
   --listing-numbers: rgb(220, 220, 220);
   --xml-tags: rgb(220, 200, 180);
@@ -332,21 +338,31 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
 }
 
 .arbitrary-prompt {
-  color: blue;
+  color: var(--arbitrary-prompt);
 }
 
 .arbitrary-response {
-  color: var(--body-color);
+  color: var(--arbitrary-prompt-reponse);
 }
 
 .terminal-prompt {
   font-family: Courier, "Courier New";
-  color: #777;
+  color: var(--terminal-prompt);
+  font-size: 1em;
+}
+
+.terminal-prompt-content {
+  font-family: Courier, "Courier New";
+  color: var(--terminal-prompt-content);
   font-size: 1em;
 }
 
 .python-prompt-carets {
   color: var(--python-prompt-carets);
+}
+
+.python-prompt-content {
+  color: var(--python-prompt-content);
 }
 
 .python-prompt-ok-response {
