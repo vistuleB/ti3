@@ -660,7 +660,6 @@ const rafThrottle = (func) => {
 };
 
 const onScrollMenuDisplay = () => {
-  console.log("onScrollMenuDisplay");
   if (!menuElement) {
     menuElement = document.querySelector(".menu");
     if (!menuElement) return;
@@ -720,7 +719,6 @@ const onLoad = () => {
   setupCarousels();
   add_line_number_to_numbered_pre();
   onResize();
-  console.log("onLoad triggered");
 };
 
 // event listeners
@@ -735,7 +733,6 @@ const onResize = () => {
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();
   setTimeout(adjustMathAlignment, 60);
-  // console.log("onScrollEnd");
 };
 
 const onTouchEnd = (e) => {
