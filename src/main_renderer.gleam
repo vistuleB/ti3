@@ -34,7 +34,7 @@ fn index_error(e: infra.SingletonError) -> TI3SplitterError {
   }
 }
 
-fn ti3_splitter(
+fn our_splitter(
   root: VXML
 ) -> Result(List(TI3Fragment(VXML)), TI3SplitterError) {
   use index <- result.try(
@@ -111,10 +111,10 @@ fn index_emitter(
         OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
         OutputLine(blame, 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
         OutputLine(blame, 2, "<meta name=\"description\" content=\"Table of contents for TI3 - Theoretische Informatik 2\">"),
-        OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
+        OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         OutputLine(blame, 2, "<title>TI3 - Index</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body class=\"page-index\">"),
@@ -144,10 +144,10 @@ fn chapter_emitter(
         OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
         OutputLine(blame, 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
         OutputLine(blame, 2, "<meta name=\"description\" content=\"Chapter " <> string.inspect(n) <> " of TI3 - Theoretische Informatik 2\">"),
-        OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
+        OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         OutputLine(blame, 2, "<title>TI3 - Chapter " <> string.inspect(n) <> "</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body class=\"page-chapter chapter-" <> string.inspect(n) <> "\">"),
@@ -177,10 +177,10 @@ fn subchapter_emitter(
         OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
         OutputLine(blame, 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
         OutputLine(blame, 2, "<meta name=\"description\" content=\"Section " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n) <> " of TI3 - Theoretische Informatik 2\">"),
-        OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"ti3.css\" />"),
+        OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
-        OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./ti3.js\"></script>"),
+        OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         OutputLine(blame, 2, "<title>TI3 - Chapter " <> string.inspect(chapter_n) <> ", Section " <> string.inspect(sub_n) <> "</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body class=\"page-sub chapter-" <> string.inspect(chapter_n) <> " sub-" <> string.inspect(sub_n) <> "\">"),
@@ -287,7 +287,7 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
       assembler: ds.default_assembler(amendments.only_paths),
       parser: ds.default_writerly_parser(amendments.only_key_values),
       pipeline: main_pipeline(),
-      splitter: ti3_splitter,
+      splitter: our_splitter,
       emitter: our_emitter,
       writer: ds.default_writer,
       prettifier: ds.default_prettier_prettifier,
