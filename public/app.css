@@ -559,17 +559,14 @@ figure.main-column img.constrained,
 
 .carousel__item {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel__item > * {
   max-width: 100%;
   box-sizing: border-box;
-}
-
-.carousel__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .carousel__item img {
