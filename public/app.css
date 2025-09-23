@@ -390,10 +390,6 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   color: var(--python-prompt-error-response);
 }
 
-pre span.pythonPrompt {
-  color: #000;
-}
-
 pre.listing:before {
   counter-reset: listing;
 }
