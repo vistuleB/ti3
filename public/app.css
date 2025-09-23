@@ -441,6 +441,15 @@ figure.main-column img,
   background-color: inherit;
 }
 
+.carousel__item.active > img {
+  max-width: var(--main-column-width);
+  width: 100%;
+  height: auto;
+  padding: 16px;
+  flex-shrink: 0 !important;
+  background-color: inherit;
+}
+
 figure.main-column img:not(.constrained),
 .well figure img:not(.constrained) {
   border-radius: 6px;
@@ -448,6 +457,10 @@ figure.main-column img:not(.constrained),
 
 figure.main-column img.constrained,
 .well img.constrained {
+  max-width: 100%;
+}
+
+.carousel__item.active > img.constrained {
   max-width: 100%;
 }
 
@@ -564,6 +577,15 @@ figure.main-column img.constrained,
   align-items: center;
 }
 
+.carousel__item.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: inherit;
+}
+
 .carousel__item > * {
   max-width: 100%;
   box-sizing: border-box;
@@ -581,7 +603,7 @@ figure.main-column img.constrained,
 }
 
 .carousel__items > .carousel__item.active {
-  display: block;
+  display: flex;
 }
 
 .carousel__indicators {
