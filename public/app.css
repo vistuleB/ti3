@@ -31,34 +31,50 @@
   --math-block-max-width: 100vw;
 
   /* light mode code block colors */
-  /* --python-prompt-carets: purple; */
-  /* --python-prompt-ok-response: blue; */
-  /* --python-prompt-error-response: red; */
-  /* --listing-numbers: gray; */
-  /* --xml-tags: burgundy; */
-  /* --xml-attributes: #826cc4; */
-  /* --arbitrary-prompt: blue; */
+  --pre-background-color: #fdf6e3;
+  --pre-text: #657b83;
+  --terminal-prompt: #586e75;
+  --terminal-prompt-content: #073642;
+  --arbitrary-prompt: #268bd2;
+  --arbitrary-prompt-reponse: #2aa198;
+  --python-prompt-carets: rgb(254, 56, 234); 
+  --python-prompt-content: #657b83;
+  --python-prompt-ok-response: #2aa198; 
+  --python-prompt-error-response: rgb(226, 66, 66);
+  --listing-numbers: rgb(220, 220, 220);
+  --xml-tags: #b58900;
+  --xml-attributes: #6c71c4;
+  --elm-punctuation: #dc322f;
+  --elm-defined-symbol: #268bd2;
+  --elm-type: #b58900;
+  --elm-variable: #657b83;
+  --elm-keyword: #cb4b16;
+  --elm-function: #2aa198;
+  --elm-relation: #d33682;
+  --elm-par: #b58900;
   
   /* dark code block mode */
-  --terminal-prompt: rgb(219, 220, 218);
-  --terminal-prompt-content: rgb(191, 241, 141);
-  --arbitrary-prompt: rgb(120, 120, 255);
-  --arbitrary-prompt-reponse: rgb(255, 173, 251);
-  --python-prompt-carets: rgb(244, 154, 235);
-  --python-prompt-content: rgb(255, 255, 255);
-  --python-prompt-ok-response: rgb(48, 255, 120);
-  --python-prompt-error-response: rgb(255, 142, 142);
-  --listing-numbers: rgb(220, 220, 220);
-  --xml-tags: rgb(220, 200, 180);
-  --xml-attributes: #9a83e0;
-  --elm-punctuation: #da7167ff;
-  --elm-defined-symbol: #abb66fff;
-  --elm-type: #cfa763ff;
-  --elm-variable: #e6dab5ff;
-  --elm-keyword: #da7167ff;
-  --elm-function: #e6dab5ff;
-  --elm-relation: #d58b58ff;
-  --elm-par: #cfa763ff;
+  /*--pre-background-color: #000;*/
+  /*--pre-text: #fff;*/
+  /*--terminal-prompt: rgb(219, 220, 218);*/
+  /*--terminal-prompt-content: rgb(191, 241, 141);*/
+  /*--arbitrary-prompt: rgb(120, 120, 255);*/
+  /*--arbitrary-prompt-reponse: rgb(255, 173, 251);*/
+  /*--python-prompt-carets: rgb(244, 154, 235);*/
+  /*--python-prompt-content: rgb(255, 255, 255);*/
+  /*--python-prompt-ok-response: rgb(48, 255, 120);*/
+  /*--python-prompt-error-response: rgb(255, 142, 142);*/
+  /*--listing-numbers: rgb(220, 220, 220);*/
+  /*--xml-tags: rgb(220, 200, 180);*/
+  /*--xml-attributes: #9a83e0;*/
+  /*--elm-punctuation: #da7167ff;*/
+  /*--elm-defined-symbol: #abb66fff;*/
+  /*--elm-type: #cfa763ff;*/
+  /*--elm-variable: #e6dab5ff;*/
+  /*--elm-keyword: #da7167ff;*/
+  /*--elm-function: #e6dab5ff;*/
+  /*--elm-relation: #d58b58ff;*/
+  /*--elm-par: #cfa763ff;*/
 }
 
 * {
@@ -269,14 +285,14 @@ li > p:first-child {
 
 pre {
   line-height: 1.6;
-  color: white;
-  background-color: #000;
+  color: var(--pre-text);
+  background-color: var(--pre-background-color);
   font-size: 0.9rem;
   white-space: pre-wrap;
   width: 100%;
   margin: 2ch auto;
   padding: 1.3rem 1.5rem;
-  border: 0.5px #000 solid;
+  border: 0.5px var(--pre-background-color) solid;
   overflow: scroll;
   text-wrap: nowrap;
 }
