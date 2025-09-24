@@ -14,7 +14,8 @@
             Es ist transitiv, weil aus $A \leq B$ und $B \leq C$ folgt,
             dass $A \leq C$: Wenn $f: A \rightarrow B$ und
             $g: B \rightarrow C$ injektiv sind, dann ist
-            $g \circ f: A \rightarrow C$, $a \mapsto g(f(a))$ auch injektiv.
+            $g \circ f: A \rightarrow C$, $a \mapsto g(f(a))$ auch
+            injektiv.
 
         |> li
             Es ist (so gut wie) antisymmetrisch, weil aus $A \leq B$ und

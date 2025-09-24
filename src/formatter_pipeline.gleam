@@ -42,8 +42,6 @@ pub fn formatter_pipeline(
   [
     [
       dl.identity(),
-      dl.trim_spaces_around_newlines__outside(["pre", "Math", "MathBlock", "WriterlyCodeBlock"]),
-      dl.trim_ending_spaces_except_last_line(),
       dl.find_replace__outside(#("&amp;", "&"), []),
     ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BackslashSquareBracket, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
@@ -52,6 +50,8 @@ pub fn formatter_pipeline(
     ],
     pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
     [
+      dl.trim_spaces_around_newlines__outside(["pre", "Math", "MathBlock", "WriterlyCodeBlock"]),
+      dl.trim_ending_spaces_except_last_line(),
       dl.strip_delimiters_inside_if(#(
         "MathBlock",
         infra.latex_strippable_display_delimiters(),

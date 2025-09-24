@@ -9,6 +9,22 @@ import vxml
 
 const our_blame = bl.Des([], "main_pipeline", 9)
 
+const p_cannot_contain = [
+  "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
+  "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
+  "Example", "Exercise", "Grid", "Highlight", "Index", "List", 
+  "MathBlock", "Menu", "Remark", "Statement", "Sub", "SubTitle", 
+  "SubTopic", "Topic", "WriterlyBlankLine",
+  "br", "center", "figure", "div", "hr", "li", "ul", "ol", "p", "pre",
+  "table", "thead", "tbody", "tr", "td", "colgroup", "section",
+]
+
+const p_cannot_be_contained_in = [
+  "MathBlock", "Index", "Menu", "Topic", "SubTopic", "NoWrap", "Math",
+  "QED", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem", 
+  "code", "figure", "p", "pre", "span",
+]
+
 pub fn main_pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
 
@@ -55,8 +71,8 @@ pub fn main_pipeline()  -> List(Pipe) {
   [
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
-      dl.ti3_add_should_be_numbers(),
-      dl.ti3_backfill(),
+      dl.ti2_add_should_be_numbers(),
+      dl.ti2_backfill(),
       dl.rename(#("WriterlyCodeBlock","CodeBlock")),
       dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
@@ -109,45 +125,23 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     pp.splitting_empty_lines_cleanup(),
     [
-      dl.ti3_code_block_to_pre(),
-      dl.ti3_parse_python_prompt_pre(),
-      dl.ti3_parse_orange_comments_pre(),
-      dl.ti3_parse_arbitrary_prompt_response_pre(),
-      dl.ti3_parse_redyellow_pre(),
-      dl.ti3_parse_xml_pre(),
-      dl.ti3_add_listing_bol_spans(),
-      dl.ti3_create_index(),
-      dl.ti3_create_menu(),
-      dl.ti3_expand_carousels(),
-      dl.group_consecutive_children__outside(
-        #(
-          "p",
-          [
-            "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
-            "Example", "Exercise", "Grid", "Image", "ImageLeft",
-            "ImageRight", "List", "MathBlock", "Note", "Pause", "Section",
-            "Solution", "SolutionNote", "StarDivider", "Table", "TextParent",
-            "WriterlyBlankLine", "center", "li", "ul", "ol", "table", "colgroup",
-            "Sub", "SubTitle", "Statement", "Remark",
-            "thead", "tbody", "tr", "td", "section",
-            "Index", "Menu",
-            "Topic", "SubTopic",
-            "Highlight", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
-            "pre", "div", "br", "hr",
-            "figure"
-          ]
-        ),
-        ["MathBlock", "p", "Index", "Menu", "Topic", "SubTopic", "code", "pre", "span", "NoWrap", "Math", "QED", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem", "figure"]
-      ),
+      dl.ti2_code_block_to_pre(),
+      dl.ti2_parse_python_prompt_pre(),
+      dl.ti2_parse_orange_comments_pre(),
+      dl.ti2_parse_arbitrary_prompt_response_pre(),
+      dl.ti2_parse_redyellow_pre(),
+      dl.ti2_parse_xml_pre(),
+      dl.ti2_add_listing_bol_spans(),
+      dl.ti2_create_index(),
+      dl.ti2_create_menu(),
+      dl.ti2_expand_carousels(),
+      dl.group_consecutive_children__outside(#( "p", p_cannot_contain), p_cannot_be_contained_in),
       dl.unwrap("WriterlyBlankLine"),      
       dl.trim("p"),
       dl.delete_if_empty("p"),
       
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
-    [
-      // dl.table_marker(),
-    ],
     pp.markdown_link_splitting(["MathBlock", "Math"]),
     pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),
