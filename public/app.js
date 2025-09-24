@@ -44,6 +44,24 @@ const resetScreenWidthDependentVars = () => {
     root.style.setProperty(key, `${val()}` + unit);
   };
 
+  let indexHeaderTitleFontSizeInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.8;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.9;
+    return 2;
+  };
+
+  let indexHeaderTitleLineHeightInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2.2;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2.5;
+    return 2.8;
+  };
+
+  let indexHeaderSubtitleFontSizeInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.35;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.45;
+    return 1.5;
+  };
+
   let indexHeaderPaddingTopInPx = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 90;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 100;
@@ -200,6 +218,9 @@ const resetScreenWidthDependentVars = () => {
     return mainColumnWidthInPx();
   };
 
+  set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
+  set("--index-header-title-line-height", indexHeaderTitleLineHeightInRem, "rem");
+  set("--index-header-subtitle-font-size", indexHeaderSubtitleFontSizeInRem, "rem");
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
   set("--index-toc-max-width", indexTocMaxWidthInPx, "px");

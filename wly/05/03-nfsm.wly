@@ -353,7 +353,7 @@
         \{ \emptyset, A, B, C, D, AB, AC, AD, BC, BD, CD, ABC, ABD, ACD, BCD, ABCD \}
         \end{align*}
 
-        wobei wir der Lesbarkeit halber \{A,B\} etc. schreiben. Um bei
+        wobei wir der Lesbarkeit halber `\{A,B\}` etc. schreiben. Um bei
         der Konstruktion des Potenzmengenautomaten unnötige Zustände zu
         vermeiden, bauen wir ihn Schritt für Schritt, angefangen mit dem
         Startzustand \{A\} bzw. $A$, und hängen jedem Zustand einen

@@ -7,6 +7,9 @@
   --max-carousel-indicators-per-line: 30;
 
   /* the following are set by ti3.js resetScreenWidthDependentVars: */
+  --index-header-title-font-size: 2rem;
+  --index-header-title-line-height: 2.8rem;
+  --index-header-subtitle-font-size: 2rem;
   --index-header-padding-top: 0px;
   --index-header-padding-bottom: 0px;
   --index-toc-max-width: 600px;
@@ -118,26 +121,24 @@ body {
   text-align: center;
   padding-top: var(--index-header-padding-top);
   padding-bottom: var(--index-header-padding-bottom);
-  line-height: 2.8rem;
-}
-
-.index__header + section {
-  margin-top: 6rem;
 }
 
 .index__header__title {
-  font-size: 2rem;
+  font-size: var(--index-header-title-font-size);
+  line-height: var(--index-header-title-line-height);
 }
 
 .index__header__subtitle {
-  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  font-size: var(--index-header-subtitle-font-size);
+  line-height: 1.5;
   display: block;
   margin: auto;
 }
 
 .index__toc {
   max-width: var(--index-toc-max-width);
-  line-height: 2.2rem;
+  line-height: 1.8rem;
   padding-bottom: var(--index-toc-padding-bottom);
   padding-left: 0;
   margin: 0 auto;
@@ -168,7 +169,7 @@ body {
 }
 
 .index__toc li li {
-  margin: 0;
+  margin: 0.15em 0 0em;
 }
 
 .index__toc li li:before {
