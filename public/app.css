@@ -159,7 +159,7 @@ body {
 .index__toc li {
   display: table;
   counter-increment: item;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5em;
 }
 
 .index__toc li:before {
@@ -455,6 +455,7 @@ figcaption {
   max-width: 70%;
   margin: auto;
   margin-top: 0.5em;
+  padding-bottom: 1rem;
 }
 
 figure.main-column,
