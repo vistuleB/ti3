@@ -7,9 +7,10 @@
   --max-carousel-indicators-per-line: 30;
 
   /* the following are set by ti3.js resetScreenWidthDependentVars: */
-  --index-padding-top: 82px;
-  --index-padding-bottom: 82px;
+  --index-header-padding-top: 0px;
+  --index-header-padding-bottom: 0px;
   --index-toc-max-width: 600px;
+  --index-toc-padding-bottom: 0px;
   --chapter-and-sub-padding-top: 82px;
   --chapter-and-sub-padding-bottom: 82px;
   --page-title-font-size: 2.25rem;
@@ -17,6 +18,7 @@
   --main-column-width: 100vw;
   --main-column-padding-x: 2rem;
   --main-column-to-well-margin: 0.9rem;
+  --end-of-page-main-column-margin-bottom: 0.9rem;
   --outer-well-width: 100vw;
   --carousel-arrow-size: 48px;
   --carousel-nav-button-margin-x: 2em;
@@ -98,11 +100,6 @@ body {
   color: var(--body-color);
 }
 
-.page-index {
-  padding-top: var(--index-padding-top);
-  padding-bottom: var(--index-padding-bottom);
-}
-
 .page-chapter, .page-sub {
   padding-top: var(--chapter-and-sub-padding-top);
   padding-bottom: var(--chapter-and-sub-padding-bottom);
@@ -119,8 +116,8 @@ body {
   max-width: calc(100vw - 2rem);
   margin: 0 auto;
   text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: var(--index-header-padding-top);
+  padding-bottom: var(--index-header-padding-bottom);
   line-height: 2.8rem;
 }
 
@@ -140,9 +137,10 @@ body {
 
 .index__toc {
   max-width: var(--index-toc-max-width);
-  margin: 0 auto;
-  padding-left: 0;
   line-height: 2.2rem;
+  padding-bottom: var(--index-toc-padding-bottom);
+  padding-left: 0;
+  margin: 0 auto;
 }
 
 .index__toc a {
@@ -252,6 +250,10 @@ body {
   margin-right: auto;
 }
 
+.main-column:last-child {
+  margin-bottom: var(--end-of-page-main-column-margin-bottom);
+}
+
 .well {
   width: 100%;
   margin: var(--well-margin-y) auto;
@@ -271,10 +273,6 @@ body {
 }
 
 .well.out:last-child {
-  margin-bottom: var(--end-of-page-well-margin-bottom);
-}
-
-.main-column:last-child {
   margin-bottom: var(--end-of-page-well-margin-bottom);
 }
 

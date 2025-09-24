@@ -33,8 +33,8 @@
         haben es aber bereits gelesen". Als Zustandsmenge verwenden wir
 
         \begin{align*}
-        Q := \{\texttt{findA},\texttt{findB},\texttt{findC},\texttt{noA},
-        \texttt{accept},\texttt{reject}\} \ .
+        Q := \{\texttt{findA}, \texttt{findB}, \texttt{findC}, \texttt{noA},
+        \texttt{accept}, \texttt{reject}\} \ .
         \end{align*}
 
         Die "Bedeutung" dieser Zustände ist:

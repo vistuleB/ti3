@@ -44,12 +44,13 @@ const resetScreenWidthDependentVars = () => {
     root.style.setProperty(key, `${val()}` + unit);
   };
 
-  let indexPaddingTopInPx = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 100;
-    return 60;
+  let indexHeaderPaddingTopInPx = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 90;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 100;
+    return 90;
   };
 
-  let indexPaddingBottomInRem = () => {
+  let indexHeaderPaddingBottomInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
     return 4;
@@ -57,12 +58,18 @@ const resetScreenWidthDependentVars = () => {
   
   let indexTocMaxWidthInPx = () => {
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
-    return 600;
+    return 580;
+  }
+
+  let indexTocPaddingBottomInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.5;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2;
+    return 3;
   }
 
   let chapterAndSubPaddingTopInPx = () => {
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 82;
-    return 40;
+    return 42;
   };
 
   let chapterAndSubPaddingBottomInRem = () => {
@@ -85,6 +92,19 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
       return carouselArrowSizeInPx() * 0.4;
     return carouselArrowSizeInPx();
+  };
+
+  const endOfPageMainColumnMarginBottomInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.2;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.5;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 1.8;
+    return 2.4;
+  };
+
+  const endOfPageWellMarginBottomInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.8;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.9;
+    return 2.2;
   };
 
   let mainColumnWidthInPx = () => {
@@ -127,12 +147,6 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
     return 2;
-  };
-
-  const endOfPageWellMarginBottomInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.8;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.9;
-    return 2.2;
   };
 
   const lastChildWellMarginBottomInRem = () => {
@@ -186,24 +200,22 @@ const resetScreenWidthDependentVars = () => {
     return mainColumnWidthInPx();
   };
 
-  set("--index-padding-top", indexPaddingTopInPx, "px");
-  set("--index-padding-bottom", indexPaddingBottomInRem, "rem");
+  set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
+  set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
   set("--index-toc-max-width", indexTocMaxWidthInPx, "px");
+  set("--index-toc-padding-bottom", indexTocPaddingBottomInRem, "rem");
   set("--chapter-and-sub-padding-top", chapterAndSubPaddingTopInPx, "px");
   set("--chapter-and-sub-padding-bottom", chapterAndSubPaddingBottomInRem, "rem");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
+  set("--end-of-page-main-column-margin-bottom", endOfPageMainColumnMarginBottomInRem, "rem");
+  set("--end-of-page-well-margin-bottom", endOfPageWellMarginBottomInRem, "rem");
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
   set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
   set("--outer-well-width", outerWellWidthInPx, "px");
   set("--page-title-font-size", pageTitleFontSizeInRem, "rem");
   set("--well-margin-y", wellMarginYInRem, "rem");
-  set(
-    "--end-of-page-well-margin-bottom",
-    endOfPageWellMarginBottomInRem,
-    "rem",
-  );
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
   set("--well-padding-x", wellPaddingXInRem, "rem");
   set("--well-padding-y", wellPaddingYInRem, "rem");
