@@ -253,7 +253,7 @@
 
             |> div
                 class=well alert-warning
-                Vielleicht fühlen Sie sich unwohl bei der Idee, es mit
+                ⚠⚠ Vielleicht fühlen Sie sich unwohl bei der Idee, es mit
                 Funktionen mit null Variablen tun zu haben. Allerdings:
                 warum? In Java hätten Sie bestimmt kein Problem mit
 
@@ -312,7 +312,7 @@
                 womit die Autoren andeuten, dass sie ihre Notation nicht ganz
                 korrekt anwenden, aber davon ausgehen, dass Leser oder
                 Leserin (die ja Menschen sind und keine Compiler), verstehen,
-                was gemeint ist.
+                was gemeint ist. ⚠⚠
 
             Wir haben nun also die Induktionsbasis erfolgreich gezeigt.
             Als nächstes kommt nun der Schritt. In diesem nehmen wir an,

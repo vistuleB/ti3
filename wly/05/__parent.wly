@@ -242,9 +242,7 @@
             Eine Menge $N$ abstrakter Symbole, hier
 
             $$
-            N = \{\texttt{<EmailAddress>,<Domain>,
-            <User>,<NameBlock>,<Label>,<AlphaNumOrDash>,<AlphaNum>}
-            \} \ .
+            N = \{\texttt{<EmailAddress>,<Domain>,<User>,<NameBlock>,<Label>,<AlphaNumOrDash>,<AlphaNum>}\} \ .
             $$
 
             Diese Menge nennen wir die _nichtterminalen Symbole_. Wir

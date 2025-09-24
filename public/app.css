@@ -7,9 +7,13 @@
   --max-carousel-indicators-per-line: 30;
 
   /* the following are set by ti3.js resetScreenWidthDependentVars: */
-  --body-margin-top: 80px;
-  --body-padding-bottom: 2rem;
+  --index-padding-top: 82px;
+  --index-padding-bottom: 82px;
+  --index-toc-max-width: 600px;
+  --chapter-and-sub-padding-top: 82px;
+  --chapter-and-sub-padding-bottom: 82px;
   --page-title-font-size: 2.25rem;
+  --page-title-margin: 6rem;
   --main-column-width: 100vw;
   --main-column-padding-x: 2rem;
   --main-column-to-well-margin: 0.9rem;
@@ -88,12 +92,20 @@ html {
 }
 
 body {
-  margin-top: var(--body-margin-top);
   background-color: rgba(248, 244, 253, 1);
   font-size: 1.25rem;
   min-width: 2500px;
   color: var(--body-color);
-  padding-bottom: var(--body-padding-bottom);
+}
+
+.page-index {
+  padding-top: var(--index-padding-top);
+  padding-bottom: var(--index-padding-bottom);
+}
+
+.page-chapter, .page-sub {
+  padding-top: var(--chapter-and-sub-padding-top);
+  padding-bottom: var(--chapter-and-sub-padding-bottom);
 }
 
 /* Index page
@@ -104,7 +116,8 @@ body {
 }
 
 .index__header {
-  width: 100%;
+  max-width: calc(100vw - 2rem);
+  margin: 0 auto;
   text-align: center;
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -125,33 +138,44 @@ body {
   margin: auto;
 }
 
-.index__list {
+.index__toc {
+  max-width: var(--index-toc-max-width);
   margin: 0 auto;
-  width: fit-content;
-  list-style: none;
   padding-left: 0;
-  line-height: 2rem;
+  line-height: 2.2rem;
 }
 
-.index__list a {
+.index__toc a {
   color: #337ab7;
   text-decoration: none;
 }
 
-/* for top-level list items */
-.index__list__chapter {
-  padding-left: 20px;
-  margin: 0.4rem 0;
+.index__toc ol {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
 }
 
-/* for nested lists */
-.index__list__subchapter {
-  padding-left: 1.6rem; /* more indentation for visual hierarchy */
-  list-style: none;
+.index__toc li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.2em;
 }
 
-.index__list__subchapter li {
-  margin: 0.4rem 0;
+.index__toc li:before {
+  display: table-cell;
+  content: counters(item, ".") ". ";
+  padding-right: 0.4em;
+}
+
+.index__toc li li {
+  margin: 0;
+}
+
+.index__toc li li:before {
+  content: counters(item, ".") " ";
+  padding-right: 0.5em;
 }
 
 .menu {
@@ -207,7 +231,6 @@ body {
   text-align: center;
   gap: 2rem;
   font-size: var(--page-title-font-size);
-  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -437,7 +460,7 @@ figure.main-column,
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  margin: 0 auto;
+  margin: 1rem auto;
   text-align: center;
   overflow: visible;
   background-color: inherit;

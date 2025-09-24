@@ -214,7 +214,7 @@
 
     |> div
         class=alert-info well
-        Das Wort _Unentscheidbarkeit_ verwenden wir hier in seiner
+        ℹ️ Das Wort _Unentscheidbarkeit_ verwenden wir hier in seiner
         technischen Bedeutung, die wir definiert haben: es gibt keine
         Turingmaschine, die das Problem entscheidet, also auf jeder
         Eingabeinstanz terminiert und die richtige Antwort liefert. Es

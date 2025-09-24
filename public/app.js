@@ -2,12 +2,9 @@ const WELL_100VW_MAX_WIDTH = 550;
 const WELL_100VW_MINUS_PADDING_MAX_WIDTH = 900;
 const MAIN_COLUMN_100VW_MAX_WIDTH = 1400;
 const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1050;
-const TOTAL_X_PADDING_IN_PX = 64;
 const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 150;
 const CAROUSEL_ARROW_MAX_SIZE = 48;
 const CAROUSEL_ARROW_MIN_SIZE = 28;
-const BODY_TOP_MARGIN_MOBILE = 140;
-const BODY_TOP_MARGIN_DESKTOP = 80;
 
 const root = document.documentElement;
 const remToPx = 16;
@@ -47,13 +44,28 @@ const resetScreenWidthDependentVars = () => {
     root.style.setProperty(key, `${val()}` + unit);
   };
 
-  let bodyMarginTopInPx = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return BODY_TOP_MARGIN_MOBILE;
-    return BODY_TOP_MARGIN_DESKTOP;
+  let indexPaddingTopInPx = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 100;
+    return 60;
   };
 
-  let bodyPaddingBottomInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
+  let indexPaddingBottomInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
+    return 4;
+  };
+  
+  let indexTocMaxWidthInPx = () => {
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
+    return 600;
+  }
+
+  let chapterAndSubPaddingTopInPx = () => {
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 82;
+    return 40;
+  };
+
+  let chapterAndSubPaddingBottomInRem = () => {
     return 0;
   };
 
@@ -174,8 +186,11 @@ const resetScreenWidthDependentVars = () => {
     return mainColumnWidthInPx();
   };
 
-  set("--body-margin-top", bodyMarginTopInPx, "px");
-  set("--body-padding-bottom", bodyPaddingBottomInRem, "rem");
+  set("--index-padding-top", indexPaddingTopInPx, "px");
+  set("--index-padding-bottom", indexPaddingBottomInRem, "rem");
+  set("--index-toc-max-width", indexTocMaxWidthInPx, "px");
+  set("--chapter-and-sub-padding-top", chapterAndSubPaddingTopInPx, "px");
+  set("--chapter-and-sub-padding-bottom", chapterAndSubPaddingBottomInRem, "rem");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set("--main-column-width", mainColumnWidthInPx, "px");
