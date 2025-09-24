@@ -254,6 +254,10 @@ body {
   margin-bottom: var(--end-of-page-main-column-margin-bottom);
 }
 
+figure.main-column:last-child {
+  margin-bottom: 1.5rem;
+}
+
 .well {
   width: 100%;
   margin: var(--well-margin-y) auto;

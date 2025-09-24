@@ -21,28 +21,22 @@
     ```xml-listing
     <div class="carousel-inner" style="display:inline-block">
         <div class="item active">
-    <p>$110 x + 794$</p><img
-     loading="lazy" src="img/hash/hashfunction_110_794.svg">
+            <p>$110 x + 794$</p><img loading="lazy" src="img/hash/hashfunction_110_794.svg">
         </div>
         <div class="item">
-    <p>$502 x + 121$</p><img
-     loading="lazy" src="img/hash/hashfunction_502_121.svg">
-            </div>
-        <div class="item">
-    <p>$617 x + 5$</p><img
-     loading="lazy" src="img/hash/hashfunction_617_5.svg">
+            <p>$502 x + 121$</p><img loading="lazy" src="img/hash/hashfunction_502_121.svg">
         </div>
         <div class="item">
-    <p>$815 x + 562$</p><img
-     loading="lazy" src="img/hash/hashfunction_851_562.svg">
+            <p>$617 x + 5$</p><img loading="lazy" src="img/hash/hashfunction_617_5.svg">
         </div>
         <div class="item">
-    <p>$868 x + 858$</p><img
-     loading="lazy" src="img/hash/hashfunction_868_858.svg">
+            <p>$815 x + 562$</p><img loading="lazy" src="img/hash/hashfunction_851_562.svg">
         </div>
         <div class="item">
-    <p>$915 x + 320$</p><img
-     loading="lazy" src="img/hash/hashfunction_915_320.svg">
+            <p>$868 x + 858$</p><img loading="lazy" src="img/hash/hashfunction_868_858.svg">
+        </div>
+        <div class="item">
+            <p>$915 x + 320$</p><img loading="lazy" src="img/hash/hashfunction_915_320.svg">
         </div>
     </div class="carousel-inner">
     ```
@@ -83,15 +77,15 @@
         viewBox="0 0 102 102"
         version="1.1"
     >
-        <g id="surface2322">
+        <g>
             <circle
-                style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"
+                style="fill:none;stroke:rgba(0,0,0,100);stroke-width:0.4;"
                 cx="51"
                 cy="51"
                 r="40"
             />
             <path
-                style="fill:none;stroke-width:0.4;stroke:rgba(0,0,0,100);"
+                style="fill:none;stroke:rgba(0,0,0,100);stroke-width:0.4;"
                 d="M 50 50 l 33.5 -22.5"
             />
         </g>
