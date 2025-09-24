@@ -36,7 +36,7 @@
 
   /* light mode code block colors */
   --pre-background-color: #fdf6e3;
-  --pre-text: #657b83;
+  --pre-text: #506269;
   --terminal-prompt: #586e75;
   --terminal-prompt-content: #073642;
   --arbitrary-prompt: #268bd2;
@@ -45,7 +45,7 @@
   --python-prompt-content: #657b83;
   --python-prompt-ok-response: #2aa198; 
   --python-prompt-error-response: rgb(226, 66, 66);
-  --listing-numbers: rgb(220, 220, 220);
+  --listing-numbers: rgb(174, 174, 174);
   --xml-tags: #b58900;
   --xml-attributes: #6c71c4;
   --elm-punctuation: #dc322f;

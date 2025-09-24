@@ -115,11 +115,10 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti3_parse_arbitrary_prompt_response_pre(),
       dl.ti3_parse_redyellow_pre(),
       dl.ti3_parse_xml_pre(),
-      dl.normalize_br_in_pre(),
       dl.ti3_add_listing_bol_spans(),
-      dl.generate_ti3_index(),
-      dl.generate_ti3_menu(),
-      dl.expand_ti3_carousel(),
+      dl.ti3_create_index(),
+      dl.ti3_create_menu(),
+      dl.ti3_expand_carousels(),
       dl.group_consecutive_children__outside(
         #(
           "p",
