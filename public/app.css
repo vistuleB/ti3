@@ -127,6 +127,7 @@ body {
 .index__header__title {
   font-size: var(--index-header-title-font-size);
   line-height: var(--index-header-title-line-height);
+  font-weight: normal;
 }
 
 .index__header__subtitle {
