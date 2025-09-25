@@ -363,7 +363,9 @@ class Carousel {
       firstBtn.setAttribute("aria-label", "First slide");
       firstBtn.addEventListener("click", () => {
         // show first slide
-        this.goToCarouselItem(0);
+        if (!(this.currentCarouselItem == 0)) {
+          this.goToCarouselItem(0);
+        }
       });
 
       return firstBtn;
@@ -377,7 +379,9 @@ class Carousel {
       lastBtn.setAttribute("aria-label", "Last slide");
       lastBtn.addEventListener("click", () => {
         // show last slide
-        this.goToCarouselItem(this.totalCarouselItems);
+        if (!(this.currentCarouselItem == this.totalCarouselItems)) {
+          this.goToCarouselItem(this.totalCarouselItems);
+        }
       });
 
       return lastBtn;
