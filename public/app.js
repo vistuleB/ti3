@@ -71,17 +71,18 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
     return 4;
   };
-  
+
   let indexTocMaxWidthInPx = () => {
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+      return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
     return 580;
-  }
+  };
 
   let indexTocPaddingBottomInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.5;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2;
     return 3;
-  }
+  };
 
   const carouselArrowSizeInPx = () => {
     const size = (6 / 100) * screenWidth; // 6vw
@@ -155,15 +156,17 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 3;
     return 3.6;
-  }
+  };
 
   let topicAnnouncementFontSizeInRem = () => {
     return pageTitleFontSizeInRem() * 0.8;
   };
 
   let subtopicAnnouncementFontSizeInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return topicAnnouncementFontSizeInRem() * 0.95;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return topicAnnouncementFontSizeInRem() * 0.9;
+    if (screenWidth <= WELL_100VW_MAX_WIDTH)
+      return topicAnnouncementFontSizeInRem() * 0.95;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+      return topicAnnouncementFontSizeInRem() * 0.9;
     return topicAnnouncementFontSizeInRem() * 0.85;
   };
 
@@ -225,16 +228,32 @@ const resetScreenWidthDependentVars = () => {
   };
 
   set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
-  set("--index-header-title-line-height", indexHeaderTitleLineHeightInRem, "rem");
-  set("--index-header-subtitle-font-size", indexHeaderSubtitleFontSizeInRem, "rem");
+  set(
+    "--index-header-title-line-height",
+    indexHeaderTitleLineHeightInRem,
+    "rem",
+  );
+  set(
+    "--index-header-subtitle-font-size",
+    indexHeaderSubtitleFontSizeInRem,
+    "rem",
+  );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
   set("--index-toc-max-width", indexTocMaxWidthInPx, "px");
   set("--index-toc-padding-bottom", indexTocPaddingBottomInRem, "rem");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
-  set("--end-of-page-main-column-margin-bottom", endOfPageMainColumnMarginBottomInRem, "rem");
-  set("--end-of-page-well-margin-bottom", endOfPageWellMarginBottomInRem, "rem");
+  set(
+    "--end-of-page-main-column-margin-bottom",
+    endOfPageMainColumnMarginBottomInRem,
+    "rem",
+  );
+  set(
+    "--end-of-page-well-margin-bottom",
+    endOfPageWellMarginBottomInRem,
+    "rem",
+  );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
   set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
@@ -242,7 +261,11 @@ const resetScreenWidthDependentVars = () => {
   set("--page-title-font-size", pageTitleFontSizeInRem, "rem");
   set("--page-title-margin-top", pageTitleMarginTopInRem, "rem");
   set("--topic-announcement-font-size", topicAnnouncementFontSizeInRem, "rem");
-  set("--subtopic-announcement-font-size", subtopicAnnouncementFontSizeInRem, "rem");
+  set(
+    "--subtopic-announcement-font-size",
+    subtopicAnnouncementFontSizeInRem,
+    "rem",
+  );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
   set("--well-padding-x", wellPaddingXInRem, "rem");
@@ -292,6 +315,15 @@ class Carousel {
     this.hasIndicators = false;
     this.totalCarouselItems = this.carouselItems.length - 1;
     this.currentCarouselItem = 0;
+
+    this.allCarouselImgs = Array.from(this.carouselItems)
+      .map((item) => item.querySelector("img"))
+      .filter((img) => img);
+
+    // initialize image state based on predicate that if ANY image has constrained class
+    this.isImagesEnlarged = !this.allCarouselImgs.some((img) =>
+      img.classList.contains("constrained"),
+    );
 
     // mobile navigation button on hold properties
     this.holdInterval = null;
@@ -486,11 +518,42 @@ class Carousel {
       }
     });
 
+    // preserve the enlarged/constrained state after navigation
+    this.preserveImageState();
+
     if (this.indexCounter) {
       this.indexCounter.textContent = `${this.currentCarouselItem + 1}`;
     }
 
     this.updateIndicators();
+  }
+
+  preserveImageState() {
+    // apply the current enlarged/constrained state to all images in the carousel
+    if (this.isImagesEnlarged) {
+      // apply enlarged state to all images
+      this.allCarouselImgs.forEach((img) => {
+        img.classList.remove("constrained");
+        // set img size to naturalWidth or some specific enlarged size
+        if (img.naturalWidth < WELL_100VW_MAX_WIDTH) {
+          img.style.width = "150%";
+          img.style.maxWidth = "150%";
+        } else {
+          img.style.width = img.naturalWidth + "px";
+          img.style.maxWidth = img.naturalWidth + "px";
+        }
+      });
+    } else {
+      // apply constrained state to all images
+      this.allCarouselImgs.forEach((img) => {
+        img.classList.add("constrained");
+        // reset img size to fit the container
+        img.style.width = "100%";
+        img.style.maxWidth = getComputedStyle(root)
+          .getPropertyValue("--main-column-width")
+          .trim();
+      });
+    }
   }
 
   updateIndicators() {
@@ -673,25 +736,49 @@ const adjustMathAlignment = () => {
   });
 };
 
+const englargeImg = (image) => {
+  if (image.classList.contains("constrained")) {
+    image.classList.remove("constrained");
+    if (image.naturalWidth < WELL_100VW_MAX_WIDTH) {
+      image.style.width = "150%";
+      image.style.maxWidth = "150%";
+    } else {
+      image.style.width = image.naturalWidth + "px";
+      image.style.maxWidth = image.naturalWidth + "px";
+    }
+  } else {
+    image.classList.add("constrained");
+    image.style.width = "100%";
+    image.style.maxWidth = getComputedStyle(root)
+      .getPropertyValue("--main-column-width")
+      .trim();
+  }
+};
+
+const enlargeImgForCarousel = (image) => {
+  // enlarge or constrain all carousel images whenever the action is performed on a single image
+  const carouselContainer = image.closest(".carousel__container");
+  const carousel = carouselContainer.carousel;
+
+  if (image.classList.contains("constrained")) {
+    // switch to enlarged state
+    carousel.isImagesEnlarged = true;
+  } else {
+    // switch to constrained state
+    carousel.isImagesEnlarged = false;
+  }
+
+  carousel.preserveImageState();
+};
+
 const onImgClick = (e) => {
+  const image = e.srcElement;
   if (isPageCentered) {
     onMobile(() => {
-      const image = e.srcElement;
-      if (image.classList.contains("constrained")) {
-        image.classList.remove("constrained");
-        if (image.naturalWidth < WELL_100VW_MAX_WIDTH) {
-          image.style.width = "150%";
-          image.style.maxWidth = "150%";
-        } else {
-          image.style.width = image.naturalWidth + "px";
-          image.style.maxWidth = image.naturalWidth + "px";
-        }
+      if (image.closest(".carousel")) {
+        enlargeImgForCarousel(image);
       } else {
-        image.classList.add("constrained");
-        image.style.width = "100%";
-        image.style.maxWidth = getComputedStyle(root)
-          .getPropertyValue("--main-column-width")
-          .trim();
+        englargeImg(image);
       }
     });
   }
