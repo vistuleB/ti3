@@ -180,35 +180,31 @@ body {
 
 .menu {
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   z-index: 1;
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out;
-  will-change: transform;
+  transition: top 0.5s ease-in-out;
+  will-change: top;
+  padding: 1.4rem 1.7rem 0;
 }
 
 .menu--hidden {
-  transform: translateY(-100%);
+  top: -100px;
 }
 
 .menu-right,
 .menu-left {
-  width: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  padding: 1rem;
-  justify-content: end;
-  background-color: #f8f4fd;
-  border-radius: 6px;
+  gap: 0.55rem;
 }
 
 .menu a {
-  padding: 0 1rem;
+  color: #222;
+  text-decoration: underline;
 }
 
 .menu-right {
@@ -485,7 +481,7 @@ figure.main-column img,
 
 figure.main-column img:not(.constrained),
 .well figure img:not(.constrained) {
-  border-radius: 6px;
+  border-radius: 0px;
 }
 
 figure.main-column img.constrained,
