@@ -148,7 +148,7 @@ const resetScreenWidthDependentVars = () => {
     const size = (6 / 100) * screenWidth; // 6vw
     const clampedSize = Math.min(
       CAROUSEL_ARROW_MAX_SIZE,
-      Math.max(CAROUSEL_ARROW_MIN_SIZE, size)
+      Math.max(CAROUSEL_ARROW_MIN_SIZE, size),
     );
     return clampedSize;
   };
@@ -196,10 +196,7 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= TABLET_MAX_WIDTH)
       return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
     if (screenWidth <= LAPTOP_MAX_WIDTH)
-      return (
-        mainColumnWidthInPx() -
-        2 * LAPTOP_OUTER_WELL_INSET
-      );
+      return mainColumnWidthInPx() - 2 * LAPTOP_OUTER_WELL_INSET;
     return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remToPx;
   };
 
@@ -297,12 +294,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem"
+    "rem",
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
@@ -312,19 +309,19 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-toc-subchapter-level-margin",
     indexTocSubchapterLevelMarginInEm,
-    "em"
+    "em",
   );
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
@@ -336,7 +333,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -352,7 +349,7 @@ const resetScreenWidthDependentVars = () => {
 
 const setImgHeightToAuto = () => {
   const images = document.querySelectorAll(
-    "figure.main-column img, .well figure img"
+    "figure.main-column img, .well figure img",
   );
 
   images.forEach((img) => {
@@ -394,7 +391,7 @@ class Carousel {
 
     // initialize image state based on predicate that if ANY image has constrained class
     this.isImagesEnlarged = !this.allCarouselImgs.some((img) =>
-      img.classList.contains("constrained")
+      img.classList.contains("constrained"),
     );
 
     // mobile navigation button on hold properties
@@ -519,7 +516,7 @@ class Carousel {
       () => {
         this.createWideScreenNavigationButtons();
         this.showCurrentItem();
-      }
+      },
     );
     this.attachEventListeners();
   }
@@ -705,7 +702,7 @@ class Carousel {
         e.preventDefault();
         startHold();
       },
-      { passive: false }
+      { passive: false },
     );
 
     button.addEventListener(
@@ -714,7 +711,7 @@ class Carousel {
         e.preventDefault();
         stopHold();
       },
-      { passive: false }
+      { passive: false },
     );
 
     button.addEventListener("touchcancel", stopHold);
@@ -729,7 +726,7 @@ class Carousel {
       () => {
         this.removeMobileNavigationButtons();
         this.createWideScreenNavigationButtons();
-      }
+      },
     );
   }
 
@@ -862,7 +859,7 @@ const onImgClick = (e) => {
 
 const menuVisible = () => {
   return !menuHidden;
-}
+};
 
 const setMenuVisibility = (viz) => {
   if (!menuElement) {
@@ -876,7 +873,7 @@ const setMenuVisibility = (viz) => {
     menuElement?.classList.add("menu--hidden");
     menuHidden = true;
   }
-}
+};
 
 const onScrollMenuDisplay = (_) => {
   const currentScrollY = window.scrollY;
@@ -884,7 +881,12 @@ const onScrollMenuDisplay = (_) => {
   const velocity =
     (currentScrollY - lastScrollY) / (currentScrollYMoment - lastScrollYMoment);
 
-  if ((velocity < -7 || currentScrollY <= 10 || (velocity < 0 && currentScrollY <= 200)) && !menuVisible()) {
+  if (
+    (velocity < -7 ||
+      currentScrollY <= 10 ||
+      (velocity < 0 && currentScrollY <= 200)) &&
+    !menuVisible()
+  ) {
     setMenuVisibility(true);
   } else if (
     currentScrollY > lastScrollY &&
