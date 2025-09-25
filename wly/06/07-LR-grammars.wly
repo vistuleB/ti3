@@ -2,7 +2,7 @@
     title=LR-Grammatiken
 
 
-    |> Topic
+    |> TopicAnnouncement
         Motivation und Intuition
 
     Die LL-Parser, die wir in Kapitel 5.4 gesehen haben, versuchen,
@@ -34,7 +34,7 @@
     w \Pets{} \alpha_1 \Pets{} \alpha_2 \Pets{} \dots \Pets{} \alpha_{t-1} \Pets{} S
     \end{align*}
 
-    |> Topic
+    |> TopicAnnouncement
         Notation
 
     Da aus der Sicht unseres neuen Parsers die Rückwärtsanwendung
@@ -458,7 +458,7 @@
         Als ersten Schritt sollten Sie sich überlegen, wie gültige
         Wortformen überhaupt aussehen können.
 
-    |> Topic
+    |> TopicAnnouncement
         Algorithmische Fragen
 
     Es stellen sich unmittelbar zwei zentrale Fragen:

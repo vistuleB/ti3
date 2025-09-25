@@ -212,7 +212,7 @@
         von $k$? Ist $L_t$ (für im Voraus bekanntes $t$ ) eine LL$(k)$
         -Grammatik? Für welchen Wert von $k$?
 
-    |> Topic
+    |> TopicAnnouncement
         LL$(k)$-Grammatiken parsen
 
     Wir wollen nun erarbeiten, wie wir für eine LL $(k)$ -Grammatik
@@ -376,7 +376,7 @@
     Algorithmus. Um den Algorithmus implementieren zu können, müssen
     wir es schaffen, die Menge $\First_k(\beta_i\alpha)$ zu berechnen.
 
-    |> Topic
+    |> TopicAnnouncement
         $\First_k(A)$ und $\First_k(\alpha)$ berechnen.
 
     |> Statement

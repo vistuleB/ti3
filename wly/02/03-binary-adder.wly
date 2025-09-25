@@ -2,7 +2,7 @@
     title=Binär-Addierer
 
 
-    |> Topic
+    |> TopicAnnouncement
         Ein Schaltkreis für binäre Addition
 
     Schaltkreise, der zwei Binärzahlen addieren können, finden Sie
@@ -104,7 +104,7 @@
     $\log n$ an (oder wenn wir besonders ambitionert sind und beliebig
     großen Fan-in zulassen, sogar konstante Tiefe $O(1)$ ).
 
-    |> Topic
+    |> TopicAnnouncement
         Carry Look-Ahead
 
     Tiefenmässig hat uns der obige Addierer nicht befriedigt. Das
@@ -174,7 +174,7 @@
     Das ist nicht unerträglich groß, aber auch nicht besonders
     handlich.
 
-    |> Topic
+    |> TopicAnnouncement
         Carry-Lookahead mit $O(n)$ Gates und $O(\log n)$ Tiefe
 
     Effizientere Lösungen beginnen oft mit einer guten Definition. In

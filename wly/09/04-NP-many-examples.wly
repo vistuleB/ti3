@@ -86,7 +86,7 @@
 
         Dies ist ebenfalls in NP.
 
-        |> Topic
+        |> TopicAnnouncement
             Finden versus Entscheiden
 
         Sei $G = (V,E)$ ein Graph. Eine Menge $I \subseteq V$ heißt

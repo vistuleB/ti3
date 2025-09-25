@@ -33,7 +33,7 @@
     bauen, der diese Funktion berechnet? Ich stelle Ihnen drei
     Herangehensweisen vor.
 
-    |> Topic
+    |> TopicAnnouncement
         Rekursiv, top-down
 
     Wir teilen die Tabelle in die obere Hälfte (wo $x = 0$ gilt) und
@@ -148,7 +148,7 @@
         \end{array}
         $$
 
-    |> Topic
+    |> TopicAnnouncement
         Bottom-Up, als DNF
 
     Wenn Sie Rekursionshasser sind und generell lieber in `for`
@@ -230,7 +230,7 @@
                 src=img/circuits/dnf-dirty.svg
                 loading=lazy
 
-    |> Topic
+    |> TopicAnnouncement
         Bottom-Up, als CNF
 
     Zu der eben demonstrierten Konstruktion gibt es noch eine weitere,

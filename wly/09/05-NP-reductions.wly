@@ -365,7 +365,7 @@
         ist leicht darzustellen als CNF-Formeln. Die Aussage _" $I$ hat
         Größe $k$"_ ist schwieriger. Sie müssen quasi _zählen_.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         `Hamilton Path`{sc}und `Hamilton Cycle`{sc}
 
     Sei $G = (V,E)$ ein Graph. Ein _Hamiltonscher Kreis_ ist ein

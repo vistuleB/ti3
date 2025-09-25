@@ -2,7 +2,7 @@
     title=Der DK-Automat
 
 
-    |> Topic
+    |> TopicAnnouncement
         Von der Grammatik $\hat{G}$ zu einem nichtdeterministischen
         endlichen Automaten
 
@@ -80,7 +80,7 @@
         |> img
             src=./img/context-free/LR/hat-G-to-DK.svg
 
-    |> Topic
+    |> TopicAnnouncement
         Die $a^{m+k}b^m$-Grammatik
 
     Wir illustrieren obige Vorgehensweise nun anhand der Grammatik
@@ -139,7 +139,7 @@
             src=./img/context-free/LR/dk-automaton-5-nea-aaabb/10.svg
             src=./img/context-free/LR/dk-automaton-5-nea-aaabb/11.svg
 
-    |> Topic
+    |> TopicAnnouncement
         Der nichtdeterministische DK-Automat
 
     |> Statement
@@ -184,7 +184,7 @@
         Der Startzustand ist $\boxed{S}$. Jeder Zustand der Form
         $\boxed{X \step{} \beta .}$ ist ein akzeptierender Zustand.
 
-    |> Topic
+    |> TopicAnnouncement
         Den NDK-Automaten deterministisch machen
 
     Wir wissen ja bereits, wie man einen nichtdeterministischen
@@ -240,7 +240,7 @@
     und der nicht akzeptierend ist. Dies ist übersichtlicher, als
     überall Todeskanten hinzuzufügen.
 
-    |> Topic
+    |> TopicAnnouncement
         Den DK-Automaten verwenden
 
     |> Statement
@@ -326,7 +326,7 @@
         heißt, dass Punkt 2 der Schlussfolgerung nicht gilt.
         |> QED
 
-    |> Topic
+    |> TopicAnnouncement
         LR(1)-Grammatiken
 
     Hier ist der nichtdeterministische Automat für $G$ mit Lookahead

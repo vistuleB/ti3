@@ -10,7 +10,7 @@
     Automaten; (5) transformieren diesen in einen deterministischen
     endlichen Automaten.
 
-    |> Topic
+    |> TopicAnnouncement
         1. Beschreibung des Formats in natürlicher Sprache
 
     Unsere Sprache $L$ soll so ähnlich sein wie die der erlaubten
@@ -41,7 +41,7 @@
     beschreiben - wir werden also im Prinzip eine _Grammatik_
     schreiben. Tun wir dies also.
 
-    |> Topic
+    |> TopicAnnouncement
         2. Eine reguläre Grammatik
 
     Beginnen wir mit dem Alphabet. Da es 62 alphanumerische Zeichen
@@ -99,7 +99,7 @@
     S'&\rightarrow {.}S
     \end{align*}
 
-    |> Topic
+    |> TopicAnnouncement
         3. Die reguläre Grammatik säubern
 
     Wir wollen nun alle Produktionen der Form $Y \rightarrow x$
@@ -139,7 +139,7 @@
     E&\rightarrow \epsilon
     \end{align*}
 
-    |> Topic
+    |> TopicAnnouncement
         4. Einen nichtdeterministischen endlichen Automaten bauen
 
     Dies sollte nun einfach sein. Wir erschaffen Zustände
@@ -154,7 +154,7 @@
     Ich habe die Zeichen `.:-` rot unterlegt, weil man sie sonst kaum
     erkennen würde in dem Automaten.
 
-    |> Topic
+    |> TopicAnnouncement
         5. Den nichtdeterministischen Automaten in einen deterministischen
         umwandeln
 

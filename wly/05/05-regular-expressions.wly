@@ -214,7 +214,7 @@
         regulären Ausdruck für unsere obige Sprache $L$, wo Sie aber
         neben $a$ alle alphanumerischen Zeichen zulassen.
 
-    |> Topic
+    |> TopicAnnouncement
         Einen regulären Ausdruck für jede reguläre Sprache
 
     Wir beweisen nun das Gegenstück zu Lemma >>regex-to-grammar:

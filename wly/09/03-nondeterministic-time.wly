@@ -70,7 +70,7 @@
         also die Klasse aller Probleme (formal: Sprachen), die man in
         nichtdeterministisch polynomieller Zeit entscheiden kann.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         Zertifikatmaschinen
 
     |> Statement
@@ -243,7 +243,7 @@
         _deterministische_ Turingmaschine, die $L$ in Zeit $t^2(n)$
         entscheidet.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         NP als Klasse der Probleme mit effizienten Zertifikaten
 
     Nach Definition ist eine Sprache $L$ ist in NP, wenn es eine

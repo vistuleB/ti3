@@ -154,7 +154,7 @@
     mindestens $\frac{2^n}{n+1}$ Terme, was bereits für moderate Werte
     wie $n=30$ nicht vertretbar ist.
 
-    |> Topic
+    |> TopicAnnouncement
         Majority Top-Down mit `if-then-else`-Gates
 
     Wenden wir nun statt Wahrheitstabelle die Top-Down-Methode an,
@@ -248,7 +248,7 @@
         Die Funktion $\maj_n (x_1,\dots,x_n)$ kann mit einem Schaltkreis
         der Größe $O(n^2)$, Tiefe $O(n)$ und Fan-in 2 berechnet werden.
 
-    |> Topic
+    |> TopicAnnouncement
         Majority durch Zählen
 
     $\maj_n(x_1,\dots,x_n)$ zu bestimmen sollte doch einfach sein: wir
@@ -273,7 +273,7 @@
         2-stellige Zahlen addieren müssen und erst die weniger obersten
         Gadgets Zahlen mit $\Theta(\log n)$ Bits als Input bekommen.
 
-    |> Topic
+    |> TopicAnnouncement
         $O(\log n)$ Tiefe mit 2-for-3-Addierern.
 
     Die vorherige Konstruktion mit den Addierern war schon deutlich
@@ -379,7 +379,7 @@
     Unser Pyramidenschema, in dem wir alle $\theta^m_k$ berechnen, ist
     monoton, hat allerdings leider Tiefe $\Omega(n)$.
 
-    |> Topic
+    |> TopicAnnouncement
         Monoton und polylogarithmische Tiefe durch Halbierung und
         Aufzählung.
 
@@ -422,7 +422,7 @@
         ausreichen. Zeigen Sie, wie die gerade skizzierte Konstruktion so
         ausgeführt werden kann,
 
-    |> Topic
+    |> TopicAnnouncement
         Monoton und logarithmische Tiefe: Valiants probabilitische
         Konstruktion
 

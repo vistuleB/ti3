@@ -101,7 +101,7 @@
     $M(x)$ am Ende; hierbei gibt es allerdings eine Schwierigkeit mit
     den Details der Codierung, die wir gleich ansprechen werden.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         Die Codierung
 
     Zuerst müssen wir uns auf ein Eingabealphabet $\Sigma$ einigen. Im

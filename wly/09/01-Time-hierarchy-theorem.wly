@@ -83,7 +83,7 @@
     Zeichen in den Block auf dem Arbeitsband eintragen und den Kopf
     bewegen. All das benötigt maximal $C \cdot |\enc(M)|$ Schritte.
 
-    |> Topic
+    |> TopicAnnouncement
         Untere Schranken für Zeitkomplexität
 
     Wir wollen nun eine Sprache definieren, die wir in $t(n)$

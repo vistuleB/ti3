@@ -38,7 +38,7 @@
     uns auf die Resource _Zeit_, und daher sind Turingmaschinen das
     Modell der Wahl.
 
-    |> Topic
+    |> TopicAnnouncement
         Zeitkomplexitätsklassen
 
     Wir beschränken uns der Einfachheit halber auf das Eingabealphabet
@@ -102,7 +102,7 @@
         $t: \N \rightarrow \N$. Dann gilt
         $\TIME_k(t) \subseteq \TIME_2(t \log t)$.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         Die Klasse P und der Begriff der Effizienz
 
     |> Statement

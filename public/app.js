@@ -45,9 +45,7 @@ const resetScreenWidthDependentVars = () => {
   };
 
   let indexHeaderTitleFontSizeInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.8;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.9;
-    return 2;
+    return pageTitleFontSizeInRem();
   };
 
   let indexHeaderTitleLineHeightInRem = () => {
@@ -86,7 +84,7 @@ const resetScreenWidthDependentVars = () => {
   }
 
   let chapterAndSubPaddingTopInPx = () => {
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 82;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 182;
     return 42;
   };
 
@@ -156,9 +154,19 @@ const resetScreenWidthDependentVars = () => {
   };
 
   let pageTitleFontSizeInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.9;
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.8;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2.1;
     return 2.25;
+  };
+
+  let topicAnnouncementFontSizeInRem = () => {
+    return pageTitleFontSizeInRem() * 0.8;
+  };
+
+  let subtopicAnnouncementFontSizeInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return topicAnnouncementFontSizeInRem() * 0.95;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return topicAnnouncementFontSizeInRem() * 0.9;
+    return topicAnnouncementFontSizeInRem() * 0.85;
   };
 
   const wellMarginYInRem = () => {
@@ -236,6 +244,8 @@ const resetScreenWidthDependentVars = () => {
   set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
   set("--outer-well-width", outerWellWidthInPx, "px");
   set("--page-title-font-size", pageTitleFontSizeInRem, "rem");
+  set("--topic-announcement-font-size", topicAnnouncementFontSizeInRem, "rem");
+  set("--subtopic-announcement-font-size", subtopicAnnouncementFontSizeInRem, "rem");
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
   set("--well-padding-x", wellPaddingXInRem, "rem");

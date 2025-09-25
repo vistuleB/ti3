@@ -153,7 +153,7 @@
         dürfen natürlich noch weitere Buchstaben zulassen, dann schreiben
         Sie sich aber schnell zu Tode.
 
-    |> Topic
+    |> TopicAnnouncement
         Erweitert reguläre Grammatiken
 
     In einer Übungsaufgabe oben wurden Sie aufgefordert, eine reguläre
@@ -221,7 +221,7 @@
     Grammatiken beschränken, da wir wissen, dass beide Definition eh
     gleich mächtig sind.
 
-    |> Topic
+    |> TopicAnnouncement
         Reguläre Grammatiken vereinfachen
 
     Das letzte Theorem erlaubt uns, eine Definition von regulären
@@ -370,7 +370,7 @@
         Form $X \rightarrow Y$. Wieviele Produktion hat Ihre neue
         Grammatik?
 
-    |> Topic
+    |> TopicAnnouncement
         handle=baukasten
         Reguläre Sprachen nach Baukastenprinzip bauen
 

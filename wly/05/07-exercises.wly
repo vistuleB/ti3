@@ -2,7 +2,7 @@
     title=Übungsaufgaben
 
 
-    |> Topic
+    |> TopicAnnouncement
         Reguläre Sprachen und primitive Rekursion
 
     |> Exercise
@@ -28,7 +28,7 @@
         Sei $L$ eine reguläre Sprache. Zeigen Sie, dass $f_L$ primitiv
         rekursiv ist!
 
-    |> Topic
+    |> TopicAnnouncement
         Reguläre Sprachen und Schaltkreise
 
     Wir können jedes Zeichen $\sigma \in \Sigma$ als Bitstring

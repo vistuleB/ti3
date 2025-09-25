@@ -18,6 +18,8 @@
   --chapter-and-sub-padding-bottom: 82px;
   --page-title-font-size: 2.25rem;
   --page-title-margin: 6rem;
+  --topic-announcement-font-size: 2rem;
+  --subtopic-announcement-font-size: 2rem;
   --main-column-width: 100vw;
   --main-column-padding-x: 2rem;
   --main-column-to-well-margin: 0.9rem;
@@ -230,7 +232,7 @@ body {
   text-align: center;
   gap: 2rem;
   font-size: var(--page-title-font-size);
-  margin-bottom: 2rem;
+  margin-bottom: 1em;
 }
 
 .page-title p {
@@ -274,7 +276,7 @@ figure.main-column:last-child {
 
 .main-column + .well,
 .well + .main-column {
-  margin-top: var(--main-column-to-well-margin) !important;
+  margin-top: var(--main-column-to-well-margin);
 }
 
 .well.out:last-child {
@@ -682,28 +684,28 @@ figure.main-column img.constrained,
   transform: scale(1.35);
 }
 
-h1 {
-  font-size: 1.9rem;
+/* the 2nd selector is there b/c of specificity wars: */
+.topic-announcement, .well + .topic-announcement.main-column {
+  font-size: var(--topic-announcement-font-size);
+  margin: 0 auto;
+  margin-top: 0.9em;
+  margin-bottom: 0.5em;
   font-weight: normal;
 }
 
-h2 {
-  font-size: 1.7rem;
+/* the 2nd selector is there b/c of specificity wars: */
+.subtopic-announcement, .well + .subtopic-announcement.main-column {
+  font-size: var(--subtopic-announcement-font-size);
+  margin: 0 auto;
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
   font-weight: normal;
-  margin: 0px;
 }
 
 p + p {
   margin-top: 0.8rem;
 }
-
-h1 + p,
-h2 + p {
-  margin-top: 0.8rem;
-}
-
-p + h1,
-p + h2 {
+p + h1, p + h2 {
   margin-top: 0.8rem;
 }
 

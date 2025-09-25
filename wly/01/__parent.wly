@@ -16,7 +16,7 @@
     Daten manipulieren; in jedem Schritt immer nur an einer bestimmten
     Stelle und nach festen Regeln.
 
-    |> Topic
+    |> TopicAnnouncement
         Emailadressen und Arithmetische Ausdrücke
 
     Die Menge aller denkbaren Emailadressen ist unendlich - zumindest,
@@ -69,7 +69,7 @@
         entwickeln, die die korrekten arithmetischen Ausdrücke
         beschreibt.
 
-    |> Topic
+    |> TopicAnnouncement
         Endliche Regeln und unendliches Verhalten
 
     Das klassische Beispiel, wie sehr einfache Regeln ein extrem
@@ -170,7 +170,7 @@
     wir am Ende dieses Kurses angelangt sind, werden Sie aber
     verstehen, warum das sogar recht plausibel ist.
 
-    |> Topic
+    |> TopicAnnouncement
         Zusammenfassung
 
     Es geht also in diesem Kurs vor Allem um folgende Fragen:

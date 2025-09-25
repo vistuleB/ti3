@@ -3,7 +3,7 @@
     title=Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
 
 
-    |> Topic
+    |> TopicAnnouncement
         Turingmaschinen mit mehreren Bändern
 
     Im letzten Teilkapitel ist Ihnen bestimmt aufgefallen, dass es
@@ -115,7 +115,7 @@
     Ausgabeband hat, auf dem nach Abschluss der Berechnung das
     Ausgabewort $f(x)$ steht.
 
-    |> Topic
+    |> TopicAnnouncement
         Einband-Maschinen können Mehrband-Maschinen simulieren
 
     Es stellt sich heraus, dass mehrere Bänder zwar ein praktisches
@@ -217,7 +217,7 @@
         in ihren eigenen akzeptierenden Zustand `accept'`.
         |> QED
 
-    |> Topic
+    |> TopicAnnouncement
         Einfügen versus Überschreiben
 
     Folgende Aufgabe ist auf einer Einband-Turingmaschine sehr leicht:
@@ -316,7 +316,7 @@
     Turingmaschine vorstellen, die statt $k$ Bändern einfach $2k$
     Stapel hat.
 
-    |> Topic
+    |> TopicAnnouncement
         Die Dictionary-Maschine
 
     Ein fundamentale Datenstruktur beim Programmieren sind
@@ -357,7 +357,7 @@
         Schlüssel gleiche Länge haben. Das erspart Ihnen gefühlt 20
         Zeilen im Programmcode der Turingmaschine.
 
-    |> Topic
+    |> TopicAnnouncement
         Nichtdeterministische Turingmaschinen
 
     Bereits im Kapitel über reguläre Sprachen haben wir gesehen, dass
@@ -559,7 +559,7 @@
         weil es eben eine vom Start aus erreichbare akzeptierende
         Konfiguration gibt.
 
-    |> Topic
+    |> TopicAnnouncement
         Deterministische Turingmaschinen simulieren nichtdeterministische
 
     Sind nun nichtdeterministische Turingmaschinen inhärent mächtiger?

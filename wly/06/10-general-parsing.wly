@@ -57,7 +57,7 @@
     Informatik als _effizient_ durchgeht, in der Praxis leider meist
     unbrauchbar ist.
 
-    |> Topic
+    |> TopicAnnouncement
         Chomsky-Normalform
 
     Eine kontextfreie Grammatik ist in _Chomsky-Normalform_, wenn jede
@@ -137,7 +137,7 @@
     Der Trick besteht darin, Zwischenergebnisse systematisch zu
     berechnen, um somit Laufzeit zu sparen.
 
-    |> Topic
+    |> TopicAnnouncement
         Der CYK-Algorithmus
 
     Die oben skizzierte Idee ist im CYK-Algorithmus konkretisiert

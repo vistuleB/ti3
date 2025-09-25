@@ -48,7 +48,7 @@
     also`(* (+ 31 402) 83)`. All dies wird sehr einfach sein, sobald
     wir den Ableitungsbaum als Datenstruktur vorliegen haben.
 
-    |> Topic
+    |> TopicAnnouncement
         Eine Datenstruktur für Ableitungsbäume
 
     Für meine Implementierung in Java erschaffe ich für jedes

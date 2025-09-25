@@ -63,7 +63,7 @@
         durch Umschreiben der Grammatik lösen. Wir müssen lesen, bis wir
         ein $b$ sehen.
 
-    |> Topic
+    |> TopicAnnouncement
         Das LR-Paradigma
 
     Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma war ja, mit

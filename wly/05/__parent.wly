@@ -104,7 +104,7 @@
     vorliegen, zu verarbeiten; ja auch erst einmal überhaupt Begriffe
     festlegen, wie man solche Formate definiert.
 
-    |> Topic
+    |> TopicAnnouncement
         Korrekte Email-Adressen
 
     Kommen wir auf unser erstes, einfachstes Beispiel zurück: die
@@ -220,7 +220,7 @@
         <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
         ```
 
-    |> Topic
+    |> TopicAnnouncement
         Ein Beispiel einer formalen Grammatik und einer Ableitung
 
     Was Sie hier sehen, nennt man eine _formale Grammatik_. Ihre
@@ -294,7 +294,7 @@
         Formulieren Sie weitere Regeln, um unsinnige Domainnamen wie
         `-.-.--` zu verbieten. Wie müssen Sie die obige Grammatik ändern?
 
-    |> Topic
+    |> TopicAnnouncement
         Terminologie, formale Definitionen und Beispiele
 
     Im letzten Abschnitt haben wir die Regeln für die Bildung
@@ -303,7 +303,7 @@
     geworden ist. Wir werden nun alles formaler und abstrakter
     definieren.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         Alphabet
 
     Wenn wir über formale Sprachen reden, so liegt immer eine
@@ -330,7 +330,7 @@
     $\Sigma^+$ bezeichnen wir die Menge aller nichtleeren Strings,
     also $\Sigma^+ = \Sigma^* \setminus \{\epsilon\}$.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         Sprachen
 
     Eine Teilmenge $L \subseteq \Sigma$ bezeichnen wir in diesem
@@ -385,7 +385,7 @@
         |> li
             Ja, können wir.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         Grammatiken
 
     |> Statement
@@ -604,7 +604,7 @@
         ersten beiden Ableitungen mit Wort $S \Rightarrow^* (ab)(ab)$
         bezeichnen und die dritte mit Wort $S \Rightarrow^* a(ba)b$.
 
-    |> Topic
+    |> TopicAnnouncement
         Ziele der Theorie der formalen Sprachen
 
     Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen formal

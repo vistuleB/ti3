@@ -112,7 +112,7 @@
             class=reference
         \ weglassen können, zumindest wenn $s(n)$ zeitkonstruierbar ist.
 
-    |> SubTopic
+    |> SubtopicAnnouncement
         Die wichtigsten Platzklassen: L und PSPACE
 
     Wir definieren

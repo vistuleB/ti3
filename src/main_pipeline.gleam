@@ -14,13 +14,13 @@ const p_cannot_contain = [
   "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
   "Example", "Exercise", "Grid", "Highlight", "Index", "List", 
   "MathBlock", "Menu", "Remark", "Statement", "Sub", "SubTitle", 
-  "SubTopic", "Topic", "WriterlyBlankLine",
+  "SubtopicAnnouncement", "TopicAnnouncement", "WriterlyBlankLine",
   "br", "center", "figure", "div", "hr", "li", "ul", "ol", "p", "pre",
   "table", "thead", "tbody", "tr", "td", "colgroup", "section",
 ]
 
 const p_cannot_be_contained_in = [
-  "MathBlock", "Index", "Menu", "Topic", "SubTopic", "NoWrap", "Math",
+  "MathBlock", "Index", "Menu", "TopicAnnouncement", "SubtopicAnnouncement", "NoWrap", "Math",
   "QED", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem", 
   "code", "figure", "p", "pre", "span",
 ]
@@ -28,12 +28,12 @@ const p_cannot_be_contained_in = [
 pub fn main_pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
 
-  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "Topic", "SubTopic", "Statement", "Exercise", "Highlight", "Remark", "QED", "CircleX", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
+  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "TopicAnnouncement", "SubtopicAnnouncement", "Statement", "Exercise", "Highlight", "Remark", "QED", "CircleX", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   
   let post_transformation_document_tags = ["Document", "marker", "WriterlyCodeBlock", "AnnotatedBackticks"]
-  let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "p", "b", "i", "code"])
+  let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "h3", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
 
   let possible_outer_elements = [
@@ -44,8 +44,8 @@ pub fn main_pipeline()  -> List(Pipe) {
     "pre",
     "code",
     "figure",
-    "Topic",
-    "SubTopic",
+    "TopicAnnouncement",
+    "SubtopicAnnouncement",
     "MathBlock",
     "CarouselContainer",
   ]
@@ -73,7 +73,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),
-      dl.rename(#("WriterlyCodeBlock","CodeBlock")),
+      dl.rename(#("WriterlyCodeBlock", "CodeBlock")),
       dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
         #("Chapter", "counter", "SubCounter"),
@@ -201,6 +201,10 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), ["CarouselContainer"]),
       dl.replace_with_arbitrary(#("QED", qed)),
       dl.rename_with_attributes(#("CircleX", "img", [#("class", "circle-X-img"), #("src", "img/context-free/LR/circle-X.svg")])),
+      dl.append_class__batch([
+        #("TopicAnnouncement", "topic-announcement"),
+        #("SubtopicAnnouncement", "subtopic-announcement"),
+      ]),
       dl.rename__batch([
         #("MathBlock", "div"),
         #("Index", "div"),
@@ -211,12 +215,12 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("ChapterTitle", "div"),
         #("Sub", "div"),
         #("SubTitle", "div"),
-        #("Topic", "h1"),
-        #("SubTopic", "h2"),
         #("Exercise", "div"),
         #("Statement", "div"),
         #("Highlight", "div"),
         #("Remark", "div"),
+        #("TopicAnnouncement", "h2"),
+        #("SubtopicAnnouncement", "h3"),
         #("CarouselContainer", "div"),
         #("Carousel", "div"),
         #("CarouselItems", "div"),
