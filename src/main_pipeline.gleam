@@ -198,8 +198,8 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.append_class_to_child_if_has_class(#("Sub", "out", "well")),
       dl.append_class_to_child_if_is_one_of(#("Chapter", "main-column", possible_outer_elements)),
       dl.append_class_to_child_if_is_one_of(#("Sub", "main-column", possible_outer_elements)),
-      dl.append_attribute__outside(#("img", "class", "constrained transition-all"), ["CarouselContainer"]),
-      dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), ["CarouselContainer"]),
+      dl.append_attribute__outside(#("img", "class", "constrained transition-all"), []),
+      dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), []),
       dl.replace_with_arbitrary(#("QED", qed)),
       dl.rename_with_attributes(#("CircleX", "img", [#("class", "circle-X-img"), #("src", "img/context-free/LR/circle-X.svg")])),
       dl.append_class__batch([
