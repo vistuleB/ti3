@@ -1,5 +1,4 @@
 :root {
-  --body-color: #333333;
   --carousel-indicator-gap: 4px;
   --carousel-indicator-box-size: 14px;
   --carousel-indicator-dot-size: 7.5px;
@@ -17,7 +16,7 @@
   --chapter-and-sub-padding-top: 82px;
   --chapter-and-sub-padding-bottom: 82px;
   --page-title-font-size: 2.25rem;
-  --page-title-margin: 6rem;
+  --page-title-margin-top: 1.5em;
   --topic-announcement-font-size: 2rem;
   --subtopic-announcement-font-size: 2rem;
   --main-column-width: 100vw;
@@ -102,13 +101,13 @@ body {
   background-color: rgba(248, 244, 253, 1);
   font-size: 1.25rem;
   min-width: 2500px;
-  color: var(--body-color);
+  color: #333;
 }
 
-.page-chapter, .page-sub {
+/* .page-chapter, .page-sub {
   padding-top: var(--chapter-and-sub-padding-top);
   padding-bottom: var(--chapter-and-sub-padding-bottom);
-}
+} */
 
 /* Index page
 */
@@ -216,14 +215,6 @@ body {
   text-align: right;
 }
 
-/* Chapters and Subchapters
-*/
-
-/* .chapter,
-.subchapter {
-  margin-top: 2rem;
-} */
-
 .page-title {
   width: inherit;
   display: grid;
@@ -232,6 +223,7 @@ body {
   text-align: center;
   gap: 2rem;
   font-size: var(--page-title-font-size);
+  margin-top: var(--page-title-margin-top);
   margin-bottom: 1em;
 }
 
@@ -793,24 +785,31 @@ button img {
 .elm-0 {
   color: var(--elm-punctuation);
 }
+
 .elm-1 {
   color: var(--elm-defined-symbol)
 }
+
 .elm-2 {
   color: var(--elm-type);
 }
+
 .elm-3 {
   color: var(--elm-variable);
 }
+
 .elm-4 {
   color: var(--elm-keyword);
 }
+
 .elm-5 {
   color: var(--elm-function);
 }
+
 .elm-6 {
   color: var(--elm-relation);
 }
+
 .elm-7 {
   color: var(--elm-par);
 }

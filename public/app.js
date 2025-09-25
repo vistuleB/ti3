@@ -83,15 +83,6 @@ const resetScreenWidthDependentVars = () => {
     return 3;
   }
 
-  let chapterAndSubPaddingTopInPx = () => {
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 182;
-    return 42;
-  };
-
-  let chapterAndSubPaddingBottomInRem = () => {
-    return 0;
-  };
-
   const carouselArrowSizeInPx = () => {
     const size = (6 / 100) * screenWidth; // 6vw
     const clampedSize = Math.min(
@@ -158,6 +149,13 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2.1;
     return 2.25;
   };
+
+  let pageTitleMarginTopInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 3;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 3;
+    return 3.6;
+  }
 
   let topicAnnouncementFontSizeInRem = () => {
     return pageTitleFontSizeInRem() * 0.8;
@@ -233,8 +231,6 @@ const resetScreenWidthDependentVars = () => {
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
   set("--index-toc-max-width", indexTocMaxWidthInPx, "px");
   set("--index-toc-padding-bottom", indexTocPaddingBottomInRem, "rem");
-  set("--chapter-and-sub-padding-top", chapterAndSubPaddingTopInPx, "px");
-  set("--chapter-and-sub-padding-bottom", chapterAndSubPaddingBottomInRem, "rem");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set("--end-of-page-main-column-margin-bottom", endOfPageMainColumnMarginBottomInRem, "rem");
@@ -244,6 +240,7 @@ const resetScreenWidthDependentVars = () => {
   set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
   set("--outer-well-width", outerWellWidthInPx, "px");
   set("--page-title-font-size", pageTitleFontSizeInRem, "rem");
+  set("--page-title-margin-top", pageTitleMarginTopInRem, "rem");
   set("--topic-announcement-font-size", topicAnnouncementFontSizeInRem, "rem");
   set("--subtopic-announcement-font-size", subtopicAnnouncementFontSizeInRem, "rem");
   set("--well-margin-y", wellMarginYInRem, "rem");
