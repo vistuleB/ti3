@@ -518,6 +518,7 @@ figure.main-column img.constrained,
   width: fit-content;
   padding: 0 0;
   margin: 1rem auto 1.5rem;
+  background-color: inherit;
 }
 
 .carousel {
@@ -528,6 +529,7 @@ figure.main-column img.constrained,
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  background-color: inherit;
 }
 
 .carousel__mobile-nav {
@@ -601,6 +603,7 @@ figure.main-column img.constrained,
   flex: 1 0 0%;
   display: flex;
   text-align: center;
+  background-color: inherit;
 }
 
 .carousel__item {
