@@ -52,8 +52,11 @@
   --python-prompt-ok-response: #2aa198; 
   --python-prompt-error-response: rgb(226, 66, 66);
   --listing-numbers: rgb(174, 174, 174);
-  --xml-tags: #b58900;
-  --xml-attributes: #6c71c4;
+  --xml-tag-endings: #b58900;
+  --xml-tag-names: #b58900;
+  --xml-attribute-keys: #f78080;
+  --xml-attribute-values: #6c71c4;
+  --xml-equals-sign: #913d3d;
   --elm-punctuation: #dc322f;
   --elm-defined-symbol: #268bd2;
   --elm-type: #b58900;
@@ -64,27 +67,30 @@
   --elm-par: #b58900;
   
   /* dark code block mode */
-  /*--pre-background-color: #000;*/
-  /*--pre-text: #fff;*/
-  /*--terminal-prompt: rgb(219, 220, 218);*/
-  /*--terminal-prompt-content: rgb(191, 241, 141);*/
-  /*--arbitrary-prompt: rgb(120, 120, 255);*/
-  /*--arbitrary-prompt-reponse: rgb(255, 173, 251);*/
-  /*--python-prompt-carets: rgb(244, 154, 235);*/
-  /*--python-prompt-content: rgb(255, 255, 255);*/
-  /*--python-prompt-ok-response: rgb(48, 255, 120);*/
-  /*--python-prompt-error-response: rgb(255, 142, 142);*/
-  /*--listing-numbers: rgb(220, 220, 220);*/
-  /*--xml-tags: rgb(220, 200, 180);*/
-  /*--xml-attributes: #9a83e0;*/
-  /*--elm-punctuation: #da7167ff;*/
-  /*--elm-defined-symbol: #abb66fff;*/
-  /*--elm-type: #cfa763ff;*/
-  /*--elm-variable: #e6dab5ff;*/
-  /*--elm-keyword: #da7167ff;*/
-  /*--elm-function: #e6dab5ff;*/
-  /*--elm-relation: #d58b58ff;*/
-  /*--elm-par: #cfa763ff;*/
+  /* --pre-background-color: #000;
+  --pre-text: #fff;
+  --terminal-prompt: rgb(219, 220, 218);
+  --terminal-prompt-content: rgb(191, 241, 141);
+  --arbitrary-prompt: rgb(120, 120, 255);
+  --arbitrary-prompt-reponse: rgb(255, 173, 251);
+  --python-prompt-carets: rgb(244, 154, 235);
+  --python-prompt-content: rgb(255, 255, 255);
+  --python-prompt-ok-response: rgb(48, 255, 120);
+  --python-prompt-error-response: rgb(255, 142, 142);
+  --listing-numbers: rgb(220, 220, 220);
+  --xml-tag-endings: rgb(220, 200, 180);
+  --xml-tag-names: rgb(220, 200, 180);
+  --xml-attribute-keys: #f78080;
+  --xml-attribute-values: #9a83e0;
+  --xml-equals-sign: #913d3d;
+  --elm-punctuation: #da7167ff;
+  --elm-defined-symbol: #abb66fff;
+  --elm-type: #cfa763ff;
+  --elm-variable: #e6dab5ff;
+  --elm-keyword: #da7167ff;
+  --elm-function: #e6dab5ff;
+  --elm-relation: #d58b58ff;
+  --elm-par: #cfa763ff; */
 }
 
 * {
@@ -753,27 +759,24 @@ button img {
 
 .xml-0 {
   /* '<' '/>' etc */
-  color: var(--xml-tags);
+  color: var(--xml-tag-endings);
 }
 
 .xml-1 {
-  /* tag names */
-  color: var(--xml-tags);
+  color: var(--xml-tag-names);
 }
 
 .xml-2 {
-  /* attribute keys */
-  color: #f78080;
+  color: var(--xml-attribute-keys);
 }
 
 .xml-3 {
-  /* attribute assignment '=' */
-  color: #913d3d;
+  color: var(--xml-equals-sign);
 }
 
 .xml-4 {
   /* attribute values including the quotes */
-  color: var(--xml-attributes);
+  color: var(--xml-attribute-values);
 }
 
 .xml-5 {
