@@ -166,6 +166,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("Kapitel <a href=1>_1_</a>", "<a href=1>Kapitel _1_</a>"),
         #("Teilkapitel <a href=1>_1_</a>", "<a href=1>Teilkapitel _1_</a>"),
         #("Beispiel <a href=1>_1_</a>", "<a href=1>Beispiel _1_</a>"),
+        #("Definition <a href=1>_1_</a>", "<a href=1>Definition _1_</a>"),
       ]),
     ],
     [
