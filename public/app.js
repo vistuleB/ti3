@@ -65,6 +65,7 @@ const resetScreenWidthDependentVars = () => {
     root.style.setProperty(key, `${val()}` + unit);
   };
 
+<<<<<<< HEAD
   let inhaltsArrowsDisplay = () => {
     if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
     return "inline";
@@ -72,6 +73,17 @@ const resetScreenWidthDependentVars = () => {
 
   let menuPaddingXInRem = () => {
     if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
+=======
+  let menuDisplay = () => {
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return "flex";
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "flex";
+    return "flex";
+  };
+
+  let menuPaddingXInRem = () => {
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
+      return mainColumnPaddingXInRem();
+>>>>>>> af3f1c7 (mobile menu refactor)
     return 1.7;
   };
 
@@ -82,7 +94,12 @@ const resetScreenWidthDependentVars = () => {
   };
 
   let menuBackgroundColor = () => {
+<<<<<<< HEAD
     if (screenWidth <= LAPTOP_MAX_WIDTH) return "var(--body-background-color)";
+=======
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
+      return "var(--body-background-color)";
+>>>>>>> af3f1c7 (mobile menu refactor)
     return "#0000";
   };
 
@@ -154,9 +171,17 @@ const resetScreenWidthDependentVars = () => {
   };
 
   const carouselNavButtonMarginXInPx = () => {
+<<<<<<< HEAD
     if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
     if (screenWidth <= TABLET_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
     if (screenWidth <= LAPTOP_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
+=======
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+      return carouselArrowSizeInPx() * 0.7;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
+      return carouselArrowSizeInPx() * 0.4;
+>>>>>>> af3f1c7 (mobile menu refactor)
     return carouselArrowSizeInPx();
   };
 
@@ -214,8 +239,15 @@ const resetScreenWidthDependentVars = () => {
   };
 
   let topicAnnouncementFontSizeInRem = () => {
+<<<<<<< HEAD
     if (screenWidth <= MOBILE_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.85;
     if (screenWidth <= TABLET_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.82;
+=======
+    if (screenWidth <= WELL_100VW_MAX_WIDTH)
+      return pageTitleFontSizeInRem() * 0.85;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+      return pageTitleFontSizeInRem() * 0.82;
+>>>>>>> af3f1c7 (mobile menu refactor)
     return pageTitleFontSizeInRem() * 0.78;
   };
 
@@ -881,6 +913,7 @@ const onScrollMenuDisplay = (_) => {
   const velocity =
     (currentScrollY - lastScrollY) / (currentScrollYMoment - lastScrollYMoment);
 
+<<<<<<< HEAD
   if (
     (velocity < -7 ||
       currentScrollY <= 10 ||
@@ -894,6 +927,22 @@ const onScrollMenuDisplay = (_) => {
     menuVisible()
   ) {
     setMenuVisibility(false);
+=======
+  if ((velocity < -7 || currentScrollY <= 10) && menuHidden) {
+    for (const m of menuElements) {
+      m.classList.remove("menu--hidden");
+    }
+    menuHidden = false;
+  } else if (
+    currentScrollY > lastScrollY &&
+    currentScrollY > 10 &&
+    !menuHidden
+  ) {
+    for (const m of menuElements) {
+      m.classList.add("menu--hidden");
+    }
+    menuHidden = true;
+>>>>>>> af3f1c7 (mobile menu refactor)
   }
 
   lastScrollY = currentScrollY;
