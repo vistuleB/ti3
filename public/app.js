@@ -5,7 +5,6 @@ const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1050;
 const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 150;
 const CAROUSEL_ARROW_MAX_SIZE = 48;
 const CAROUSEL_ARROW_MIN_SIZE = 28;
-// const BODY_COLOR = 
 
 const root = document.documentElement;
 const remToPx = 16;
@@ -47,37 +46,32 @@ const resetScreenWidthDependentVars = () => {
     root.style.setProperty(key, `${val()}` + unit);
   };
 
-  let menuBiplaneDisplay = () => {
+  let menuDisplay = () => {
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return "flex";
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "flex";
     return "flex";
   }
 
-  let menuBiplanePaddingXInRem = () => {
+  let menuPaddingXInRem = () => {
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return mainColumnPaddingXInRem();
     return 1.7;
   }
 
-  let menuBiplanePaddingYInRem = () => {
+  let menuPaddingYInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.6;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
     return 1.4;
   }
 
-  let menuBiplaneBackgroundColor = () => {
+  let menuBackgroundColor = () => {
     if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "var(--body-background-color)";
     return "#0000";
   }
 
-  let menuBiplaneElementGapInRem = () => {
+  let menuElementGapInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.7;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.7;
     return 0.55;
-  }
-
-  let menuHorizontalDisplay = () => {
-    if (WELL_100VW_MINUS_PADDING_MAX_WIDTH < screenWidth && screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "none";
-    return "none";
   }
 
   let indexHeaderTitleFontSizeInRem = () => {
@@ -273,12 +267,11 @@ const resetScreenWidthDependentVars = () => {
     return mainColumnWidthInPx();
   };
 
-  set("--menu-biplane-display", menuBiplaneDisplay, "");
-  set("--menu-biplane-padding-x", menuBiplanePaddingXInRem, "rem");
-  set("--menu-biplane-padding-y", menuBiplanePaddingYInRem, "rem");
-  set("--menu-biplane-element-gap", menuBiplaneElementGapInRem, "rem");
-  set("--menu-biplane-background-color", menuBiplaneBackgroundColor, "");
-  set("--menu-horizontal-display", menuHorizontalDisplay, "");
+  set("--menu-display", menuDisplay, "");
+  set("--menu-padding-x", menuPaddingXInRem, "rem");
+  set("--menu-padding-y", menuPaddingYInRem, "rem");
+  set("--menu-element-gap", menuElementGapInRem, "rem");
+  set("--menu-background-color", menuBackgroundColor, "");
   set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
   set("--index-header-title-line-height", indexHeaderTitleLineHeightInRem, "rem");
   set("--index-header-subtitle-font-size", indexHeaderSubtitleFontSizeInRem, "rem");

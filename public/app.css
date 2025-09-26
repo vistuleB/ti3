@@ -7,12 +7,11 @@
   --body-background-color: rgba(248, 244, 253, 1);
 
   /* the following are set by ti3.js resetScreenWidthDependentVars: */
-  --menu-horizontal-display: none;
-  --menu-biplane-display: flex;
-  --menu-biplane-padding-x: 1.7rem;
-  --menu-biplane-padding-y: 1.4rem;
-  --menu-biplane-background-color: var(--body-background-color);
-  --menu-biplane-element-gap: 0.55rem;
+  --menu-display: flex;
+  --menu-padding-x: 1.7rem;
+  --menu-padding-y: 1.4rem;
+  --menu-background-color: var(--body-background-color);
+  --menu-element-gap: 0.55rem;
   --carousel-arrow-size: 48px;
   --carousel-nav-button-margin-x: 2em;
   --index-header-title-font-size: 2rem;
@@ -212,35 +211,22 @@ body {
   color: #222;
 }
  
-.menu-biplane {
-  display: var(--menu-biplane-display);
+.menu {
+  display: var(--menu-display);
   justify-content: space-between;
-  padding: var(--menu-biplane-padding-y) var(--menu-biplane-padding-x) calc(var(--menu-biplane-padding-y) * 0.8);
-  background-color: var(--menu-biplane-background-color);
+  padding: var(--menu-padding-y) var(--menu-padding-x) calc(var(--menu-padding-y) * 0.8);
+  background-color: var(--menu-background-color);
 }
 
-.menu-biplane-right,
-.menu-biplane-left {
+.menu-right,
+.menu-left {
   display: flex;
   flex-direction: column;
-  gap: var(--menu-biplane-element-gap);
+  gap: var(--menu-element-gap);
 }  
 
-.menu-biplane-right {
+.menu-right {
   text-align: right;
-}
-
-.menu-horizontal {
-  display: var(--menu-horizontal-display);
-  padding: 1.3rem var(--main-column-padding-x);
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: var(--body-background-color);
-  border-bottom: 1.3pt solid #d2265a90;
-}
-
-.menu-horizontal a {
-  display: flex;
 }
 
 .page-title {
