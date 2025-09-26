@@ -801,6 +801,19 @@ function throttle(func, delay = 16) {
   };
 }
 
+const hideMenu = () => {
+  // mount menuElement
+  if (!menuElement) {
+    menuElement = document.querySelector(".menu");
+    if (!menuElement) return;
+  }
+
+  // hide menu
+  if (!menuElement.classList.contains("menu--hidden")) {
+    menuElement.classList.add("menu--hidden");
+  }
+};
+
 const onScrollMenuDisplay = () => {
   if (!menuElement) {
     menuElement = document.querySelector(".menu");
@@ -867,6 +880,7 @@ const onLoad = () => {
 const onResize = () => {
   instantRecenter();
   resetScreenWidthDependentVars();
+  onMobile(() => hideMenu());
   onMobile(() => setImgHeightToAuto());
   onMobile(() => setMenuBorder());
   setTimeout(adjustMathAlignment, 60);
@@ -929,7 +943,7 @@ const onKeyDown = (e) => {
 window.addEventListener("resize", onResize);
 document.addEventListener("DOMContentLoaded", onLoad);
 document.addEventListener("click", smoothRecenter);
-document.addEventListener("scroll", menuHandler, { passive: true });
+// document.addEventListener("scroll", menuHandler, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd, { passive: true });
 document.addEventListener("keydown", onKeyDown);
