@@ -4,8 +4,17 @@
   --carousel-indicator-dot-size: 7.5px;
   --progress-counter-font-size: 0.8em;
   --max-carousel-indicators-per-line: 30;
+  --body-background-color: rgba(248, 244, 253, 1);
 
   /* the following are set by ti3.js resetScreenWidthDependentVars: */
+  --menu-horizontal-display: none;
+  --menu-biplane-display: flex;
+  --menu-biplane-padding-x: 1.7rem;
+  --menu-biplane-padding-y: 1.4rem;
+  --menu-biplane-background-color: var(--body-background-color);
+  --menu-biplane-element-gap: 0.55rem;
+  --carousel-arrow-size: 48px;
+  --carousel-nav-button-margin-x: 2em;
   --index-header-title-font-size: 2rem;
   --index-header-title-line-height: 2.8rem;
   --index-header-subtitle-font-size: 2rem;
@@ -24,8 +33,6 @@
   --main-column-to-well-margin: 0.9rem;
   --end-of-page-main-column-margin-bottom: 0.9rem;
   --outer-well-width: 100vw;
-  --carousel-arrow-size: 48px;
-  --carousel-nav-button-margin-x: 2em;
   --well-after-main-column-margin-top: 0.9rem;
   --well-before-main-column-margin-bottom: 0.9rem;
   --well-margin-y: 0.75rem;
@@ -104,7 +111,7 @@ html {
 }
 
 body {
-  background-color: rgba(248, 244, 253, 1);
+  background-color: var(--body-background-color);
   font-size: 1.25rem;
   min-width: 2500px;
   color: #333;
@@ -185,37 +192,53 @@ body {
   padding-right: 0.5em;
 }
 
-.menu {
-  position: fixed;
-  top: 0px;
-  left: 0;
-  z-index: 1;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  transition: top 0.5s ease-in-out;
-  will-change: top;
-  padding: 1.4rem 1.7rem 0;
-}
-
-.menu--hidden {
+.menu.menu--hidden {
   top: -100px;
 }
 
-.menu-right,
-.menu-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  transition: top 0.5s ease-in-out;
+  will-change: top;
+}  
 
 .menu a {
   color: #222;
-  text-decoration: underline;
+}
+ 
+.menu-biplane {
+  display: var(--menu-biplane-display);
+  justify-content: space-between;
+  padding: var(--menu-biplane-padding-y) var(--menu-biplane-padding-x) calc(var(--menu-biplane-padding-y) * 0.8);
+  background-color: var(--menu-biplane-background-color);
 }
 
-.menu-right {
+.menu-biplane-right,
+.menu-biplane-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--menu-biplane-element-gap);
+}  
+
+.menu-biplane-right {
   text-align: right;
+}
+
+.menu-horizontal {
+  display: var(--menu-horizontal-display);
+  padding: 1.3rem var(--main-column-padding-x);
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--body-background-color);
+  border-bottom: 1.3pt solid #d2265a90;
+}
+
+.menu-horizontal a {
+  display: flex;
 }
 
 .page-title {
@@ -686,7 +709,7 @@ figure.main-column img.constrained,
 .topic-announcement, .well + .topic-announcement.main-column {
   font-size: var(--topic-announcement-font-size);
   margin: 0 auto;
-  margin-top: 0.9em;
+  margin-top: 0.85em;
   margin-bottom: 0.5em;
   font-weight: normal;
 }
@@ -827,10 +850,11 @@ button img {
 }
 
 .textfigure {
-  padding: 0 var(--textfigure-padding-x);
+  padding: 0.5rem var(--textfigure-padding-x);
 }
 
 .checkered {
+  /* https://codepen.io/mootari/pen/yLBoqdO */
   --color: #9995;
   --gradient: linear-gradient(to top left, var(--color) 25.1%, transparent 0, transparent 74.9%, var(--color) 0);
   --width:  40px;
