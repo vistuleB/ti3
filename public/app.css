@@ -506,7 +506,7 @@ figure.main-column img.constrained,
 
 .carousel__container {
   max-width: fit-content;
-  width: fit-content;
+  width: 100%;
   height: auto;
   margin: 1rem auto 1.5rem;
   background-color: inherit;
