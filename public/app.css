@@ -22,6 +22,8 @@
   --index-header-padding-bottom: 0px;
   --index-toc-max-width: 600px;
   --index-toc-padding-bottom: 0px;
+  --index-toc-chapter-level-margin: 0.5em;
+  --index-toc-subchapter-level-margin: 0.15em;
   --chapter-and-sub-padding-top: 82px;
   --chapter-and-sub-padding-bottom: 82px;
   --page-title-font-size: 2.25rem;
@@ -174,7 +176,7 @@ body {
 .index__toc li {
   display: table;
   counter-increment: item;
-  margin-bottom: 0.5em;
+  margin-bottom: var(--index-toc-chapter-level-margin);
 }
 
 .index__toc li:before {
@@ -184,7 +186,7 @@ body {
 }
 
 .index__toc li li {
-  margin: 0.15em 0 0em;
+  margin: var(--index-toc-subchapter-level-margin) 0 0em;
 }
 
 .index__toc li li:before {

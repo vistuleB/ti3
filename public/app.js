@@ -119,6 +119,18 @@ const resetScreenWidthDependentVars = () => {
     return 3;
   }
 
+  let indexTocChapterLevelMarginInEm = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.6;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.6;
+    return 0.5;
+  }
+
+  let indexTocSubchapterLevelMarginInEm = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.25;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.2;
+    return 0.15;
+  }
+
   const carouselArrowSizeInPx = () => {
     const size = (6 / 100) * screenWidth; // 6vw
     const clampedSize = Math.min(
@@ -274,6 +286,8 @@ const resetScreenWidthDependentVars = () => {
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
   set("--index-toc-max-width", indexTocMaxWidthInPx, "px");
   set("--index-toc-padding-bottom", indexTocPaddingBottomInRem, "rem");
+  set("--index-toc-chapter-level-margin", indexTocChapterLevelMarginInEm, "em");
+  set("--index-toc-subchapter-level-margin", indexTocSubchapterLevelMarginInEm, "em");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set("--end-of-page-main-column-margin-bottom", endOfPageMainColumnMarginBottomInRem, "rem");
