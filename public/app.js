@@ -144,6 +144,22 @@ const resetScreenWidthDependentVars = () => {
     return 0.15;
   };
 
+  const carouselMaxWidthInPx = () => {
+    const adjustedScreenWidth = screenWidth * 0.9;
+    const computeTabletMaxWidth = Math.min(
+      adjustedScreenWidth,
+      DESKTOP_MAIN_COLUMN_WIDTH,
+    );
+    const computeDesktopMaxWidth =
+      screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
+        ? adjustedScreenWidth
+        : DESKTOP_MAIN_COLUMN_WIDTH;
+
+    if (screenWidth <= MOBILE_MAX_WIDTH) return screenWidth;
+    if (screenWidth <= TABLET_MAX_WIDTH) return computeTabletMaxWidth;
+    return computeDesktopMaxWidth;
+  };
+
   const carouselArrowSizeInPx = () => {
     const size = (6 / 100) * screenWidth; // 6vw
     const clampedSize = Math.min(
@@ -311,6 +327,7 @@ const resetScreenWidthDependentVars = () => {
     indexTocSubchapterLevelMarginInEm,
     "em",
   );
+  set("--carousel-max-width", carouselMaxWidthInPx, "px");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set(

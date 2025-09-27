@@ -1,4 +1,5 @@
 :root {
+  --carousel-max-width: 1050px;
   --carousel-indicator-gap: 4px;
   --carousel-indicator-box-size: 14px;
   --carousel-indicator-dot-size: 7.5px;
@@ -499,7 +500,7 @@ figure.main-column img.constrained,
 
 /** begin of carousel **/
 .carousel__container.main-column {
-  max-width: var(--main-column-width);
+  max-width: var(--carousel-max-width);
   padding: 0 0.1rem;
 }
 
@@ -631,7 +632,7 @@ figure.main-column img.constrained,
 /* end of resuable components for both mobile and desktop nav */
 
 .carousel > .carousel__items {
-  max-width: 100%;
+  max-width: inherit;
   width: 100%;
   height: auto;
   flex: 1 0 0%;
@@ -640,12 +641,13 @@ figure.main-column img.constrained,
 }
 
 .carousel__items > .carousel__item {
-  max-width: 100%;
+  max-width: inherit;
   display: none;
   flex: 1 0 100%;
 }
 
 .carousel__items > .carousel__item.active {
+  max-width: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
