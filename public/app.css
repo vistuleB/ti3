@@ -188,11 +188,11 @@ body {
   padding-right: 0.5em;
 }
 
-.menu.menu--hidden {
+#menu.menu--hidden {
   top: -100px;
 }
 
-.menu {
+#menu {
   display: flex;
   position: fixed;
   top: 0;
@@ -206,7 +206,7 @@ body {
   background-color: var(--menu-background-color);
 }  
 
-.menu a {
+#menu a {
   color: #222;
 }
  

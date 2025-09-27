@@ -1,8 +1,8 @@
-const WELL_100VW_MAX_WIDTH = 550;
-const WELL_100VW_MINUS_PADDING_MAX_WIDTH = 900;
-const MAIN_COLUMN_100VW_MAX_WIDTH = 1400;
-const WIDE_SCREEN_MAIN_COLUMN_WIDTH = 1050;
-const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET = 150;
+const MOBILE_MAX_WIDTH = 550;
+const TABLET_MAX_WIDTH = 900;
+const LAPTOP_MAX_WIDTH = 1400;
+const DESKTOP_MAIN_COLUMN_WIDTH = 1050;
+const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_IN_LAPTOP_LAYOUT = 150;
 const CAROUSEL_ARROW_MAX_SIZE = 48;
 const CAROUSEL_ARROW_MIN_SIZE = 28;
 
@@ -14,8 +14,7 @@ window.history.scrollRestoration = "manual";
 let lastScrollY = 0;
 let lastScrollYMoment = Date.now();
 let menuHidden = false;
-// let menuElement = null;
-let menuElements = null;
+let menuElement = null;
 let isPageCentered = true;
 
 const marginWidth = () => {
@@ -47,203 +46,203 @@ const resetScreenWidthDependentVars = () => {
   };
 
   let inhaltsArrowsDisplay = () => {
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "none";
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
     return "inline";
-  }
+  };
 
   let menuPaddingXInRem = () => {
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return mainColumnPaddingXInRem();
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
     return 1.7;
-  }
+  };
 
   let menuPaddingYInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.6;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.6;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
     return 1.4;
-  }
+  };
 
   let menuBackgroundColor = () => {
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "var(--body-background-color)";
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return "var(--body-background-color)";
     return "#0000";
-  }
+  };
 
   let menuElementGapInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.7;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.7;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.7;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 0.7;
     return 0.55;
-  }
+  };
 
   let indexHeaderTitleFontSizeInRem = () => {
     return pageTitleFontSizeInRem();
   };
 
   let indexHeaderTitleLineHeightInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2.2;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2.5;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 2.2;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 2.5;
     return 2.8;
   };
 
   let indexHeaderSubtitleFontSizeInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.35;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.45;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.35;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.45;
     return 1.5;
   };
 
   let indexHeaderPaddingTopInPx = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 90;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 100;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 90;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 100;
     return 90;
   };
 
   let indexHeaderPaddingBottomInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 2;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 3;
     return 4;
   };
 
   let indexTocMaxWidthInPx = () => {
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+    if (screenWidth <= TABLET_MAX_WIDTH)
       return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
     return 580;
   };
 
   let indexTocPaddingBottomInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.5;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.5;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 2;
     return 3;
-  }
+  };
 
   let indexTocChapterLevelMarginInEm = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.6;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.6;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.6;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 0.6;
     return 0.5;
-  }
+  };
 
   let indexTocSubchapterLevelMarginInEm = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.25;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.2;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.25;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 0.2;
     return 0.15;
-  }
+  };
 
   const carouselArrowSizeInPx = () => {
     const size = (6 / 100) * screenWidth; // 6vw
     const clampedSize = Math.min(
       CAROUSEL_ARROW_MAX_SIZE,
-      Math.max(CAROUSEL_ARROW_MIN_SIZE, size),
+      Math.max(CAROUSEL_ARROW_MIN_SIZE, size)
     );
     return clampedSize;
   };
 
   const carouselNavButtonMarginXInPx = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+    if (screenWidth <= TABLET_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
     return carouselArrowSizeInPx();
   };
 
   const endOfPageMainColumnMarginBottomInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.2;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.5;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 1.8;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
     return 2.4;
   };
 
   const endOfPageWellMarginBottomInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.8;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.9;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
     return 2.2;
   };
 
   let mainColumnWidthInPx = () => {
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return screenWidth;
-    return WIDE_SCREEN_MAIN_COLUMN_WIDTH;
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return screenWidth;
+    return DESKTOP_MAIN_COLUMN_WIDTH;
   };
 
   let mainColumnPaddingXInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.5;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.8;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.5;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.8;
     return 2;
   };
 
   let mainColumnToWellMarginInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.8;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 1.7;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.7;
     return 1.8;
   };
 
   let outerWellWidthInPx = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return screenWidth - 1.5 * remToPx;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+    if (screenWidth <= MOBILE_MAX_WIDTH) return screenWidth - 1.5 * remToPx;
+    if (screenWidth <= TABLET_MAX_WIDTH)
       return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
+    if (screenWidth <= LAPTOP_MAX_WIDTH)
       return (
         mainColumnWidthInPx() -
-        2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_WHEN_WELL_IS_INSET
+        2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_IN_LAPTOP_LAYOUT
       );
     return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remToPx;
   };
 
   let pageTitleFontSizeInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.8;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2.1;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.8;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 2.1;
     return 2.25;
   };
 
   let pageTitleMarginTopInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 7;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 7;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 6;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 7;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 7;
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return 6;
     return 3.6;
   };
 
   let topicAnnouncementFontSizeInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.85;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.82;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.85;
+    if (screenWidth <= TABLET_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.82;
     return pageTitleFontSizeInRem() * 0.78;
   };
 
   let subtopicAnnouncementFontSizeInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH)
+    if (screenWidth <= MOBILE_MAX_WIDTH)
       return topicAnnouncementFontSizeInRem() * 0.95;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
+    if (screenWidth <= TABLET_MAX_WIDTH)
       return topicAnnouncementFontSizeInRem() * 0.9;
     return topicAnnouncementFontSizeInRem() * 0.85;
   };
 
   const wellMarginYInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
     return 2;
   };
 
   const lastChildWellMarginBottomInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.2;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 0.2;
     return 0.5;
   };
 
   const wellPaddingXInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.3;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.3;
     return 2;
   };
 
   const wellPaddingYInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.75;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.2;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.2;
     return 1.6;
   };
 
   const ulOlMarginLeftInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.5;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 1;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
     return 2;
   };
 
   const ulOlMarginRightInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.5;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 1;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
     return 2;
   };
 
@@ -252,20 +251,20 @@ const resetScreenWidthDependentVars = () => {
   };
 
   const nestedUlOlMarginRightInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 1;
     return 2;
   };
 
   const textfigurePaddingXInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2.5;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 5;
+    if (screenWidth <= MOBILE_MAX_WIDTH) return 2.5;
+    if (screenWidth <= TABLET_MAX_WIDTH) return 3;
+    if (screenWidth <= LAPTOP_MAX_WIDTH) return 5;
     return 6;
   };
 
   const mathBlockMaxWidthInPx = () => {
-    if (screenWidth > MAIN_COLUMN_100VW_MAX_WIDTH) return Infinity;
+    if (screenWidth > LAPTOP_MAX_WIDTH) return Infinity;
     return mainColumnWidthInPx();
   };
 
@@ -278,30 +277,34 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem",
+    "rem"
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem",
+    "rem"
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
   set("--index-toc-max-width", indexTocMaxWidthInPx, "px");
   set("--index-toc-padding-bottom", indexTocPaddingBottomInRem, "rem");
   set("--index-toc-chapter-level-margin", indexTocChapterLevelMarginInEm, "em");
-  set("--index-toc-subchapter-level-margin", indexTocSubchapterLevelMarginInEm, "em");
+  set(
+    "--index-toc-subchapter-level-margin",
+    indexTocSubchapterLevelMarginInEm,
+    "em"
+  );
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem",
+    "rem"
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem",
+    "rem"
   );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
@@ -313,7 +316,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem",
+    "rem"
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -329,7 +332,7 @@ const resetScreenWidthDependentVars = () => {
 
 const setImgHeightToAuto = () => {
   const images = document.querySelectorAll(
-    "figure.main-column img, .well figure img",
+    "figure.main-column img, .well figure img"
   );
 
   images.forEach((img) => {
@@ -371,7 +374,7 @@ class Carousel {
 
     // initialize image state based on predicate that if ANY image has constrained class
     this.isImagesEnlarged = !this.allCarouselImgs.some((img) =>
-      img.classList.contains("constrained"),
+      img.classList.contains("constrained")
     );
 
     // mobile navigation button on hold properties
@@ -496,7 +499,7 @@ class Carousel {
       () => {
         this.createWideScreenNavigationButtons();
         this.showCurrentItem();
-      },
+      }
     );
     this.attachEventListeners();
   }
@@ -588,7 +591,7 @@ class Carousel {
       this.allCarouselImgs.forEach((img) => {
         img.classList.remove("constrained");
         // set img size to naturalWidth or some specific enlarged size
-        if (img.naturalWidth < WELL_100VW_MAX_WIDTH) {
+        if (img.naturalWidth < MOBILE_MAX_WIDTH) {
           img.style.width = "150%";
           img.style.maxWidth = "150%";
         } else {
@@ -682,7 +685,7 @@ class Carousel {
         e.preventDefault();
         startHold();
       },
-      { passive: false },
+      { passive: false }
     );
 
     button.addEventListener(
@@ -691,7 +694,7 @@ class Carousel {
         e.preventDefault();
         stopHold();
       },
-      { passive: false },
+      { passive: false }
     );
 
     button.addEventListener("touchcancel", stopHold);
@@ -706,7 +709,7 @@ class Carousel {
       () => {
         this.removeMobileNavigationButtons();
         this.createWideScreenNavigationButtons();
-      },
+      }
     );
   }
 
@@ -767,7 +770,7 @@ const setupCarousels = () => {
 const adjustMathAlignment = () => {
   // we do not apply alignment, unless it is wide screen
   const screenWidth = window.innerWidth;
-  if (screenWidth <= WELL_100VW_MAX_WIDTH) return;
+  if (screenWidth <= MOBILE_MAX_WIDTH) return;
 
   document.querySelectorAll(".math-block").forEach((math_block) => {
     const svg = math_block.querySelector("svg");
@@ -792,7 +795,7 @@ const adjustMathAlignment = () => {
 const englargeImg = (image) => {
   if (image.classList.contains("constrained")) {
     image.classList.remove("constrained");
-    if (image.naturalWidth < WELL_100VW_MAX_WIDTH) {
+    if (image.naturalWidth < MOBILE_MAX_WIDTH) {
       image.style.width = "150%";
       image.style.maxWidth = "150%";
     } else {
@@ -837,24 +840,38 @@ const onImgClick = (e) => {
   }
 };
 
-const onScrollMenuDisplay = (e) => {
-  if (!menuElements) {
-    menuElements = document.getElementsByClassName("menu");
-    if (menuElements.length === 0) return;
+const menuVisible = () => {
+  return !menuHidden;
+}
+
+const setMenuVisibility = (viz) => {
+  if (!menuElement) {
+    menuElement = document.getElementById("menu");
   }
 
+  if (viz) {
+    menuElement?.classList.remove("menu--hidden");
+    menuHidden = false;
+  } else {
+    menuElement?.classList.add("menu--hidden");
+    menuHidden = true;
+  }
+}
+
+const onScrollMenuDisplay = (_) => {
   const currentScrollY = window.scrollY;
   const currentScrollYMoment = Date.now();
-  const velocity = (currentScrollY - lastScrollY) / (currentScrollYMoment - lastScrollYMoment);
+  const velocity =
+    (currentScrollY - lastScrollY) / (currentScrollYMoment - lastScrollYMoment);
 
-  if ((velocity < -7 || currentScrollY <= 10) && menuHidden) {
-    for (const m of menuElements) { m.classList.remove("menu--hidden"); }
-    menuHidden = false;
-  }
-  
-  else if (currentScrollY > lastScrollY && currentScrollY > 10 && !menuHidden) {
-    for (const m of menuElements) { m.classList.add("menu--hidden"); }
-    menuHidden = true;
+  if ((velocity < -7 || currentScrollY <= 10 || (velocity < 0 && currentScrollY < 100)) && !menuVisible()) {
+    setMenuVisibility(true);
+  } else if (
+    currentScrollY > lastScrollY &&
+    currentScrollY > 10 &&
+    menuVisible()
+  ) {
+    setMenuVisibility(false);
   }
 
   lastScrollY = currentScrollY;
@@ -873,22 +890,13 @@ const smoothRecenterMaybe = (e) => {
   }
 };
 
-// helpers
-const onWideScreen = (callback) => {
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= WELL_100VW_MAX_WIDTH) return;
-  return callback();
-};
-
 const onMobile = (callback) => {
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= WELL_100VW_MAX_WIDTH) return callback();
+  if (window.innerWidth <= MOBILE_MAX_WIDTH) return callback();
   return;
 };
 
 const onTouchScreenElse = (callback1, callback2) => {
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return callback1();
+  if (window.innerWidth <= TABLET_MAX_WIDTH) return callback1();
   return callback2();
 };
 
@@ -898,13 +906,13 @@ const onLoad = () => {
   setupCarousels();
   add_line_number_to_numbered_pre();
   onResize();
+  setMenuVisibility(true);
 };
 
 // event listeners
 const onResize = () => {
   instantRecenter();
   resetScreenWidthDependentVars();
-  onMobile(() => hideMenu());
   onMobile(() => setImgHeightToAuto());
   onMobile(() => setMenuBorder());
   setTimeout(adjustMathAlignment, 60);
