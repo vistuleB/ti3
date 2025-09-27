@@ -1,8 +1,28 @@
+/**************************************************
+ * the different layouts are characterized by:    *
+ *                                                *
+ * - MOBILE: edge of text in outer wells is       *
+ *   flush with edge of main column of text       *
+ *                                                *
+ * - TABLET: edge of outer well (the well itself) *
+ *   is flush with edge of main column of text,   *
+ *                                                *
+ * - LAPTOP: outer well is inset compared to      *
+ *   main column of text;                         *
+ *   see const LAPTOP_OUTER_WELL_INSET            *
+ *                                                *
+ * - DESKTOP: main column of text no longer       *
+ *   takes up whole screen, outer well is flush   *
+ *   again; see const DESKTOP_MAIN_COLUMN_WIDTH   *
+ **************************************************/
+
 const MOBILE_MAX_WIDTH = 550;
 const TABLET_MAX_WIDTH = 900;
 const LAPTOP_MAX_WIDTH = 1400;
+
+const LAPTOP_OUTER_WELL_INSET = 150;
 const DESKTOP_MAIN_COLUMN_WIDTH = 1050;
-const DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_IN_LAPTOP_LAYOUT = 150;
+
 const CAROUSEL_ARROW_MAX_SIZE = 48;
 const CAROUSEL_ARROW_MIN_SIZE = 28;
 
@@ -178,7 +198,7 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= LAPTOP_MAX_WIDTH)
       return (
         mainColumnWidthInPx() -
-        2 * DIFF_BETWEEN_WELL_AND_MAIN_COLUMN_IN_LAPTOP_LAYOUT
+        2 * LAPTOP_OUTER_WELL_INSET
       );
     return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remToPx;
   };
@@ -864,7 +884,7 @@ const onScrollMenuDisplay = (_) => {
   const velocity =
     (currentScrollY - lastScrollY) / (currentScrollYMoment - lastScrollYMoment);
 
-  if ((velocity < -7 || currentScrollY <= 10 || (velocity < 0 && currentScrollY < 100)) && !menuVisible()) {
+  if ((velocity < -7 || currentScrollY <= 10 || (velocity < 0 && currentScrollY <= 200)) && !menuVisible()) {
     setMenuVisibility(true);
   } else if (
     currentScrollY > lastScrollY &&
