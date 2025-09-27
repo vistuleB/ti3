@@ -46,10 +46,9 @@ const resetScreenWidthDependentVars = () => {
     root.style.setProperty(key, `${val()}` + unit);
   };
 
-  let menuDisplay = () => {
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return "flex";
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "flex";
-    return "flex";
+  let inhaltsArrowsDisplay = () => {
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "none";
+    return "inline";
   }
 
   let menuPaddingXInRem = () => {
@@ -270,7 +269,7 @@ const resetScreenWidthDependentVars = () => {
     return mainColumnWidthInPx();
   };
 
-  set("--menu-display", menuDisplay, "");
+  set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
   set("--menu-padding-x", menuPaddingXInRem, "rem");
   set("--menu-padding-y", menuPaddingYInRem, "rem");
   set("--menu-element-gap", menuElementGapInRem, "rem");
