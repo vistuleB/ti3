@@ -14,40 +14,36 @@
   --menu-padding-y: 1.4rem;
   --menu-background-color: #0000;
   --menu-element-gap: 0.55rem;
-  --index-header-title-font-size: 2rem;
+  --index-header-title-font-size: 2.25rem;
   --index-header-title-line-height: 2.8rem;
-  --index-header-subtitle-font-size: 2rem;
-  --index-header-padding-top: 0px;
-  --index-header-padding-bottom: 0px;
-  --index-toc-max-width: 600px;
-  --index-toc-padding-bottom: 0px;
+  --index-header-subtitle-font-size: 1.5rem;
+  --index-header-padding-top: 90px;
+  --index-header-padding-bottom: 4rem;
+  --index-toc-max-width: 580px;
+  --index-toc-padding-bottom: 3rem;
   --index-toc-chapter-level-margin: 0.5em;
   --index-toc-subchapter-level-margin: 0.15em;
   --carousel-arrow-size: 48px;
-  --carousel-nav-button-margin-x: 2em;
-  --chapter-and-sub-padding-top: 82px;
-  --chapter-and-sub-padding-bottom: 82px;
-  --page-title-font-size: 2.25rem;
-  --page-title-margin-top: 1.5em;
-  --topic-announcement-font-size: 2rem;
-  --subtopic-announcement-font-size: 2rem;
-  --main-column-width: 100vw;
+  --carousel-nav-button-margin-x: 48px;
+  --end-of-page-main-column-margin-bottom: 2.4rem;
+  --end-of-page-well-margin-bottom: 2.2rem;
+  --main-column-width: 1050px;
   --main-column-padding-x: 2rem;
-  --main-column-to-well-margin: 0.9rem;
-  --end-of-page-main-column-margin-bottom: 0.9rem;
-  --outer-well-width: 100vw;
-  --well-after-main-column-margin-top: 0.9rem;
-  --well-before-main-column-margin-bottom: 0.9rem;
-  --well-margin-y: 0.75rem;
-  --end-of-page-well-margin-bottom: 0.9rem;
-  --last-child-well-margin-bottom: 0rem;
-  --well-padding-y: 0.75rem;
-  --well-padding-x: 0.75rem;
+  --main-column-to-well-margin: 1.8rem;
+  --outer-well-width: 922px;
+  --page-title-font-size: 2.25rem;
+  --page-title-margin-top: 3.6rem;
+  --topic-announcement-font-size: 1.75rem;
+  --subtopic-announcement-font-size: 1.5rem;
+  --well-margin-y: 2rem;
+  --last-child-well-margin-bottom: 0.5rem;
+  --well-padding-y: 2rem;
+  --well-padding-x: 1.6rem;
   --ul-ol-margin-left: 2rem;
   --ul-ol-margin-right: 2rem;
   --nested-ul-ol-margin-left: 2rem;
   --nested-ul-ol-margin-right: 2rem;
-  --textfigure-padding-x: 4rem;
+  --textfigure-padding-x: 6rem;
   --math-block-max-width: 100vw;
 
   /********************************/
@@ -124,14 +120,6 @@ body {
   min-width: 2500px;
   color: #333;
 }
-
-/* .page-chapter, .page-sub {
-  padding-top: var(--chapter-and-sub-padding-top);
-  padding-bottom: var(--chapter-and-sub-padding-bottom);
-} */
-
-/* Index page
-*/
 
 .index {
   margin-top: 2rem;
