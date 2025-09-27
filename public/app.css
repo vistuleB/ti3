@@ -215,10 +215,41 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--menu-element-gap);
+  overflow: visible;
 }  
 
 .menu-right {
   text-align: right;
+}
+
+#prev-page,
+#next-page {
+  position: relative;
+}
+
+#prev-page-tooltip,
+#next-page-tooltip {
+  white-space: nowrap;
+  position: absolute;
+  top: 1.9em;
+  /* background-color: rgb(255, 252, 151); */
+  background-color: rgb(255, 188, 246);
+  border: 1.4px solid black;
+  border-radius: 0.05em;
+  font-size: 0.7em;
+  padding: 0.15em 0.45em;
+}
+
+#prev-page-tooltip {
+  /* top: 0.9em;
+  left: 92%; */
+  left: 0%;
+}
+
+#next-page-tooltip {
+  /* top: 0.98em;
+  right: 95%; */
+  right: 0%;
 }
 
 .page-title {

@@ -367,16 +367,6 @@ const setMenuBorder = () => {
   menuLeftRight.forEach((menu) => (menu.style.borderRadius = "0px"));
 };
 
-const add_line_number_to_numbered_pre = () => {
-  document.querySelectorAll("pre.numbered-pre").forEach((pre) => {
-    const lines = pre.textContent.split("\n");
-    pre.innerHTML = lines
-      .map((line, i) => `${i + 1}. ${line}`)
-      .slice(0, -1)
-      .join("\n");
-  });
-};
-
 class Carousel {
   constructor(container) {
     container.carousel = this;
@@ -922,11 +912,59 @@ const onTouchScreenElse = (callback1, callback2) => {
 
 const visibleCarouselContainers = new Array();
 
+const setupMenuTooltips = () => {
+  for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
+    let tooltip = document.getElementById(id);
+    if (!tooltip) return;
+    tooltip.visibility = false;
+    tooltip.parentNode.addEventListener(
+      'mouseover',
+      () => {
+        tooltip.visibility = true;
+        setTimeout(() => {
+          if (tooltip.visibility === true)
+            tooltip.style.visibility = 'visible';
+        }, 250);
+      }
+    );
+    tooltip.parentNode.addEventListener(
+      'mouseout',
+      () => {
+        tooltip.visibility = false;
+        tooltip.style.visibility = 'hidden';
+      }
+    );
+  }
+}
+
+const setupNextPageTooltip = () => {
+  let tooltip = document.getElementById('next-page-tooltip');
+  if (!tooltip) return;
+  tooltip.visibility = false;
+  tooltip.parentNode.addEventListener(
+    'mouseover',
+    () => {
+      tooltip.visibility = true;
+      setTimeout(() => {
+        if (tooltip.visibility === true)
+          tooltip.style.visibility = 'visible';
+      }, 250);
+    }
+  );
+  tooltip.parentNode.addEventListener(
+    'mouseout',
+    () => {
+      tooltip.visibility = false;
+      tooltip.style.visibility = 'hidden';
+    }
+  );
+}
+
 const onLoad = () => {
   setupCarousels();
-  add_line_number_to_numbered_pre();
   onResize();
   setMenuVisibility(true);
+  setupMenuTooltips();
 };
 
 // event listeners
