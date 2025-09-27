@@ -12,8 +12,10 @@ const remToPx = 16;
 window.history.scrollRestoration = "manual";
 
 let lastScrollY = 0;
-let ticking = false;
-let menuElement = null;
+let lastScrollYMoment = Date.now();
+let menuHidden = false;
+// let menuElement = null;
+let menuElements = null;
 let isPageCentered = true;
 
 const marginWidth = () => {
@@ -43,6 +45,34 @@ const resetScreenWidthDependentVars = () => {
   let set = (key, val, unit) => {
     root.style.setProperty(key, `${val()}` + unit);
   };
+
+  let menuDisplay = () => {
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return "flex";
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "flex";
+    return "flex";
+  }
+
+  let menuPaddingXInRem = () => {
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return mainColumnPaddingXInRem();
+    return 1.7;
+  }
+
+  let menuPaddingYInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.6;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 1.6;
+    return 1.4;
+  }
+
+  let menuBackgroundColor = () => {
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return "var(--body-background-color)";
+    return "#0000";
+  }
+
+  let menuElementGapInRem = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.7;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.7;
+    return 0.55;
+  }
 
   let indexHeaderTitleFontSizeInRem = () => {
     return pageTitleFontSizeInRem();
@@ -82,7 +112,19 @@ const resetScreenWidthDependentVars = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 1.5;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 2;
     return 3;
-  };
+  }
+
+  let indexTocChapterLevelMarginInEm = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.6;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.6;
+    return 0.5;
+  }
+
+  let indexTocSubchapterLevelMarginInEm = () => {
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0.25;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 0.2;
+    return 0.15;
+  }
 
   const carouselArrowSizeInPx = () => {
     const size = (6 / 100) * screenWidth; // 6vw
@@ -95,10 +137,8 @@ const resetScreenWidthDependentVars = () => {
 
   const carouselNavButtonMarginXInPx = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 0;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH)
-      return carouselArrowSizeInPx() * 0.7;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH)
-      return carouselArrowSizeInPx() * 0.4;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
     return carouselArrowSizeInPx();
   };
 
@@ -152,14 +192,16 @@ const resetScreenWidthDependentVars = () => {
   };
 
   let pageTitleMarginTopInRem = () => {
-    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 3;
-    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
-    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 3;
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return 7;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 7;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 6;
     return 3.6;
   };
 
   let topicAnnouncementFontSizeInRem = () => {
-    return pageTitleFontSizeInRem() * 0.8;
+    if (screenWidth <= WELL_100VW_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.85;
+    if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.82;
+    return pageTitleFontSizeInRem() * 0.78;
   };
 
   let subtopicAnnouncementFontSizeInRem = () => {
@@ -219,7 +261,8 @@ const resetScreenWidthDependentVars = () => {
   const textfigurePaddingXInRem = () => {
     if (screenWidth <= WELL_100VW_MAX_WIDTH) return 2.5;
     if (screenWidth <= WELL_100VW_MINUS_PADDING_MAX_WIDTH) return 3;
-    return 4;
+    if (screenWidth <= MAIN_COLUMN_100VW_MAX_WIDTH) return 5;
+    return 6;
   };
 
   const mathBlockMaxWidthInPx = () => {
@@ -227,6 +270,11 @@ const resetScreenWidthDependentVars = () => {
     return mainColumnWidthInPx();
   };
 
+  set("--menu-display", menuDisplay, "");
+  set("--menu-padding-x", menuPaddingXInRem, "rem");
+  set("--menu-padding-y", menuPaddingYInRem, "rem");
+  set("--menu-element-gap", menuElementGapInRem, "rem");
+  set("--menu-background-color", menuBackgroundColor, "");
   set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
   set(
     "--index-header-title-line-height",
@@ -242,6 +290,8 @@ const resetScreenWidthDependentVars = () => {
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
   set("--index-toc-max-width", indexTocMaxWidthInPx, "px");
   set("--index-toc-padding-bottom", indexTocPaddingBottomInRem, "rem");
+  set("--index-toc-chapter-level-margin", indexTocChapterLevelMarginInEm, "em");
+  set("--index-toc-subchapter-level-margin", indexTocSubchapterLevelMarginInEm, "em");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
   set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set(
@@ -788,54 +838,29 @@ const onImgClick = (e) => {
   }
 };
 
-function throttle(func, delay = 16) {
-  let lastExecTime = 0;
-
-  return function (...args) {
-    const currentTime = Date.now();
-
-    if (currentTime - lastExecTime >= delay) {
-      func.apply(this, args);
-      lastExecTime = currentTime;
-    }
-  };
-}
-
-const hideMenu = () => {
-  // mount menuElement
-  if (!menuElement) {
-    menuElement = document.querySelector(".menu");
-    if (!menuElement) return;
-  }
-
-  // hide menu
-  if (!menuElement.classList.contains("menu--hidden")) {
-    menuElement.classList.add("menu--hidden");
-  }
-};
-
-const onScrollMenuDisplay = () => {
-  if (!menuElement) {
-    menuElement = document.querySelector(".menu");
-    if (!menuElement) return;
+const onScrollMenuDisplay = (e) => {
+  if (!menuElements) {
+    menuElements = document.getElementsByClassName("menu");
+    if (menuElements.length === 0) return;
   }
 
   const currentScrollY = window.scrollY;
+  const currentScrollYMoment = Date.now();
+  const velocity = (currentScrollY - lastScrollY) / (currentScrollYMoment - lastScrollYMoment);
 
-  // show menu when scrolling up or at the top
-  if (currentScrollY < lastScrollY || currentScrollY <= 10) {
-    menuElement.classList.remove("menu--hidden");
+  if ((velocity < -7 || currentScrollY <= 10) && menuHidden) {
+    for (const m of menuElements) { m.classList.remove("menu--hidden"); }
+    menuHidden = false;
   }
-  // hide menu when scrolling down (but not at the very top)
-  else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-    menuElement.classList.add("menu--hidden");
+  
+  else if (currentScrollY > lastScrollY && currentScrollY > 10 && !menuHidden) {
+    for (const m of menuElements) { m.classList.add("menu--hidden"); }
+    menuHidden = true;
   }
 
   lastScrollY = currentScrollY;
-  ticking = false;
+  lastScrollYMoment = currentScrollYMoment;
 };
-
-const menuHandler = throttle(onScrollMenuDisplay, 200);
 
 const smoothRecenterMaybe = (e) => {
   let theoretical_left = marginWidth();
@@ -943,7 +968,7 @@ const onKeyDown = (e) => {
 window.addEventListener("resize", onResize);
 document.addEventListener("DOMContentLoaded", onLoad);
 document.addEventListener("click", smoothRecenter);
-// document.addEventListener("scroll", menuHandler, { passive: true });
+document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd, { passive: true });
 document.addEventListener("keydown", onKeyDown);

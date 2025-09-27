@@ -12,15 +12,16 @@ const our_blame = bl.Des([], "main_pipeline", 9)
 const p_cannot_contain = [
   "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
   "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
-  "Example", "Exercise", "Grid", "Highlight", "Index", "List", 
-  "MathBlock", "Menu", "Remark", "Statement", "Sub", "SubTitle", 
+  "Example", "Exercise", "Grid", "Highlight", "HorizontalMenu", "Index", 
+  "List", "MathBlock", "Menu", "Remark", "Statement", "Sub", "SubTitle", 
   "SubtopicAnnouncement", "TopicAnnouncement", "WriterlyBlankLine",
   "br", "center", "figure", "div", "hr", "li", "ul", "ol", "p", "pre",
   "table", "thead", "tbody", "tr", "td", "colgroup", "section",
 ]
 
 const p_cannot_be_contained_in = [
-  "MathBlock", "Index", "Menu", "TopicAnnouncement", "SubtopicAnnouncement", "NoWrap", "Math",
+  "HorizontalMenu", "Index", "Math", "MathBlock", "Menu", "TopicAnnouncement",
+  "SubtopicAnnouncement", "NoWrap", 
   "QED", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem", 
   "code", "figure", "p", "pre", "span",
 ]
@@ -135,11 +136,10 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti2_create_index(),
       dl.ti2_create_menu(),
       dl.ti2_expand_carousels(),
-      dl.group_consecutive_children__outside(#( "p", p_cannot_contain), p_cannot_be_contained_in),
-      dl.unwrap("WriterlyBlankLine"),      
+      dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
+      dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
       dl.delete_if_empty("p"),
-      
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     pp.markdown_link_splitting(["MathBlock", "Math"]),
@@ -175,7 +175,6 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.wrap(#("Carousel", "CarouselContainer")),
       dl.append_attribute__batch([
         #("Index", "class", "index"),
-        #("Menu", "class", "menu"),
         #("Chapter", "class", "chapter"),
         #("ChapterTitle","class", "main-column page-title"),
         #("Sub", "class", "subchapter"),
@@ -212,6 +211,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("Menu", "div"),
         #("LeftMenu", "div"),
         #("RightMenu", "div"),
+        #("HorizontalMenu", "div"),
         #("Chapter", "div"),
         #("ChapterTitle", "div"),
         #("Sub", "div"),

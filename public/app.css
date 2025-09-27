@@ -4,8 +4,16 @@
   --carousel-indicator-dot-size: 7.5px;
   --progress-counter-font-size: 0.8em;
   --max-carousel-indicators-per-line: 30;
+  --body-background-color: rgba(248, 244, 253, 1);
 
   /* the following are set by ti3.js resetScreenWidthDependentVars: */
+  --menu-display: flex;
+  --menu-padding-x: 1.7rem;
+  --menu-padding-y: 1.4rem;
+  --menu-background-color: var(--body-background-color);
+  --menu-element-gap: 0.55rem;
+  --carousel-arrow-size: 48px;
+  --carousel-nav-button-margin-x: 2em;
   --index-header-title-font-size: 2rem;
   --index-header-title-line-height: 2.8rem;
   --index-header-subtitle-font-size: 2rem;
@@ -13,6 +21,8 @@
   --index-header-padding-bottom: 0px;
   --index-toc-max-width: 600px;
   --index-toc-padding-bottom: 0px;
+  --index-toc-chapter-level-margin: 0.5em;
+  --index-toc-subchapter-level-margin: 0.15em;
   --chapter-and-sub-padding-top: 82px;
   --chapter-and-sub-padding-bottom: 82px;
   --page-title-font-size: 2.25rem;
@@ -24,8 +34,6 @@
   --main-column-to-well-margin: 0.9rem;
   --end-of-page-main-column-margin-bottom: 0.9rem;
   --outer-well-width: 100vw;
-  --carousel-arrow-size: 48px;
-  --carousel-nav-button-margin-x: 2em;
   --well-after-main-column-margin-top: 0.9rem;
   --well-before-main-column-margin-bottom: 0.9rem;
   --well-margin-y: 0.75rem;
@@ -104,7 +112,7 @@ html {
 }
 
 body {
-  background-color: rgba(248, 244, 253, 1);
+  background-color: var(--body-background-color);
   font-size: 1.25rem;
   min-width: 2500px;
   color: #333;
@@ -167,7 +175,7 @@ body {
 .index__toc li {
   display: table;
   counter-increment: item;
-  margin-bottom: 0.5em;
+  margin-bottom: var(--index-toc-chapter-level-margin);
 }
 
 .index__toc li:before {
@@ -177,12 +185,16 @@ body {
 }
 
 .index__toc li li {
-  margin: 0.15em 0 0em;
+  margin: var(--index-toc-subchapter-level-margin) 0 0em;
 }
 
 .index__toc li li:before {
   content: counters(item, ".") " ";
   padding-right: 0.5em;
+}
+
+.menu.menu--hidden {
+  top: -100px;
 }
 
 .menu {
@@ -191,32 +203,27 @@ body {
   left: 0;
   z-index: 1;
   width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(0);
-  /*transition: transform 0.5s ease-in-out;
-  will-change: transform;*/
-}
+  transition: top 0.5s ease-in-out;
+  will-change: top;
+}  
 
-.menu--hidden {
-  transform: translateY(-100%);
+.menu a {
+  color: #222;
+}
+ 
+.menu {
+  display: var(--menu-display);
+  justify-content: space-between;
+  padding: var(--menu-padding-y) var(--menu-padding-x) calc(var(--menu-padding-y) * 0.8);
+  background-color: var(--menu-background-color);
 }
 
 .menu-right,
 .menu-left {
-  width: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  padding: 1rem;
-  justify-content: end;
-  background-color: #f8f4fd;
-  border-radius: 6px;
-}
-
-.menu a {
-  padding: 0 1rem;
-}
+  gap: var(--menu-element-gap);
+}  
 
 .menu-right {
   text-align: right;
@@ -677,7 +684,7 @@ figure.main-column img.constrained,
 .topic-announcement, .well + .topic-announcement.main-column {
   font-size: var(--topic-announcement-font-size);
   margin: 0 auto;
-  margin-top: 0.9em;
+  margin-top: 0.85em;
   margin-bottom: 0.5em;
   font-weight: normal;
 }
@@ -818,10 +825,11 @@ button img {
 }
 
 .textfigure {
-  padding: 0 var(--textfigure-padding-x);
+  padding: 0.5rem var(--textfigure-padding-x);
 }
 
 .checkered {
+  /* https://codepen.io/mootari/pen/yLBoqdO */
   --color: #9995;
   --gradient: linear-gradient(to top left, var(--color) 25.1%, transparent 0, transparent 74.9%, var(--color) 0);
   --width:  40px;
