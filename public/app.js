@@ -931,10 +931,59 @@ const onTouchScreenElse = (callback1, callback2) => {
 
 const visibleCarouselContainers = new Array();
 
+const setupMenuTooltips = () => {
+  for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
+    let tooltip = document.getElementById(id);
+    if (!tooltip) return;
+    tooltip.visibility = false;
+    tooltip.parentNode.addEventListener(
+      'mouseover',
+      () => {
+        tooltip.visibility = true;
+        setTimeout(() => {
+          if (tooltip.visibility === true)
+            tooltip.style.visibility = 'visible';
+        }, 250);
+      }
+    );
+    tooltip.parentNode.addEventListener(
+      'mouseout',
+      () => {
+        tooltip.visibility = false;
+        tooltip.style.visibility = 'hidden';
+      }
+    );
+  }
+}
+
+const setupNextPageTooltip = () => {
+  let tooltip = document.getElementById('next-page-tooltip');
+  if (!tooltip) return;
+  tooltip.visibility = false;
+  tooltip.parentNode.addEventListener(
+    'mouseover',
+    () => {
+      tooltip.visibility = true;
+      setTimeout(() => {
+        if (tooltip.visibility === true)
+          tooltip.style.visibility = 'visible';
+      }, 250);
+    }
+  );
+  tooltip.parentNode.addEventListener(
+    'mouseout',
+    () => {
+      tooltip.visibility = false;
+      tooltip.style.visibility = 'hidden';
+    }
+  );
+}
+
 const onLoad = () => {
   setupCarousels();
   onResize();
   setMenuVisibility(true);
+  setupMenuTooltips();
 };
 
 // event listeners
