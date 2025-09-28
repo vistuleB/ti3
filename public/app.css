@@ -673,7 +673,6 @@ figure.main-column img.constrained,
 }
 
 .carousel__items > .carousel__item.active {
-  /*max-width: inherit;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -691,9 +690,9 @@ figure.main-column img.constrained,
   background-color: inherit;
 }
 
-/* .carousel__item.active > img.constrained {
+ .carousel__item.active > img.constrained {
   max-width: 100%;
-} */
+} 
 
 .carousel__item > img {
   flex-shrink: 0;
