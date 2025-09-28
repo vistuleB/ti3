@@ -512,16 +512,6 @@ figure.main-column img,
   background-color: inherit;
 }
 
-figure.main-column img:not(.constrained),
-.well figure img:not(.constrained) {
-  border-radius: 0px;
-}
-
-figure.main-column img.constrained,
-.well img.constrained {
-  max-width: 100%;
-}
-
 .transition-all {
   will-change: max-width, width;
   transition-property: max-width, width;
@@ -689,10 +679,6 @@ figure.main-column img.constrained,
   flex-shrink: 0 !important;
   background-color: inherit;
 }
-
- .carousel__item.active > img.constrained {
-  max-width: 100%;
-} 
 
 .carousel__item > img {
   flex-shrink: 0;

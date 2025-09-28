@@ -758,22 +758,30 @@ const adjustMathAlignment = () => {
   });
 };
 
+const constrainImage = (image) => {
+  image.classList.add("constrained");
+  image.style.width = "100%";
+  image.style.maxWidth = getComputedStyle(root)
+    .getPropertyValue("--main-column-width")
+    .trim();
+};
+
+const unconstrainImage = (image) => {
+  image.classList.remove("constrained");
+  if (image.naturalWidth < MOBILE_MAX_WIDTH) {
+    image.style.width = "150%";
+    image.style.maxWidth = "150%";
+  } else {
+    image.style.width = image.naturalWidth + "px";
+    image.style.maxWidth = image.naturalWidth + "px";
+  }
+};
+
 const toggleImageZoom = (image) => {
   if (image.classList.contains("constrained")) {
-    image.classList.remove("constrained");
-    if (image.naturalWidth < MOBILE_MAX_WIDTH) {
-      image.style.width = "150%";
-      image.style.maxWidth = "150%";
-    } else {
-      image.style.width = image.naturalWidth + "px";
-      image.style.maxWidth = image.naturalWidth + "px";
-    }
+    unconstrainImage(image);
   } else {
-    image.classList.add("constrained");
-    image.style.width = "100%";
-    image.style.maxWidth = getComputedStyle(root)
-      .getPropertyValue("--main-column-width")
-      .trim();
+    constrainImage(image);
   }
 };
 
@@ -904,7 +912,17 @@ const setupNextPageTooltip = () => {
   });
 };
 
+const setupImages = () => {
+  let images = document.querySelectorAll("img");
+  for (const image of images) {
+    if (!image.closest(".carousel")) {
+      constrainImage(image);
+    }
+  }
+};
+
 const onLoad = () => {
+  setupImages();
   setupCarousels();
   onResize();
   setMenuVisibility(true);
