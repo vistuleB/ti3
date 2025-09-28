@@ -23,7 +23,9 @@ const LAPTOP_MAX_WIDTH = 1400;
 const LAPTOP_OUTER_WELL_INSET = 150;
 const DESKTOP_MAIN_COLUMN_WIDTH = 1050;
 
-const CAROUSEL_ARROW_MAX_SIZE = 48;
+const CAROUSEL_ARROW_DESKTOP_SIZE = 48;
+const CAROUSEL_ARROW_LAPTOP_SIZE = 45;
+const CAROUSEL_ARROW_TABLET_MAX_SIZE = 40;
 const CAROUSEL_ARROW_MIN_SIZE = 28;
 
 const root = document.documentElement;
@@ -148,7 +150,7 @@ const resetScreenWidthDependentVars = () => {
     const adjustedScreenWidth = screenWidth * 0.9;
     const computeTabletMaxWidth = Math.min(
       adjustedScreenWidth,
-      DESKTOP_MAIN_COLUMN_WIDTH,
+      DESKTOP_MAIN_COLUMN_WIDTH
     );
     const computeDesktopMaxWidth =
       screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
@@ -161,12 +163,15 @@ const resetScreenWidthDependentVars = () => {
   };
 
   const carouselArrowSizeInPx = () => {
-    const size = (6 / 100) * screenWidth; // 6vw
-    const clampedSize = Math.min(
-      CAROUSEL_ARROW_MAX_SIZE,
-      Math.max(CAROUSEL_ARROW_MIN_SIZE, size),
+    if (screenWidth > LAPTOP_MAX_WIDTH) return CAROUSEL_ARROW_DESKTOP_SIZE;
+    if (screenWidth > TABLET_MAX_WIDTH) return CAROUSEL_ARROW_LAPTOP_SIZE;
+    let minSizeWidth = 490; // the width at which arrow reaches min width
+    return (
+      CAROUSEL_ARROW_MIN_SIZE +
+      ((CAROUSEL_ARROW_TABLET_MAX_SIZE - CAROUSEL_ARROW_MIN_SIZE) *
+        Math.max(0, screenWidth - minSizeWidth)) /
+        (TABLET_MAX_WIDTH - minSizeWidth)
     );
-    return clampedSize;
   };
 
   const carouselNavButtonMarginXInPx = () => {
@@ -310,12 +315,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem",
+    "rem"
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem",
+    "rem"
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
@@ -325,7 +330,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-toc-subchapter-level-margin",
     indexTocSubchapterLevelMarginInEm,
-    "em",
+    "em"
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
@@ -333,12 +338,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem",
+    "rem"
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem",
+    "rem"
   );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
@@ -350,7 +355,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem",
+    "rem"
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -366,7 +371,7 @@ const resetScreenWidthDependentVars = () => {
 
 const setImgHeightToAuto = () => {
   const images = document.querySelectorAll(
-    "figure.main-column img, .well figure img",
+    "figure.main-column img, .well figure img"
   );
 
   images.forEach((img) => {
@@ -387,230 +392,211 @@ class Carousel {
     this.container = container;
     this.carousel = container.querySelector(".carousel");
     this.carouselItems = container.querySelectorAll(".carousel__item");
-    this.indicators = null;
-    this.hasIndicators = false;
-    this.totalCarouselItems = this.carouselItems.length - 1;
-    this.currentCarouselItem = 0;
-
+    this.numItems = this.carouselItems.length;
+    this.itemNumber = 1;
     this.allCarouselImgs = Array.from(this.carouselItems)
       .map((item) => item.querySelector("img"))
       .filter((img) => img);
 
     // initialize image state based on predicate that if ANY image has constrained class
-    this.isImagesEnlarged = !this.allCarouselImgs.some((img) =>
-      img.classList.contains("constrained"),
+    this.imagesAreEnlarged = !this.allCarouselImgs.some((img) =>
+      img.classList.contains("constrained")
     );
 
     // mobile navigation button on hold properties
     this.holdInterval = null;
     this.holdTimeout = null;
     this.isHolding = false;
-    // buttons
-    this.prevBtn = (() => {
-      const prevBtn = document.createElement("button");
-      prevBtn.className = "carousel__nav-button carousel__nav-item--prev";
-      prevBtn.innerHTML =
+
+    this.widescreenPrevBtn = (() => {
+      const btn = document.createElement("button");
+      btn.className = "carousel__nav-button carousel__nav-item--prev";
+      btn.innerHTML =
         '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
-      prevBtn.setAttribute("aria-label", "Previous slide");
-      prevBtn.addEventListener("click", () => {
-        this.changeCarouselItem(-1);
+      btn.setAttribute("aria-label", "Previous slide");
+      btn.addEventListener("click", () => {
+        this.nudgeCarouselItem(-1);
       });
-
-      return prevBtn;
+      return btn;
     })();
 
-    this.nextBtn = (() => {
-      const nextBtn = document.createElement("button");
-      nextBtn.className = "carousel__nav-button carousel__nav-item--next";
-      nextBtn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
-      nextBtn.setAttribute("aria-label", "Next slide");
-      nextBtn.addEventListener("click", () => {
-        this.changeCarouselItem(1);
+    this.widescreenNextBtn = (() => {
+      const btn = document.createElement("button");
+      btn.className = "carousel__nav-button carousel__nav-item--next";
+      btn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
+      btn.setAttribute("aria-label", "Next slide");
+      btn.addEventListener("click", () => {
+        this.nudgeCarouselItem(1);
       });
-
-      return nextBtn;
+      return btn;
     })();
 
-    this.firstBtn = (() => {
-      const firstBtn = document.createElement("button");
-      firstBtn.className = "carousel__nav-button carousel__nav-item--first";
-      firstBtn.innerHTML =
+    this.touchscreenFstBtn = (() => {
+      const btn = document.createElement("button");
+      btn.className = "carousel__nav-button carousel__nav-item--first";
+      btn.innerHTML =
         '<img src="./img/carousel-jump-to-start.svg" alt="First">';
-      firstBtn.setAttribute("aria-label", "First slide");
-      firstBtn.addEventListener("click", () => {
-        // show first slide
-        if (!(this.currentCarouselItem == 0)) {
-          this.goToCarouselItem(0);
-        }
+      btn.setAttribute("aria-label", "First slide");
+      btn.addEventListener("click", () => {
+        this.setItemNumber(1);
       });
-
-      return firstBtn;
+      return btn;
     })();
 
-    this.lastBtn = (() => {
-      const lastBtn = document.createElement("button");
-      lastBtn.className = "carousel__nav-button carousel__nav-item--last";
-      lastBtn.innerHTML =
+    this.touchscreenLstBtn = (() => {
+      const btn = document.createElement("button");
+      btn.className = "carousel__nav-button carousel__nav-item--last";
+      btn.innerHTML =
         '<img src="./img/carousel-jump-to-end.svg" alt="Last">';
-      lastBtn.setAttribute("aria-label", "Last slide");
-      lastBtn.addEventListener("click", () => {
-        // show last slide
-        if (!(this.currentCarouselItem == this.totalCarouselItems)) {
-          this.goToCarouselItem(this.totalCarouselItems);
-        }
+      btn.setAttribute("aria-label", "Last slide");
+      btn.addEventListener("click", () => {
+        this.setItemNumber(this.numItems);
       });
-
-      return lastBtn;
+      return btn;
     })();
+
+    this.touchscreenPrevBtn = this.widescreenPrevBtn.cloneNode(true);
+    this.touchscreenNextBtn = this.widescreenNextBtn.cloneNode(true);
+
+    this.addHoldFunctionality(this.touchscreenPrevBtn, -1);
+    this.addHoldFunctionality(this.touchscreenNextBtn, 1);
+    this.addHoldFunctionality(this.widescreenPrevBtn, -1);
+    this.addHoldFunctionality(this.widescreenNextBtn, 1);
 
     this.indexCounter = (() => {
       const indexCounter = document.createElement("span");
-      indexCounter.textContent = `${this.currentCarouselItem + 1}`;
+      indexCounter.textContent = `${this.itemNumber}`;
       return indexCounter;
     })();
 
     this.progressCounter = (() => {
-      const container = document.createElement("div");
-      container.className = "carousel__progress-counter";
+      const progressCounter = document.createElement("div");
+      progressCounter.className = "carousel__progress-counter";
+
       const slash = (() => {
         const slash = document.createElement("span");
         slash.textContent = "/";
         return slash;
       })();
+
       const totalSlides = (() => {
         const totalSlides = document.createElement("span");
-        totalSlides.textContent = `${this.totalCarouselItems + 1}`;
+        totalSlides.textContent = `${this.numItems}`;
         return totalSlides;
       })();
 
-      container.appendChild(this.indexCounter);
-      container.appendChild(slash);
-      container.appendChild(totalSlides);
+      progressCounter.appendChild(this.indexCounter);
+      progressCounter.appendChild(slash);
+      progressCounter.appendChild(totalSlides);
 
-      return container;
+      return progressCounter;
+    })();
+    
+    this.touchscreenNav = (() => {
+      const touchscreenNav = document.createElement("div");
+
+      touchscreenNav.className = "carousel__mobile-nav";
+      touchscreenNav.appendChild(this.touchscreenFstBtn);
+      touchscreenNav.appendChild(this.touchscreenPrevBtn);
+      touchscreenNav.appendChild(this.progressCounter);
+      touchscreenNav.appendChild(this.touchscreenNextBtn);
+      touchscreenNav.appendChild(this.touchscreenLstBtn);
+
+      return touchscreenNav;
     })();
 
-    // mobile navigation
-    this.mobileNav = (() => {
-      const mobileNav = document.createElement("div");
-      mobileNav.className = "carousel__mobile-nav";
-
-      const mobilePrevBtn = this.prevBtn.cloneNode(true);
-      const mobileNextBtn = this.nextBtn.cloneNode(true);
-
-      // add event listeners to cloned buttons
-      this.addHoldFunctionality(mobilePrevBtn, -1);
-      this.addHoldFunctionality(mobileNextBtn, 1);
-
-      mobileNav.appendChild(this.firstBtn);
-      mobileNav.appendChild(mobilePrevBtn);
-      mobileNav.appendChild(this.progressCounter);
-      mobileNav.appendChild(mobileNextBtn);
-      mobileNav.appendChild(this.lastBtn);
-
-      return mobileNav;
+    [this.indicators, this.indicator_dots] = (() => {
+      const indicators = document.createElement("div");
+      indicators.className = "carousel__indicators";
+      const indicator_dots = new Array();
+      for (let i = 1; i <= this.numItems; i++) {
+        const indicator = document.createElement("button");
+        indicator.className = "carousel__indicator_box";
+        indicator.setAttribute("aria-label", `Go to slide ${i}`);
+        indicator.addEventListener("click", () => this.setItemNumber(i));
+        const circle = document.createElement("div");
+        circle.className = "carousel__indicator_dot";
+        indicator.appendChild(circle);
+        indicators.appendChild(indicator);
+        indicator_dots.push(circle);
+      }
+      return [indicators, indicator_dots];
     })();
 
-    this.init();
+    this.setItemNumber(1);
+    this.handleResize();
+
+    window.addEventListener("resize", () => this.handleResize());
   }
 
-  init() {
-    onTouchScreenElse(
-      () => {
-        this.createMobileNavigationButtons();
-        this.showCurrentItem();
-      },
-      () => {
-        this.createWideScreenNavigationButtons();
-        this.showCurrentItem();
-      },
-    );
-    this.attachEventListeners();
-  }
-
-  createWideScreenNavigationButtons() {
-    this.carousel.prepend(this.prevBtn);
-    this.carousel.append(this.nextBtn);
-    this.createIndicators();
-  }
-
-  createMobileNavigationButtons() {
-    if (!this.container.contains(this.mobileNav)) {
-      this.container.appendChild(this.mobileNav);
+  appendToContainer(thing) {
+    if (!this.container.contains(thing)) {
+      this.container.appendChild(thing);
     }
   }
 
-  removeMobileNavigationButtons() {
-    if (this.container.contains(this.mobileNav)) {
-      this.container.removeChild(this.mobileNav);
+  removeFromContainer(thing) {
+    if (this.container.contains(thing)) {
+      this.container.removeChild(thing);
     }
   }
 
-  createIndicators() {
-    if (this.hasIndicators && this.indicators) return;
-
-    this.indicators = document.createElement("div");
-    this.indicators.className = "carousel__indicators";
-
-    for (let i = 0; i <= this.totalCarouselItems; i++) {
-      const indicator = document.createElement("button");
-      indicator.className = "carousel__indicator_box";
-      indicator.setAttribute("aria-label", `Go to slide ${i + 1}`);
-      indicator.addEventListener("click", () => this.goToCarouselItem(i));
-      const circle = document.createElement("div");
-      circle.className = "carousel__indicator_dot";
-      if (i === 0) circle.classList.add("active");
-      indicator.appendChild(circle);
-      this.indicators.appendChild(indicator);
-    }
-
-    this.container.appendChild(this.indicators);
-    this.hasIndicators = true;
-
-    this.updateIndicators();
-  }
-
-  removeIndicators() {
-    if (this.hasIndicators && this.indicators) {
-      this.container.removeChild(this.indicators);
-      this.indicators = null;
-      this.hasIndicators = false;
+  appendToCarousel(thing) {
+    if (!this.carousel.contains(thing)) {
+      this.carousel.appendChild(thing);
     }
   }
 
-  removeWideScreenNavigationButtons() {
-    if (this.carousel.contains(this.prevBtn)) {
-      this.carousel.removeChild(this.prevBtn);
+  prependToCarousel(thing) {
+    if (!this.carousel.contains(thing)) {
+      this.carousel.prepend(thing);
     }
-    if (this.carousel.contains(this.nextBtn)) {
-      this.carousel.removeChild(this.nextBtn);
-    }
-
-    this.removeIndicators();
   }
 
-  showCurrentItem() {
-    // hide all items and show only the current one
+  removeFromCarousel(thing) {
+    if (this.carousel.contains(thing)) {
+      this.carousel.removeChild(thing);
+    }
+  }
+
+  attachWidescreenNav() {
+    this.prependToCarousel(this.widescreenPrevBtn);
+    this.appendToCarousel(this.widescreenNextBtn);
+    this.appendToContainer(this.indicators);
+  }
+
+  removeWidescreenNav() {
+    this.removeFromCarousel(this.widescreenPrevBtn);
+    this.removeFromCarousel(this.widescreenNextBtn);
+    this.removeFromContainer(this.indicators);
+  }
+
+  attachTouchscreenNav() {
+    this.appendToContainer(this.touchscreenNav);
+  }
+
+  removeTouchscreenNav() {
+    this.removeFromContainer(this.touchscreenNav);
+  }
+
+  updateIndexCounter() {
+    if (this.indexCounter) {
+      this.indexCounter.textContent = `${this.itemNumber}`;
+    }
+  }
+
+  updateItemClassLists() {
     this.carouselItems.forEach((item, index) => {
       item.classList.remove("active");
-      if (index === this.currentCarouselItem) {
+      if (index + 1 === this.itemNumber) {
         item.classList.add("active");
       }
     });
-
-    // preserve the enlarged/constrained state after navigation
-    this.preserveImageState();
-
-    if (this.indexCounter) {
-      this.indexCounter.textContent = `${this.currentCarouselItem + 1}`;
-    }
-
-    this.updateIndicators();
   }
 
-  preserveImageState() {
+  updateImageWidthsAndMaxWidths() {
     // apply the current enlarged/constrained state to all images in the carousel
-    if (this.isImagesEnlarged) {
+    if (this.imagesAreEnlarged) {
       // apply enlarged state to all images
       this.allCarouselImgs.forEach((img) => {
         img.classList.remove("constrained");
@@ -637,33 +623,33 @@ class Carousel {
   }
 
   updateIndicators() {
-    const dots = this.container.querySelectorAll(".carousel__indicator_dot");
-    dots.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === this.currentCarouselItem);
+    this.indicator_dots.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index + 1 === this.itemNumber);
     });
   }
 
-  changeCarouselItem(direction) {
-    this.currentCarouselItem += direction;
-
-    // cyclic rotation
-    if (this.currentCarouselItem > this.totalCarouselItems) {
-      this.currentCarouselItem = 0; // go to first slide
-    } else if (this.currentCarouselItem < 0) {
-      this.currentCarouselItem = this.totalCarouselItems; // go to last slide
+  setItemNumber(itemNumber) {
+    if (itemNumber < 1 || itemNumber > this.numItems) {
+      console.error("bad item number:", itemNumber);
+      return;
     }
-
-    this.showCurrentItem();
+    this.itemNumber = itemNumber;
+    this.updateItemClassLists();
+    this.updateIndexCounter();
+    this.updateIndicators();
+    this.updateImageWidthsAndMaxWidths();
   }
 
-  goToCarouselItem(carouselItemIndex) {
-    if (
-      carouselItemIndex >= 0 &&
-      carouselItemIndex <= this.totalCarouselItems
-    ) {
-      this.currentCarouselItem = carouselItemIndex;
-      this.showCurrentItem();
+  nudgeCarouselItem(direction) {
+    if (direction < -1 || direction > 1) {
+      console.error("bad direction in nudgeCarouselItem:", direction);
+      return;
     }
+    this.setItemNumber(
+      1 +
+        ((this.numItems + this.itemNumber + direction - 1) %
+          this.numItems)
+    );
   }
 
   addHoldFunctionality(button, direction) {
@@ -673,12 +659,12 @@ class Carousel {
       this.isHolding = true;
 
       // initial touch - immediate response
-      this.changeCarouselItem(direction);
+      this.nudgeCarouselItem(direction);
 
       // start continuous navigation after a delay
       this.holdTimeout = setTimeout(() => {
         this.holdInterval = setInterval(() => {
-          this.changeCarouselItem(direction);
+          this.nudgeCarouselItem(direction);
         }, 200); // change slide every 200ms while holding
       }, 500); // wait 500ms before starting continuous navigation
     };
@@ -709,7 +695,7 @@ class Carousel {
         e.preventDefault();
         startHold();
       },
-      { passive: false },
+      { passive: false }
     );
 
     button.addEventListener(
@@ -718,27 +704,23 @@ class Carousel {
         e.preventDefault();
         stopHold();
       },
-      { passive: false },
+      { passive: false }
     );
 
     button.addEventListener("touchcancel", stopHold);
   }
 
   handleResize() {
-    onTouchScreenElse(
+    onTouchscreenElse(
       () => {
-        this.removeWideScreenNavigationButtons();
-        this.createMobileNavigationButtons();
+        this.removeWidescreenNav();
+        this.attachTouchscreenNav();
       },
       () => {
-        this.removeMobileNavigationButtons();
-        this.createWideScreenNavigationButtons();
-      },
+        this.removeTouchscreenNav();
+        this.attachWidescreenNav();
+      }
     );
-  }
-
-  attachEventListeners() {
-    window.addEventListener("resize", () => this.handleResize());
   }
 }
 
@@ -838,13 +820,13 @@ const enlargeImgForCarousel = (image) => {
 
   if (image.classList.contains("constrained")) {
     // switch to enlarged state
-    carousel.isImagesEnlarged = true;
+    carousel.imagesAreEnlarged = true;
   } else {
     // switch to constrained state
-    carousel.isImagesEnlarged = false;
+    carousel.imagesAreEnlarged = false;
   }
 
-  carousel.preserveImageState();
+  carousel.updateImageWidthsAndMaxWidths();
 };
 
 const onImgClick = (e) => {
@@ -878,7 +860,7 @@ const setMenuVisibility = (viz) => {
   }
 };
 
-const onScrollMenuDisplay = (_) => {
+const onScrollMenuDisplay = (e) => {
   const currentScrollY = window.scrollY;
   const currentScrollYMoment = Date.now();
   const velocity =
@@ -920,7 +902,7 @@ const onMobile = (callback) => {
   return;
 };
 
-const onTouchScreenElse = (callback1, callback2) => {
+const onTouchscreenElse = (callback1, callback2) => {
   if (window.innerWidth <= TABLET_MAX_WIDTH) return callback1();
   return callback2();
 };
@@ -1030,7 +1012,7 @@ const onKeyDown = (e) => {
       e.preventDefault();
       var carousel = getClosestVisibleCarousel();
       if (carousel != null) {
-        carousel.changeCarouselItem(-1);
+        carousel.nudgeCarouselItem(-1);
       } else {
         navigateToChapter("prev-page");
       }
@@ -1039,7 +1021,7 @@ const onKeyDown = (e) => {
       e.preventDefault();
       var carousel = getClosestVisibleCarousel();
       if (carousel != null) {
-        carousel.changeCarouselItem(1);
+        carousel.nudgeCarouselItem(1);
       } else {
         navigateToChapter("next-page");
       }

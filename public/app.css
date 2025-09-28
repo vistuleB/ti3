@@ -529,10 +529,9 @@ figure.main-column img.constrained,
   transition-duration: 500ms;
 }
 
-/** begin of carousel **/
 .carousel__container.main-column {
   max-width: var(--carousel-max-width);
-  padding: 0 0.1rem;
+  padding: 0 0rem;
 }
 
 .carousel__container {
@@ -541,10 +540,6 @@ figure.main-column img.constrained,
   height: auto;
   margin: 1rem auto 1.5rem;
   background-color: inherit;
-}
-
-.carousel__container:last-child {
-  margin-bottom: 2rem;
 }
 
 .carousel__container > .carousel {
@@ -696,9 +691,9 @@ figure.main-column img.constrained,
   background-color: inherit;
 }
 
-.carousel__item.active > img.constrained {
+/* .carousel__item.active > img.constrained {
   max-width: 100%;
-}
+} */
 
 .carousel__item > img {
   flex-shrink: 0;
