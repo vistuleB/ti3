@@ -658,7 +658,7 @@ figure.main-column img.constrained,
 /* end of resuable components for both mobile and desktop nav */
 
 .carousel > .carousel__items {
-  max-width: inherit;
+  max-width: 100%;
   width: 100%;
   height: auto;
   flex: 1 0 0%;
@@ -667,13 +667,13 @@ figure.main-column img.constrained,
 }
 
 .carousel__items > .carousel__item {
-  max-width: inherit;
+  max-width: 100%;
   display: none;
   flex: 1 0 100%;
 }
 
 .carousel__items > .carousel__item.active {
-  max-width: inherit;
+  /*max-width: inherit;*/
   display: flex;
   flex-direction: column;
   align-items: center;
