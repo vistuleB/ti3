@@ -150,7 +150,7 @@ const resetScreenWidthDependentVars = () => {
     const adjustedScreenWidth = screenWidth * 0.9;
     const computeTabletMaxWidth = Math.min(
       adjustedScreenWidth,
-      DESKTOP_MAIN_COLUMN_WIDTH
+      DESKTOP_MAIN_COLUMN_WIDTH,
     );
     const computeDesktopMaxWidth =
       screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
@@ -315,12 +315,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem"
+    "rem",
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
@@ -330,7 +330,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-toc-subchapter-level-margin",
     indexTocSubchapterLevelMarginInEm,
-    "em"
+    "em",
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
@@ -338,12 +338,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
@@ -355,7 +355,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -371,7 +371,7 @@ const resetScreenWidthDependentVars = () => {
 
 const setImgHeightToAuto = () => {
   const images = document.querySelectorAll(
-    "figure.main-column img, .well figure img"
+    "figure.main-column img, .well figure img",
   );
 
   images.forEach((img) => {
@@ -394,25 +394,19 @@ class Carousel {
     this.carouselItems = container.querySelectorAll(".carousel__item");
     this.numItems = this.carouselItems.length;
     this.itemNumber = 1;
-    this.allCarouselImgs = Array.from(this.carouselItems)
-      .map((item) => item.querySelector("img"))
-      .filter((img) => img);
-
-    // initialize image state based on predicate that if ANY image has constrained class
-    this.imagesAreEnlarged = !this.allCarouselImgs.some((img) =>
-      img.classList.contains("constrained")
-    );
-
-    // mobile navigation button on hold properties
+    this.constrained = true;
     this.holdInterval = null;
     this.holdTimeout = null;
     this.isHolding = false;
 
+    this.imgs = Array.from(this.carouselItems)
+      .map((item) => item.querySelector("img"))
+      .filter((img) => img);
+
     this.widescreenPrevBtn = (() => {
       const btn = document.createElement("button");
       btn.className = "carousel__nav-button carousel__nav-item--prev";
-      btn.innerHTML =
-        '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
+      btn.innerHTML = '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
       btn.setAttribute("aria-label", "Previous slide");
       btn.addEventListener("click", () => {
         this.nudgeCarouselItem(-1);
@@ -446,8 +440,7 @@ class Carousel {
     this.touchscreenLstBtn = (() => {
       const btn = document.createElement("button");
       btn.className = "carousel__nav-button carousel__nav-item--last";
-      btn.innerHTML =
-        '<img src="./img/carousel-jump-to-end.svg" alt="Last">';
+      btn.innerHTML = '<img src="./img/carousel-jump-to-end.svg" alt="Last">';
       btn.setAttribute("aria-label", "Last slide");
       btn.addEventListener("click", () => {
         this.setItemNumber(this.numItems);
@@ -491,7 +484,7 @@ class Carousel {
 
       return progressCounter;
     })();
-    
+
     this.touchscreenNav = (() => {
       const touchscreenNav = document.createElement("div");
 
@@ -579,10 +572,21 @@ class Carousel {
     this.removeFromContainer(this.touchscreenNav);
   }
 
+  handleResize() {
+    onTouchscreenElse(
+      () => {
+        this.removeWidescreenNav();
+        this.attachTouchscreenNav();
+      },
+      () => {
+        this.removeTouchscreenNav();
+        this.attachWidescreenNav();
+      },
+    );
+  }
+
   updateIndexCounter() {
-    if (this.indexCounter) {
-      this.indexCounter.textContent = `${this.itemNumber}`;
-    }
+    this.indexCounter.textContent = `${this.itemNumber}`;
   }
 
   updateItemClassLists() {
@@ -596,9 +600,9 @@ class Carousel {
 
   updateImageWidthsAndMaxWidths() {
     // apply the current enlarged/constrained state to all images in the carousel
-    if (this.imagesAreEnlarged) {
+    if (!this.constrained) {
       // apply enlarged state to all images
-      this.allCarouselImgs.forEach((img) => {
+      this.imgs.forEach((img) => {
         img.classList.remove("constrained");
         // set img size to naturalWidth or some specific enlarged size
         if (img.naturalWidth < MOBILE_MAX_WIDTH) {
@@ -611,7 +615,7 @@ class Carousel {
       });
     } else {
       // apply constrained state to all images
-      this.allCarouselImgs.forEach((img) => {
+      this.imgs.forEach((img) => {
         img.classList.add("constrained");
         // reset img size to fit the container
         img.style.width = "100%";
@@ -646,9 +650,7 @@ class Carousel {
       return;
     }
     this.setItemNumber(
-      1 +
-        ((this.numItems + this.itemNumber + direction - 1) %
-          this.numItems)
+      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems),
     );
   }
 
@@ -659,14 +661,14 @@ class Carousel {
       this.isHolding = true;
 
       // initial touch - immediate response
-      this.nudgeCarouselItem(direction);
+      onMobile(() => this.nudgeCarouselItem(direction));
 
       // start continuous navigation after a delay
       this.holdTimeout = setTimeout(() => {
         this.holdInterval = setInterval(() => {
           this.nudgeCarouselItem(direction);
         }, 200); // change slide every 200ms while holding
-      }, 500); // wait 500ms before starting continuous navigation
+      }, 400); // wait 500ms before starting continuous navigation
     };
 
     const stopHold = () => {
@@ -695,7 +697,7 @@ class Carousel {
         e.preventDefault();
         startHold();
       },
-      { passive: false }
+      { passive: false },
     );
 
     button.addEventListener(
@@ -704,23 +706,10 @@ class Carousel {
         e.preventDefault();
         stopHold();
       },
-      { passive: false }
+      { passive: false },
     );
 
     button.addEventListener("touchcancel", stopHold);
-  }
-
-  handleResize() {
-    onTouchscreenElse(
-      () => {
-        this.removeWidescreenNav();
-        this.attachTouchscreenNav();
-      },
-      () => {
-        this.removeTouchscreenNav();
-        this.attachWidescreenNav();
-      }
-    );
   }
 }
 
@@ -820,10 +809,10 @@ const enlargeImgForCarousel = (image) => {
 
   if (image.classList.contains("constrained")) {
     // switch to enlarged state
-    carousel.imagesAreEnlarged = true;
+    carousel.constrained = false;
   } else {
     // switch to constrained state
-    carousel.imagesAreEnlarged = false;
+    carousel.constrained = true;
   }
 
   carousel.updateImageWidthsAndMaxWidths();
