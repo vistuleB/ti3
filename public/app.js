@@ -936,48 +936,34 @@ const setupMenuTooltips = () => {
     let tooltip = document.getElementById(id);
     if (!tooltip) return;
     tooltip.visibility = false;
-    tooltip.parentNode.addEventListener(
-      'mouseover',
-      () => {
-        tooltip.visibility = true;
-        setTimeout(() => {
-          if (tooltip.visibility === true)
-            tooltip.style.visibility = 'visible';
-        }, 250);
-      }
-    );
-    tooltip.parentNode.addEventListener(
-      'mouseout',
-      () => {
-        tooltip.visibility = false;
-        tooltip.style.visibility = 'hidden';
-      }
-    );
-  }
-}
-
-const setupNextPageTooltip = () => {
-  let tooltip = document.getElementById('next-page-tooltip');
-  if (!tooltip) return;
-  tooltip.visibility = false;
-  tooltip.parentNode.addEventListener(
-    'mouseover',
-    () => {
+    tooltip.parentNode.addEventListener("mouseover", () => {
       tooltip.visibility = true;
       setTimeout(() => {
-        if (tooltip.visibility === true)
-          tooltip.style.visibility = 'visible';
+        if (tooltip.visibility === true) tooltip.style.visibility = "visible";
       }, 250);
-    }
-  );
-  tooltip.parentNode.addEventListener(
-    'mouseout',
-    () => {
+    });
+    tooltip.parentNode.addEventListener("mouseout", () => {
       tooltip.visibility = false;
-      tooltip.style.visibility = 'hidden';
-    }
-  );
-}
+      tooltip.style.visibility = "hidden";
+    });
+  }
+};
+
+const setupNextPageTooltip = () => {
+  let tooltip = document.getElementById("next-page-tooltip");
+  if (!tooltip) return;
+  tooltip.visibility = false;
+  tooltip.parentNode.addEventListener("mouseover", () => {
+    tooltip.visibility = true;
+    setTimeout(() => {
+      if (tooltip.visibility === true) tooltip.style.visibility = "visible";
+    }, 250);
+  });
+  tooltip.parentNode.addEventListener("mouseout", () => {
+    tooltip.visibility = false;
+    tooltip.style.visibility = "hidden";
+  });
+};
 
 const onLoad = () => {
   setupCarousels();
@@ -1014,6 +1000,12 @@ const navigateToChapter = (elementId) => {
 };
 
 const onKeyDown = (e) => {
+  // prevent default browser behavior for Option/Alt + Arrow combinations first
+  if (e.altKey && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
   // check if any input fields are focused to avoid interfering with typing
   const activeElement = document.activeElement;
   const isInputFocused =
@@ -1023,6 +1015,19 @@ const onKeyDown = (e) => {
       activeElement.isContentEditable);
 
   if (isInputFocused) return;
+
+  // check for Option+Arrow (Mac) or Alt+Arrow (Windows) for direct page navigation
+  if (e.altKey && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+    switch (e.key) {
+      case "ArrowLeft":
+        navigateToChapter("prev-page");
+        break;
+      case "ArrowRight":
+        navigateToChapter("next-page");
+        break;
+    }
+    return;
+  }
 
   switch (e.key) {
     case "ArrowLeft":
@@ -1055,4 +1060,4 @@ document.addEventListener("click", smoothRecenter);
 document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd, { passive: true });
-document.addEventListener("keydown", onKeyDown);
+document.addEventListener("keydown", onKeyDown, { capture: true });
