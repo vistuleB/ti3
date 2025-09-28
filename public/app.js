@@ -743,38 +743,34 @@ class Carousel {
 }
 
 function getClosestVisibleCarousel() {
-  var y0 = window.innerHeight / 2;
-  var closestDistance = Infinity;
-  var closestContainer = null;
-  for (c of visibleCarouselContainers) {
-    let r = c.getBoundingClientRect();
-    let y = r.y + r.height / 2;
-    if (Math.abs(y - y0) < closestDistance) {
-      closestDistance = Math.abs(y - y0);
-      closestContainer = c;
+  const y0 = window.innerHeight / 2;
+  let closestDistance = Infinity;
+  let closestContainer = null;
+  for (const container of visibleCarouselContainers) {
+    const r = container.getBoundingClientRect();
+    const y = r.y + r.height / 2;
+    const distance = Math.abs(y - y0);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestContainer = container;
     }
   }
-  return closestContainer != null ? closestContainer.carousel : null;
+  return closestContainer?.carousel || null;
 }
 
 function createCarouselObserver() {
   const options = {
     root: null,
     rootMargin: "0% 0% 0% 0%",
-    threshold: 1.0,
+    threshold: 0.9,
   };
 
   const callback = (entries, _) => {
     entries.forEach((entry) => {
-      let index = visibleCarouselContainers.indexOf(entry.target);
       if (entry.isIntersecting) {
-        if (index === -1) {
-          visibleCarouselContainers.push(entry.target);
-        }
+        visibleCarouselContainers.add(entry.target);
       } else {
-        if (index !== -1) {
-          visibleCarouselContainers.splice(index, 1);
-        }
+        visibleCarouselContainers.delete(entry.target);
       }
     });
   };
@@ -929,7 +925,7 @@ const onTouchScreenElse = (callback1, callback2) => {
   return callback2();
 };
 
-const visibleCarouselContainers = new Array();
+const visibleCarouselContainers = new Set();
 
 const setupMenuTooltips = () => {
   for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
