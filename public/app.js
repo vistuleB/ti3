@@ -150,7 +150,7 @@ const resetScreenWidthDependentVars = () => {
     const adjustedScreenWidth = screenWidth * 0.9;
     const computeTabletMaxWidth = Math.min(
       adjustedScreenWidth,
-      DESKTOP_MAIN_COLUMN_WIDTH,
+      DESKTOP_MAIN_COLUMN_WIDTH
     );
     const computeDesktopMaxWidth =
       screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
@@ -315,12 +315,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem",
+    "rem"
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem",
+    "rem"
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
@@ -330,7 +330,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-toc-subchapter-level-margin",
     indexTocSubchapterLevelMarginInEm,
-    "em",
+    "em"
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
   set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
@@ -338,12 +338,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem",
+    "rem"
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem",
+    "rem"
   );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
@@ -355,7 +355,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem",
+    "rem"
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -371,7 +371,7 @@ const resetScreenWidthDependentVars = () => {
 
 const setImgHeightToAuto = () => {
   const images = document.querySelectorAll(
-    "figure.main-column img, .well figure img",
+    "figure.main-column img, .well figure img"
   );
 
   images.forEach((img) => {
@@ -408,9 +408,6 @@ class Carousel {
       btn.className = "carousel__nav-button carousel__nav-item--prev";
       btn.innerHTML = '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
       btn.setAttribute("aria-label", "Previous slide");
-      btn.addEventListener("click", () => {
-        this.nudgeCarouselItem(-1);
-      });
       return btn;
     })();
 
@@ -419,9 +416,6 @@ class Carousel {
       btn.className = "carousel__nav-button carousel__nav-item--next";
       btn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
       btn.setAttribute("aria-label", "Next slide");
-      btn.addEventListener("click", () => {
-        this.nudgeCarouselItem(1);
-      });
       return btn;
     })();
 
@@ -451,10 +445,18 @@ class Carousel {
     this.touchscreenPrevBtn = this.widescreenPrevBtn.cloneNode(true);
     this.touchscreenNextBtn = this.widescreenNextBtn.cloneNode(true);
 
-    this.addHoldFunctionality(this.touchscreenPrevBtn, -1);
-    this.addHoldFunctionality(this.touchscreenNextBtn, 1);
-    this.addHoldFunctionality(this.widescreenPrevBtn, -1);
-    this.addHoldFunctionality(this.widescreenNextBtn, 1);
+    this.doOnClickAndOnHold(this.touchscreenPrevBtn, () => {
+      this.nudgeCarouselItem(-1);
+    });
+    this.doOnClickAndOnHold(this.touchscreenNextBtn, () => {
+      this.nudgeCarouselItem(1);
+    });
+    this.doOnClickAndOnHold(this.widescreenPrevBtn, () => {
+      this.nudgeCarouselItem(-1);
+    });
+    this.doOnClickAndOnHold(this.widescreenNextBtn, () => {
+      this.nudgeCarouselItem(1);
+    });
 
     this.indexCounter = (() => {
       const indexCounter = document.createElement("span");
@@ -581,7 +583,7 @@ class Carousel {
       () => {
         this.removeTouchscreenNav();
         this.attachWidescreenNav();
-      },
+      }
     );
   }
 
@@ -645,70 +647,43 @@ class Carousel {
   }
 
   nudgeCarouselItem(direction) {
-    if (direction < -1 || direction > 1) {
-      console.error("bad direction in nudgeCarouselItem:", direction);
-      return;
-    }
+    // console.log("in nudge!", direction);
     this.setItemNumber(
-      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems),
+      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems)
     );
   }
 
-  addHoldFunctionality(button, direction) {
-    const startHold = () => {
+  doOnClickAndOnHold(button, callback) {
+    const startHold = (e) => {
+      e.preventDefault();
       if (this.isHolding) return;
-
       this.isHolding = true;
-
-      // initial touch - immediate response
-      onMobile(() => this.nudgeCarouselItem(direction));
-
-      // start continuous navigation after a delay
+      callback();
       this.holdTimeout = setTimeout(() => {
         this.holdInterval = setInterval(() => {
-          this.nudgeCarouselItem(direction);
-        }, 200); // change slide every 200ms while holding
-      }, 400); // wait 500ms before starting continuous navigation
+          callback();
+        }, 200);
+      }, 400);
     };
 
-    const stopHold = () => {
+    const stopHold = (e) => {
+      e.preventDefault();
       this.isHolding = false;
-
       if (this.holdTimeout) {
         clearTimeout(this.holdTimeout);
         this.holdTimeout = null;
       }
-
       if (this.holdInterval) {
         clearInterval(this.holdInterval);
         this.holdInterval = null;
       }
     };
 
-    // mouse events
     button.addEventListener("mousedown", startHold);
+    button.addEventListener("touchstart", startHold, { passive: false });
     button.addEventListener("mouseup", stopHold);
     button.addEventListener("mouseleave", stopHold);
-
-    // touch events for mobile
-    button.addEventListener(
-      "touchstart",
-      (e) => {
-        e.preventDefault();
-        startHold();
-      },
-      { passive: false },
-    );
-
-    button.addEventListener(
-      "touchend",
-      (e) => {
-        e.preventDefault();
-        stopHold();
-      },
-      { passive: false },
-    );
-
+    button.addEventListener("touchend", stopHold, { passive: false });
     button.addEventListener("touchcancel", stopHold);
   }
 }
@@ -783,7 +758,7 @@ const adjustMathAlignment = () => {
   });
 };
 
-const englargeImg = (image) => {
+const toggleImageZoom = (image) => {
   if (image.classList.contains("constrained")) {
     image.classList.remove("constrained");
     if (image.naturalWidth < MOBILE_MAX_WIDTH) {
@@ -802,16 +777,13 @@ const englargeImg = (image) => {
   }
 };
 
-const enlargeImgForCarousel = (image) => {
-  // enlarge or constrain all carousel images whenever the action is performed on a single image
+const toggleCarouselImageZoom = (image) => {
   const carouselContainer = image.closest(".carousel__container");
   const carousel = carouselContainer.carousel;
 
   if (image.classList.contains("constrained")) {
-    // switch to enlarged state
     carousel.constrained = false;
   } else {
-    // switch to constrained state
     carousel.constrained = true;
   }
 
@@ -823,9 +795,9 @@ const onImgClick = (e) => {
   if (isPageCentered) {
     onMobile(() => {
       if (image.closest(".carousel")) {
-        enlargeImgForCarousel(image);
+        toggleCarouselImageZoom(image);
       } else {
-        englargeImg(image);
+        toggleImageZoom(image);
       }
     });
   }
