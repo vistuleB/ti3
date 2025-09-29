@@ -156,25 +156,6 @@ const carouselMaxWidthInPx = () => {
   return computeDesktopMaxWidth;
 };
 
-const carouselArrowSizeInPx = () => {
-  if (screenWidth > LAPTOP_MAX_WIDTH) return CAROUSEL_ARROW_DESKTOP_SIZE;
-  if (screenWidth > TABLET_MAX_WIDTH) return CAROUSEL_ARROW_LAPTOP_SIZE;
-  let minSizeWidth = 490; // the width at which arrow reaches min width
-  return (
-    CAROUSEL_ARROW_MIN_SIZE +
-    ((CAROUSEL_ARROW_TABLET_MAX_SIZE - CAROUSEL_ARROW_MIN_SIZE) *
-      Math.max(0, screenWidth - minSizeWidth)) /
-      (TABLET_MAX_WIDTH - minSizeWidth)
-  );
-};
-
-const carouselNavButtonMarginXInPx = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
-  if (screenWidth <= TABLET_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
-  if (screenWidth <= LAPTOP_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
-  return carouselArrowSizeInPx();
-};
-
 const endOfPageMainColumnMarginBottomInRem = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
   if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
@@ -332,8 +313,6 @@ const resetScreenWidthDependentVars = () => {
     "em"
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
-  set("--carousel-arrow-size", carouselArrowSizeInPx, "px");
-  set("--carousel-nav-button-margin-x", carouselNavButtonMarginXInPx, "px");
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
@@ -367,318 +346,6 @@ const resetScreenWidthDependentVars = () => {
   set("--textfigure-padding-x", textfigurePaddingXInRem, "rem");
   set("--math-block-max-width", mathBlockMaxWidthInPx, "px");
 };
-
-class Carousel {
-  constructor(container) {
-    if (!container.classList.contains("carousel__container")) {
-      console.error("'Carousel' constructor should be called on carousel__container!");
-      return;
-    }
-
-    this.container = container;
-    this.carousel = container.querySelector(".carousel");
-    this.carouselItems = container.querySelectorAll(".carousel__item");
-    this.numItems = this.carouselItems.length;
-    this.itemNumber = 1;
-    this.holdInterval = null;
-    this.holdTimeout = null;
-    this.isHolding = false;
-    this.constrained = true;
-    this.bigEnoughContainerForUnconstrainedContent = true;
-
-    container.carousel = this;
-    this.carousel.object = this;
-
-    this.imgs = Array.from(this.carouselItems)
-      .map((item) => item.querySelector("img"))
-      .filter((img) => img);
-
-    let maxOriginalWidthInPx = 0;
-    let minOriginalWidthInPx = Infinity;
-    for (const img of this.imgs) {
-      if (img.originalWidthInPx > maxOriginalWidthInPx)
-        maxOriginalWidthInPx = img.originalWidthInPx;
-      if (img.originalWidthInPx < minOriginalWidthInPx)
-        minOriginalWidthInPx = img.originalWidthInPx;
-    }
-    if (minOriginalWidthInPx > maxOriginalWidthInPx) {
-      console.error(`minOriginalWidthInPx > maxOriginalWidthInPx: ${minOriginalWidthInPx} > ${maxOriginalWidthInPx}`);
-    }
-    if (minOriginalWidthInPx < maxOriginalWidthInPx) {
-      console.warn(`minOriginalWidthInPx < maxOriginalWidthInPx: ${minOriginalWidthInPx} < ${maxOriginalWidthInPx}`);
-    }
-    this.maxOriginalWidthInPx = maxOriginalWidthInPx;
-    this.minOriginalWidthInPx = minOriginalWidthInPx;
-    this.maxOriginalWidth = maxOriginalWidthInPx + 'px';
-
-    this.widescreenPrevBtn = (() => {
-      const btn = document.createElement("button");
-      btn.className = "carousel__nav-button carousel__nav-item--prev";
-      btn.innerHTML = '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
-      btn.setAttribute("aria-label", "Previous slide");
-      return btn;
-    })();
-
-    this.widescreenNextBtn = (() => {
-      const btn = document.createElement("button");
-      btn.className = "carousel__nav-button carousel__nav-item--next";
-      btn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
-      btn.setAttribute("aria-label", "Next slide");
-      return btn;
-    })();
-
-    this.touchscreenFstBtn = (() => {
-      const btn = document.createElement("button");
-      btn.className = "carousel__nav-button carousel__nav-item--first";
-      btn.innerHTML =
-        '<img src="./img/carousel-jump-to-start.svg" alt="First">';
-      btn.setAttribute("aria-label", "First slide");
-      btn.addEventListener("click", () => {
-        this.setItemNumber(1);
-      });
-      return btn;
-    })();
-
-    this.touchscreenLstBtn = (() => {
-      const btn = document.createElement("button");
-      btn.className = "carousel__nav-button carousel__nav-item--last";
-      btn.innerHTML = '<img src="./img/carousel-jump-to-end.svg" alt="Last">';
-      btn.setAttribute("aria-label", "Last slide");
-      btn.addEventListener("click", () => {
-        this.setItemNumber(this.numItems);
-      });
-      return btn;
-    })();
-
-    this.touchscreenPrevBtn = this.widescreenPrevBtn.cloneNode(true);
-    this.touchscreenNextBtn = this.widescreenNextBtn.cloneNode(true);
-
-    this.doOnClickAndOnHold(this.touchscreenPrevBtn, () => {
-      this.nudgeCarouselItem(-1);
-    });
-    this.doOnClickAndOnHold(this.touchscreenNextBtn, () => {
-      this.nudgeCarouselItem(1);
-    });
-    this.doOnClickAndOnHold(this.widescreenPrevBtn, () => {
-      this.nudgeCarouselItem(-1);
-    });
-    this.doOnClickAndOnHold(this.widescreenNextBtn, () => {
-      this.nudgeCarouselItem(1);
-    });
-
-    this.indexCounter = (() => {
-      const indexCounter = document.createElement("span");
-      indexCounter.textContent = `${this.itemNumber}`;
-      return indexCounter;
-    })();
-
-    this.progressCounter = (() => {
-      const progressCounter = document.createElement("div");
-      progressCounter.className = "carousel__progress-counter";
-
-      const slash = (() => {
-        const slash = document.createElement("span");
-        slash.textContent = "/";
-        return slash;
-      })();
-
-      const totalSlides = (() => {
-        const totalSlides = document.createElement("span");
-        totalSlides.textContent = `${this.numItems}`;
-        return totalSlides;
-      })();
-
-      progressCounter.appendChild(this.indexCounter);
-      progressCounter.appendChild(slash);
-      progressCounter.appendChild(totalSlides);
-
-      return progressCounter;
-    })();
-
-    this.touchscreenNav = (() => {
-      const touchscreenNav = document.createElement("div");
-
-      touchscreenNav.className = "carousel__mobile-nav";
-      touchscreenNav.appendChild(this.touchscreenFstBtn);
-      touchscreenNav.appendChild(this.touchscreenPrevBtn);
-      touchscreenNav.appendChild(this.progressCounter);
-      touchscreenNav.appendChild(this.touchscreenNextBtn);
-      touchscreenNav.appendChild(this.touchscreenLstBtn);
-
-      return touchscreenNav;
-    })();
-
-    [this.indicators, this.indicator_dots] = (() => {
-      const indicators = document.createElement("div");
-      indicators.className = "carousel__indicators";
-      const indicator_dots = new Array();
-      for (let i = 1; i <= this.numItems; i++) {
-        const indicator = document.createElement("button");
-        indicator.className = "carousel__indicator_box";
-        indicator.setAttribute("aria-label", `Go to slide ${i}`);
-        indicator.addEventListener("click", () => this.setItemNumber(i));
-        const circle = document.createElement("div");
-        circle.className = "carousel__indicator_dot";
-        indicator.appendChild(circle);
-        indicators.appendChild(indicator);
-        indicator_dots.push(circle);
-      }
-      return [indicators, indicator_dots];
-    })();
-
-    this.setItemNumber(1);
-    this.onScreenWidthChange();
-
-    // window.addEventListener("resize", () => this.onScreenWidthChange());
-  }
-
-  appendToContainer(thing) {
-    if (!this.container.contains(thing)) {
-      this.container.appendChild(thing);
-    }
-  }
-
-  removeFromContainer(thing) {
-    if (this.container.contains(thing)) {
-      this.container.removeChild(thing);
-    }
-  }
-
-  appendToCarousel(thing) {
-    if (!this.carousel.contains(thing)) {
-      this.carousel.appendChild(thing);
-    }
-  }
-
-  prependToCarousel(thing) {
-    if (!this.carousel.contains(thing)) {
-      this.carousel.prepend(thing);
-    }
-  }
-
-  removeFromCarousel(thing) {
-    if (this.carousel.contains(thing)) {
-      this.carousel.removeChild(thing);
-    }
-  }
-
-  attachWidescreenNav() {
-    this.prependToCarousel(this.widescreenPrevBtn);
-    this.appendToCarousel(this.widescreenNextBtn);
-    this.appendToContainer(this.indicators);
-  }
-
-  removeWidescreenNav() {
-    this.removeFromCarousel(this.widescreenPrevBtn);
-    this.removeFromCarousel(this.widescreenNextBtn);
-    this.removeFromContainer(this.indicators);
-  }
-
-  attachTouchscreenNav() {
-    this.appendToContainer(this.touchscreenNav);
-  }
-
-  removeTouchscreenNav() {
-    this.removeFromContainer(this.touchscreenNav);
-  }
-
-  onScreenWidthChange() {
-    let containerWidth = this.container.getBoundingClientRect().width;
-    let expandedWidth = this.maxOriginalWidthInPx + 2 * carouselArrowSizeInPx() + 4 * carouselNavButtonMarginXInPx();
-    if (containerWidth >= expandedWidth) {
-      this.bigEnoughContainerForUnconstrainedContent = true;
-      this.removeTouchscreenNav();
-      this.attachWidescreenNav();
-    } else {
-      this.bigEnoughContainerForUnconstrainedContent = false;
-      this.removeWidescreenNav();
-      this.attachTouchscreenNav();
-    }
-    this.updateConstrained();
-  }
-
-  updateIndexCounter() {
-    this.indexCounter.textContent = `${this.itemNumber}`;
-  }
-
-  updateItemsDisplayValue() {
-    this.carouselItems.forEach((item, index) => {
-      item.style.display =
-        index + 1 === this.itemNumber ? "flex" : "none";
-    });
-  }
-
-  updateConstrained() {
-    if (!this.bigEnoughContainerForUnconstrainedContent && this.constrained) {
-      this.imgs.forEach(constrainImage);
-    } else {
-      this.imgs.forEach(unconstrainImage);
-    }
-  }
-
-  toggleZoom() {
-    this.constrained = !this.constrained;
-    this.updateConstrained();
-  }
-
-  updateIndicators() {
-    this.indicator_dots.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index + 1 === this.itemNumber);
-    });
-  }
-
-  setItemNumber(itemNumber) {
-    if (itemNumber < 1 || itemNumber > this.numItems) {
-      console.error("bad item number:", itemNumber);
-      return;
-    }
-    this.itemNumber = itemNumber;
-    this.updateItemsDisplayValue();
-    this.updateIndexCounter();
-    this.updateIndicators();
-  }
-
-  nudgeCarouselItem(direction) {
-    // console.log("in nudge!", direction);
-    this.setItemNumber(
-      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems)
-    );
-  }
-
-  doOnClickAndOnHold(button, callback) {
-    const startHold = (e) => {
-      e.preventDefault();
-      if (this.isHolding) return;
-      this.isHolding = true;
-      callback();
-      this.holdTimeout = setTimeout(() => {
-        this.holdInterval = setInterval(() => {
-          callback();
-        }, 200);
-      }, 400);
-    };
-
-    const stopHold = (e) => {
-      e.preventDefault();
-      this.isHolding = false;
-      if (this.holdTimeout) {
-        clearTimeout(this.holdTimeout);
-        this.holdTimeout = null;
-      }
-      if (this.holdInterval) {
-        clearInterval(this.holdInterval);
-        this.holdInterval = null;
-      }
-    };
-
-    button.addEventListener("mousedown", startHold);
-    button.addEventListener("touchstart", startHold, { passive: false });
-    button.addEventListener("mouseup", stopHold);
-    button.addEventListener("mouseleave", stopHold);
-    button.addEventListener("touchend", stopHold, { passive: false });
-    button.addEventListener("touchcancel", stopHold);
-  }
-}
 
 function getClosestVisibleCarousel() {
   const y0 = window.innerHeight / 2;
@@ -715,18 +382,6 @@ function createCarouselObserver() {
 
   return new IntersectionObserver(callback, options);
 }
-
-let allCarouselObjects = new Array();
-
-const setupCarousels = () => {
-  let carouselObserver = createCarouselObserver();
-  const carousels = document.querySelectorAll(".carousel__container");
-  carousels.forEach((container) => {
-    carouselObserver.observe(container);
-    let c = new Carousel(container);
-    allCarouselObjects.push(c);
-  });
-};
 
 const adjustMathAlignment = () => {
   // we do not apply alignment, unless it is wide screen
@@ -906,6 +561,373 @@ const setupImages = () => {
       image.addEventListener("click", figureImgClick);
     });
   }
+};
+
+let allCarouselObjects = new Array();
+
+class Carousel {
+  constructor(container) {
+    if (!container.classList.contains("carousel__container")) {
+      console.error(
+        "'Carousel' constructor should be called on carousel__container!"
+      );
+      return;
+    }
+
+    this.container = container;
+    this.carousel = container.querySelector(".carousel");
+    this.carouselItems = container.querySelectorAll(".carousel__item");
+    this.numItems = this.carouselItems.length;
+    this.itemNumber = 1;
+    this.holdInterval = null;
+    this.holdTimeout = null;
+    this.isHolding = false;
+    this.constrained = true;
+    this.bigEnoughContainerForUnconstrainedContent = true;
+
+    container.carousel = this;
+    this.carousel.object = this;
+
+    this.imgs = Array.from(this.carouselItems)
+      .map((item) => item.querySelector("img"))
+      .filter((img) => img);
+
+    let maxOriginalWidthInPx = 0;
+    let minOriginalWidthInPx = Infinity;
+    for (const img of this.imgs) {
+      if (img.originalWidthInPx > maxOriginalWidthInPx)
+        maxOriginalWidthInPx = img.originalWidthInPx;
+      if (img.originalWidthInPx < minOriginalWidthInPx)
+        minOriginalWidthInPx = img.originalWidthInPx;
+    }
+    if (minOriginalWidthInPx > maxOriginalWidthInPx) {
+      console.error(
+        `minOriginalWidthInPx > maxOriginalWidthInPx: ${minOriginalWidthInPx} > ${maxOriginalWidthInPx}`
+      );
+    }
+    if (minOriginalWidthInPx < maxOriginalWidthInPx) {
+      console.warn(
+        `minOriginalWidthInPx < maxOriginalWidthInPx: ${minOriginalWidthInPx} < ${maxOriginalWidthInPx}`
+      );
+    }
+    this.maxOriginalWidthInPx = maxOriginalWidthInPx;
+    this.minOriginalWidthInPx = minOriginalWidthInPx;
+    this.maxOriginalWidth = maxOriginalWidthInPx + "px";
+
+    this.widescreenPrevBtn = (() => {
+      const btn = document.createElement("button");
+      btn.className = "carousel__nav-button carousel__nav-item--prev";
+      btn.innerHTML = '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
+      btn.setAttribute("aria-label", "Previous slide");
+      return btn;
+    })();
+
+    this.widescreenNextBtn = (() => {
+      const btn = document.createElement("button");
+      btn.className = "carousel__nav-button carousel__nav-item--next";
+      btn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
+      btn.setAttribute("aria-label", "Next slide");
+      return btn;
+    })();
+
+    this.touchscreenFstBtn = (() => {
+      const btn = document.createElement("button");
+      btn.className = "carousel__nav-button carousel__nav-item--first";
+      btn.innerHTML =
+        '<img src="./img/carousel-jump-to-start.svg" alt="First">';
+      btn.setAttribute("aria-label", "First slide");
+      btn.addEventListener("click", () => {
+        this.setItemNumber(1);
+      });
+      return btn;
+    })();
+
+    this.touchscreenLstBtn = (() => {
+      const btn = document.createElement("button");
+      btn.className = "carousel__nav-button carousel__nav-item--last";
+      btn.innerHTML = '<img src="./img/carousel-jump-to-end.svg" alt="Last">';
+      btn.setAttribute("aria-label", "Last slide");
+      btn.addEventListener("click", () => {
+        this.setItemNumber(this.numItems);
+      });
+      return btn;
+    })();
+
+    this.touchscreenPrevBtn = this.widescreenPrevBtn.cloneNode(true);
+    this.touchscreenNextBtn = this.widescreenNextBtn.cloneNode(true);
+
+    this.doOnClickAndOnHold(this.touchscreenPrevBtn, () => {
+      this.nudgeCarouselItem(-1);
+    });
+    this.doOnClickAndOnHold(this.touchscreenNextBtn, () => {
+      this.nudgeCarouselItem(1);
+    });
+    this.doOnClickAndOnHold(this.widescreenPrevBtn, () => {
+      this.nudgeCarouselItem(-1);
+    });
+    this.doOnClickAndOnHold(this.widescreenNextBtn, () => {
+      this.nudgeCarouselItem(1);
+    });
+
+    this.indexCounter = (() => {
+      const indexCounter = document.createElement("span");
+      indexCounter.textContent = `${this.itemNumber}`;
+      return indexCounter;
+    })();
+
+    this.progressCounter = (() => {
+      const progressCounter = document.createElement("div");
+      progressCounter.className = "carousel__progress-counter";
+
+      const slash = (() => {
+        const slash = document.createElement("span");
+        slash.textContent = "/";
+        return slash;
+      })();
+
+      const totalSlides = (() => {
+        const totalSlides = document.createElement("span");
+        totalSlides.textContent = `${this.numItems}`;
+        return totalSlides;
+      })();
+
+      progressCounter.appendChild(this.indexCounter);
+      progressCounter.appendChild(slash);
+      progressCounter.appendChild(totalSlides);
+
+      return progressCounter;
+    })();
+
+    this.touchscreenNav = (() => {
+      const touchscreenNav = document.createElement("div");
+
+      touchscreenNav.className = "carousel__mobile-nav";
+      touchscreenNav.appendChild(this.touchscreenFstBtn);
+      touchscreenNav.appendChild(this.touchscreenPrevBtn);
+      touchscreenNav.appendChild(this.progressCounter);
+      touchscreenNav.appendChild(this.touchscreenNextBtn);
+      touchscreenNav.appendChild(this.touchscreenLstBtn);
+
+      return touchscreenNav;
+    })();
+
+    [this.indicators, this.indicator_dots] = (() => {
+      const indicators = document.createElement("div");
+      indicators.className = "carousel__indicators";
+      const indicator_dots = new Array();
+      for (let i = 1; i <= this.numItems; i++) {
+        const indicator = document.createElement("button");
+        indicator.className = "carousel__indicator_box";
+        indicator.setAttribute("aria-label", `Go to slide ${i}`);
+        indicator.addEventListener("click", () => this.setItemNumber(i));
+        const circle = document.createElement("div");
+        circle.className = "carousel__indicator_dot";
+        indicator.appendChild(circle);
+        indicators.appendChild(indicator);
+        indicator_dots.push(circle);
+      }
+      return [indicators, indicator_dots];
+    })();
+
+    this.setItemNumber(1);
+    this.onScreenWidthChange();
+  }
+
+  appendToContainer(thing) {
+    if (!this.container.contains(thing)) {
+      this.container.appendChild(thing);
+    }
+  }
+
+  removeFromContainer(thing) {
+    if (this.container.contains(thing)) {
+      this.container.removeChild(thing);
+    }
+  }
+
+  appendToCarousel(thing) {
+    if (!this.carousel.contains(thing)) {
+      this.carousel.appendChild(thing);
+    }
+  }
+
+  prependToCarousel(thing) {
+    if (!this.carousel.contains(thing)) {
+      this.carousel.prepend(thing);
+    }
+  }
+
+  removeFromCarousel(thing) {
+    if (this.carousel.contains(thing)) {
+      this.carousel.removeChild(thing);
+    }
+  }
+
+  attachWidescreenNav() {
+    this.prependToCarousel(this.widescreenPrevBtn);
+    this.appendToCarousel(this.widescreenNextBtn);
+    this.appendToContainer(this.indicators);
+  }
+
+  removeWidescreenNav() {
+    this.removeFromCarousel(this.widescreenPrevBtn);
+    this.removeFromCarousel(this.widescreenNextBtn);
+    this.removeFromContainer(this.indicators);
+  }
+
+  attachTouchscreenNav() {
+    this.appendToContainer(this.touchscreenNav);
+  }
+
+  removeTouchscreenNav() {
+    this.removeFromContainer(this.touchscreenNav);
+  }
+
+  buttonHeightFromContainerWidth = () => {
+    let minSizeContainerWidth = 490;
+    return Math.min(
+      CAROUSEL_ARROW_DESKTOP_SIZE,
+      CAROUSEL_ARROW_MIN_SIZE +
+        ((CAROUSEL_ARROW_TABLET_MAX_SIZE - CAROUSEL_ARROW_MIN_SIZE) *
+          Math.max(0, this.containerWidth - minSizeContainerWidth)) /
+          (TABLET_MAX_WIDTH - minSizeContainerWidth)
+    );
+  };
+
+  buttonMarginFromContainerWidth = () => {
+    return this.buttonHeightFromContainerWidth() * 0.7;
+  };
+
+  resetButtonsHeightMarginFromContainerWidth = () => {
+    this.buttonHeight = this.buttonHeightFromContainerWidth();
+    this.buttonMargin = this.buttonMarginFromContainerWidth();
+
+    this.widescreenPrevBtn.style.height = this.buttonHeight + "px";
+    this.widescreenNextBtn.style.height = this.buttonHeight + "px";
+
+    this.touchscreenPrevBtn.style.height = this.buttonHeight + "px";
+    this.touchscreenNextBtn.style.height = this.buttonHeight + "px";
+    this.touchscreenFstBtn.style.height = this.buttonHeight + "px";
+    this.touchscreenLstBtn.style.height = this.buttonHeight + "px";
+
+    this.widescreenPrevBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
+    this.widescreenNextBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
+
+    this.touchscreenPrevBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
+    this.touchscreenNextBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
+    this.touchscreenFstBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
+    this.touchscreenLstBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
+  }
+
+  onScreenWidthChange() {
+    this.containerWidth = this.container.getBoundingClientRect().width;
+    this.resetButtonsHeightMarginFromContainerWidth();
+    let expandedWidth =
+      this.maxOriginalWidthInPx +
+      2 * this.buttonHeight +
+      4 * this.buttonMargin;
+    if (this.containerWidth >= expandedWidth) {
+      this.bigEnoughContainerForUnconstrainedContent = true;
+      this.removeTouchscreenNav();
+      this.attachWidescreenNav();
+    } else {
+      this.bigEnoughContainerForUnconstrainedContent = false;
+      this.removeWidescreenNav();
+      this.attachTouchscreenNav();
+    }
+    this.updateConstrained();
+  }
+
+  updateIndexCounter() {
+    this.indexCounter.textContent = `${this.itemNumber}`;
+  }
+
+  updateItemsDisplayValue() {
+    this.carouselItems.forEach((item, index) => {
+      item.style.display = index + 1 === this.itemNumber ? "flex" : "none";
+    });
+  }
+
+  updateConstrained() {
+    if (!this.bigEnoughContainerForUnconstrainedContent && this.constrained) {
+      this.imgs.forEach(constrainImage);
+    } else {
+      this.imgs.forEach(unconstrainImage);
+    }
+  }
+
+  toggleZoom() {
+    this.constrained = !this.constrained;
+    this.updateConstrained();
+  }
+
+  updateIndicators() {
+    this.indicator_dots.forEach((indicator, index) => {
+      indicator.classList.toggle("active", index + 1 === this.itemNumber);
+    });
+  }
+
+  setItemNumber(itemNumber) {
+    if (itemNumber < 1 || itemNumber > this.numItems) {
+      console.error("bad item number:", itemNumber);
+      return;
+    }
+    this.itemNumber = itemNumber;
+    this.updateItemsDisplayValue();
+    this.updateIndexCounter();
+    this.updateIndicators();
+  }
+
+  nudgeCarouselItem(direction) {
+    // console.log("in nudge!", direction);
+    this.setItemNumber(
+      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems)
+    );
+  }
+
+  doOnClickAndOnHold(button, callback) {
+    const startHold = (e) => {
+      e.preventDefault();
+      if (this.isHolding) return;
+      this.isHolding = true;
+      callback();
+      this.holdTimeout = setTimeout(() => {
+        this.holdInterval = setInterval(() => {
+          callback();
+        }, 200);
+      }, 400);
+    };
+
+    const stopHold = (e) => {
+      e.preventDefault();
+      this.isHolding = false;
+      if (this.holdTimeout) {
+        clearTimeout(this.holdTimeout);
+        this.holdTimeout = null;
+      }
+      if (this.holdInterval) {
+        clearInterval(this.holdInterval);
+        this.holdInterval = null;
+      }
+    };
+
+    button.addEventListener("mousedown", startHold);
+    button.addEventListener("touchstart", startHold, { passive: false });
+    button.addEventListener("mouseup", stopHold);
+    button.addEventListener("mouseleave", stopHold);
+    button.addEventListener("touchend", stopHold, { passive: false });
+    button.addEventListener("touchcancel", stopHold);
+  }
+}
+
+const setupCarousels = () => {
+  let carouselObserver = createCarouselObserver();
+  const carousels = document.querySelectorAll(".carousel__container");
+  carousels.forEach((container) => {
+    carouselObserver.observe(container);
+    let c = new Carousel(container);
+    allCarouselObjects.push(c);
+  });
 };
 
 const onLoad = () => {

@@ -24,8 +24,6 @@
   --index-toc-padding-bottom: 3rem;
   --index-toc-chapter-level-margin: 0.5em;
   --index-toc-subchapter-level-margin: 0.15em;
-  --carousel-arrow-size: 48px;
-  --carousel-nav-button-margin-x: 48px;
   --end-of-page-main-column-margin-bottom: 2.4rem;
   --end-of-page-well-margin-bottom: 2.2rem;
   --main-column-width: 1050px;
@@ -580,7 +578,7 @@ figcaption {
     calc(
       (var(--carousel-indicator-box-size) + var(--carousel-indicator-gap)) * 30
     ),
-    calc(100% - (2 * var(--carousel-arrow-size)))
+    75%
   );
   display: flex;
   flex-wrap: wrap;
@@ -617,14 +615,12 @@ figcaption {
 .carousel__nav-button {
   flex-shrink: 0;
   border: none;
-  background-color: transparent;
+  background-color: #0000;
   cursor: pointer;
   display: flex;
-  font-size: 18px;
   color: #333;
   transition: background-color 0.3s ease;
   z-index: 100;
-  margin: 0 var(--carousel-nav-button-margin-x);
 }
 
 .carousel__nav-button:disabled {
@@ -633,10 +629,6 @@ figcaption {
   color: #999;
 }
 
-.carousel__nav-button > img {
-  width: var(--carousel-arrow-size);
-  height: var(--carousel-arrow-size);
-}
 /* end of resuable components for both mobile and desktop nav */
 
 .carousel__container {

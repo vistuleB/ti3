@@ -13,6 +13,7 @@
             src=./img/finite-state-automata/nfsm-example-01.svg
 
     |> Carousel
+        id=curio
         height=100px
         src=./img/test_img.svg
         src=./img/test_img.svg
