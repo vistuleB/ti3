@@ -486,6 +486,15 @@ pre.listing.redyellow > span.listing-bol::before{
   margin: 0 auto;
   padding: 0 16px;
   background-color: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.figure__container {
+  display: flex;
+  justify-content: center;
+  background-color: inherit;
+  width: 100%;
 }
 
 figure {
@@ -494,6 +503,7 @@ figure {
   margin: 1rem auto;
   overflow: visible;
   justify-content: center;
+  width: fit-content;
 }
 
 figure img,
@@ -525,7 +535,7 @@ figcaption {
   padding-bottom: 1rem;
 }
 
-.constrainable-image-zoom-transition {
+.zoom-transition {
   will-change: width, border-width;
   transition-property: width, border-width;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

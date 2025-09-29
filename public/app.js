@@ -408,23 +408,25 @@ const adjustMathAlignment = () => {
   });
 };
 
-const constrainImage = (image) => {
+const constrainFigureImage = (image) => {
   image.classList.remove("unconstrained");
   image.classList.add("constrained");
-  image.style.width = `min(100%, ${image.originalWidth})`;
+  let constrainerWidth = image.constrainer.getBoundingClientRect().width;
+  let padding = parseFloat(window.getComputedStyle(image.constrainer).paddingLeft);
+  image.style.width = `min(${(constrainerWidth - 2 * padding) + 'px'}, ${image.originalWidth})`;
 };
 
-const unconstrainImage = (image) => {
+const unconstrainFigureImage = (image) => {
   image.classList.remove("constrained");
   image.classList.add("unconstrained");
   image.style.width = image.originalWidth;
 };
 
-const toggleImageZoom = (image) => {
+const toggleFigureImageZoom = (image) => {
   if (image.classList.contains("constrained")) {
-    unconstrainImage(image);
+    unconstrainFigureImage(image);
   } else {
-    constrainImage(image);
+    constrainFigureImage(image);
   }
 };
 
@@ -436,7 +438,7 @@ const constrainableImgClick = (e) => {
     carousel.object.toggleZoom();
     return;
   }
-  toggleImageZoom(image);
+  toggleFigureImageZoom(image);
 };
 
 const menuVisible = () => {
@@ -540,6 +542,9 @@ const setupNextPageTooltip = () => {
   });
 };
 
+let allFigureImages = new Array();
+let allConstrainableImages = new Array();
+
 const setupImages = () => {
   let images = document.querySelectorAll("img");
   for (const image of images) {
@@ -551,9 +556,15 @@ const setupImages = () => {
     image.originalHeightInPx = parseFloat(image.originalHeight);
     image.style.width = "";
     image.style.height = "";
-    constrainImage(image);
+    if (!image.closest(".carousel")) {
+      image.classList.add("constrained");
+      image.figure = image.closest("figure");
+      image.constrainer = image.figure.parentNode;
+      allFigureImages.push(image);
+    }
+    allConstrainableImages.push(image);
     window.requestAnimationFrame(() => {
-      image.classList.add("constrainable-image-zoom-transition");
+      image.classList.add("zoom-transition");
       image.addEventListener("click", constrainableImgClick);
     });
   }
@@ -590,6 +601,7 @@ class Carousel {
     let maxOriginalWidthInPx = 0;
     let minOriginalWidthInPx = Infinity;
     for (const img of this.imgs) {
+      console.log("img.originalWidthInPx: ", img.originalWidthInPx);
       if (img.originalWidthInPx > maxOriginalWidthInPx)
         maxOriginalWidthInPx = img.originalWidthInPx;
       if (img.originalWidthInPx < minOriginalWidthInPx)
@@ -609,7 +621,9 @@ class Carousel {
     this.minOriginalWidthInPx = minOriginalWidthInPx;
     this.maxOriginalWidth = maxOriginalWidthInPx + "px";
 
-    this.widescreenPrevBtn = (() => {
+    console.log("maxOriginalWidth:", this.maxOriginalWidth);
+
+    this.unconstrainedUIPrevBtn = (() => {
       const btn = document.createElement("button");
       btn.className = "carousel__nav-button carousel__nav-item--prev";
       btn.innerHTML = '<img src="./img/carousel-prev-icon.svg" alt="Previous">';
@@ -617,7 +631,7 @@ class Carousel {
       return btn;
     })();
 
-    this.widescreenNextBtn = (() => {
+    this.unconstrainedUINextBtn = (() => {
       const btn = document.createElement("button");
       btn.className = "carousel__nav-button carousel__nav-item--next";
       btn.innerHTML = '<img src="./img/carousel-next-icon.svg" alt="Next">';
@@ -625,7 +639,7 @@ class Carousel {
       return btn;
     })();
 
-    this.touchscreenFstBtn = (() => {
+    this.constrainedUIFstBtn = (() => {
       const btn = document.createElement("button");
       btn.className = "carousel__nav-button carousel__nav-item--first";
       btn.innerHTML =
@@ -637,7 +651,7 @@ class Carousel {
       return btn;
     })();
 
-    this.touchscreenLstBtn = (() => {
+    this.constrainedUILstBtn = (() => {
       const btn = document.createElement("button");
       btn.className = "carousel__nav-button carousel__nav-item--last";
       btn.innerHTML = '<img src="./img/carousel-jump-to-end.svg" alt="Last">';
@@ -648,19 +662,19 @@ class Carousel {
       return btn;
     })();
 
-    this.touchscreenPrevBtn = this.widescreenPrevBtn.cloneNode(true);
-    this.touchscreenNextBtn = this.widescreenNextBtn.cloneNode(true);
+    this.constrainedUIPrevBtn = this.unconstrainedUIPrevBtn.cloneNode(true);
+    this.constrainedUINextBtn = this.unconstrainedUINextBtn.cloneNode(true);
 
-    this.doOnClickAndOnHold(this.touchscreenPrevBtn, () => {
+    this.doOnClickAndOnHold(this.constrainedUIPrevBtn, () => {
       this.nudgeCarouselItem(-1);
     });
-    this.doOnClickAndOnHold(this.touchscreenNextBtn, () => {
+    this.doOnClickAndOnHold(this.constrainedUINextBtn, () => {
       this.nudgeCarouselItem(1);
     });
-    this.doOnClickAndOnHold(this.widescreenPrevBtn, () => {
+    this.doOnClickAndOnHold(this.unconstrainedUIPrevBtn, () => {
       this.nudgeCarouselItem(-1);
     });
-    this.doOnClickAndOnHold(this.widescreenNextBtn, () => {
+    this.doOnClickAndOnHold(this.unconstrainedUINextBtn, () => {
       this.nudgeCarouselItem(1);
     });
 
@@ -693,17 +707,17 @@ class Carousel {
       return progressCounter;
     })();
 
-    this.touchscreenNav = (() => {
-      const touchscreenNav = document.createElement("div");
+    this.constrainedNav = (() => {
+      const constrainedNav = document.createElement("div");
 
-      touchscreenNav.className = "carousel__constrained-nav";
-      touchscreenNav.appendChild(this.touchscreenFstBtn);
-      touchscreenNav.appendChild(this.touchscreenPrevBtn);
-      touchscreenNav.appendChild(this.progressCounter);
-      touchscreenNav.appendChild(this.touchscreenNextBtn);
-      touchscreenNav.appendChild(this.touchscreenLstBtn);
+      constrainedNav.className = "carousel__constrained-nav";
+      constrainedNav.appendChild(this.constrainedUIFstBtn);
+      constrainedNav.appendChild(this.constrainedUIPrevBtn);
+      constrainedNav.appendChild(this.progressCounter);
+      constrainedNav.appendChild(this.constrainedUINextBtn);
+      constrainedNav.appendChild(this.constrainedUILstBtn);
 
-      return touchscreenNav;
+      return constrainedNav;
     })();
 
     [this.indicators, this.indicator_dots] = (() => {
@@ -757,24 +771,24 @@ class Carousel {
     }
   }
 
-  attachWidescreenNav() {
-    this.prependToCarousel(this.widescreenPrevBtn);
-    this.appendToCarousel(this.widescreenNextBtn);
+  attachUnconstrainedNav() {
+    this.prependToCarousel(this.unconstrainedUIPrevBtn);
+    this.appendToCarousel(this.unconstrainedUINextBtn);
     this.appendToContainer(this.indicators);
   }
 
-  removeWidescreenNav() {
-    this.removeFromCarousel(this.widescreenPrevBtn);
-    this.removeFromCarousel(this.widescreenNextBtn);
+  removeUnconstrainedNav() {
+    this.removeFromCarousel(this.unconstrainedUIPrevBtn);
+    this.removeFromCarousel(this.unconstrainedUINextBtn);
     this.removeFromContainer(this.indicators);
   }
 
-  attachTouchscreenNav() {
-    this.appendToContainer(this.touchscreenNav);
+  attachConstrainedNav() {
+    this.appendToContainer(this.constrainedNav);
   }
 
-  removeTouchscreenNav() {
-    this.removeFromContainer(this.touchscreenNav);
+  removeConstrainedNav() {
+    this.removeFromContainer(this.constrainedNav);
   }
 
   phase1ButtonHeightComputation = () => {
@@ -798,27 +812,25 @@ class Carousel {
     this.buttonMargin = this.phase1ButtonMarginComputation();
   }
 
-  phase2resetButtonStyles = () => {
-    this.widescreenPrevBtn.style.height = this.buttonHeight;
-    this.widescreenNextBtn.style.height = this.buttonHeight;
+  phase2ResetButtonStyles = () => {
+    this.unconstrainedUIPrevBtn.style.height = this.buttonHeight;
+    this.unconstrainedUINextBtn.style.height = this.buttonHeight;
 
-    this.touchscreenPrevBtn.style.height = this.buttonHeight;
-    this.touchscreenNextBtn.style.height = this.buttonHeight;
-    this.touchscreenFstBtn.style.height = this.buttonHeight;
-    this.touchscreenLstBtn.style.height = this.buttonHeight;
+    this.constrainedUIPrevBtn.style.height = this.buttonHeight;
+    this.constrainedUINextBtn.style.height = this.buttonHeight;
+    this.constrainedUIFstBtn.style.height = this.buttonHeight;
+    this.constrainedUILstBtn.style.height = this.buttonHeight;
 
-    this.widescreenPrevBtn.style.margin = `0 ${this.buttonMargin}`;
-    this.widescreenNextBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.unconstrainedUIPrevBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.unconstrainedUINextBtn.style.margin = `0 ${this.buttonMargin}`;
 
-    this.touchscreenPrevBtn.style.margin = `0 ${this.buttonMargin}`;
-    this.touchscreenNextBtn.style.margin = `0 ${this.buttonMargin}`;
-    this.touchscreenFstBtn.style.margin = `0 ${this.buttonMargin}`;
-    this.touchscreenLstBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.constrainedUIPrevBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.constrainedUINextBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.constrainedUIFstBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.constrainedUILstBtn.style.margin = `0 ${this.buttonMargin}`;
   };
 
   onScreenWidthChangePhase2(imposedButtonHeight, imposedButtonWidth) {
-    console.log("in phase 2 with:", imposedButtonHeight, imposedButtonWidth);
-
     let unconstrainedUIWidth =
       this.maxOriginalWidthInPx +
       2 * imposedButtonHeight +
@@ -826,18 +838,18 @@ class Carousel {
 
     if (this.containerWidth >= unconstrainedUIWidth) {
       this.bigEnoughContainerForUnconstrainedUI = true;
-      this.removeTouchscreenNav();
-      this.attachWidescreenNav();
+      this.removeConstrainedNav();
+      this.attachUnconstrainedNav();
     } else {
       this.bigEnoughContainerForUnconstrainedUI = false;
-      this.removeWidescreenNav();
-      this.attachTouchscreenNav();
+      this.removeUnconstrainedNav();
+      this.attachConstrainedNav();
     }
 
     this.buttonHeight = imposedButtonHeight + "px";
     this.buttonMargin = imposedButtonWidth + "px";
 
-    this.phase2resetButtonStyles();
+    this.phase2ResetButtonStyles();
     this.updateConstrained();
   }
 
@@ -851,12 +863,27 @@ class Carousel {
     });
   }
 
+  ourConstrainImage = (image) => {
+    image.classList.remove("unconstrained");
+    image.classList.add("constrained");
+    image.style.width = `min(${this.containerWidth + 'px'}, ${image.originalWidth})`;
+  };
+
+  ourUnconstrainImage = (image) => {
+    image.classList.remove("constrained");
+    image.classList.add("unconstrained");
+    image.style.width = image.originalWidth;
+  };
+
   updateConstrained() {
-    if (this.bigEnoughContainerForUnconstrainedUI === undefined) return;
+    if (this.bigEnoughContainerForUnconstrainedUI === undefined) {
+      console.warn("carousel.updateConstrained called before onResize (?)");
+    }
+
     if (!this.bigEnoughContainerForUnconstrainedUI && this.constrained) {
-      this.imgs.forEach(constrainImage);
+      this.imgs.forEach(this.ourConstrainImage);
     } else {
-      this.imgs.forEach(unconstrainImage);
+      this.imgs.forEach(this.ourUnconstrainImage);
     }
   }
 
@@ -942,19 +969,34 @@ const onLoad = () => {
   setupMenuTooltips();
 };
 
-// event listeners
 const onResize = () => {
-  let z = window.innerWidth;
-  if (z == screenWidth) {
-    return;
-  }
-  screenWidth = z;
+  let tmp = window.innerWidth;
+  if (tmp == screenWidth) return;
+  screenWidth = tmp;
   instantRecenter();
   resetScreenWidthDependentVars();
   setTimeout(adjustMathAlignment, 60);
+  for (const image of allConstrainableImages) {
+    image.classList.remove("zoom-transition");
+  }
+  figureImagesResizeHandler();
+  carouselsResizeHandler();
+  window.requestAnimationFrame(() => {    
+    for (const image of allConstrainableImages) {
+      image.classList.add("zoom-transition");
+    }
+  });
+};
 
+const figureImagesResizeHandler = () => {
+  for (const image of allFigureImages) {
+    if (image.classList.contains("constrained"))
+      constrainFigureImage(image);
+  }
+}
+
+const carouselsResizeHandler = () => {
   if (allCarouselObjects.length === 0) return;
-
   let totalButtonHeights = 0;
   for (const carousel of allCarouselObjects) {
     carousel.onScreenWidthChangePhase1();
@@ -964,10 +1006,10 @@ const onResize = () => {
   for (const carousel of allCarouselObjects) {
     carousel.onScreenWidthChangePhase2(
       avgButtonHeight,
-      avgButtonHeight * carousel.buttonMargin / carousel.buttonHeight,
+      (avgButtonHeight * carousel.buttonMargin) / carousel.buttonHeight
     );
   }
-};
+}
 
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();

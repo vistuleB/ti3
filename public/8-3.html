@@ -279,33 +279,39 @@ carry1, 0, 1, 0,&lt;,&lt;,&lt;
       "zusammenkleben" in ein neues Band, in welcher jede Zelle $k$
       Symbole enthalten kann:
     </p>
-    <figure>
-      <img
-        src="img/turing-machines/example-3-multitape/multitape-to-onetape.svg"
-        style="height: 12em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/turing-machines/example-3-multitape/multitape-to-onetape.svg"
+          style="height: 12em"
+        >
+      </figure>
+    </div>
     <p>
       Das Problem sind nun die Köpfe. Wenn wir diese Idee naiv
       umsetzen würden, hätte unsere Maschine $M'$ zwar ein Band, dafür
       drei Köpfe auf diesem:
     </p>
-    <figure>
-      <img
-        src="img/turing-machines/example-3-multitape/multitape-to-onetape-three-heads.svg"
-        style="height: 15em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/turing-machines/example-3-multitape/multitape-to-onetape-three-heads.svg"
+          style="height: 15em"
+        >
+      </figure>
+    </div>
     <p>
       Wir lösen dies, indem wir die Kopfpositionen in das Band selbst
       reinschreiben:
     </p>
-    <figure>
-      <img
-        src="img/turing-machines/example-3-multitape/multitape-to-onetape-one-head.svg"
-        style="height: 12em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/turing-machines/example-3-multitape/multitape-to-onetape-one-head.svg"
+          style="height: 12em"
+        >
+      </figure>
+    </div>
     <p>
       Das neue Bandalphabet ist also nicht $\Gamma^k$ sondern
       <span class="nowrap">$(\Gamma \times \{\texttt{head}, \texttt{nohead}\} )^k$.</span>
@@ -1016,22 +1022,26 @@ r,   c, y, -, &gt;  <span class="actual-orange-comment">// für jedes Zeichen c<
       gibt es gar keine Möglichkeit. Dies ist einfach: sollte es mehr
       als zwei Möglichkeiten geben, so führen wir Zwischenzustände ein:
     </p>
-    <figure>
-      <img
-        src="img/turing-machines/nondeterminism/three-to-two.svg"
-        style="height: 10em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/turing-machines/nondeterminism/three-to-two.svg"
+          style="height: 10em"
+        >
+      </figure>
+    </div>
     <p>
       Auf der Menge der Konfigurationen schaut das dann noch
       intuitiver aus:
     </p>
-    <figure>
-      <img
-        src="img/turing-machines/nondeterminism/three-to-two-2.svg"
-        style="height: 10em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/turing-machines/nondeterminism/three-to-two-2.svg"
+          style="height: 10em"
+        >
+      </figure>
+    </div>
     <p>
       Sollte ein Paar $(q,c)$ weniger als zwei Folgemöglichkeiten
       geben, so erfinden wir einfach neue, die jedoch direkt
@@ -1045,13 +1055,15 @@ r,   c, y, -, &gt;  <span class="actual-orange-comment">// für jedes Zeichen c<
       Band eine $0$ liest, nimm den oberen Pfeil, der von $q,c$
       ausgeht; wenn Du eine $1$ liest, nimm den unteren Pfeil.
     </p>
-    <figure>
-      <img
-        loading="lazy"
-        src="img/turing-machines/nondeterminism/two-to-det.svg"
-        style="height: 10em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          loading="lazy"
+          src="img/turing-machines/nondeterminism/two-to-det.svg"
+          style="height: 10em"
+        >
+      </figure>
+    </div>
     <p>
       Falls wir auf dem zweiten Band einem anderen Zeichen begegnen (
       $\square$ oder sonst etwas, das weder 0 noch 1 ist), dann lehnen

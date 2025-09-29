@@ -67,6 +67,7 @@ pub fn main_pipeline()  -> List(Pipe) {
   ]
 
   let assert Ok(pseudowell) = infra.expand_selector_shorthand("div.pseudowell")
+  let assert Ok(figure__container) = infra.expand_selector_shorthand("div.figure__container")
 
   // use 'dl.table_marker()' desugarer to mark a line 
   // in the table; (with '--table' printout)
@@ -145,7 +146,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     pp.markdown_link_splitting(["MathBlock", "Math"]),
-    pp.symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
+    pp.barbaric_symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
     pp.splitting_empty_lines_cleanup(),
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math", "pre", "code"]),
     pp.splitting_empty_lines_cleanup(),
@@ -201,6 +202,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.append_class_to_child_if_is_one_of(#("Sub", "main-column", main_column_things)),
       dl.replace_with_arbitrary(#("QED", qed)),
       dl.rename_with_attributes(#("CircleX", "img", [#("class", "circle-X-img"), #("src", "img/context-free/LR/circle-X.svg")])),
+      dl.wrap_with_custom_if_not_child_of(#("figure", figure__container, ["Sub", "Chapter"])),
       dl.wrap_with_custom_if_child_of(#("figure", pseudowell, ["Sub", "Chapter"])),
       dl.wrap_with_custom_if_child_of(#("CarouselContainer", pseudowell, ["Sub", "Chapter"])),
       dl.append_class__batch([

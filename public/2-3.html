@@ -146,12 +146,14 @@
       Bauen Sie einen Schaltkreis oneBitAdder:
       $\{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende Funktionalität:
     </p>
-    <figure>
-      <img
-        src="img/circuits/onebitadder.svg"
-        style="height:10em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/onebitadder.svg"
+          style="height:10em"
+        >
+      </figure>
+    </div>
     <p>
       Versuchen Sie, so wenig Gates wie möglich zu verwenden.
       Entscheiden Sie sich im Voraus, ob Sie beliebigen Fan-in erlauben
@@ -511,12 +513,14 @@
       mit vier Inputs
       und zwei Outputs:
     </p>
-    <figure>
-      <img
-        src="img/circuits/pg-gate.svg"
-        style="height:10em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/pg-gate.svg"
+          style="height:10em"
+        >
+      </figure>
+    </div>
     <p>
       Mit Hilfe dieses Gates können wir $p_{c0*^k}, g_{c0*^k}$ und
       $p_{c1*^k}, g_{c1*^k}$ zu $p_{c*^{k+1}}, g_{c*^{k+1}}$
@@ -527,12 +531,14 @@
       Für $n=16$ schaut das so
       aus:
     </p>
-    <figure>
-      <img
-        src="img/circuits/pg-all-gates.svg"
-        style="height:18em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/pg-all-gates.svg"
+          style="height:18em"
+        >
+      </figure>
+    </div>
     <p>
       Jede Kante steht hier für zwei gebündelte Kanten, nämlich $p_I$
       und
@@ -664,12 +670,14 @@
       $[l+1,k]$ ein Binärintervall ist. Wir zerlegen nun
       $[0,k] = [0,l] \cup [k+1,l]$ und berechnen $pg_{[0,k]}$ so:
     </p>
-    <figure>
-      <img
-        src="img/circuits/pg0k.svg"
-        style="height:5em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/pg0k.svg"
+          style="height:5em"
+        >
+      </figure>
+    </div>
     <p>
       Der Wert $pg_{[l+1,k]}$ ist bereits ein Binärintervall, kann
       also direkt aus dem vorherigen Schaltkreis abgelesen werden; der
@@ -719,12 +727,14 @@
       Das Maximum wird erreicht, wenn
       <span class="nowrap">$k = (1...10)_2$:</span>
     </p>
-    <figure>
-      <img
-        src="img/circuits/pg-0-30.svg"
-        style="height:18em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/pg-0-30.svg"
+          style="height:18em"
+        >
+      </figure>
+    </div>
     <p>
       <b>Tiefe.</b>
       Jedes
@@ -766,12 +776,14 @@
       die Konstruktion für
       <span class="nowrap">$n=16$:</span>
     </p>
-    <figure>
-      <img
-        src="img/circuits/pg-prefices-16.svg"
-        style="height:20em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/pg-prefices-16.svg"
+          style="height:20em"
+        >
+      </figure>
+    </div>
     <p>
       Wir benötigen also (weniger als) $n$ viele $pg$ -Gates; jedes
       davon besteht wiederum aus 4 Basis-Gates
@@ -784,12 +796,14 @@
       Auch, um $g_{[0,k]}$ aus $pg_{[0,l]}$ und $pg_{[l+1,k]}]$ zu
       berechnen, brauchen wir $p_{[0,l]}$ nicht:
     </p>
-    <figure>
-      <img
-        src="img/circuits/pg-gadget-no-need-p.svg"
-        style="height:15em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/pg-gadget-no-need-p.svg"
+          style="height:15em"
+        >
+      </figure>
+    </div>
     <p>
       Es reichen also in der Tat $2n$ Basis-Gates aus.
       <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>

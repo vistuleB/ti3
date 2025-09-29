@@ -191,12 +191,14 @@
       Partialordnungen auf Mengen $\{0,1\}^2$ bzw.
       <span class="nowrap">$\{0,1\}^3$:</span>
     </p>
-    <figure>
-      <img
-        src="img/circuits/hasse-diagram.svg"
-        style="height:10em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/hasse-diagram.svg"
+          style="height:10em"
+        >
+      </figure>
+    </div>
     <p>
       und überlegen sich, wie Sie die vier bzw. acht Knoten auf
       monotone Weise in einen 1-Bereich und einen 0-Bereich aufteilen
@@ -216,12 +218,14 @@
       einhalten, aber beliebig viele AND-
       und OR-Gates.
     </p>
-    <figure>
-      <img
-        src="img/circuits/triple-negator.svg"
-        style="height:10em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/triple-negator.svg"
+          style="height:10em"
+        >
+      </figure>
+    </div>
   </div>
   <h2 class="main-column topic-announcement">
     Lösungen zu den Übungsaufgaben
@@ -566,12 +570,14 @@
         diesem Falle mit einem
         <span class="nowrap"><code>if-then-else</code>-Gate:</span>
       </p>
-      <figure>
-        <img
-          src="img/circuits/top-down-if-then-else.svg"
-          style="height:15em"
-        >
-      </figure>
+      <div class="figure__container">
+        <figure>
+          <img
+            src="img/circuits/top-down-if-then-else.svg"
+            style="height:15em"
+          >
+        </figure>
+      </div>
       <p>
         Ich behaupte, dass obiger Schaltkreis tatsächlich $f$
         berechnet. Falls dies noch nicht klar sein sollte, können wir
@@ -665,12 +671,14 @@
       <span class="nowrap"><code>if-then-else</code>-Gate</span>
       und erhalten:
     </p>
-    <figure>
-      <img
-        src="img/circuits/top-down-if-then-else-2.svg"
-        style="height:15em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/top-down-if-then-else-2.svg"
+          style="height:15em"
+        >
+      </figure>
+    </div>
     <p>
       Die "durchgetrichenen" Kabel bedeuten, dass hier mehrere Kabel
       parallel laufen (also hier $n-1$ viele). Erkennen Sie das
@@ -680,12 +688,14 @@
       nicht monoton. Unser Schaltkreis schaut also in Wirklichkeit so
       aus:
     </p>
-    <figure>
-      <img
-        src="img/circuits/top-down-if-then-else-3.svg"
-        style="height:18em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/top-down-if-then-else-3.svg"
+          style="height:18em"
+        >
+      </figure>
+    </div>
     <p>
       und enthält ein NOT-Gate. Aber klar: wir können natürlich nicht
       die Konstruktion aus dem vorherigen Beweis wiederholen und
@@ -698,12 +708,14 @@
       Wege ein: wir können das NOT-Gate einfach durch ein gate-loses
       Kabel ersetzen oder das Kabel einfach ganz weglassen, also:
     </p>
-    <figure>
-      <img
-        src="img/circuits/top-down-if-then-else-4.svg"
-        style="height:18em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/top-down-if-then-else-4.svg"
+          style="height:18em"
+        >
+      </figure>
+    </div>
     <p>
       Der linke Schaltkreis gibt uns, als Formel geschrieben,
     </p>
@@ -731,12 +743,14 @@
       Input, kann also weggelassen werden (d.h. durch ein Kabel ersetzt
       werden); wir erhalten den monotonen Schaltkreis
     </p>
-    <figure>
-      <img
-        src="img/circuits/top-down-if-then-else-monotone.svg"
-        style="height:18em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/top-down-if-then-else-monotone.svg"
+          style="height:18em"
+        >
+      </figure>
+    </div>
     <p>
       bzw. als Formel:
     </p>
@@ -869,12 +883,14 @@
       einfach $f$ schreiben); per Induktion können wir für $f_1, f_0$
       monotone Schaltkreise finden, und somit ist
     </p>
-    <figure>
-      <img
-        src="img/circuits/top-down-if-then-else-monotone-finished.svg"
-        style="height:18em"
-      >
-    </figure>
+    <div class="figure__container">
+      <figure>
+        <img
+          src="img/circuits/top-down-if-then-else-monotone-finished.svg"
+          style="height:18em"
+        >
+      </figure>
+    </div>
     <p>
       ein monotoner Schaltkreis für
       <span class="nowrap">$f$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
