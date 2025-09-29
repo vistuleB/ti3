@@ -411,11 +411,7 @@ const adjustMathAlignment = () => {
 const constrainImage = (image) => {
   image.classList.remove("unconstrained");
   image.classList.add("constrained");
-  let z = `min(100%, ${image.originalWidth})`;
-  if (image.id === "mini") {
-    console.log("z:", z);
-  }
-  image.style.width = z;
+  image.style.width = `min(100%, ${image.originalWidth})`;
 };
 
 const unconstrainImage = (image) => {
@@ -432,7 +428,7 @@ const toggleImageZoom = (image) => {
   }
 };
 
-const figureImgClick = (e) => {
+const constrainableImgClick = (e) => {
   if (!isPageCentered) return;
   const image = e.srcElement;
   const carousel = image.closest(".carousel");
@@ -557,8 +553,8 @@ const setupImages = () => {
     image.style.height = "";
     constrainImage(image);
     window.requestAnimationFrame(() => {
-      image.classList.add("image-zoom-transition");
-      image.addEventListener("click", figureImgClick);
+      image.classList.add("constrainable-image-zoom-transition");
+      image.addEventListener("click", constrainableImgClick);
     });
   }
 };
@@ -676,7 +672,7 @@ class Carousel {
 
     this.progressCounter = (() => {
       const progressCounter = document.createElement("div");
-      progressCounter.className = "carousel__progress-counter";
+      progressCounter.className = "carousel__constrained-progress-counter";
 
       const slash = (() => {
         const slash = document.createElement("span");
@@ -700,7 +696,7 @@ class Carousel {
     this.touchscreenNav = (() => {
       const touchscreenNav = document.createElement("div");
 
-      touchscreenNav.className = "carousel__mobile-nav";
+      touchscreenNav.className = "carousel__constrained-nav";
       touchscreenNav.appendChild(this.touchscreenFstBtn);
       touchscreenNav.appendChild(this.touchscreenPrevBtn);
       touchscreenNav.appendChild(this.progressCounter);

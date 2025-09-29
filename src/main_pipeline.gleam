@@ -207,7 +207,6 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("TopicAnnouncement", "topic-announcement"),
         #("SubtopicAnnouncement", "subtopic-announcement"),
       ]),
-      dl.table_marker(),
       dl.rename__batch([
         #("MathBlock", "div"),
         #("Index", "div"),
