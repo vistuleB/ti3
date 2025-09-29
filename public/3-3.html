@@ -13,30 +13,16 @@
 <body class="page-sub chapter-3 sub-3">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./3-2.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 3.2<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >3.2 
-            Beispiele abzählbar unendlicher Mengen</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./3-2.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 3.2</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./3-4.html"
-          id="next-page"
-        >Kapitel 3.4 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >3.4 
-            Die Cantorsche Diagonalisation: $\N \not \approx \R$</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./3-4.html"
+        id="next-page"
+      >Kapitel 3.4 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -68,10 +54,7 @@
     Zahlen gibt als natürliche; dass also $\R$ nicht abzählbar ist.
     Aber eins nach dem anderen.
   </p>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Beobachtung</b>
       <b>3.3.1</b>
@@ -123,20 +106,14 @@
       <span class="nowrap">$(0,1)$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
     </p>
   </div>
-  <div
-    _="ExerciseCounter 1"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 3.3.1</b>
       Zeigen Sie
       <span class="nowrap">$\R \approx \R^+$.</span>
     </p>
   </div>
-  <div
-    _="ExerciseCounter 2"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 3.3.2</b>
       Zeigen Sie, dass $\R_0^+ \approx \R^+$ gilt. Sie müssen "die 0
@@ -145,7 +122,6 @@
   </div>
   <div
     id="_6_hgi_"
-    _="ExerciseCounter 3"
     class="well exercise out"
   >
     <p>
@@ -179,7 +155,6 @@
   </p>
   <div
     id="_7_hgi_"
-    _="StatementCounter 2"
     class="well statement out"
   >
     <p>
@@ -257,10 +232,7 @@
       Lücken füllen, die $f$ lässt - also
       <span class="nowrap">$X$.</span>
     </p>
-    <div
-      _="ExerciseCounter 4"
-      class="well exercise"
-    >
+    <div class="well exercise">
       <p>
         <b>Übungsaufgabe 3.3.4</b>
         Sei
@@ -275,10 +247,7 @@
         $Y \approx X \cup Y$ gilt.
       </p>
     </div>
-    <div
-      _="ExerciseCounter 5"
-      class="well exercise"
-    >
+    <div class="well exercise">
       <p>
         <b>Übungsaufgabe 3.3.5</b>
         Verwenden Sie die vorherige Übungsaufgabe, um $Y$ zu
@@ -287,11 +256,7 @@
         hilft Ihnen folgendes Bild:
       </p>
       <figure>
-        <img
-          src="./img/infinite-sets/interval-sequences-fill-the-gaps.svg"
-          class="constrained transition-all"
-          onClick="onImgClick(event)"
-        >
+        <img src="./img/infinite-sets/interval-sequences-fill-the-gaps.svg">
       </figure>
     </div>
     <p>
@@ -305,7 +270,6 @@
   </p>
   <div
     id="_8_hgi_"
-    _="StatementCounter 3"
     class="well statement out"
   >
     <p>
@@ -396,22 +360,22 @@
     Schweif von Einsen. Sie ist hochgradig nichtstetig. Dennoch können
     wir versuchen, sie zu plotten:
   </p>
-  <figure class="main-column">
-    <img
-      src="./img/infinite-sets/bijection-square-interval.png"
-      style="height: 20em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-    <figcaption>
-      Plot der (Fast-) Bijektion
-      <span class="nowrap">$f : [0,1) \times [0,1) \rightarrow [0,1)$.</span>
-      Ausgabewerte sind
-      mit Farbwerten / Helligkeitswerten codiert. Grün/blass steht
-      für niedrige Werte (nahe der 0), rot/kräftig für hohe (nahe der
-      1).
-    </figcaption>
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="./img/infinite-sets/bijection-square-interval.png"
+        style="height: 20em"
+      >
+      <figcaption>
+        Plot der (Fast-) Bijektion
+        <span class="nowrap">$f : [0,1) \times [0,1) \rightarrow [0,1)$.</span>
+        Ausgabewerte sind
+        mit Farbwerten / Helligkeitswerten codiert. Grün/blass steht
+        für niedrige Werte (nahe der 0), rot/kräftig für hohe (nahe der
+        1).
+      </figcaption>
+    </figure>
+  </div>
   <p class="main-column">
     Als nächstes versuche ich, die Umkehrfunktion
     $f^{-1} : [0,1) \mapsto [0,1) \times [0,1)$ zu skizzieren. Das ist
@@ -438,10 +402,7 @@
     also
     <span class="nowrap">$f^{-1}(1/7) = (2/7, 1/7)$.</span>
   </p>
-  <div
-    _="StatementCounter 4"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Beobachtung</b>
       <b>3.3.4</b>
@@ -501,14 +462,14 @@
     nach rechts unten und bewegt sich nach rechts oben. Grafisch stelle
     ich das wie folgt (und etwas unbeholfen) dar:
   </p>
-  <figure class="main-column">
-    <img
-      src="./img/infinite-sets/interval-to-square.svg"
-      style="height: 10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="./img/infinite-sets/interval-to-square.svg"
+        style="height: 10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Beachten Sie, dass die Verbindungslinien zwischen den Kreisen
     Sprünge sind, also Unstetigkeitsstellen von
@@ -526,32 +487,24 @@
           <img
             src="./img/infinite-sets/interval-to-square-animation/figures-01-01.svg"
             style="height: 15em"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
           >
         </div>
         <div class="carousel__item">
           <img
             src="./img/infinite-sets/interval-to-square-animation/figures-01-02.svg"
             style="height: 15em"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
           >
         </div>
         <div class="carousel__item">
           <img
             src="./img/infinite-sets/interval-to-square-animation/figures-01-03.svg"
             style="height: 15em"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
           >
         </div>
         <div class="carousel__item">
           <img
             src="./img/infinite-sets/interval-to-square-animation/figures-01-04.svg"
             style="height: 15em"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
           >
         </div>
       </div>
@@ -565,10 +518,7 @@
     Menge aller unendlichen Folgen reeller Zahlen:
     <span class="nowrap">$r_1, r_2, r_3, \dots$.</span>
   </p>
-  <div
-    _="StatementCounter 5"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>3.3.5</b>
@@ -602,11 +552,7 @@
       sieht unsere Tabelle so aus:
     </p>
     <figure>
-      <img
-        src="./img/infinite-sets/table-infinite-sequences.svg"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
-      >
+      <img src="./img/infinite-sets/table-infinite-sequences.svg">
     </figure>
     <p>
       Wir wollen jetzt eine Bijektion
@@ -616,22 +562,14 @@
       Diagonalen und arbeiten jede separat ab:
     </p>
     <figure>
-      <img
-        src="./img/infinite-sets/table-infinite-sequences-with-blue.svg"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
-      >
+      <img src="./img/infinite-sets/table-infinite-sequences-with-blue.svg">
     </figure>
     <p>
       Schließlich definieren wir unsere Folge
       <span class="nowrap">$s_1 s_2 s_3 \dots \in \cuben$:</span>
     </p>
     <figure>
-      <img
-        src="./img/infinite-sets/table-infinite-sequences-with-s.svg"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
-      >
+      <img src="./img/infinite-sets/table-infinite-sequences-with-s.svg">
     </figure>
     <p>
       <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
@@ -705,7 +643,6 @@
   </div>
   <div
     id="_9_hgi_"
-    _="StatementCounter 6"
     class="well statement out"
   >
     <p>
@@ -745,7 +682,6 @@
   </p>
   <div
     id="_10_hgi_"
-    _="StatementCounter 7"
     class="well statement out"
   >
     <p>
@@ -785,10 +721,7 @@
     zusammengefasst habe. Punkt 4 folgt nämlich nicht unmittelbar aus
     Punkt 3 sondern erfordert einen separaten Beweis.
   </p>
-  <div
-    _="ExerciseCounter 6"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 3.3.6</b>
       Beweisen Sie so viele Punkte von
@@ -821,10 +754,7 @@
     also die Menge
     aller Teilmengen.
   </p>
-  <div
-    _="ExerciseCounter 7"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 3.3.7</b>
       Zeigen Sie, dass $2^{\N} \approx \cuben$ gilt.
@@ -909,10 +839,7 @@
     wählen, sie finden immer noch ein $B$ dazwischen:
     <span class="nowrap">$\{0\} \subsetneq B \subsetneq A$.</span>
   </p>
-  <div
-    _="StatementCounter 8"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>3.3.8</b>
@@ -940,10 +867,7 @@
     aber es gibt keine Menge zwischen den
     beiden.
   </p>
-  <div
-    _="ExerciseCounter 8"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 3.3.8</b>
       Finden Sie in $(2^\N, \subseteq)$ eine Kette

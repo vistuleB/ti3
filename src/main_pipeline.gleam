@@ -1,6 +1,8 @@
 import desugarer_library as dl
 import infrastructure.{type Pipe} as infra
 import gleam/list
+import gleam/io
+import gleam/string.{inspect as ins}
 import prefabricated_pipelines as pp
 import group_replacement_splitting as grs
 import selector_library as sl
@@ -68,6 +70,10 @@ pub fn main_pipeline()  -> List(Pipe) {
 
   // use 'dl.table_marker()' desugarer to mark a line 
   // in the table; (with '--table' printout)
+
+  let assert Ok(pseudowell_elt) = infra.expand_selector_shorthand("div.pseudowell")
+
+  io.println(ins(pseudowell_elt))
 
   [
     [
@@ -171,12 +177,12 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     [
       dl.fold_contents_into_text("Math"),
-      dl.wrap_children_in(#("Carousel","CarouselItems")),
+      dl.wrap_children_in(#("Carousel", "CarouselItems")),
       dl.wrap(#("Carousel", "CarouselContainer")),
       dl.append_attribute__batch([
         #("Index", "class", "index"),
         #("Chapter", "class", "chapter"),
-        #("ChapterTitle","class", "main-column page-title"),
+        #("ChapterTitle", "class", "main-column page-title"),
         #("Sub", "class", "subchapter"),
         #("SubTitle", "class", "main-column page-title"),
         #("MathBlock", "class", "math-block"),
@@ -193,14 +199,14 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.wrap_with_if_child_of(#("pre", "div", ["Sub", "Chapter"])),
       dl.wrap_with_if_child_of(#("ol", "div", ["Sub", "Chapter"])),
       dl.wrap_with_if_child_of(#("ul", "div", ["Sub", "Chapter"])),
+      dl.wrap_with_if_child_of(#("figure", "Pseudowell", ["Sub", "Chapter"])),
       dl.append_class_to_child_if_has_class(#("Chapter", "out", "well")),
       dl.append_class_to_child_if_has_class(#("Sub", "out", "well")),
       dl.append_class_to_child_if_is_one_of(#("Chapter", "main-column", possible_outer_elements)),
       dl.append_class_to_child_if_is_one_of(#("Sub", "main-column", possible_outer_elements)),
-      dl.append_attribute__outside(#("img", "class", "constrained transition-all"), []),
-      dl.append_attribute__outside(#("img", "onClick", "onImgClick(event)"), []),
       dl.replace_with_arbitrary(#("QED", qed)),
       dl.rename_with_attributes(#("CircleX", "img", [#("class", "circle-X-img"), #("src", "img/context-free/LR/circle-X.svg")])),
+      dl.rename_with_attributes(#("Pseudowell", "div", [#("class", "pseudowell")])),
       dl.append_class__batch([
         #("TopicAnnouncement", "topic-announcement"),
         #("SubtopicAnnouncement", "subtopic-announcement"),
@@ -229,7 +235,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("SubTheorem", "div"),
         #("NoWrap", "span"),
       ]),
-      dl.delete_attribute__batch([".", "counter", "title"]),
+      dl.delete_attribute__batch(["_", "counter", "title"]),
       dl.check_tags(#(post_transformation_approved_tags,"post-transformation")),
     ]
   ]

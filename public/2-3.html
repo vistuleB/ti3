@@ -13,30 +13,16 @@
 <body class="page-sub chapter-2 sub-3">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./2-2.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 2.2<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >2.2 
-            Wahrheitstabellen, CNF, DNF</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./2-2.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 2.2</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./2-4.html"
-          id="next-page"
-        >Kapitel 2.4 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >2.4 
-            Monotone Funktionen und monotone Schaltkreise</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./2-4.html"
+        id="next-page"
+      >Kapitel 2.4 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -122,14 +108,14 @@
     aus, wenn mindestens zwei ihrer drei Input-Bits 1 sind. Wir kürzen
     Sie im folgenden mit $M$ ab. Hier ist nun unser $n$ -Bit-Addierer:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/adder-ripple.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/adder-ripple.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Wir numerieren unsere Variablen von
     <span class="nowrap">$0, \dots,n-1$,</span>
@@ -154,10 +140,7 @@
     AND/OR/NOT zu basteln, haben wir mehr, allerdings in jedem Fall
     $O(n)$ viele.
   </p>
-  <div
-    _="ExerciseCounter 1"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.3.1</b>
       Bauen Sie einen Schaltkreis oneBitAdder:
@@ -167,8 +150,6 @@
       <img
         src="img/circuits/onebitadder.svg"
         style="height:10em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -230,14 +211,14 @@
     Beispiel den obigen Ripple-Carry-Adder nehmen und alles löschen,
     was nicht zur Berechnung von $c_{k+1}$ beiträgt:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/adder-ripple-only-carry.svg"
-      style="height:6em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/adder-ripple-only-carry.svg"
+        style="height:6em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Betrachten Sie
     <span class="nowrap">$(x_i,y_i)$.</span>
@@ -319,10 +300,7 @@
     sein, wenn an Stelle $b$ ein Carry nach $b+1$ rausgeschickt wird,
     falls eines von $a-1$ nach $a$ reingeschickt wird.
   </p>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition (Carry propagate / generate für Intervalle)</b>
       <b>2.3.1</b>
@@ -388,19 +366,17 @@
   <p class="main-column">
     und hier ein Bild zur Illustration:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/carry-generate-interval.svg"
-      style="height:11em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    ><br><img
-      src="img/circuits/carry-propagate-interval.svg"
-      style="height:11em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/carry-generate-interval.svg"
+        style="height:11em"
+      ><br><img
+        src="img/circuits/carry-propagate-interval.svg"
+        style="height:11em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Im Extremfall $a=b$ gilt
     <span class="nowrap">$g_{[a,a]} = g_a, p_{[a,a]} = p_a$,</span>
@@ -419,10 +395,7 @@
     gilt, wir also die Carrys direkt ablesen, zweitens wir die
     $g_{[a,b]}$ bequem rekursiv berechnen können:
   </p>
-  <div
-    _="StatementCounter 2"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Beobachtung</b>
       <b>2.3.2</b>
@@ -455,10 +428,7 @@
     Trick: wir beschränken uns auf besonders schöne Intervalle,
     <span class="nowrap">nämlich<i>Binärintervalle</i>.</span>
   </p>
-  <div
-    _="StatementCounter 3"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>2.3.3</b>
@@ -489,10 +459,7 @@
     <span class="nowrap">[11<b></b>]</span>
     notieren.
   </p>
-  <div
-    _="ExerciseCounter 2"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.3.2</b>
       Seit
@@ -501,10 +468,7 @@
       <span class="nowrap">$\{0,\dots,n-1\}$?</span>
     </p>
   </div>
-  <div
-    _="StatementCounter 4"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Lemma</b>
       <b>2.3.4</b>
@@ -551,8 +515,6 @@
       <img
         src="img/circuits/pg-gate.svg"
         style="height:10em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -569,8 +531,6 @@
       <img
         src="img/circuits/pg-all-gates.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -637,10 +597,7 @@
     und ist somit ein
     <i>monotoner Schaltkreis.</i>
   </p>
-  <div
-    _="StatementCounter 5"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Lemma</b>
       <b>2.3.5</b>
@@ -711,8 +668,6 @@
       <img
         src="img/circuits/pg0k.svg"
         style="height:5em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -768,8 +723,6 @@
       <img
         src="img/circuits/pg-0-30.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -817,8 +770,6 @@
       <img
         src="img/circuits/pg-prefices-16.svg"
         style="height:20em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -837,8 +788,6 @@
       <img
         src="img/circuits/pg-gadget-no-need-p.svg"
         style="height:15em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -878,10 +827,7 @@
     4 \ceil { \log_2 n } + 3\ .
     $$
   </div>
-  <div
-    _="ExerciseCounter 3"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.3.3</b>
       Bauen Sie einen Schaltkreis für die Boolesche Funktion

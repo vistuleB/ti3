@@ -13,30 +13,16 @@
 <body class="page-sub chapter-2 sub-1">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./2-0.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 2<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >2. 
-            Boolesche Schaltkreise (nicht im Sommersemester 2025)</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./2-0.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 2</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./2-2.html"
-          id="next-page"
-        >Kapitel 2.2 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >2.2 
-            Wahrheitstabellen, CNF, DNF</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./2-2.html"
+        id="next-page"
+      >Kapitel 2.2 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -49,10 +35,7 @@
     Für Boolesche Schaltkreise gibt es drei Komplexitätsparameter, die
     uns interessieren.
   </p>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>2.1.1</b>
@@ -81,19 +64,17 @@
     AND- und OR-Gates mit mehr als zwei Inputs als verschachteltes AND
     oder OR darstellen:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/and-n-fold-linear-depth.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >oder alternativ:<img
-      src="img/circuits/and-n-fold-log-depth.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/and-n-fold-linear-depth.svg"
+        style="height:10em"
+      >oder alternativ:<img
+        src="img/circuits/and-n-fold-log-depth.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     In beiden Fällen ersetzen wir ein AND-Gate von Fan-in $n$ durch
     $n - 1$ AND-Gates von je Fan-in 2. Wenn wir allerdings die Tiefe
@@ -101,10 +82,7 @@
     hat, der rechte jedoch nur
     <span class="nowrap">$\ceil{\log_2(n)}$.</span>
   </p>
-  <div
-    _="StatementCounter 2"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>2.1.2</b>

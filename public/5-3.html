@@ -13,30 +13,16 @@
 <body class="page-sub chapter-5 sub-3">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./5-2.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 5.2<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >5.2 
-            Endliche Automaten</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./5-2.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 5.2</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./5-4.html"
-          id="next-page"
-        >Kapitel 5.4 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >5.4 
-            Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./5-4.html"
+        id="next-page"
+      >Kapitel 5.4 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -52,14 +38,30 @@
     (eventuell gar keinen) geben kann. Hier ist das Beispiel von
     vorhin, leicht abgewandelt:
   </p>
-  <figure class="main-column">
-    <img
-      src="./img/finite-state-automata/nfsm-example-01.svg"
-      style="height: 10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="./img/finite-state-automata/nfsm-example-01.svg"
+        style="height: 10em"
+      >
+    </figure>
+  </div>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="./img/test_img.svg"
+        style="height:100px"
+      >
+    </figure>
+  </div>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="./img/test_img.svg"
+        style="width:500px"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang,
     der
@@ -70,10 +72,7 @@
     gesprochen ist $\delta$ nun keine Funktion mehr, sondern eine
     <span class="nowrap"><i>Relation</i>:</span>
   </p>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>5.3.1</b>
@@ -82,6 +81,18 @@
       Ein nichtdeterministischer endlicher
       Automat besteht aus
     </p>
+    <figure>
+      <img
+        src="./img/test_img.svg"
+        style="height:100px"
+      >
+    </figure>
+    <figure>
+      <img
+        src="./img/test_img.svg"
+        style="width:500px"
+      >
+    </figure>
     <ul>
       <li>
         <p>
@@ -135,10 +146,7 @@
     deterministischen Automaten definieren wir eine erweiterte
     Zustandsübergangsrelation.
   </p>
-  <div
-    _="StatementCounter 2"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>5.3.2</b>
@@ -176,10 +184,7 @@
       $$
     </div>
   </div>
-  <div
-    _="StatementCounter 3"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Beobachtung</b>
       <b>5.3.3</b>
@@ -207,10 +212,7 @@
     der Umkehrschluss: zu einer regulären Grammatik gibt es einen
     nichtdeterministischen endlichen Automaten:
   </p>
-  <div
-    _="StatementCounter 4"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>5.3.4</b>
@@ -270,10 +272,7 @@
       Form $X \rightarrow Y$ und $X \rightarrow a$ zu eliminieren.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
     </p>
   </div>
-  <div
-    _="StatementCounter 5"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Beispiel</b>
       <b>5.3.5</b>
@@ -300,8 +299,6 @@
       <img
         src="./img/finite-state-automata/finite-state-machine-example-03.svg"
         style="height: 10em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -325,10 +322,7 @@
       <span class="nowrap">$ba \not \in L(M)$.</span>
     </p>
   </div>
-  <div
-    _="StatementCounter 6"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Beispiel</b>
       <b>5.3.6</b>
@@ -385,14 +379,11 @@
       <img
         src="./img/finite-state-automata/nfsm-example-02.svg"
         style="height: 10em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
   </div>
   <div
     id="_21_hgi_"
-    _="ExerciseCounter 1"
     class="well exercise out"
   >
     <p>
@@ -419,14 +410,14 @@
     endlichen Automaten
     <span class="nowrap">$M$:</span>
   </p>
-  <figure class="main-column">
-    <img
-      src="./img/finite-state-automata/nfsm-example-01.svg"
-      style="height: 10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="./img/finite-state-automata/nfsm-example-01.svg"
+        style="height: 10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     und das Eingabewort $\alpha = 1001100$ überprüfen können, ob
     $1001100 \in L(M)$ gilt. Einem determinischen endlichen Automaten
@@ -440,158 +431,70 @@
     <div class="carousel">
       <div class="carousel__items">
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-01.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-01.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-02.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-02.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-03.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-03.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-04.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-04.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-05.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-05.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-06.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-06.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-07.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-07.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-08.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-08.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-09.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-09.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-10.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-10.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-11.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-11.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-12.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-12.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-13.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-13.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-14.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-14.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-15.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-15.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-16.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-16.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-17.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-17.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-18.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-18.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-19.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-19.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-20.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-20.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-21.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-21.svg">
         </div>
         <div class="carousel__item">
-          <img
-            src="./img/finite-state-automata/nfsm-colored-balls-22.svg"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
-          >
+          <img src="./img/finite-state-automata/nfsm-colored-balls-22.svg">
         </div>
       </div>
     </div>
@@ -655,7 +558,6 @@
   </p>
   <div
     id="_22_hgi_"
-    _="StatementCounter 7"
     class="well statement out"
   >
     <p>
@@ -701,7 +603,6 @@
   </p>
   <div
     id="_23_hgi_"
-    _="StatementCounter 8"
     class="well statement out"
   >
     <p>
@@ -712,10 +613,7 @@
       <span class="nowrap">$L(M) = L$.</span>
     </p>
   </div>
-  <div
-    _="StatementCounter 9"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Beispiel</b>
       <b>5.3.9</b>
@@ -741,8 +639,6 @@
       <img
         src="./img/finite-state-automata/nfsm-example-04-third-from-right.svg"
         style="height: 10em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -773,123 +669,55 @@
       <div class="carousel">
         <div class="carousel__items">
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/01.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/01.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/02.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/02.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/03.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/03.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/04.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/04.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/05.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/05.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/06.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/06.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/07.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/07.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/08.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/08.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/09.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/09.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/10.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/10.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/11.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/11.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/12.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/12.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/13.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/13.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/14.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/14.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/15.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/15.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/16.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/16.svg">
           </div>
           <div class="carousel__item">
-            <img
-              src="./img/finite-state-automata/potenzmengenautomat/17.svg"
-              class="constrained transition-all"
-              onClick="onImgClick(event)"
-            >
+            <img src="./img/finite-state-automata/potenzmengenautomat/17.svg">
           </div>
         </div>
       </div>

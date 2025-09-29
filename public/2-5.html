@@ -13,30 +13,16 @@
 <body class="page-sub chapter-2 sub-5">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./2-4.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 2.4<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >2.4 
-            Monotone Funktionen und monotone Schaltkreise</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./2-4.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 2.4</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./2-6.html"
-          id="next-page"
-        >Kapitel 2.6 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >2.6 
-            Untere und obere Schranken</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./2-6.html"
+        id="next-page"
+      >Kapitel 2.6 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -49,15 +35,15 @@
     Unser ZiEl in diesem Teilkapitel ist es, Schaltkreise für die
     Majority-Funktion zu bauen:
   </p>
-  <figure class="main-column">
-    <img
-      loading="lazy"
-      src="./img/circuits/majority.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        loading="lazy"
+        src="./img/circuits/majority.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Diese nimmt $n$ Bits als Input und gibt 1 aus, wenn mehr als $n/2$
     davon 1 sind. Für $n=3$ heißt dass, das mindestens zwei Input-Bits
@@ -71,15 +57,15 @@
   <p class="main-column">
     und als Schaltkreis so:
   </p>
-  <figure class="main-column">
-    <img
-      loading="lazy"
-      src="./img/circuits/maj3.svg"
-      style="height:8em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        loading="lazy"
+        src="./img/circuits/maj3.svg"
+        style="height:8em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Wie können wir das sinnvoll verallgemeinern für größere
     <span class="nowrap">$n$?</span>
@@ -89,10 +75,7 @@
     Wahrheitstabelle in genau $2^{n-1}$ vielen Zeilen eine 1 stehen
     hat und in ebenso vielen eine 0.
   </p>
-  <div
-    _="ExerciseCounter 1"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.5.1</b>
       Sei $n$ eine ungerade Zahl. Zeigen Sie, dass $\maj_n$ für genau
@@ -165,10 +148,7 @@
     Diese Konstruktion hat nun ${n \choose k}$ Terme, von denen jeder
     aus $k$ Variablen besteht. Ist das nun gut oder schlecht?
   </p>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Lemma</b>
       <b>2.5.1</b>
@@ -303,15 +283,15 @@
     $\theta^{n-1}_k$ berechnen. Rekursiv fortgefühtr sieht das dann so
     aus:
   </p>
-  <figure class="main-column">
-    <img
-      loading="lazy"
-      src="./img/circuits/majority-theta-recursive.svg"
-      style="height:15em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        loading="lazy"
+        src="./img/circuits/majority-theta-recursive.svg"
+        style="height:15em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Die Konstruktion endet mit
     <span class="nowrap">$\theta^m_0$,</span>
@@ -346,15 +326,15 @@
     berechnen, also statt dem obigen Baum einen Schaltkreis nach
     folgendem Pyramidenschema bauen:
   </p>
-  <figure class="main-column">
-    <img
-      loading="lazy"
-      src="./img/circuits/majority-theta-dp.svg"
-      style="height:18em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        loading="lazy"
+        src="./img/circuits/majority-theta-dp.svg"
+        style="height:18em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Um eine Analogie mit der Programmierpraxis zu bemühen: der
     Unterschied zwischen den beiden Konstruktionen für $\theta^n_k$
@@ -389,10 +369,7 @@
     jedem Schritt von grauem Kasten zu dem nächsttieferen der Wert von
     $m$ abnimmt. Insgesamt also haben wir gezeigt:
   </p>
-  <div
-    _="StatementCounter 2"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>2.5.2</b>
@@ -422,19 +399,16 @@
     <span class="nowrap">$000\dots 0$,</span>
     also 0, und addieren die dann auf:
   </p>
-  <figure class="main-column">
-    <img
-      loading="lazy"
-      src="./img/circuits/majority-by-adding.svg"
-      style="height:12em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
-  <div
-    _="ExerciseCounter 2"
-    class="well exercise out"
-  >
+  <div class="pseudowell">
+    <figure>
+      <img
+        loading="lazy"
+        src="./img/circuits/majority-by-adding.svg"
+        style="height:12em"
+      >
+    </figure>
+  </div>
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.5.2</b>
       Bestimmen Sie asymptotisch die Größe und die Tiefe dieses
@@ -455,10 +429,7 @@
     Tiefe von $O (\log n)$ erreichen wird, ist ebenso einfach wie
     genial.
   </p>
-  <div
-    _="StatementCounter 3"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Lemma (2-for-3 Adder)</b>
       <b>2.5.3</b>
@@ -490,8 +461,6 @@
         loading="lazy"
         src="./img/circuits/2-for-3-adder-example.svg"
         style="height:10em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -508,8 +477,6 @@
         loading="lazy"
         src="./img/circuits/2-for-3-adder-binary.svg"
         style="height:15em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -560,10 +527,7 @@
     )-stellige Zahlen addieren müssen; wir haben insgesamt also
     $O (n \log n)$ viele Gates.
   </p>
-  <div
-    _="StatementCounter 4"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>2.5.4</b>
@@ -572,10 +536,7 @@
       Größe $O (n \log n)$
     </p>
   </div>
-  <div
-    _="ExerciseCounter 3"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.5.3</b>
       Führen Sie eine genauere Abschätzung der Größe durch.
@@ -668,10 +629,7 @@
     wir erhalten also insgesamt eine Tiefe von
     <span class="nowrap">$O(\log^2 n)$.</span>
   </p>
-  <div
-    _="ExerciseCounter 4"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.5.4</b>
       dass polynomiell viele (in diesem Falle: $O(n^2)$ viele) Gates
@@ -683,10 +641,7 @@
     Monoton und logarithmische Tiefe: Valiants probabilitische
     Konstruktion
   </h2>
-  <div
-    _="StatementCounter 5"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>2.5.5</b>
@@ -728,10 +683,7 @@
       von
       Verteilungen über Schaltkreise.
     </p>
-    <div
-      _="StatementCounter 6"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Definition (Signalstärke)</b>
         <b>2.5.6</b>
@@ -759,10 +711,7 @@
       Schaltkreis) bauen, der ein schwache aber positive Signalstärke
       hat.
     </p>
-    <div
-      _="StatementCounter 7"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Lemma</b>
         <b>2.5.7</b>
@@ -866,10 +815,7 @@
       $\mathcal{C}^{\otimes 3}$ nennen. Diese hat eine höhere
       Signalstärke:
     </p>
-    <div
-      _="StatementCounter 8"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Lemma</b>
         <b>2.5.8</b>
@@ -1079,8 +1025,6 @@
       <img
         src="./img/circuits/majority-probability-labeled.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       ><br>Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
     </figure>
     <hr>
@@ -1088,8 +1032,6 @@
       <img
         src="./img/circuits/majority-probability-close-to-half-labeled.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       ><br>Signalstärke $\delta$ wächst für $p \in [1/2, 3/4]$
       exponentiell.
     </figure>
@@ -1098,8 +1040,6 @@
       <img
         src="./img/circuits/majority-probability-close-to-one-labeled.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       ><br>Fehlerwahrscheinlichkeit $\epsilon$ fällt für
       $p \in [3/4, 1/2]$ doppelt exponentiell.
     </figure>
@@ -1212,10 +1152,7 @@
       $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$ Gates.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
     </p>
   </div>
-  <div
-    _="ExerciseCounter 5"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.5.5</b>
       Präzisieren Sie die Größe von Valiants Schaltkreis und bestimmen

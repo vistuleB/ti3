@@ -13,31 +13,16 @@
 <body class="page-sub chapter-6 sub-3">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./6-2.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 6.2<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >6.2 
-            Kontextfreie Grammatiken und Kellerautomaten</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./6-2.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 6.2</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./6-4.html"
-          id="next-page"
-        >Kapitel 6.4 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >6.4
-            <span class="nowrap">LL($k$)-Grammatiken</span>
-            (nicht im Sommersemester 2025)</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./6-4.html"
+        id="next-page"
+      >Kapitel 6.4 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -51,14 +36,14 @@
     <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">drawManualGrammar.html</a>,
     um mit kontextfreien Grammatik zu experimentieren:
   </p>
-  <figure class="main-column">
-    <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html"><img
-        src="img/cfg-manual-screenshot-2.png"
-        style="height:20em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
-      ></a>
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html"><img
+          src="img/cfg-manual-screenshot-2.png"
+          style="height:20em"
+        ></a>
+    </figure>
+  </div>
   <p class="main-column">
     Diese besteht aus folgenden Teilen:
   </p>
@@ -96,10 +81,7 @@
       </li>
     </ol>
   </div>
-  <div
-    _="ExerciseCounter 1"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 6.3.1</b>
       Geben Sie folgende Grammatik in die App ein:
@@ -121,10 +103,7 @@ S -&gt;; "(" S "]" S;
       wird sofort bestraft).
     </p>
   </div>
-  <div
-    _="ExerciseCounter 2"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 6.3.2</b>
       Schreiben Sie eine kontextfreie Grammatik für die Sprache aller
@@ -145,10 +124,7 @@ S -&gt;; "(" S "]" S;
       keine / nur wenige Sackgassen hat?
     </p>
   </div>
-  <div
-    _="ExerciseCounter 3"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 6.3.3</b>
       Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im
@@ -164,10 +140,7 @@ S -&gt;; "(" S "]" S;
       erkannt, welche Konstrukte lange Sackgassen begünstigen?
     </p>
   </div>
-  <div
-    _="ExerciseCounter 4"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 6.3.4</b>
       Wiederholen Sie die vorherige Übung für arithmetische Ausdrücke
@@ -182,10 +155,7 @@ S -&gt;; "(" S "]" S;
       sollte sich das wiederspiegeln.
     </p>
   </div>
-  <div
-    _="ExerciseCounter 5"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 6.3.5</b>
       <b>(Challenge)</b>
@@ -204,10 +174,7 @@ S -&gt;; ;
       Grammatik schreiben?
     </p>
   </div>
-  <div
-    _="ExerciseCounter 6"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 6.3.6</b>
       <b>(Challenge)</b>
@@ -232,10 +199,7 @@ X -&gt;; "a" | "a" X | "a" X X;
       Backtrack-Baumes um einen Faktor $R \gt 1$ wachsen.
     </p>
   </div>
-  <div
-    _="ExerciseCounter 7"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 6.3.7</b>
       <span class="nowrap"><b>(Super-Challenge; ich hab selbst keine Lösung)</b>.</span>

@@ -7,8 +7,8 @@
  * - TABLET: edge of outer well (the well itself) *
  *   is flush with edge of main column of text,   *
  *                                                *
- * - LAPTOP: outer well is inset compared to      *
  *   main column of text;                         *
+ * - LAPTOP: outer well is inset compared to      *
  *   see const LAPTOP_OUTER_WELL_INSET            *
  *                                                *
  * - DESKTOP: main column of text no longer       *
@@ -388,7 +388,6 @@ const setMenuBorder = () => {
 
 class Carousel {
   constructor(container) {
-    container.carousel = this;
     this.container = container;
     this.carousel = container.querySelector(".carousel");
     this.carouselItems = container.querySelectorAll(".carousel__item");
@@ -398,6 +397,9 @@ class Carousel {
     this.holdInterval = null;
     this.holdTimeout = null;
     this.isHolding = false;
+    
+    container.carousel = this;
+    this.carousel.object = this;
 
     this.imgs = Array.from(this.carouselItems)
       .map((item) => item.querySelector("img"))
@@ -600,32 +602,17 @@ class Carousel {
     });
   }
 
-  updateImageWidthsAndMaxWidths() {
-    // apply the current enlarged/constrained state to all images in the carousel
+  updateConstrained() {
     if (!this.constrained) {
-      // apply enlarged state to all images
-      this.imgs.forEach((img) => {
-        img.classList.remove("constrained");
-        // set img size to naturalWidth or some specific enlarged size
-        if (img.naturalWidth < MOBILE_MAX_WIDTH) {
-          img.style.width = "150%";
-          img.style.maxWidth = "150%";
-        } else {
-          img.style.width = img.naturalWidth + "px";
-          img.style.maxWidth = img.naturalWidth + "px";
-        }
-      });
+      this.imgs.forEach(unconstrainImage);
     } else {
-      // apply constrained state to all images
-      this.imgs.forEach((img) => {
-        img.classList.add("constrained");
-        // reset img size to fit the container
-        img.style.width = "100%";
-        img.style.maxWidth = getComputedStyle(root)
-          .getPropertyValue("--main-column-width")
-          .trim();
-      });
+      this.imgs.forEach(constrainImage);
     }
+  }
+
+  toggleZoom() {
+    this.constrained = !this.constrained;
+    this.updateConstrained();
   }
 
   updateIndicators() {
@@ -643,7 +630,7 @@ class Carousel {
     this.updateItemClassLists();
     this.updateIndexCounter();
     this.updateIndicators();
-    this.updateImageWidthsAndMaxWidths();
+    this.updateConstrained();
   }
 
   nudgeCarouselItem(direction) {
@@ -759,22 +746,15 @@ const adjustMathAlignment = () => {
 };
 
 const constrainImage = (image) => {
+  image.classList.remove("unconstrained");
   image.classList.add("constrained");
-  image.style.width = "100%";
-  image.style.maxWidth = getComputedStyle(root)
-    .getPropertyValue("--main-column-width")
-    .trim();
+  image.style.width = `calc(min(100%, ${image.originalWidth}))`;
 };
 
 const unconstrainImage = (image) => {
   image.classList.remove("constrained");
-  if (image.naturalWidth < MOBILE_MAX_WIDTH) {
-    image.style.width = "150%";
-    image.style.maxWidth = "150%";
-  } else {
-    image.style.width = image.naturalWidth + "px";
-    image.style.maxWidth = image.naturalWidth + "px";
-  }
+  image.classList.add("unconstrained");
+  image.style.width = image.originalWidth;
 };
 
 const toggleImageZoom = (image) => {
@@ -785,30 +765,15 @@ const toggleImageZoom = (image) => {
   }
 };
 
-const toggleCarouselImageZoom = (image) => {
-  const carouselContainer = image.closest(".carousel__container");
-  const carousel = carouselContainer.carousel;
-
-  if (image.classList.contains("constrained")) {
-    carousel.constrained = false;
-  } else {
-    carousel.constrained = true;
-  }
-
-  carousel.updateImageWidthsAndMaxWidths();
-};
-
-const onImgClick = (e) => {
+const figureImgClick = (e) => {
+  if (!isPageCentered) return;
   const image = e.srcElement;
-  if (isPageCentered) {
-    onMobile(() => {
-      if (image.closest(".carousel")) {
-        toggleCarouselImageZoom(image);
-      } else {
-        toggleImageZoom(image);
-      }
-    });
+  const carousel = image.closest(".carousel");
+  if (carousel) {
+    carousel.object.toggleZoom();
+    return;
   }
+  toggleImageZoom(image);
 };
 
 const menuVisible = () => {
@@ -915,9 +880,21 @@ const setupNextPageTooltip = () => {
 const setupImages = () => {
   let images = document.querySelectorAll("img");
   for (const image of images) {
-    if (!image.closest(".carousel")) {
-      constrainImage(image);
-    }
+    if (!image.closest(".carousel") && !image.closest("figure"))
+      continue;
+    let s = window.getComputedStyle(image);
+    image.originalWidth = s.width;
+    image.originalHeight = s.height;
+    image.style.width = "";
+    image.style.height = "";
+    constrainImage(image);
+    window.requestAnimationFrame(() => {
+      image.classList.add("image-zoom-transition");
+      image.addEventListener(
+        "click",
+        figureImgClick,
+      )
+    });
   }
 };
 

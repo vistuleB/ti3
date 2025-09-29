@@ -13,30 +13,16 @@
 <body class="page-chapter chapter-2">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./1-0.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 1<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >1. 
-            Einleitung</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./1-0.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 1</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./2-1.html"
-          id="next-page"
-        >Kapitel 2.1 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >2.1 
-            Fanin, Tiefe, Größe</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./2-1.html"
+        id="next-page"
+      >Kapitel 2.1 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -60,14 +46,14 @@
     Hier sehen Sie
     die drei üblichsten Gatter:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/and-or-not-gates.svg"
-      style="width:20em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/and-or-not-gates.svg"
+        style="width:20em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Von links nach rechts sind dies: das Und-Gatter
     <span class="nowrap">(<i>and-gate</i>),</span>
@@ -122,22 +108,22 @@
     welches $y$ ausgibt, wenn $x$ wahr ist und ansonsten $z$ ausgibt.
     So ein Gate können Sie sich einfach aus And, Or, Not bauen:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/if-then-else-gate.svg"
-      style="height:13em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-    <figcaption>
-      <code>if</code>
-      $x$
-      <code>then</code>
-      $y$
-      <code>else</code>
-      $z$
-    </figcaption>
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/if-then-else-gate.svg"
+        style="height:13em"
+      >
+      <figcaption>
+        <code>if</code>
+        $x$
+        <code>then</code>
+        $y$
+        <code>else</code>
+        $z$
+      </figcaption>
+    </figure>
+  </div>
   <p class="main-column">
     Jeder Schaltkreis
     <i>berechnet</i>
@@ -148,22 +134,19 @@
     Funktion kombiniert und werden schließlich an den Output-Gates
     ausgegeben:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/if-then-else-gate-with-values.svg"
-      style="height:13em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-    <figcaption>
-    </figcaption>
-    Das if-then-else-Gate mit einer konkreten Belegung und einem
-    Ausgabewert
-  </figure>
-  <div
-    _="ExerciseCounter 1"
-    class="well exercise out"
-  >
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/if-then-else-gate-with-values.svg"
+        style="height:13em"
+      >
+      <figcaption>
+      </figcaption>
+      Das if-then-else-Gate mit einer konkreten Belegung und einem
+      Ausgabewert
+    </figure>
+  </div>
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.1</b>
       Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:
@@ -195,8 +178,6 @@
           <img
             src="img/circuits/n-fold-xor.svg"
             style="height:4em"
-            class="constrained transition-all"
-            onClick="onImgClick(event)"
           >
         </figure>
         <p>
@@ -224,14 +205,14 @@
     Inputs zuzulassen, beispielsweise
     $x_1 \land x_2 \land \ldots \land x_n$ als ein Gate darzustellen:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/and-fan-in-n.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/and-fan-in-n.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Man bezeichnet dies als AND-Gate mit einem Fan-in von
     <span class="nowrap">$n$.</span>
@@ -245,39 +226,39 @@
     Größerer Fan-in ist aber nicht wirklich etwas neues unter der
     Sonne: Sie können jederzeit großen Fan-in durch kleinen simulieren:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/and-n-fold-linear-depth.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/and-n-fold-linear-depth.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Also als geschachteltes AND, oder aber in Form eines Binärbaums:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/and-n-fold-log-depth.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/and-n-fold-log-depth.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Schaltkreise, wie wir sie in diesem Kapitel betrachten, sind immer
     azyklisch. Das heißt insbesondere, das Dinge mit
     "Feedback-Schleifen" wie Flipflops eben keine Schaltkreis in
     unserem Sinn sind:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/flipflop.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/flipflop.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Das Flipflop zeigt ein interessantes Verhalten: wenn
     <span class="nowrap">$\text{Reset} = 0$,</span>
@@ -309,10 +290,7 @@
     die Werte der Input-Gates determiniert. Wir sind nun bereit für
     eine formale Definition von Schaltkreisen.
   </p>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>2.1</b>
@@ -358,10 +336,7 @@
     schreiben wir einfach
     <span class="nowrap">$C : \{0,1\}^n \to \{0,1\}^m$.</span>
   </p>
-  <div
-    _="StatementCounter 2"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Beobachtung</b>
       <b>2.2</b>
@@ -376,10 +351,7 @@
     Schaltkreise gesehen, und im Rahmen der obigen Übungsaufgabe wohl
     auch mehrere Schaltkreise, die das gleiche tun, entwickelt.
   </p>
-  <div
-    _="StatementCounter 3"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>2.3</b>

@@ -13,30 +13,16 @@
 <body class="page-sub chapter-8 sub-4">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./8-3.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 8.3<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >8.3 
-            Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./8-3.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 8.3</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./8-5.html"
-          id="next-page"
-        >Kapitel 8.5 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >8.5 
-            Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./8-5.html"
+        id="next-page"
+      >Kapitel 8.5 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -272,27 +258,27 @@
     <span class="nowrap">$\delta$-Tabelle</span>
     der Turingmaschine für $\{a^nb^nc^n\}$
   </p>
-  <figure class="main-column">
-    <img
-      loading="lazy"
-      src="img/turing-machines/exampe-2-aabbcc/delta-table.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        loading="lazy"
+        src="img/turing-machines/exampe-2-aabbcc/delta-table.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     würde dann zu folgender Tabelle:
   </p>
-  <figure class="main-column">
-    <img
-      loading="lazy"
-      src="img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        loading="lazy"
+        src="img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Wenn wir dies nun als
     <i>ein</i>
@@ -342,10 +328,7 @@
     \end{align*}
     $$
   </div>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>8.4.1</b>

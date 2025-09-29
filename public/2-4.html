@@ -13,30 +13,16 @@
 <body class="page-sub chapter-2 sub-4">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./2-3.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 2.3<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >2.3 
-            Binär-Addierer</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./2-3.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 2.3</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./2-5.html"
-          id="next-page"
-        >Kapitel 2.5 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >2.5 
-            Majority</span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./2-5.html"
+        id="next-page"
+      >Kapitel 2.5 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -64,14 +50,14 @@
     Am Besten stellen Sie sich eine solche
     Partialordnung als gerichteten Graphen vor:
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/hasse-diagram.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/hasse-diagram.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Diese Darstellung einer Partialordnung als gerichteter Graph
     bezeichnet man auch als
@@ -92,10 +78,7 @@
     Elemente sind
     <span class="nowrap"><i>unvergleichbar</i>.</span>
   </p>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>2.4.1</b>
@@ -114,10 +97,7 @@
       kann das Output-Bit nicht von 1 auf 0 umkippen.
     </p>
   </div>
-  <div
-    _="ExerciseCounter 1"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.4.1</b>
       Welche der Booleschen Funktionen
@@ -131,14 +111,14 @@
     Hasse-Diagramm von $\{0,1\}^2$ diejenigen Elemente blau, auf denen
     $f(x,y) = 1$ ist, und die anderen rot.
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/hasse-clouds.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/hasse-clouds.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     Wir sehen nun, dass es im Bild von $\wedge$ keinen roten Punkt
     gibt, der oberhalb eines blauen Punktes liegt, im Bild von $\oplus$
@@ -160,14 +140,14 @@
     berechnet. Allerdings stimmt der Umkehrschluss nicht. Der
     Schaltkreis
   </p>
-  <figure class="main-column">
-    <img
-      src="img/circuits/monotone-or-not.svg"
-      style="height:10em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="img/circuits/monotone-or-not.svg"
+        style="height:10em"
+      >
+    </figure>
+  </div>
   <p class="main-column">
     ist nicht monoton (beachten Sie hinter der $\bar{y}$ -Schreibweise
     versteckte NOT-Gate), ist aber äquivalent zu der offensichtlich
@@ -177,7 +157,6 @@
   </p>
   <div
     id="_2_hgi_"
-    _="StatementCounter 2"
     class="well statement out"
   >
     <p>
@@ -188,10 +167,7 @@
       $f$ berechnet.
     </p>
   </div>
-  <div
-    _="ExerciseCounter 2"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.4.2</b>
       Beweisen Sie das Theorem.
@@ -202,10 +178,7 @@
       loswerden.
     </p>
   </div>
-  <div
-    _="ExerciseCounter 3"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.4.3</b>
       Finden Sie alle monotonen Funktionen in zwei Variablen. Wie
@@ -222,8 +195,6 @@
       <img
         src="img/circuits/hasse-diagram.svg"
         style="height:10em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -232,10 +203,7 @@
       können.
     </p>
   </div>
-  <div
-    _="ExerciseCounter 4"
-    class="well exercise out"
-  >
+  <div class="well exercise out">
     <p>
       <b>Übungsaufgabe 2.4.4</b>
       <b>(Challenge).</b>
@@ -252,8 +220,6 @@
       <img
         src="img/circuits/triple-negator.svg"
         style="height:10em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
   </div>
@@ -269,10 +235,7 @@
     und verschiedene
     Beweisstrategien einzugehen.
   </p>
-  <div
-    _="StatementCounter 3"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>2.4.3</b>
@@ -359,10 +322,7 @@
       <a href="index.html#truth-table-top-down">Top-Down-Methode</a>, wie wir aus
       einer Wahrheitstabelle einen Schaltkreis bauen:
     </p>
-    <div
-      _="StatementCounter 4"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Theorem</b>
         <b>2.4.4</b>
@@ -438,10 +398,7 @@
         Zahl $n$ bereits im Theorem vorkommt. Wir formulieren sie also
         nun so um:
       </p>
-      <div
-        _="StatementCounter 5"
-        class="well statement"
-      >
+      <div class="well statement">
         <p>
           <b>(Theorem 1.4.4, alternative Formulierung)</b>
           <b>2.4.5</b>
@@ -613,8 +570,6 @@
         <img
           src="img/circuits/top-down-if-then-else.svg"
           style="height:15em"
-          class="constrained transition-all"
-          onClick="onImgClick(event)"
         >
       </figure>
       <p>
@@ -714,8 +669,6 @@
       <img
         src="img/circuits/top-down-if-then-else-2.svg"
         style="height:15em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -731,8 +684,6 @@
       <img
         src="img/circuits/top-down-if-then-else-3.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -751,8 +702,6 @@
       <img
         src="img/circuits/top-down-if-then-else-4.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -786,8 +735,6 @@
       <img
         src="img/circuits/top-down-if-then-else-monotone.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -801,10 +748,7 @@
     <p>
       Wir müssen nun zeigen, dass dies wirklich $f$ berechnet, also
     </p>
-    <div
-      _="StatementCounter 6"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Behauptung</b>
         <b>2.4.6</b>
@@ -929,8 +873,6 @@
       <img
         src="img/circuits/top-down-if-then-else-monotone-finished.svg"
         style="height:18em"
-        class="constrained transition-all"
-        onClick="onImgClick(event)"
       >
     </figure>
     <p>
@@ -1071,10 +1013,7 @@
       <span class="nowrap">$T_{\mathbf{a}}$,</span>
       stellt also weniger "Bedingungen". Formal gesprochen:
     </p>
-    <div
-      _="StatementCounter 7"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Behauptung</b>
         <b>2.4.7</b>
@@ -1110,10 +1049,7 @@
       negativen Literale ersatzlos streichen. Wir behaupten nun, dass
       $F'$ und $F$ dieselbe Funktion darstellen:
     </p>
-    <div
-      _="StatementCounter 8"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Behauptung</b>
         <b>2.4.8</b>

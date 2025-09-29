@@ -13,31 +13,16 @@
 <body class="page-sub chapter-4 sub-3">
   <div id="menu">
     <div class="menu-left">
-      <a href="./index.html">Inhaltsverzeichnis</a>
-      <div>
-        <a
-          href="./4-2.html"
-          id="prev-page"
-        >&lt;&lt; Kapitel 4.2<span
-            id="prev-page-tooltip"
-            style="visibility:hidden"
-          >4.2 
-            Primitive Rekursion: Konstruktionen und Tricks</span></a>
-      </div>
+      <a href="./index.html">Inhaltsverzeichnis</a><a
+        href="./4-2.html"
+        id="prev-page"
+      >&lt;&lt; Kapitel 4.2</a>
     </div>
     <div class="menu-right">
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a>
-      <div>
-        <a
-          href="./4-4.html"
-          id="next-page"
-        >Kapitel 4.4 &gt;&gt;<span
-            id="next-page-tooltip"
-            style="visibility:hidden"
-          >4.4 
-            Ein Schritt weiter:  while-Schleifen und
-            <span class="nowrap">$\mu$-Rekursion</span></span></a>
-      </div>
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
+        href="./4-4.html"
+        id="next-page"
+      >Kapitel 4.4 &gt;&gt;</a>
     </div>
   </div>
   <div class="main-column page-title">
@@ -78,10 +63,7 @@
     gefunden wurde
     (obwohl der letztere Artikel das Jahr 1955 nennt).
   </p>
-  <div
-    _="StatementCounter 1"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Definition</b>
       <b>4.3.1</b>
@@ -191,10 +173,7 @@
   <h2 class="main-column topic-announcement">
     Die Péter-Ackermann-Funktion ist berechenbar
   </h2>
-  <div
-    _="StatementCounter 2"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>4.3.2</b>
@@ -291,10 +270,7 @@
   <h2 class="main-column topic-announcement">
     Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv
   </h2>
-  <div
-    _="StatementCounter 3"
-    class="well statement out"
-  >
+  <div class="well statement out">
     <p>
       <b>Theorem</b>
       <b>4.3.3</b>
@@ -355,10 +331,7 @@
       Funktion $f: \N \rightarrow \N$ schneller wächst als
       <span class="nowrap">$g: \N^k \rightarrow \N$.</span>
     </p>
-    <div
-      _="StatementCounter 4"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Definition</b>
         <b>4.3.4</b>
@@ -403,10 +376,7 @@
       abhängen darf, nicht aber von den Eingabewerten, die $g$
       bekommt.
     </p>
-    <div
-      _="StatementCounter 5"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Lemma</b>
         <b>4.3.5</b>
@@ -557,10 +527,7 @@
       mit $A_q \gt g$ und
       <span class="nowrap">$A_q \gt h$.</span>
     </p>
-    <div
-      _="StatementCounter 6"
-      class="well statement"
-    >
+    <div class="well statement">
       <p>
         <b>Behauptung</b>
         <b>4.3.6</b>
@@ -653,13 +620,13 @@ add = PrimRec (p0, Comp(succ, p0))
   <p class="main-column">
     dann können wir das auf Baum darstellen:
   </p>
-  <figure class="main-column">
-    <img
-      src="./img/primitive-rekursion/primitive-recursive-tree.svg"
-      style="height:25em"
-      class="constrained transition-all"
-      onClick="onImgClick(event)"
-    >
-  </figure>
+  <div class="pseudowell">
+    <figure>
+      <img
+        src="./img/primitive-rekursion/primitive-recursive-tree.svg"
+        style="height:25em"
+      >
+    </figure>
+  </div>
 </body>
 </html>
