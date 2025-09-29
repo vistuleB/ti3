@@ -135,9 +135,9 @@ const indexTocChapterLevelMarginInEm = () => {
 };
 
 const indexTocSubchapterLevelMarginInEm = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.25;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 0.2;
-  return 0.15;
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.3;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0.25;
+  return 0.2;
 };
 
 const carouselMaxWidthInPx = () => {
