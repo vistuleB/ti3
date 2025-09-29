@@ -412,8 +412,7 @@ const constrainFigureImage = (image) => {
   image.classList.remove("unconstrained");
   image.classList.add("constrained");
   let constrainerWidth = image.constrainer.getBoundingClientRect().width;
-  let padding = parseFloat(window.getComputedStyle(image.constrainer).paddingLeft);
-  image.style.width = `min(${(constrainerWidth - 2 * padding) + 'px'}, ${image.originalWidth})`;
+  image.style.width = `min(${constrainerWidth + "px"}, ${image.originalWidth})`;
 };
 
 const unconstrainFigureImage = (image) => {
@@ -598,30 +597,11 @@ class Carousel {
       .map((item) => item.querySelector("img"))
       .filter((img) => img);
 
-    let maxOriginalWidthInPx = 0;
-    let minOriginalWidthInPx = Infinity;
+    this.maxOriginalWidthInPx = 0;
     for (const img of this.imgs) {
-      console.log("img.originalWidthInPx: ", img.originalWidthInPx);
-      if (img.originalWidthInPx > maxOriginalWidthInPx)
-        maxOriginalWidthInPx = img.originalWidthInPx;
-      if (img.originalWidthInPx < minOriginalWidthInPx)
-        minOriginalWidthInPx = img.originalWidthInPx;
+      if (img.originalWidthInPx > this.maxOriginalWidthInPx)
+        this.maxOriginalWidthInPx = img.originalWidthInPx;
     }
-    if (minOriginalWidthInPx > maxOriginalWidthInPx) {
-      console.error(
-        `minOriginalWidthInPx > maxOriginalWidthInPx: ${minOriginalWidthInPx} > ${maxOriginalWidthInPx}`
-      );
-    }
-    if (minOriginalWidthInPx < maxOriginalWidthInPx) {
-      console.warn(
-        `minOriginalWidthInPx < maxOriginalWidthInPx: ${minOriginalWidthInPx} < ${maxOriginalWidthInPx}`
-      );
-    }
-    this.maxOriginalWidthInPx = maxOriginalWidthInPx;
-    this.minOriginalWidthInPx = minOriginalWidthInPx;
-    this.maxOriginalWidth = maxOriginalWidthInPx + "px";
-
-    console.log("maxOriginalWidth:", this.maxOriginalWidth);
 
     this.unconstrainedUIPrevBtn = (() => {
       const btn = document.createElement("button");
@@ -668,12 +648,15 @@ class Carousel {
     this.doOnClickAndOnHold(this.constrainedUIPrevBtn, () => {
       this.nudgeCarouselItem(-1);
     });
+
     this.doOnClickAndOnHold(this.constrainedUINextBtn, () => {
       this.nudgeCarouselItem(1);
     });
+
     this.doOnClickAndOnHold(this.unconstrainedUIPrevBtn, () => {
       this.nudgeCarouselItem(-1);
     });
+
     this.doOnClickAndOnHold(this.unconstrainedUINextBtn, () => {
       this.nudgeCarouselItem(1);
     });
@@ -866,7 +849,9 @@ class Carousel {
   ourConstrainImage = (image) => {
     image.classList.remove("unconstrained");
     image.classList.add("constrained");
-    image.style.width = `min(${this.containerWidth + 'px'}, ${image.originalWidth})`;
+    image.style.width = `min(${this.containerWidth + "px"}, ${
+      image.originalWidth
+    })`;
   };
 
   ourUnconstrainImage = (image) => {
@@ -981,7 +966,7 @@ const onResize = () => {
   }
   figureImagesResizeHandler();
   carouselsResizeHandler();
-  window.requestAnimationFrame(() => {    
+  window.requestAnimationFrame(() => {
     for (const image of allConstrainableImages) {
       image.classList.add("zoom-transition");
     }
@@ -990,10 +975,9 @@ const onResize = () => {
 
 const figureImagesResizeHandler = () => {
   for (const image of allFigureImages) {
-    if (image.classList.contains("constrained"))
-      constrainFigureImage(image);
+    if (image.classList.contains("constrained")) constrainFigureImage(image);
   }
-}
+};
 
 const carouselsResizeHandler = () => {
   if (allCarouselObjects.length === 0) return;
@@ -1009,7 +993,7 @@ const carouselsResizeHandler = () => {
       (avgButtonHeight * carousel.buttonMargin) / carousel.buttonHeight
     );
   }
-}
+};
 
 const onScrollEnd = (e) => {
   smoothRecenterMaybe();
