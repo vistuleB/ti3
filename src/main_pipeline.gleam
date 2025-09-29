@@ -1,8 +1,6 @@
 import desugarer_library as dl
 import infrastructure.{type Pipe} as infra
 import gleam/list
-import gleam/io
-import gleam/string.{inspect as ins}
 import prefabricated_pipelines as pp
 import group_replacement_splitting as grs
 import selector_library as sl
@@ -39,18 +37,18 @@ pub fn main_pipeline()  -> List(Pipe) {
   let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "h3", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
 
-  let possible_outer_elements = [
+  let main_column_things = [
     "p",
-    "ul",
-    "ol",
+    // "ul",
+    // "ol",
     "div",
     "pre",
-    "code",
-    "figure",
+    // "code",
+    // "figure",
     "TopicAnnouncement",
     "SubtopicAnnouncement",
     "MathBlock",
-    "CarouselContainer",
+    // "CarouselContainer",
   ]
 
   let qed = [
@@ -68,12 +66,10 @@ pub fn main_pipeline()  -> List(Pipe) {
     ),
   ]
 
+  let assert Ok(pseudowell) = infra.expand_selector_shorthand("div.pseudowell")
+
   // use 'dl.table_marker()' desugarer to mark a line 
   // in the table; (with '--table' printout)
-
-  let assert Ok(pseudowell_elt) = infra.expand_selector_shorthand("div.pseudowell")
-
-  io.println(ins(pseudowell_elt))
 
   [
     [
@@ -199,18 +195,19 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.wrap_with_if_child_of(#("pre", "div", ["Sub", "Chapter"])),
       dl.wrap_with_if_child_of(#("ol", "div", ["Sub", "Chapter"])),
       dl.wrap_with_if_child_of(#("ul", "div", ["Sub", "Chapter"])),
-      dl.wrap_with_if_child_of(#("figure", "Pseudowell", ["Sub", "Chapter"])),
       dl.append_class_to_child_if_has_class(#("Chapter", "out", "well")),
       dl.append_class_to_child_if_has_class(#("Sub", "out", "well")),
-      dl.append_class_to_child_if_is_one_of(#("Chapter", "main-column", possible_outer_elements)),
-      dl.append_class_to_child_if_is_one_of(#("Sub", "main-column", possible_outer_elements)),
+      dl.append_class_to_child_if_is_one_of(#("Chapter", "main-column", main_column_things)),
+      dl.append_class_to_child_if_is_one_of(#("Sub", "main-column", main_column_things)),
       dl.replace_with_arbitrary(#("QED", qed)),
       dl.rename_with_attributes(#("CircleX", "img", [#("class", "circle-X-img"), #("src", "img/context-free/LR/circle-X.svg")])),
-      dl.rename_with_attributes(#("Pseudowell", "div", [#("class", "pseudowell")])),
+      dl.wrap_with_custom_if_child_of(#("figure", pseudowell, ["Sub", "Chapter"])),
+      dl.wrap_with_custom_if_child_of(#("CarouselContainer", pseudowell, ["Sub", "Chapter"])),
       dl.append_class__batch([
         #("TopicAnnouncement", "topic-announcement"),
         #("SubtopicAnnouncement", "subtopic-announcement"),
       ]),
+      dl.table_marker(),
       dl.rename__batch([
         #("MathBlock", "div"),
         #("Index", "div"),

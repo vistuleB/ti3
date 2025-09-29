@@ -486,6 +486,7 @@ pre.listing.redyellow > span.listing-bol::before{
 .pseudowell {
   width: 100vw;
   margin: 0 auto;
+  padding: 0 16px;
   background-color: inherit;
 }
 
@@ -504,12 +505,12 @@ figure img {
   border-top-width: 16px;
   border-bottom-width: 16px;
   border-style: solid;
-  border-color: transparent; */
-}  
+  border-color: transparent;
+}
 
-figure > img.constrained {
-  border-left-width: var(--well-padding-x);
-  border-right-width: var(--well-padding-x);  
+figure img.constrained {
+  border-left-width: min(var(--well-padding-x), 16px);
+  border-right-width: min(var(--well-padding-x), 16px);  
 }
 
 figure img.unconstrained {
@@ -531,31 +532,8 @@ figcaption {
   transition-duration: 500ms;
 }
 
-.carousel__container.main-column {
-  max-width: var(--carousel-max-width);
-  padding: 0 0rem;
-}
-
-.carousel__container {
-  max-width: fit-content;
-  width: 100%;
-  height: auto;
-  margin: 1rem auto 1.5rem;
-  background-color: inherit;
-}
-
-.carousel__container > .carousel {
-  max-width: inherit;
-  width: inherit;
-  height: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: inherit;
-}
-
 /* begin of mobile nav */
-.carousel__container > .carousel__mobile-nav {
+.carousel__mobile-nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -563,7 +541,7 @@ figcaption {
   touch-action: pinch-zoom;
 }
 
-.carousel__mobile-nav > .carousel__progress-counter {
+.carousel__progress-counter {
   width: 4em;
   text-align: center;
   font-size: var(--progress-counter-font-size);
@@ -595,7 +573,7 @@ figcaption {
 /* end of mobile nav */
 
 /* begin of desktop nav */
-.carousel__container > .carousel__indicators {
+.carousel__indicators {
   max-width: min(
     calc(
       (var(--carousel-indicator-box-size) + var(--carousel-indicator-gap)) * 30
@@ -611,7 +589,7 @@ figcaption {
   margin: 1rem auto;
 }
 
-.carousel__indicators > .carousel__indicator_box {
+.carousel__indicator_box {
   width: var(--carousel-indicator-box-size);
   height: var(--carousel-indicator-box-size);
   background-color: #0000;
@@ -619,7 +597,7 @@ figcaption {
   border: none;
 }
 
-.carousel__indicator_box > .carousel__indicator_dot {
+.carousel__indicator_dot {
   width: var(--carousel-indicator-dot-size);
   height: var(--carousel-indicator-dot-size);
   background-color: #d3d3d3ff;
@@ -659,42 +637,37 @@ figcaption {
 }
 /* end of resuable components for both mobile and desktop nav */
 
-.carousel > .carousel__items {
-  max-width: 100%;
+.carousel__container {
   width: 100%;
-  height: auto;
-  flex: 1 0 0%;
+  background-color: inherit;
+  margin: 1rem auto 1.5rem;
+}
+
+.carousel {
+  width: inherit;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel__items {
+  width: 100%;
   display: flex;
   background-color: inherit;
 }
 
-.carousel__items > .carousel__item {
-  max-width: 100%;
-  display: none;
-  flex: 1 0 100%;
-}
-
-.carousel__items > .carousel__item.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.carousel__item {
   width: fit-content;
+  background-color: inherit;
   margin: 0 auto;
-  background-color: inherit;
+  justify-content: center;
+  overflow: visible;
 }
 
-.carousel__item.active > img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  padding: 16px;
-  flex-shrink: 0 !important;
-  background-color: inherit;
-}
-
-.carousel__item > img {
+.carousel__item img {
   flex-shrink: 0;
 }
+
 /** end of carousel **/
 
 /* the 2nd selector is there b/c of specificity wars: */

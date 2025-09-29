@@ -369,23 +369,6 @@ const resetScreenWidthDependentVars = () => {
   set("--math-block-max-width", mathBlockMaxWidthInPx, "px");
 };
 
-const setImgHeightToAuto = () => {
-  const images = document.querySelectorAll(
-    "figure.main-column img, .well figure img"
-  );
-
-  images.forEach((img) => {
-    if (img.style.height) {
-      img.style.height = "auto";
-    }
-  });
-};
-
-const setMenuBorder = () => {
-  const menuLeftRight = document.querySelectorAll(".menu-right, .menu-left");
-  menuLeftRight.forEach((menu) => (menu.style.borderRadius = "0px"));
-};
-
 class Carousel {
   constructor(container) {
     this.container = container;
@@ -397,7 +380,7 @@ class Carousel {
     this.holdInterval = null;
     this.holdTimeout = null;
     this.isHolding = false;
-    
+
     container.carousel = this;
     this.carousel.object = this;
 
@@ -595,10 +578,8 @@ class Carousel {
 
   updateItemClassLists() {
     this.carouselItems.forEach((item, index) => {
-      item.classList.remove("active");
-      if (index + 1 === this.itemNumber) {
-        item.classList.add("active");
-      }
+      item.style.display =
+        index + 1 === this.itemNumber ? "flex" : "none";
     });
   }
 
@@ -748,7 +729,11 @@ const adjustMathAlignment = () => {
 const constrainImage = (image) => {
   image.classList.remove("unconstrained");
   image.classList.add("constrained");
-  image.style.width = `calc(min(100%, ${image.originalWidth}))`;
+  let z = `min(100%, ${image.originalWidth})`;
+  if (image.id === "mini") {
+    console.log("z:", z);
+  }
+  image.style.width = z;
 };
 
 const unconstrainImage = (image) => {
@@ -880,20 +865,19 @@ const setupNextPageTooltip = () => {
 const setupImages = () => {
   let images = document.querySelectorAll("img");
   for (const image of images) {
-    if (!image.closest(".carousel") && !image.closest("figure"))
-      continue;
+    if (!image.closest(".carousel") && !image.closest("figure")) continue;
     let s = window.getComputedStyle(image);
     image.originalWidth = s.width;
     image.originalHeight = s.height;
     image.style.width = "";
     image.style.height = "";
+    if (image.id === "mini") {
+      console.log("mini had a cArousel");
+    }
     constrainImage(image);
     window.requestAnimationFrame(() => {
       image.classList.add("image-zoom-transition");
-      image.addEventListener(
-        "click",
-        figureImgClick,
-      )
+      image.addEventListener("click", figureImgClick);
     });
   }
 };
@@ -910,8 +894,6 @@ const onLoad = () => {
 const onResize = () => {
   instantRecenter();
   resetScreenWidthDependentVars();
-  onMobile(() => setImgHeightToAuto());
-  onMobile(() => setMenuBorder());
   setTimeout(adjustMathAlignment, 60);
 };
 

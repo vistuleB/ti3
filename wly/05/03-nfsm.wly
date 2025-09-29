@@ -12,15 +12,17 @@
             style=height: 10em
             src=./img/finite-state-automata/nfsm-example-01.svg
 
-    |> figure
-        |> img
-            style=height:100px
-            src=./img/test_img.svg
+    |> Carousel
+        height=100px
+        src=./img/test_img.svg
+        src=./img/test_img.svg
+        src=./img/test_img.svg
 
-    |> figure
-        |> img
-            style=width:500px
-            src=./img/test_img.svg
+    |> Carousel
+        width=500px
+        src=./img/test_img.svg
+        src=./img/test_img.svg
+        src=./img/test_img.svg
 
     Ein Pfeil beschreibt also nicht unbedingt einen Zustandsübergang,
     der _geschieht_, sondern einen, der _möglich_ ist. Formal
@@ -62,6 +64,16 @@
 
         Formal gesehen ist also ein Automat ein Quintupel
         $M = (\Sigma, Q, \qstart, F, \delta)$.
+
+    |> figure
+        |> img
+            style=height:100px
+            src=./img/test_img.svg
+
+    |> figure
+        |> img
+            style=width:500px
+            src=./img/test_img.svg
 
     Von nun an bezeichnen wir endliche Automaten auch als
     _deterministische_ endliche Automaten, um den Unterschied zu den
