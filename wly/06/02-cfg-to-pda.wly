@@ -1,42 +1,11 @@
 |> Sub
     title=Kontextfreie Grammatiken und Kellerautomaten
 
-    |> figure
-        |> img
-            style=width:840px
-            src=./img/test_img.svg
-
-    |> figure
-        |> img
-            style=width:840px
-            src=./img/test_img2.svg
-
-    |> figure
-        |> img
-            style=width:840px
-            src=./img/test_img3.svg
-
     |> Statement
         title=*Theorem*
         Zu jeder kontextfreien Grammatik $G = (\Sigma, N, S, P)$ gibt es
         einen Kellerautomaten $M = (\Sigma, Q, \Gamma, \qstart, \delta)$,
         der die gleiche Sprache akzeptiert, also $L(G) = L(M)$.
-
-        |> figure
-            |> img
-                style=width:840px
-                src=./img/test_img.svg
-
-        |> figure
-            |> img
-                style=width:840px
-                src=./img/test_img2.svg
-
-        |> figure
-            |> img
-                style=width:840px
-                src=./img/test_img3.svg
-
 
     |> Highlight
         title=*Beweis.*
