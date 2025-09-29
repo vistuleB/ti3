@@ -38,6 +38,7 @@ let lastScrollYMoment = Date.now();
 let menuHidden = false;
 let menuElement = null;
 let isPageCentered = true;
+let screenWidth = -1;
 
 const marginWidth = () => {
   return (document.body.scrollWidth - window.visualViewport.width) / 2;
@@ -60,250 +61,248 @@ const instantRecenter = () => {
   recenter("instant");
 };
 
-const resetScreenWidthDependentVars = () => {
-  const screenWidth = window.innerWidth;
+const inhaltsArrowsDisplay = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
+  return "inline";
+};
 
+const menuPaddingXInRem = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
+  return 1.7;
+};
+
+const menuPaddingYInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.6;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
+  return 1.4;
+};
+
+const menuBackgroundColor = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "var(--body-background-color)";
+  return "#0000";
+};
+
+const menuElementGapInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.7;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0.7;
+  return 0.55;
+};
+
+const indexHeaderTitleFontSizeInRem = () => {
+  return pageTitleFontSizeInRem();
+};
+
+const indexHeaderTitleLineHeightInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 2.2;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 2.5;
+  return 2.8;
+};
+
+const indexHeaderSubtitleFontSizeInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.35;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.45;
+  return 1.5;
+};
+
+const indexHeaderPaddingTopInPx = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 90;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 100;
+  return 90;
+};
+
+const indexHeaderPaddingBottomInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 2;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 3;
+  return 4;
+};
+
+const indexTocMaxWidthInPx = () => {
+  if (screenWidth <= TABLET_MAX_WIDTH)
+    return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
+  return 580;
+};
+
+const indexTocPaddingBottomInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.5;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 2;
+  return 3;
+};
+
+const indexTocChapterLevelMarginInEm = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.6;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0.6;
+  return 0.5;
+};
+
+const indexTocSubchapterLevelMarginInEm = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.25;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0.2;
+  return 0.15;
+};
+
+const carouselMaxWidthInPx = () => {
+  const adjustedScreenWidth = screenWidth * 0.9;
+  const computeTabletMaxWidth = Math.min(
+    adjustedScreenWidth,
+    DESKTOP_MAIN_COLUMN_WIDTH
+  );
+  const computeDesktopMaxWidth =
+    screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
+      ? adjustedScreenWidth
+      : DESKTOP_MAIN_COLUMN_WIDTH;
+
+  if (screenWidth <= MOBILE_MAX_WIDTH) return screenWidth;
+  if (screenWidth <= TABLET_MAX_WIDTH) return computeTabletMaxWidth;
+  return computeDesktopMaxWidth;
+};
+
+const carouselArrowSizeInPx = () => {
+  if (screenWidth > LAPTOP_MAX_WIDTH) return CAROUSEL_ARROW_DESKTOP_SIZE;
+  if (screenWidth > TABLET_MAX_WIDTH) return CAROUSEL_ARROW_LAPTOP_SIZE;
+  let minSizeWidth = 490; // the width at which arrow reaches min width
+  return (
+    CAROUSEL_ARROW_MIN_SIZE +
+    ((CAROUSEL_ARROW_TABLET_MAX_SIZE - CAROUSEL_ARROW_MIN_SIZE) *
+      Math.max(0, screenWidth - minSizeWidth)) /
+      (TABLET_MAX_WIDTH - minSizeWidth)
+  );
+};
+
+const carouselNavButtonMarginXInPx = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+  if (screenWidth <= TABLET_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
+  return carouselArrowSizeInPx();
+};
+
+const endOfPageMainColumnMarginBottomInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
+  return 2.4;
+};
+
+const endOfPageWellMarginBottomInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
+  return 2.2;
+};
+
+const mainColumnWidthInPx = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return screenWidth;
+  return DESKTOP_MAIN_COLUMN_WIDTH;
+};
+
+const mainColumnPaddingXInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.5;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.8;
+  return 2;
+};
+
+const mainColumnToWellMarginInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.7;
+  return 1.8;
+};
+
+const outerWellWidthInPx = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return screenWidth - 1.5 * remToPx;
+  if (screenWidth <= TABLET_MAX_WIDTH)
+    return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
+  if (screenWidth <= LAPTOP_MAX_WIDTH)
+    return mainColumnWidthInPx() - 2 * LAPTOP_OUTER_WELL_INSET;
+  return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remToPx;
+};
+
+const pageTitleFontSizeInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.8;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 2.1;
+  return 2.25;
+};
+
+const pageTitleMarginTopInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 7;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 7;
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 6;
+  return 3.6;
+};
+
+const topicAnnouncementFontSizeInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.85;
+  if (screenWidth <= TABLET_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.82;
+  return pageTitleFontSizeInRem() * 0.78;
+};
+
+const subtopicAnnouncementFontSizeInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH)
+    return topicAnnouncementFontSizeInRem() * 0.95;
+  if (screenWidth <= TABLET_MAX_WIDTH)
+    return topicAnnouncementFontSizeInRem() * 0.9;
+  return topicAnnouncementFontSizeInRem() * 0.85;
+};
+
+const wellMarginYInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
+  return 2;
+};
+
+const lastChildWellMarginBottomInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0.2;
+  return 0.5;
+};
+
+const wellPaddingXInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.3;
+  return 2;
+};
+
+const wellPaddingYInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.2;
+  return 1.6;
+};
+
+const ulOlMarginLeftInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
+  return 2;
+};
+
+const ulOlMarginRightInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
+  return 2;
+};
+
+const nestedUlOlMarginLeftInRem = () => {
+  return ulOlMarginLeftInRem();
+};
+
+const nestedUlOlMarginRightInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1;
+  return 2;
+};
+
+const textfigurePaddingXInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 2.5;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 3;
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 5;
+  return 6;
+};
+
+const mathBlockMaxWidthInPx = () => {
+  if (screenWidth > LAPTOP_MAX_WIDTH) return Infinity;
+  return mainColumnWidthInPx();
+};
+
+const resetScreenWidthDependentVars = () => {
   let set = (key, val, unit) => {
     root.style.setProperty(key, `${val()}` + unit);
-  };
-
-  let inhaltsArrowsDisplay = () => {
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
-    return "inline";
-  };
-
-  let menuPaddingXInRem = () => {
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
-    return 1.7;
-  };
-
-  let menuPaddingYInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.6;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
-    return 1.4;
-  };
-
-  let menuBackgroundColor = () => {
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return "var(--body-background-color)";
-    return "#0000";
-  };
-
-  let menuElementGapInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.7;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 0.7;
-    return 0.55;
-  };
-
-  let indexHeaderTitleFontSizeInRem = () => {
-    return pageTitleFontSizeInRem();
-  };
-
-  let indexHeaderTitleLineHeightInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 2.2;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 2.5;
-    return 2.8;
-  };
-
-  let indexHeaderSubtitleFontSizeInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.35;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.45;
-    return 1.5;
-  };
-
-  let indexHeaderPaddingTopInPx = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 90;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 100;
-    return 90;
-  };
-
-  let indexHeaderPaddingBottomInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 2;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 3;
-    return 4;
-  };
-
-  let indexTocMaxWidthInPx = () => {
-    if (screenWidth <= TABLET_MAX_WIDTH)
-      return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
-    return 580;
-  };
-
-  let indexTocPaddingBottomInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.5;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 2;
-    return 3;
-  };
-
-  let indexTocChapterLevelMarginInEm = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.6;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 0.6;
-    return 0.5;
-  };
-
-  let indexTocSubchapterLevelMarginInEm = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.25;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 0.2;
-    return 0.15;
-  };
-
-  const carouselMaxWidthInPx = () => {
-    const adjustedScreenWidth = screenWidth * 0.9;
-    const computeTabletMaxWidth = Math.min(
-      adjustedScreenWidth,
-      DESKTOP_MAIN_COLUMN_WIDTH
-    );
-    const computeDesktopMaxWidth =
-      screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
-        ? adjustedScreenWidth
-        : DESKTOP_MAIN_COLUMN_WIDTH;
-
-    if (screenWidth <= MOBILE_MAX_WIDTH) return screenWidth;
-    if (screenWidth <= TABLET_MAX_WIDTH) return computeTabletMaxWidth;
-    return computeDesktopMaxWidth;
-  };
-
-  const carouselArrowSizeInPx = () => {
-    if (screenWidth > LAPTOP_MAX_WIDTH) return CAROUSEL_ARROW_DESKTOP_SIZE;
-    if (screenWidth > TABLET_MAX_WIDTH) return CAROUSEL_ARROW_LAPTOP_SIZE;
-    let minSizeWidth = 490; // the width at which arrow reaches min width
-    return (
-      CAROUSEL_ARROW_MIN_SIZE +
-      ((CAROUSEL_ARROW_TABLET_MAX_SIZE - CAROUSEL_ARROW_MIN_SIZE) *
-        Math.max(0, screenWidth - minSizeWidth)) /
-        (TABLET_MAX_WIDTH - minSizeWidth)
-    );
-  };
-
-  const carouselNavButtonMarginXInPx = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
-    if (screenWidth <= TABLET_MAX_WIDTH) return carouselArrowSizeInPx() * 0.7;
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return carouselArrowSizeInPx() * 0.4;
-    return carouselArrowSizeInPx();
-  };
-
-  const endOfPageMainColumnMarginBottomInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
-    return 2.4;
-  };
-
-  const endOfPageWellMarginBottomInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
-    return 2.2;
-  };
-
-  let mainColumnWidthInPx = () => {
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return screenWidth;
-    return DESKTOP_MAIN_COLUMN_WIDTH;
-  };
-
-  let mainColumnPaddingXInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.5;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.8;
-    return 2;
-  };
-
-  let mainColumnToWellMarginInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.7;
-    return 1.8;
-  };
-
-  let outerWellWidthInPx = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return screenWidth - 1.5 * remToPx;
-    if (screenWidth <= TABLET_MAX_WIDTH)
-      return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
-    if (screenWidth <= LAPTOP_MAX_WIDTH)
-      return mainColumnWidthInPx() - 2 * LAPTOP_OUTER_WELL_INSET;
-    return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remToPx;
-  };
-
-  let pageTitleFontSizeInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 1.8;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 2.1;
-    return 2.25;
-  };
-
-  let pageTitleMarginTopInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 7;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 7;
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return 6;
-    return 3.6;
-  };
-
-  let topicAnnouncementFontSizeInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.85;
-    if (screenWidth <= TABLET_MAX_WIDTH) return pageTitleFontSizeInRem() * 0.82;
-    return pageTitleFontSizeInRem() * 0.78;
-  };
-
-  let subtopicAnnouncementFontSizeInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH)
-      return topicAnnouncementFontSizeInRem() * 0.95;
-    if (screenWidth <= TABLET_MAX_WIDTH)
-      return topicAnnouncementFontSizeInRem() * 0.9;
-    return topicAnnouncementFontSizeInRem() * 0.85;
-  };
-
-  const wellMarginYInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
-    return 2;
-  };
-
-  const lastChildWellMarginBottomInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 0.2;
-    return 0.5;
-  };
-
-  const wellPaddingXInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.3;
-    return 2;
-  };
-
-  const wellPaddingYInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.2;
-    return 1.6;
-  };
-
-  const ulOlMarginLeftInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 1;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
-    return 2;
-  };
-
-  const ulOlMarginRightInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 1;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
-    return 2;
-  };
-
-  const nestedUlOlMarginLeftInRem = () => {
-    return ulOlMarginLeftInRem();
-  };
-
-  const nestedUlOlMarginRightInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 1;
-    return 2;
-  };
-
-  const textfigurePaddingXInRem = () => {
-    if (screenWidth <= MOBILE_MAX_WIDTH) return 2.5;
-    if (screenWidth <= TABLET_MAX_WIDTH) return 3;
-    if (screenWidth <= LAPTOP_MAX_WIDTH) return 5;
-    return 6;
-  };
-
-  const mathBlockMaxWidthInPx = () => {
-    if (screenWidth > LAPTOP_MAX_WIDTH) return Infinity;
-    return mainColumnWidthInPx();
   };
 
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
@@ -371,15 +370,21 @@ const resetScreenWidthDependentVars = () => {
 
 class Carousel {
   constructor(container) {
+    if (!container.classList.contains("carousel__container")) {
+      console.error("'Carousel' constructor should be called on carousel__container!");
+      return;
+    }
+
     this.container = container;
     this.carousel = container.querySelector(".carousel");
     this.carouselItems = container.querySelectorAll(".carousel__item");
     this.numItems = this.carouselItems.length;
     this.itemNumber = 1;
-    this.constrained = true;
     this.holdInterval = null;
     this.holdTimeout = null;
     this.isHolding = false;
+    this.constrained = true;
+    this.bigEnoughContainerForUnconstrainedContent = true;
 
     container.carousel = this;
     this.carousel.object = this;
@@ -387,6 +392,24 @@ class Carousel {
     this.imgs = Array.from(this.carouselItems)
       .map((item) => item.querySelector("img"))
       .filter((img) => img);
+
+    let maxOriginalWidthInPx = 0;
+    let minOriginalWidthInPx = Infinity;
+    for (const img of this.imgs) {
+      if (img.originalWidthInPx > maxOriginalWidthInPx)
+        maxOriginalWidthInPx = img.originalWidthInPx;
+      if (img.originalWidthInPx < minOriginalWidthInPx)
+        minOriginalWidthInPx = img.originalWidthInPx;
+    }
+    if (minOriginalWidthInPx > maxOriginalWidthInPx) {
+      console.error(`minOriginalWidthInPx > maxOriginalWidthInPx: ${minOriginalWidthInPx} > ${maxOriginalWidthInPx}`);
+    }
+    if (minOriginalWidthInPx < maxOriginalWidthInPx) {
+      console.warn(`minOriginalWidthInPx < maxOriginalWidthInPx: ${minOriginalWidthInPx} < ${maxOriginalWidthInPx}`);
+    }
+    this.maxOriginalWidthInPx = maxOriginalWidthInPx;
+    this.minOriginalWidthInPx = minOriginalWidthInPx;
+    this.maxOriginalWidth = maxOriginalWidthInPx + 'px';
 
     this.widescreenPrevBtn = (() => {
       const btn = document.createElement("button");
@@ -504,9 +527,9 @@ class Carousel {
     })();
 
     this.setItemNumber(1);
-    this.handleResize();
+    this.onScreenWidthChange();
 
-    window.addEventListener("resize", () => this.handleResize());
+    // window.addEventListener("resize", () => this.onScreenWidthChange());
   }
 
   appendToContainer(thing) {
@@ -559,24 +582,26 @@ class Carousel {
     this.removeFromContainer(this.touchscreenNav);
   }
 
-  handleResize() {
-    onTouchscreenElse(
-      () => {
-        this.removeWidescreenNav();
-        this.attachTouchscreenNav();
-      },
-      () => {
-        this.removeTouchscreenNav();
-        this.attachWidescreenNav();
-      }
-    );
+  onScreenWidthChange() {
+    let containerWidth = this.container.getBoundingClientRect().width;
+    let expandedWidth = this.maxOriginalWidthInPx + 2 * carouselArrowSizeInPx() + 4 * carouselNavButtonMarginXInPx();
+    if (containerWidth >= expandedWidth) {
+      this.bigEnoughContainerForUnconstrainedContent = true;
+      this.removeTouchscreenNav();
+      this.attachWidescreenNav();
+    } else {
+      this.bigEnoughContainerForUnconstrainedContent = false;
+      this.removeWidescreenNav();
+      this.attachTouchscreenNav();
+    }
+    this.updateConstrained();
   }
 
   updateIndexCounter() {
     this.indexCounter.textContent = `${this.itemNumber}`;
   }
 
-  updateItemClassLists() {
+  updateItemsDisplayValue() {
     this.carouselItems.forEach((item, index) => {
       item.style.display =
         index + 1 === this.itemNumber ? "flex" : "none";
@@ -584,10 +609,10 @@ class Carousel {
   }
 
   updateConstrained() {
-    if (!this.constrained) {
-      this.imgs.forEach(unconstrainImage);
-    } else {
+    if (!this.bigEnoughContainerForUnconstrainedContent && this.constrained) {
       this.imgs.forEach(constrainImage);
+    } else {
+      this.imgs.forEach(unconstrainImage);
     }
   }
 
@@ -608,10 +633,9 @@ class Carousel {
       return;
     }
     this.itemNumber = itemNumber;
-    this.updateItemClassLists();
+    this.updateItemsDisplayValue();
     this.updateIndexCounter();
     this.updateIndicators();
-    this.updateConstrained();
   }
 
   nudgeCarouselItem(direction) {
@@ -692,12 +716,15 @@ function createCarouselObserver() {
   return new IntersectionObserver(callback, options);
 }
 
+let allCarouselObjects = new Array();
+
 const setupCarousels = () => {
   let carouselObserver = createCarouselObserver();
   const carousels = document.querySelectorAll(".carousel__container");
   carousels.forEach((container) => {
-    new Carousel(container);
     carouselObserver.observe(container);
+    let c = new Carousel(container);
+    allCarouselObjects.push(c);
   });
 };
 
@@ -869,11 +896,10 @@ const setupImages = () => {
     let s = window.getComputedStyle(image);
     image.originalWidth = s.width;
     image.originalHeight = s.height;
+    image.originalWidthInPx = parseFloat(image.originalWidth);
+    image.originalHeightInPx = parseFloat(image.originalHeight);
     image.style.width = "";
     image.style.height = "";
-    if (image.id === "mini") {
-      console.log("mini had a cArousel");
-    }
     constrainImage(image);
     window.requestAnimationFrame(() => {
       image.classList.add("image-zoom-transition");
@@ -892,9 +918,17 @@ const onLoad = () => {
 
 // event listeners
 const onResize = () => {
+  let z = window.innerWidth;
+  if (z == screenWidth) {
+    return;
+  }
+  screenWidth = z;
   instantRecenter();
   resetScreenWidthDependentVars();
   setTimeout(adjustMathAlignment, 60);
+  for (const carousel of allCarouselObjects) {
+    carousel.onScreenWidthChange();
+  }
 };
 
 const onScrollEnd = (e) => {

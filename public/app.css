@@ -498,9 +498,9 @@ figure {
   justify-content: center;
 }
 
-figure img {
+figure img,
+.carousel__item img {
   background-color: inherit;
-  margin: 0 auto;
   box-sizing: content-box;
   border-top-width: 16px;
   border-bottom-width: 16px;
@@ -508,12 +508,14 @@ figure img {
   border-color: transparent;
 }
 
-figure img.constrained {
+figure img.constrained,
+.carousel__item img.constrained {
   border-left-width: min(var(--well-padding-x), 16px);
   border-right-width: min(var(--well-padding-x), 16px);  
 }
 
-figure img.unconstrained {
+figure img.unconstrained,
+.carousel__item img {
   border-left-width: 16px;
   border-right-width: 16px;
 }
@@ -665,9 +667,24 @@ figcaption {
   overflow: visible;
 }
 
-.carousel__item img {
-  flex-shrink: 0;
+/* .carousel__item img {
+  background-color: inherit;
+  box-sizing: content-box;
+  border-top-width: 16px;
+  border-bottom-width: 16px;
+  border-style: solid;
+  border-color: transparent;
 }
+
+.carousel__item img.constrained {
+  border-left-width: min(var(--well-padding-x), 16px);
+  border-right-width: min(var(--well-padding-x), 16px);  
+}
+
+.carousel__item img.unconstrained {
+  border-left-width: 16px;
+  border-right-width: 16px;
+} */
 
 /** end of carousel **/
 

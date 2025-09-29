@@ -45,6 +45,18 @@
                 style=width:500px
                 src=./img/test_img.svg
 
+        |> Carousel
+            height=100px
+            src=./img/test_img.svg
+            src=./img/test_img.svg
+            src=./img/test_img.svg
+
+        |> Carousel
+            width=500px
+            src=./img/test_img.svg
+            src=./img/test_img.svg
+            src=./img/test_img.svg
+
         |> ul
             |> li
                 einem endlichen Eingabealphaet $\Sigma$,
