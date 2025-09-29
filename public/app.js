@@ -583,7 +583,6 @@ class Carousel {
     this.holdTimeout = null;
     this.isHolding = false;
     this.constrained = true;
-    this.bigEnoughContainerForUnconstrainedContent = true;
 
     container.carousel = this;
     this.carousel.object = this;
@@ -730,7 +729,6 @@ class Carousel {
     })();
 
     this.setItemNumber(1);
-    this.onScreenWidthChange();
   }
 
   appendToContainer(thing) {
@@ -783,7 +781,7 @@ class Carousel {
     this.removeFromContainer(this.touchscreenNav);
   }
 
-  buttonHeightFromContainerWidth = () => {
+  phase1ButtonHeightComputation = () => {
     let minSizeContainerWidth = 490;
     return Math.min(
       CAROUSEL_ARROW_DESKTOP_SIZE,
@@ -794,47 +792,56 @@ class Carousel {
     );
   };
 
-  buttonMarginFromContainerWidth = () => {
-    return this.buttonHeightFromContainerWidth() * 0.7;
+  phase1ButtonMarginComputation = () => {
+    return this.phase1ButtonHeightComputation() * 0.7;
   };
 
-  resetButtonsHeightMarginFromContainerWidth = () => {
-    this.buttonHeight = this.buttonHeightFromContainerWidth();
-    this.buttonMargin = this.buttonMarginFromContainerWidth();
-
-    this.widescreenPrevBtn.style.height = this.buttonHeight + "px";
-    this.widescreenNextBtn.style.height = this.buttonHeight + "px";
-
-    this.touchscreenPrevBtn.style.height = this.buttonHeight + "px";
-    this.touchscreenNextBtn.style.height = this.buttonHeight + "px";
-    this.touchscreenFstBtn.style.height = this.buttonHeight + "px";
-    this.touchscreenLstBtn.style.height = this.buttonHeight + "px";
-
-    this.widescreenPrevBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
-    this.widescreenNextBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
-
-    this.touchscreenPrevBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
-    this.touchscreenNextBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
-    this.touchscreenFstBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
-    this.touchscreenLstBtn.style.margin = `0 ${this.buttonMargin + "px"}`;
+  onScreenWidthChangePhase1() {
+    this.containerWidth = this.container.getBoundingClientRect().width;
+    this.buttonHeight = this.phase1ButtonHeightComputation();
+    this.buttonMargin = this.phase1ButtonMarginComputation();
   }
 
-  onScreenWidthChange() {
-    this.containerWidth = this.container.getBoundingClientRect().width;
-    this.resetButtonsHeightMarginFromContainerWidth();
-    let expandedWidth =
+  phase2resetButtonStyles = () => {
+    this.widescreenPrevBtn.style.height = this.buttonHeight;
+    this.widescreenNextBtn.style.height = this.buttonHeight;
+
+    this.touchscreenPrevBtn.style.height = this.buttonHeight;
+    this.touchscreenNextBtn.style.height = this.buttonHeight;
+    this.touchscreenFstBtn.style.height = this.buttonHeight;
+    this.touchscreenLstBtn.style.height = this.buttonHeight;
+
+    this.widescreenPrevBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.widescreenNextBtn.style.margin = `0 ${this.buttonMargin}`;
+
+    this.touchscreenPrevBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.touchscreenNextBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.touchscreenFstBtn.style.margin = `0 ${this.buttonMargin}`;
+    this.touchscreenLstBtn.style.margin = `0 ${this.buttonMargin}`;
+  };
+
+  onScreenWidthChangePhase2(imposedButtonHeight, imposedButtonWidth) {
+    console.log("in phase 2 with:", imposedButtonHeight, imposedButtonWidth);
+
+    let unconstrainedUIWidth =
       this.maxOriginalWidthInPx +
-      2 * this.buttonHeight +
-      4 * this.buttonMargin;
-    if (this.containerWidth >= expandedWidth) {
-      this.bigEnoughContainerForUnconstrainedContent = true;
+      2 * imposedButtonHeight +
+      4 * imposedButtonWidth;
+
+    if (this.containerWidth >= unconstrainedUIWidth) {
+      this.bigEnoughContainerForUnconstrainedUI = true;
       this.removeTouchscreenNav();
       this.attachWidescreenNav();
     } else {
-      this.bigEnoughContainerForUnconstrainedContent = false;
+      this.bigEnoughContainerForUnconstrainedUI = false;
       this.removeWidescreenNav();
       this.attachTouchscreenNav();
     }
+
+    this.buttonHeight = imposedButtonHeight + "px";
+    this.buttonMargin = imposedButtonWidth + "px";
+
+    this.phase2resetButtonStyles();
     this.updateConstrained();
   }
 
@@ -849,7 +856,8 @@ class Carousel {
   }
 
   updateConstrained() {
-    if (!this.bigEnoughContainerForUnconstrainedContent && this.constrained) {
+    if (this.bigEnoughContainerForUnconstrainedUI === undefined) return;
+    if (!this.bigEnoughContainerForUnconstrainedUI && this.constrained) {
       this.imgs.forEach(constrainImage);
     } else {
       this.imgs.forEach(unconstrainImage);
@@ -948,8 +956,20 @@ const onResize = () => {
   instantRecenter();
   resetScreenWidthDependentVars();
   setTimeout(adjustMathAlignment, 60);
+
+  if (allCarouselObjects.length === 0) return;
+
+  let totalButtonHeights = 0;
   for (const carousel of allCarouselObjects) {
-    carousel.onScreenWidthChange();
+    carousel.onScreenWidthChangePhase1();
+    totalButtonHeights += carousel.buttonHeight;
+  }
+  const avgButtonHeight = totalButtonHeights / allCarouselObjects.length;
+  for (const carousel of allCarouselObjects) {
+    carousel.onScreenWidthChangePhase2(
+      avgButtonHeight,
+      avgButtonHeight * carousel.buttonMargin / carousel.buttonHeight,
+    );
   }
 };
 
