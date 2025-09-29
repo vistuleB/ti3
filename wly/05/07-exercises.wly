@@ -1,7 +1,6 @@
 |> Sub
     title=Übungsaufgaben
 
-
     |> TopicAnnouncement
         Reguläre Sprachen und primitive Rekursion
 

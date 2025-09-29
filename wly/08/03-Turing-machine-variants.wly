@@ -2,7 +2,6 @@
     handle=turing-variants
     title=Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
 
-
     |> TopicAnnouncement
         Turingmaschinen mit mehreren Bändern
 
@@ -560,7 +559,8 @@
         Konfiguration gibt.
 
     |> TopicAnnouncement
-        Deterministische Turingmaschinen simulieren nichtdeterministische
+        Deterministische Turingmaschinen simulieren
+        nichtdeterministische
 
     Sind nun nichtdeterministische Turingmaschinen inhärent mächtiger?
     Können Sie das Teilsummenproblem auch mit einer deterministischen
@@ -638,7 +638,6 @@
             |> img
                 style=height: 10em
                 src=img/turing-machines/nondeterminism/two-to-det.svg
-                loading=lazy
 
         Falls wir auf dem zweiten Band einem anderen Zeichen begegnen (
         $\square$ oder sonst etwas, das weder 0 noch 1 ist), dann lehnen

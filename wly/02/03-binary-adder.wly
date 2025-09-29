@@ -1,7 +1,6 @@
 |> Sub
     title=Binär-Addierer
 
-
     |> TopicAnnouncement
         Ein Schaltkreis für binäre Addition
 

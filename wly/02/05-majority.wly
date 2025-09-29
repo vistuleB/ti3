@@ -8,7 +8,6 @@
         |> img
             style=height:10em
             src=./img/circuits/majority.svg
-            loading=lazy
 
     Diese nimmt $n$ Bits als Input und gibt 1 aus, wenn mehr als $n/2$
     davon 1 sind. Für $n=3$ heißt dass, das mindestens zwei Input-Bits
@@ -24,7 +23,6 @@
         |> img
             style=height:8em
             src=./img/circuits/maj3.svg
-            loading=lazy
 
     Wie können wir das sinnvoll verallgemeinern für größere $n$? Was
     geschieht, wenn wir einfach die Wahrheitstabellen-Methode anwenden?
@@ -189,7 +187,6 @@
         |> img
             style=height:15em
             src=./img/circuits/majority-theta-recursive.svg
-            loading=lazy
 
     Die Konstruktion endet mit $\theta^m_0$, was immer $1$ ausgibt,
     und mit $\theta^m_{m}$, was $x_1 \wedge \dots \wedge x_m$ ist. Die
@@ -217,7 +214,6 @@
         |> img
             style=height:18em
             src=./img/circuits/majority-theta-dp.svg
-            loading=lazy
 
     Um eine Analogie mit der Programmierpraxis zu bemühen: der
     Unterschied zwischen den beiden Konstruktionen für $\theta^n_k$
@@ -264,7 +260,6 @@
         |> img
             style=height:12em
             src=./img/circuits/majority-by-adding.svg
-            loading=lazy
 
     |> Exercise
         Bestimmen Sie asymptotisch die Größe und die Tiefe dieses
@@ -304,7 +299,6 @@
             |> img
                 style=height:10em
                 src=./img/circuits/2-for-3-adder-example.svg
-                loading=lazy
 
         Wir addieren also pro Stelle drei (einstellige) Zahlen, führen
         den Übertrag (das Carry) aber nicht der weiter links stehenden
@@ -316,7 +310,6 @@
             |> img
                 style=height:15em
                 src=./img/circuits/2-for-3-adder-binary.svg
-                loading=lazy
 
         Dieser Schaltkreis hat insgesamt $O(n)$ Gates und Tiefe 2 (wobei
         wir die NOT-Gates im $\oplus$-Gate nicht mitzählen).

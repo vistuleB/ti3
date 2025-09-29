@@ -388,7 +388,6 @@
             |> img
                 style=height:10em
                 src=./img/finite-state-automata/nfsm-example-01.svg
-                loading=lazy
 
         akzeptiert die Sprache $L$ aller $\alpha \in \{0,1\}^n$, deren
         viertletzter Buchstabe eine 1 ist. Unsere Konstruktion, ihn

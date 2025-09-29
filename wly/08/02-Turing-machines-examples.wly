@@ -75,7 +75,6 @@
             |> img
                 style=height:12em
                 src=img/turing-machines/exampe-2-aabbcc/delta-table.svg
-                loading=lazy
 
         Beachten Sie: manche Zellen sind leer. Damit meine ich, dass die
         Turingmaschine dort in den Zustand `reject` wechselt. Andere
@@ -165,7 +164,6 @@
             |> img
                 style=height:15em
                 src=img/turing-machines/exampe-2-aabbcc/delta-table-palindromes.svg
-                loading=lazy
 
     |> Exercise
         Implementieren Sie die Turingmaschine für die Palindromsprache

@@ -189,7 +189,6 @@
         |> img
             style=height:10em
             src=img/circuits/dnf-example.svg
-            loading=lazy
 
     In diesem Schaltkreis habe ich die Input-Knoten mehrfach
     aufgeführt und die NOT-Gates nicht explizit aufgeführt, damit kein
@@ -228,7 +227,6 @@
             |> img
                 style=height:10em
                 src=img/circuits/dnf-dirty.svg
-                loading=lazy
 
     |> TopicAnnouncement
         Bottom-Up, als CNF
@@ -268,7 +266,6 @@
         |> img
             style=height:10em
             src=img/circuits/cnf-example.svg
-            loading=lazy
 
     |> Statement
         title=*Definition*

@@ -155,8 +155,8 @@
     erkennen würde in dem Automaten.
 
     |> TopicAnnouncement
-        5. Den nichtdeterministischen Automaten in einen deterministischen
-        umwandeln
+        5. Den nichtdeterministischen Automaten in einen
+        deterministischen umwandeln
 
     Unser nichtdeterministischer endlicher Automat hat Zustandsmenge
     $Q = \{S, S', C, C', D, D', E\}$, also insgesamt sieben Zustände.

@@ -57,6 +57,7 @@ pub fn formatter_pipeline(
         infra.latex_strippable_display_delimiters(),
         infra.descendant_text_contains(_, "\\begin{align")
       )),
+      dl.delete_attribute("loading"),
       dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
       dl.concatenate_text_nodes(),
       dl.insert_text_start_end(#("tt", #("`", "`"))),

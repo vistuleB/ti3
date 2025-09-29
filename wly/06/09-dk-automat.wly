@@ -1,7 +1,6 @@
 |> Sub
     title=Der DK-Automat
 
-
     |> TopicAnnouncement
         Von der Grammatik $\hat{G}$ zu einem nichtdeterministischen
         endlichen Automaten
@@ -336,6 +335,5 @@
         |> img
             style=height: 30em
             src=./img/context-free/LR/dk-automaton-7-nea-aaabb-LR1/Nea-LR-1-for-aaabb.svg
-            loading=lazy
 
     Jetzt machen wir den Automaten deterministisch:

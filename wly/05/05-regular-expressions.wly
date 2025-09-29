@@ -273,7 +273,6 @@
             |> img
                 style=height:14em
                 src=./img/finite-state-automata/to-regex/nea-to-vnea.svg
-                loading=lazy
 
         Definieren wir nun formal, was VNEAs sind und welche Sprache sie
         akzeptieren:
@@ -342,7 +341,6 @@
             |> img
                 style=height:10em
                 src=./img/finite-state-automata/to-regex/eliminate-B.svg
-                loading=lazy
 
         Falls die mit $R_2$ beschriftete Selbstschleife an Zustand $B$
         nicht existieren sollte, dann schreiben wir einfach $R_1R_3$
@@ -364,7 +362,6 @@
             |> img
                 style=height:2.5em
                 src=./img/finite-state-automata/to-regex/nvea-final.svg
-                loading=lazy
 
         Dieser VNEA akzeptiert immer noch die gleiche Sprache $L$ wie
         der ursprüngliche NEA, mit dem wir begonnen haben. Welche Sprache
