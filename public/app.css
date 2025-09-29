@@ -648,10 +648,11 @@ figcaption {
   background-color: inherit;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .carousel__items {
-  width: 100%;
+  width: fit-content;
   display: flex;
   background-color: inherit;
 }
