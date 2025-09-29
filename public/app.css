@@ -816,7 +816,9 @@ button img {
 }
 
 .textfigure {
+  width: var(--main-column-width);
   padding: 0.5rem var(--textfigure-padding-x);
+  text-align: center;
 }
 
 .checkered {
