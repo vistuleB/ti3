@@ -62,7 +62,7 @@ const instantRecenter = () => {
 };
 
 const inhaltsArrowsDisplay = () => {
-  if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
+  if (screenWidth <= LAPTOP_MAX_WIDTH || document.getElementById("prev-page").getAttribute('href') != "./index.html") return "none";
   return "inline";
 };
 

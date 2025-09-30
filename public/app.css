@@ -10,7 +10,7 @@
   /*********************************/
   /* resetScreenWidthDependentVars */
   /*********************************/
-  --inhalts-arrow-display: inline;
+  --inhalts-arrow-display: none;
   --menu-padding-x: 2rem;
   --menu-padding-y: 1.4rem;
   --menu-background-color: #0000;
