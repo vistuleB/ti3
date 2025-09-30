@@ -22,14 +22,14 @@
     separiert durch `:` oder `-` aber niemals durch beides innerhalb
     eines Blockes. Also:
 
-    |> div
-        style=text-align:center
+    |> figure
+        class=textfigure
         `bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa`
 
     ist ein Wort in $L$, aber
 
-    |> div
-        style=text-align:center
+    |> figure
+        class=textfigure
         `a:b-c.hello`
 
     ist kein Wort in $L$, da das erste Label die Separatoren `:` und

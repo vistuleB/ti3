@@ -93,8 +93,8 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.set_handle_value_if_has_ancestor_else(#("Topic", "Sub", "::øøChapterCounter.::øøSubCounter", "::øøChapterCounter")),
       dl.auto_generate_child_if_missing_from_attribute(#("Chapter", "ChapterTitle", "title")),
       dl.auto_generate_child_if_missing_from_attribute(#("Sub", "SubTitle", "title")),
-      dl.prepend_text_node(#("ChapterTitle","::øøChapterCounter. ")), 
-      dl.prepend_text_node(#("SubTitle", "::øøChapterCounter.::øøSubCounter ")),
+      dl.prepend_attribute(#("ChapterTitle", "number-chiron", "::øøChapterCounter.", infra.GoBack)),
+      dl.prepend_attribute(#("SubTitle", "number-chiron", "::øøChapterCounter.::øøSubCounter", infra.GoBack)),
       dl.prepend_text_node_if_has_ancestor_else__batch([
         #(
           "Exercise",
@@ -133,6 +133,8 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti2_create_index(),
       dl.ti2_create_menu(),
       dl.ti2_expand_carousels(),
+      dl.insert_attribute_value_at_start(#("ChapterTitle", "number-chiron", "&ensp;", infra.GoBack)),
+      dl.insert_attribute_value_at_start(#("SubTitle", "number-chiron", "&ensp;", infra.GoBack)),
       dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
@@ -227,7 +229,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("SubTheorem", "div"),
         #("NoWrap", "span"),
       ]),
-      dl.delete_attribute__batch(["_", "counter", "title"]),
+      dl.delete_attribute__batch(["_", "counter", "title", "number-chiron"]),
       dl.check_tags(#(post_transformation_approved_tags,"post-transformation")),
     ]
   ]
