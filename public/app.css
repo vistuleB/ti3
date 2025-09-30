@@ -508,6 +508,7 @@ figure {
 
 figure img,
 .carousel__item img {
+  margin: 0 auto; /* has helped measure originalWidth, originalHeight */
   background-color: inherit;
   box-sizing: content-box;
   border-top-width: 16px;
