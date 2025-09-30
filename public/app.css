@@ -503,6 +503,7 @@ figure {
   overflow: visible;
   justify-content: center;
   width: fit-content;
+  flex-direction: column;
 }
 
 figure img,
@@ -528,10 +529,11 @@ figure img.unconstrained,
 }
 
 figcaption {
-  max-width: 70%;
+  max-width: min(400px, 90%, calc(var(--main-column-width) * 0.7));
   margin: auto;
   margin-top: 0.5em;
   padding-bottom: 1rem;
+  text-align: center;
 }
 
 .zoom-transition {

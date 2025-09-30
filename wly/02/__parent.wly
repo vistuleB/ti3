@@ -71,8 +71,8 @@
             style=height:13em
             src=img/circuits/if-then-else-gate-with-values.svg
         |> figcaption
-        Das if-then-else-Gate mit einer konkreten Belegung und einem
-        Ausgabewert
+            Das if-then-else-Gate mit einer konkreten Belegung und einem
+            Ausgabewert
 
     |> Exercise
         Bauen Sie folgende Gates aus And-, Or- und Not-Gates zusammen:

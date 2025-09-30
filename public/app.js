@@ -516,7 +516,7 @@ const setupMenuTooltips = () => {
       tooltip.visibility = true;
       setTimeout(() => {
         if (tooltip.visibility === true) tooltip.style.visibility = "visible";
-      }, 250);
+      }, 50);
     });
     tooltip.parentNode.addEventListener("mouseout", () => {
       tooltip.visibility = false;
@@ -955,17 +955,16 @@ const onLoad = () => {
 };
 
 const onResize = () => {
-  let tmp = window.innerWidth;
-  if (tmp == screenWidth) return;
-  screenWidth = tmp;
+  if (window.innerWidth == screenWidth) return;
+  screenWidth = window.innerWidth;
   instantRecenter();
   resetScreenWidthDependentVars();
   setTimeout(adjustMathAlignment, 60);
   for (const image of allConstrainableImages) {
     image.classList.remove("zoom-transition");
   }
-  figureImagesResizeHandler();
-  carouselsResizeHandler();
+  figureImagesOnResize();
+  carouselImagesOnResize();
   window.requestAnimationFrame(() => {
     for (const image of allConstrainableImages) {
       image.classList.add("zoom-transition");
@@ -973,13 +972,13 @@ const onResize = () => {
   });
 };
 
-const figureImagesResizeHandler = () => {
+const figureImagesOnResize = () => {
   for (const image of allFigureImages) {
     if (image.classList.contains("constrained")) constrainFigureImage(image);
   }
 };
 
-const carouselsResizeHandler = () => {
+const carouselImagesOnResize = () => {
   if (allCarouselObjects.length === 0) return;
   let totalButtonHeights = 0;
   for (const carousel of allCarouselObjects) {
