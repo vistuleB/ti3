@@ -114,6 +114,12 @@ html {
 }
 
 body {
+  /* see also: https://codepen.io/chrislachance/pen/OJpmgrM */
+  /* https://github.com/twbs/bootstrap/issues/34107 */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
   background-color: var(--body-background-color);
   font-size: 1.25rem;
   min-width: 2500px;
