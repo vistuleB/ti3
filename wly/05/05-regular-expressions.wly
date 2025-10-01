@@ -379,13 +379,13 @@
     Hier sehen Sie den ganzen Ablauf an unserer
     `aaaa:a:aaa.aa-aa`-Sprache:
 
-    |> div
-        style=padding:1em 0 0.5em;
-        |> figure
-            style=overflow-x:auto;margin:0 center;
-            |> img
-                style=height:20em
-                src=./img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg
+    !! |> div
+    !!     style=padding:1em 0 0.5em;
+    |> figure
+        style=overflow-x:auto;margin:0 center;
+        |> img
+            style=height:20em
+            src=./img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg
 
     |> Exercise
         Wandeln Sie nach dem eben beschriebenen Schema den Automaten
