@@ -518,7 +518,6 @@ const onTouchscreenElse = (callback1, callback2) => {
 const visibleCarouselContainers = new Set();
 
 const setupMenuTooltips = () => {
-  console.log("hello");
   for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
     let tooltip = document.getElementById(id);
     if (!tooltip) continue;
