@@ -150,7 +150,7 @@ const carouselMaxWidthInPx = () => {
   const adjustedScreenWidth = screenWidth * 0.9;
   const computeTabletMaxWidth = Math.min(
     adjustedScreenWidth,
-    DESKTOP_MAIN_COLUMN_WIDTH
+    DESKTOP_MAIN_COLUMN_WIDTH,
   );
   const computeDesktopMaxWidth =
     screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
@@ -302,12 +302,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem"
+    "rem",
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
@@ -317,18 +317,18 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-toc-subchapter-level-margin",
     indexTocSubchapterLevelMarginInEm,
-    "em"
+    "em",
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
@@ -340,7 +340,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -526,7 +526,7 @@ const setupMenuTooltips = () => {
     tooltip.touchdevice = false;
     tooltip.parentNode.addEventListener("touchstart", () => {
       tooltip.touchdevice = true;
-      tooltip.style.display = 'none';
+      tooltip.style.display = "none";
     });
     tooltip.parentNode.addEventListener("mouseover", () => {
       tooltip.visibility = true;
@@ -593,7 +593,7 @@ class Carousel {
   constructor(container) {
     if (!container.classList.contains("carousel__container")) {
       console.error(
-        "'Carousel' constructor should be called on carousel__container!"
+        "'Carousel' constructor should be called on carousel__container!",
       );
       return;
     }
@@ -799,7 +799,7 @@ class Carousel {
       CAROUSEL_ARROW_MIN_SIZE +
         ((CAROUSEL_ARROW_TABLET_MAX_SIZE - CAROUSEL_ARROW_MIN_SIZE) *
           Math.max(0, this.containerWidth - minSizeContainerWidth)) /
-          (TABLET_MAX_WIDTH - minSizeContainerWidth)
+          (TABLET_MAX_WIDTH - minSizeContainerWidth),
     );
   };
 
@@ -915,7 +915,7 @@ class Carousel {
   nudgeCarouselItem(direction) {
     // console.log("in nudge!", direction);
     this.setItemNumber(
-      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems)
+      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems),
     );
   }
 
@@ -1007,7 +1007,7 @@ const carouselImagesOnResize = () => {
   for (const carousel of allCarouselObjects) {
     carousel.onScreenWidthChangePhase2(
       avgButtonHeight,
-      (avgButtonHeight * carousel.buttonMargin) / carousel.buttonHeight
+      (avgButtonHeight * carousel.buttonMargin) / carousel.buttonHeight,
     );
   }
 };
