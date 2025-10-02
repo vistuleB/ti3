@@ -66,9 +66,11 @@ const remInPx = () => {
 };
 
 const inhaltsArrowsDisplay = () => {
+  let prevPage = document.getElementById("prev-page");
   if (
     screenWidth <= LAPTOP_MAX_WIDTH ||
-    document.getElementById("prev-page").getAttribute("href") != "./index.html"
+    !prevPage ||
+    prevPage.getAttribute("href") != "./index.html"
   )
     return "none";
   return "inline";
@@ -520,9 +522,12 @@ const onTouchscreenElse = (callback1, callback2) => {
 const visibleCarouselContainers = new Set();
 
 const setupMenuTooltips = () => {
+  console.log("hello");
   for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
     let tooltip = document.getElementById(id);
-    if (!tooltip) return;
+    if (!tooltip) {
+      continue;
+    }
     tooltip.visibility = false;
     tooltip.touchdevice = false;
     tooltip.parentNode.addEventListener("touchstart", () => {
