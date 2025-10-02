@@ -202,7 +202,6 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.wrap_with_custom_if_child_of(#("figure", pseudowell, ["Sub", "Chapter"])),
       dl.wrap_with_custom_if_child_of(#("CarouselContainer", pseudowell, ["Sub", "Chapter"])),
       dl.replace_with_arbitrary(#("QED", qed)),
-      // dl.rename_with_attributes(#("CircleX", "img", [#("class", "circle-X-img"), #("src", "img/context-free/LR/circle-X.svg")])),
       dl.rename_with_class_and_attributes(#("CircleX", "img", "circle-X-img", [#("src", "img/context-free/LR/circle-X.svg")])),
       dl.append_class__batch([
         #("TopicAnnouncement", "topic-announcement"),
