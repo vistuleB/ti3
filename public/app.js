@@ -66,13 +66,9 @@ const remInPx = () => {
 };
 
 const inhaltsArrowsDisplay = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
   let prevPage = document.getElementById("prev-page");
-  if (
-    screenWidth <= LAPTOP_MAX_WIDTH ||
-    !prevPage ||
-    prevPage.getAttribute("href") != "./index.html"
-  )
-    return "none";
+  if (prevPage.getAttribute("href") != "./index.html") return "none";
   return "inline";
 };
 
@@ -525,9 +521,7 @@ const setupMenuTooltips = () => {
   console.log("hello");
   for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
     let tooltip = document.getElementById(id);
-    if (!tooltip) {
-      continue;
-    }
+    if (!tooltip) continue;
     tooltip.visibility = false;
     tooltip.touchdevice = false;
     tooltip.parentNode.addEventListener("touchstart", () => {
