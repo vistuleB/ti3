@@ -29,7 +29,6 @@ const CAROUSEL_ARROW_TABLET_MAX_SIZE = 40;
 const CAROUSEL_ARROW_MIN_SIZE = 28;
 
 const root = document.documentElement;
-const remToPx = 16;
 
 window.history.scrollRestoration = "manual";
 
@@ -61,8 +60,17 @@ const instantRecenter = () => {
   recenter("instant");
 };
 
+const remInPx = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 17;
+  return 16;
+};
+
 const inhaltsArrowsDisplay = () => {
-  if (screenWidth <= LAPTOP_MAX_WIDTH || document.getElementById("prev-page").getAttribute('href') != "./index.html") return "none";
+  if (
+    screenWidth <= LAPTOP_MAX_WIDTH ||
+    document.getElementById("prev-page").getAttribute("href") != "./index.html"
+  )
+    return "none";
   return "inline";
 };
 
@@ -118,7 +126,7 @@ const indexHeaderPaddingBottomInRem = () => {
 
 const indexTocMaxWidthInPx = () => {
   if (screenWidth <= TABLET_MAX_WIDTH)
-    return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
+    return screenWidth - 2 * mainColumnPaddingXInRem() * remInPx();
   return 580;
 };
 
@@ -188,12 +196,12 @@ const mainColumnToWellMarginInRem = () => {
 };
 
 const outerWellWidthInPx = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return screenWidth - 1.5 * remToPx;
+  if (screenWidth <= MOBILE_MAX_WIDTH) return screenWidth - 1.5 * remInPx();
   if (screenWidth <= TABLET_MAX_WIDTH)
-    return screenWidth - 2 * mainColumnPaddingXInRem() * remToPx;
+    return screenWidth - 2 * mainColumnPaddingXInRem() * remInPx();
   if (screenWidth <= LAPTOP_MAX_WIDTH)
     return mainColumnWidthInPx() - 2 * LAPTOP_OUTER_WELL_INSET;
-  return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remToPx;
+  return mainColumnWidthInPx() - 2 * mainColumnPaddingXInRem() * remInPx();
 };
 
 const pageTitleFontSizeInRem = () => {
@@ -286,6 +294,7 @@ const resetScreenWidthDependentVars = () => {
     root.style.setProperty(key, `${val()}` + unit);
   };
 
+  set("--rem-font-size", remInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
   set("--menu-padding-x", menuPaddingXInRem, "rem");
   set("--menu-padding-y", menuPaddingYInRem, "rem");
@@ -413,7 +422,7 @@ const constrainFigureImage = (image) => {
   image.classList.add("constrained");
   let constrainerWidth = image.constrainer.getBoundingClientRect().width;
   if (image.id === "aa" || image.id === "bb") {
-    console.log(image.id, "the image.originalWidth is:", image.originalWidth)
+    console.log(image.id, "the image.originalWidth is:", image.originalWidth);
   }
   image.style.width = `min(${constrainerWidth + "px"}, ${image.originalWidth})`;
 };
@@ -515,10 +524,16 @@ const setupMenuTooltips = () => {
     let tooltip = document.getElementById(id);
     if (!tooltip) return;
     tooltip.visibility = false;
+    tooltip.touchdevice = false;
+    tooltip.parentNode.addEventListener("touchstart", () => {
+      tooltip.touchdevice = true;
+      tooltip.style.display = 'none';
+    });
     tooltip.parentNode.addEventListener("mouseover", () => {
       tooltip.visibility = true;
       setTimeout(() => {
-        if (tooltip.visibility === true) tooltip.style.visibility = "visible";
+        if (tooltip.visibility === true && !tooltip.touchdevice)
+          tooltip.style.visibility = "visible";
       }, 50);
     });
     tooltip.parentNode.addEventListener("mouseout", () => {
@@ -564,7 +579,6 @@ const setupImages = () => {
       image.constrainer = image.figure.parentNode;
       image.figcaption = image.figure.querySelector("figcaption");
       allFigureImages.push(image);
-
     }
     allConstrainableImages.push(image);
     window.requestAnimationFrame(() => {
