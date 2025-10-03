@@ -567,7 +567,12 @@ let allConstrainableImages = new Array();
 const setupImages = () => {
   let images = document.querySelectorAll("img");
   for (const image of images) {
-    if (!image.closest(".carousel") && !image.closest("figure")) continue;
+    if (!image.closest(".carousel") && !image.closest("figure")) {
+      // setting image width that appears outside figure or carousel to 100%
+      // so it expands as much as the parent width
+      image.style.width = "100%";
+      continue;
+    }
     let s = window.getComputedStyle(image);
     image.originalWidth = s.width;
     image.originalHeight = s.height;
