@@ -1,23 +1,9 @@
 window.MathJax = {
   loader: {
-    load: ["ui/lazy"],
+    load: [],
   },
   startup: {
     ready() {
-      // extend lazy observer margin
-      MathJax.startup.extendHandler((handler) => {
-        handler.documentClass = class extends handler.documentClass {
-          constructor(...args) {
-            super(...args);
-            this.lazyObserver = new IntersectionObserver(
-              this.lazyObserve.bind(this),
-              { rootMargin: "500px" }
-            );
-          }
-        };
-        return handler;
-      }, 100);
-
       // run default startup
       MathJax.startup.defaultReady();
     },
@@ -97,7 +83,8 @@ window.MathJax = {
       state: "\\textnormal{state}",
       lsr: "\\{\\texttt{L}, \\texttt{S}, \\texttt{R}\\}",
       enc: "\\textnormal{enc}",
-      writelambda: "\\Sigma \\cup \\{0, 1, \\texttt{#}, \\texttt{,}, \\texttt{L}, \\texttt{S}, \\texttt{R}, \\texttt{;}\\}\\}",
+      writelambda:
+        "\\Sigma \\cup \\{0, 1, \\texttt{#}, \\texttt{,}, \\texttt{L}, \\texttt{S}, \\texttt{R}, \\texttt{;}\\}\\}",
       halt: "{\\rm H{\\small ALT}}",
       tm: "\\textnormal{TM}",
       diag: "\\textnormal{Diag}",
@@ -111,6 +98,6 @@ window.MathJax = {
       NTIME: "\\textnormal{NTIME}",
       SPACE: "\\textnormal{SPACE}",
       NSPACE: "\\textnormal{NSPACE}}",
-    }
-  }
-}
+    },
+  },
+};
