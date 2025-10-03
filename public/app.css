@@ -221,7 +221,11 @@ body {
 #menu a {
   color: #222;
 }
- 
+
+#bottom-menu {
+  display: none;
+}
+
 .menu-right,
 .menu-left {
   display: flex;
@@ -300,11 +304,11 @@ body {
   margin-right: auto;
 }
 
-.main-column:last-child {
+.main-column:has(+ #bottom-menu) {
   margin-bottom: var(--end-of-page-main-column-margin-bottom);
 }
 
-.pseudowell:last-child {
+.pseudowell:has(+ #bottom-menu) {
   margin-bottom: 1.5rem;
 }
 
@@ -326,9 +330,9 @@ body {
   margin-top: var(--main-column-to-well-margin);
 }
 
-.well.out:last-child {
+/* .well.out:last-child {
   margin-bottom: var(--end-of-page-well-margin-bottom);
-}
+} */
 
 .well > .well:last-child {
   margin-bottom: var(--last-child-well-margin-bottom);
