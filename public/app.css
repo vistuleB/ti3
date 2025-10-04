@@ -513,31 +513,31 @@ pre.listing.redyellow > span.listing-bol::before{
 }
 
 .figure__container {
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: inherit;
-  width: 100%;
 }
 
 figure {
-  background-color: inherit;
-  display: flex;
-  margin: 1rem auto;
-  overflow: visible;
-  justify-content: center;
   width: fit-content;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
+  overflow: visible;
+  background-color: inherit;
 }
 
 figure img,
 .carousel__item img {
-  margin: 0 auto; /* has helped measure originalWidth, originalHeight */
-  background-color: inherit;
   box-sizing: content-box;
+  margin: 0 auto; /* has helped measure originalWidth, originalHeight */
   border-top-width: 16px;
   border-bottom-width: 16px;
   border-style: solid;
   border-color: transparent;
+  background-color: inherit;
 }
 
 figure img.constrained,
@@ -569,13 +569,16 @@ figcaption {
 
 /** begin of carousel **/ /* (see more 'carousel__item img' styles above) */
 .carousel__container {
-  width: 100%;
-  background-color: inherit;
+  max-width: 100%;
+  width: auto;
+  height: auto;
   margin: 1rem auto 1.5rem;
+  background-color: inherit;
 }
 
 .carousel {
   width: inherit;
+  height: auto;
   background-color: inherit;
   display: flex;
   justify-content: center;
@@ -584,16 +587,19 @@ figcaption {
 
 .carousel__items {
   width: fit-content;
+  height: inherit;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: inherit;
 }
 
 .carousel__item {
   width: fit-content;
-  background-color: inherit;
-  margin: 0 auto;
-  justify-content: center;
+  height: inherit;
   overflow: visible;
+  background-color: inherit;
 }
 
 /* begin of constrained nav */
