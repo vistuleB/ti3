@@ -299,7 +299,7 @@ body {
 .main-column {
   max-width: var(--main-column-width);
   padding: 0 var(--main-column-padding-x);
-  width: 100%;
+  /*width: 100%;*/
   margin-left: auto;
   margin-right: auto;
 }
@@ -312,6 +312,10 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.well.out {
+  max-width: var(--outer-well-width);
+}
+
 .well {
   width: 100%;
   margin: var(--well-margin-y) auto;
@@ -321,12 +325,8 @@ body {
   overflow: visible;
 }
 
-.well.out {
-  width: var(--outer-well-width);
-}
-
-.main-column + .well,
-.well + .main-column {
+.main-column + .well.out,
+.well.out + .main-column {
   margin-top: var(--main-column-to-well-margin);
 }
 
@@ -505,7 +505,7 @@ pre.listing.redyellow > span.listing-bol::before{
 }
 
 .pseudowell {
-  width: calc(100vw - 2 * var(--main-column-padding-x));
+  max-width: calc(100vw - 2 * var(--main-column-padding-x));
   margin: 0 auto;
   background-color: inherit;
   display: flex;
