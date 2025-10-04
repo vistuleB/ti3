@@ -1,5 +1,5 @@
 import desugarer_library as dl
-import infrastructure.{type Pipe} as infra
+import infrastructure.{type Pipe, GoBack, Continue} as infra
 import gleam/list
 import prefabricated_pipelines as pp
 import group_replacement_splitting as grs
@@ -13,17 +13,18 @@ const p_cannot_contain = [
   "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
   "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
   "Example", "Exercise", "Grid", "Highlight", "HorizontalMenu", "Index", 
-  "List", "MathBlock", "Menu", "Remark", "Statement", "Sub", "SubTitle", 
+  "List", "MathBlock", "Menu", "BottomMenu", "Remark", "Statement", "Sub", "SubTitle", 
   "SubtopicAnnouncement", "TopicAnnouncement", "WriterlyBlankLine",
   "br", "center", "figure", "div", "hr", "li", "ul", "ol", "p", "pre",
   "table", "thead", "tbody", "tr", "td", "colgroup", "section",
 ]
 
 const p_cannot_be_contained_in = [
-  "HorizontalMenu", "Index", "Math", "MathBlock", "Menu", "TopicAnnouncement",
+  "HorizontalMenu", "Index", "Math", "MathBlock", "Menu", "BottomMenu", "TopicAnnouncement",
   "SubtopicAnnouncement", "NoWrap", 
   "QED", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem", 
   "code", "figure", "p", "pre", "span",
+  // "ChapterTitle", "SubTitle"
 ]
 
 pub fn main_pipeline()  -> List(Pipe) {
@@ -62,6 +63,8 @@ pub fn main_pipeline()  -> List(Pipe) {
 
   let assert Ok(pseudowell) = infra.expand_selector_shorthand("div.pseudowell")
   let assert Ok(figure__container) = infra.expand_selector_shorthand("div.figure__container")
+  let assert Ok(end_of_page_element) = infra.expand_selector_shorthand("EndOfPageElt#end-of-page-elt")
+  let assert Ok(body_wrapper) = infra.expand_selector_shorthand("BodyWrapper.body-wrapper")
 
   // use 'dl.table_marker()' desugarer to mark a line 
   // in the table; (with '--table' printout)
@@ -80,21 +83,21 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("Sub", "counter", "ExerciseCounter"),
         #("Sub", "counter", "StatementCounter")
       ]),
-      dl.prepend_attribute(#("Chapter", "path", "./::øøChapterCounter-0.html", infra.GoBack)),
-      dl.prepend_attribute(#("Sub", "path", "./::øøChapterCounter-::øøSubCounter.html", infra.GoBack)),
-      dl.prepend_counter_incrementing_attribute(#("Chapter", "ChapterCounter", infra.GoBack)),
-      dl.prepend_counter_incrementing_attribute(#("Sub", "SubCounter", infra.GoBack)),
-      dl.prepend_counter_incrementing_attribute(#("Exercise", "ExerciseCounter", infra.Continue)),
-      dl.prepend_counter_incrementing_attribute(#("Statement", "StatementCounter", infra.Continue)),
-      dl.set_handle_value(#("Chapter", "::øøChapterCounter", infra.GoBack)),
-      dl.set_handle_value(#("Sub", "::øøChapterCounter.::øøSubCounter", infra.GoBack)),
+      dl.prepend_attribute(#("Chapter", "path", "./::øøChapterCounter-0.html", GoBack)),
+      dl.prepend_attribute(#("Sub", "path", "./::øøChapterCounter-::øøSubCounter.html", GoBack)),
+      dl.prepend_counter_incrementing_attribute(#("Chapter", "ChapterCounter", GoBack)),
+      dl.prepend_counter_incrementing_attribute(#("Sub", "SubCounter", GoBack)),
+      dl.prepend_counter_incrementing_attribute(#("Exercise", "ExerciseCounter", Continue)),
+      dl.prepend_counter_incrementing_attribute(#("Statement", "StatementCounter", Continue)),
+      dl.set_handle_value(#("Chapter", "::øøChapterCounter", GoBack)),
+      dl.set_handle_value(#("Sub", "::øøChapterCounter.::øøSubCounter", GoBack)),
       dl.set_handle_value_if_has_ancestor_else(#("Statement", "Sub", "::øøChapterCounter.::øøSubCounter.::øøStatementCounter", "::øøChapterCounter.::øøStatementCounter")),
       dl.set_handle_value_if_has_ancestor_else(#("Exercise", "Sub", "::øøChapterCounter.::øøSubCounter.::øøExerciseCounter", "::øøChapterCounter.::øøExerciseCounter")),
       dl.set_handle_value_if_has_ancestor_else(#("Topic", "Sub", "::øøChapterCounter.::øøSubCounter", "::øøChapterCounter")),
       dl.auto_generate_child_if_missing_from_attribute(#("Chapter", "ChapterTitle", "title")),
       dl.auto_generate_child_if_missing_from_attribute(#("Sub", "SubTitle", "title")),
-      dl.prepend_attribute(#("ChapterTitle", "number-chiron", "::øøChapterCounter.", infra.GoBack)),
-      dl.prepend_attribute(#("SubTitle", "number-chiron", "::øøChapterCounter.::øøSubCounter", infra.GoBack)),
+      dl.prepend_attribute(#("ChapterTitle", "number-chiron", "::øøChapterCounter.", GoBack)),
+      dl.prepend_attribute(#("SubTitle", "number-chiron", "::øøChapterCounter.::øøSubCounter", GoBack)),
       dl.prepend_text_node_if_has_ancestor_else__batch([
         #(
           "Exercise",
@@ -123,6 +126,10 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     pp.splitting_empty_lines_cleanup(),
     [
+      dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
+      dl.unwrap("WriterlyBlankLine"),
+      dl.trim("p"),
+      dl.delete_if_empty("p"),
       dl.ti2_code_block_to_pre(),
       dl.ti2_parse_python_prompt_pre(),
       dl.ti2_parse_orange_comments_pre(),
@@ -132,15 +139,16 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti2_add_listing_bol_spans(),
       dl.ti2_create_index(),
       dl.ti2_add_prev_next_chapter_title_elements(),
+      dl.append_custom(#("Chapter", end_of_page_element, GoBack)),
+      dl.append_custom(#("Sub", end_of_page_element, GoBack)),
+      dl.append_custom(#("Index", end_of_page_element, GoBack)),
       dl.ti2_create_menu(),
       dl.delete__batch(["PrevChapterOrSubTitle", "NextChapterOrSubTitle"]),
+      dl.insert_attribute_value_at_first_child_start(#("ChapterTitle", "number-chiron", "&ensp;", GoBack)),
+      dl.insert_attribute_value_at_first_child_start(#("SubTitle", "number-chiron", "&ensp;", GoBack)),
+      // dl.wrap_children(#("ChapterTitle", "p", GoBack)),
+      // dl.wrap_children(#("SubTitle", "p", GoBack)),
       dl.ti2_expand_carousels(),
-      dl.insert_attribute_value_at_start(#("ChapterTitle", "number-chiron", "&ensp;", infra.GoBack)),
-      dl.insert_attribute_value_at_start(#("SubTitle", "number-chiron", "&ensp;", infra.GoBack)),
-      dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
-      dl.unwrap("WriterlyBlankLine"),
-      dl.trim("p"),
-      dl.delete_if_empty("p"),
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     pp.markdown_link_splitting(["MathBlock", "Math"]),
@@ -172,7 +180,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     [
       dl.fold_contents_into_text("Math"),
-      dl.wrap_children_in(#("Carousel", "CarouselItems")),
+      dl.wrap_children(#("Carousel", "CarouselItems", GoBack)),
       dl.wrap(#("Carousel", "CarouselContainer")),
       dl.append_class__batch([
         #("Index", "index"),
@@ -207,10 +215,13 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("TopicAnnouncement", "topic-announcement"),
         #("SubtopicAnnouncement", "subtopic-announcement"),
       ]),
+      dl.wrap_children_up_to_custom(#("Chapter", "Sub", body_wrapper, GoBack)),
+      dl.wrap_children_custom(#("Sub", body_wrapper, GoBack)),
       dl.rename__batch([
         #("MathBlock", "div"),
         #("Index", "div"),
         #("Menu", "div"),
+        #("BottomMenu", "div"),
         #("MenuLeft", "div"),
         #("MenuRight", "div"),
         #("HorizontalMenu", "div"),
@@ -230,6 +241,8 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("CarouselItem", "div"),
         #("SubTheorem", "div"),
         #("NoWrap", "span"),
+        #("BodyWrapper", "div"),
+        #("EndOfPageElt", "div"),
       ]),
       dl.delete_attribute__batch(["_", "counter", "title", "number-chiron"]),
       dl.check_tags(#(post_transformation_approved_tags,"post-transformation")),

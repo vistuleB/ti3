@@ -23,10 +23,10 @@ const LAPTOP_MAX_WIDTH = 1400;
 const LAPTOP_OUTER_WELL_INSET = 150;
 const DESKTOP_MAIN_COLUMN_WIDTH = 1050;
 
-const CAROUSEL_ARROW_DESKTOP_SIZE = 48;
-const CAROUSEL_ARROW_LAPTOP_SIZE = 45;
-const CAROUSEL_ARROW_TABLET_MAX_SIZE = 40;
-const CAROUSEL_ARROW_MIN_SIZE = 28;
+const CAROUSEL_ARROW_MAX_HEIGHT = 58;
+const CAROUSEL_ARROW_MIN_HEIGHT = 35;
+const CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_HEIGHT = 1500;
+const CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_HEIGHT = 490;
 
 const root = document.documentElement;
 
@@ -86,6 +86,27 @@ const menuPaddingYInRem = () => {
 const menuBackgroundColor = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "var(--body-background-color)";
   return "#0000";
+};
+
+const bottomMenuDisplay = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
+  return "flex";
+};
+
+const bottomMenuPosition = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "static";
+  return "absolute";
+};
+
+const bottomMenuPaddingXInRem = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
+  return 2.4;
+};
+
+const bottomMenuPaddingYInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0;
+  return 0;
 };
 
 const menuElementGapInRem = () => {
@@ -150,7 +171,7 @@ const carouselMaxWidthInPx = () => {
   const adjustedScreenWidth = screenWidth * 0.9;
   const computeTabletMaxWidth = Math.min(
     adjustedScreenWidth,
-    DESKTOP_MAIN_COLUMN_WIDTH,
+    DESKTOP_MAIN_COLUMN_WIDTH
   );
   const computeDesktopMaxWidth =
     screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
@@ -163,16 +184,18 @@ const carouselMaxWidthInPx = () => {
 };
 
 const endOfPageMainColumnMarginBottomInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
-  if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
-  return 2.4;
+  return 0;
+  // if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
+  // if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
+  // if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
+  // return 2.4;
 };
 
 const endOfPageWellMarginBottomInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
-  return 2.2;
+  return 0.2;
+  // if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
+  // if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
+  // return 2.2;
 };
 
 const mainColumnWidthInPx = () => {
@@ -191,6 +214,10 @@ const mainColumnToWellMarginInRem = () => {
   if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
   if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.7;
   return 1.8;
+};
+
+const centeredScreenScrollXInPx = () => {
+  return (2500 - screenWidth) / 2;
 };
 
 const outerWellWidthInPx = () => {
@@ -250,7 +277,7 @@ const wellPaddingXInRem = () => {
 const wellPaddingYInRem = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
   if (screenWidth <= TABLET_MAX_WIDTH) return 1.2;
-  return 1.6;
+  return 1.55;
 };
 
 const ulOlMarginLeftInRem = () => {
@@ -298,16 +325,20 @@ const resetScreenWidthDependentVars = () => {
   set("--menu-padding-y", menuPaddingYInRem, "rem");
   set("--menu-element-gap", menuElementGapInRem, "rem");
   set("--menu-background-color", menuBackgroundColor, "");
+  set("--bottom-menu-display", bottomMenuDisplay, "");
+  set("--bottom-menu-position", bottomMenuPosition, "");
+  set("--bottom-menu-padding-x", bottomMenuPaddingXInRem, "rem");
+  set("--bottom-menu-padding-y", bottomMenuPaddingYInRem, "rem");
   set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem",
+    "rem"
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem",
+    "rem"
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
@@ -317,22 +348,23 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-toc-subchapter-level-margin",
     indexTocSubchapterLevelMarginInEm,
-    "em",
+    "em"
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem",
+    "rem"
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem",
+    "rem"
   );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
   set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
+  set("--centered-screen-scroll-x", centeredScreenScrollXInPx, "px");
   set("--outer-well-width", outerWellWidthInPx, "px");
   set("--page-title-font-size", pageTitleFontSizeInRem, "rem");
   set("--page-title-margin-top", pageTitleMarginTopInRem, "rem");
@@ -340,7 +372,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem",
+    "rem"
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -518,7 +550,12 @@ const onTouchscreenElse = (callback1, callback2) => {
 const visibleCarouselContainers = new Set();
 
 const setupMenuTooltips = () => {
-  for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
+  for (const id of [
+    "prev-page-tooltip",
+    "next-page-tooltip",
+    "bottom-prev-page-tooltip",
+    "bottom-next-page-tooltip",
+  ]) {
     let tooltip = document.getElementById(id);
     if (!tooltip) continue;
     tooltip.visibility = false;
@@ -530,7 +567,11 @@ const setupMenuTooltips = () => {
     tooltip.parentNode.addEventListener("mouseover", () => {
       tooltip.visibility = true;
       setTimeout(() => {
-        if (tooltip.visibility === true && !tooltip.touchdevice)
+        if (
+          tooltip.visibility === true &&
+          !tooltip.touchdevice &&
+          screenWidth >= TABLET_MAX_WIDTH
+        )
           tooltip.style.visibility = "visible";
       }, 50);
     });
@@ -592,7 +633,7 @@ class Carousel {
   constructor(container) {
     if (!container.classList.contains("carousel__container")) {
       console.error(
-        "'Carousel' constructor should be called on carousel__container!",
+        "'Carousel' constructor should be called on carousel__container!"
       );
       return;
     }
@@ -792,64 +833,72 @@ class Carousel {
   }
 
   phase1ButtonHeightComputation = () => {
-    let minSizeContainerWidth = 490;
     return Math.min(
-      CAROUSEL_ARROW_DESKTOP_SIZE,
-      CAROUSEL_ARROW_MIN_SIZE +
-        ((CAROUSEL_ARROW_TABLET_MAX_SIZE - CAROUSEL_ARROW_MIN_SIZE) *
-          Math.max(0, this.containerWidth - minSizeContainerWidth)) /
-          (TABLET_MAX_WIDTH - minSizeContainerWidth),
+      CAROUSEL_ARROW_MAX_HEIGHT,
+      CAROUSEL_ARROW_MIN_HEIGHT +
+        ((CAROUSEL_ARROW_MAX_HEIGHT - CAROUSEL_ARROW_MIN_HEIGHT) *
+          Math.max(
+            0,
+            this.containerWidth - CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_HEIGHT
+          )) /
+          (CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_HEIGHT -
+            CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_HEIGHT)
     );
-  };
-
-  phase1ButtonMarginComputation = () => {
-    return this.phase1ButtonHeightComputation() * 0.7;
   };
 
   onScreenWidthChangePhase1() {
     this.containerWidth = this.container.getBoundingClientRect().width;
-    this.buttonHeight = this.phase1ButtonHeightComputation();
-    this.buttonMargin = this.phase1ButtonMarginComputation();
+    return this.phase1ButtonHeightComputation();
   }
 
-  phase2ResetButtonStyles = () => {
-    this.unconstrainedUIPrevBtn.style.height = this.buttonHeight;
-    this.unconstrainedUINextBtn.style.height = this.buttonHeight;
+  phase2ResetUnconstrainedUIButtonStyles = () => {
+    let height = this.buttonHeightInPx + "px";
+    this.unconstrainedUIPrevBtn.style.height = height;
+    this.unconstrainedUINextBtn.style.height = height;
 
-    this.constrainedUIPrevBtn.style.height = this.buttonHeight;
-    this.constrainedUINextBtn.style.height = this.buttonHeight;
-    this.constrainedUIFstBtn.style.height = this.buttonHeight;
-    this.constrainedUILstBtn.style.height = this.buttonHeight;
-
-    this.unconstrainedUIPrevBtn.style.margin = `0 ${this.buttonMargin}`;
-    this.unconstrainedUINextBtn.style.margin = `0 ${this.buttonMargin}`;
-
-    this.constrainedUIPrevBtn.style.margin = `0 ${this.buttonMargin}`;
-    this.constrainedUINextBtn.style.margin = `0 ${this.buttonMargin}`;
-    this.constrainedUIFstBtn.style.margin = `0 ${this.buttonMargin}`;
-    this.constrainedUILstBtn.style.margin = `0 ${this.buttonMargin}`;
+    let margin = this.buttonMarginInPx + "px";
+    this.unconstrainedUIPrevBtn.style.margin = "0 " + margin;
+    this.unconstrainedUINextBtn.style.margin = "0 " + margin;
+    this.unconstrainedUIPrevBtn.style.margin = "0 " + margin;
+    this.unconstrainedUINextBtn.style.margin = "0 " + margin;
   };
 
-  onScreenWidthChangePhase2(imposedButtonHeight, imposedButtonWidth) {
+  phase2ResetConstrainedUIButtonStyles = () => {
+    let height = this.buttonHeightInPx + "px";
+    this.constrainedUIPrevBtn.style.height = height;
+    this.constrainedUINextBtn.style.height = height;
+    this.constrainedUIFstBtn.style.height = height;
+    this.constrainedUILstBtn.style.height = height;
+
+    let margin = this.buttonMarginInPx + "px";
+    this.constrainedUIPrevBtn.style.margin = "0 " + margin;
+    this.constrainedUINextBtn.style.margin = "0 " + margin;
+    this.constrainedUIFstBtn.style.margin = "0 " + margin;
+    this.constrainedUILstBtn.style.margin = "0 " + margin;
+  };
+
+  onScreenWidthChangePhase2(imposedButtonHeight) {
+    this.buttonHeightInPx = imposedButtonHeight;
+    this.buttonWidthInPx = this.buttonHeightInPx * 18 / 34;
+    this.buttonMarginInPx = imposedButtonHeight * 0.7;
+
     let unconstrainedUIWidth =
       this.maxOriginalWidthInPx +
-      2 * imposedButtonHeight +
-      4 * imposedButtonWidth;
+      2 * this.buttonWidthInPx +
+      4 * this.buttonMarginInPx;
 
     if (this.containerWidth >= unconstrainedUIWidth) {
       this.bigEnoughContainerForUnconstrainedUI = true;
       this.removeConstrainedNav();
       this.attachUnconstrainedNav();
+      this.phase2ResetUnconstrainedUIButtonStyles();
     } else {
       this.bigEnoughContainerForUnconstrainedUI = false;
       this.removeUnconstrainedNav();
       this.attachConstrainedNav();
+      this.phase2ResetConstrainedUIButtonStyles();
     }
 
-    this.buttonHeight = imposedButtonHeight + "px";
-    this.buttonMargin = imposedButtonWidth + "px";
-
-    this.phase2ResetButtonStyles();
     this.updateConstrained();
   }
 
@@ -914,7 +963,7 @@ class Carousel {
   nudgeCarouselItem(direction) {
     // console.log("in nudge!", direction);
     this.setItemNumber(
-      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems),
+      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems)
     );
   }
 
@@ -981,7 +1030,7 @@ const setPageTitleGridColumns = () => {
 
   pageTitle.style.setProperty(
     "grid-template-columns",
-    `minmax(${minWidth}, 1fr) auto minmax(${minWidth}, 1fr)`,
+    `minmax(${minWidth}, 1fr) auto minmax(${minWidth}, 1fr)`
   );
   pageTitle.classList.toggle("no-borders", onMobile);
 };
@@ -1023,15 +1072,11 @@ const carouselImagesOnResize = () => {
   if (allCarouselObjects.length === 0) return;
   let totalButtonHeights = 0;
   for (const carousel of allCarouselObjects) {
-    carousel.onScreenWidthChangePhase1();
-    totalButtonHeights += carousel.buttonHeight;
+    totalButtonHeights += carousel.onScreenWidthChangePhase1();
   }
   const avgButtonHeight = totalButtonHeights / allCarouselObjects.length;
   for (const carousel of allCarouselObjects) {
-    carousel.onScreenWidthChangePhase2(
-      avgButtonHeight,
-      (avgButtonHeight * carousel.buttonMargin) / carousel.buttonHeight,
-    );
+    carousel.onScreenWidthChangePhase2(avgButtonHeight);
   }
 };
 

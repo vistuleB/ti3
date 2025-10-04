@@ -7,7 +7,9 @@
   --progress-counter-font-size: 0.9em;
   --max-carousel-indicators-per-line: 30;
   --body-background-color: rgba(248, 244, 253, 1);
+  --body-min-width: 2500px;
   --page-title-border-min-width: 40px;
+  --line-height: 1.8rem;
 
   /*********************************/
   /* resetScreenWidthDependentVars */
@@ -17,6 +19,10 @@
   --menu-padding-y: 1.4rem;
   --menu-background-color: #0000;
   --menu-element-gap: 0.55rem;
+  --bottom-menu-display: block;
+  --bottom-menu-position: absolute;
+  --bottom-menu-padding-x: 2rem;
+  --bottom-menu-padding-y: 1.4rem;
   --index-header-title-font-size: 2.25rem;
   --index-header-title-line-height: 2.8rem;
   --index-header-subtitle-font-size: 1.5rem;
@@ -31,6 +37,8 @@
   --main-column-width: 1050px;
   --main-column-padding-x: 2rem;
   --main-column-to-well-margin: 1.8rem;
+  --main-column-padding-x: auto;
+  --centered-screen-scroll-n: 0;
   --outer-well-width: 922px;
   --page-title-font-size: 2.25rem;
   --page-title-margin-top: 3.6rem;
@@ -129,8 +137,17 @@ body {
   text-size-adjust: none;
   background-color: var(--body-background-color);
   font-size: 1.25rem;
-  min-width: 2500px;
+  min-width: var(--body-min-width);
   color: #333;
+}
+
+.body-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 .index {
@@ -206,6 +223,8 @@ body {
 
 #menu {
   display: flex;
+  justify-content: space-between;
+  flex-direction: row;
   position: fixed;
   top: 0;
   left: 0;
@@ -213,17 +232,47 @@ body {
   width: 100vw;
   transition: top 0.5s ease-in-out;
   will-change: top;
-  justify-content: space-between;
   padding: var(--menu-padding-y) var(--menu-padding-x) calc(var(--menu-padding-y) * 0.8);
   background-color: var(--menu-background-color);
 }  
 
-#menu a {
-  color: #222;
+#bottom-menu {
+  display: var(--bottom-menu-display);
+  position: var(--bottom-menu-position);
+  padding: var(--bottom-menu-padding-y) var(--bottom-menu-padding-x);
+  justify-content: space-between;
+  bottom: 0px;
+  width: 100vw;
+  left: var(--centered-screen-scroll-x);
 }
 
-#bottom-menu {
-  display: none;
+.bottom-menu-left,
+.bottom-menu-right {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bottom-menu-right {
+  text-align: right;
+}
+
+#end-of-page-elt {
+  height: 1px;
+  width: 100%;
+  background-color: red;
+  margin-top: 0;
+  margin-bottom: var(--end-of-page-elt-margin-bottom);
+}
+
+#bottom-menu a {
+  line-height: var(--line-height);
+}
+
+#menu a,
+#bottom-menu a {
+  color: #222;
+  text-decoration: underline;
 }
 
 .menu-right,
@@ -232,7 +281,7 @@ body {
   flex-direction: column;
   gap: var(--menu-element-gap);
   overflow: visible;
-}  
+}
 
 .menu-right {
   text-align: right;
@@ -243,28 +292,37 @@ body {
   position: relative;
 }
 
+#bottom-prev-page-tooltip,
+#bottom-next-page-tooltip,
 #prev-page-tooltip,
 #next-page-tooltip {
   white-space: nowrap;
   position: absolute;
-  top: 1.9em;
-  /* background-color: rgb(255, 252, 151); */
   background-color: rgb(255, 188, 246);
   border: 1.4px solid black;
   border-radius: 0.05em;
   font-size: 0.7em;
   padding: 0.15em 0.45em;
+  line-height: 1;
 }
 
-#prev-page-tooltip {
-  /* top: 0.9em;
-  left: 92%; */
+#prev-page-tooltip,
+#next-page-tooltip {
+  top: 1.9em;
+}
+
+#bottom-prev-page-tooltip,
+#bottom-next-page-tooltip {
+  bottom: 2em;
+}
+
+#prev-page-tooltip,
+#bottom-prev-page-tooltip {
   left: 0%;
 }
 
-#next-page-tooltip {
-  /* top: 0.98em;
-  right: 95%; */
+#next-page-tooltip,
+#bottom-next-page-tooltip {
   right: 0%;
 }
 
@@ -304,8 +362,12 @@ body {
   margin-right: auto;
 }
 
-.main-column:has(+ #bottom-menu) {
+.main-column:has(+ #end-of-page-elt) {
   margin-bottom: var(--end-of-page-main-column-margin-bottom);
+}
+
+.well:has(+ #end-of-page-elt) {
+  margin-bottom: var(--end-of-page-well-margin-bottom);
 }
 
 .pseudowell:has(+ #bottom-menu) {
@@ -316,7 +378,7 @@ body {
   width: 100%;
   margin: var(--well-margin-y) auto;
   padding: var(--well-padding-y) var(--well-padding-x);
-  line-height: 1.8rem;
+  line-height: var(--line-height);
   border-radius: 12px;
   overflow: visible;
 }
@@ -329,10 +391,6 @@ body {
 .well + .main-column {
   margin-top: var(--main-column-to-well-margin);
 }
-
-/* .well.out:last-child {
-  margin-bottom: var(--end-of-page-well-margin-bottom);
-} */
 
 .well > .well:last-child {
   margin-bottom: var(--last-child-well-margin-bottom);
@@ -377,7 +435,7 @@ pre {
 }
 
 p {
-  line-height: 1.8rem;
+  line-height: var(--line-height);
 }
 
 p:has(> mjx-container) {
