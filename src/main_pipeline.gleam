@@ -172,7 +172,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     [
       dl.fold_contents_into_text("Math"),
-      dl.wrap_children_in(#("Carousel", "CarouselItems")),
+      dl.wrap_children(#("Carousel", "CarouselItems", infra.Continue)),
       dl.wrap(#("Carousel", "CarouselContainer")),
       dl.append_class__batch([
         #("Index", "index"),
