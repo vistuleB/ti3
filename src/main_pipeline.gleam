@@ -33,7 +33,7 @@ pub fn main_pipeline()  -> List(Pipe) {
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   
-  let post_transformation_document_tags = ["Document", "marker", "WriterlyCodeBlock", "AnnotatedBackticks"]
+  let post_transformation_document_tags = ["Document", "marker", "WriterlyCodeBlock", "AnnotatedBackticks", "BottomMenu"]
   let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "h3", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
 
