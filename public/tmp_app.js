@@ -25,8 +25,8 @@ const DESKTOP_MAIN_COLUMN_WIDTH = 1050;
 
 const CAROUSEL_ARROW_MAX_HEIGHT = 58;
 const CAROUSEL_ARROW_MIN_HEIGHT = 35;
-const CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_WIDTH = 2200;
-const CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH = 490;
+const CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_HEIGHT = 1500;
+const CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_HEIGHT = 490;
 
 const root = document.documentElement;
 
@@ -38,10 +38,6 @@ let menuHidden = false;
 let menuElement = null;
 let isPageCentered = true;
 let screenWidth = -1;
-
-const clamp01 = (x) => {
-  return Math.max(Math.min(x, 1), 0);
-};
 
 const marginWidth = () => {
   return (document.body.scrollWidth - window.visualViewport.width) / 2;
@@ -90,6 +86,27 @@ const menuPaddingYInRem = () => {
 const menuBackgroundColor = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "var(--body-background-color)";
   return "#0000";
+};
+
+const bottomMenuDisplay = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
+  return "flex";
+};
+
+const bottomMenuPosition = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "static";
+  return "absolute";
+};
+
+const bottomMenuPaddingXInRem = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
+  return 2.4;
+};
+
+const bottomMenuPaddingYInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0;
+  return 0;
 };
 
 const menuElementGapInRem = () => {
@@ -167,16 +184,18 @@ const carouselMaxWidthInPx = () => {
 };
 
 const endOfPageMainColumnMarginBottomInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
-  if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
-  return 2.4;
+  return 0;
+  // if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
+  // if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
+  // if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
+  // return 2.4;
 };
 
 const endOfPageWellMarginBottomInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
-  return 2.2;
+  return 0.2;
+  // if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
+  // if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
+  // return 2.2;
 };
 
 const mainColumnWidthInPx = () => {
@@ -195,6 +214,10 @@ const mainColumnToWellMarginInRem = () => {
   if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
   if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.7;
   return 1.8;
+};
+
+const centeredScreenScrollXInPx = () => {
+  return (2500 - screenWidth) / 2;
 };
 
 const outerWellWidthInPx = () => {
@@ -254,7 +277,7 @@ const wellPaddingXInRem = () => {
 const wellPaddingYInRem = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 0.75;
   if (screenWidth <= TABLET_MAX_WIDTH) return 1.2;
-  return 1.6;
+  return 1.55;
 };
 
 const ulOlMarginLeftInRem = () => {
@@ -302,6 +325,10 @@ const resetScreenWidthDependentVars = () => {
   set("--menu-padding-y", menuPaddingYInRem, "rem");
   set("--menu-element-gap", menuElementGapInRem, "rem");
   set("--menu-background-color", menuBackgroundColor, "");
+  set("--bottom-menu-display", bottomMenuDisplay, "");
+  set("--bottom-menu-position", bottomMenuPosition, "");
+  set("--bottom-menu-padding-x", bottomMenuPaddingXInRem, "rem");
+  set("--bottom-menu-padding-y", bottomMenuPaddingYInRem, "rem");
   set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
   set(
     "--index-header-title-line-height",
@@ -337,6 +364,7 @@ const resetScreenWidthDependentVars = () => {
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
   set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
+  set("--centered-screen-scroll-x", centeredScreenScrollXInPx, "px");
   set("--outer-well-width", outerWellWidthInPx, "px");
   set("--page-title-font-size", pageTitleFontSizeInRem, "rem");
   set("--page-title-margin-top", pageTitleMarginTopInRem, "rem");
@@ -522,7 +550,12 @@ const onTouchscreenElse = (callback1, callback2) => {
 const visibleCarouselContainers = new Set();
 
 const setupMenuTooltips = () => {
-  for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
+  for (const id of [
+    "prev-page-tooltip",
+    "next-page-tooltip",
+    "bottom-prev-page-tooltip",
+    "bottom-next-page-tooltip",
+  ]) {
     let tooltip = document.getElementById(id);
     if (!tooltip) continue;
     tooltip.visibility = false;
@@ -534,7 +567,11 @@ const setupMenuTooltips = () => {
     tooltip.parentNode.addEventListener("mouseover", () => {
       tooltip.visibility = true;
       setTimeout(() => {
-        if (tooltip.visibility === true && !tooltip.touchdevice)
+        if (
+          tooltip.visibility === true &&
+          !tooltip.touchdevice &&
+          screenWidth >= TABLET_MAX_WIDTH
+        )
           tooltip.style.visibility = "visible";
       }, 50);
     });
@@ -796,14 +833,16 @@ class Carousel {
   }
 
   phase1ButtonHeightComputation = () => {
-    let pct = clamp01(
-      (this.containerWidth - CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH) /
-        (CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_WIDTH -
-          CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH)
-    );
-
-    return (
-      CAROUSEL_ARROW_MIN_HEIGHT * (1 - pct) + CAROUSEL_ARROW_MAX_HEIGHT * pct
+    return Math.min(
+      CAROUSEL_ARROW_MAX_HEIGHT,
+      CAROUSEL_ARROW_MIN_HEIGHT +
+        ((CAROUSEL_ARROW_MAX_HEIGHT - CAROUSEL_ARROW_MIN_HEIGHT) *
+          Math.max(
+            0,
+            this.containerWidth - CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_HEIGHT
+          )) /
+          (CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_HEIGHT -
+            CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_HEIGHT)
     );
   };
 
@@ -840,7 +879,7 @@ class Carousel {
 
   onScreenWidthChangePhase2(imposedButtonHeight) {
     this.buttonHeightInPx = imposedButtonHeight;
-    this.buttonWidthInPx = (this.buttonHeightInPx * 18) / 34;
+    this.buttonWidthInPx = this.buttonHeightInPx * 18 / 34;
     this.buttonMarginInPx = imposedButtonHeight * 0.7;
 
     let unconstrainedUIWidth =
