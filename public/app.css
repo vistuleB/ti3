@@ -15,10 +15,10 @@
   /* resetScreenWidthDependentVars */
   /*********************************/
   --inhalts-arrow-display: none;
-  --menu-padding-x: 2rem;
-  --menu-padding-y: 1.4rem;
-  --menu-background-color: #0000;
-  --menu-element-gap: 0.55rem;
+  --top-menu-padding-x: 2rem;
+  --top-menu-padding-y: 1.4rem;
+  --top-menu-background-color: #0000;
+  --top-menu-element-gap: 0.55rem;
   --bottom-menu-display: block;
   --bottom-menu-position: absolute;
   --bottom-menu-padding-x: 2rem;
@@ -217,11 +217,11 @@ body {
   padding-right: 0.5em;
 }
 
-#menu.menu--hidden {
+#top-menu.menu--hidden {
   top: -100px;
 }
 
-#menu {
+#top-menu {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -232,8 +232,8 @@ body {
   width: 100vw;
   transition: top 0.5s ease-in-out;
   will-change: top;
-  padding: var(--menu-padding-y) var(--menu-padding-x) calc(var(--menu-padding-y) * 0.8);
-  background-color: var(--menu-background-color);
+  padding: var(--top-menu-padding-y) var(--top-menu-padding-x) calc(var(--top-menu-padding-y) * 0.8);
+  background-color: var(--top-menu-background-color);
 }  
 
 #bottom-menu {
@@ -260,7 +260,7 @@ body {
 #end-of-page-elt {
   height: 1px;
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
   margin-top: 0;
   margin-bottom: var(--end-of-page-elt-margin-bottom);
 }
@@ -269,21 +269,21 @@ body {
   line-height: var(--line-height);
 }
 
-#menu a,
+#top-menu a,
 #bottom-menu a {
   color: #222;
   text-decoration: underline;
 }
 
-.menu-right,
-.menu-left {
+.top-menu-right,
+.top-menu-left {
   display: flex;
   flex-direction: column;
-  gap: var(--menu-element-gap);
+  gap: var(--top-menu-element-gap);
   overflow: visible;
 }
 
-.menu-right {
+.top-menu-right {
   text-align: right;
 }
 

@@ -13,18 +13,18 @@ const p_cannot_contain = [
   "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
   "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
   "Example", "Exercise", "Grid", "Highlight", "HorizontalMenu", "Index", 
-  "List", "MathBlock", "Menu", "BottomMenu", "Remark", "Statement", "Sub", "SubTitle", 
+  "List", "MathBlock", "TopMenu", "BottomMenu", "Remark", "Statement", "Sub", "SubTitle", 
   "SubtopicAnnouncement", "TopicAnnouncement", "WriterlyBlankLine",
   "br", "center", "figure", "div", "hr", "li", "ul", "ol", "p", "pre",
   "table", "thead", "tbody", "tr", "td", "colgroup", "section",
+  "CodeBlock",
 ]
 
 const p_cannot_be_contained_in = [
-  "HorizontalMenu", "Index", "Math", "MathBlock", "Menu", "BottomMenu", "TopicAnnouncement",
+  "HorizontalMenu", "Index", "Math", "MathBlock", "TopMenu", "BottomMenu", "TopicAnnouncement",
   "SubtopicAnnouncement", "NoWrap", 
   "QED", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem", 
   "code", "figure", "p", "pre", "span",
-  // "ChapterTitle", "SubTitle"
 ]
 
 pub fn main_pipeline()  -> List(Pipe) {
@@ -142,12 +142,11 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.append_custom(#("Chapter", end_of_page_element, GoBack)),
       dl.append_custom(#("Sub", end_of_page_element, GoBack)),
       dl.append_custom(#("Index", end_of_page_element, GoBack)),
+      dl.table_marker(),
       dl.ti2_create_menu(),
       dl.delete__batch(["PrevChapterOrSubTitle", "NextChapterOrSubTitle"]),
       dl.insert_attribute_value_at_first_child_start(#("ChapterTitle", "number-chiron", "&ensp;", GoBack)),
       dl.insert_attribute_value_at_first_child_start(#("SubTitle", "number-chiron", "&ensp;", GoBack)),
-      // dl.wrap_children(#("ChapterTitle", "p", GoBack)),
-      // dl.wrap_children(#("SubTitle", "p", GoBack)),
       dl.ti2_expand_carousels(),
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
@@ -220,7 +219,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.rename__batch([
         #("MathBlock", "div"),
         #("Index", "div"),
-        #("Menu", "div"),
+        #("TopMenu", "div"),
         #("BottomMenu", "div"),
         #("MenuLeft", "div"),
         #("MenuRight", "div"),

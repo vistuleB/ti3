@@ -12,8 +12,8 @@
 </head>
 <body>
   <div class="body-wrapper">
-    <div id="menu">
-      <div class="menu-left">
+    <div id="top-menu">
+      <div class="top-menu-left">
         <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
           </span>Inhaltsverzeichnis</a><a
           id="prev-page"
@@ -21,24 +21,16 @@
         >&lt;&lt; Kapitel 6<span
             style="visibility:hidden"
             id="prev-page-tooltip"
-          >
-            <p>
-              Kontextfreie Sprachen
-            </p>
-          </span></a>
+          >Kontextfreie Sprachen</span></a>
       </div>
-      <div class="menu-right">
+      <div class="top-menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./6-2.html"
         >Kapitel 6.2 &gt;&gt;<span
             style="visibility:hidden"
             id="next-page-tooltip"
-          >
-            <p>
-              Kontextfreie Grammatiken und Kellerautomaten
-            </p>
-          </span></a>
+          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -140,18 +132,21 @@
       Zahlenfolge spiegeln also nur zwei verschiedene Weisen wieder, den
       Baum auszugeben.
     </p>
-    <p class="main-column">
+    <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span>def treeToLeftDerivation (tree):
-<span class="listing-bol"></span>    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
-<span class="listing-bol"></span>    for child in tree.children (from left ro right):
-<span class="listing-bol"></span>        treeToLeftDerivation(child)
-<span class="listing-bol"></span>def treeToRightDerivation (tree):
-<span class="listing-bol"></span>    for child in tree.children (from left ro right):
-<span class="listing-bol"></span>        treeToLeftDerivation(child)
-<span class="listing-bol"></span>    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+<span class="listing-bol"></span>
+<p>
+def treeToLeftDerivation (tree):
+    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+    for child in tree.children (from left ro right):
+        treeToLeftDerivation(child)
+def treeToRightDerivation (tree):
+    for child in tree.children (from left ro right):
+        treeToLeftDerivation(child)
+    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       Beachten Sie, dass wir in beiden Fällen die Liste Kinder von links
       nach rechts durchgehen.
@@ -163,21 +158,13 @@
         <a href="./6-0.html">&lt;&lt; Kapitel 6<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          >
-            <p>
-              Kontextfreie Sprachen
-            </p>
-          </span></a>
+          >Kontextfreie Sprachen</span></a>
       </div>
       <div class="bottom-menu-right">
         <a href="./6-2.html">Kapitel 6.2 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >
-            <p>
-              Kontextfreie Grammatiken und Kellerautomaten
-            </p>
-          </span></a>
+          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
       </div>
     </div>
   </div>

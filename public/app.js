@@ -35,7 +35,8 @@ window.history.scrollRestoration = "manual";
 let lastScrollY = 0;
 let lastScrollYMoment = Date.now();
 let menuHidden = false;
-let menuElement = null;
+let topMenu = null;
+let bottomMenu = null;
 let isPageCentered = true;
 let screenWidth = -1;
 
@@ -183,6 +184,13 @@ const carouselMaxWidthInPx = () => {
   return computeDesktopMaxWidth;
 };
 
+const endOfPageEltMarginBottomInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
+  return 2.4;
+};
+
 const endOfPageMainColumnMarginBottomInRem = () => {
   return 0;
   // if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
@@ -192,7 +200,7 @@ const endOfPageMainColumnMarginBottomInRem = () => {
 };
 
 const endOfPageWellMarginBottomInRem = () => {
-  return 0.2;
+  return 0.25;
   // if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
   // if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
   // return 2.2;
@@ -321,10 +329,10 @@ const resetScreenWidthDependentVars = () => {
 
   set("--rem-font-size", remInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
-  set("--menu-padding-x", menuPaddingXInRem, "rem");
-  set("--menu-padding-y", menuPaddingYInRem, "rem");
-  set("--menu-element-gap", menuElementGapInRem, "rem");
-  set("--menu-background-color", menuBackgroundColor, "");
+  set("--top-menu-padding-x", menuPaddingXInRem, "rem");
+  set("--top-menu-padding-y", menuPaddingYInRem, "rem");
+  set("--top-menu-element-gap", menuElementGapInRem, "rem");
+  set("--top-menu-background-color", menuBackgroundColor, "");
   set("--bottom-menu-display", bottomMenuDisplay, "");
   set("--bottom-menu-position", bottomMenuPosition, "");
   set("--bottom-menu-padding-x", bottomMenuPaddingXInRem, "rem");
@@ -351,6 +359,7 @@ const resetScreenWidthDependentVars = () => {
     "em"
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
+  set("--end-of-page-elt-margin-bottom", endOfPageEltMarginBottomInRem, "rem");
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
@@ -486,21 +495,27 @@ const menuVisible = () => {
   return !menuHidden;
 };
 
-const setMenuVisibility = (viz) => {
-  if (!menuElement) {
-    menuElement = document.getElementById("menu");
-  }
+const setTopMenuVisibility = (viz) => {
+  if (!topMenu) return;
 
   if (viz) {
-    menuElement?.classList.remove("menu--hidden");
+    topMenu.classList.remove("menu--hidden");
     menuHidden = false;
   } else {
-    menuElement?.classList.add("menu--hidden");
+    topMenu.classList.add("menu--hidden");
     menuHidden = true;
   }
 };
 
-const onScrollMenuDisplay = (e) => {
+const setBottomMenuVisibility = (viz) => {
+  if (viz) {
+    bottomMenu.style.display = 'flex';
+  } else {
+    bottomMenu.style.display = 'none';
+  }
+}
+
+const onScrollTopMenuUpdate = () => {
   const currentScrollY = window.scrollY;
   const currentScrollYMoment = Date.now();
   const velocity =
@@ -508,22 +523,27 @@ const onScrollMenuDisplay = (e) => {
 
   if (
     (velocity < -7 ||
+      (velocity < -3.5 && screenWidth <= MOBILE_MAX_WIDTH) ||
       currentScrollY <= 10 ||
       (velocity < 0 && currentScrollY <= 200)) &&
     !menuVisible()
   ) {
-    setMenuVisibility(true);
+    setTopMenuVisibility(true);
   } else if (
     currentScrollY > lastScrollY &&
     currentScrollY > 10 &&
     menuVisible()
   ) {
-    setMenuVisibility(false);
+    setTopMenuVisibility(false);
   }
 
   lastScrollY = currentScrollY;
   lastScrollYMoment = currentScrollYMoment;
 };
+
+const onScroll = (e) => {
+  onScrollTopMenuUpdate();
+}
 
 const smoothRecenterMaybe = (e) => {
   let theoretical_left = marginWidth();
@@ -879,7 +899,7 @@ class Carousel {
 
   onScreenWidthChangePhase2(imposedButtonHeight) {
     this.buttonHeightInPx = imposedButtonHeight;
-    this.buttonWidthInPx = this.buttonHeightInPx * 18 / 34;
+    this.buttonWidthInPx = (this.buttonHeightInPx * 18) / 34;
     this.buttonMarginInPx = imposedButtonHeight * 0.7;
 
     let unconstrainedUIWidth =
@@ -1035,12 +1055,26 @@ const setPageTitleGridColumns = () => {
   pageTitle.classList.toggle("no-borders", onMobile);
 };
 
+const onBodyHeightChange = () => {
+  let clientHeight = document.body.clientHeight;
+  // console.log("clientHeight:", clientHeight);
+  setBottomMenuVisibility(clientHeight >= 1000);
+}
+
 const onLoad = () => {
+  topMenu = document.getElementById("top-menu");
+  bottomMenu = document.getElementById("bottom-menu");
   setupImages();
   setupCarousels();
   onResize();
-  setMenuVisibility(true);
+  setTopMenuVisibility(true);
+  setBottomMenuVisibility(false);
   setupMenuTooltips();
+  let resizeObserver = new ResizeObserver((entries) => {
+    onBodyHeightChange();
+  });
+  resizeObserver.observe(document.body);
+  onBodyHeightChange();
 };
 
 const onResize = () => {
@@ -1156,7 +1190,7 @@ const onKeyDown = (e) => {
 window.addEventListener("resize", onResize);
 document.addEventListener("DOMContentLoaded", onLoad);
 document.addEventListener("click", smoothRecenter);
-document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
+document.addEventListener("scroll", onScroll, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd, { passive: true });
 document.addEventListener("keydown", onKeyDown, { capture: true });

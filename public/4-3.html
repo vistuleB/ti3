@@ -12,8 +12,8 @@
 </head>
 <body>
   <div class="body-wrapper">
-    <div id="menu">
-      <div class="menu-left">
+    <div id="top-menu">
+      <div class="top-menu-left">
         <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
           </span>Inhaltsverzeichnis</a><a
           id="prev-page"
@@ -21,25 +21,17 @@
         >&lt;&lt; Kapitel 4.2<span
             style="visibility:hidden"
             id="prev-page-tooltip"
-          >
-            <p>
-              Primitive Rekursion: Konstruktionen und Tricks
-            </p>
-          </span></a>
+          >Primitive Rekursion: Konstruktionen und Tricks</span></a>
       </div>
-      <div class="menu-right">
+      <div class="top-menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./4-4.html"
         >Kapitel 4.4 &gt;&gt;<span
             style="visibility:hidden"
             id="next-page-tooltip"
-          >
-            <p>
-              Ein Schritt weiter:  while-Schleifen und
-              <span class="nowrap">$\mu$-Rekursion</span>
-            </p>
-          </span></a>
+          >Ein Schritt weiter:  while-Schleifen und
+            <span class="nowrap">$\mu$-Rekursion</span></span></a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -626,13 +618,15 @@
       Funktion $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln auf,
       wie wir diese als primitiv-rekursive Funktion konstruiert haben:
     </p>
-    <p class="main-column">
+    <div class="main-column">
 <pre>
+<p>
 pair = Comp(add, p0, Comp(choose2,Comp(add,p0,Comp(succ,p1))))
 choose2 = PrimRec(zero, Comp(add,p0,p1))
 add = PrimRec (p0, Comp(succ, p0))
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       dann können wir das auf Baum darstellen:
     </p>
@@ -651,22 +645,14 @@ add = PrimRec (p0, Comp(succ, p0))
         <a href="./4-2.html">&lt;&lt; Kapitel 4.2<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          >
-            <p>
-              Primitive Rekursion: Konstruktionen und Tricks
-            </p>
-          </span></a>
+          >Primitive Rekursion: Konstruktionen und Tricks</span></a>
       </div>
       <div class="bottom-menu-right">
         <a href="./4-4.html">Kapitel 4.4 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >
-            <p>
-              Ein Schritt weiter:  while-Schleifen und
-              <span class="nowrap">$\mu$-Rekursion</span>
-            </p>
-          </span></a>
+          >Ein Schritt weiter:  while-Schleifen und
+            <span class="nowrap">$\mu$-Rekursion</span></span></a>
       </div>
     </div>
   </div>

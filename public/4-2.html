@@ -12,8 +12,8 @@
 </head>
 <body>
   <div class="body-wrapper">
-    <div id="menu">
-      <div class="menu-left">
+    <div id="top-menu">
+      <div class="top-menu-left">
         <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
           </span>Inhaltsverzeichnis</a><a
           id="prev-page"
@@ -21,24 +21,16 @@
         >&lt;&lt; Kapitel 4.1<span
             style="visibility:hidden"
             id="prev-page-tooltip"
-          >
-            <p>
-              Primitive Rekursion: Motivation und Definitionen
-            </p>
-          </span></a>
+          >Primitive Rekursion: Motivation und Definitionen</span></a>
       </div>
-      <div class="menu-right">
+      <div class="top-menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./4-3.html"
         >Kapitel 4.3 &gt;&gt;<span
             style="visibility:hidden"
             id="next-page-tooltip"
-          >
-            <p>
-              Primitive Rekursion kann nicht alles: die Péter-Ackermann-Funktion
-            </p>
-          </span></a>
+          >Primitive Rekursion kann nicht alles: die Péter-Ackermann-Funktion</span></a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -69,15 +61,17 @@
       die primitive Rekursion zulässt, und schreiben in Orange auch
       gleich die Funktionen $g$ und $h$ dazu:
     </p>
-    <p class="main-column">
-<pre class="orange-comments">
+    <div class="main-column">
+<pre language="orange-comments">
+<p>
 def mult(t,x):
-    temp = 0 <span class="actual-orange-comment">= zero(x)</span>
+    temp = 0 //= zero(x)
     for i in range(t):
-        temp = add(temp,x) <span class="actual-orange-comment">= Comp(add, p_0, p2) (temp,i,x)</span>
+        temp = add(temp,x) //= Comp(add, p_0, p2) (temp,i,x)
     return temp
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       erinnern Sie sich daran: $h$ muss immer eine Funktion in der
       lokalen Variable temp, der Laufvariable $i$ und $\vec{x}$ sein.
@@ -121,15 +115,17 @@ def mult(t,x):
       etwas interessanter, weil wir hier auf das Zwischenergebnis und die
       Laufvariable zugreifen müssen:
     </p>
-    <p class="main-column">
-<pre class="orange-comments">
+    <div class="main-column">
+<pre language="orange-comments">
+<p>
 def factorial(t):
-    temp = 1 <span class="actual-orange-comment">= one()</span>
+    temp = 1 //= one()
 for i in range(t):
-    temp = mult(temp,i+1) <span class="actual-orange-comment">= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)</span>
+    temp = mult(temp,i+1) //= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)
     return temp
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       Wir können nicht einfach $i+1$ schreiben! Wir müssen dies via
       $\comp(\succ,\pi_1)$ konstruieren. Denn: die Funktion $h$ bekommt
@@ -144,15 +140,17 @@ for i in range(t):
       Wir definieren das als 0. So
       können wir pred implementieren:
     </p>
-    <p class="main-column">
-<pre class="orange-comments">
+    <div class="main-column">
+<pre language="orange-comments">
+<p>
 def pred(t):
-    temp = 0 <span class="actual-orange-comment">= zero()</span>
+    temp = 0 //= zero()
     for i in range(t):
-        temp = i <span class="actual-orange-comment">= p1 (temp,i)</span>
+        temp = i //= p1 (temp,i)
     return temp
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       In Worten: wenn
       <span class="nowrap">$t=0$,</span>
@@ -202,15 +200,17 @@ def pred(t):
       also Funktion mit Booleschem Ausgabewert, ist
       <span class="nowrap"><code>isPositive</code>:</span>
     </p>
-    <p class="main-column">
-<pre class="orange-comments">
+    <div class="main-column">
+<pre language="orange-comments">
+<p>
 def pred(t):
-    temp = 0 <span class="actual-orange-comment">= zero()</span>
+    temp = 0 //= zero()
     for i in range(t):
-        temp = 1 <span class="actual-orange-comment">= one</span>
+        temp = 1 //= one
     return temp
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       und somit
     </p>
@@ -264,15 +264,17 @@ def pred(t):
     <p class="main-column">
       und damit können wir die ganzzahlige Wurzel schreiben als
     </p>
-    <p class="main-column">
-<pre class="orange-comments">
+    <div class="main-column">
+<pre language="orange-comments">
+<p>
 def largestIbelowTwithISquareLessEqualX(t,x):
-    temp = 0 <span class="actual-orange-comment">= zero(x)</span>
+    temp = 0 //= zero(x)
     for i in range(t):
-        temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span class="actual-orange-comment">= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)</span>
+        temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) //= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)
     return temp
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       Was geht hier vor? Wenn ${\rm iSquareLessEqualX}(i,x))$ True ist,
       dann ersetzen wir temp durch
@@ -403,14 +405,16 @@ a = b-a
       kennengelernt. Diese Funktion ist primitiv rekursiv: es gilt
       ${n \choose 2} = 1 + 2 + \cdots + (n-1)$ und somit
     </p>
-    <p class="main-column">
-<pre class="orange-comments">
+    <div class="main-column">
+<pre language="orange-comments">
+<p>
 def choose2(t):
-    temp = 0 <span class="actual-orange-comment">= zero()</span>
+    temp = 0 //= zero()
     for i in range(t):
-        temp = add(temp,i) <span class="actual-orange-comment">= Comp(add, p0, p1)</span>
+        temp = add(temp,i) //= Comp(add, p0, p1)
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       und somit
     </p>
@@ -460,16 +464,18 @@ def choose2(t):
       zusammenhängen, z.B. $[5,7,9]$ wird zu
       <span style="color:red">$\pair(5, \pair(7, 9))$</span>. Das ist natürlich inkorrekt:
     </p>
-    <p class="main-column">
-<pre class="python-prompt">
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,pair(7,9))</span>
-<span class="python-prompt-ok-response">11031</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(7,9)</span>
-<span class="python-prompt-ok-response">143</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,143)</span>
-<span class="python-prompt-ok-response">11031</span>
+    <div class="main-column">
+<pre language="python-prompt">
+<p>
+&gt;&gt;&gt; pair(5,pair(7,9))
+11031
+&gt;&gt;&gt; pair(7,9)
+143
+&gt;&gt;&gt; pair(5,143)
+11031
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       Das Problem ist, dass wir das Ende der Liste nicht kennen. Wir
       lösen das Problem, indem wir die leere Liste mit $0$ codieren und
@@ -488,18 +494,20 @@ def choose2(t):
     <p class="main-column">
       Jetzt klappt alles wunderbar:
     </p>
-    <p class="main-column">
-<pre class="python-prompt">
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> push(11, push(7, push(5, 0)))</span>
-<span class="python-prompt-ok-response">90537</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(90537)</span>
-<span class="python-prompt-ok-response">11</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(90537))</span>
-<span class="python-prompt-ok-response">7</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(tail(90537)))</span>
-<span class="python-prompt-ok-response">5</span>
+    <div class="main-column">
+<pre language="python-prompt">
+<p>
+&gt;&gt;&gt; push(11, push(7, push(5, 0)))
+90537
+&gt;&gt;&gt; head(90537)
+11
+&gt;&gt;&gt; head(tail(90537))
+7
+&gt;&gt;&gt; head(tail(tail(90537)))
+5
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       <b>Native Implementierung.</b>
       Die primitive Rekursion ist ein
@@ -518,15 +526,18 @@ def choose2(t):
       implementieren, also beispielsweise in meiner Datei
       <span class="nowrap"><code>stockpile.py</code>:</span>
     </p>
-    <p class="main-column">
+    <div class="main-column">
 <pre
   class="listing"
   style="counter-set:listing 62"
 >
-<span class="listing-bol"></span>def pair(x,y):
-<span class="listing-bol"></span>    return int(((x+y+1) * (x+y)) / 2 + x )
+<span class="listing-bol"></span>
+<p>
+def pair(x,y):
+    return int(((x+y+1) * (x+y)) / 2 + x )
+</p>
 </pre>
-    </p>
+    </div>
     <div id="end-of-page-elt">
     </div>
     <div id="bottom-menu">
@@ -534,21 +545,13 @@ def choose2(t):
         <a href="./4-1.html">&lt;&lt; Kapitel 4.1<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          >
-            <p>
-              Primitive Rekursion: Motivation und Definitionen
-            </p>
-          </span></a>
+          >Primitive Rekursion: Motivation und Definitionen</span></a>
       </div>
       <div class="bottom-menu-right">
         <a href="./4-3.html">Kapitel 4.3 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >
-            <p>
-              Primitive Rekursion kann nicht alles: die Péter-Ackermann-Funktion
-            </p>
-          </span></a>
+          >Primitive Rekursion kann nicht alles: die Péter-Ackermann-Funktion</span></a>
       </div>
     </div>
   </div>

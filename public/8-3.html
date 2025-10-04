@@ -12,8 +12,8 @@
 </head>
 <body>
   <div class="body-wrapper">
-    <div id="menu">
-      <div class="menu-left">
+    <div id="top-menu">
+      <div class="top-menu-left">
         <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
           </span>Inhaltsverzeichnis</a><a
           id="prev-page"
@@ -21,24 +21,16 @@
         >&lt;&lt; Kapitel 8.2<span
             style="visibility:hidden"
             id="prev-page-tooltip"
-          >
-            <p>
-              Beispiele
-            </p>
-          </span></a>
+          >Beispiele</span></a>
       </div>
-      <div class="menu-right">
+      <div class="top-menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./8-4.html"
         >Kapitel 8.4 &gt;&gt;<span
             style="visibility:hidden"
             id="next-page-tooltip"
-          >
-            <p>
-              Turing-Maschinen codieren
-            </p>
-          </span></a>
+          >Turing-Maschinen codieren</span></a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -207,14 +199,14 @@
         nicht, können Sie in Ihrem internen Zustand speichern. Eine Regel
         wäre also zum Beispiel:
       </p>
-      <p>
 <pre>
+<p>
 carry1, 0, 0, _
 carry0, 0, 0, 1,&lt;,&lt;,&lt;
 carry1, 0, 1, _
 carry1, 0, 1, 0,&lt;,&lt;,&lt;
+</p>
 </pre>
-      </p>
       <p>
         Ein lästiges Detail ist, dass $y$ kürzer sein könnte als $x$ und
         Sie daher in das
@@ -502,19 +494,22 @@ carry1, 0, 1, 0,&lt;,&lt;,&lt;
       In der Syntax von
       <a href="https://turingmachinesimulator.com">turingmachinesimulator.com</a>:
     </p>
-    <p class="main-column">
+    <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span>name: replace_b_by_c
-<span class="listing-bol"></span>init: init
-<span class="listing-bol"></span>accept: accept
-<span class="listing-bol"></span>init, a
-<span class="listing-bol"></span>init, a, &gt;
-<span class="listing-bol"></span>init, b
-<span class="listing-bol"></span>init, c, &gt;
-<span class="listing-bol"></span>init, _
-<span class="listing-bol"></span>accept, _, &gt;
+<span class="listing-bol"></span>
+<p>
+name: replace_b_by_c
+init: init
+accept: accept
+init, a
+init, a, &gt;
+init, b
+init, c, &gt;
+init, _
+accept, _, &gt;
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       Ungleich schwieriger ist die Aufgabe, jedes $b$ durch ein $bc$ zu
       ersetzen, weil wir hier etwas
@@ -577,14 +572,16 @@ r, _, x, &gt;, &gt;
       Eine Linksbewegung ist etwas schwieriger zu implementieren. Aus
       $\delta(q,x) = (r,y,\texttt{L})$ wird
     </p>
-    <p class="main-column">
-<pre class="orange-comments">
+    <div class="main-column">
+<pre language="orange-comments">
+<p>
 q,  x, _
 r', x, _, -, -
 r', _, c
-r,  c, _   <span class="actual-orange-comment">// für jedes Zeichen c</span>
+r,  c, _   //// für jedes Zeichen c
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       Nehmen Sie die Beispielmaschine
       <a href="./code/turing%20machines/go-left-go-right.txt">go-left-go-right.txt</a>,
@@ -606,14 +603,16 @@ r,  c, _   <span class="actual-orange-comment">// für jedes Zeichen c</span>
     <p class="main-column">
       wird
     </p>
-    <p class="main-column">
-<pre class="orange-comments">
+    <div class="main-column">
+<pre language="orange-comments">
+<p>
 q,   x, _
 r'', _, z, &gt;, &gt;
 r'', c, _
-r,   c, y, -, &gt;  <span class="actual-orange-comment">// für jedes Zeichen c</span>
+r,   c, y, -, &gt;  //// für jedes Zeichen c
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       Sie können sich meine Implementierung in
       <a href="./code/turing%20machines/insert-z-before-y.txt">insert-z-before-y.txt</a>
@@ -635,15 +634,17 @@ r,   c, y, -, &gt;  <span class="actual-orange-comment">// für jedes Zeichen c<
       <span class="nowrap"><i>Dictionaries</i>,</span>
       die Key-Value-Paare speichern:
     </p>
-    <p class="main-column">
-<pre class="python-prompt">
-<span class="terminal-prompt">user@home:~$</span><span class="terminal-prompt-content"> python -i</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> dict = {"karl" : 42, "eva" : 35, "werner" : 20}</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> dict["eva"]</span>
-<span class="python-prompt-ok-response">35</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"></span>
+    <div class="main-column">
+<pre language="python-prompt">
+<p>
+user@home:~$ python -i
+&gt;&gt;&gt; dict = {"karl" : 42, "eva" : 35, "werner" : 20}
+&gt;&gt;&gt; dict["eva"]
+35
+&gt;&gt;&gt;
+</p>
 </pre>
-    </p>
+    </div>
     <p class="main-column">
       Im Zweifelsfall sind diese als Hashmaps oder Rot-Schwarz-Bäume
       oder B-Bäume implementiert. Hier interessiert uns nicht so sehr die
@@ -1207,21 +1208,13 @@ r,   c, y, -, &gt;  <span class="actual-orange-comment">// für jedes Zeichen c<
         <a href="./8-2.html">&lt;&lt; Kapitel 8.2<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          >
-            <p>
-              Beispiele
-            </p>
-          </span></a>
+          >Beispiele</span></a>
       </div>
       <div class="bottom-menu-right">
         <a href="./8-4.html">Kapitel 8.4 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >
-            <p>
-              Turing-Maschinen codieren
-            </p>
-          </span></a>
+          >Turing-Maschinen codieren</span></a>
       </div>
     </div>
   </div>

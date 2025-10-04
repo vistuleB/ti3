@@ -12,8 +12,8 @@
 </head>
 <body>
   <div class="body-wrapper">
-    <div id="menu">
-      <div class="menu-left">
+    <div id="top-menu">
+      <div class="top-menu-left">
         <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
           </span>Inhaltsverzeichnis</a><a
           id="prev-page"
@@ -21,24 +21,16 @@
         >&lt;&lt; Kapitel 9.4<span
             style="visibility:hidden"
             id="prev-page-tooltip"
-          >
-            <p>
-              Viele Beispiele aus NP
-            </p>
-          </span></a>
+          >Viele Beispiele aus NP</span></a>
       </div>
-      <div class="menu-right">
+      <div class="top-menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./9-6.html"
         >Kapitel 9.6 &gt;&gt;<span
             style="visibility:hidden"
             id="next-page-tooltip"
-          >
-            <p>
-              Ganz NP reduziert auf SAT: das Cook-Levin-Theorem
-            </p>
-          </span></a>
+          >Ganz NP reduziert auf SAT: das Cook-Levin-Theorem</span></a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -152,14 +144,18 @@
         ist. Und hier ist nun unser Code für
         <code>is_3_colorable:</code>
       </p>
-      <p>
-<pre class="listing orange-comments">
-<span class="listing-bol"></span>def is_3_colorable(graph):
-<span class="listing-bol"></span>    F = convert_to_CNF_formula(graph)
-<span class="listing-bol"></span>    <span class="actual-orange-comment"># F ist die oben beschriebene Formel mit 3n Variablen</span>
-<span class="listing-bol"></span>    return is_satisfiable(F)
+<pre
+  language="orange-comments"
+  class="listing"
+>
+<span class="listing-bol"></span>
+<p>
+def is_3_colorable(graph):
+    F = convert_to_CNF_formula(graph)
+    //# F ist die oben beschriebene Formel mit 3n Variablen
+    return is_satisfiable(F)
+</p>
 </pre>
-      </p>
       <p>
         Falls Ihnen eine Funktion
         <code>find_satisying_assignment</code>
@@ -321,14 +317,18 @@
         in eine erfüllende Belegung übersetzen
         und umgekehrt. Hier ist also der Code:
       </p>
-      <p>
-<pre class="listing orange-comments">
-<span class="listing-bol"></span>def is_3CNF_satisfiable(the_3_cnf_formula):
-<span class="listing-bol"></span>    G = cOnvert_to_graph(the_3_cnf_formula)
-<span class="listing-bol"></span>    <span class="actual-orange-comment"># G ist der oben konstruierte Graph</span>
-<span class="listing-bol"></span>    return is_3_colorable(G)
+<pre
+  language="orange-comments"
+  class="listing"
+>
+<span class="listing-bol"></span>
+<p>
+def is_3CNF_satisfiable(the_3_cnf_formula):
+    G = cOnvert_to_graph(the_3_cnf_formula)
+    //# G ist der oben konstruierte Graph
+    return is_3_colorable(G)
+</p>
 </pre>
-      </p>
       <p>
         <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
@@ -901,17 +901,18 @@
         haben wir unseren Kreis; wenn es überhaupt einen Kreis gibt, dann
         klappt es auch mit einem Nachbarn (in der Tat: sogar mit zweien).
       </p>
-      <p>
 <pre class="listing">
-<span class="listing-bol"></span>def has_hamilton_cycle(G):
-<span class="listing-bol"></span>    u = ein beliebiger Knoten
-<span class="listing-bol"></span>    for v in neighbors[u]:
-<span class="listing-bol"></span>    H = G - {u,v} + {s,u} + {t,v}
-<span class="listing-bol"></span>    if has_hamilton_path(H):
-<span class="listing-bol"></span>    return True
-<span class="listing-bol"></span>    return False
+<span class="listing-bol"></span>
+<p>
+def has_hamilton_cycle(G):
+    u = ein beliebiger Knoten
+    for v in neighbors[u]:
+    H = G - {u,v} + {s,u} + {t,v}
+    if has_hamilton_path(H):
+    return True
+    return False
+</p>
 </pre>
-      </p>
       <p>
         Falls nun
         <code>has_hamilton_path</code>
@@ -982,21 +983,13 @@
         <a href="./9-4.html">&lt;&lt; Kapitel 9.4<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          >
-            <p>
-              Viele Beispiele aus NP
-            </p>
-          </span></a>
+          >Viele Beispiele aus NP</span></a>
       </div>
       <div class="bottom-menu-right">
         <a href="./9-6.html">Kapitel 9.6 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >
-            <p>
-              Ganz NP reduziert auf SAT: das Cook-Levin-Theorem
-            </p>
-          </span></a>
+          >Ganz NP reduziert auf SAT: das Cook-Levin-Theorem</span></a>
       </div>
     </div>
   </div>

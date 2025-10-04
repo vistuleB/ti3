@@ -12,8 +12,8 @@
 </head>
 <body>
   <div class="body-wrapper">
-    <div id="menu">
-      <div class="menu-left">
+    <div id="top-menu">
+      <div class="top-menu-left">
         <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
           </span>Inhaltsverzeichnis</a><a
           id="prev-page"
@@ -21,24 +21,16 @@
         >&lt;&lt; Kapitel 5.4<span
             style="visibility:hidden"
             id="prev-page-tooltip"
-          >
-            <p>
-              Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel
-            </p>
-          </span></a>
+          >Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel</span></a>
       </div>
-      <div class="menu-right">
+      <div class="top-menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./5-6.html"
         >Kapitel 5.6 &gt;&gt;<span
             style="visibility:hidden"
             id="next-page-tooltip"
-          >
-            <p>
-              Die Grenzen regulärer Sprachen
-            </p>
-          </span></a>
+          >Die Grenzen regulärer Sprachen</span></a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -359,17 +351,17 @@
         <a href="./code/regular-expressions/TestRegex.java">TextRegex.java</a>
         herunter, kompilieren und starten Sie es.
       </p>
-      <p>
-<pre class="arbitrary-prompt-response">
-<span class="terminal-prompt">user@home:~$</span><span class="terminal-prompt-content"> java TestRegex</span>
-<span class="arbitrary-prompt">Please enter a regular expression: </span><span class="arbitrary-response">(a+)(:a+)*</span>
-<span class="arbitrary-prompt">Enter words to be matched, one per line</span><span class="arbitrary-response"></span>
-<span class="arbitrary-prompt"></span><span class="arbitrary-response">aaaaa:aa:aaaa:a</span>
-<span class="arbitrary-prompt">true</span><span class="arbitrary-response"></span>
-<span class="arbitrary-prompt"></span><span class="arbitrary-response">aaa:aa:</span>
-<span class="arbitrary-prompt">false</span><span class="arbitrary-response"></span>
+<pre language="arbitrary-prompt-response">
+<p>
+user@home:~$ java TestRegex
+Please enter a regular expression: &lt;- (a+)(:a+)*
+Enter words to be matched, one per line
+&lt;- aaaaa:aa:aaaa:a
+true
+&lt;- aaa:aa:
+false
+</p>
 </pre>
-      </p>
       <p>
         Schreiben Sie nun einen regulären Ausdruck $R$ für die obige
         Sprache und testen Sie ihn mit dem Java-Programm.
@@ -698,21 +690,13 @@
         <a href="./5-4.html">&lt;&lt; Kapitel 5.4<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          >
-            <p>
-              Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel
-            </p>
-          </span></a>
+          >Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel</span></a>
       </div>
       <div class="bottom-menu-right">
         <a href="./5-6.html">Kapitel 5.6 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >
-            <p>
-              Die Grenzen regulärer Sprachen
-            </p>
-          </span></a>
+          >Die Grenzen regulärer Sprachen</span></a>
       </div>
     </div>
   </div>

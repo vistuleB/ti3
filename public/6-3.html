@@ -12,8 +12,8 @@
 </head>
 <body>
   <div class="body-wrapper">
-    <div id="menu">
-      <div class="menu-left">
+    <div id="top-menu">
+      <div class="top-menu-left">
         <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
           </span>Inhaltsverzeichnis</a><a
           id="prev-page"
@@ -21,25 +21,17 @@
         >&lt;&lt; Kapitel 6.2<span
             style="visibility:hidden"
             id="prev-page-tooltip"
-          >
-            <p>
-              Kontextfreie Grammatiken und Kellerautomaten
-            </p>
-          </span></a>
+          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
       </div>
-      <div class="menu-right">
+      <div class="top-menu-right">
         <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en">zür Kursübersicht</a><a
           id="next-page"
           href="./6-4.html"
         >Kapitel 6.4 &gt;&gt;<span
             style="visibility:hidden"
             id="next-page-tooltip"
-          >
-            <p>
-              <span class="nowrap">LL($k$)-Grammatiken</span>
-              (nicht im Sommersemester 2025)
-            </p>
-          </span></a>
+          ><span class="nowrap">LL($k$)-Grammatiken</span>
+            (nicht im Sommersemester 2025)</span></a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -102,13 +94,13 @@
         <b>Übungsaufgabe 6.3.1</b>
         Geben Sie folgende Grammatik in die App ein:
       </p>
-      <p>
 <pre>
+<p>
 S -&gt;; ;
 S -&gt;; "("S")"S ;
 S -&gt;; "(" S "]" S;
+</p>
 </pre>
-      </p>
       <p>
         Was ist die erzeugte Sprache? Können Sie sie in Worten
         beschreiben? Erzeugen Sie Wörter in dieser Sprache, für die der
@@ -148,12 +140,12 @@ S -&gt;; "(" S "]" S;
         Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im
         Racket-Stil, also
       </p>
-      <p>
 <pre>
+<p>
 (* (+ 2 3) (- 4 (* 2 4) 5)
 (+ 1 2 (* 2))
+</p>
 </pre>
-      </p>
       <p>
         Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie
         die Grammatik abändern? Haben Sie mittlerweile ein Schema
@@ -168,11 +160,11 @@ S -&gt;; "(" S "]" S;
         Konventionen Punkt-vor-Strich beachtet werden. Im Ableitungsbaum
         von
       </p>
-      <p>
 <pre>
+<p>
 2+3*(5+4)
+</p>
 </pre>
-      </p>
       <p>
         sollte sich das wiederspiegeln.
       </p>
@@ -183,13 +175,13 @@ S -&gt;; "(" S "]" S;
         <b>(Challenge)</b>
         Geben Sie die Grammatik hier ein:
       </p>
-      <p>
 <pre>
+<p>
 S -&gt;; "("S")"S;
 S -&gt;; "["S"("S;
 S -&gt;; ;
+</p>
 </pre>
-      </p>
       <p>
         Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik
         ist nicht eindeutig. Das Wort
@@ -211,12 +203,12 @@ S -&gt;; ;
         vorgeschlagen als Beispiel für eine eindeutige Grammatik, bei der
         Sie exponentiell große Backtrack-Bäume bekommen können:
       </p>
-      <p>
 <pre>
+<p>
 S -&gt;;  "a" X "b" | "a" X "c";
 X -&gt;; "a" | "a" X | "a" X X;
+</p>
 </pre>
-      </p>
       <p>
         Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
         Können Sie eine
@@ -247,22 +239,14 @@ X -&gt;; "a" | "a" X | "a" X X;
         <a href="./6-2.html">&lt;&lt; Kapitel 6.2<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          >
-            <p>
-              Kontextfreie Grammatiken und Kellerautomaten
-            </p>
-          </span></a>
+          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
       </div>
       <div class="bottom-menu-right">
         <a href="./6-4.html">Kapitel 6.4 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >
-            <p>
-              <span class="nowrap">LL($k$)-Grammatiken</span>
-              (nicht im Sommersemester 2025)
-            </p>
-          </span></a>
+          ><span class="nowrap">LL($k$)-Grammatiken</span>
+            (nicht im Sommersemester 2025)</span></a>
       </div>
     </div>
   </div>
