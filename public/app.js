@@ -795,23 +795,21 @@ class Carousel {
     this.removeFromContainer(this.constrainedNav);
   }
 
-  phase1ButtonHeightComputation = () => {
+  suggestedButtonHeightForOwnContainerSize = () => {
     let lambda = clamp01(
       (this.containerWidth - CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH) /
         (CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_WIDTH -
           CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH)
     );
 
-    let carousel_button_height_that_we_would_suggest_if_it_were_only_up_to_us = (
+    return (
       CAROUSEL_ARROW_MIN_HEIGHT * (1 - lambda) + CAROUSEL_ARROW_MAX_HEIGHT * lambda
     );
-
-    return carousel_button_height_that_we_would_suggest_if_it_were_only_up_to_us;
   };
 
   onScreenWidthChangePhase1() {
     this.containerWidth = this.container.getBoundingClientRect().width;
-    return this.phase1ButtonHeightComputation();
+    return this.suggestedButtonHeightForOwnContainerSize();
   }
 
   phase2ResetUnconstrainedUIButtonStyles = () => {
