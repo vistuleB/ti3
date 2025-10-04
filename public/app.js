@@ -154,7 +154,7 @@ const carouselMaxWidthInPx = () => {
   const adjustedScreenWidth = screenWidth * 0.9;
   const computeTabletMaxWidth = Math.min(
     adjustedScreenWidth,
-    DESKTOP_MAIN_COLUMN_WIDTH
+    DESKTOP_MAIN_COLUMN_WIDTH,
   );
   const computeDesktopMaxWidth =
     screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
@@ -306,12 +306,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem"
+    "rem",
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
@@ -321,18 +321,18 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-toc-subchapter-level-margin",
     indexTocSubchapterLevelMarginInEm,
-    "em"
+    "em",
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
@@ -344,7 +344,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -596,7 +596,7 @@ class Carousel {
   constructor(container) {
     if (!container.classList.contains("carousel__container")) {
       console.error(
-        "'Carousel' constructor should be called on carousel__container!"
+        "'Carousel' constructor should be called on carousel__container!",
       );
       return;
     }
@@ -799,11 +799,12 @@ class Carousel {
     let lambda = clamp01(
       (this.containerWidth - CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH) /
         (CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_WIDTH -
-          CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH)
+          CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH),
     );
 
     return (
-      CAROUSEL_ARROW_MIN_HEIGHT * (1 - lambda) + CAROUSEL_ARROW_MAX_HEIGHT * lambda
+      CAROUSEL_ARROW_MIN_HEIGHT * (1 - lambda) +
+      CAROUSEL_ARROW_MAX_HEIGHT * lambda
     );
   };
 
@@ -924,7 +925,7 @@ class Carousel {
   nudgeCarouselItem(direction) {
     // console.log("in nudge!", direction);
     this.setItemNumber(
-      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems)
+      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems),
     );
   }
 
@@ -991,7 +992,7 @@ const setPageTitleGridColumns = () => {
 
   pageTitle.style.setProperty(
     "grid-template-columns",
-    `minmax(${minWidth}, 1fr) auto minmax(${minWidth}, 1fr)`
+    `minmax(${minWidth}, 1fr) auto minmax(${minWidth}, 1fr)`,
   );
   pageTitle.classList.toggle("no-borders", onMobile);
 };
