@@ -615,6 +615,7 @@ figcaption {
 
 .carousel__constrained-progress-counter {
   width: 4em;
+  text-wrap: nowrap;
   text-align: center;
   font-size: var(--progress-counter-font-size);
   user-select: none;
