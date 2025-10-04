@@ -1000,13 +1000,13 @@ const setPageTitleGridColumns = () => {
 };
 
 const onLoad = () => {
-  window.requestAnimationFrame(() => {
+  setTimeout(() => {
     setupImages();
     setupCarousels();
     onResize();
     setMenuVisibility(true);
     setupMenuTooltips();
-  });
+  }, 16);
 };
 
 const onResize = () => {
