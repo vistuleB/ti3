@@ -1000,13 +1000,11 @@ const setPageTitleGridColumns = () => {
 };
 
 const onLoad = () => {
-  setTimeout(() => {
-    setupImages();
-    setupCarousels();
-    onResize();
-    setMenuVisibility(true);
-    setupMenuTooltips();
-  }, 16);
+  setupImages();
+  setupCarousels();
+  onResize();
+  setMenuVisibility(true);
+  setupMenuTooltips();
 };
 
 const onResize = () => {
@@ -1120,7 +1118,7 @@ const onKeyDown = (e) => {
 };
 
 window.addEventListener("resize", onResize);
-document.addEventListener("DOMContentLoaded", onLoad);
+window.addEventListener("load", onLoad);
 document.addEventListener("click", smoothRecenter);
 document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
