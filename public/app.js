@@ -423,9 +423,6 @@ const constrainFigureImage = (image) => {
   image.classList.remove("unconstrained");
   image.classList.add("constrained");
   let constrainerWidth = image.constrainer.getBoundingClientRect().width;
-  if (image.id === "aa" || image.id === "bb") {
-    console.log(image.id, "the image.originalWidth is:", image.originalWidth);
-  }
   image.style.width = `min(${constrainerWidth + "px"}, ${image.originalWidth})`;
 };
 
