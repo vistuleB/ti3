@@ -33,7 +33,7 @@ pub fn main_pipeline()  -> List(Pipe) {
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   
-  let post_transformation_document_tags = ["Document", "marker", "WriterlyCodeBlock", "AnnotatedBackticks", "BottomMenu"]
+  let post_transformation_document_tags = ["Document"]
   let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "h3", "p", "b", "i", "code"])
   let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
 
@@ -123,6 +123,10 @@ pub fn main_pipeline()  -> List(Pipe) {
     ],
     pp.splitting_empty_lines_cleanup(),
     [
+      dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
+      dl.unwrap("WriterlyBlankLine"),
+      dl.trim("p"),
+      dl.delete_if_empty("p"),
       dl.ti2_code_block_to_pre(),
       dl.ti2_parse_python_prompt_pre(),
       dl.ti2_parse_orange_comments_pre(),
@@ -135,12 +139,8 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti2_create_menu(),
       dl.delete__batch(["PrevChapterOrSubTitle", "NextChapterOrSubTitle"]),
       dl.ti2_expand_carousels(),
-      dl.insert_attribute_value_at_start(#("ChapterTitle", "number-chiron", "&ensp;", infra.GoBack)),
-      dl.insert_attribute_value_at_start(#("SubTitle", "number-chiron", "&ensp;", infra.GoBack)),
-      dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
-      dl.unwrap("WriterlyBlankLine"),
-      dl.trim("p"),
-      dl.delete_if_empty("p"),
+      dl.insert_attribute_value_at_first_child_start(#("ChapterTitle", "number-chiron", "&ensp;", infra.GoBack)),
+      dl.insert_attribute_value_at_first_child_start(#("SubTitle", "number-chiron", "&ensp;", infra.GoBack)),
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     pp.markdown_link_splitting(["MathBlock", "Math"]),
@@ -211,6 +211,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("MathBlock", "div"),
         #("Index", "div"),
         #("Menu", "div"),
+        #("BottomMenu", "div"),
         #("MenuLeft", "div"),
         #("MenuRight", "div"),
         #("HorizontalMenu", "div"),

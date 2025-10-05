@@ -46,7 +46,7 @@
     korrekt sind, ungeachtet, ob ein Konto mit dieser Email-Adresse
     besteht.
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre class="orange-comments">
 thomas.schmitz@hszg.de                              <span class="actual-orange-comment">Gültig</span>
 dominik@cs.sjtu.edu.cn                              <span class="actual-orange-comment">Gültig</span>
@@ -54,13 +54,13 @@ raffaela@mayer@gmail.com                            <span class="actual-orange-c
 lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-comment">Ungültig: Domain-Name darf kein / enthalten</span>
 .schlaumeier@gmail.com                              <span class="actual-orange-comment">Ungültig: Google will kein . an erster Stelle</span>
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Hier sehen Sie den Teil eines HTML-Dokuments. Beachten Sie die
     typische hierarchisch-geschachtelte Struktur (sie müssen es nicht
     im Detail lesen):
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre class="listing html">
 <span class="listing-bol"></span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"carousel-inner"</span> <span class="xml-2">style</span><span class="xml-3">=</span><span class="xml-4">"display:inline-block"</span><span class="xml-0">&gt;</span>
 <span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"item active"</span><span class="xml-0">&gt;</span>
@@ -83,12 +83,12 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
 <span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">div</span><span class="xml-0">&gt;</span>
 <span class="listing-bol"></span><span class="xml-0">&lt;/</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"carousel-inner"</span><span class="xml-0">&gt;</span>
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Hier sehen Sie einen Ausschnitt aus einem Elm-Programm (auch
     diesen müssen Sie nicht im Detail lesen):
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre class="listing">
 <span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-0">:</span> <span class="elm-2">Bst</span> <span class="elm-6">-&gt;</span> <span class="elm-2">String</span> <span class="elm-6">-&gt;</span> <span class="elm-2">Maybe</span> <span class="elm-2">String</span>
 <span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-3">tree</span> <span class="elm-3">key</span> <span class="elm-0">=</span>
@@ -103,7 +103,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
 <span class="listing-bol"></span>            <span class="elm-4">else</span>
 <span class="listing-bol"></span>                <span class="elm-5">find</span> <span class="elm-3">rightChild</span> <span class="elm-3">key</span>
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Als letztes Beispiel sehen Sie hier eine svg-Datei. Dies ist ein
     Dateiformat für Vektorgrafiken. In diesem Falle ein Kreis mit einer
@@ -118,7 +118,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
       >
     </figure>
   </div>
-  <div class="main-column">
+  <p class="main-column">
 <pre class="listing html">
 <span class="listing-bol"></span><span class="xml-0">&lt;?</span><span class="xml-1">xml</span> <span class="xml-2">version</span><span class="xml-3">=</span><span class="xml-4">"1.0"</span> <span class="xml-2">encoding</span><span class="xml-3">=</span><span class="xml-4">"UTF-8"</span><span class="xml-0">?&gt;</span>
 <span class="listing-bol"></span><span class="xml-0">&lt;</span><span class="xml-1">svg</span>
@@ -142,7 +142,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
 <span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">g</span><span class="xml-0">&gt;</span>
 <span class="listing-bol"></span><span class="xml-0">&lt;/</span><span class="xml-1">svg</span><span class="xml-0">&gt;</span>
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Was haben diese vier Beispiele gemeinsam? Es handelt sich in allen
     Fällen um
@@ -214,11 +214,11 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     <i>Ableitungsregel</i>
     darstellen:
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre>
 &lt;EmailAdress&gt; -&gt; &lt;User&gt; @ &lt;Domain&gt;
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Wie können wir nun beispielsweise eine ähnliche Ableitungsregeln
     für
@@ -240,12 +240,12 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     also
     wiederum etwas, das wie ein Domainname aussieht. Daher:
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre>
 &lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Label&gt;
 &lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Domain&gt;
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Wir geben also
     <i>zwei</i>
@@ -272,14 +272,14 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     <span class="nowrap"><code>--&gt;;</code>-Notation?</span>
     Wieder mit dem Rekursionstrick:
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre>
 &lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt;
 &lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt; &lt;Label&gt;
 &lt;AlphaNumOrDash&gt; -&gt; &lt;AlphaNum&gt;
 &lt;AlphaNumOrDash&gt; -&gt; -
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Nun müssen wir noch Regeln für
     <code>&lt;AlphaNum&gt;</code>
@@ -287,13 +287,13 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     wir eine weitere Konvention ein: nämlich, dass wir verschiedene
     Alternativen mit einem senkrechten Strich | separieren:
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre>
 &lt;AlphaNum&gt; -&gt; a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
 &lt;AlphaNum&gt; -&gt; A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
 &lt;AlphaNum&gt; -&gt; 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Beachten Sie: ich habe hier absichtlich nicht
     <code>&lt;AlphaNum&gt; *-&gt;* a
@@ -315,12 +315,12 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     separiert sind, wobei ein Namensblock eine nichtleere Folge
     alphanumerischer Zeichen ist.
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre>
 &lt;User&gt; -&gt; &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;
 &lt;NameBlock&gt; -&gt; &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Nun haben wir unser Emailformat vollständig beschrieben. Das
     gesamte Regelwerk sehen Sie hier noch einmal im Ganzen:
@@ -329,6 +329,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     id="email-context-free-grammar"
     class="main-column"
   >
+    <p>
 <pre class="listing">
 <span class="listing-bol"></span>&lt;EmailAddress&gt;    -&gt;    &lt;User&gt; @ &lt;Domain&gt;
 <span class="listing-bol"></span>&lt;Domain&gt;          -&gt;    &lt;Label&gt; . &lt;Label&gt; | &lt;Label&gt; . &lt;Domain&gt;
@@ -339,6 +340,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
 <span class="listing-bol"></span>&lt;AlphaNum&gt;        -&gt;    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
 <span class="listing-bol"></span>&lt;AlphaNum&gt;        -&gt;    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
 </pre>
+    </p>
   </div>
   <h2 class="main-column topic-announcement">
     Ein Beispiel einer formalen Grammatik und einer Ableitung
@@ -411,7 +413,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     so, denn es soll ja mehr als eine Email-Adresse geben. Hier ist ein
     Beispiel für eine Ableitung basierend auf der obigen Grammatik:
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre>
 &lt;EmailAddress&gt; -&gt; &lt;User&gt;@&lt;Domain&gt;
             -&gt; &lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;
@@ -431,7 +433,7 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
             -&gt; d.s@&lt;AlphaNumOrDash&gt;.b.de
             -&gt; d.s@a.b.de
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Nach dem gleichen Schema könnten wir
     <code>d.s.@-.-.--</code>
@@ -1010,22 +1012,20 @@ lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-c
     <i>regulären</i>
     Grammatiken.
   </p>
-  <p class="main-column">
-    <BottomMenu id="bottom-menu">
-      <div class="bottom-menu-left">
-        <a href="./4-4.html">&lt;&lt; Kapitel 4.4<span
-            style="visibility:hidden"
-            id="bottom-prev-page-tooltip"
-          >Ein Schritt weiter:  while-Schleifen und
-            <span class="nowrap">$\mu$-Rekursion</span></span></a>
-      </div>
-      <div class="bottom-menu-right">
-        <a href="./5-1.html">Kapitel 5.1 &gt;&gt;<span
-            style="visibility:hidden"
-            id="bottom-next-page-tooltip"
-          >Reguläre Grammatiken</span></a>
-      </div>
-    </BottomMenu>
-  </p>
+  <div id="bottom-menu">
+    <div class="bottom-menu-left">
+      <a href="./4-4.html">&lt;&lt; Kapitel 4.4<span
+          style="visibility:hidden"
+          id="bottom-prev-page-tooltip"
+        >Ein Schritt weiter:  while-Schleifen und
+          <span class="nowrap">$\mu$-Rekursion</span></span></a>
+    </div>
+    <div class="bottom-menu-right">
+      <a href="./5-1.html">Kapitel 5.1 &gt;&gt;<span
+          style="visibility:hidden"
+          id="bottom-next-page-tooltip"
+        >Reguläre Grammatiken</span></a>
+    </div>
+  </div>
 </body>
 </html>

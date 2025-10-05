@@ -169,7 +169,6 @@
         title=*Beispiel*
         Wir betrachten die reguläre Grammatik aus Übungsaufgabe
         >>exercise-no-a-or-no-b:
-        |> marker
 
         \begin{align*}
         S&\rightarrow A \ | \ B \\ A&\rightarrow \epsilon \

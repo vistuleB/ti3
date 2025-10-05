@@ -191,7 +191,7 @@
     vorstellen, in der nur eine
     lokale Variable erlaubt ist:
   </p>
-  <div class="main-column">
+  <p class="main-column">
 <pre class="listing">
 <span class="listing-bol"></span>def PrimRec(g, h):
 <span class="listing-bol"></span>    def f(t,*x):
@@ -201,7 +201,7 @@
 <span class="listing-bol"></span>        return temp
 <span class="listing-bol"></span>    return f
 </pre>
-  </div>
+  </p>
   <p class="main-column">
     Die Forderung, dass man nur
     <i>eine</i>
@@ -297,10 +297,12 @@
       Argumente addiert. Ich darf also nicht einfach python
       programmieren und
     </p>
+    <p>
 <pre class="listing redyellow">
 <span class="listing-bol"></span>def add(x, y)
 <span class="listing-bol"></span>    return x + y
 </pre>
+    </p>
     <p>
       schreiben, denn unsere "Programmiersprache" ist Primitive
       Rekursion, nicht Python! Wir müssen uns
@@ -332,10 +334,12 @@
       <span class="nowrap">$h = {\comp}(\succ, \pi_0)$,</span>
       also
     </p>
+    <p>
 <pre class="listing">
 <span class="listing-bol"></span>p0 = Proj(0)
 <span class="listing-bol"></span>add = PrimRec (p0, Comp(succ,p0))
 </pre>
+    </p>
   </div>
   <div class="well exercise out">
     <p>
@@ -413,21 +417,19 @@
       </li>
     </ul>
   </div>
-  <p class="main-column">
-    <BottomMenu id="bottom-menu">
-      <div class="bottom-menu-left">
-        <a href="./4-0.html">&lt;&lt; Kapitel 4<span
-            style="visibility:hidden"
-            id="bottom-prev-page-tooltip"
-          >Berechenbarkeit und natürliche Zahlen</span></a>
-      </div>
-      <div class="bottom-menu-right">
-        <a href="./4-2.html">Kapitel 4.2 &gt;&gt;<span
-            style="visibility:hidden"
-            id="bottom-next-page-tooltip"
-          >Primitive Rekursion: Konstruktionen und Tricks</span></a>
-      </div>
-    </BottomMenu>
-  </p>
+  <div id="bottom-menu">
+    <div class="bottom-menu-left">
+      <a href="./4-0.html">&lt;&lt; Kapitel 4<span
+          style="visibility:hidden"
+          id="bottom-prev-page-tooltip"
+        >Berechenbarkeit und natürliche Zahlen</span></a>
+    </div>
+    <div class="bottom-menu-right">
+      <a href="./4-2.html">Kapitel 4.2 &gt;&gt;<span
+          style="visibility:hidden"
+          id="bottom-next-page-tooltip"
+        >Primitive Rekursion: Konstruktionen und Tricks</span></a>
+    </div>
+  </div>
 </body>
 </html>

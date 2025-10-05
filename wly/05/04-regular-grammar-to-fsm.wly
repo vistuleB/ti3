@@ -1,23 +1,23 @@
 |> Sub
     title=Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel
 
-    !! |> Carousel
-    !!     style=height:100px;
-    !!     src=./img/test_img.svg
-    !!     src=./img/test_img.svg
-    !!     src=./img/test_img.svg
+    |> Carousel
+        style=height:100px;
+        src=./img/test_img.svg
+        src=./img/test_img.svg
+        src=./img/test_img.svg
 
-    !! |> Carousel
-    !!     style=width:500px;
-    !!     src=./img/test_img.svg
-    !!     src=./img/test_img.svg
-    !!     src=./img/test_img.svg
+    |> Carousel
+        style=width:500px;
+        src=./img/test_img.svg
+        src=./img/test_img.svg
+        src=./img/test_img.svg
 
-    !! |> Carousel
-    !!     style=width:840px;
-    !!     src=./img/test_img3.svg
-    !!     src=./img/test_img3.svg
-    !!     src=./img/test_img3.svg
+    |> Carousel
+        style=width:840px;
+        src=./img/test_img3.svg
+        src=./img/test_img3.svg
+        src=./img/test_img3.svg
 
     |> Statement
         title=*Theorem*
@@ -25,23 +25,23 @@
         einen Kellerautomaten $M = (\Sigma, Q, \Gamma, \qstart, \delta)$,
         der die gleiche Sprache akzeptiert, also $L(G) = L(M)$.
 
-        !! |> Carousel
-        !!     style=height:100px;
-        !!     src=./img/test_img.svg
-        !!     src=./img/test_img.svg
-        !!     src=./img/test_img.svg
+        |> Carousel
+            style=height:100px;
+            src=./img/test_img.svg
+            src=./img/test_img.svg
+            src=./img/test_img.svg
 
-        !! |> Carousel
-        !!     style=width:500px;
-        !!     src=./img/test_img.svg
-        !!     src=./img/test_img.svg
-        !!     src=./img/test_img.svg
+        |> Carousel
+            style=width:500px;
+            src=./img/test_img.svg
+            src=./img/test_img.svg
+            src=./img/test_img.svg
 
-        !! |> Carousel
-        !!     style=width:840px;
-        !!     src=./img/test_img3.svg
-        !!     src=./img/test_img3.svg
-        !!     src=./img/test_img3.svg
+        |> Carousel
+            style=width:840px;
+            src=./img/test_img3.svg
+            src=./img/test_img3.svg
+            src=./img/test_img3.svg
 
     In diesem Unterkapitel wollen wir das Gelernte an einem konkreten
     Beispiel anwenden. Wir beginnen (1) mit einer Beschreibung eines

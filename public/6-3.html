@@ -93,11 +93,13 @@
       <b>Übungsaufgabe 6.3.1</b>
       Geben Sie folgende Grammatik in die App ein:
     </p>
+    <p>
 <pre>
 S -&gt;; ;
 S -&gt;; "("S")"S ;
 S -&gt;; "(" S "]" S;
 </pre>
+    </p>
     <p>
       Was ist die erzeugte Sprache? Können Sie sie in Worten
       beschreiben? Erzeugen Sie Wörter in dieser Sprache, für die der
@@ -137,10 +139,12 @@ S -&gt;; "(" S "]" S;
       Entwerfen Sie eine Grammatik für arithmetische Ausdrücke im
       Racket-Stil, also
     </p>
+    <p>
 <pre>
 (* (+ 2 3) (- 4 (* 2 4) 5)
 (+ 1 2 (* 2))
 </pre>
+    </p>
     <p>
       Leidet Ihre Grammatik an langen Sackgassen? Wenn ja, können Sie
       die Grammatik abändern? Haben Sie mittlerweile ein Schema
@@ -155,9 +159,11 @@ S -&gt;; "(" S "]" S;
       Konventionen Punkt-vor-Strich beachtet werden. Im Ableitungsbaum
       von
     </p>
+    <p>
 <pre>
 2+3*(5+4)
 </pre>
+    </p>
     <p>
       sollte sich das wiederspiegeln.
     </p>
@@ -168,11 +174,13 @@ S -&gt;; "(" S "]" S;
       <b>(Challenge)</b>
       Geben Sie die Grammatik hier ein:
     </p>
+    <p>
 <pre>
 S -&gt;; "("S")"S;
 S -&gt;; "["S"("S;
 S -&gt;; ;
 </pre>
+    </p>
     <p>
       Überlegen Sie, was diese "bedeutet". Sie sehen, die Grammatik
       ist nicht eindeutig. Das Wort
@@ -194,10 +202,12 @@ S -&gt;; ;
       vorgeschlagen als Beispiel für eine eindeutige Grammatik, bei der
       Sie exponentiell große Backtrack-Bäume bekommen können:
     </p>
+    <p>
 <pre>
 S -&gt;;  "a" X "b" | "a" X "c";
 X -&gt;; "a" | "a" X | "a" X X;
 </pre>
+    </p>
     <p>
       Das ist aber keine Kunst, da die Grammatik uneindeutig ist.
       Können Sie eine
@@ -221,22 +231,20 @@ X -&gt;; "a" | "a" X | "a" X X;
       erzeugt, unter exponentiell großen Backtrack-Bäumen leidet.
     </p>
   </div>
-  <p class="main-column">
-    <BottomMenu id="bottom-menu">
-      <div class="bottom-menu-left">
-        <a href="./6-2.html">&lt;&lt; Kapitel 6.2<span
-            style="visibility:hidden"
-            id="bottom-prev-page-tooltip"
-          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
-      </div>
-      <div class="bottom-menu-right">
-        <a href="./6-4.html">Kapitel 6.4 &gt;&gt;<span
-            style="visibility:hidden"
-            id="bottom-next-page-tooltip"
-          ><span class="nowrap">LL($k$)-Grammatiken</span>
-            (nicht im Sommersemester 2025)</span></a>
-      </div>
-    </BottomMenu>
-  </p>
+  <div id="bottom-menu">
+    <div class="bottom-menu-left">
+      <a href="./6-2.html">&lt;&lt; Kapitel 6.2<span
+          style="visibility:hidden"
+          id="bottom-prev-page-tooltip"
+        >Kontextfreie Grammatiken und Kellerautomaten</span></a>
+    </div>
+    <div class="bottom-menu-right">
+      <a href="./6-4.html">Kapitel 6.4 &gt;&gt;<span
+          style="visibility:hidden"
+          id="bottom-next-page-tooltip"
+        ><span class="nowrap">LL($k$)-Grammatiken</span>
+          (nicht im Sommersemester 2025)</span></a>
+    </div>
+  </div>
 </body>
 </html>
