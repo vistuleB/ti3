@@ -809,11 +809,6 @@ class Carousel {
     );
   };
 
-  onScreenWidthChangePhase1() {
-    this.containerWidth = this.container.getBoundingClientRect().width;
-    return this.suggestedButtonHeightForOwnContainerSize();
-  }
-
   phase2ResetUnconstrainedUIButtonStyles = () => {
     let height = this.buttonHeightInPx + "px";
     this.unconstrainedUIPrevBtn.style.height = height;
@@ -840,7 +835,25 @@ class Carousel {
     this.constrainedUILstBtn.style.margin = "0 " + margin;
   };
 
+  onScreenWidthChangePhase1() {
+    // PHASE 1 AFTER CONTAINER RESIZE (or on load)
+    //
+    // resets this.containerWidth and reports back
+    // what this carousel considers to be its ideal
+    // button height (for its own container size)
+    this.containerWidth = this.container.getBoundingClientRect().width;
+    return this.suggestedButtonHeightForOwnContainerSize();
+  }
+  
   onScreenWidthChangePhase2(imposedButtonHeight) {
+    // PHASE 2 AFTER CONTAINER RESIZE (or on load)
+    //
+    // someone else tells us what button height to
+    // use; given that button height, the carousel
+    // determines whether to use the constrained UI 
+    // (cassette tape UI) or the unconstrained UI
+    // (indicator dots) for this carousel, and sets
+    // the UI
     this.buttonHeightInPx = imposedButtonHeight;
     this.buttonWidthInPx = (this.buttonHeightInPx * 18) / 34;
     this.buttonMarginInPx = imposedButtonHeight * 0.7;
