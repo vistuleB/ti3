@@ -814,7 +814,7 @@ class Carousel {
     this.unconstrainedUIPrevBtn.style.height = height;
     this.unconstrainedUINextBtn.style.height = height;
 
-    let margin = this.buttonMarginInPx + "px";
+    let margin = this.unconstrainedButtonMarginInPx + "px";
     this.unconstrainedUIPrevBtn.style.margin = "0 " + margin;
     this.unconstrainedUINextBtn.style.margin = "0 " + margin;
     this.unconstrainedUIPrevBtn.style.margin = "0 " + margin;
@@ -828,11 +828,10 @@ class Carousel {
     this.constrainedUIFstBtn.style.height = height;
     this.constrainedUILstBtn.style.height = height;
 
-    let margin = this.buttonMarginInPx + "px";
-    this.constrainedUIPrevBtn.style.margin = "0 " + margin;
-    this.constrainedUINextBtn.style.margin = "0 " + margin;
-    this.constrainedUIFstBtn.style.margin = "0 " + margin;
-    this.constrainedUILstBtn.style.margin = "0 " + margin;
+    this.constrainedUIPrevBtn.style.margin = "0";
+    this.constrainedUINextBtn.style.margin = "0";
+    this.constrainedUIFstBtn.style.margin = "0";
+    this.constrainedUILstBtn.style.margin = "0";
   };
 
   onScreenWidthChangePhase1() {
@@ -856,12 +855,12 @@ class Carousel {
     // the UI
     this.buttonHeightInPx = imposedButtonHeight;
     this.buttonWidthInPx = (this.buttonHeightInPx * 18) / 34;
-    this.buttonMarginInPx = imposedButtonHeight * 0.7;
+    this.unconstrainedButtonMarginInPx = imposedButtonHeight * 0.7;
 
     let unconstrainedUIWidth =
       this.maxOriginalWidthInPx +
       2 * this.buttonWidthInPx +
-      4 * this.buttonMarginInPx;
+      4 * this.unconstrainedButtonMarginInPx;
 
     if (this.containerWidth >= unconstrainedUIWidth) {
       this.bigEnoughContainerForUnconstrainedUI = true;
