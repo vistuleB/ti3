@@ -923,7 +923,6 @@ class Carousel {
   }
 
   nudgeCarouselItem(direction) {
-    // console.log("in nudge!", direction);
     this.setItemNumber(
       1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems)
     );
@@ -994,16 +993,19 @@ const updatePageTitleForScreenWidthChange = () => {
 };
 
 const onDOMContentLoaded = () => {
+  console.log("onDOMContentLoaded");
   setMenuVisibility(true);
   setupMenuTooltips();
   onResize();
 };
 
 const onLoad = () => {
+  console.log("onLoad");
   setupImages();
   setupCarousels();
+  screenWidth = -1; // force onResize though onDOMContentLoaded already called it
   onResize();
-  document.body.style.visibility = 'visible';
+  document.body.style.visibility = "visible";
 };
 
 const onResize = () => {
@@ -1035,6 +1037,7 @@ const figureImagesOnResize = () => {
 };
 
 const carouselImagesOnResize = () => {
+  console.log("u made it here");
   if (allCarouselObjects.length === 0) return;
   let totalButtonHeights = 0;
   for (const carousel of allCarouselObjects) {
