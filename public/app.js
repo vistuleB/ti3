@@ -72,7 +72,7 @@ const remInPx = () => {
 const inhaltsArrowsDisplay = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
   let prevPage = document.getElementById("prev-page");
-  if (!prevPage) return;
+  if (!prevPage) return "";
   if (prevPage.getAttribute("href") != "./index.html") return "none";
   return "inline";
 };
