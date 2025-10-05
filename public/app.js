@@ -1119,6 +1119,7 @@ const onKeyDown = (e) => {
 
 window.addEventListener("resize", onResize);
 window.addEventListener("load", onLoad);
+window.addEventListener("DOMContentLoaded", instantRecenter);
 document.addEventListener("click", smoothRecenter);
 document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
