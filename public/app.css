@@ -687,15 +687,6 @@ figcaption {
   background-color: #0000;
   cursor: pointer;
   display: flex;
-  color: #333;
-  transition: background-color 0.3s ease;
-  z-index: 100;
-}
-
-.carousel__nav-button:disabled {
-  opacity: 0.4;
-  cursor: default;
-  color: #999;
 }
 /* end of resuable components for both constrained & unconstrained nav */
 /** end of carousel **/
