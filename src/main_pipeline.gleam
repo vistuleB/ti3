@@ -243,7 +243,8 @@ pub fn main_pipeline()  -> List(Pipe) {
     |> infra.extend_selector_down(16)
     |> infra.extend_selector_to_ancestors(
       with_elder_siblings: True,
-      with_attributes: False,
+      with_ancestor_attributes: False,
+      with_elder_sibling_attributes: False,
     ),
     infra.TrackingOff,
   )
