@@ -36,6 +36,7 @@ let lastScrollY = 0;
 let lastScrollYMoment = Date.now();
 let topMenu = null;
 let topMenuHidden = false;
+let bottomMenu = null;
 let isPageCentered = true;
 let screenWidth = -1;
 
@@ -491,7 +492,7 @@ const topMenuVisible = () => {
 };
 
 const setTopMenuVisible = (val) => {
-  topMenu?.classList.toggle("menu--hidden", val);
+  topMenu?.classList.toggle("menu--hidden", !val);
   topMenuHidden = !val;
 };
 
@@ -1035,6 +1036,16 @@ const updatePageTitleForScreenWidthChange = () => {
   pageTitle.style.setProperty("grid-template-columns", template);
 };
 
+const setBottomMenuVisible = (viz) => {
+  if (!bottomMenu) return;
+  bottomMenu.style.visibility = (viz) ? 'visible' : 'hidden';
+}
+
+const onBodyHeightChange = () => {
+  let clientHeight = document.body.clientHeight;
+  setBottomMenuVisible(clientHeight >= 1000);
+}
+
 const onDOMContentLoaded = () => {
   console.log("onDOMContentLoaded");
   setTopMenuVisible(true);
@@ -1044,11 +1055,18 @@ const onDOMContentLoaded = () => {
 
 const onLoad = () => {
   console.log("onLoad");
+  topMenu = document.getElementById("top-menu");
+  bottomMenu = document.getElementById("bottom-menu");
   setupImages();
   setupCarousels();
   screenWidth = -1; // force onResize though onDOMContentLoaded already called it
   onResize();
-  document.body.style.visibility = "visible";
+  let resizeObserver = new ResizeObserver((entries) => {
+    onBodyHeightChange();
+  });
+  resizeObserver.observe(document.body);
+  onBodyHeightChange();
+  document.body.style.visibility = 'visible';
 };
 
 const onResize = () => {
