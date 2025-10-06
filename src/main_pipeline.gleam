@@ -142,7 +142,6 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.append_custom(#("Chapter", end_of_page_element, GoBack)),
       dl.append_custom(#("Sub", end_of_page_element, GoBack)),
       dl.append_custom(#("Index", end_of_page_element, GoBack)),
-      dl.table_marker(),
       dl.ti2_create_menu(),
       dl.delete__batch(["PrevChapterOrSubTitle", "NextChapterOrSubTitle"]),
       dl.insert_attribute_value_at_first_child_start(#("ChapterTitle", "number-chiron", "&ensp;", GoBack)),
@@ -214,6 +213,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("TopicAnnouncement", "topic-announcement"),
         #("SubtopicAnnouncement", "subtopic-announcement"),
       ]),
+      dl.table_marker(),
       dl.wrap_children_up_to_custom(#("Chapter", "Sub", body_wrapper, GoBack)),
       dl.wrap_children_custom(#("Sub", body_wrapper, GoBack)),
       dl.rename__batch([
@@ -254,7 +254,8 @@ pub fn main_pipeline()  -> List(Pipe) {
     |> infra.extend_selector_down(16)
     |> infra.extend_selector_to_ancestors(
       with_elder_siblings: True,
-      with_attributes: False,
+      with_ancestor_attributes: False,
+      with_elder_sibling_attributes: True,
     ),
     infra.TrackingOff,
   )

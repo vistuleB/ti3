@@ -322,11 +322,11 @@ const mathBlockMaxWidthInPx = () => {
   return mainColumnWidthInPx();
 };
 
-const resetScreenWidthDependentVars = () => {
-  let set = (key, val, unit) => {
-    root.style.setProperty(key, `${val()}` + unit);
-  };
+const set = (key, val, unit) => {
+  root.style.setProperty(key, `${val()}` + unit);
+};
 
+const resetScreenWidthDependentVars = () => {
   set("--rem-font-size", remInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
   set("--top-menu-padding-x", menuPaddingXInRem, "rem");
@@ -508,11 +508,8 @@ const setTopMenuVisibility = (viz) => {
 };
 
 const setBottomMenuVisibility = (viz) => {
-  if (viz) {
-    bottomMenu.style.display = 'flex';
-  } else {
-    bottomMenu.style.display = 'none';
-  }
+  if (!bottomMenu) return;
+  bottomMenu.style.visibility = (viz) ? 'visible' : 'hidden';
 }
 
 const onScrollTopMenuUpdate = () => {
@@ -571,8 +568,8 @@ const visibleCarouselContainers = new Set();
 
 const setupMenuTooltips = () => {
   for (const id of [
-    "prev-page-tooltip",
-    "next-page-tooltip",
+    "top-prev-page-tooltip",
+    "top-next-page-tooltip",
     "bottom-prev-page-tooltip",
     "bottom-next-page-tooltip",
   ]) {
