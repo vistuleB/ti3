@@ -73,20 +73,26 @@ const inhaltsArrowsDisplay = () => {
   return "inline";
 };
 
-const menuPaddingXInRem = () => {
+const topMenuPaddingXInRem = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
   return 1.7;
 };
 
-const menuPaddingYInRem = () => {
+const topMenuPaddingYInRem = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 1.6;
   if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
   return 1.4;
 };
 
-const menuBackgroundColor = () => {
+const topMenuBackgroundColor = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "var(--body-background-color)";
   return "#0000";
+};
+
+const topMenuElementGapInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.7;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0.7;
+  return 0.55;
 };
 
 const bottomMenuDisplay = () => {
@@ -108,12 +114,6 @@ const bottomMenuPaddingYInRem = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
   if (screenWidth <= TABLET_MAX_WIDTH) return 0;
   return 0;
-};
-
-const topMenuElementGapInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.7;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 0.7;
-  return 0.55;
 };
 
 const indexHeaderTitleFontSizeInRem = () => {
@@ -329,10 +329,10 @@ const set = (key, val, unit) => {
 const resetScreenWidthDependentVars = () => {
   set("--rem-font-size", remInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
-  set("--top-menu-padding-x", menuPaddingXInRem, "rem");
-  set("--top-menu-padding-y", menuPaddingYInRem, "rem");
+  set("--top-menu-padding-x", topMenuPaddingXInRem, "rem");
+  set("--top-menu-padding-y", topMenuPaddingYInRem, "rem");
+  set("--top-menu-background-color", topMenuBackgroundColor, "");
   set("--top-menu-element-gap", topMenuElementGapInRem, "rem");
-  set("--top-menu-background-color", menuBackgroundColor, "");
   set("--bottom-menu-display", bottomMenuDisplay, "");
   set("--bottom-menu-position", bottomMenuPosition, "");
   set("--bottom-menu-padding-x", bottomMenuPaddingXInRem, "rem");
