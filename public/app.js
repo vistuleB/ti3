@@ -99,6 +99,32 @@ const topMenuElementGapInRem = () => {
   return 0.55;
 };
 
+const bottomMenuDisplay = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
+  return "flex";
+};
+
+const bottomMenuPosition = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "static";
+  return "absolute";
+};
+
+const bottomMenuPaddingXInRem = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
+  return 2.4;
+};
+
+const bottomMenuPaddingYInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 0;
+  return 0;
+};
+
+const bottomMenuLeft = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "";
+  return marginWidth() + "px";
+};
+
 const indexHeaderTitleFontSizeInRem = () => {
   return pageTitleFontSizeInRem();
 };
@@ -303,6 +329,11 @@ const resetScreenWidthDependentVars = () => {
   set("--top-menu-padding-y", topMenuPaddingYInRem, "rem");
   set("--top-menu-element-gap", topMenuElementGapInRem, "rem");
   set("--top-menu-background-color", topMenuBackgroundColor, "");
+  set("--bottom-menu-display", bottomMenuDisplay, "");
+  set("--bottom-menu-position", bottomMenuPosition, "");
+  set("--bottom-menu-padding-x", bottomMenuPaddingXInRem, "rem");
+  set("--bottom-menu-padding-y", bottomMenuPaddingYInRem, "rem");
+  set("--bottom-menu-left", bottomMenuLeft, "");
   set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
   set(
     "--index-header-title-line-height",
@@ -459,18 +490,9 @@ const topMenuVisible = () => {
   return !topMenuHidden;
 };
 
-const setTopMenuVisibility = (viz) => {
-  if (!topMenu) {
-    topMenu = document.getElementById("top-menu");
-  }
-
-  if (viz) {
-    topMenu?.classList.remove("menu--hidden");
-    topMenuHidden = false;
-  } else {
-    topMenu?.classList.add("menu--hidden");
-    topMenuHidden = true;
-  }
+const setTopMenuVisible = (val) => {
+  topMenu?.classList.toggle("menu--hidden", val);
+  topMenuHidden = !val;
 };
 
 const onScrollMenuDisplay = (e) => {
@@ -485,13 +507,13 @@ const onScrollMenuDisplay = (e) => {
       (velocity < 0 && currentScrollY <= 200)) &&
     !topMenuVisible()
   ) {
-    setTopMenuVisibility(true);
+    setTopMenuVisible(true);
   } else if (
     currentScrollY > lastScrollY &&
     currentScrollY > 10 &&
     topMenuVisible()
   ) {
-    setTopMenuVisibility(false);
+    setTopMenuVisible(false);
   }
 
   lastScrollY = currentScrollY;
@@ -523,7 +545,12 @@ const onTouchscreenElse = (callback1, callback2) => {
 const visibleCarouselContainers = new Set();
 
 const setupMenuTooltips = () => {
-  for (const id of ["top-prev-page-tooltip", "top-next-page-tooltip"]) {
+  for (const id of [
+    "top-prev-page-tooltip",
+    "top-next-page-tooltip",
+    "bottom-prev-page-tooltip",
+    "bottom-next-page-tooltip",
+  ]) {
     let tooltip = document.getElementById(id);
     if (!tooltip) {
       console.log("could not find tooltip:", id);
@@ -846,13 +873,13 @@ class Carousel {
     this.containerWidth = this.container.getBoundingClientRect().width;
     return this.suggestedButtonHeightForOwnContainerSize();
   }
-  
+
   onScreenWidthChangePhase2(imposedButtonHeight) {
     // PHASE 2 AFTER CONTAINER RESIZE (or on load)
     //
     // someone else tells us what button height to
     // use; given that button height, the carousel
-    // determines whether to use the constrained UI 
+    // determines whether to use the constrained UI
     // (cassette tape UI) or the unconstrained UI
     // (indicator dots) for this carousel, and sets
     // the UI
@@ -1010,7 +1037,7 @@ const updatePageTitleForScreenWidthChange = () => {
 
 const onDOMContentLoaded = () => {
   console.log("onDOMContentLoaded");
-  setTopMenuVisibility(true);
+  setTopMenuVisible(true);
   setupMenuTooltips();
   onResize();
 };
