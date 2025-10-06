@@ -100,8 +100,12 @@ const topMenuElementGapInRem = () => {
   return 0.55;
 };
 
+const bottomMenuHrDisplay = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "block";
+  return "none";
+};
+
 const bottomMenuDisplay = () => {
-  if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
   return "flex";
 };
 
@@ -124,6 +128,11 @@ const bottomMenuPaddingYInRem = () => {
 const bottomMenuLeft = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "";
   return marginWidth() + "px";
+};
+
+const bottomMenuMargin = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "0 auto 1.3em";
+  return "0";
 };
 
 const indexHeaderTitleFontSizeInRem = () => {
@@ -330,11 +339,13 @@ const resetScreenWidthDependentVars = () => {
   set("--top-menu-padding-y", topMenuPaddingYInRem, "rem");
   set("--top-menu-element-gap", topMenuElementGapInRem, "rem");
   set("--top-menu-background-color", topMenuBackgroundColor, "");
+  set("--bottom-menu-hr-display", bottomMenuHrDisplay, "");
   set("--bottom-menu-display", bottomMenuDisplay, "");
   set("--bottom-menu-position", bottomMenuPosition, "");
   set("--bottom-menu-padding-x", bottomMenuPaddingXInRem, "rem");
   set("--bottom-menu-padding-y", bottomMenuPaddingYInRem, "rem");
   set("--bottom-menu-left", bottomMenuLeft, "");
+  set("--bottom-menu-margin", bottomMenuMargin, "");
   set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
   set(
     "--index-header-title-line-height",

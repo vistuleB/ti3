@@ -19,11 +19,13 @@
   --top-menu-padding-y: 1.4rem;
   --top-menu-background-color: #0000;
   --top-menu-element-gap: 0.55rem;
+  --bottom-menu-hr-display: 'none';
   --bottom-menu-display: none;
   --bottom-menu-position: absolute;
   --bottom-menu-padding-x: 0px;
   --bottom-menu-padding-y: 0px;
   --bottom-menu-left: 0px;
+  --bottom-menu-margin: "";
   --index-header-title-font-size: 2.25rem;
   --index-header-title-line-height: 2.8rem;
   --index-header-subtitle-font-size: 1.5rem;
@@ -441,6 +443,16 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   right: 0%;
 }
 
+#bottom-menu-hr {
+  margin: 1.8rem auto 1.4rem;
+  display: var(--bottom-menu-hr-display);
+  border-color: black;
+  border-width: 0px;
+  border-top-width: 1px;
+  border-style: solid;
+  width: calc(100vw - 2 * var(--main-column-padding-x));
+}
+
 #bottom-menu {
   display: var(--bottom-menu-display);
   position: var(--bottom-menu-position);
@@ -449,6 +461,7 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   bottom: 0px;
   width: 100vw;
   left: var(--bottom-menu-left);
+  margin: var(--bottom-menu-margin);
 }
 
 #bottom-menu a {
