@@ -274,22 +274,11 @@
     "Verfeinerung".
 
     |> Carousel
-        |> CarouselItem
-            |> img
-                style=height: 15em
-                src=./img/infinite-sets/interval-to-square-animation/figures-01-01.svg
-        |> CarouselItem
-            |> img
-                style=height: 15em
-                src=./img/infinite-sets/interval-to-square-animation/figures-01-02.svg
-        |> CarouselItem
-            |> img
-                style=height: 15em
-                src=./img/infinite-sets/interval-to-square-animation/figures-01-03.svg
-        |> CarouselItem
-            |> img
-                style=height: 15em
-                src=./img/infinite-sets/interval-to-square-animation/figures-01-04.svg
+        height=15em
+        src=./img/infinite-sets/interval-to-square-animation/figures-01-01.svg
+        src=./img/infinite-sets/interval-to-square-animation/figures-01-02.svg
+        src=./img/infinite-sets/interval-to-square-animation/figures-01-03.svg
+        src=./img/infinite-sets/interval-to-square-animation/figures-01-04.svg
 
     Wir wissen nun, dass $\R \approx \R^2$ gilt. Ebenso können wir
     $\R \approx \R^{k}$ für jedes $k \in \N^+$ zeigen. Wie sieht es
