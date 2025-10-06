@@ -210,7 +210,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.rename__batch([
         #("MathBlock", "div"),
         #("Index", "div"),
-        #("Menu", "div"),
+        #("TopMenu", "div"),
         #("BottomMenu", "div"),
         #("MenuLeft", "div"),
         #("MenuRight", "div"),

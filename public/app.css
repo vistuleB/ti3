@@ -13,10 +13,10 @@
   /* resetScreenWidthDependentVars */
   /*********************************/
   --inhalts-arrow-display: none;
-  --menu-padding-x: 2rem;
-  --menu-padding-y: 1.4rem;
-  --menu-background-color: #0000;
-  --menu-element-gap: 0.55rem;
+  --top-menu-padding-x: 2rem;
+  --top-menu-padding-y: 1.4rem;
+  --top-menu-background-color: #0000;
+  --top-menu-element-gap: 0.55rem;
   --index-header-title-font-size: 2.25rem;
   --index-header-title-line-height: 2.8rem;
   --index-header-subtitle-font-size: 1.5rem;
@@ -201,11 +201,11 @@ body {
   padding-right: 0.5em;
 }
 
-#menu.menu--hidden {
+#top-menu.menu--hidden {
   top: -100px;
 }
 
-#menu {
+#top-menu {
   display: flex;
   position: fixed;
   top: 0;
@@ -215,41 +215,36 @@ body {
   transition: top 0.5s ease-in-out;
   will-change: top;
   justify-content: space-between;
-  padding: var(--menu-padding-y) var(--menu-padding-x) calc(var(--menu-padding-y) * 0.8);
-  background-color: var(--menu-background-color);
-}  
+  padding: var(--top-menu-padding-y) var(--top-menu-padding-x) calc(var(--top-menu-padding-y) * 0.8);
+  background-color: var(--top-menu-background-color);
+}
 
-#menu a {
+#top-menu a {
   color: #222;
+  position: relative;
 }
 
 #bottom-menu {
   display: none;
 }
 
-.menu-right,
-.menu-left {
+.top-menu-right,
+.top-menu-left {
   display: flex;
   flex-direction: column;
-  gap: var(--menu-element-gap);
+  gap: var(--top-menu-element-gap);
   overflow: visible;
 }  
 
-.menu-right {
+.top-menu-right {
   text-align: right;
 }
 
-#prev-page,
-#next-page {
-  position: relative;
-}
-
-#prev-page-tooltip,
-#next-page-tooltip {
+#top-prev-page-tooltip,
+#top-next-page-tooltip {
   white-space: nowrap;
   position: absolute;
   top: 1.9em;
-  /* background-color: rgb(255, 252, 151); */
   background-color: rgb(255, 188, 246);
   border: 1.4px solid black;
   border-radius: 0.05em;
@@ -257,15 +252,11 @@ body {
   padding: 0.15em 0.45em;
 }
 
-#prev-page-tooltip {
-  /* top: 0.9em;
-  left: 92%; */
+#top-prev-page-tooltip {
   left: 0%;
 }
 
-#next-page-tooltip {
-  /* top: 0.98em;
-  right: 95%; */
+#top-next-page-tooltip {
   right: 0%;
 }
 

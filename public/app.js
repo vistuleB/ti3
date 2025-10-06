@@ -77,23 +77,23 @@ const inhaltsArrowsDisplay = () => {
   return "inline";
 };
 
-const menuPaddingXInRem = () => {
+const topMenuPaddingXInRem = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return mainColumnPaddingXInRem();
   return 1.7;
 };
 
-const menuPaddingYInRem = () => {
+const topMenuPaddingYInRem = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 1.6;
   if (screenWidth <= TABLET_MAX_WIDTH) return 1.6;
   return 1.4;
 };
 
-const menuBackgroundColor = () => {
+const topMenuBackgroundColor = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "var(--body-background-color)";
   return "#0000";
 };
 
-const menuElementGapInRem = () => {
+const topMenuElementGapInRem = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 0.7;
   if (screenWidth <= TABLET_MAX_WIDTH) return 0.7;
   return 0.55;
@@ -299,10 +299,10 @@ const resetScreenWidthDependentVars = () => {
 
   set("--rem-font-size", remInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
-  set("--menu-padding-x", menuPaddingXInRem, "rem");
-  set("--menu-padding-y", menuPaddingYInRem, "rem");
-  set("--menu-element-gap", menuElementGapInRem, "rem");
-  set("--menu-background-color", menuBackgroundColor, "");
+  set("--top-menu-padding-x", topMenuPaddingXInRem, "rem");
+  set("--top-menu-padding-y", topMenuPaddingYInRem, "rem");
+  set("--top-menu-element-gap", topMenuElementGapInRem, "rem");
+  set("--top-menu-background-color", topMenuBackgroundColor, "");
   set("--index-header-title-font-size", indexHeaderTitleFontSizeInRem, "rem");
   set(
     "--index-header-title-line-height",
@@ -523,7 +523,7 @@ const onTouchscreenElse = (callback1, callback2) => {
 const visibleCarouselContainers = new Set();
 
 const setupMenuTooltips = () => {
-  for (const id of ["prev-page-tooltip", "next-page-tooltip"]) {
+  for (const id of ["top-prev-page-tooltip", "top-next-page-tooltip"]) {
     let tooltip = document.getElementById(id);
     if (!tooltip) continue;
     tooltip.visibility = false;
