@@ -134,6 +134,12 @@ body {
   visibility: hidden;
 }
 
+#body_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .index {
   margin-top: 2rem;
 }

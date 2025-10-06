@@ -20,7 +20,7 @@
     die primitive Rekursion zulässt, und schreiben in Orange auch
     gleich die Funktionen $g$ und $h$ dazu:
 
-    ```orange-comments
+    ```orange-comments&class=blue
     def mult(t,x):
         temp = 0 //= zero(x)
         for i in range(t):

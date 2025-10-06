@@ -11,17 +11,17 @@ const our_blame = bl.Des([], "main_pipeline", 9)
 
 const p_cannot_contain = [
   "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem",
-  "CentralDisplay", "CentralDisplayItalic", "Chapter", "ChapterTitle",
-  "Example", "Exercise", "Grid", "Highlight", "HorizontalMenu", "Index", 
-  "List", "MathBlock", "Menu", "Remark", "Statement", "Sub", "SubTitle", 
-  "SubtopicAnnouncement", "TopicAnnouncement", "WriterlyBlankLine",
+  "CentralDisplay", "CentralDisplayItalic", "Chapter",
+  "ChapterTitle", "Example", "Exercise", "Grid", "Highlight", "HorizontalMenu",
+  "Index", "List", "MathBlock", "Menu", "Remark", "Statement", "Sub",
+  "SubTitle", "SubtopicAnnouncement", "TopicAnnouncement", "WriterlyBlankLine",
   "br", "center", "figure", "div", "hr", "li", "ul", "ol", "p", "pre",
   "table", "thead", "tbody", "tr", "td", "colgroup", "section",
 ]
 
 const p_cannot_be_contained_in = [
   "HorizontalMenu", "Index", "Math", "MathBlock", "Menu", "TopicAnnouncement",
-  "SubtopicAnnouncement", "NoWrap", 
+  "SubtopicAnnouncement", "NoWrap",
   "QED", "CarouselContainer", "Carousel", "CarouselItems", "CarouselItem", 
   "code", "figure", "p", "pre", "span",
 ]
@@ -62,6 +62,7 @@ pub fn main_pipeline()  -> List(Pipe) {
 
   let assert Ok(pseudowell) = infra.expand_selector_shorthand("div.pseudowell")
   let assert Ok(figure__container) = infra.expand_selector_shorthand("div.figure__container")
+  let assert Ok(body_wrapper) = infra.expand_selector_shorthand("BodyWrapper#body-wrapper")
 
   // use 'dl.table_marker()' desugarer to mark a line 
   // in the table; (with '--table' printout)
@@ -69,9 +70,9 @@ pub fn main_pipeline()  -> List(Pipe) {
   [
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
+      dl.rename(#("WriterlyCodeBlock", "pre")),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),
-      dl.rename(#("WriterlyCodeBlock", "CodeBlock")),
       dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
         #("Chapter", "counter", "SubCounter"),
@@ -127,7 +128,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
       dl.delete_if_empty("p"),
-      dl.ti2_code_block_to_pre(),
+      dl.ti2_process_pre_language_attribute(),
       dl.ti2_parse_python_prompt_pre(),
       dl.ti2_parse_orange_comments_pre(),
       dl.ti2_parse_arbitrary_prompt_response_pre(),
@@ -207,6 +208,10 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("TopicAnnouncement", "topic-announcement"),
         #("SubtopicAnnouncement", "subtopic-announcement"),
       ]),
+      dl.delete_attribute__batch(["_", "counter", "title", "number-chiron"]),
+      dl.wrap_children_up_to_custom(#("Chapter", "Sub", body_wrapper, infra.GoBack)),
+      dl.wrap_children_custom(#("Sub", body_wrapper, infra.GoBack)),
+      dl.wrap_children_custom(#("Index", body_wrapper, infra.GoBack)),
       dl.rename__batch([
         #("MathBlock", "div"),
         #("Index", "div"),
@@ -231,8 +236,8 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("CarouselItem", "div"),
         #("SubTheorem", "div"),
         #("NoWrap", "span"),
+        #("BodyWrapper", "div"),
       ]),
-      dl.delete_attribute__batch(["_", "counter", "title", "number-chiron"]),
       dl.check_tags(#(post_transformation_approved_tags,"post-transformation")),
     ]
   ]
