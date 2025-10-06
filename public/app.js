@@ -34,8 +34,8 @@ window.history.scrollRestoration = "manual";
 
 let lastScrollY = 0;
 let lastScrollYMoment = Date.now();
-let menuHidden = false;
-let menuElement = null;
+let topMenu = null;
+let topMenuHidden = false;
 let isPageCentered = true;
 let screenWidth = -1;
 
@@ -455,21 +455,21 @@ const constrainableImgClick = (e) => {
   toggleFigureImageZoom(image);
 };
 
-const menuVisible = () => {
-  return !menuHidden;
+const topMenuVisible = () => {
+  return !topMenuHidden;
 };
 
-const setMenuVisibility = (viz) => {
-  if (!menuElement) {
-    menuElement = document.getElementById("menu");
+const setTopMenuVisibility = (viz) => {
+  if (!topMenu) {
+    topMenu = document.getElementById("top-menu");
   }
 
   if (viz) {
-    menuElement?.classList.remove("menu--hidden");
-    menuHidden = false;
+    topMenu?.classList.remove("menu--hidden");
+    topMenuHidden = false;
   } else {
-    menuElement?.classList.add("menu--hidden");
-    menuHidden = true;
+    topMenu?.classList.add("menu--hidden");
+    topMenuHidden = true;
   }
 };
 
@@ -483,15 +483,15 @@ const onScrollMenuDisplay = (e) => {
     (velocity < -7 ||
       currentScrollY <= 10 ||
       (velocity < 0 && currentScrollY <= 200)) &&
-    !menuVisible()
+    !topMenuVisible()
   ) {
-    setMenuVisibility(true);
+    setTopMenuVisibility(true);
   } else if (
     currentScrollY > lastScrollY &&
     currentScrollY > 10 &&
-    menuVisible()
+    topMenuVisible()
   ) {
-    setMenuVisibility(false);
+    setTopMenuVisibility(false);
   }
 
   lastScrollY = currentScrollY;
@@ -525,7 +525,10 @@ const visibleCarouselContainers = new Set();
 const setupMenuTooltips = () => {
   for (const id of ["top-prev-page-tooltip", "top-next-page-tooltip"]) {
     let tooltip = document.getElementById(id);
-    if (!tooltip) continue;
+    if (!tooltip) {
+      console.log("could not find tooltip:", id);
+      continue;
+    }
     tooltip.visibility = false;
     tooltip.touchdevice = false;
     tooltip.parentNode.addEventListener("touchstart", () => {
@@ -1007,7 +1010,7 @@ const updatePageTitleForScreenWidthChange = () => {
 
 const onDOMContentLoaded = () => {
   console.log("onDOMContentLoaded");
-  setMenuVisibility(true);
+  setTopMenuVisibility(true);
   setupMenuTooltips();
   onResize();
 };
