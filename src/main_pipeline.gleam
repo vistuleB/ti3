@@ -62,6 +62,7 @@ pub fn main_pipeline()  -> List(Pipe) {
 
   let assert Ok(pseudowell) = infra.expand_selector_shorthand("div.pseudowell")
   let assert Ok(figure__container) = infra.expand_selector_shorthand("div.figure__container")
+  let assert Ok(end_of_page_element) = infra.expand_selector_shorthand("EndOfPageElt#end-of-page-elt")
   let assert Ok(body_wrapper) = infra.expand_selector_shorthand("BodyWrapper#body-wrapper")
 
   // use 'dl.table_marker()' desugarer to mark a line 
@@ -137,6 +138,9 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti2_add_listing_bol_spans(),
       dl.ti2_create_index(),
       dl.ti2_add_prev_next_chapter_title_elements(),
+      dl.insert_custom_before_first(#("Chapter", end_of_page_element, "Sub", infra.GoBack)),
+      dl.append_custom(#("Sub", end_of_page_element, infra.GoBack)),
+      dl.append_custom(#("Index", end_of_page_element, infra.GoBack)),
       dl.ti2_create_menu(),
       dl.delete__batch(["PrevChapterOrSubTitle", "NextChapterOrSubTitle"]),
       dl.ti2_expand_carousels(),
@@ -237,6 +241,7 @@ pub fn main_pipeline()  -> List(Pipe) {
         #("SubTheorem", "div"),
         #("NoWrap", "span"),
         #("BodyWrapper", "div"),
+        #("EndOfPageElt", "div"),
       ]),
       dl.check_tags(#(post_transformation_approved_tags,"post-transformation")),
     ]

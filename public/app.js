@@ -105,6 +105,20 @@ const bottomMenuHrDisplay = () => {
   return "none";
 };
 
+const bottomMenuHrMarginTopInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.9;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.3;
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.5;
+  return 1.6;
+};
+
+const bottomMenuHrMarginBottomInRem = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.1;
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.3;
+  return 1.4;
+};
+
 const bottomMenuDisplay = () => {
   return "flex";
 };
@@ -131,6 +145,8 @@ const bottomMenuLeft = () => {
 };
 
 const bottomMenuMargin = () => {
+  if (screenWidth <= MOBILE_MAX_WIDTH) return "0 auto 0.8em";
+  if (screenWidth <= TABLET_MAX_WIDTH) return "0 auto 1.1em";
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "0 auto 1.3em";
   return "0";
 };
@@ -204,15 +220,22 @@ const carouselMaxWidthInPx = () => {
 };
 
 const endOfPageMainColumnMarginBottomInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
-  if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
-  return 2.4;
+  return 0.1; // cuz of some optical illusion
+  // if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
+  // if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
+  // if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
+  // return 2.4;
 };
 
 const endOfPageWellMarginBottomInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
+  return 0.3;
+  // if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
+  // if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
+  // return 2.2;
+};
+
+const endOfPageEltMarginBottomInRem = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 0;
   return 2.2;
 };
 
@@ -340,6 +363,8 @@ const resetScreenWidthDependentVars = () => {
   set("--top-menu-element-gap", topMenuElementGapInRem, "rem");
   set("--top-menu-background-color", topMenuBackgroundColor, "");
   set("--bottom-menu-hr-display", bottomMenuHrDisplay, "");
+  set("--bottom-menu-hr-margin-top", bottomMenuHrMarginTopInRem, "rem");
+  set("--bottom-menu-hr-margin-bottom", bottomMenuHrMarginBottomInRem, "rem");
   set("--bottom-menu-display", bottomMenuDisplay, "");
   set("--bottom-menu-position", bottomMenuPosition, "");
   set("--bottom-menu-padding-x", bottomMenuPaddingXInRem, "rem");
@@ -376,6 +401,11 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
+    "rem"
+  );
+  set(
+    "--end-of-page-elt-margin-bottom",
+    endOfPageEltMarginBottomInRem,
     "rem"
   );
   set("--main-column-width", mainColumnWidthInPx, "px");

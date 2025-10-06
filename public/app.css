@@ -20,6 +20,8 @@
   --top-menu-background-color: #0000;
   --top-menu-element-gap: 0.55rem;
   --bottom-menu-hr-display: 'none';
+  --bottom-menu-hr-margin-top: 1.6rem;
+  --bottom-menu-hr-margin-bottom: 1.4rem;
   --bottom-menu-display: none;
   --bottom-menu-position: absolute;
   --bottom-menu-padding-x: 0px;
@@ -37,6 +39,7 @@
   --index-toc-subchapter-level-margin: 0.15em;
   --end-of-page-main-column-margin-bottom: 2.4rem;
   --end-of-page-well-margin-bottom: 2.2rem;
+  --end-of-page-elt-margin-bottom: 0rem;
   --main-column-width: 1050px;
   --main-column-padding-x: 2rem;
   --main-column-to-well-margin: 1.8rem;
@@ -184,19 +187,10 @@ body {
   margin-right: auto;
 }
 
-.main-column:has(+ #bottom-menu) {
-  margin-bottom: var(--end-of-page-main-column-margin-bottom);
-}
-
-.pseudowell:has(+ #bottom-menu) {
-  margin-bottom: 1.5rem;
-}
-
 .well {
   width: 100%;
   margin: var(--well-margin-y) auto;
   padding: var(--well-padding-y) var(--well-padding-x);
-  /* line-height: var(--line-height); */
   border-radius: 12px;
   overflow: visible;
 }
@@ -210,12 +204,27 @@ body {
   margin-top: var(--main-column-to-well-margin);
 }
 
-/* .well.out:last-child {
-  margin-bottom: var(--end-of-page-well-margin-bottom);
-} */
-
 .well > .well:last-child {
   margin-bottom: var(--last-child-well-margin-bottom);
+}
+
+.main-column:has(+ #end-of-page-elt) {
+  margin-bottom: var(--end-of-page-main-column-margin-bottom);
+}
+
+.well:has(+ #end-of-page-elt) {
+  margin-bottom: var(--end-of-page-well-margin-bottom);
+}
+
+.well:has(+ #end-of-page-elt + #bottom-menu-hr) {
+  margin-bottom: calc(var(--end-of-page-well-margin-bottom) + 0.3rem);
+}
+
+#end-of-page-elt {
+  height: 1px;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: var(--end-of-page-elt-margin-bottom);
 }
 
 ul,
@@ -444,7 +453,7 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
 }
 
 #bottom-menu-hr {
-  margin: 1.8rem auto 1.4rem;
+  margin: var(--bottom-menu-hr-margin-top) auto var(--bottom-menu-hr-margin-bottom);
   display: var(--bottom-menu-hr-display);
   border-color: black;
   border-width: 0px;
