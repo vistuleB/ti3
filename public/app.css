@@ -243,13 +243,13 @@ body {
   left: var(--centered-screen-scroll-x);
 }
 
-.bottom-menu-left,
-.bottom-menu-right {
+#bottom-menu-left,
+#bottom-menu-right {
   display: flex;
   flex-direction: column;
 }
 
-.bottom-menu-right {
+#bottom-menu-right {
   text-align: right;
 }
 
@@ -272,14 +272,14 @@ body {
   position: relative;
 }
 
-.top-menu-right,
-.top-menu-left {
+#top-menu-right,
+#top-menu-left {
   display: flex;
   flex-direction: column;
   gap: var(--top-menu-element-gap);
 }
 
-.top-menu-right {
+#top-menu-right {
   text-align: right;
 }
 
