@@ -139,7 +139,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti2_add_listing_bol_spans(),
       dl.ti2_create_index(),
       dl.ti2_add_prev_next_chapter_title_elements(),
-      dl.append_custom(#("Chapter", end_of_page_element, GoBack)),
+      dl.insert_custom_before_first(#("Chapter", end_of_page_element, "Sub", GoBack)),
       dl.append_custom(#("Sub", end_of_page_element, GoBack)),
       dl.append_custom(#("Index", end_of_page_element, GoBack)),
       dl.ti2_create_menu(),
