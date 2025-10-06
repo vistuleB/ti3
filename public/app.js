@@ -110,7 +110,7 @@ const bottomMenuPaddingYInRem = () => {
   return 0;
 };
 
-const menuElementGapInRem = () => {
+const topMenuElementGapInRem = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 0.7;
   if (screenWidth <= TABLET_MAX_WIDTH) return 0.7;
   return 0.55;
@@ -331,7 +331,7 @@ const resetScreenWidthDependentVars = () => {
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
   set("--top-menu-padding-x", menuPaddingXInRem, "rem");
   set("--top-menu-padding-y", menuPaddingYInRem, "rem");
-  set("--top-menu-element-gap", menuElementGapInRem, "rem");
+  set("--top-menu-element-gap", topMenuElementGapInRem, "rem");
   set("--top-menu-background-color", menuBackgroundColor, "");
   set("--bottom-menu-display", bottomMenuDisplay, "");
   set("--bottom-menu-position", bottomMenuPosition, "");
