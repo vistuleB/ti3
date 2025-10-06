@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <meta name="description" content="Section 4.1 of TI3 - Theoretische Informatik 2">
+  <meta name="description" content="Section 4.1 of TI-2 - Theoretische Informatik 2">
   <link rel="stylesheet" type="text/css" href="app.css" />
   <script type="text/javascript" src="./mathjax_setup.js"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <script type="text/javascript" src="./app.js"></script>
-  <title>TI3 - Chapter 4, Section 1</title>
+  <title>TI-2 - Chapter 4, Section 1</title>
 </head>
 <body>
   <div class="body-wrapper">
@@ -194,16 +194,13 @@
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span>
-<p>
-def PrimRec(g, h):
-    def f(t,*x):
-        temp = g(*x)
-        for i in range(t):
-            temp = h(temp, i, *x)
-        return temp
-    return f
-</p>
+<span class="listing-bol"></span>def PrimRec(g, h):
+<span class="listing-bol"></span>    def f(t,*x):
+<span class="listing-bol"></span>        temp = g(*x)
+<span class="listing-bol"></span>        for i in range(t):
+<span class="listing-bol"></span>            temp = h(temp, i, *x)
+<span class="listing-bol"></span>        return temp
+<span class="listing-bol"></span>    return f
 </pre>
     </div>
     <p class="main-column">
@@ -302,11 +299,8 @@ def PrimRec(g, h):
         programmieren und
       </p>
 <pre class="listing redyellow">
-<span class="listing-bol"></span>
-<p>
-def add(x, y)
-    return x + y
-</p>
+<span class="listing-bol"></span>def add(x, y)
+<span class="listing-bol"></span>    return x + y
 </pre>
       <p>
         schreiben, denn unsere "Programmiersprache" ist Primitive
@@ -340,11 +334,8 @@ def add(x, y)
         also
       </p>
 <pre class="listing">
-<span class="listing-bol"></span>
-<p>
-p0 = Proj(0)
-add = PrimRec (p0, Comp(succ,p0))
-</p>
+<span class="listing-bol"></span>p0 = Proj(0)
+<span class="listing-bol"></span>add = PrimRec (p0, Comp(succ,p0))
 </pre>
     </div>
     <div class="well exercise out">

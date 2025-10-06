@@ -18,16 +18,16 @@ pub type FragmentType {
   Index
 }
 
-type TI3Fragment(z) = ds.OutputFragment(FragmentType, z)
+type TI2Fragment(z) = ds.OutputFragment(FragmentType, z)
 type BL = List(OutputLine)
 
-pub type TI3SplitterError {
+pub type TI2SplitterError {
   NoChapters
   MoreThanOneIndex
   NoIndex
 }
 
-fn index_error(e: infra.SingletonError) -> TI3SplitterError {
+fn index_error(e: infra.SingletonError) -> TI2SplitterError {
   case e {
     infra.MoreThanOne -> MoreThanOneIndex
     infra.LessThanOne -> NoIndex
@@ -36,7 +36,7 @@ fn index_error(e: infra.SingletonError) -> TI3SplitterError {
 
 fn our_splitter(
   root: VXML
-) -> Result(List(TI3Fragment(VXML)), TI3SplitterError) {
+) -> Result(List(TI2Fragment(VXML)), TI2SplitterError) {
   use index <- result.try(
     infra.descendants_with_class(root, "index")
     |> infra.read_singleton
@@ -99,8 +99,8 @@ fn our_splitter(
 
 // index emitter - handles index fragments
 fn index_emitter(
-  fragment: TI3Fragment(VXML),
-) -> Result(TI3Fragment(BL), String) {
+  fragment: TI2Fragment(VXML),
+) -> Result(TI2Fragment(BL), String) {
   let blame = Ext([], "index_emitter")
   let lines =
     list.flatten([
@@ -110,12 +110,12 @@ fn index_emitter(
         OutputLine(blame, 0, "<head>"),
         OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
         OutputLine(blame, 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
-        OutputLine(blame, 2, "<meta name=\"description\" content=\"Table of contents for TI3 - Theoretische Informatik 2\">"),
+        OutputLine(blame, 2, "<meta name=\"description\" content=\"Table of contents for TI-2 - Theoretische Informatik 2\">"),
         OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
-        OutputLine(blame, 2, "<title>TI3 - Index</title>"),
+        OutputLine(blame, 2, "<title>TI-2 - Index</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
       ],
@@ -131,8 +131,8 @@ fn index_emitter(
 
 // chapter emitter - handles chapter fragments
 fn chapter_emitter(
-  fragment: TI3Fragment(VXML),
-) -> Result(TI3Fragment(BL), String) {
+  fragment: TI2Fragment(VXML),
+) -> Result(TI2Fragment(BL), String) {
   let assert Chapter(n) = fragment.classifier
   let blame = Ext([], "chapter_emitter")
   let lines =
@@ -143,12 +143,12 @@ fn chapter_emitter(
         OutputLine(blame, 0, "<head>"),
         OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
         OutputLine(blame, 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
-        OutputLine(blame, 2, "<meta name=\"description\" content=\"Chapter " <> string.inspect(n) <> " of TI3 - Theoretische Informatik 2\">"),
+        OutputLine(blame, 2, "<meta name=\"description\" content=\"Chapter " <> string.inspect(n) <> " of TI-2 - Theoretische Informatik 2\">"),
         OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
-        OutputLine(blame, 2, "<title>TI3 - Chapter " <> string.inspect(n) <> "</title>"),
+        OutputLine(blame, 2, "<title>TI-2 - Chapter " <> string.inspect(n) <> "</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
       ],
@@ -164,8 +164,8 @@ fn chapter_emitter(
 
 // subchapter emitter - handles sub fragments
 fn subchapter_emitter(
-  fragment: TI3Fragment(VXML),
-) -> Result(TI3Fragment(BL), String) {
+  fragment: TI2Fragment(VXML),
+) -> Result(TI2Fragment(BL), String) {
   let assert Sub(chapter_n, sub_n) = fragment.classifier
   let blame = Ext([], "subchapter_emitter")
   let lines =
@@ -176,12 +176,12 @@ fn subchapter_emitter(
         OutputLine(blame, 0, "<head>"),
         OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
         OutputLine(blame, 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
-        OutputLine(blame, 2, "<meta name=\"description\" content=\"Section " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n) <> " of TI3 - Theoretische Informatik 2\">"),
+        OutputLine(blame, 2, "<meta name=\"description\" content=\"Section " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n) <> " of TI-2 - Theoretische Informatik 2\">"),
         OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
-        OutputLine(blame, 2, "<title>TI3 - Chapter " <> string.inspect(chapter_n) <> ", Section " <> string.inspect(sub_n) <> "</title>"),
+        OutputLine(blame, 2, "<title>TI-2 - Chapter " <> string.inspect(chapter_n) <> ", Section " <> string.inspect(sub_n) <> "</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
       ],
@@ -197,8 +197,8 @@ fn subchapter_emitter(
 
 // main emitter that dispatches to appropriate sub-emitters
 fn our_emitter(
-  fragment: TI3Fragment(VXML),
-) -> Result(TI3Fragment(BL), String) {
+  fragment: TI2Fragment(VXML),
+) -> Result(TI2Fragment(BL), String) {
   case fragment.classifier {
     Index -> index_emitter(fragment)
     Chapter(_) -> chapter_emitter(fragment)

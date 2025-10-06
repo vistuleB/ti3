@@ -17,7 +17,6 @@ const p_cannot_contain = [
   "SubtopicAnnouncement", "TopicAnnouncement", "WriterlyBlankLine",
   "br", "center", "figure", "div", "hr", "li", "ul", "ol", "p", "pre",
   "table", "thead", "tbody", "tr", "td", "colgroup", "section",
-  "CodeBlock",
 ]
 
 const p_cannot_be_contained_in = [
@@ -72,6 +71,7 @@ pub fn main_pipeline()  -> List(Pipe) {
   [
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
+      dl.rename(#("WriterlyCodeBlock", "pre")),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),
       dl.rename(#("WriterlyCodeBlock", "CodeBlock")),
@@ -130,7 +130,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
       dl.delete_if_empty("p"),
-      dl.ti2_code_block_to_pre(),
+      dl.ti2_process_pre_language_attribute(),
       dl.ti2_parse_python_prompt_pre(),
       dl.ti2_parse_orange_comments_pre(),
       dl.ti2_parse_arbitrary_prompt_response_pre(),

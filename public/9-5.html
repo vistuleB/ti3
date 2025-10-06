@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <meta name="description" content="Section 9.5 of TI3 - Theoretische Informatik 2">
+  <meta name="description" content="Section 9.5 of TI-2 - Theoretische Informatik 2">
   <link rel="stylesheet" type="text/css" href="app.css" />
   <script type="text/javascript" src="./mathjax_setup.js"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <script type="text/javascript" src="./app.js"></script>
-  <title>TI3 - Chapter 9, Section 5</title>
+  <title>TI-2 - Chapter 9, Section 5</title>
 </head>
 <body>
   <div class="body-wrapper">
@@ -144,17 +144,11 @@
         ist. Und hier ist nun unser Code für
         <code>is_3_colorable:</code>
       </p>
-<pre
-  language="orange-comments"
-  class="listing"
->
-<span class="listing-bol"></span>
-<p>
-def is_3_colorable(graph):
-    F = convert_to_CNF_formula(graph)
-    //# F ist die oben beschriebene Formel mit 3n Variablen
-    return is_satisfiable(F)
-</p>
+<pre class="listing orange-comments">
+<span class="listing-bol"></span>def is_3_colorable(graph):
+<span class="listing-bol"></span>    F = convert_to_CNF_formula(graph)
+<span class="listing-bol"></span>    <span class="actual-orange-comment"># F ist die oben beschriebene Formel mit 3n Variablen</span>
+<span class="listing-bol"></span>    return is_satisfiable(F)
 </pre>
       <p>
         Falls Ihnen eine Funktion
@@ -317,17 +311,11 @@ def is_3_colorable(graph):
         in eine erfüllende Belegung übersetzen
         und umgekehrt. Hier ist also der Code:
       </p>
-<pre
-  language="orange-comments"
-  class="listing"
->
-<span class="listing-bol"></span>
-<p>
-def is_3CNF_satisfiable(the_3_cnf_formula):
-    G = cOnvert_to_graph(the_3_cnf_formula)
-    //# G ist der oben konstruierte Graph
-    return is_3_colorable(G)
-</p>
+<pre class="listing orange-comments">
+<span class="listing-bol"></span>def is_3CNF_satisfiable(the_3_cnf_formula):
+<span class="listing-bol"></span>    G = cOnvert_to_graph(the_3_cnf_formula)
+<span class="listing-bol"></span>    <span class="actual-orange-comment"># G ist der oben konstruierte Graph</span>
+<span class="listing-bol"></span>    return is_3_colorable(G)
 </pre>
       <p>
         <span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
@@ -902,16 +890,13 @@ def is_3CNF_satisfiable(the_3_cnf_formula):
         klappt es auch mit einem Nachbarn (in der Tat: sogar mit zweien).
       </p>
 <pre class="listing">
-<span class="listing-bol"></span>
-<p>
-def has_hamilton_cycle(G):
-    u = ein beliebiger Knoten
-    for v in neighbors[u]:
-    H = G - {u,v} + {s,u} + {t,v}
-    if has_hamilton_path(H):
-    return True
-    return False
-</p>
+<span class="listing-bol"></span>def has_hamilton_cycle(G):
+<span class="listing-bol"></span>    u = ein beliebiger Knoten
+<span class="listing-bol"></span>    for v in neighbors[u]:
+<span class="listing-bol"></span>    H = G - {u,v} + {s,u} + {t,v}
+<span class="listing-bol"></span>    if has_hamilton_path(H):
+<span class="listing-bol"></span>    return True
+<span class="listing-bol"></span>    return False
 </pre>
       <p>
         Falls nun

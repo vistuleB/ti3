@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <meta name="description" content="Section 6.1 of TI3 - Theoretische Informatik 2">
+  <meta name="description" content="Section 6.1 of TI-2 - Theoretische Informatik 2">
   <link rel="stylesheet" type="text/css" href="app.css" />
   <script type="text/javascript" src="./mathjax_setup.js"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <script type="text/javascript" src="./app.js"></script>
-  <title>TI3 - Chapter 6, Section 1</title>
+  <title>TI-2 - Chapter 6, Section 1</title>
 </head>
 <body>
   <div class="body-wrapper">
@@ -134,17 +134,14 @@
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span>
-<p>
-def treeToLeftDerivation (tree):
-    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
-    for child in tree.children (from left ro right):
-        treeToLeftDerivation(child)
-def treeToRightDerivation (tree):
-    for child in tree.children (from left ro right):
-        treeToLeftDerivation(child)
-    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
-</p>
+<span class="listing-bol"></span>def treeToLeftDerivation (tree):
+<span class="listing-bol"></span>    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+<span class="listing-bol"></span>    for child in tree.children (from left ro right):
+<span class="listing-bol"></span>        treeToLeftDerivation(child)
+<span class="listing-bol"></span>def treeToRightDerivation (tree):
+<span class="listing-bol"></span>    for child in tree.children (from left ro right):
+<span class="listing-bol"></span>        treeToLeftDerivation(child)
+<span class="listing-bol"></span>    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
 </pre>
     </div>
     <p class="main-column">

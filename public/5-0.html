@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <meta name="description" content="Chapter 5 of TI3 - Theoretische Informatik 2">
+  <meta name="description" content="Chapter 5 of TI-2 - Theoretische Informatik 2">
   <link rel="stylesheet" type="text/css" href="app.css" />
   <script type="text/javascript" src="./mathjax_setup.js"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <script type="text/javascript" src="./app.js"></script>
-  <title>TI3 - Chapter 5</title>
+  <title>TI-2 - Chapter 5</title>
 </head>
 <body>
   <div class="body-wrapper">
@@ -48,14 +48,12 @@
       besteht.
     </p>
     <div class="main-column">
-<pre language="orange-comments">
-<p>
-thomas.schmitz@hszg.de                              //Gültig
-dominik@cs.sjtu.edu.cn                              //Gültig
-raffaela@mayer@gmail.com                            //Ungültig: @ kommt zweimal vor
-lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name darf kein / enthalten
-.schlaumeier@gmail.com                              //Ungültig: Google will kein . an erster Stelle
-</p>
+<pre class="orange-comments">
+thomas.schmitz@hszg.de                              <span class="actual-orange-comment">Gültig</span>
+dominik@cs.sjtu.edu.cn                              <span class="actual-orange-comment">Gültig</span>
+raffaela@mayer@gmail.com                            <span class="actual-orange-comment">Ungültig: @ kommt zweimal vor</span>
+lorenz.klein@greatest/company/in/the/world.com      <span class="actual-orange-comment">Ungültig: Domain-Name darf kein / enthalten</span>
+.schlaumeier@gmail.com                              <span class="actual-orange-comment">Ungültig: Google will kein . an erster Stelle</span>
 </pre>
     </div>
     <p class="main-column">
@@ -65,29 +63,26 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </p>
     <div class="main-column">
 <pre class="listing html">
-<span class="listing-bol"></span>
-<p>
-&lt;div class="carousel-inner" style="display:inline-block"&gt;
-    &lt;div class="item active"&gt;
-        <span class="nowrap">&lt;p&gt;$110 x + 794$&lt;/p&gt;&lt;img</span> loading="lazy" src="img/hash/hashfunction_110_794.svg"&gt;
-    &lt;/div&gt;
-    &lt;div class="item"&gt;
-        <span class="nowrap">&lt;p&gt;$502 x + 121$&lt;/p&gt;&lt;img</span> loading="lazy" src="img/hash/hashfunction_502_121.svg"&gt;
-    &lt;/div&gt;
-    &lt;div class="item"&gt;
-        <span class="nowrap">&lt;p&gt;$617 x + 5$&lt;/p&gt;&lt;img</span> loading="lazy" src="img/hash/hashfunction_617_5.svg"&gt;
-    &lt;/div&gt;
-    &lt;div class="item"&gt;
-        <span class="nowrap">&lt;p&gt;$815 x + 562$&lt;/p&gt;&lt;img</span> loading="lazy" src="img/hash/hashfunction_851_562.svg"&gt;
-    &lt;/div&gt;
-    &lt;div class="item"&gt;
-        <span class="nowrap">&lt;p&gt;$868 x + 858$&lt;/p&gt;&lt;img</span> loading="lazy" src="img/hash/hashfunction_868_858.svg"&gt;
-    &lt;/div&gt;
-    &lt;div class="item"&gt;
-        <span class="nowrap">&lt;p&gt;$915 x + 320$&lt;/p&gt;&lt;img</span> loading="lazy" src="img/hash/hashfunction_915_320.svg"&gt;
-    &lt;/div&gt;
-&lt;/div class="carousel-inner"&gt;
-</p>
+<span class="listing-bol"></span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"carousel-inner"</span> <span class="xml-2">style</span><span class="xml-3">=</span><span class="xml-4">"display:inline-block"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"item active"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">        </span><span class="xml-0">&lt;</span><span class="xml-1">p</span><span class="xml-0">&gt;</span>$110 x + 794$<span class="xml-0">&lt;/</span><span class="xml-1">p</span><span class="xml-0">&gt;</span><span class="xml-0">&lt;</span><span class="xml-1">img</span> <span class="xml-2">loading</span><span class="xml-3">=</span><span class="xml-4">"lazy"</span> <span class="xml-2">src</span><span class="xml-3">=</span><span class="xml-4">"img/hash/hashfunction_110_794.svg"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">div</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"item"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">        </span><span class="xml-0">&lt;</span><span class="xml-1">p</span><span class="xml-0">&gt;</span>$502 x + 121$<span class="xml-0">&lt;/</span><span class="xml-1">p</span><span class="xml-0">&gt;</span><span class="xml-0">&lt;</span><span class="xml-1">img</span> <span class="xml-2">loading</span><span class="xml-3">=</span><span class="xml-4">"lazy"</span> <span class="xml-2">src</span><span class="xml-3">=</span><span class="xml-4">"img/hash/hashfunction_502_121.svg"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">div</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"item"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">        </span><span class="xml-0">&lt;</span><span class="xml-1">p</span><span class="xml-0">&gt;</span>$617 x + 5$<span class="xml-0">&lt;/</span><span class="xml-1">p</span><span class="xml-0">&gt;</span><span class="xml-0">&lt;</span><span class="xml-1">img</span> <span class="xml-2">loading</span><span class="xml-3">=</span><span class="xml-4">"lazy"</span> <span class="xml-2">src</span><span class="xml-3">=</span><span class="xml-4">"img/hash/hashfunction_617_5.svg"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">div</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"item"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">        </span><span class="xml-0">&lt;</span><span class="xml-1">p</span><span class="xml-0">&gt;</span>$815 x + 562$<span class="xml-0">&lt;/</span><span class="xml-1">p</span><span class="xml-0">&gt;</span><span class="xml-0">&lt;</span><span class="xml-1">img</span> <span class="xml-2">loading</span><span class="xml-3">=</span><span class="xml-4">"lazy"</span> <span class="xml-2">src</span><span class="xml-3">=</span><span class="xml-4">"img/hash/hashfunction_851_562.svg"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">div</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"item"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">        </span><span class="xml-0">&lt;</span><span class="xml-1">p</span><span class="xml-0">&gt;</span>$868 x + 858$<span class="xml-0">&lt;/</span><span class="xml-1">p</span><span class="xml-0">&gt;</span><span class="xml-0">&lt;</span><span class="xml-1">img</span> <span class="xml-2">loading</span><span class="xml-3">=</span><span class="xml-4">"lazy"</span> <span class="xml-2">src</span><span class="xml-3">=</span><span class="xml-4">"img/hash/hashfunction_868_858.svg"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">div</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"item"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">        </span><span class="xml-0">&lt;</span><span class="xml-1">p</span><span class="xml-0">&gt;</span>$915 x + 320$<span class="xml-0">&lt;/</span><span class="xml-1">p</span><span class="xml-0">&gt;</span><span class="xml-0">&lt;</span><span class="xml-1">img</span> <span class="xml-2">loading</span><span class="xml-3">=</span><span class="xml-4">"lazy"</span> <span class="xml-2">src</span><span class="xml-3">=</span><span class="xml-4">"img/hash/hashfunction_915_320.svg"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">div</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-0">&lt;/</span><span class="xml-1">div</span> <span class="xml-2">class</span><span class="xml-3">=</span><span class="xml-4">"carousel-inner"</span><span class="xml-0">&gt;</span>
 </pre>
     </div>
     <p class="main-column">
@@ -96,21 +91,18 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span>
-<p>
-<span class="elm-1">find</span> <span class="elm-0">:</span> <span class="elm-2">Bst</span> <span class="elm-6">-&gt;</span> <span class="elm-2">String</span> <span class="elm-6">-&gt;</span> <span class="elm-2">Maybe</span> <span class="elm-2">String</span>
-<span class="elm-1">find</span> <span class="elm-3">tree</span> <span class="elm-3">key</span> <span class="elm-0">=</span>
-    <span class="elm-4">case</span> <span class="elm-3">tree</span> <span class="elm-4">of</span>
-        <span class="elm-5">Empty</span> <span class="elm-4">_</span> <span class="elm-6">-&gt;</span>
-            <span class="elm-5">Nothing</span>
-        <span class="elm-5">Node</span> <span class="elm-7">(</span> <span class="elm-3">keyHere</span>, <span class="elm-3">valueHere</span> <span class="elm-7">)</span> <span class="elm-3">leftChild</span> <span class="elm-3">rightChild</span> <span class="elm-6">-&gt;</span>
-            <span class="elm-4">if</span> <span class="elm-3">key</span> <span class="elm-6">==</span> <span class="elm-3">keyHere</span> <span class="elm-4">then</span>
-                <span class="elm-5">Just</span> <span class="elm-3">valueHere</span>
-            <span class="elm-4">else</span> <span class="elm-4">if</span> <span class="elm-3">key</span> <span class="elm-6">&lt;</span> <span class="elm-3">keyHere</span> <span class="elm-4">then</span>
-                <span class="elm-5">find</span> <span class="elm-3">leftChild</span> <span class="elm-3">key</span>
-            <span class="elm-4">else</span>
-                <span class="elm-5">find</span> <span class="elm-3">rightChild</span> <span class="elm-3">key</span>
-</p>
+<span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-0">:</span> <span class="elm-2">Bst</span> <span class="elm-6">-&gt;</span> <span class="elm-2">String</span> <span class="elm-6">-&gt;</span> <span class="elm-2">Maybe</span> <span class="elm-2">String</span>
+<span class="listing-bol"></span><span class="elm-1">find</span> <span class="elm-3">tree</span> <span class="elm-3">key</span> <span class="elm-0">=</span>
+<span class="listing-bol"></span>    <span class="elm-4">case</span> <span class="elm-3">tree</span> <span class="elm-4">of</span>
+<span class="listing-bol"></span>        <span class="elm-5">Empty</span> <span class="elm-4">_</span> <span class="elm-6">-&gt;</span>
+<span class="listing-bol"></span>            <span class="elm-5">Nothing</span>
+<span class="listing-bol"></span>        <span class="elm-5">Node</span> <span class="elm-7">(</span> <span class="elm-3">keyHere</span>, <span class="elm-3">valueHere</span> <span class="elm-7">)</span> <span class="elm-3">leftChild</span> <span class="elm-3">rightChild</span> <span class="elm-6">-&gt;</span>
+<span class="listing-bol"></span>            <span class="elm-4">if</span> <span class="elm-3">key</span> <span class="elm-6">==</span> <span class="elm-3">keyHere</span> <span class="elm-4">then</span>
+<span class="listing-bol"></span>                <span class="elm-5">Just</span> <span class="elm-3">valueHere</span>
+<span class="listing-bol"></span>            <span class="elm-4">else</span> <span class="elm-4">if</span> <span class="elm-3">key</span> <span class="elm-6">&lt;</span> <span class="elm-3">keyHere</span> <span class="elm-4">then</span>
+<span class="listing-bol"></span>                <span class="elm-5">find</span> <span class="elm-3">leftChild</span> <span class="elm-3">key</span>
+<span class="listing-bol"></span>            <span class="elm-4">else</span>
+<span class="listing-bol"></span>                <span class="elm-5">find</span> <span class="elm-3">rightChild</span> <span class="elm-3">key</span>
 </pre>
     </div>
     <p class="main-column">
@@ -129,30 +121,27 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </div>
     <div class="main-column">
 <pre class="listing html">
-<span class="listing-bol"></span>
-<p>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="204px" height="204px"
-    viewBox="0 0 102 102"
-    version="1.1"
-&gt;
-    &lt;g id="layer 1"&gt;
-        &lt;circle
-            style="fill:none;stroke:rgba(255,0,0,255);stroke-width:0.7;"
-            cx="51"
-            cy="51"
-            r="40"
-        /&gt;
-        &lt;path
-            style="fill:none;stroke:rgba(255,0,0,255);stroke-width:0.7;"
-            d="M 51 51 l 33.5 -22.5"
-        /&gt;
-    &lt;/g&gt;
-&lt;/svg&gt;
-</p>
+<span class="listing-bol"></span><span class="xml-0">&lt;?</span><span class="xml-1">xml</span> <span class="xml-2">version</span><span class="xml-3">=</span><span class="xml-4">"1.0"</span> <span class="xml-2">encoding</span><span class="xml-3">=</span><span class="xml-4">"UTF-8"</span><span class="xml-0">?&gt;</span>
+<span class="listing-bol"></span><span class="xml-0">&lt;</span><span class="xml-1">svg</span>
+<span class="listing-bol"></span>    <span class="xml-2">xmlns</span><span class="xml-3">=</span><span class="xml-4">"http://www.w3.org/2000/svg"</span>
+<span class="listing-bol"></span>    <span class="xml-2">xmlns:xlink</span><span class="xml-3">=</span><span class="xml-4">"http://www.w3.org/1999/xlink"</span>
+<span class="listing-bol"></span>    <span class="xml-2">width</span><span class="xml-3">=</span><span class="xml-4">"204px"</span> <span class="xml-2">height</span><span class="xml-3">=</span><span class="xml-4">"204px"</span>
+<span class="listing-bol"></span>    <span class="xml-2">viewBox</span><span class="xml-3">=</span><span class="xml-4">"0 0 102 102"</span>
+<span class="listing-bol"></span>    <span class="xml-2">version</span><span class="xml-3">=</span><span class="xml-4">"1.1"</span>
+<span class="listing-bol"></span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;</span><span class="xml-1">g</span> <span class="xml-2">id</span><span class="xml-3">=</span><span class="xml-4">"layer 1"</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">        </span><span class="xml-0">&lt;</span><span class="xml-1">circle</span>
+<span class="listing-bol"></span>            <span class="xml-2">style</span><span class="xml-3">=</span><span class="xml-4">"fill:none;stroke:rgba(255,0,0,255);stroke-width:0.7;"</span>
+<span class="listing-bol"></span>            <span class="xml-2">cx</span><span class="xml-3">=</span><span class="xml-4">"51"</span>
+<span class="listing-bol"></span>            <span class="xml-2">cy</span><span class="xml-3">=</span><span class="xml-4">"51"</span>
+<span class="listing-bol"></span>            <span class="xml-2">r</span><span class="xml-3">=</span><span class="xml-4">"40"</span>
+<span class="listing-bol"></span>        <span class="xml-0">/&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">        </span><span class="xml-0">&lt;</span><span class="xml-1">path</span>
+<span class="listing-bol"></span>            <span class="xml-2">style</span><span class="xml-3">=</span><span class="xml-4">"fill:none;stroke:rgba(255,0,0,255);stroke-width:0.7;"</span>
+<span class="listing-bol"></span>            <span class="xml-2">d</span><span class="xml-3">=</span><span class="xml-4">"M 51 51 l 33.5 -22.5"</span>
+<span class="listing-bol"></span>        <span class="xml-0">/&gt;</span>
+<span class="listing-bol"></span><span class="xml-5">    </span><span class="xml-0">&lt;/</span><span class="xml-1">g</span><span class="xml-0">&gt;</span>
+<span class="listing-bol"></span><span class="xml-0">&lt;/</span><span class="xml-1">svg</span><span class="xml-0">&gt;</span>
 </pre>
     </div>
     <p class="main-column">
@@ -228,9 +217,7 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </p>
     <div class="main-column">
 <pre>
-<p>
 &lt;EmailAdress&gt; -&gt; &lt;User&gt; @ &lt;Domain&gt;
-</p>
 </pre>
     </div>
     <p class="main-column">
@@ -256,10 +243,8 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </p>
     <div class="main-column">
 <pre>
-<p>
 &lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Label&gt;
 &lt;Domain&gt; -&gt; &lt;Label&gt; . &lt;Domain&gt;
-</p>
 </pre>
     </div>
     <p class="main-column">
@@ -290,12 +275,10 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </p>
     <div class="main-column">
 <pre>
-<p>
 &lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt;
 &lt;Label&gt; -&gt; &lt;AlphaNumOrDash&gt; &lt;Label&gt;
 &lt;AlphaNumOrDash&gt; -&gt; &lt;AlphaNum&gt;
 &lt;AlphaNumOrDash&gt; -&gt; -
-</p>
 </pre>
     </div>
     <p class="main-column">
@@ -307,11 +290,9 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </p>
     <div class="main-column">
 <pre>
-<p>
 &lt;AlphaNum&gt; -&gt; a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
 &lt;AlphaNum&gt; -&gt; A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
 &lt;AlphaNum&gt; -&gt; 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-</p>
 </pre>
     </div>
     <p class="main-column">
@@ -337,10 +318,8 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </p>
     <div class="main-column">
 <pre>
-<p>
 &lt;User&gt; -&gt; &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;
 &lt;NameBlock&gt; -&gt; &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;
-</p>
 </pre>
     </div>
     <p class="main-column">
@@ -352,17 +331,14 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
       class="main-column"
     >
 <pre class="listing">
-<span class="listing-bol"></span>
-<p>
-&lt;EmailAddress&gt;    -&gt;    &lt;User&gt; @ &lt;Domain&gt;
-&lt;Domain&gt;          -&gt;    &lt;Label&gt; . &lt;Label&gt; | &lt;Label&gt; . &lt;Domain&gt;
-&lt;User&gt;            -&gt;    &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;
-&lt;NameBlock&gt;       -&gt;    &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;
-&lt;Label&gt;           -&gt;    &lt;AlphaNumOrDash&gt; | &lt;AlphaNumOrDash&gt; &lt;Label&gt;
-&lt;AlphaNumOrDash&gt;  -&gt;    &lt;AlphaNum&gt; | -
-&lt;AlphaNum&gt;        -&gt;    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
-&lt;AlphaNum&gt;        -&gt;    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
-</p>
+<span class="listing-bol"></span>&lt;EmailAddress&gt;    -&gt;    &lt;User&gt; @ &lt;Domain&gt;
+<span class="listing-bol"></span>&lt;Domain&gt;          -&gt;    &lt;Label&gt; . &lt;Label&gt; | &lt;Label&gt; . &lt;Domain&gt;
+<span class="listing-bol"></span>&lt;User&gt;            -&gt;    &lt;NameBlock&gt; | &lt;NameBlock&gt; . &lt;User&gt;
+<span class="listing-bol"></span>&lt;NameBlock&gt;       -&gt;    &lt;AlphaNum&gt; | &lt;AlphaNum&gt; &lt;NameBlock&gt;
+<span class="listing-bol"></span>&lt;Label&gt;           -&gt;    &lt;AlphaNumOrDash&gt; | &lt;AlphaNumOrDash&gt; &lt;Label&gt;
+<span class="listing-bol"></span>&lt;AlphaNumOrDash&gt;  -&gt;    &lt;AlphaNum&gt; | -
+<span class="listing-bol"></span>&lt;AlphaNum&gt;        -&gt;    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+<span class="listing-bol"></span>&lt;AlphaNum&gt;        -&gt;    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
 </pre>
     </div>
     <h2 class="main-column topic-announcement">
@@ -438,7 +414,6 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
     </p>
     <div class="main-column">
 <pre>
-<p>
 &lt;EmailAddress&gt; -&gt; &lt;User&gt;@&lt;Domain&gt;
             -&gt; &lt;NameBlock&gt;.&lt;User&gt;@&lt;Domain&gt;
             -&gt; &lt;NameBlock&gt;.&lt;NameBlock&gt;@&lt;Domain&gt;
@@ -456,7 +431,6 @@ lorenz.klein@greatest/company/in/the/world.com      //Ungültig: Domain-Name dar
             -&gt; d.s@&lt;AlphaNumOrDash&gt;.&lt;AlphaNumOrDash&gt;.de
             -&gt; d.s@&lt;AlphaNumOrDash&gt;.b.de
             -&gt; d.s@a.b.de
-</p>
 </pre>
     </div>
     <p class="main-column">

@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <meta name="description" content="Section 9.4 of TI3 - Theoretische Informatik 2">
+  <meta name="description" content="Section 9.4 of TI-2 - Theoretische Informatik 2">
   <link rel="stylesheet" type="text/css" href="app.css" />
   <script type="text/javascript" src="./mathjax_setup.js"></script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <script type="text/javascript" src="./app.js"></script>
-  <title>TI3 - Chapter 9, Section 4</title>
+  <title>TI-2 - Chapter 9, Section 4</title>
 </head>
 <body>
   <div class="body-wrapper">
@@ -96,17 +96,14 @@
         Hier ist unser Code:
       </p>
 <pre class="listing">
-<span class="listing-bol"></span>
-<p>
-def is_3_coloring(graph, c):
-    (V,E) = graph
-    for (u,v) in E:
-    if c[u] == c[v]:
-    return False
-    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
-        return False
-    return True
-</p>
+<span class="listing-bol"></span>def is_3_coloring(graph, c):
+<span class="listing-bol"></span>    (V,E) = graph
+<span class="listing-bol"></span>    for (u,v) in E:
+<span class="listing-bol"></span>    if c[u] == c[v]:
+<span class="listing-bol"></span>    return False
+<span class="listing-bol"></span>    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
+<span class="listing-bol"></span>        return False
+<span class="listing-bol"></span>    return True
 </pre>
       <p>
         Falls nun $G$
