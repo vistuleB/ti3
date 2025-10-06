@@ -495,7 +495,7 @@ const menuVisible = () => {
   return !menuHidden;
 };
 
-const setTopMenuVisibility = (viz) => {
+const setTopMenuVisible = (viz) => {
   if (!topMenu) return;
 
   if (viz) {
@@ -506,11 +506,6 @@ const setTopMenuVisibility = (viz) => {
     menuHidden = true;
   }
 };
-
-const setBottomMenuVisibility = (viz) => {
-  if (!bottomMenu) return;
-  bottomMenu.style.visibility = (viz) ? 'visible' : 'hidden';
-}
 
 const onScrollTopMenuUpdate = () => {
   const currentScrollY = window.scrollY;
@@ -525,13 +520,13 @@ const onScrollTopMenuUpdate = () => {
       (velocity < 0 && currentScrollY <= 200)) &&
     !menuVisible()
   ) {
-    setTopMenuVisibility(true);
+    setTopMenuVisible(true);
   } else if (
     currentScrollY > lastScrollY &&
     currentScrollY > 10 &&
     menuVisible()
   ) {
-    setTopMenuVisibility(false);
+    setTopMenuVisible(false);
   }
 
   lastScrollY = currentScrollY;
@@ -1052,10 +1047,14 @@ const setPageTitleGridColumns = () => {
   pageTitle.classList.toggle("no-borders", onMobile);
 };
 
+const setBottomMenuVisible = (viz) => {
+  if (!bottomMenu) return;
+  bottomMenu.style.visibility = (viz) ? 'visible' : 'hidden';
+}
+
 const onBodyHeightChange = () => {
   let clientHeight = document.body.clientHeight;
-  // console.log("clientHeight:", clientHeight);
-  setBottomMenuVisibility(clientHeight >= 1000);
+  setBottomMenuVisible(clientHeight >= 1000);
 }
 
 const onLoad = () => {
@@ -1064,8 +1063,8 @@ const onLoad = () => {
   setupImages();
   setupCarousels();
   onResize();
-  setTopMenuVisibility(true);
-  setBottomMenuVisibility(false);
+  setTopMenuVisible(true);
+  setBottomMenuVisible(false);
   setupMenuTooltips();
   let resizeObserver = new ResizeObserver((entries) => {
     onBodyHeightChange();
