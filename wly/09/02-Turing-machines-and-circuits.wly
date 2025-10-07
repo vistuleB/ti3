@@ -46,12 +46,10 @@
     |> Proof
         Wir zeigen den Beweis schematisch anhand von $1$
         -Band-Turingmaschinen. Für $k$ -Bandmaschinen geht es fast genau
-        so. Erinnern Sie sich an die Definition der _Konfiguration_ einer
-        Turing-Maschine (
-        |> span
-            data-ref=def-TM-configuration
-            class=reference
-        ). Formal war das ein Wort
+        so. Erinnern Sie sich an die Definition der 
+        [_Konfiguration_](>>def-TM-configuration)
+        einer Turing-Maschine.
+        Formal war das ein Wort
         $C \in \Gamma^* \times Q \times \Gamma^*$. Ich zeige hier
         schematisch, wie aus einer Konfiguration per $\hat{\delta}$ die
         Folgekonfiguration wird:

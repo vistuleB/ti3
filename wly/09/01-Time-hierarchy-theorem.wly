@@ -267,11 +267,7 @@
         für alle $k \geq 1$.
 
     Zusammen mit der Simulation von $k$-Band-TMs durch $2$ -Band-TMs,
-    also 
-    |> span
-        data-ref=k-tape-to-2-tape
-        class=reference
-    \ folgt nun
+    also Theorem >>k-tape-to-2-tape folgt nun
 
     \begin{align*}
     \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq \TIME_5(t \log t)

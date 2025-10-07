@@ -95,6 +95,7 @@
     vorerst ohne Beweis:
 
     |> Theorem
+        handle=k-tape-to-2-tape
         *($k$-Band zu $2$-Band; ohne Beweis).* Sei
         $t: \N \rightarrow \N$. Dann gilt
         $\TIME_k(t) \subseteq \TIME_2(t \log t)$.
