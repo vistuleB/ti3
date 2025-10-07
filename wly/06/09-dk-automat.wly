@@ -243,7 +243,7 @@
         Den DK-Automaten verwenden
 
     |> Statement
-        title=*Theroem*
+        title=*Theorem*
         *(DK-Test).* Sei $G$ eine kontextfreie Grammatik ohne nutzlose
         Nichtterminale und ei $M$ der DK-Automat für die Grammatik $G$.
         Die Grammatik $G$ ist LR(0) genau dann, wenn folgende zwei

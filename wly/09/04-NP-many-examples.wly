@@ -104,7 +104,7 @@
         definieren:
 
         |> Statement
-            title=*PrOblem*
+            title=*Problem*
             handle=problem-max-independent-set
             class=numbered-title
             (`Independent Set`{sc}) Gegeben ein Graph $G=(V,E)$ und eine
