@@ -57,8 +57,7 @@
     stellt zwei Kombinatoren zur Verfügung: Komposition (Verknüpfung)
     und primitive Rekursion.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Komposition)* Sei $f: \N^k \rightarrow \N$ und
         $g_1, \dots, g_k: \N^l \rightarrow \N$. Dann ist
         $\comp(f, g_1, \dots, g_k)$ die Funktion
@@ -80,8 +79,7 @@
     oder Rekursion. Wir dürfen nur eine sehr beschränkte Form der
     Rekursion verwenden:
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *Primitive Rekursion* Seien $g: \N^k \rightarrow \N$ und
         $h: \N^{k+2} \rightarrow \N$. Wir definieren eine neue Funktion
         $f: \N^{k+1} \rightarrow \N$ wie folgt:

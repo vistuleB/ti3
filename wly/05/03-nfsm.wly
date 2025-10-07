@@ -17,8 +17,7 @@
     gesprochen ist $\delta$ nun keine Funktion mehr, sondern eine
     _Relation_:
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Nichtdeterministischer endlicher Automat, non-deterministic
         finite state machine)* Ein nichtdeterministischer endlicher
         Automat besteht aus
@@ -55,8 +54,7 @@
     deterministischen Automaten definieren wir eine erweiterte
     Zustandsübergangsrelation.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Erweiterte Zuständsübergangsfunktion)*. Für einen
         nichtdeterministischen endlichen Automaten
         $(\Sigma, Q, \qstart, F, \delta)$ definieren wir die _erweiterte

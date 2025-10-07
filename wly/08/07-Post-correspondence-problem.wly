@@ -74,8 +74,7 @@
     diese Maschine "simuliert". Aber eins nach dem anderen. Wir
     beginnen mit Terminologie.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $\Sigma$ ein endliches Alphabet.
 
         |> ul

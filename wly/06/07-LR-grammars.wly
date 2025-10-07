@@ -45,8 +45,7 @@
     nach rechts verläuft, mehr entgegen kommt:
     $\alpha \beta \gamma \rstep{} \alpha X \gamma$.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Reduktion und Linksreduktion)* Seien
         $\alpha, \beta, \gamma \in (\Sigma \cup N)^*$ Wortformen und
         $X \rightarrow \beta$ eine Produktion. Dann schreiben wir
@@ -120,8 +119,7 @@
     korrekt ist. Diese Fragen werden uns für den Rest dieses und des
     nächsten Teilkapitels beschäftigen.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Gültige Wortform, korrekter Reduktionsschritt)* Eine Wortform
         $\gamma \in (\Sigma \cup N)^*$ heißt _gültig_, wenn es eine
         Rechtsableitung
@@ -241,8 +239,7 @@
     Wir definieren nun eine Klasse von Grammatiken, bei denen diese
     schlechten Fälle nicht auftreten.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *($LR(0)$-Grammatiken)* Eine kontextfreie Grammatik heißt
         $LR(0)$-Grammatik, wenn keiner der obigen schlechten Fälle
         eintritt. Formal, wenn (1) die Grammatik eindeutig ist und (2)

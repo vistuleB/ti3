@@ -437,8 +437,7 @@
     $C_x \Step{}^* C_{\rm accept}$ gibt, sagen wir, dass $M$ das
     Eingabewort akzeptiert.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Akzeptieren und Entscheiden bei nichtdeterministischen
         Turingmaschinen).* Eine nichtdeterministische Turingmaschine $M$
         akzeptiert die Sprache $L$ wenn

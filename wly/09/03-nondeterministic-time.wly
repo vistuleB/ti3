@@ -11,8 +11,7 @@
     nicht-deterministische Zeitklassen definieren und eine leicht
     andere, zugänglichere Definition einführen.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $t: \N \rightarrow \N$. Eine nicht-deterministische
         Turingmaschinen $M$ _entscheidet_ eine Sprache
         $L \subseteq \Sigma^*$ in Zeit $t$ wenn
@@ -59,8 +58,7 @@
     Analog zur Komplexitätsklasse P (polynomielle Zeit) definieren wir
     NP (nichtdeterministisch polynomielle Zeit):
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Wir definieren
 
         \begin{align*}
@@ -73,8 +71,7 @@
     |> SubtopicAnnouncement
         Zertifikatmaschinen
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Zertifikatmaschine).* Eine Zertifikatmaschine ist eine
         deterministische Turingmaschine mit $k$ Bändern. Band 1 ist das
         Eingabeband und Band 2 das _Zertifikatband._ Seien

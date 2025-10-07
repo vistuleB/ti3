@@ -39,8 +39,7 @@
     Maschine den Zustand $\qaccept$ erreicht. Was brauchen wir also,
     um so eine Turingmaschine und ihre Arbeitsweise zu beschreiben?
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Turingmaschine).* Eine Turingmaschine besteht aus folgenden
         Elementen:
 
@@ -109,8 +108,7 @@
             style=height:20em
             src=img/turing-machines/configuration.svg
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Die _Konfiguration_ einer Turingmaschine ist ein Element in
         $\Gamma^* \times Q \times \Gamma^*$, also
 
@@ -206,8 +204,7 @@
     Formal definiert $\delta$ nun auch eine Funktion auf der Menge der
     Konfigurationen:
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(erweiterte Zustandsübergangsfunktion)* Die erweiterte
         Zustandsübergangsfunktion einer Turingmaschine ist
 
@@ -310,8 +307,7 @@
     \end{cases}
     \end{align*}
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Turingmaschine entscheidet eine Sprache)* Eine Turingmaschine
         $M$ _entscheidet_ die Sprache $L \subseteq \Sigma^*$ wenn
 
@@ -329,8 +325,7 @@
         terminiert. Eine Sprache $L$ heißt _entscheidbar_, wenn es eine
         Turingmaschine gibt, die sie entscheidet.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Turingmaschine akzeptiert eine Sprache)* Eine Turingmaschine
         $M$ _akzeptiert_ die Sprache $L \subseteq \Sigma^*$ wenn
 
@@ -359,8 +354,7 @@
     Band. Formal müssen wir noch klären, was _$g(x)$ steht auf dem
     Band_ bedeutet.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Turingmaschine berechnet eine Funktion)* Seien
         $\Sigma_1, \Sigma_2$ zwei endliche Alphabete und
 

@@ -163,8 +163,7 @@
     die Werte der Input-Gates determiniert. Wir sind nun bereit für
     eine formale Definition von Schaltkreisen.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Boolesche Schaltkreise)* Ein Boolescher Schaltkreis ist ein
         gerichteter, azyklischer Graph (englisch directed acyclic graph,
         kurz DAG), in welchem jeder Knoten entweder
@@ -206,8 +205,7 @@
     Schaltkreise gesehen, und im Rahmen der obigen Übungsaufgabe wohl
     auch mehrere Schaltkreise, die das gleiche tun, entwickelt.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Zwei Boolesche Schaltkreise $C, C^{\prime}$ heißen äquivalent,
         wenn $f_C = f_{C^{\prime}}$, wenn sie also die gleiche Funktion
         berechnen. Wir schreiben $C \equiv C^{\prime}$.

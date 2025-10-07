@@ -70,8 +70,7 @@
         es ein [Kapitel zu
         Streaming-Algorithmen](https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html).
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *($\SPACE(s)$).* Sei $M$ eine Turingmaschine mit dezidiertem
         Eingabeband 1 und Ausgabeband $k$. Die _Größe einer
         Konfiguration_ ist die Größe der Bandinhalte der Arbeitsbänder.

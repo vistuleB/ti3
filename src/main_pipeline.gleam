@@ -26,12 +26,33 @@ const p_cannot_be_contained_in = [
   "code", "figure", "p", "pre", "span",
 ]
 
-const post_counter_space = "&thinsp;&thinsp;"
+const post_counter_space = " "
 
 pub fn main_pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
 
-  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "Theorem", "Proof", "WriterlyBlankLine", "TopicAnnouncement", "SubtopicAnnouncement", "Statement", "Exercise", "Highlight", "Remark", "QED", "CircleX", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
+  let pre_transformation_document_tags = [
+    "Carousel",
+    "CarouselItem",
+    "Chapter",
+    "ChapterTitle",
+    "CircleX", 
+    "Definition",
+    "Document",
+    "Exercise",
+    "Highlight",
+    "Proof",
+    "QED", 
+    "Remark",
+    "Statement", 
+    "Sub",
+    "SubTitle", 
+    "SubtopicAnnouncement", 
+    "Theorem",
+    "TopicAnnouncement",
+    "WriterlyBlankLine",
+    "WriterlyCodeBlock",
+  ]
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   
@@ -75,6 +96,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
       dl.rename(#("WriterlyCodeBlock", "pre")),
       dl.rename_with_attributes(#("Theorem", "Statement", [#("title", "*Theorem*")])),
+      dl.rename_with_attributes(#("Definition", "Statement", [#("title", "*Definition*")])),
       dl.rename_with_attributes(#("Proof", "Highlight", [#("title", "*Beweis.*")])),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),

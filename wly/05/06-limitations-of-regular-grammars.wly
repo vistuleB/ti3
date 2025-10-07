@@ -143,8 +143,7 @@
     und _der Automat muss aber $\gamma$ von $\gamma'$ unterscheiden
     können_ zu formalisieren.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *$M$-Äquivalenz* Sei $M= (\Sigma, Q, \qstart, F, \delta$ ein
         (deterministischer) endlicher Automat. Zwei Wörter
         $\alpha, \beta \in \Sigma^*$ sind _$M$ -äquivalent_, geschrieben
@@ -170,8 +169,7 @@
     beiden Fällen das Wort $\gamma$ , endet also in beiden Fällen im
     gleichen Zustand.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *$L$-Äquivalenz* Sei $L \subseteq \Sigma^*$ eine Sprache. Zwei
         Wörter $\alpha, \beta \in \Sigma^*$ sind _$L$ -äquivalent_,
         geschrieben
@@ -225,8 +223,7 @@
     alle den Automaten in einen anderen Zustand bringen. Der Automat
     $M$ kann also die Sprache $L$ nicht erkennen. Formaler:
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $L \subseteq \Sigma^*$. Der _Index von $L$_ ist die Anzahl
         von Äquivalenzklassen der Relation $\equiv_L$, also die
         größtmögliche Anzahl gegenseitig nichtäquivalenter Wörter

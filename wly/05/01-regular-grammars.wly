@@ -8,8 +8,7 @@
     bearbeitbar zu sein. Insbesondere ist das Parsen von regulären
     Grammatiken immer in linearer Zeit möglich.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         handle=def-regular
         Eine kontextfreie Sprache $G = (\Sigma, N, P, S)$ heißt
         _regulär_, wenn jede Produktion eine der folgenden vier Formen
@@ -169,8 +168,7 @@
     Definition. Was tun wir, wenn wir nicht zufrieden sind mit einer
     Definition? Wir wandeln sie ab.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Eine Grammatik $G = (\Sigma, N, P, S)$ heißt _erweitert
         regulär_, wenn jede Produktion eine der folgenden Formen hat:
 
@@ -430,8 +428,7 @@
     _Ding 1, gefolgt von Ding 2_ mit regulären Grammatiken realisierbar
     sind.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Kleenesche Hülle).* Seien $L_1, L_2 \in \Sigma^*$ zwei
         Sprachen. Die Verknüpfungssprache $L_1 \circ L_2$ ist definiert
         als
@@ -487,8 +484,7 @@
     In einem dritten Lemma werden wir zeigen, dass die Konstruktion
     _Ding, beliebig oft wiederholt_ mit regulären Sprachen möglich ist.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $L \subseteq \Sigma^*$. Die Sprache $L^n$ ist die Menge
 
         \begin{align*}

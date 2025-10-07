@@ -194,8 +194,7 @@
     \Lambda := \writelambda
     \end{align*}
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Zu einem Eingabealphabet $\Sigma$ definieren wir das
         _Codierungsalphabet_ $\Lambda := \writelambda$ , wobei wir
         annehmen, dass

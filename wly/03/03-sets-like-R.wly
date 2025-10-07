@@ -475,8 +475,7 @@
     wählen, sie finden immer noch ein $B$ dazwischen:
     $\{0\} \subsetneq B \subsetneq A$.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Dichte Partialordnung)* Eine Partialordnung $(X,\preceq)$
         heißt _dicht_, wenn es für alle $x,z \in X$ mit $x \prec z$ ein
         $y \in X$ gibt mit $x \prec y \prec z$.

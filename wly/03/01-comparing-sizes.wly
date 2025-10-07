@@ -109,8 +109,7 @@
 
     Wir sind nun reif für eine formale Definition:
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Zwei Mengen $A$ und $B$ heißen _gleichmächtig_, wenn es eine
         Bijektion $f : A \rightarrow B$ gibt. Wir schreiben in diesem
         Falle $A \approx B$. Es gilt trivialerweise immer $A \approx A$,
@@ -123,8 +122,7 @@
         $\approx$ ist reflexiv, symmetrisch und transitiv und ist somit
         eine _Äquivalenzrelation_.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Eine Menge $A$ mit $A \approx \N$, die also gleichmächtig zu den
         natürlichen Zahlen ist, nennt man _abzählbar unendlich_, auf
         Englisch _countably infinite_ oder einfach _countable_.
@@ -140,8 +138,7 @@
     Der Begriff der Gleichmächtigkeit liefert uns nun eine wunderbar
     einfache und rigorose Definition von Unendlichkeit.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Eine Menge $A$ heißt _unendlich_, wenn es eine echte Teilmenge
         $A' \subsetneq A$ gibt, zu der sie gleichmächtig ist, also
         $A' \approx A$.

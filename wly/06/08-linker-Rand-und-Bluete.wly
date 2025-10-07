@@ -158,8 +158,7 @@
     Die Aussage "Stamm, linker Rand und Blüte haben eine einfache
     Struktur" können wir formalisieren.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Für eine kontextfreie Grammatik $G$ definieren wir die Sprache
         $\Front(G) \subseteq (\Sigma \cup N)^*$:
 
@@ -215,8 +214,7 @@
     einführen; diese entsprechen dann auch den Zuständen des
     dazugehörigen nichtdeterministischen Automaten:
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $G = (\Sigma, N, S, P)$ eine kontextfreie Grammatik. Die
         Front-Grammatik oder DK-Grammatik von $G$ ist die _erweitert
         reguläre_ Grammatik

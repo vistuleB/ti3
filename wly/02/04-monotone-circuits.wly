@@ -26,8 +26,7 @@
     nach $110$ finden; es gilt also $001 \not \leq 110$; die beiden
     Elemente sind _unvergleichbar_.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Eine Boolesche Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ heißt
         _monoton_, wenn
 

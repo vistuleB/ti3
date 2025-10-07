@@ -275,8 +275,7 @@
     Trick: wir beschränken uns auf besonders schöne Intervalle,
     nämlich_Binärintervalle_.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Ein Binärintervall ist eine Menge natürlicher Zahlen der Form
 
         $$

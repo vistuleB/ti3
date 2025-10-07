@@ -105,8 +105,7 @@
     An dieser Stelle zahlt es sich aus, eine formale Notation
     einzuführen:
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $f: \{0,1\}^n \rightarrow \{0,1\}$ eine Boolesche Funktion,
         $i \in \{1,\dots,n\}$ ein Index und $b \in \{0,1\}$ ein Wert.
         Dann ist $f|_{x_i=b}$ eine neue Funktion, und zwar
@@ -206,8 +205,7 @@
     \vee (x \wedge y \wedge z)
     $$
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Ein _Literal_ ist eine Variable $x$ oder deren Negation
         $\bar{x}$. Ein _Term_ ist ein AND (auch: Konjunktion) von
         Literalen (beispielsweise $\bar{x} \wedge \bar{y} \wedge z)$.
@@ -267,8 +265,7 @@
             style=height:10em
             src=img/circuits/cnf-example.svg
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Eine Formel in _konjunktiver Normalform_ (CNF) ist ein AND von
         Klauseln. Alternativ: eine CNF-Formel ist ein Schaltkreis der
         Tiefe 2 (wobei NOT-Gates nicht mitzählen), dessen Output-Gate ein

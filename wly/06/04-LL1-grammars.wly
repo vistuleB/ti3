@@ -2,8 +2,7 @@
     title=LL(\(k\))-Grammatiken (nicht im Sommersemester 2025)
 
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *Grenzform* Sei $G = (\Sigma, N, S, P)$ eine kontextfreie
         Grammatik. Eine Wortform $A \alpha$ - also eine Wortform, die
         mit einem Nichtterminal beginnt - heißt _Grenzform_, wenn es ein
@@ -24,8 +23,7 @@
     Umständen wir die richtige Auswahl treffen können, auch wenn wir
     nur wenige weitere Zeichen unseres Inputwortes lesen dürfen.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Für ein Wort $w \in \Sigma^*$ und eine natürliche Zahl $k \in \N$
         sei $\first_k(w)$ wie folgt definiert:
 
@@ -39,8 +37,7 @@
         In Worten: $\first_{k}(w)$ besteht aus den ersten $k$ Zeichen
         von $w$ (oder aus ganz $w$, falls es weniger als $k$ lang ist).
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *LL($k$)-Grammatiken* Eine kontextfreie Grammatik
         $G = (\Sigma, N, S, P)$ ist eine LL($k$ )-Grammatik, wenn für
         jede Grenzform $A \alpha$ und für jedes Paar
@@ -221,8 +218,7 @@
     Wörtern auf _Wortformen_ (die also Nichtterminale beinhalten
     können).
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei eine kontextfreie Grammatik $G = (\Sigma, N, S, P)$ und eine
         Wortform $\alpha \in (\Sigma \cup N)^*$ gegeben. Wir definieren
 
@@ -233,7 +229,7 @@
     Wir können nun die LL$(k)$-Bedingung äquivalent formulieren:
 
     |> Statement
-        title=*Definition/Beobachtung*
+        title=*Definition / Beobachtung*
         Eine Grammatik $G$ ist LL$(k)$ genau dann, wenn für alle
         Grenzformen $A \alpha$ und alle Produktionen mit $A$ auf der
         linken Seite, also
@@ -378,8 +374,7 @@
     |> TopicAnnouncement
         $\First_k(A)$ und $\First_k(\alpha)$ berechnen.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Seien $K, L \subseteq \Sigma^*$ zwei Mengen. Mit $K \circ L$
         bezeichnen wir die Menge
 
@@ -521,8 +516,7 @@
     machen. Wir führen nun, zusätzlich zu $\First_k(X)$ und
     $\First_k(\alpha)$, noch eine feinere Unterteilung an:
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $\sigma$ ein Symbol und $d \in \N$. Dann ist
 
         \begin{align*}

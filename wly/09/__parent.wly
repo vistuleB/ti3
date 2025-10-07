@@ -45,8 +45,7 @@
     $\Sigma = \{0,1\}$ und auf Entscheidungsprobleme, wo uns also nur
     eine Ja/Nein-Antwort interessiert.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $t: \N \rightarrow \N$. Eine Turingmaschinen $M$
         _entscheidet_ eine Sprache $L \subseteq \Sigma^*$ in Zeit $t$
         wenn
@@ -103,8 +102,7 @@
     |> SubtopicAnnouncement
         Die Klasse P und der Begriff der Effizienz
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Die Komplexitätsklasse P).* Wir definieren
 
         \begin{align*}

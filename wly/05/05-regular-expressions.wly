@@ -56,8 +56,7 @@
     Sprache zusammenbauen. Dieses Baukastenprinzip hat auch einen
     Namen: reguläre Ausdrücke. Definieren wir diese nun formal.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Sei $\Sigma$ einendliches Alphabet. Die regulären Audrücke über
         $\Sigma$ sind induktiv definiert wie folgt und beschreiben
         folgende Sprachen:
@@ -275,8 +274,7 @@
         Definieren wir nun formal, was VNEAs sind und welche Sprache sie
         akzeptieren:
 
-        |> Statement
-            title=*Definition*
+        |> Definition
             *(Verallgemeinerter nichtdeterministischer endlicher Automat,
             VNEA).* Ein VNEA besteht aus einem Alphabet $\Sigma$, einer
             Zustandsmenge $Q$, einen Startzustand $\qstart \in Q$, einem

@@ -141,8 +141,7 @@
     |> TopicAnnouncement
         Der nichtdeterministische DK-Automat
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Für eine kontextfreie Grammatik ist der nichtdeterministische
         DK-Automat (NDK-Automat) ein nichtdeterministischer endlicher
         Automat mit $\epsilon$ -Übergängen, den wir wie folgt

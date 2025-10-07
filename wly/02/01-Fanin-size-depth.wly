@@ -4,8 +4,7 @@
     Für Boolesche Schaltkreise gibt es drei Komplexitätsparameter, die
     uns interessieren.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Die _Größe_ eines Schaltkreises ist die Anzahl seiner Gates,
         also die Anzahl der Knoten im zugrundeliegenden DAG. Die Teife
         ist die Länge des längsten gerichteten Pfades von einem Input- zu

@@ -105,8 +105,7 @@
     entscheidbar ist, aber nicht in sehr viel weniger. Dafür definieren
     wir uns ein _Halteproblem mit Zeitbudget._
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Zeitbudgetiertes Halteproblem).* Sei $\Sigma$ ein endliches
         Alphabet. Wir definieren die Sprache
 
@@ -175,8 +174,7 @@
     Problem dar. Insgesamt sind wir auf der sicheren Seite, wenn wir
     die Funktion $t$ selbst in $O(t)$ Schritten berechnen können.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Eine Funktion $t: \N \rightarrow \N$ heißt _zeitkonstruierbar_,
         wenn es eine Turingmaschine gibt, die aus dem Eingabewort $1^n$
         das Ausgabewort $1^{t(n)}$ berechnet und selbst maximal $O(t(n))$

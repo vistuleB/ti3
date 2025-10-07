@@ -29,8 +29,7 @@
     Gibt es in NP "Allzweckwaffen", also Probleme, mit deren Hilfe wir
     _alle anderen_ NP-Probleme lösen könnten?
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Ein Entscheidungsproblem $L \subseteq \Sigma^*$ heißt
         _NP-schwer_, wenn für jedes Problem $K \in {\rm NP}$ gilt:
         $K \leq_p L$. Wenn sich also jedes NP-Problem auf $K$ in

@@ -24,20 +24,20 @@
 
     |> Highlight
         title=*Beweisidee.*
-        Die $k$-Band-Turingmaschine $M$, die $L$
-        entscheidet, macht auf Eingabe $x$ höchstens $T = t(|x|)$
-        Schritte. Es gibt also einen Bereich von insgesamt $2Tk$ Zellen
-        ($2t$ pro Band), den sie nie verlässt. Das heißt, jede
-        Konfiguration besteht aus $O(t)$ Zeichen. Die Funktion
-        $\hat{\delta}_M$, die für jede Konfiguration $C$ die
-        Nachfolgekonfiguration $C' := \hat{\delta}_M(C)$ berechnet, ist
-        sehr lokal und sehr einfach; die $i$-te Stelle von Konfiguration
-        $C$ hat nur auf die Stellen $i-2$, $i-1$, $i$ und $i+1$ von $C'$
-        Einfluss. Somit können wir bei geeigneter binärer Codierung einen
-        effizienten Schaltkreis bauen, der $\hat{\delta}_{M}$ berechnet.
-        Da wir wissen, dass $M$ höchstens $T$ Schritte macht, wissen
-        wir, dass $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt; wir
-        können nun einfach $T$ Schaltkreise hintereinanderschalten, um
+        Die $k$-Band-Turingmaschine $M$, die $L$ entscheidet, macht auf
+        Eingabe $x$ höchstens $T = t(|x|)$ Schritte. Es gibt also einen
+        Bereich von insgesamt $2Tk$ Zellen ($2t$ pro Band), den sie nie
+        verlässt. Das heißt, jede Konfiguration besteht aus $O(t)$
+        Zeichen. Die Funktion $\hat{\delta}_M$, die für jede
+        Konfiguration $C$ die Nachfolgekonfiguration
+        $C' := \hat{\delta}_M(C)$ berechnet, ist sehr lokal und sehr
+        einfach; die $i$-te Stelle von Konfiguration $C$ hat nur auf die
+        Stellen $i-2$, $i-1$, $i$ und $i+1$ von $C'$ Einfluss. Somit
+        können wir bei geeigneter binärer Codierung einen effizienten
+        Schaltkreis bauen, der $\hat{\delta}_{M}$ berechnet. Da wir
+        wissen, dass $M$ höchstens $T$ Schritte macht, wissen wir, dass
+        $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt; wir können nun
+        einfach $T$ Schaltkreise hintereinanderschalten, um
         $\hat{\delta}^*(x)$ und somit die Endkonfiguration zu berechnen;
         mit einem weiteren einfachen Schaltkreis können wir nun den
         erreichten Endzustand auslesen und entsprechen 0 oder 1 ausgeben.

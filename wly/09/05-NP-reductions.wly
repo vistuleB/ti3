@@ -252,8 +252,7 @@
     >>definition-reduction kennengelernt haben, nun aber mit einer
     Aussage über die Laufzeit.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Polynomialzeitreduktion)*. Seien $L_1 \subseteq \Sigma_1^*$
         und $L_2 \subseteq \Sigma_2^*$ zwei Sprachen. Eine Funktion
         $f: \Sigma_1^* \rightarrow \Sigma_2^*$ heißt

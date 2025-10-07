@@ -62,9 +62,8 @@
     ansonsten _lehnt er es ab_. In unserem Beispiel sehen wir also,
     dass der Automat das Eingabewort $yxzxxyy$ ablehnt.
 
-    |> Statement
+    |> Definition
         handle=definition-finite-state-machine
-        title=*Definition*
         *(Endlicher Automat, Finite State Machine).* Ein endlicher
         Automat besteht aus einem endlichen Eingabealphaet $\Sigma$,
         einer endlichen Menge $Q$ von Zuständen, einem Startzustand
@@ -162,8 +161,7 @@
         $\delta: Q \times \Sigma \rightarrow Q$ und genau so formal wie
         die Tabellenschreibweise.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Erweiterte Zuständsübergangsfunktion)*. Für einen endlichen
         Automaten $(\Sigma, Q, \qstart, F, \delta)$ definieren wir die
         _erweiterte Zustandsübergangsfunktion_
@@ -184,8 +182,7 @@
         q \stackrel{\alpha}{\rightarrow} q' \ .
         $$
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         * (Akzeptierte Sprache). * Sei
         $M = (\Sigma, Q, \qstart, F, \delta)$ ein endlicher Automat. Die
         von $M$ akzeptierte Sprache ist

@@ -62,7 +62,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <span class="nowrap"><b>Theorem 9.2.1</b>&thinsp;&thinsp;</span>
+        <b>Theorem 9.2.1</b>
         Wenn $L$ in Zeit $t(n)$ entscheidbar ist und $t(n) \geq n$ gilt,
         dann gibt es einen Booleschen Schaltkreis $C$ mit $O(t(n)^2)$
         Gates, der $f_{L,n}$ berechnet.
@@ -74,27 +74,29 @@
         Die
         <span class="nowrap">$k$-Band-Turingmaschine</span>
         <span class="nowrap">$M$,</span>
-        die $L$
-        entscheidet, macht auf Eingabe $x$ höchstens $T = t(|x|)$
-        Schritte. Es gibt also einen Bereich von insgesamt $2Tk$ Zellen
+        die $L$ entscheidet, macht auf
+        Eingabe $x$ höchstens $T = t(|x|)$ Schritte. Es gibt also einen
+        Bereich von insgesamt $2Tk$ Zellen
         <span class="nowrap">($2t$</span>
-        pro Band), den sie nie verlässt. Das heißt, jede
-        Konfiguration besteht aus $O(t)$ Zeichen. Die Funktion
+        pro Band), den sie nie
+        verlässt. Das heißt, jede Konfiguration besteht aus $O(t)$
+        Zeichen. Die Funktion
         <span class="nowrap">$\hat{\delta}_M$,</span>
-        die für jede Konfiguration $C$ die
-        Nachfolgekonfiguration $C' := \hat{\delta}_M(C)$ berechnet, ist
-        sehr lokal und sehr einfach; die
+        die für jede
+        Konfiguration $C$ die Nachfolgekonfiguration
+        $C' := \hat{\delta}_M(C)$ berechnet, ist sehr lokal und sehr
+        einfach; die
         <span class="nowrap">$i$-te</span>
-        Stelle von Konfiguration
-        $C$ hat nur auf die Stellen
+        Stelle von Konfiguration $C$ hat nur auf die
+        Stellen
         <span class="nowrap">$i-2$,</span>
         <span class="nowrap">$i-1$,</span>
-        $i$ und $i+1$ von $C'$
-        Einfluss. Somit können wir bei geeigneter binärer Codierung einen
-        effizienten Schaltkreis bauen, der $\hat{\delta}_{M}$ berechnet.
-        Da wir wissen, dass $M$ höchstens $T$ Schritte macht, wissen
-        wir, dass $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt; wir
-        können nun einfach $T$ Schaltkreise hintereinanderschalten, um
+        $i$ und $i+1$ von $C'$ Einfluss. Somit
+        können wir bei geeigneter binärer Codierung einen effizienten
+        Schaltkreis bauen, der $\hat{\delta}_{M}$ berechnet. Da wir
+        wissen, dass $M$ höchstens $T$ Schritte macht, wissen wir, dass
+        $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt; wir können nun
+        einfach $T$ Schaltkreise hintereinanderschalten, um
         $\hat{\delta}^*(x)$ und somit die Endkonfiguration zu berechnen;
         mit einem weiteren einfachen Schaltkreis können wir nun den
         erreichten Endzustand auslesen und entsprechen 0 oder 1 ausgeben.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>

@@ -389,8 +389,7 @@
     |> SubtopicAnnouncement
         Grammatiken
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Kontextfreie Grammatik).* Eine _kontextfreie Grammatik_
         besteht aus
 
@@ -459,8 +458,7 @@
         übrigbleiben. Dann hat sich ein Wort $\alpha \in \Sigma^*$
         ergeben.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Gegeben sei eine kontextfreie Grammatik $G = (\Sigma, N, P, S)$.
         Ein String $\alpha \in (\Sigma \cup N)^*$ heißt _Wortform_ (im
         Gegensatz zu einem Wort $x \in \Sigma^*)$. Für zwei Wortformen
@@ -518,8 +516,7 @@
     und sehen, dass die Menge aller Paare $\alpha \Rightarrow \beta$
     unendlich ist.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Die von einer Grammatik erzeugte Sprache).* Sei
         $G = (\Sigma, N, P, S)$ eine kontextfreie Grammatik. Die von $G$
         erzeugte Sprache $L(G)$ ist die Menge aller Wörter, die vom

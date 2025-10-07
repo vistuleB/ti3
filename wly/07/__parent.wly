@@ -31,8 +31,7 @@
     |> TopicAnnouncement
         Allgemeine formale Grammatiken
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(formale Grammatik)* Eine formale Grammatik ist gegeben durch
         ein endliches Alphabet $\Sigma$ aus _Terminalsymbolen_, einer
         endlichen Menge $\N$ von _Nichtterminalen_, einem Startsymbol
@@ -56,8 +55,7 @@
     ein Nichtterminal enthalten, welches ganz rechts stehen muss. In
     diesem Falle würde es sich um eine reguläre Grammatik handeln.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Ableitung und erzeugte Sprache)*. Sei $G$ eine formale
         Grammtik und $\gamma_1, \gamma_2 \in (\Sigma\cup N)^*$ zwei
         Wortformen. Wir schreiben $\gamma_1 \Step{} \gamma_2$, wenn wir

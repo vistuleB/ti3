@@ -26,8 +26,7 @@
     Péter](https://de.wikipedia.org/wiki/Rózsa_Péter) gefunden wurde
     (obwohl der letztere Artikel das Jahr 1955 nennt).
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         *(Péter-Ackermann-Funktion).*
 
         \begin{align*}
@@ -198,8 +197,7 @@
         Funktion $f: \N \rightarrow \N$ schneller wächst als
         $g: \N^k \rightarrow \N$.
 
-        |> Statement
-            title=*Definition*
+        |> Definition
             Sei $f: \N \rightarrow \N$ und $g: \N^k \rightarrow \N$. Die
             Funktion $f$ _majorisiert_ $g$, wenn
 

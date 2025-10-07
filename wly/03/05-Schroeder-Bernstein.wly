@@ -15,8 +15,7 @@
     Hauptarbeit geleistet. Surjektivität herzustellen sollte nicht so
     schwer sein. Formalisieren wir diese Gedanken durch etwas Notation.
 
-    |> Statement
-        title=*Definition*
+    |> Definition
         Seien $A$ und $B$ zwei Mengen. Wir schreiben $A \leq B$, wenn es
         eine injektive Funktion $f : A \rightarrow B$ gibt. Falls
         $A \leq B$ und $A \not \approx B$ gilt, so schreiben wir
