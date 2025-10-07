@@ -220,8 +220,7 @@
         abhängen darf, nicht aber von den Eingabewerten, die $g$
         bekommt.
 
-        |> Statement
-            title=*Lemma*
+        |> Lemma
             Für jede primitiv rekursive Funktion $f: \N^k \rightarrow \N$
             gibt es ein $r \in \N$, so dass $f$ von $A_r$ majorisiert
             wird.
@@ -312,8 +311,7 @@
         primitiv rekursive Funktionen sind. Daher gibt es ein $q \in \N$
         mit $A_q \gt g$ und $A_q \gt h$.
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             $f(t, \vec{x}) \leq A_{q+1} (t+x)$, wobei
             $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$.
 

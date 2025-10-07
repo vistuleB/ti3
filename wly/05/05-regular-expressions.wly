@@ -106,8 +106,7 @@
     Kleenesche Hülle wiederum reguläre Sprachen erzeugen. Wir erhalten
     das folgende Ergebnis:
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         handle=regex-to-grammar
         Die von einem regulären Ausdruck $R$ beschriebene Sprache $L(R)$
         ist regulär.

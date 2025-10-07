@@ -190,8 +190,7 @@
     falls eines von $a-1$ nach $a$ reingeschickt wird.
 
     |> Definition
-        *(Carry propagate / generate für Intervalle)*
-        Sei
+        *(Carry propagate / generate für Intervalle)* Sei
         $I = \{a,a+1, \dots, b\}$ ein Intervall natürlicher Zahlen. Die
         Werte $p_I$ und $g_I$ sind wie folgt definiert:
 
@@ -297,8 +296,7 @@
         Seit $n = 2^d-1$. Wie viele Binärintervalle gibt es in
         $\{0,\dots,n-1\}$?
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Es gibt einen Schaltkreis mit Input-Gates
         $x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}$ mit Größe
         $6n - 4 \in O(n)$ und Tiefe
@@ -380,8 +378,7 @@
     ausschließlich aus AND- und OR-Gates; er enthält keine NOT-Gates
     und ist somit ein _monotoner Schaltkreis._
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Es gibt einen Schaltkreis der Größe $2n$ und Tiefe
         $2 \ceil{\log_2 n} - 2 = O(\log n)$, der die $p_I, g_I$ für
         Binärintervalle als Inputs nimmt und daraus $g_{[0,k]}$

@@ -69,8 +69,7 @@
         wobei \(\$\) ein neues Zeichen ist, dass nicht in der
         Symbolmenge des PCP-Puzzles $P$ enthalten ist.
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             Wenn die Grammatik $G$ ein Palindromwort ableiten kann, dann
             hat das PCP-Puzzle $P$ eine Lösung.
 
@@ -94,8 +93,7 @@
             eine Lösung des PCP-Puzzles.
             |> QED
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             Wenn das PCP-Puzzle $P$ eine Lösung hat, dann kann die
             Grammatik $G$ ein Palindromwort ableiten.
 

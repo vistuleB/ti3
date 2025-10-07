@@ -80,20 +80,22 @@ const post_counter_space = " "
 
 pub fn main_pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
-
   let pre_transformation_document_tags = [
     "Carousel",
     "CarouselItem",
     "Chapter",
     "ChapterTitle",
-    "CircleX", 
+    "CircleX",
+    "Claim",
     "Definition",
     "Document",
     "Exercise",
     "Example",
     "Highlight",
+    "Lemma",
     "MathBlock",
     "Observation",
+    "Problem",
     "Proof",
     "QED", 
     "Remark",
@@ -152,6 +154,9 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.rename_with_attributes(#("Definition", "Statement", [#("title", "*Definition*")])),
       dl.rename_with_attributes(#("Observation", "Statement", [#("title", "*Beobachtung*")])),
       dl.rename_with_attributes(#("Example", "Statement", [#("title", "*Beispiel*")])),
+      dl.rename_with_attributes(#("Lemma", "Statement", [#("title", "*Lemma*")])),
+      dl.rename_with_attributes(#("Claim", "Statement", [#("title", "*Behauptung*")])),
+      dl.rename_with_attributes(#("Problem", "Statement", [#("title", "*Problem*")])),
       dl.rename_with_attributes(#("Proof", "Highlight", [#("title", "*Beweis.*")])),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),

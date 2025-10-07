@@ -85,8 +85,7 @@
     Diese Konstruktion hat nun ${n \choose k}$ Terme, von denen jeder
     aus $k$ Variablen besteht. Ist das nun gut oder schlecht?
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Es gilt
 
         $$
@@ -276,12 +275,11 @@
     Tiefe von $O (\log n)$ erreichen wird, ist ebenso einfach wie
     genial.
 
-    |> Statement
-        title=*Lemma*
-        *(2-for-3 Adder)*
-        Es gibt einen Schaltkreis mit $O(n)$ Gates, Tiefe 2 und Fan-In
-        2, der als Input drei $n$-stellige Binärzahlen $x,y,z$ nimmt und
-        zwei $n+1$-stellige Binärzahlen $u, v$ ausgibt, so dass
+    |> Lemma
+        *(2-for-3 Adder)* Es gibt einen Schaltkreis mit $O(n)$ Gates,
+        Tiefe 2 und Fan-In 2, der als Input drei $n$-stellige
+        Binärzahlen $x,y,z$ nimmt und zwei $n+1$-stellige Binärzahlen
+        $u, v$ ausgibt, so dass
 
         $$
         x + y + z = u + v
@@ -441,12 +439,11 @@
         über Inputs. Zuerst definieren wir die _Signalstärke_ von
         Verteilungen über Schaltkreise.
 
-        |> Statement
-            title=*Definition*
-            *(Signalstärke)*
-            Sei $\mathcal{C}$ eine Verteilung über Schaltkreise mit
-            Input-Variablen $x_1,\dots,x_n$. Wir sagen, dass $\mathcal{C}$
-            _Signalstärke mindestens $\delta$_ hat, wenn
+        |> Definition
+            *(Signalstärke)* Sei $\mathcal{C}$ eine Verteilung über
+            Schaltkreise mit Input-Variablen $x_1,\dots,x_n$. Wir sagen,
+            dass $\mathcal{C}$ _Signalstärke mindestens $\delta$_ hat,
+            wenn
 
             $$
             \forall x \in \{0,1\}: \quad \Pr_{C \in \mathcal{C}} [C(x) = \maj_n(x)]
@@ -461,8 +458,7 @@
         Schaltkreis) bauen, der ein schwache aber positive Signalstärke
         hat.
 
-        |> Statement
-            title=*Lemma*
+        |> Lemma
             Es gibt eine Wahrscheinlichkeitsverteilung $\mathcal{C}_0$
             über monotone Schaltkreise der Größe 1, die Signalstärke
             $\frac{1}{n}$ hat. Genauer gesagt gilt für jeden Input
@@ -534,8 +530,7 @@
         $\mathcal{C}^{\otimes 3}$ nennen. Diese hat eine höhere
         Signalstärke:
 
-        |> Statement
-            title=*Lemma*
+        |> Lemma
             Falls $\mathcal{C}$ eine Verteilung über Schaltkreise der
             Tiefe $d$ und Größe $s$ ist und $\mathcal{C}$ Signalstärke
             $\delta$ hat, dann gilt:

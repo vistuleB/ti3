@@ -384,14 +384,12 @@
 
     Wir definieren nun die zwei entsprechenden Entscheidungsprobleme:
 
-    |> Statement
-        title=*Problem*
+    |> Problem
         `(Hamilton Cycle).`{sc} Gegeben ein Graph $G=(V,E)$, gibt es in
         $G$ einen Kreis der Länge $|V|$, der also durch alle Knoten
         geht?
 
-    |> Statement
-        title=*Problem*
+    |> Problem
         `(Hamilton Path).`{sc} Gegeben ein Graph $G=(V,E)$ , gibt es in
         $G$ einen Pfad der Länge $|V|-1$, der also alle $|V|$ Knoten
         enthält?

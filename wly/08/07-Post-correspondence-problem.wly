@@ -165,8 +165,7 @@
         Lösung mit dieser Startkachel beginnen muss. Es ist also ein
         "strengeres" Problem als das PCP.
 
-        |> Statement
-            title=*Lemma*
+        |> Lemma
             Gegeben ein MPCP-Puzzle $S$, so können wir ein (normales)
             PCP-Puzzle $S'$ erstellen, mit der Eigenschaft, dass $S$ eine
             Lösung hat genau dann, wenn $S'$ eine Lösung hat.

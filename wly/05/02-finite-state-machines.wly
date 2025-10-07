@@ -271,8 +271,7 @@
 
         einführen. Wir zeigen nun per Induktion:
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             Sei $\alpha \in \Sigma^*$ und $q, q' \in Q$. Dann gilt
             $q \stackrel{\alpha}{\rightarrow} q'$ genau dann, wenn
             $q \Rightarrow^* \alpha q'$ in Grammatik $G'$ gilt.

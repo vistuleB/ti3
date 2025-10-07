@@ -262,8 +262,7 @@
         AND-Gates und $2^n-1$ XOR-Gates berechnet. Wir zeigen in der Tat
         etwas mehr:
 
-        |> Statement
-            title=*Lemma*
+        |> Lemma
             Es gibt einen Schaltkreis $C_n$ mit $n$ Input-Gates
             $x_1, \dots, x_n$ und $2^n$ Output-Gates, eines für jedes
             Monom $x^{I}$, der $2^n$ Gates hat.

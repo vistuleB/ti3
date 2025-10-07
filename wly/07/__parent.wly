@@ -238,8 +238,7 @@
         $\gamma \in \{A,B,C\}^*$ enthält gleich viele $A$ wie $B$ wie
         $C$.
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             Sei $\#_{A,a}(\beta)$ die Anahl der $A$ und $a$ in der
             Wortform $\beta$. Wenn $S \Step{} \beta$, dann gilt
 

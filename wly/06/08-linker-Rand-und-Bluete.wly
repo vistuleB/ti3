@@ -178,8 +178,7 @@
         also die Menge aller Wortformen, die Front einer gültigen
         Wortform sind.
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Die Sprache $\Front(G)$ ist regulär. Insbesondere gibt es eine
         erweitert reguläre Grammatik $\hat{G}$ für $\Front(G)$, so dass
         die Blüte genau die im letzen Ableitungsschritt erzeugten

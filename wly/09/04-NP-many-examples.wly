@@ -1,9 +1,7 @@
 |> Sub
     title=Viele Beispiele aus NP
 
-
-    |> Statement
-        title=*Problem*
+    |> Problem
         handle=problem-3-colorability
         (`3-Colorability`{sc}). Gegeben ein Graph $G= (V,E)$, gibt es
         eine Färbung $c : V \rightarrow \{1,2,3\}$ mit
@@ -72,8 +70,7 @@
         jede Klausel auswertet und schaut, ob immer `True` rauskommt.
         Somit gilt: auch`CNF-Satisfiability`{sc} ist in NP.
 
-        |> Statement
-            title=*Problem*
+        |> Problem
             handle=problem-subset-sum
             (`Subset Sum`{sc}). Gegeben eine Liste $p_1, \dots, p_n \in \N$
             von "Preisen" und ein "Guthaben" $g \in \N$, gibt es eine
@@ -92,8 +89,7 @@
         _unabhängig_, wenn es keine Kante $\{u,v\} \in E$ gibt mit
         $u,v \in I$.
 
-        |> Statement
-            title=*Problem*
+        |> Problem
             handle=blabla
             Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$ . Finde eine
             unabhängige Menge in $I$ in $G$ mit $|I| \geq k$, falls es
@@ -103,8 +99,7 @@
         Entscheidungsproblem. Wir können aber eine Entscheidungsvariante
         definieren:
 
-        |> Statement
-            title=*Problem*
+        |> Problem
             handle=problem-max-independent-set
             class=numbered-title
             (`Independent Set`{sc}) Gegeben ein Graph $G=(V,E)$ und eine
@@ -153,8 +148,7 @@
         bzw.`NonPrimes`{sc}nicht das entsprechende Entscheidungsproblem,
         weil es uns nicht erlaubt, den Faktor auch zu finden.
 
-        |> Statement
-            title=*Problem*
+        |> Problem
             handle=problem-small-factor
             (`Small Factor`{sc}) Gegeben eine Zahl $X \in \N$, binär
             codiert als $x \in \{0,1\}^n$, und eine Zahl $K \in \N$: gibt

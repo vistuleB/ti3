@@ -425,7 +425,7 @@
         \end{align*}
 
     |> Observation
-        *- Wie man $\First_k(\alpha)$ berechnet.* Sei eine Wortform
+        *- wie man $\First_k(\alpha)$ berechnet.* Sei eine Wortform
         $\alpha$ gegeben, also $\alpha \in (\Sigma \cup N)^*$. Wir
         berechnen $\First_k(\alpha)$, indem wir als erstes $\alpha$
         aussschreiben als
@@ -569,8 +569,7 @@
     Produktionen mit $X$ auf der linken Seite. Dann gilt für
     $k \geq 1$:
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Für $d \geq 1$ gilt
 
         \begin{align*}

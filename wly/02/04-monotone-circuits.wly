@@ -231,10 +231,10 @@
             nun so um:
 
             |> Theorem
-                *(Theorem >>theorem-zu-jeder, alternative Formulierung)*
-                Für jede natürliche Zahl $n$ gilt: zu jeder Booleschen
-                Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen
-                Schaltkreis $C$, der $f$ berechnet.
+                *(Theorem >>theorem-zu-jeder, alternative Formulierung)* Für
+                jede natürliche Zahl $n$ gilt: zu jeder Booleschen Funktion
+                $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen Schaltkreis
+                $C$, der $f$ berechnet.
 
             Wir haben also im Prinzip Theorem 1.4.4 umständlicher
             formuliert, um die Abhängigkeit von $n$ zu verdeutlichen. Wir
@@ -393,8 +393,8 @@
     Diesen "hellblauen" Beweis haben wir ja bereits in der Vorlesung
     geführt. Ich habe ihn hier wiederholt und in größerem Detail
     besprochen, um auf verschiedene formale Aspekte der Beweisführung
-    einzugehen. Wenden wir uns jetzt dem Beweis von Theorem >>theorem-monotone-zu-jeder
-    zu.
+    einzugehen. Wenden wir uns jetzt dem Beweis von Theorem
+    >>theorem-monotone-zu-jeder zu.
 
     |> Highlight
         title=*Theorem >>theorem-monotone-zu-jeder, nochmals.*
@@ -485,8 +485,7 @@
 
         Wir müssen nun zeigen, dass dies wirklich $f$ berechnet, also
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             Für alle $x_1,\dots,x_n$ gilt
             $f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee
             f_0(x_2,\dots,x_n) .$
@@ -661,8 +660,7 @@
         Der Term $T'_{\mathbf{a}}$ ist "kürzer" als $T_{\mathbf{a}}$,
         stellt also weniger "Bedingungen". Formal gesprochen:
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             Für alle $x_1,\dots,x_n$ gilt
             $T_{\mathbf{a}} \leq T'_{\mathbf{a}}$.
 
@@ -689,8 +687,7 @@
         negativen Literale ersatzlos streichen. Wir behaupten nun, dass
         $F'$ und $F$ dieselbe Funktion darstellen:
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             $F \equiv F'$, d.h. sie berechnen beide dieselbe Funktion,
             nämlich $f$.
 

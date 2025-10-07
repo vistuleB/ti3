@@ -381,8 +381,7 @@
         deterministisch zu machen, würde 16 Zustände erzeugen. Ist dies
         optimal? Ja, ist es:
 
-        |> Statement
-            title=*Behauptung*
+        |> Claim
             Die Sprache $L$ hat Index 16. Alle Wörter in $\{0,1\}^4$ sind
             nicht $L$-äquivalent.
 

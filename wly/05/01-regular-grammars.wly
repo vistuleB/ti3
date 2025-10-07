@@ -383,8 +383,7 @@
             Ding 1 oder Ding 2. Beispielsweise _Bindestrich oder
             alphanumerisches Zeichen_.
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann ist
         $L_1 \cup L_2$ auch regulär.
 
@@ -434,8 +433,7 @@
         L_1, \beta \in L_2\} \ .
         \end{align*}
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann ist
         $L_1 \circ L_2$ auch regulär.
 
@@ -500,8 +498,7 @@
         $\alpha_1 \alpha_2 \dots \alpha_n$, wobei $n$ beliebig und jedes
         $\alpha_i \in L$ ist.
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Sei $L$ eine reguläre Sprache. Dann ist $L^*$ auch regulär.
 
     |> Proof

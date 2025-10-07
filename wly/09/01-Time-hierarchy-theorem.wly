@@ -157,8 +157,7 @@
     \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0 \enc(M) 1^m \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
     \end{align*}
 
-    |> Statement
-        title=*Behauptung*
+    |> Claim
         *(nicht ganz korrekt).* $\bnegdiag \in \TIME_{k+3}(t)$.
 
     Sei $n := |\enc(M) + m|$ die Länge des Inputwortes. Wir können
@@ -179,8 +178,7 @@
         das Ausgabewort $1^{t(n)}$ berechnet und selbst maximal $O(t(n))$
         Schritte läuft.
 
-    |> Statement
-        title=*Behauptung*
+    |> Claim
         *(jetzt korrekt).* Sei $t: \N \rightarrow \N$ zeitkonstruierbar,
         monoton steigend und $t(n) \geq n$. Dann gilt
         $\bnegdiag \in \TIME_{k+3}(t)$.
@@ -188,8 +186,7 @@
     So weit, so gut. Wonach wir allerdings aus sind, ist ein Beweis,
     dass $\bnegdiag$ nicht signifikant schneller zu berechnen ist.
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Sei $s: \N \rightarrow \N$ eine Funktion mit $s(n) \geq n$ und
         $s = o(t)$, also
         $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$. Dann gilt

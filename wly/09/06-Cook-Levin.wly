@@ -45,8 +45,7 @@
     (1) dass $L \leq_p$ `Circuit-SAT`{sc} und (2) `Circuit-SAT $\leq_p$
     3-SAT`{sc} gilt.
 
-    |> Statement
-        title=*Problem*
+    |> Problem
         (`Circuit-SAT`{sc}). Gegeben ein Boolescher Schaltkreis $C$ mit
         $n$ Eingabevariablen. Gibt es ein $x \in \{0,1\}^n$ mit
         $C(x) = 1$?
@@ -55,8 +54,7 @@
     und `3-SAT $\leq_p$ Circuit-SAT`{sc}, da CNF-Formeln (und somit
     auch $3$ -CNF-Formeln) Spezialfälle Boolescher Schaltkreise sind.
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         Sei $L \in {\rm NP}$. Dann gilt `$L \leq_p$ Circuit-SAT`{sc}.
 
     |> Proof
@@ -123,8 +121,7 @@
         also genau dann, wenn `$D \in$ Circuit-SAT`{sc}.
         |> QED
 
-    |> Statement
-        title=*Lemma*
+    |> Lemma
         `Circuit-SAT`{sc} $\leq_p$ `3-SAT`{sc}.
 
     |> Proof
