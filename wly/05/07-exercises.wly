@@ -26,10 +26,8 @@
 
         Sei $L$ eine reguläre Sprache. Zeigen Sie, dass $f_L$ primitiv
         rekursiv ist!
-
     |> TopicAnnouncement
         Reguläre Sprachen und Schaltkreise
-
     Wir können jedes Zeichen $\sigma \in \Sigma$ als Bitstring
     $x_{\sigma} \in \cube^k$ codieren, mit $k = \ceil{\log_2|\Sigma|}$,
     und damit jedes $\alpha = (a_1, \dots, a_n) \in \Sigma^*$ als

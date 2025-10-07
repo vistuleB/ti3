@@ -15,10 +15,8 @@
     Noch dazu kann ein Algorithmus nur beschränkt die ihm gegebenen
     Daten manipulieren; in jedem Schritt immer nur an einer bestimmten
     Stelle und nach festen Regeln.
-
     |> TopicAnnouncement
         Emailadressen und Arithmetische Ausdrücke
-
     Die Menge aller denkbaren Emailadressen ist unendlich - zumindest,
     solange wir für Nutzernamen und Domainnamen keine
     Längenbeschränkung haben. Nach welchen Regeln sind sie gebildet?
@@ -68,10 +66,8 @@
         Operatoren. Versuchen Sie, eine Art formale Sprache zu
         entwickeln, die die korrekten arithmetischen Ausdrücke
         beschreibt.
-
     |> TopicAnnouncement
         Endliche Regeln und unendliches Verhalten
-
     Das klassische Beispiel, wie sehr einfache Regeln ein extrem
     komplexes Verhalten erzeugen können, ist Conways Game of Life. Hier
     ist der [Wikipedia-Artikel
@@ -169,10 +165,8 @@
     dann einen ganzen Rechner simuliert. Klingt kaum vorstellbar. Wenn
     wir am Ende dieses Kurses angelangt sind, werden Sie aber
     verstehen, warum das sogar recht plausibel ist.
-
     |> TopicAnnouncement
         Zusammenfassung
-
     Es geht also in diesem Kurs vor Allem um folgende Fragen:
 
     |> ul

@@ -27,7 +27,6 @@
     Punkt 1 werden wir in diesem Kapitel diskutieren. Punkt 2 und 3
     werden Gegenstand des nächsten Kapitels sein, in welchem wir die
     Turing-Maschinen einführen.
-
     |> TopicAnnouncement
         Allgemeine formale Grammatiken
 
@@ -68,8 +67,7 @@
         schreiben können für Wortformen $u,v$, sodass
         $\alpha \rightarrow \beta$ eine Produktion von $G$ ist.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Betrachten wir die allgemeine Grammatik mit Terminalalphabet
         $\Sigma = \{a,b,c\}$, Nichtterminalsymbolen $N = \{S, A, B, C\}$,
         Startsymbol $S$ und den Produktionen
@@ -115,8 +113,7 @@
     Nichtterminal $X$ ersetzen und schließlich Produktionen
     $X \rightarrow x$ einführen.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Versuchen wir nun, eine allgemeine formale Grammatik für die
         Sprache
 
@@ -285,8 +282,7 @@
         Anzahl der drei Symbole gleich sein muss, gilt also
         $\beta = a^n b^n c^n$ und somit $\beta \in L$.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Im Teilkapitel >>limitations-of-context-free-grammars gab es
         Übungsaufgabe >>exercise-power-2: in der zu zeigen war, dass
 
@@ -339,8 +335,7 @@
     beschreiben, sondern komplizierte Rechnungen durchführen können.
     Sie stellen somit ein völlig andersartiges Biest dar.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Sei $L$ die Sprache aller Wörter über $\Sigma = \{1\}$, deren
         Länge eine Quadratzahl ist. Wir werden als erstes eine
         _Multiplikationsgrammatik_ erzeugen. Dies soll eine Menge von

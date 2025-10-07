@@ -32,8 +32,7 @@
     Cantor](https://en.wikipedia.org/wiki/Georg_Cantor) Ende des 19.
     Jahrhunderts gefunden. Sie war anfangs nicht unumstritten.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Beginnen wir mit einem  einfachen Beispiel und betrachten die
         zwei Mengen $\N = \{0,1,2,3,4,\dots\}$ und
         $\N^+ = \{1,2,3,4,\dots\}$. Beide sind unendlich, und
@@ -63,8 +62,7 @@
     dortige auf Zimmer 3, und so weiter. Das Hotel ist also voll
     belegt, kann aber dennoch weitere Gäste aufnehmen.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Ermutigt von unserem Erfolg gerade eben betrachten wir zwei
         unendliche Mengen, die sich stärker unterscheiden: $\N$ und
         $\Z = \{\dots, -2, -1, 0, 1, 2, \dots\}$. Wir können diese
@@ -131,10 +129,8 @@
     _nicht_ gleichmächtig mit $\N$ sind, weil sie "viel viel größer"
     sind. Wir nennen sie _überabzählbare_ Mengen, auf Englisch
     _uncountably infinite_.
-
     |> TopicAnnouncement
         Was ist unendlich?
-
     Der Begriff der Gleichmächtigkeit liefert uns nun eine wunderbar
     einfache und rigorose Definition von Unendlichkeit.
 

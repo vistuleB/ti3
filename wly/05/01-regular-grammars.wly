@@ -23,8 +23,7 @@
         eine reguläre Grammatik $G$ gibt, die sie erzeugt, also
         $L(G) = L$.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Die folgende Grammatik über dem Alphabet $\Sigma = \{1\}$, den
         nichtterminalen Symbolen $\{E,O\}$ und den Regeln
 
@@ -37,9 +36,8 @@
         $\{\epsilon, 11, 1111, 111111, \dots \}= \{1^n | n
         \textnormal{ ist gerade}\}$.
 
-    |> Statement
+    |> Example
         handle=example-aaabb
-        title=*Beispiel*
         Die folgende Grammatik haben wir bereits im letzten Abschnitt
         kennengelernt. Sie ist nicht regulär:
 
@@ -150,10 +148,8 @@
         Emailadressen über dem Alphabet $\Sigma = \{a,b,.,-,@\}$. Sie
         dürfen natürlich noch weitere Buchstaben zulassen, dann schreiben
         Sie sich aber schnell zu Tode.
-
     |> TopicAnnouncement
         Erweitert reguläre Grammatiken
-
     In einer Übungsaufgabe oben wurden Sie aufgefordert, eine reguläre
     Grammatik zu schreiben für die Sprache aller $1^n$ mit $n$ durch 3
     teilbar. Hier ist eine besonders einfache Lösung:
@@ -215,10 +211,8 @@
     studieren wollen), können wir uns auf die eigentlichen regulären
     Grammatiken beschränken, da wir wissen, dass beide Definition eh
     gleich mächtig sind.
-
     |> TopicAnnouncement
         Reguläre Grammatiken vereinfachen
-
     Das letzte Theorem erlaubt uns, eine Definition von regulären
     Grammatiken zu verwenden, die uns mehr erlaubt. Im Folgenden zeigen
     wir, wie man die Form der Grammatiken noch stärker einschränken
@@ -361,11 +355,9 @@
         Schreiben Sie eine äquivalente Grammatik ohne Produktionen der
         Form $X \rightarrow Y$. Wieviele Produktion hat Ihre neue
         Grammatik?
-
     |> TopicAnnouncement
         handle=baukasten
         Reguläre Sprachen nach Baukastenprinzip bauen
-
     Eine schöne Eigenschaft von regulären Grammatiken ist, dass sie
     mächtig genug sind, um uns zu erlauben, die nach dem
     Baukastenprinzip zu komplizierteren Einheiten zusammenzufügen.

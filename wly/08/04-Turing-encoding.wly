@@ -100,10 +100,8 @@
     dass $U (\enc(M)\#x)$ am Ende den gleichen Bandinhalt hat wie
     $M(x)$ am Ende; hierbei gibt es allerdings eine Schwierigkeit mit
     den Details der Codierung, die wir gleich ansprechen werden.
-
     |> SubtopicAnnouncement
         Die Codierung
-
     Zuerst müssen wir uns auf ein Eingabealphabet $\Sigma$ einigen. Im
     Ernstfall genügt immer $\Sigma = \{0,1\}$ , allerdings gibt es
     keinen Grund, für die Definitionen nicht allgemeine endliche

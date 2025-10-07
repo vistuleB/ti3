@@ -2,8 +2,7 @@
     title=Beispiele
 
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Betrachten wir die Sprache
 
         \begin{align*}
@@ -103,9 +102,8 @@
         angeben, wobei die Richtung $D$ mit den Symbolen `<`, `-`, `>`
         codiert wird.
 
-    |> Statement
+    |> Example
         handle=example-palindromes
-        title=*Beispiel*
         Als zweites Beispiel nehmen wir die Palindromsprache
 
         \begin{align*}

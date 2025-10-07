@@ -37,8 +37,7 @@
 
     Das geht aber nicht immer:
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Betrachten wir die recht einfache Sprache
 
         \begin{align*}
@@ -62,10 +61,8 @@
         $S \rightarrow Xc$ anwenden sollen. Das lässt sich auch nicht
         durch Umschreiben der Grammatik lösen. Wir müssen lesen, bis wir
         ein $b$ sehen.
-
     |> TopicAnnouncement
         Das LR-Paradigma
-
     Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma war ja, mit
     $S$ zu starten und, geleitet von den nächsten $k$ Zeichen, zu
     entscheiden, welche Ableitungsregel als nächstes anzuwenden ist.

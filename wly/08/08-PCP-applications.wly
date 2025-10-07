@@ -136,10 +136,8 @@
         ob $G$ ein Palindromwort ableiten kann. Dies beantwortet auch
         die Frage nach der Lösbarkeit des gegebenen PCP-Puzzles.
         |> QED
-
     |> SubtopicAnnouncement
         Reduktionen
-
     Es lohnt sich, an dieser Stelle zu pausieren. Was Sie gerade
     gesehen haben, ist eine _Reduktion_. Im "echten" Leben verwenden
     wir Reduktionen, um bereits gefundene Lösungen zu "recyceln".

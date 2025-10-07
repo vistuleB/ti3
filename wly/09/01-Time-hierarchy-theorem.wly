@@ -81,10 +81,8 @@
     ausführen, also den neuen Zustand auf Band 2 schreiben, das neue
     Zeichen in den Block auf dem Arbeitsband eintragen und den Kopf
     bewegen. All das benötigt maximal $C \cdot |\enc(M)|$ Schritte.
-
     |> TopicAnnouncement
         Untere Schranken für Zeitkomplexität
-
     Wir wollen nun eine Sprache definieren, die wir in $t(n)$
     Schritten entscheiden können aber nicht deutlich schneller. Wir
     erinnern uns an $\halt$, die von der universellen Turingmaschine

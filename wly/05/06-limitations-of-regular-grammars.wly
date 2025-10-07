@@ -10,8 +10,7 @@
     regulärer Sprachen verstehen, also das, was sie nicht mehr
     beschreiben können.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         SEI $L$ die Sprache aller Wörter über dem Alphabet
         $\Sigma = \{a,b\}$, die die Form $a^n b^n$ haben; also eine
         beliebig lange Folge von $a$s, gefolgt von genau so vielen $b$
@@ -260,8 +259,7 @@
         $q = q'$ gelten würde.
         |> QED
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Die Sprache $L = \{a^n b^n \ | \ n \geq 0\}$ ist nicht regulär.
         In der Tat hat diese Sprache unendlichen Index. Die Wörter
         $a, aa, aaa, aaaa, ...$ sind alle nicht $L$ -äquivalent. Für
@@ -269,8 +267,7 @@
         um zu zeigen, dass $a^i \gamma \in L$ und $a^j \gamma \not \in L$
         ist.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Sei $L \subseteq \{a,b\}^*$ die Sprache aller Palindrome. Also
         der Wörter $\alpha$ mit $\alpha = \alpha^R$, wobei $\alpha^R$
         das Wort $\alpha$ in umgekehrter Reihnfolge gelesen ist. Die
@@ -371,8 +368,7 @@
     dass eine Sprache nicht regulär ist, sondern auch, um zu zeigen,
     dass eine bestimmte Menge an Zuständen optimal ist.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Der nichtdeterministische endliche Automat
 
         |> figure

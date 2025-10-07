@@ -71,8 +71,7 @@
         Negieren Sie die Definition, d.h., schreiben Sie eine Aussage
         der Form _Wenn $G$ nicht LL($k$) ist, dann gibt es..._
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Die Klammern-Grammatik
 
         \begin{align*}
@@ -207,10 +206,8 @@
         Sie, dass $L_3$ eine LL$(k)$ -Grammatik ist. Für welchen Wert
         von $k$? Ist $L_t$ (für im Voraus bekanntes $t$ ) eine LL$(k)$
         -Grammatik? Für welchen Wert von $k$?
-
     |> TopicAnnouncement
         LL$(k)$-Grammatiken parsen
-
     Wir wollen nun erarbeiten, wie wir für eine LL $(k)$ -Grammatik
     einen Parser, also im Prinzip einen deterministischen
     Pushdown-Automaten schreiben können. Wir tasten uns langsam voran.
@@ -370,7 +367,6 @@
     Die rot und fett gedruckte Zeile ist das "Herz" dieses
     Algorithmus. Um den Algorithmus implementieren zu können, müssen
     wir es schaffen, die Menge $\First_k(\beta_i\alpha)$ zu berechnen.
-
     |> TopicAnnouncement
         $\First_k(A)$ und $\First_k(\alpha)$ berechnen.
 
@@ -404,8 +400,7 @@
     Kombinationen von Wörtern und nimmt von jedem die ersten $k$
     Zeichen.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Sei
 
         \begin{align*}
@@ -522,8 +517,7 @@
         $\sigma \Step{}^* w$ der Höhe höchstens $d$}\}
         \end{align*}
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Sei unsere Grammatik
 
         \begin{align*}

@@ -127,8 +127,7 @@
         Form $X \rightarrow Y$ und $X \rightarrow a$ zu eliminieren.
         |> QED
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Wir betrachten abermals die reguläre Grammatik aus dem
         vorherigen Kapitel >>example-aaabb:
 
@@ -160,8 +159,7 @@
         $S \stackrel{ba}{\rightarrow} q$, geschweige denn einen
         akzeptierenden Endzustand. Daher gilt: $ba \not \in L(M)$.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Wir betrachten die reguläre Grammatik aus Übungsaufgabe
         >>exercise-no-a-or-no-b:
 
@@ -208,10 +206,8 @@
         $L_5 \cup L_7$, also die Strings aus 1, deren Länge durch 5 oder
         durch 7 teilbar ist. Zeichnen Sie nun einen
         nichtdeterministischen endlichen Automaten für $L_5 \cup L_7$.
-
     |> TopicAnnouncement
         Nichtdeterministische endliche Automaten deterministisch machen
-
     Wir werden nun zeigen, dass man zu jedem nichtdeterministischen
     Automaten $M$ einen äquivalenten deterministischen Automaten $M'$
     bauen kann. Bevor wir eine allgemeine Konstruktion zeigen, fragen
@@ -320,8 +316,7 @@
         Zu jeder regulären Sprache $L$ gibt es einen deterministischen
         endlichen Automaten $M$ mit $L(M) = L$.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Der obige nichtdeterminische Automaten $M$, der die Sprache
         aller Wörter, deren viertletztes Zeichen eine 1 ist, akzeptiert,
         hat fünf Zustände. Sein Potenzmengenautomat $M'$ hätte also

@@ -241,8 +241,7 @@
     |> Observation
         $\hat{G}$ erzeugt die Sprache $\Front(G)$.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Für unsere Grammatik $G$ oben ergeben sich folgende Produktionen
         $\hat{P}$ in $\hat{G}$:
 

@@ -104,10 +104,8 @@
     Algorithmen entwickeln, um Daten, die in einem bestimmten Format
     vorliegen, zu verarbeiten; ja auch erst einmal überhaupt Begriffe
     festlegen, wie man solche Formate definiert.
-
     |> TopicAnnouncement
         Korrekte Email-Adressen
-
     Kommen wir auf unser erstes, einfachstes Beispiel zurück: die
     Email-Adressen. Können Sie möglichst präzise und möglichst formal
     beschreiben, wie eine korrekte Email-Adresse auszusehen hat? Hier
@@ -220,10 +218,8 @@
         <AlphaNum>        ->    a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
         <AlphaNum>        ->    A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
         ```
-
     |> TopicAnnouncement
         Ein Beispiel einer formalen Grammatik und einer Ableitung
-
     Was Sie hier sehen, nennt man eine _formale Grammatik_. Ihre
     Bestandteile sind:
 
@@ -294,19 +290,15 @@
     |> Exercise
         Formulieren Sie weitere Regeln, um unsinnige Domainnamen wie
         `-.-.--` zu verbieten. Wie müssen Sie die obige Grammatik ändern?
-
     |> TopicAnnouncement
         Terminologie, formale Definitionen und Beispiele
-
     Im letzten Abschnitt haben wir die Regeln für die Bildung
     syntaktisch korrekter Emailadressen formalisiert. Zwar
     unvollständig, doch hoffe ich, dass das allgemeine Schema klar
     geworden ist. Wir werden nun alles formaler und abstrakter
     definieren.
-
     |> SubtopicAnnouncement
         Alphabet
-
     Wenn wir über formale Sprachen reden, so liegt immer eine
     (endliche) Menge von Symbolen zugrunde, das Alphabet $\Sigma$. Im
     Emailadressen-Beispiel war (\Sigma) recht groß: die 52 Buchstaben;
@@ -330,10 +322,8 @@
     $\Sigma$-Symbolen, bezeichnen wir als _Wort über $\Sigma$_. Mit
     $\Sigma^+$ bezeichnen wir die Menge aller nichtleeren Strings,
     also $\Sigma^+ = \Sigma^* \setminus \{\epsilon\}$.
-
     |> SubtopicAnnouncement
         Sprachen
-
     Eine Teilmenge $L \subseteq \Sigma$ bezeichnen wir in diesem
     Kontext als _Sprache_ und kürzen Sie oft mit $L$ ab, was für
     _language_ steht. Beispiele für Sprachen wären
@@ -385,7 +375,6 @@
 
         |> li
             Ja, können wir.
-
     |> SubtopicAnnouncement
         Grammatiken
 
@@ -423,8 +412,7 @@
     erstellen wollen, dann wird $\Sigma$ natürlich auch Großbuchstaben
     enthalten.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Wir betrachten die Grammatik $G = (\{a,b\}, \{S, A, B\}, P, S)$
         mit den Produktionsregeln
 
@@ -534,16 +522,14 @@
         Symbole enthält. Es gilt also $aaAB \not \in L(G)$. Oft können
         wir $L(G)$ kompakt mit natürlicher Sprache beschreiben:
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Sei $G$ die zuletzt betrachtete Grammatik. Dann ist $L(G)$ die
         Menge aller Wörter der Form $a^* b^*$, also Wörter, in denen auf
         beliebig viele $a$'s beliebig viele $b$'s folgen.
 
     Wir betrachten nun einige weitere Beispiele
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Wir betrachten die Grammatik $G_2 = (\{a,b\}, \{S\}, P, S)$ mit
         den Produktionsregeln
 
@@ -601,10 +587,8 @@
         die Struktur der Ableitung zu verdeutlichen, könnten wir die
         ersten beiden Ableitungen mit Wort $S \Rightarrow^* (ab)(ab)$
         bezeichnen und die dritte mit Wort $S \Rightarrow^* a(ba)b$.
-
     |> TopicAnnouncement
         Ziele der Theorie der formalen Sprachen
-
     Ganz allgemein gesagt wollen wir lernen, wie wir Sprachen formal
     beschreiben können; wie wir, gegeben eine Grammatik $G$ und ein
     Zielwort $x$, eine Ableitung $G \Rightarrow^* x$ finden können.

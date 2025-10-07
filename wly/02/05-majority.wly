@@ -150,10 +150,8 @@
     Unsere neue, bessere Konstruktion benötigt also immer noch
     mindestens $\frac{2^n}{n+1}$ Terme, was bereits für moderate Werte
     wie $n=30$ nicht vertretbar ist.
-
     |> TopicAnnouncement
         Majority Top-Down mit `if-then-else`-Gates
-
     Wenden wir nun statt Wahrheitstabelle die Top-Down-Methode an,
     modifiziert für monotone Funktionen wie in den [Lösungen zu den
     Übungsaufgaben](>>monotone-circuits) dargestellt. Insbesondere
@@ -241,10 +239,8 @@
     |> Theorem
         Die Funktion $\maj_n (x_1,\dots,x_n)$ kann mit einem Schaltkreis
         der Größe $O(n^2)$, Tiefe $O(n)$ und Fan-in 2 berechnet werden.
-
     |> TopicAnnouncement
         Majority durch Zählen
-
     $\maj_n(x_1,\dots,x_n)$ zu bestimmen sollte doch einfach sein: wir
     zählen die Anzahl der 1en und vergleichen sie mit $\ceil{n}{2}$.
     Wie aber sollen wir zählen? Ganz einfach: mit einem Binäraddierer!
@@ -265,10 +261,8 @@
         darauf, dass die untersten Add-Gadgets ja 1-stellige oder dann
         2-stellige Zahlen addieren müssen und erst die weniger obersten
         Gadgets Zahlen mit $\Theta(\log n)$ Bits als Input bekommen.
-
     |> TopicAnnouncement
         $O(\log n)$ Tiefe mit 2-for-3-Addierern.
-
     Die vorherige Konstruktion mit den Addierern war schon deutlich
     effizienter als unsere pyramidenartige $\theta^m_l$ -Konstruktion,
     allerdings wurde das Ziel, eine Tiefe von $O (\log n)$ zu
@@ -367,11 +361,9 @@
     verständlich, dass wir auch einen monotonen Schaltkreis wollen.
     Unser Pyramidenschema, in dem wir alle $\theta^m_k$ berechnen, ist
     monoton, hat allerdings leider Tiefe $\Omega(n)$.
-
     |> TopicAnnouncement
         Monoton und polylogarithmische Tiefe durch Halbierung und
         Aufzählung.
-
     Die Idee ist, dass wir, anstatt $\theta^n_k$ aus $x_n$ ,
     $\theta^{n-1}_{k-1}$ und $\theta^{n-1}_{k}$ zu berechnen,
     versuchen, irgendwie von $n$ auf $n/2$ runterzukommen. Dann
@@ -410,7 +402,6 @@
         dass polynomiell viele (in diesem Falle: $O(n^2)$ viele) Gates
         ausreichen. Zeigen Sie, wie die gerade skizzierte Konstruktion so
         ausgeführt werden kann,
-
     |> TopicAnnouncement
         Monoton und logarithmische Tiefe: Valiants probabilitische
         Konstruktion

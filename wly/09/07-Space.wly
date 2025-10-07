@@ -109,10 +109,8 @@
             data-ref=definition-space-bounded
             class=reference
         \ weglassen können, zumindest wenn $s(n)$ zeitkonstruierbar ist.
-
     |> SubtopicAnnouncement
         Die wichtigsten Platzklassen: L und PSPACE
-
     Wir definieren
 
     \begin{align*}

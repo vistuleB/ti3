@@ -114,8 +114,7 @@
 
     Es ist Zeit für ein paar Beispiele.
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Nehmen wir die Sprache der Wörter der Form
         `bla:bla:blu.xyz-12-ab.b:x` aus dem letzten Kapitel. Sie erinnern
         sich: eine endliche Folge von _Labels_, wo ein Label eine
@@ -212,10 +211,8 @@
         erschlagen. Schreiben Sie nun in der Java-Regex-Syntax einen
         regulären Ausdruck für unsere obige Sprache $L$, wo Sie aber
         neben $a$ alle alphanumerischen Zeichen zulassen.
-
     |> TopicAnnouncement
         Einen regulären Ausdruck für jede reguläre Sprache
-
     Wir beweisen nun das Gegenstück zu Lemma >>regex-to-grammar:
 
     |> Theorem

@@ -32,10 +32,8 @@
     Wie können wir von so einer Tabelle ausgehend einen Schaltkreis
     bauen, der diese Funktion berechnet? Ich stelle Ihnen drei
     Herangehensweisen vor.
-
     |> TopicAnnouncement
         Rekursiv, top-down
-
     Wir teilen die Tabelle in die obere Hälfte (wo $x = 0$ gilt) und
     die untere Hälfte:
 
@@ -146,10 +144,8 @@
         1 & 1 & 1 & 1 & 0 \\
         \end{array}
         $$
-
     |> TopicAnnouncement
         Bottom-Up, als DNF
-
     Wenn Sie Rekursionshasser sind und generell lieber in `for`
     -Schleifen denken, dann wird die nächste Konstruktion mehr nach
     Ihrem Geschmack sein. Im Prinzip werden wir alle Kombinationen der
@@ -225,10 +221,8 @@
             |> img
                 style=height:10em
                 src=img/circuits/dnf-dirty.svg
-
     |> TopicAnnouncement
         Bottom-Up, als CNF
-
     Zu der eben demonstrierten Konstruktion gibt es noch eine weitere,
     dazu duale Konstruktion. Bildlich gesprochen listet
     DNF-Konstruktion alle Möglichkeiten auf, wie man eine 1 erhalten

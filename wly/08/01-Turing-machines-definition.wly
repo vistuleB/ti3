@@ -89,10 +89,8 @@
     \delta(q_2, b)&= (q_3, a, \texttt{R}) \\
     \delta(q_3, \#)&= (q_4, b, \texttt{L})
     \end{align*}
-
     |> SubtopicAnnouncement
         Was macht eine Turingmaschine?
-
     Sie haben nun wohl bereits eine vage Vorstellung, was eine
     Turingmaschine macht. Versuchen wir, es noch weiter zu
     formalisieren. Um den _Gesamtzustand_ der Turingmaschine zu
@@ -234,10 +232,8 @@
     $\Gamma^* \times Q \times \Gamma^*$). Stellen Sie sich einfach
     vor, Sie müssten eine Turingmaschine in Java implementieren. Dann
     würden Sie es wahrscheilich irgendwie so ähnlich machen.
-
     |> SubtopicAnnouncement
         Ausgabekonfiguration einer Turingmaschine
-
     Die Funktion $\hat{\delta}$ bildet aus einer Konfiguration die
     Folgekonfiguration. Wir definieren nun
 
@@ -281,10 +277,8 @@
     erreichte Konfiguration bezeichnen wir mit $\hat{M}(x)$. Falls nie
     ein Endzustand erreicht wird (die Turingmaschine also endlos
     läuft), ist $\hat{M}(x)$ `undefined`.
-
     |> TopicAnnouncement
         Sprachen entscheiden
-
     Ein _Entscheidungsproblem_ ist eine Funktion
     $P : \Sigma^* \rightarrow \{\texttt{true}, \texttt{false}\}$,
     beispielsweise: _gegeben ein Wort, stellt dieses Wort ein korrektes
@@ -341,10 +335,8 @@
 
     In beiden Definition verlangen wir natürlich, dass $\Sigma$ das
     Eingabealphabet der Turingmaschine ist.
-
     |> TopicAnnouncement
         Funktionen berechnen
-
     Oft wollen wir nicht nur eine Sprache $L \subseteq \Sigma^*$
     entscheiden, sondern eine Funktion
     $g: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnen. Mit einer
@@ -382,7 +374,6 @@
                 In der Endkonfiguration $\hat{M}(x)$ steht auf dem
                 Arbeitsband das Wort $g(x) \in \Sigma_2^*$ und der Kopf
                 steht ganz links, also $\hat{M}(x) = \qaccept{} g(x)$.
-
     |> TopicAnnouncement
         Turingmaschinen und formale Grammatiken
 

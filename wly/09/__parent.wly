@@ -37,10 +37,8 @@
     modellieren zu können. Dennoch: in diesem Kapitel beschränken wir
     uns auf die Resource _Zeit_, und daher sind Turingmaschinen das
     Modell der Wahl.
-
     |> TopicAnnouncement
         Zeitkomplexitätsklassen
-
     Wir beschränken uns der Einfachheit halber auf das Eingabealphabet
     $\Sigma = \{0,1\}$ und auf Entscheidungsprobleme, wo uns also nur
     eine Ja/Nein-Antwort interessiert.
@@ -98,7 +96,6 @@
         *($k$-Band zu $2$-Band; ohne Beweis).* Sei
         $t: \N \rightarrow \N$. Dann gilt
         $\TIME_k(t) \subseteq \TIME_2(t \log t)$.
-
     |> SubtopicAnnouncement
         Die Klasse P und der Begriff der Effizienz
 

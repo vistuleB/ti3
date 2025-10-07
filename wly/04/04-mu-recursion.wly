@@ -21,10 +21,8 @@
     immer, wie oft wir eine Tätigkeit wiederholen müssen, bis wir
     fertig sind, und ob wir überhaupt jemals fertig werden. Sie kennen
     vielleicht die Collatz-Vermutung.
-
     |> TopicAnnouncement
         Die Collatz-Vermutung
-
     Wir definieren eine Funktion $f: \N_+ \rightarrow \N_+$ wie folgt:
 
     \begin{align*}
@@ -79,10 +77,8 @@
     zahlreichen Lösungsversuchung widersetzt und demonstriert
     eindrucksvoll, dass auch mathematische Probleme mit sehr einfacher
     Formulierung extrem schwierig sein können.
-
     |> TopicAnnouncement
         While-Schleifen
-
     Eine Einschränkung primitiv-rekursiver Funktionen ist also, dass
     wir immer vor der Schleife angeben müssen, wie oft diese
     durchlaufen werden soll. Es gibt also keine `while`-Schleifen.

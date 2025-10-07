@@ -78,10 +78,8 @@
 
         wobei $\epsilon$ die leere Folge (mit 0 Gliedern) bezeichnet.
         Zeigen Sie $\N^* \approx \N$.
-
     |> TopicAnnouncement
         Rationale Zahlen
-
     Ich will Sie nun davon überzeugen, dass $\Q \approx \N$ ist, dass
     es also "gleich viele rationale wie natürliche Zahlen" gibt. Ich
     beginne mit etwas Einfacherem:
@@ -187,10 +185,8 @@
         $(x,1)$ der Zahl $\frac{x}{1}$ entsprechen, und das ist ja ein
         gekürzter Bruch.
         |> QED
-
     |> TopicAnnouncement
         Endliche Strings
-
     Erinnern wir uns an $\{0,1\}^*$, die Menge aller endlichen
     Bitstrings. Die Menge ist ganz klar unendlich, weil sie zum
     Beispiel $1, 11, 111, 1111, \dots$ enthält. Ist sie _abzählbar_

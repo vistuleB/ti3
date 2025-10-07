@@ -84,10 +84,8 @@
             \end{align*}
 
         Dies ist ebenfalls in NP.
-
         |> TopicAnnouncement
             Finden versus Entscheiden
-
         Sei $G = (V,E)$ ein Graph. Eine Menge $I \subseteq V$ heißt
         _unabhängig_, wenn es keine Kante $\{u,v\} \in E$ gibt mit
         $u,v \in I$.

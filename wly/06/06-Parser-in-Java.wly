@@ -47,10 +47,8 @@
     Oder den Ausdruck umformen von Infix-Notation zu Präfixnotation,
     also`(* (+ 31 402) 83)`. All dies wird sehr einfach sein, sobald
     wir den Ableitungsbaum als Datenstruktur vorliegen haben.
-
     |> TopicAnnouncement
         Eine Datenstruktur für Ableitungsbäume
-
     Für meine Implementierung in Java erschaffe ich für jedes
     Nichtterminal $X$ ein Interface und für jede Produktionsregel
     $X \rightarrow \alpha$ eine Klasse, die das Interface $X$

@@ -47,8 +47,7 @@
         nicht.
         |> QED
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Betrachten wir die Grammatik
 
         \begin{align*}
@@ -328,8 +327,7 @@
         Detail erklärt.
         |> QED
 
-    |> Statement
-        title=*Beispiel*
+    |> Example
         Wir betrachten die Sprache
 
         \begin{align*}
