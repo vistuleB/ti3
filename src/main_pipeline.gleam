@@ -72,6 +72,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
       dl.rename(#("WriterlyCodeBlock", "pre")),
+      dl.rename_with_attributes(#("Theorem", "Statement", [#("title", "*Theorem*")])),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),
       dl.append_attribute__batch([
