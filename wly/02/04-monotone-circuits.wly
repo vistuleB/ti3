@@ -79,7 +79,7 @@
     monotonen Funktion $x$. Allerdings können wir folgendes beweisen:
 
     |> Theorem
-        handle=zu-jeder
+        handle=theorem-monotone-zu-jeder
         Zu jeder monotonen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$
         gibt es einen monotonen Schaltkreis (also ohne NOT-Gates), der
         $f$ berechnet.
@@ -180,6 +180,7 @@
         einer Wahrheitstabelle einen Schaltkreis bauen:
 
         |> Theorem
+            handle=theorem-zu-jeder
             Zu jeder Booleschen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$
             gibt es einen Schaltkreis $C$, der $f$ berechnet.
 
@@ -229,8 +230,8 @@
             Zahl $n$ bereits im Theorem vorkommt. Wir formulieren sie also
             nun so um:
 
-            |> Statement
-                title=*(Theorem 1.4.4, alternative Formulierung)*
+            |> Theorem
+                *(Theorem >>theorem-zu-jeder, alternative Formulierung)*
                 Für jede natürliche Zahl $n$ gilt: zu jeder Booleschen
                 Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen
                 Schaltkreis $C$, der $f$ berechnet.
@@ -392,11 +393,11 @@
     Diesen "hellblauen" Beweis haben wir ja bereits in der Vorlesung
     geführt. Ich habe ihn hier wiederholt und in größerem Detail
     besprochen, um auf verschiedene formale Aspekte der Beweisführung
-    einzugehen. Wenden wir uns jetzt dem Beweis von Theorem >>zu-jeder
+    einzugehen. Wenden wir uns jetzt dem Beweis von Theorem >>theorem-monotone-zu-jeder
     zu.
 
     |> Highlight
-        title=*Theorem >>zu-jeder, nochmals.*
+        title=*Theorem >>theorem-monotone-zu-jeder, nochmals.*
         Zu jeder monotonen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$
         gibt es einen monotonen Schaltkreis (also ohne NOT-Gates), der
         $f$ berechnet.

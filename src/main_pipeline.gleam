@@ -247,6 +247,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.handles_substitute_and_fix_nonlocal_id_links(#("path", "a", "a", [], [])),
       dl.rearrange_links__batch([
         #("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>"),
+        #("(Theorem <a href=1>_1_</a>", "(<a href=1>Theorem _1_</a>"),
         #("Übungsaufgabe <a href=1>_1_</a>", "<a href=1>Übungsaufgabe _1_</a>"),
         #("Aufgabe <a href=1>_1_</a>", "<a href=1>Aufgabe _1_</a>"),
         #("Lemma <a href=1>_1_</a>", "<a href=1>Lemma _1_</a>"),

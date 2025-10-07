@@ -107,8 +107,8 @@
     das folgende Ergebnis:
 
     |> Statement
-        handle=regex-to-grammar
         title=*Lemma*
+        handle=regex-to-grammar
         Die von einem regulären Ausdruck $R$ beschriebene Sprache $L(R)$
         ist regulär.
 

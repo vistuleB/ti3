@@ -277,7 +277,8 @@
     genial.
 
     |> Statement
-        title=*Lemma (2-for-3 Adder)*
+        title=*Lemma*
+        *(2-for-3 Adder)*
         Es gibt einen Schaltkreis mit $O(n)$ Gates, Tiefe 2 und Fan-In
         2, der als Input drei $n$-stellige Binärzahlen $x,y,z$ nimmt und
         zwei $n+1$-stellige Binärzahlen $u, v$ ausgibt, so dass
@@ -441,7 +442,8 @@
         Verteilungen über Schaltkreise.
 
         |> Statement
-            title=*Definition (Signalstärke)*
+            title=*Definition*
+            *(Signalstärke)*
             Sei $\mathcal{C}$ eine Verteilung über Schaltkreise mit
             Input-Variablen $x_1,\dots,x_n$. Wir sagen, dass $\mathcal{C}$
             _Signalstärke mindestens $\delta$_ hat, wenn

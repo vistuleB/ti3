@@ -189,9 +189,9 @@
     sein, wenn an Stelle $b$ ein Carry nach $b+1$ rausgeschickt wird,
     falls eines von $a-1$ nach $a$ reingeschickt wird.
 
-    |> Statement
-        title=*Definition (Carry propagate / generate für Intervalle)*
-        (Carry propagate / generate für Intervalle) Sei
+    |> Definition
+        *(Carry propagate / generate für Intervalle)*
+        Sei
         $I = \{a,a+1, \dots, b\}$ ein Intervall natürlicher Zahlen. Die
         Werte $p_I$ und $g_I$ sind wie folgt definiert:
 
