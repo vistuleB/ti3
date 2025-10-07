@@ -103,7 +103,7 @@
         nicht klar sein sollte).
 
         |> Remark
-            title=*Behauptung 1.*
+            *Behauptung 1.*
             $g^{-1}(a)$ ist definiert für jedes $a \in A'$ .
 
         |> Proof
@@ -119,7 +119,7 @@
         nun: $h$ ist wohldefiniert. Ist es injektiv?
 
         |> Remark
-            title=*Behauptung 2.*
+            *Behauptung 2.*
             $h$ ist injektiv.
 
         |> Proof
