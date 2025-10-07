@@ -273,8 +273,7 @@
     effizienten Algorithmus für $L_2$, dann können wir wie in
     `is_in_L1(x)` oben skizziert $L_1$ effizient entscheiden. Formal:
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Wenn $L_1 \leq_p L_2$ ist und $L_2 \in {\rm P}$, dann auch
         $L_1 \in {\rm P}$.
 

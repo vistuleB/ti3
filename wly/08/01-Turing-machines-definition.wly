@@ -439,8 +439,7 @@
         $\delta(q,\square)$ entspricht. Es sollte nun klar sein, dass
         folgendes gilt:
 
-        |> Statement
-            title=*Beobachtung*
+        |> Observation
             Wenn $\hat{\delta}^{(i)} (uqv) = u'q'v'$ gilt, die
             Turingmaschine also in $i$ Schritten von Konfiguration $uqv$
             nach $u'q'v'$ übergeht, dann gilt in der gerade entwickelten

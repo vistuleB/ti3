@@ -80,8 +80,7 @@
         \qstart \stackrel{\alpha}{\rightarrow} q \}
         $$
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Sei $M = (\Sigma, Q, \qstart, F, \delta)$ ein
         nichtdeterministischer endlicher Automat. Dann gibt es eine
         reguläre Grammatik $G$ mit $L(G) = L(M)$.

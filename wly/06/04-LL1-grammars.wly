@@ -426,8 +426,7 @@
         &=\{c, bb, b, ac, ab\}
         \end{align*}
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         *- Wie man $\First_k(\alpha)$ berechnet.* Sei eine Wortform
         $\alpha$ gegeben, also $\alpha \in (\Sigma \cup N)^*$. Wir
         berechnen $\First_k(\alpha)$, indem wir als erstes $\alpha$
@@ -477,8 +476,7 @@
     Die erste Idee ist, dass wir für $\First_k(X)$ eine Gleichung
     schreiben können, die $(\ref{first-k-wortform})$ verwendet.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Sei $X$ ein Nichtterminal und
 
         \begin{align*}
@@ -604,8 +602,7 @@
     $X \in N$, und somit werden die Mengen $\First_{k}^{(d)}(X)$ für
     alle $d$ von nun an gleich bleiben.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Falls $\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$ für alle
         $X \in N$, dann gilt
 

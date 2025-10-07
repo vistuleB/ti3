@@ -86,8 +86,7 @@
     es also "gleich viele rationale wie natürliche Zahlen" gibt. Ich
     beginne mit etwas Einfacherem:
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Es gibt eine injektive Funktion $f : \Q \rightarrow \N$.
 
     |> Proof
@@ -119,8 +118,7 @@
     Dies ist leider keine Bijektion: das Paar $(6,9)$ beispielsweise
     wird nie vorkommen, weil $\frac{6}{9}$ nicht gekürzt ist.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Es gibt eine injektive Funktion $g: \N \rightarrow \Q$.
 
     |> Proof

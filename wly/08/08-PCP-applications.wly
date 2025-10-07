@@ -189,8 +189,7 @@
     liefert uns jeder Entscheidungsalgorithmus für $L_2$ unmittelbar
     einen Entscheidungsalgorithmus für $L_1$:
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und $L_2$
         entscheidbar ist, dann ist auch $L_1$ entscheidbar.
 
@@ -223,8 +222,7 @@
     interessiert, zu zeigen, was _nicht möglich_ ist, und wenden daher
     häufiger das Kontrapositiv der Behauptung an:
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und $L_1$
         unentscheidbar ist, dann ist auch $L_2$ unentscheidbar.
 

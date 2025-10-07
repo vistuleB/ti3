@@ -27,8 +27,7 @@
                 src=img/09-complexity-theory/np-examples/not-3-colorable.svg
             Dieser Graph ist nicht 3-färbbar
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         `3-Colorability`{sc} ist in NP.
 
     |> Proof

@@ -76,8 +76,7 @@
     von Terminalen, eventuell ganz am Schluss gefolgt von einem
     Nichtterminal. Halten wir diese erste Beobachtung formal fest.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Sei $G = (\Sigma, N, P, S)$ eine reguläre Grammatik und
         $S \Rightarrow^* \alpha$ eine Ableitung einer Wortform
         $\alpha \in (\Sigma \cup N)^*$. Dann hat $\alpha$ die Form $y X$
@@ -304,8 +303,7 @@
     Wir berechnen nun $N_{\geq k}$ für steigende $k$, bis keine
     weitere Veränderung eintritt.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Wenn $N_{k+1}(X) = N_k(X)$, dann ist
         $N_k(X) = N_{k+1}(X) = N_{k+2}(X)= \dots$
 

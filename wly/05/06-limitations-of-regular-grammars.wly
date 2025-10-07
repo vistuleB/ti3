@@ -182,8 +182,7 @@
         und $\beta \gamma$ entweder beide in $L$ oder beide nicht in $L$
         sind.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Sei $L$ die vom endlichen Automaten $M$ akzeptierte Sprache.
         Wenn $\alpha \equiv_M \beta$ gilt, dann auch
         $\alpha \equiv_L \beta$.
@@ -230,8 +229,7 @@
         $\alpha_1, \alpha_2, \dots \in \Sigma^*$; dies ist
         möglicherweise unendlich.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Sei $M$ ein endlicher Automat von $L$ die von ihm akzeptierte
         Sprache. Dann ist der Index von $L$ höchstens die Anzahl $|Q|$
         von Zuständen. Im Umkehrschluss heißt das: wenn $L$ unendlichen

@@ -201,8 +201,7 @@
     $a\textcolor{darkgray}{cabaz}$. Da könnten wir ja gleich
     $a \Pets{} Y$ reduzieren.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Die Reduktion $XYa \Pets{} XYY$ kann nicht richtig sein, weil
         $XYY$ nie als Präfix in einer Rechtsableitung vorkommen kann.
         Genauer gesagt: es gibt kein $w \in \Sigma^*$, so dass

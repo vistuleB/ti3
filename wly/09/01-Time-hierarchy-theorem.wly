@@ -130,8 +130,7 @@
     $\enc(M)$, $1^b$, $0$ und $x$ zerlegen. Die $0$ dient dazu, das
     "Budget" $1^b$ vom "inneren Eingabewort" $x$ abzugrenzen.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         $\bhalt \in \TIME_{k+3}(n)$.
 
     |> Proof

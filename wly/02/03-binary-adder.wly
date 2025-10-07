@@ -250,8 +250,7 @@
     gilt, wir also die Carrys direkt ablesen, zweitens wir die
     $g_{[a,b]}$ bequem rekursiv berechnen können:
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Wenn wir $[a,b] = [a,i] \cup [i+1,b]$ schreiben für
         $a \lt i \lt b$, dann gilt
 

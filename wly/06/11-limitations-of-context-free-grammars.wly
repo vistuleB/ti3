@@ -270,8 +270,7 @@
     Allgemeinen keine kontextfreie Sprache. Das Gegenbeispiel haben wir
     schon fast gesehen:
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Der Schnitt $L_1 \cap L_2$ zweier kontextfreier Sprachen ist im
         Allgemeinen _nicht_ kontextfrei. Ein Beispiel ist
 
@@ -290,8 +289,7 @@
         genau diejenige Sprache, für die wir oben gezeigt haben, dass
         sie nicht kontextfrei ist.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Das Komplement $L$ einer kontextfreien Sprache ist im
         Allgemeinen _nicht_ kontextfrei. \\ Warum? Wenn er es wäre, dann
         wäre mit Hilfe von Punkt 1 auch

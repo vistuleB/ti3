@@ -194,8 +194,7 @@
     $C$ eine _Funktion_ $f_C : \{0,1\}^n \to \{0,1\}^m$ berechnet. Oft
     schreiben wir einfach $C : \{0,1\}^n \to \{0,1\}^m$.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Ein Schaltkreis $C$ mit $n$ Input-Gates und $m$ Output-Gates
         berechnet eine Funktion $f_C : \{0,1\}^n \to \{0,1\}^m$
 

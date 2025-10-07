@@ -297,8 +297,7 @@
     mal durchlaufen. Also "ungefähr" $g n^3 / 6$ und "noch ungefährer"
     $g n^3$. Also:
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Sei $n = |w|$ die Länge des Eingabewortes und $g$ die Anzahl der
         Produktionen der Form $X \rightarrow YZ$. Dann ist die Laufzeit
         des CYK-Algorithmus proportional zu $g \cdot n^3$.

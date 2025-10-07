@@ -90,8 +90,7 @@
         Eine Sprache ist in $\SPACE(s)$, wenn es eine Turingmaschine
         gibt, die in Platz $s$ läuft und sie entscheidet.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Wenn $M$ in Platz $s(n)$ läuft, dann hat $M$ Laufzeit
         $2^{O(s(n))}$.
 

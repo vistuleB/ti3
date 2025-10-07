@@ -12,8 +12,7 @@
     Zahlen gibt als natürliche; dass also $\R$ nicht abzählbar ist.
     Aber eins nach dem anderen.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Es gilt $\R \approx (0,1)$, wobei $(0,1)$ das offene
         Einheitsintervall ist.
 
@@ -214,8 +213,7 @@
 
     also $f^{-1}(1/7) = (2/7, 1/7)$.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         Die Funktion $f^{-1}$ bildet
 
         |> ul

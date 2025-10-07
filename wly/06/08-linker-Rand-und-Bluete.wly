@@ -238,8 +238,7 @@
 
         besitzt.
 
-    |> Statement
-        title=*Beobachtung*
+    |> Observation
         $\hat{G}$ erzeugt die Sprache $\Front(G)$.
 
     |> Statement
