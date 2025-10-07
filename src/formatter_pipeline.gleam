@@ -144,7 +144,8 @@ pub fn formatter_pipeline(
       // dl.rename_if_has_key_value(#("Remark", "Proof", "title", "*Beweis.*")),
       // dl.rename_if_has_key_value(#("Statement", "Theorem", "title", "*Theorem*")),
       // dl.rename_if_has_key_value(#("Statement", "Observation", "title", "*Beobachtung*")),
-      dl.rename_if_has_key_value(#("Statement", "Example", "title", "*Beispiel*")),
+      // dl.rename_if_has_key_value(#("Statement", "Example", "title", "*Beispiel*")),
+      dl.rename_if_has_key_value(#("Statement", "Exercise", "title", "*Übungsaufgabe*")), // 6-11, 9-5, 9-7
       dl.prepend(#("Chapter", "WriterlyBlankLine", [])),
       dl.prepend(#("Sub", "WriterlyBlankLine", [])),
       dl.add_between(#("p", "p", "WriterlyBlankLine", [])),

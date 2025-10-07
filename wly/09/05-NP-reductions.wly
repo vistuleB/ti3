@@ -348,8 +348,7 @@
         $\alpha(u) = 1$, und $\alpha$ erfüllt $C$ .
         |> QED
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Zeigen Sie `Independent Set $\leq_p$ SAT`{sc}. Also: Gegeben
         einen Graphen $G$ und eine Zahl $k \in \N$, zeigen Sie, wie man
         die Aussage _$G$ hat eine unabhängige Menge der Größe $k$_ als
@@ -472,16 +471,14 @@
     , nennt man in Abgrenzung dazu _Karp-Reduktion_ nach Richard Karp,
     ein weiterer NP-Vater.
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Geben Sie einen "richtigen" Beweis für
         |> span
             data-ref=theorem-ham-cycle-to-path
             class=reference
         , also eine Karp-Reduktion.
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Zeigen Sie `Hamilton Path $\leq_p$ Hamilton Cycle`{sc}. Wenn es
         Ihnen einfacher scheint, geben Sie erst einmal eine
         Cook-Reduktion.

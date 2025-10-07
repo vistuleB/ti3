@@ -71,6 +71,7 @@
         Streaming-Algorithmen](https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html).
 
     |> Definition
+        handle=definition-space-bounded
         *($\SPACE(s)$).* Sei $M$ eine Turingmaschine mit dezidiertem
         Eingabeband 1 und Ausgabeband $k$. Die _Größe einer
         Konfiguration_ ist die Größe der Bandinhalte der Arbeitsbänder.
@@ -102,13 +103,10 @@
         Schritte dauern.
         |> QED
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Zeigen Sie, dass wir die Bedingung 1 aus
-        |> span
-            data-ref=definition-space-bounded
-            class=reference
-        \ weglassen können, zumindest wenn $s(n)$ zeitkonstruierbar ist.
+        Definition >>definition-space-bounded
+        weglassen können, zumindest wenn $s(n)$ zeitkonstruierbar ist.
 
     |> SubtopicAnnouncement
         Die wichtigsten Platzklassen: L und PSPACE
@@ -129,13 +127,11 @@
     die Menge aller Probleme, die man mit _logarithmischem
     Speicherplatz_ entscheiden kann. Man nennt $L$ auch LogSpace.
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$ gilt. Fangen
         Sie zum Beispiel an,`3-Colorability $\in$ PSPACE`{sc} zu zeigen.
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Sei `Palindrome`{sc} die Sprache aller Palindromwörter mit
         Trennungszeichen in der Mitte, also
 
@@ -145,8 +141,7 @@
 
         Zeigen Sie, dass `Palindrome $\in$ L`{sc}
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Zeigen Sie, dass die Sprache aller wohlgeformten
         Klammerausdrücke in L ist, also die Sprache über $\{a,b\}$ mit
 
@@ -154,8 +149,7 @@
         S&\rightarrow \epsilon \ | \ aSbS \ .
         \end{align*}
 
-    |> Statement
-        title=*Übungsaufgabe*
+    |> Exercise
         Seien $f: \Sigma_1 \rightarrow \Sigma_2$ und
         $g: \Sigma_2 \rightarrow \Sigma_3$ zwei Funktionen. Zeigen Sie,
         dass, falls $f$ und $g$ in logarithmischem Platz berechnet
