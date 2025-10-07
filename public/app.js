@@ -113,8 +113,8 @@ const bottomMenuHrMarginTopInRem = () => {
 };
 
 const bottomMenuHrMarginBottomInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 1.1;
+  if (screenWidth <= MOBILE_MAX_WIDTH) return 0.85;
+  if (screenWidth <= TABLET_MAX_WIDTH) return 1.2;
   if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.3;
   return 1.4;
 };
@@ -134,8 +134,6 @@ const bottomMenuPaddingXInRem = () => {
 };
 
 const bottomMenuPaddingYInRem = () => {
-  if (screenWidth <= MOBILE_MAX_WIDTH) return 0;
-  if (screenWidth <= TABLET_MAX_WIDTH) return 0;
   return 0;
 };
 
@@ -146,8 +144,8 @@ const bottomMenuLeft = () => {
 
 const bottomMenuMargin = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return "0 auto 0.8em";
-  if (screenWidth <= TABLET_MAX_WIDTH) return "0 auto 1.1em";
-  if (screenWidth <= LAPTOP_MAX_WIDTH) return "0 auto 1.3em";
+  if (screenWidth <= TABLET_MAX_WIDTH) return "0 auto 1.3em";
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return "0 auto 1.4em";
   return "0";
 };
 

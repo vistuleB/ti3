@@ -489,7 +489,7 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
 
 #bottom-prev-page-tooltip,
 #bottom-next-page-tooltip {
-  bottom: 1.9em;
+  bottom: 1.95em;
 }
 
 #bottom-prev-page-tooltip {
