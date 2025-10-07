@@ -92,6 +92,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     "Exercise",
     "Example",
     "Highlight",
+    "MathBlock",
     "Observation",
     "Proof",
     "QED", 

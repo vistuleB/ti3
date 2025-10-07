@@ -46,9 +46,8 @@
     |> Proof
         Wir zeigen den Beweis schematisch anhand von $1$
         -Band-Turingmaschinen. Für $k$ -Bandmaschinen geht es fast genau
-        so. Erinnern Sie sich an die Definition der 
-        [_Konfiguration_](>>def-TM-configuration)
-        einer Turing-Maschine.
+        so. Erinnern Sie sich an die Definition der
+        [_Konfiguration_](>>def-TM-configuration) einer Turing-Maschine.
         Formal war das ein Wort
         $C \in \Gamma^* \times Q \times \Gamma^*$. Ich zeige hier
         schematisch, wie aus einer Konfiguration per $\hat{\delta}$ die
@@ -122,16 +121,14 @@
         $\tilde{\delta} : \{0,1\}^{4l} \rightarrow \{0,1\}^l$. Wir
         können dafür einen Schaltkreis der Größe
         $O(2^l) = O(|\Gamma \cup Q|^4)$ bauen: per Wahrheitstabelle wird
-        er etwas größer; mit der Lupanov-Schranke (
-        |> span
-            data-ref=theorem-lupanov
-            class=reference
-        ) kriegen Sie $O(2^l)$. Wir haben nun also einen Schaltkreis
-        $\Delta$, der $\tilde{\delta}$ berechnet. Seine Größe ist
-        $O(|\Gamma \cup Q|^4)$. Da wir $|Q|$ und $|\Gamma|$ als konstant
-        betrachten, da es nicht von der Eingabegröße $n=|x|$ abhängt,
-        können wir sogar behaupten: die Größe von $\Delta$ ist $O(1)$.
-        Wir schalten jetzt $S$ Kopien von $\Delta$ parallel, um
+        er etwas größer; mit der Lupanov-Schranke (Theorem
+        >>theorem-lupanov) kriegen Sie $O(2^l)$. Wir haben nun also
+        einen Schaltkreis $\Delta$, der $\tilde{\delta}$ berechnet.
+        Seine Größe ist $O(|\Gamma \cup Q|^4)$. Da wir $|Q|$ und
+        $|\Gamma|$ als konstant betrachten, da es nicht von der
+        Eingabegröße $n=|x|$ abhängt, können wir sogar behaupten: die
+        Größe von $\Delta$ ist $O(1)$. Wir schalten jetzt $S$ Kopien von
+        $\Delta$ parallel, um
         $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ zu
         berechnen, also aus einer gegebenen Konfiguration die
         Folgekonfiguration:

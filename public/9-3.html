@@ -40,15 +40,16 @@
     </div>
     <p class="main-column">
       In
-      <span
-        data-ref="nondet-tm-to-det"
-        class="reference"
-      ></span>
-      haben wir gesehen, dass jede nichtdeterministische
-      Turing-Maschine durch eine deterministische simuliert werden kann,
-      wobei der Zeit-Overhead exponentiell ist. Hier werden wir formal
-      nicht-deterministische Zeitklassen definieren und eine leicht
-      andere, zugänglichere Definition einführen.
+      <a
+        href="./8-3.html#_33_hgi_"
+        class=""
+      >Theorem 8.3.5</a>
+      haben wir gesehen, dass jede
+      nichtdeterministische Turing-Maschine durch eine deterministische
+      simuliert werden kann, wobei der Zeit-Overhead exponentiell ist.
+      Hier werden wir formal nicht-deterministische Zeitklassen
+      definieren und eine leicht andere, zugänglichere Definition
+      einführen.
     </p>
     <div class="well statement out">
       <p>
@@ -309,7 +310,10 @@
         schreibt. Flicken Sie diese beiden Fehler!
       </p>
     </div>
-    <div class="well statement out">
+    <div
+      id="_41_hgi_"
+      class="well statement out"
+    >
       <p>
         <b>Theorem 9.3.5 
           (Zertifikatmaschinen simulieren NDTM).</b>
@@ -343,19 +347,20 @@
         der
         Aktionen, die die Turingmaschine nun ausführen könnte. Wie im
         Beweis von
-        <span
-          data-ref="nondet-tm-to-det"
-          class="reference"
-        ></span>können wir $M$ so umprogrammieren, dass sie die selbe Sprache
-        entscheidet, aber $|\delta(q,x_1,x_2,\dots,x_k)| = 2$ gilt,
-        außer für
+        <a
+          href="./8-3.html#_33_hgi_"
+          class=""
+        >Theorem 8.3.5</a>
+        können wir $M$ so
+        umprogrammieren, dass sie die selbe Sprache entscheidet, aber
+        $|\delta(q,x_1,x_2,\dots,x_k)| = 2$ gilt, außer für
         <span class="nowrap">$q \in \{\texttt{accept}, \texttt{reject}\}$.</span>
-        Wir
-        wählen uns zwei beliebige Symbole in $\Sigma$ und geben ihnen in
-        diesem Beweis die Spitznamen $1$ und
+        Wir wählen uns
+        zwei beliebige Symbole in $\Sigma$ und geben ihnen in diesem
+        Beweis die Spitznamen $1$ und
         <span class="nowrap">$2$.</span>
-        Der Zertifikatmaschine
-        $M'$ geben wir zusätzlich zu den Bändern von $M$ ein weiteres
+        Der Zertifikatmaschine $M'$
+        geben wir zusätzlich zu den Bändern von $M$ ein weiteres
         Zertifikatband (das wir nun als das
         <i>zweite</i>
         Band bezeichnen).
@@ -433,11 +438,13 @@
       Nach Definition ist eine Sprache $L$ ist in NP, wenn es eine
       nichtdeterministische Turingmaschine mit polynomieller Laufzeit
       $t(n) = n^k$ gibt, die $L$ entscheidet. Nach
-      <span
-        data-ref="theorem-certificate-simulates-nondet"
-        class="reference"
-      ></span>also, wenn es eine Zertifikatmaschine $M$ gibt, die $L$ in Zeit $t$
-      entscheidet. Wenn also
+      <a
+        href="./9-3.html#_41_hgi_"
+        class=""
+      >Theorem 9.3.5</a>
+      also, wenn es eine
+      Zertifikatmaschine $M$ gibt, die $L$ in Zeit $t$ entscheidet. Wenn
+      also
     </p>
     <div class="math-block main-column">
       $$

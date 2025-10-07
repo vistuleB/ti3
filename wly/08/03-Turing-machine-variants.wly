@@ -268,7 +268,6 @@
     wird dann
 
     |> pre
-        class=container
         q, x, _
         r, _, x, >, > 
 
@@ -581,6 +580,7 @@
     indem wir "alles ausprobieren"? Ja, in der Tat!
 
     |> Theorem
+        handle=nondet-tm-to-det
         *(Nichtdeterministische Turingmaschinen
         deterministischsimulieren)* Sei $M$ eine nichtdeterministische
         Turingmaschine. Dann gibt es eine deterministische Maschine $M'$

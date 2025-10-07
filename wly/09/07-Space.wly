@@ -104,9 +104,9 @@
         |> QED
 
     |> Exercise
-        Zeigen Sie, dass wir die Bedingung 1 aus
-        Definition >>definition-space-bounded
-        weglassen können, zumindest wenn $s(n)$ zeitkonstruierbar ist.
+        Zeigen Sie, dass wir die Bedingung 1 aus Definition
+        >>definition-space-bounded weglassen können, zumindest wenn
+        $s(n)$ zeitkonstruierbar ist.
 
     |> SubtopicAnnouncement
         Die wichtigsten Platzklassen: L und PSPACE

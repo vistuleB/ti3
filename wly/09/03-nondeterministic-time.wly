@@ -1,15 +1,12 @@
 |> Sub
     title=Nichtdeterministische Zeit
 
-    In 
-    |> span
-        data-ref=nondet-tm-to-det
-        class=reference
-    \ haben wir gesehen, dass jede nichtdeterministische
-    Turing-Maschine durch eine deterministische simuliert werden kann,
-    wobei der Zeit-Overhead exponentiell ist. Hier werden wir formal
-    nicht-deterministische Zeitklassen definieren und eine leicht
-    andere, zugänglichere Definition einführen.
+    In Theorem >>nondet-tm-to-det haben wir gesehen, dass jede
+    nichtdeterministische Turing-Maschine durch eine deterministische
+    simuliert werden kann, wobei der Zeit-Overhead exponentiell ist.
+    Hier werden wir formal nicht-deterministische Zeitklassen
+    definieren und eine leicht andere, zugänglichere Definition
+    einführen.
 
     |> Definition
         Sei $t: \N \rightarrow \N$. Eine nicht-deterministische
@@ -166,6 +163,7 @@
         schreibt. Flicken Sie diese beiden Fehler!
 
     |> Theorem
+        handle=theorem-certificate-simulates-nondet
         *(Zertifikatmaschinen simulieren NDTM).* Sei
         $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$ eine
         nichtdeterministische Turingmaschine, die die Sprache $L$ in
@@ -185,16 +183,13 @@
 
         Nun bezeichnet $\delta(q, x_1, \dots, x_k)$ also die _Menge_ der
         Aktionen, die die Turingmaschine nun ausführen könnte. Wie im
-        Beweis von 
-        |> span
-            data-ref=nondet-tm-to-det
-            class=reference
-        können wir $M$ so umprogrammieren, dass sie die selbe Sprache
-        entscheidet, aber $|\delta(q,x_1,x_2,\dots,x_k)| = 2$ gilt,
-        außer für $q \in \{\texttt{accept}, \texttt{reject}\}$. Wir
-        wählen uns zwei beliebige Symbole in $\Sigma$ und geben ihnen in
-        diesem Beweis die Spitznamen $1$ und $2$. Der Zertifikatmaschine
-        $M'$ geben wir zusätzlich zu den Bändern von $M$ ein weiteres
+        Beweis von Theorem >>nondet-tm-to-det können wir $M$ so
+        umprogrammieren, dass sie die selbe Sprache entscheidet, aber
+        $|\delta(q,x_1,x_2,\dots,x_k)| = 2$ gilt, außer für
+        $q \in \{\texttt{accept}, \texttt{reject}\}$. Wir wählen uns
+        zwei beliebige Symbole in $\Sigma$ und geben ihnen in diesem
+        Beweis die Spitznamen $1$ und $2$. Der Zertifikatmaschine $M'$
+        geben wir zusätzlich zu den Bändern von $M$ ein weiteres
         Zertifikatband (das wir nun als das _zweite_ Band bezeichnen).
         Sie verfährt nun wie folgt:
 
@@ -243,12 +238,10 @@
 
     Nach Definition ist eine Sprache $L$ ist in NP, wenn es eine
     nichtdeterministische Turingmaschine mit polynomieller Laufzeit
-    $t(n) = n^k$ gibt, die $L$ entscheidet. Nach 
-    |> span
-        data-ref=theorem-certificate-simulates-nondet
-        class=reference
-    also, wenn es eine Zertifikatmaschine $M$ gibt, die $L$ in Zeit $t$
-    entscheidet. Wenn also
+    $t(n) = n^k$ gibt, die $L$ entscheidet. Nach Theorem
+    >>theorem-certificate-simulates-nondet also, wenn es eine
+    Zertifikatmaschine $M$ gibt, die $L$ in Zeit $t$ entscheidet. Wenn
+    also
 
     \begin{align*}
     x \in L \Longleftrightarrow \exists z \in \Sigma^*: M(x,z) = \texttt{accept}

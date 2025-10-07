@@ -284,7 +284,10 @@
       Können wir sie
       schließen?
     </p>
-    <div class="well statement out">
+    <div
+      id="_4_hgi_"
+      class="well statement out"
+    >
       <p>
         <span class="nowrap"><b>Theorem 2.6.2 
             (Lupanov)</b>.</span>
@@ -611,16 +614,18 @@
       </div>
       <p>
         Ich habe keine explizite Formel, um das für $k$ aufzulösen, also
-        setze ich auf gut Glück $k = \log n$ und wir erhalten<span style="color:red">
-          <div class="math-block">
-            $$
-            \begin{align*}
-            (\ref{size-lupanov})&amp;= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
-            &amp;= 2^{2^{\log n}} + \dots
-            \end{align*}
-            $$
-          </div>
-        </span>und wir können gleich aufhören, da der erste Term bereits $2^n$
+        setze ich auf gut Glück $k = \log n$ und wir erhalten
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        (\ref{size-lupanov})&amp;= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
+        &amp;= 2^{2^{\log n}} + \dots
+        \end{align*}
+        $$
+      </div>
+      <p>
+        und wir können gleich aufhören, da der erste Term bereits $2^n$
         ergibt. Das ist zu groß. Wir müssen $k$ also kleiner wählen.
         Nächster Versuch:
         <span class="nowrap">$k := \log n - 1$.</span>

@@ -18,7 +18,7 @@
         `3-Colorability`{sc}.
 
     |> Proof
-        Wir nehmen an, wir hätten einen effizienten AlgorithmUs
+        Wir nehmen an, wir hätten einen effizienten Algorithmus
         `is_satisfiable( $F$)`. Wir verwenden diesen, um einen
         Algorithmus `is_3_colorable` zu entwerfen. Sei nun $G = (V,E)$
         ein Graph und $v_1, \dots, v_n$ seine Knoten. Wir führen $3n$
@@ -253,6 +253,7 @@
     Aussage über die Laufzeit.
 
     |> Definition
+        handle=definition-polynomial-reduction
         *(Polynomialzeitreduktion)*. Seien $L_1 \subseteq \Sigma_1^*$
         und $L_2 \subseteq \Sigma_2^*$ zwei Sprachen. Eine Funktion
         $f: \Sigma_1^* \rightarrow \Sigma_2^*$ heißt
@@ -396,6 +397,7 @@
         enthält?
 
     |> Theorem
+        handle=theorem-ham-cycle-to-path
         `Hamilton Cycle $\leq_p$ Hamilton Path`{sc}
 
     |> Highlight
@@ -464,19 +466,13 @@
     Fachbegriff für das, was unsere obige Funktion `has_hamilton_cycle`
     tut, nennt sich _Cook-Reduktion_, nach Stephen Cook, einem der
     Väter der Klasse NP. Eine Reduktion, die dem strengen
-    Reduktionsbegriff folgt, also 
-    |> span
-        data-ref=definition-polynomial-reduction
-        class=reference
-    , nennt man in Abgrenzung dazu _Karp-Reduktion_ nach Richard Karp,
+    Reduktionsbegriff folgt, also Definition >>definition-polynomial-reduction,
+    nennt man in Abgrenzung dazu _Karp-Reduktion_ nach Richard Karp,
     ein weiterer NP-Vater.
 
     |> Exercise
-        Geben Sie einen "richtigen" Beweis für
-        |> span
-            data-ref=theorem-ham-cycle-to-path
-            class=reference
-        , also eine Karp-Reduktion.
+        Geben Sie einen "richtigen" Beweis für Theorem >>theorem-ham-cycle-to-path,
+        also eine Karp-Reduktion.
 
     |> Exercise
         Zeigen Sie `Hamilton Path $\leq_p$ Hamilton Cycle`{sc}. Wenn es
