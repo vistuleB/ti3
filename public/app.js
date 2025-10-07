@@ -1212,6 +1212,33 @@ const onKeyDown = (e) => {
     case "0":
       window.location.href = "index.html";
       break;
+    case "1":
+      window.location.href = "1-0.html";
+      break;
+    case "2":
+      window.location.href = "2-0.html";
+      break;
+    case "3":
+      window.location.href = "3-0.html";
+      break;
+    case "4":
+      window.location.href = "4-0.html";
+      break;
+    case "5":
+      window.location.href = "5-0.html";
+      break;
+    case "6":
+      window.location.href = "6-0.html";
+      break;
+    case "7":
+      window.location.href = "7-0.html";
+      break;
+    case "8":
+      window.location.href = "8-0.html";
+      break;
+    case "9":
+      window.location.href = "9-0.html";
+      break;
   }
 };
 
