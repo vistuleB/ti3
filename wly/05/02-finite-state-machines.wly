@@ -213,8 +213,10 @@
     |> Exercise
         Zeichnen Sie einen Automaten für die Sprache aller Wörter über
         $\{a,b,c,d\}$, die genau vier $a$ enthalten.
+
     |> TopicAnnouncement
         Endliche Automaten zu regulären Grammatiken
+
     Wenn wir einen endlichen Automaten gegeben haben, dann können wir
     leicht eine entsprechende reguläre Grammatik dazu bauen, indem wir
     alle Pfeile einfach in Produktionen übersetzen. Für den Automaten
@@ -443,8 +445,10 @@
                 src=img/finite-state-automata/finite-state-machine-example-02.svg
 
         und beschreiben Sie die Sprache in eigenen Worten.
+
     |> TopicAnnouncement
         Reguläre Grammatiken zu endlichen Automaten?
+
     Im letzten Abschnitt haben wir gesehen, wie wir zu einem gegebenen
     endlichen Automaten recht einfach eine äquivalente reguläre
     Grammatik schreibne können. Es drängt sich die Frage auf: geht das

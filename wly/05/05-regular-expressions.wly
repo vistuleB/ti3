@@ -211,8 +211,10 @@
         erschlagen. Schreiben Sie nun in der Java-Regex-Syntax einen
         regulären Ausdruck für unsere obige Sprache $L$, wo Sie aber
         neben $a$ alle alphanumerischen Zeichen zulassen.
+
     |> TopicAnnouncement
         Einen regulären Ausdruck für jede reguläre Sprache
+
     Wir beweisen nun das Gegenstück zu Lemma >>regex-to-grammar:
 
     |> Theorem

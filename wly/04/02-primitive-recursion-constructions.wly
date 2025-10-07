@@ -6,8 +6,10 @@
     [`stockpile.py`{codelink}](code/primitive-recursion/stockpile.py)
     zu erklären und werde dann weitere, weniger offensichtliche
     Konstruktionen diskutieren.
+
     |> TopicAnnouncement
         Arithmetische Operationen
+
     Wir haben bereits gesehen, dass wir die Addition per
     ${\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0))$ schreiben
     können. Beachten Sie, dass ich hier die Indizierung immer bei 0
@@ -94,8 +96,10 @@
     {\rm subtractFrom}&= \primrec(\pi_0, \comp(\pred, \pi_0)) \\
     {\rm minus}&= \comp({\rm subtractFrom}, \pi_1, \pi_0)
     \end{align*}
+
     |> TopicAnnouncement
         Boolesche Werte
+
     Die primitive Rekursion stellt uns als "Datentyp" nur die
     natürlichen Zahlen zur Verfügung. Alles andere müssen wir als
     natürliche Zahlen nach einem von uns selbst gewählten Schema
@@ -119,8 +123,10 @@
 
     Auf ähnliche Weise können wir uns nun lessThan, lessEqual, and,
     or, not, ifThenElse konstruieren.
+
     |> TopicAnnouncement
         Wurzel und Suchen im Allgemeinen
+
     Eine größere Herausforderung stellt die ganzzahlige Wurzel
     $x \mapsto \floor{\sqrt{x}}$ dar. Hierfür haben wir keine Formel
     mit $+, *, -$, auch keine schöne rekursive Formel zur Hand. Es
@@ -189,8 +195,10 @@
     \begin{align*}
     {\rm sqrt} = {\rm LargestLessThan} (\pi_0, {\rm iSquareLessEqual})
     \end{align*}
+
     |> TopicAnnouncement
         Paare und Listen
+
     Eine recht stark anmutende Beschränkung primitiv rekursiver
     Funktionen ist die Tatsache, dass wir in der Schleife nur _eine_
     lokale Variable führen dürfen, hier meistens `temp` genannt. Manche

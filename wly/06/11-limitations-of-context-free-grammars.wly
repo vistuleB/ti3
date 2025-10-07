@@ -172,8 +172,10 @@
 
         Also $L = \{1, 11, 1111, 11111111, 1111111111111111, \dots\}$.
         Zeigen Sie, dass $L$ nicht kontextfrei ist.
+
     |> SubtopicAnnouncement
         Mengenoperationen auf kontextfreien Sprachen
+
     Im Kapitel über reguläre Sprachen hatten wir folgende
     Abschlusseigenschaften:
 

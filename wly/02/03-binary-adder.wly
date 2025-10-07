@@ -1,8 +1,10 @@
 |> Sub
     title=Binär-Addierer
 
+
     |> TopicAnnouncement
         Ein Schaltkreis für binäre Addition
+
     Schaltkreise, der zwei Binärzahlen addieren können, finden Sie
     heutzutage wahrscheinlich in jedem besseren Haushaltsgerät (und
     wenn Sie ein gegen Covid-19 geimpfter Verschwörungstheoretiker
@@ -101,8 +103,10 @@
     ist in der Regel nicht gut. Idealerweise streben wir eine Tiefe von
     $\log n$ an (oder wenn wir besonders ambitionert sind und beliebig
     großen Fan-in zulassen, sogar konstante Tiefe $O(1)$ ).
+
     |> TopicAnnouncement
         Carry Look-Ahead
+
     Tiefenmässig hat uns der obige Addierer nicht befriedigt. Das
     Problem ist, dass das Carry im schlimmsten Fall von ganz rechts
     nach ganz links durchrasseln muss, zum Beispiel wenn man
@@ -169,8 +173,10 @@
     Für $n=64$ wie bei zeitgenössischen Rechnern ergibt dies 41664.
     Das ist nicht unerträglich groß, aber auch nicht besonders
     handlich.
+
     |> TopicAnnouncement
         Carry-Lookahead mit $O(n)$ Gates und $O(\log n)$ Tiefe
+
     Effizientere Lösungen beginnen oft mit einer guten Definition. In
     diesem Falle ist das die Verallgemeinerung von _Carry Generate
     $g_i$_ und _Carry Propagate $p_i$_ von Indizes auf Intervalle. Für

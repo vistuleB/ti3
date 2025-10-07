@@ -176,8 +176,10 @@
             Matching. Dies sättigt $A$ oder $B$ und gibt uns somit eine
             injektive Funktion $A \rightarrow B$ oder $B \rightarrow A$.
             |> QED
+
     |> TopicAnnouncement
         Zornsches Lemma, Auswahlaxiom und die axiomatische Mengenlehre
+
     Glauben Sie das, was das Zornsche Lemma besagt? Bei unendlichen
     Mengen verlässt und leider schnell die Intuition, oder schlimmer:
     sie wird trügerisch. Gegen Ende des 19. Jahrhunderts tauchten in

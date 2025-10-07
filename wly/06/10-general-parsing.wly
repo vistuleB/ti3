@@ -56,8 +56,10 @@
     hat kubische Laufzeit $O(n^3)$, was zwar in der theoretischen
     Informatik als _effizient_ durchgeht, in der Praxis leider meist
     unbrauchbar ist.
+
     |> TopicAnnouncement
         Chomsky-Normalform
+
     Eine kontextfreie Grammatik ist in _Chomsky-Normalform_, wenn jede
     Produktion eine der folgenden Formen hat:
 
@@ -133,8 +135,10 @@
     rekursiv täten, dann würden das eine enorme Laufzeit verursachen.
     Der Trick besteht darin, Zwischenergebnisse systematisch zu
     berechnen, um somit Laufzeit zu sparen.
+
     |> TopicAnnouncement
         Der CYK-Algorithmus
+
     Die oben skizzierte Idee ist im CYK-Algorithmus konkretisiert
     (benannt nach John Cocke, Daniel Younger und Tadao Kasami). Für die
     praktische Anwendung ist dieser weniger relevant. Dafür ist er ein

@@ -206,8 +206,10 @@
         Sie, dass $L_3$ eine LL$(k)$ -Grammatik ist. Für welchen Wert
         von $k$? Ist $L_t$ (für im Voraus bekanntes $t$ ) eine LL$(k)$
         -Grammatik? Für welchen Wert von $k$?
+
     |> TopicAnnouncement
         LL$(k)$-Grammatiken parsen
+
     Wir wollen nun erarbeiten, wie wir für eine LL $(k)$ -Grammatik
     einen Parser, also im Prinzip einen deterministischen
     Pushdown-Automaten schreiben können. Wir tasten uns langsam voran.
@@ -367,6 +369,7 @@
     Die rot und fett gedruckte Zeile ist das "Herz" dieses
     Algorithmus. Um den Algorithmus implementieren zu können, müssen
     wir es schaffen, die Menge $\First_k(\beta_i\alpha)$ zu berechnen.
+
     |> TopicAnnouncement
         $\First_k(A)$ und $\First_k(\alpha)$ berechnen.
 

@@ -1,9 +1,11 @@
 |> Sub
     title=Der DK-Automat
 
+
     |> TopicAnnouncement
         Von der Grammatik $\hat{G}$ zu einem nichtdeterministischen
         endlichen Automaten
+
     Um den $LR(0)$-Parser gemäß Algorithmus >>algorithm-LR-parser zu
     implementieren, müssen wir den Test
     $\gamma \stackrel{?}\in \Front(G)$ durchführen und, falls die
@@ -77,8 +79,10 @@
     |> figure
         |> img
             src=./img/context-free/LR/hat-G-to-DK.svg
+
     |> TopicAnnouncement
         Die $a^{m+k}b^m$-Grammatik
+
     Wir illustrieren obige Vorgehensweise nun anhand der Grammatik
 
     \begin{align*}
@@ -134,6 +138,7 @@
             src=./img/context-free/LR/dk-automaton-5-nea-aaabb/09.svg
             src=./img/context-free/LR/dk-automaton-5-nea-aaabb/10.svg
             src=./img/context-free/LR/dk-automaton-5-nea-aaabb/11.svg
+
     |> TopicAnnouncement
         Der nichtdeterministische DK-Automat
 
@@ -177,8 +182,10 @@
         haben, welche Produktion $Y \rightarrow ?$ wir anwenden wollen.
         Der Startzustand ist $\boxed{S}$. Jeder Zustand der Form
         $\boxed{X \step{} \beta .}$ ist ein akzeptierender Zustand.
+
     |> TopicAnnouncement
         Den NDK-Automaten deterministisch machen
+
     Wir wissen ja bereits, wie man einen nichtdeterministischen
     Automaten deterministisch macht: die Potenzmengenkonstruktion aus
     Kapitel >>nfsm-to-fsm. Hier können wir diese leider nicht direkt
@@ -231,6 +238,7 @@
     einen Todeszustand wechselt, aus dem er nicht wieder herauskommt
     und der nicht akzeptierend ist. Dies ist übersichtlicher, als
     überall Todeskanten hinzuzufügen.
+
     |> TopicAnnouncement
         Den DK-Automaten verwenden
 
@@ -316,8 +324,10 @@
         Fronten von $G$, und $\sigma v$ besteht nur aus Terminalen. Das
         heißt, dass Punkt 2 der Schlussfolgerung nicht gilt.
         |> QED
+
     |> TopicAnnouncement
         LR(1)-Grammatiken
+
     Hier ist der nichtdeterministische Automat für $G$ mit Lookahead
     1.
 

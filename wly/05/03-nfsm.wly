@@ -206,8 +206,10 @@
         $L_5 \cup L_7$, also die Strings aus 1, deren Länge durch 5 oder
         durch 7 teilbar ist. Zeichnen Sie nun einen
         nichtdeterministischen endlichen Automaten für $L_5 \cup L_7$.
+
     |> TopicAnnouncement
         Nichtdeterministische endliche Automaten deterministisch machen
+
     Wir werden nun zeigen, dass man zu jedem nichtdeterministischen
     Automaten $M$ einen äquivalenten deterministischen Automaten $M'$
     bauen kann. Bevor wir eine allgemeine Konstruktion zeigen, fragen

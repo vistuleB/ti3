@@ -358,8 +358,10 @@
         *Hinweis:* Die Aussage _"$I$ ist eine unabhängige Menge von $G$_
         ist leicht darzustellen als CNF-Formeln. Die Aussage _" $I$ hat
         Größe $k$"_ ist schwieriger. Sie müssen quasi _zählen_.
+
     |> SubtopicAnnouncement
         `Hamilton Path`{sc}und `Hamilton Cycle`{sc}
+
     Sei $G = (V,E)$ ein Graph. Ein _Hamiltonscher Kreis_ ist ein
     Kreis, der durch alle Knoten geht. Es muss ein _Kreis_ sein;
     Kantenzüge, die einen Knoten mehrmals durchlaufen, sind also nicht

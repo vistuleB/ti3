@@ -2,8 +2,10 @@
     handle=turing-variants
     title=Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
 
+
     |> TopicAnnouncement
         Turingmaschinen mit mehreren Bändern
+
     Im letzten Teilkapitel ist Ihnen bestimmt aufgefallen, dass es
     auffallend lästig ist, selbst für einfache Sprachen wie
 
@@ -111,8 +113,10 @@
     dann bauen wir sie per Konvention so, dass sie ein designiertes
     Ausgabeband hat, auf dem nach Abschluss der Berechnung das
     Ausgabewort $f(x)$ steht.
+
     |> TopicAnnouncement
         Einband-Maschinen können Mehrband-Maschinen simulieren
+
     Es stellt sich heraus, dass mehrere Bänder zwar ein praktisches
     Feature sind, aber nicht wirklich mehr Ausdruckskraft verlangen;
     was eine Mehrband-Turingmaschine schafft, schafft eine
@@ -209,8 +213,10 @@
         Ausgabeband gehören, durch $\square$ ersetzt. Dann wechselt sie
         in ihren eigenen akzeptierenden Zustand `accept'`.
         |> QED
+
     |> TopicAnnouncement
         Einfügen versus Überschreiben
+
     Folgende Aufgabe ist auf einer Einband-Turingmaschine sehr leicht:
     gegeben ein Eingabewort $w \in \{a,b\}^*$ , ersetze jedes $b$
     durch ein $c$. In der Syntax von
@@ -306,8 +312,10 @@
     Band durch zwei Bänder ersetzen. Alternativ können Sie sich eine
     Turingmaschine vorstellen, die statt $k$ Bändern einfach $2k$
     Stapel hat.
+
     |> TopicAnnouncement
         Die Dictionary-Maschine
+
     Ein fundamentale Datenstruktur beim Programmieren sind
     _Dictionaries_, die Key-Value-Paare speichern:
 
@@ -345,8 +353,10 @@
         einfach machen wollen, nehmen Sie einfach mal an, dass alle
         Schlüssel gleiche Länge haben. Das erspart Ihnen gefühlt 20
         Zeilen im Programmcode der Turingmaschine.
+
     |> TopicAnnouncement
         Nichtdeterministische Turingmaschinen
+
     Bereits im Kapitel über reguläre Sprachen haben wir gesehen, dass
     Nichtdeterminismus hilfreich ist, wenn wir Dinge beschreiben
     wollen, auch wenn es kein realistisches Modell für Rechenmaschinen
@@ -543,9 +553,10 @@
 
         weil es eben eine vom Start aus erreichbare akzeptierende
         Konfiguration gibt.
+
     |> TopicAnnouncement
-        Deterministische Turingmaschinen simulieren
-        nichtdeterministische
+        Deterministische Turingmaschinen simulieren nichtdeterministische
+
     Sind nun nichtdeterministische Turingmaschinen inhärent mächtiger?
     Können Sie das Teilsummenproblem auch mit einer deterministischen
     lösen? Klar! Hier ist mein Code in Elm, einer funktionalen

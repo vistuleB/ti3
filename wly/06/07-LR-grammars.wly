@@ -1,8 +1,10 @@
 |> Sub
     title=LR-Grammatiken
 
+
     |> TopicAnnouncement
         Motivation und Intuition
+
     Die LL-Parser, die wir in Kapitel 5.4 gesehen haben, versuchen,
     eine Linksableitung $S \Step{}^* w$ Schritt für Schritt zu
     konstruieren. Eine Hauptschwäche ist, dass Sie von einer Wortform
@@ -31,8 +33,10 @@
     \begin{align*}
     w \Pets{} \alpha_1 \Pets{} \alpha_2 \Pets{} \dots \Pets{} \alpha_{t-1} \Pets{} S
     \end{align*}
+
     |> TopicAnnouncement
         Notation
+
     Da aus der Sicht unseres neuen Parsers die Rückwärtsanwendung
     einer Produktion $X \rightarrow \beta$, also der Schritt
     $\alpha X \gamma \Leftarrow \alpha \beta \gamma$ einen
@@ -446,8 +450,10 @@
 
         Als ersten Schritt sollten Sie sich überlegen, wie gültige
         Wortformen überhaupt aussehen können.
+
     |> TopicAnnouncement
         Algorithmische Fragen
+
     Es stellen sich unmittelbar zwei zentrale Fragen:
 
     |> ol

@@ -162,8 +162,10 @@
         $L \subseteq \Sigma^*$ über einem Alphabet $\Sigma$, dass uns
         erlaubt, Graphen zu codieren. Wie können wir $L$ als Boolesche
         Funktion darstellen?
+
     |> TopicAnnouncement
         Obere Schranken: Die Lupanov-Schranke
+
     Wir haben nun eine Konstruktion, die uns für jede beliebige
     Funktion $f: \fcube$ Schaltkresie mit $O(2^n)$ Gates baut. Wir
     haben eine untere Schranke, die besagt, dass es mit weniger als
