@@ -111,9 +111,9 @@ pub fn main_pipeline()  -> List(Pipe) {
           " *::øøChapterCounter.::øøStatementCounter* "
         ),
       ]),
-      dl.prepend_attribute_as_text(#("Statement", "title")),
-      dl.prepend_attribute_as_text(#("Highlight", "title")),
-      dl.prepend_attribute_as_text(#("Remark", "title")),
+      dl.insert_attribute_as_text(#("Statement", "title")),
+      dl.insert_attribute_as_text(#("Highlight", "title")),
+      dl.insert_attribute_as_text(#("Remark", "title")),
       dl.counters_substitute_and_assign_handles(),
     ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
@@ -156,6 +156,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     pp.symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "pre", "code"]),
     pp.splitting_empty_lines_cleanup(),
     [
+      dl.bridge_whitespace("b"),
       dl.wrap_adjacent_non_whitespace_text_with(#(["Math", "i", "b", "code"], "NoWrap")),
     ],
     pp.splitting_empty_lines_cleanup(),

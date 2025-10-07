@@ -116,16 +116,16 @@
     </div>
     <div class="well remark out">
       <p>
-        <b>Warten Sie!</b>
-        Scrollen Sie erst weiter, wenn Sie den Baum oben lang genug
+        <span class="nowrap"><b>Warten Sie!</b>Scrollen</span>
+        Sie erst weiter, wenn Sie den Baum oben lang genug
         angeschaut haben! Versuchen Sie selbst, die spezielle Form dieses
         Baumes möglichst formal zu beschreiben!
       </p>
     </div>
     <div class="well remark out">
       <p>
-        <b>Auflösung.</b>
-        Hier sehen Sie noch einmal den gleichen Baum, nun aber gewisse
+        <span class="nowrap"><b>Auflösung.</b>Hier</span>
+        sehen Sie noch einmal den gleichen Baum, nun aber gewisse
         Teile verschieden umrandet / eingefärbt.
       </p>
     </div>
@@ -147,9 +147,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition / Beobachtung</b>
-        <b>6.8.1</b>
-        <b>(Stamm, linker Rand, Blüte, Front, rechter Rest)</b>
+        <b>Definition / Beobachtung 6.8.1 
+          (Stamm, linker Rand, Blüte, Front, rechter Rest)</b>
         Sei
         $S \Step{}^* \gamma$ eine Rechtsableitung, $\gamma$ also eine
         gültige Wortform, und $\mathcal{T}$ der Ableitungsbaum von
@@ -310,8 +309,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition</b>
-        <b>6.8.2</b>
+        <b>Definition 6.8.2</b>
         Für eine kontextfreie Grammatik $G$ definieren wir die Sprache
         <span class="nowrap">$\Front(G) \subseteq (\Sigma \cup N)^*$:</span>
       </p>
@@ -342,8 +340,7 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Lemma</b>
-        <b>6.8.3</b>
+        <b>Lemma 6.8.3</b>
         Die Sprache $\Front(G)$ ist regulär. Insbesondere gibt es eine
         erweitert reguläre Grammatik $\hat{G}$ für
         <span class="nowrap">$\Front(G)$,</span>
@@ -404,8 +401,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition</b>
-        <b>6.8.4</b>
+        <b>Definition 6.8.4</b>
         Sei $G = (\Sigma, N, S, P)$ eine kontextfreie Grammatik. Die
         Front-Grammatik oder DK-Grammatik von $G$ ist die
         <i>erweitert
@@ -443,16 +439,14 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Beobachtung</b>
-        <b>6.8.5</b>
+        <b>Beobachtung 6.8.5</b>
         $\hat{G}$ erzeugt die Sprache
         <span class="nowrap">$\Front(G)$.</span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b>Beispiel</b>
-        <b>6.8.6</b>
+        <b>Beispiel 6.8.6</b>
         Für unsere Grammatik $G$ oben ergeben sich folgende Produktionen
         $\hat{P}$ in
         <span class="nowrap">$\hat{G}$:</span>
@@ -502,9 +496,8 @@
       class="well statement out"
     >
       <p>
-        <b>Algorithmus</b>
-        <b>6.8.7</b>
-        <b>- Der
+        <b>Algorithmus 6.8.7 
+          - Der
           <span class="nowrap">$LR(0)$-Parser.</span></b>
         Starte mit einem leerem Stack. Sei
         $\gamma$ der Inhalt des Stacks zu einem Zeitpunkt.
@@ -553,8 +546,7 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Theorem</b>
-        <b>6.8.8</b>
+        <b>Theorem 6.8.8</b>
         Wenn der
         <span class="nowrap">$LR(0)$-Parser</span>
         akzeptiert, dann hat er eine
@@ -571,8 +563,8 @@
     </div>
     <div class="well highlight out">
       <p>
-        <b>Beweis.</b>
-        Der erste Teil der Bedeutung ist einfach zu sehen. Jeder
+        <span class="nowrap"><b>Beweis.</b>Der</span>
+        erste Teil der Bedeutung ist einfach zu sehen. Jeder
         Reduktionsschritt ist ein Linksreduktionsschritt, und wenn man
         Ende $S$ steht, waren es auch alles
         <i>korrekte</i>

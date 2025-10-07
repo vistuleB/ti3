@@ -12,7 +12,7 @@
 
     |> Statement
         title=*Beispiel*
-        Sei $L$ die Sprache aller Wörter über dem Alphabet
+        SEI $L$ die Sprache aller Wörter über dem Alphabet
         $\Sigma = \{a,b\}$, die die Form $a^n b^n$ haben; also eine
         beliebig lange Folge von $a$s, gefolgt von genau so vielen $b$
         s. Hier ist eine kontextfreie Grammatik für $L$:

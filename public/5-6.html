@@ -50,9 +50,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Beispiel</b>
-        <b>5.6.1</b>
-        Sei $L$ die Sprache aller Wörter über dem Alphabet
+        <b>Beispiel 5.6.1</b>
+        SEI $L$ die Sprache aller Wörter über dem Alphabet
         <span class="nowrap">$\Sigma = \{a,b\}$,</span>
         die die Form $a^n b^n$ haben; also eine
         beliebig lange Folge von
@@ -260,9 +259,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition</b>
-        <b>5.6.2</b>
-        <b><span class="nowrap">$M$-Äquivalenz</span></b>
+        <b>Definition 5.6.2
+          <span class="nowrap">$M$-Äquivalenz</span></b>
         Sei $M= (\Sigma, Q, \qstart, F, \delta$ ein
         (deterministischer) endlicher Automat. Zwei Wörter
         $\alpha, \beta \in \Sigma^*$ sind
@@ -300,9 +298,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition</b>
-        <b>5.6.3</b>
-        <b><span class="nowrap">$L$-Äquivalenz</span></b>
+        <b>Definition 5.6.3
+          <span class="nowrap">$L$-Äquivalenz</span></b>
         Sei $L \subseteq \Sigma^*$ eine Sprache. Zwei
         Wörter $\alpha, \beta \in \Sigma^*$ sind
         <span class="nowrap"><i>$L$ -äquivalent</i>,</span>
@@ -323,8 +320,7 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Beobachtung</b>
-        <b>5.6.4</b>
+        <b>Beobachtung 5.6.4</b>
         Sei $L$ die vom endlichen Automaten $M$ akzeptierte Sprache.
         Wenn $\alpha \equiv_M \beta$ gilt, dann auch
         <span class="nowrap">$\alpha \equiv_L \beta$.</span>
@@ -332,8 +328,8 @@
     </div>
     <div class="well highlight out">
       <p>
-        <b>Beweis.</b>
-        Nehmen wir an
+        <span class="nowrap"><b>Beweis.</b>Nehmen</span>
+        wir an
         <span class="nowrap">$\alpha \equiv_M \beta$;</span>
         es gibt also einen
         Zustand $q$ mit
@@ -395,8 +391,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition</b>
-        <b>5.6.5</b>
+        <b>Definition 5.6.5</b>
         Sei
         <span class="nowrap">$L \subseteq \Sigma^*$.</span>
         Der
@@ -413,8 +408,7 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Beobachtung</b>
-        <b>5.6.6</b>
+        <b>Beobachtung 5.6.6</b>
         Sei $M$ ein endlicher Automat von $L$ die von ihm akzeptierte
         Sprache. Dann ist der Index von $L$ höchstens die Anzahl $|Q|$
         von Zuständen. Im Umkehrschluss heißt das: wenn $L$ unendlichen
@@ -424,8 +418,8 @@
     </div>
     <div class="well highlight out">
       <p>
-        <b>Beweis.</b>
-        Wenn der Index von $L$ größer wäre als
+        <span class="nowrap"><b>Beweis.</b>Wenn</span>
+        der Index von $L$ größer wäre als
         <span class="nowrap">$|Q|$,</span>
         dann hieße das,
         dass wir $k := |Q|+1$ nicht $L$ -äquivalente
@@ -460,8 +454,7 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Beispiel</b>
-        <b>5.6.7</b>
+        <b>Beispiel 5.6.7</b>
         Die Sprache $L = \{a^n b^n \ | \ n \geq 0\}$ ist nicht regulär.
         In der Tat hat diese Sprache unendlichen Index. Die Wörter
         $a, aa, aaa, aaaa, ...$ sind alle nicht $L$ -äquivalent. Für
@@ -472,8 +465,7 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Beispiel</b>
-        <b>5.6.8</b>
+        <b>Beispiel 5.6.8</b>
         Sei $L \subseteq \{a,b\}^*$ die Sprache aller Palindrome. Also
         der Wörter $\alpha$ mit
         <span class="nowrap">$\alpha = \alpha^R$,</span>
@@ -527,16 +519,15 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem</b>
-        <b>5.6.9</b>
+        <b>Theorem 5.6.9</b>
         Eine Sprache $L \subseteq \Sigma^*$ ist genau dann regulär, wenn
         sie endlichen Index hat.
       </p>
     </div>
     <div class="well highlight out">
       <p>
-        <b>Beweis.</b>
-        Eine Richtung haben wir bereits weiter oben gezeigt: wenn es zu
+        <span class="nowrap"><b>Beweis.</b>Eine</span>
+        Richtung haben wir bereits weiter oben gezeigt: wenn es zu
         $L$ einen endlichen Automaten mit Zustandsmenge $Q$ gibt, dann
         ist der Index von $L$ höchstens
         <span class="nowrap">$|Q|$.</span>
@@ -654,8 +645,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Beispiel</b>
-        <b>5.6.10</b>
+        <b>Beispiel 5.6.10</b>
         Der nichtdeterministische endliche Automat
       </p>
       <div class="figure__container">
@@ -676,8 +666,7 @@
       </p>
       <div class="well statement">
         <p>
-          <b>Behauptung</b>
-          <b>5.6.11</b>
+          <b>Behauptung 5.6.11</b>
           Die Sprache $L$ hat Index 16. Alle Wörter in $\{0,1\}^4$ sind
           nicht
           <span class="nowrap">$L$-äquivalent.</span>
@@ -685,8 +674,7 @@
       </div>
       <div class="well remark">
         <p>
-          <b>Beweis.</b>
-          Seien
+          <span class="nowrap"><b>Beweis.</b>Seien</span>
           $\alpha:= a_1 a_2 a_3 a_4, \beta := b_1 b_2 b_3 b_4 \in
           \{0,1\}^4$
           zwei verschiedene Wörter. Dann gibt es ein $1 \leq i \leq 4$

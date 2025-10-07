@@ -155,8 +155,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Lemma</b>
-        <b>2.5.1</b>
+        <b>Lemma 2.5.1</b>
         Es gilt
       </p>
       <div class="math-block">
@@ -167,8 +166,7 @@
     </div>
     <div class="well highlight out">
       <p>
-        <b>Beweis.</b>
-        Sei
+        <span class="nowrap"><b>Beweis.</b>Sei</span>
         <span class="nowrap">$k \in \{1,\dots,n\}$.</span>
         Vergleichen wir ${n \choose k}$ mit
         <span class="nowrap">${n \choose k-1}$:</span>
@@ -374,8 +372,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem</b>
-        <b>2.5.2</b>
+        <b>Theorem 2.5.2</b>
         Die Funktion $\maj_n (x_1,\dots,x_n)$ kann mit einem Schaltkreis
         der Größe
         <span class="nowrap">$O(n^2)$,</span>
@@ -433,8 +430,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Lemma (2-for-3 Adder)</b>
-        <b>2.5.3</b>
+        <b>Lemma (2-for-3 Adder) 2.5.3</b>
         Es gibt einen Schaltkreis mit $O(n)$ Gates, Tiefe 2 und Fan-In
         2, der als Input drei
         <span class="nowrap">$n$-stellige</span>
@@ -454,8 +450,8 @@
     </div>
     <div class="well highlight out">
       <p>
-        <b>Beweis.</b>
-        Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen
+        <span class="nowrap"><b>Beweis.</b>Ich</span>
+        demonstriere das Beweisprinzip erst einmal mit drei Zahlen
         in Basis 10:
       </p>
       <div class="figure__container">
@@ -533,8 +529,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem</b>
-        <b>2.5.4</b>
+        <b>Theorem 2.5.4</b>
         Die Konstruktion mit 2-for-3-Addierern gibt uns einen
         Schaltkreis für Majority mit Fan-in 2, Tiefe $O(\log n)$ und
         Größe $O (n \log n)$
@@ -647,8 +642,7 @@
     </h2>
     <div class="well statement out">
       <p>
-        <b>Theorem</b>
-        <b>2.5.5</b>
+        <b>Theorem 2.5.5</b>
         Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe
         $O(\log n)$ und Größe
         <span class="nowrap">$\poly(n)$,</span>
@@ -657,8 +651,8 @@
     </div>
     <div class="well highlight out">
       <p>
-        <b>Beweis.</b>
-        Die Beweismethode, die wir verwenden, ist womöglich neu für Sie.
+        <span class="nowrap"><b>Beweis.</b>Die</span>
+        Beweismethode, die wir verwenden, ist womöglich neu für Sie.
         Wir verwenden bei der Konstruktion des Schaltkreises
         <span class="nowrap"><i>Zufall</i>;</span>
         am
@@ -689,8 +683,7 @@
       </p>
       <div class="well statement">
         <p>
-          <b>Definition (Signalstärke)</b>
-          <b>2.5.6</b>
+          <b>Definition (Signalstärke) 2.5.6</b>
           Sei $\mathcal{C}$ eine Verteilung über Schaltkreise mit
           Input-Variablen
           <span class="nowrap">$x_1,\dots,x_n$.</span>
@@ -717,8 +710,7 @@
       </p>
       <div class="well statement">
         <p>
-          <b>Lemma</b>
-          <b>2.5.7</b>
+          <b>Lemma 2.5.7</b>
           Es gibt eine Wahrscheinlichkeitsverteilung $\mathcal{C}_0$
           über monotone Schaltkreise der Größe 1, die Signalstärke
           $\frac{1}{n}$ hat. Genauer gesagt gilt für jeden Input
@@ -737,8 +729,8 @@
       </div>
       <div class="well remark">
         <p>
-          <b>Beweis.</b>
-          Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist
+          <span class="nowrap"><b>Beweis.</b>Der</span>
+          Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist
           extrem einfach. Wir wählen zufällig einen Index
           $I \in \{1,\dots,n\}$ und geben $x_I$ als unseren Schaltkreis
           $C$ (bestehend aus einem einzigen Input-Gate, das gleichzeitig
@@ -821,8 +813,7 @@
       </p>
       <div class="well statement">
         <p>
-          <b>Lemma</b>
-          <b>2.5.8</b>
+          <b>Lemma 2.5.8</b>
           Falls $\mathcal{C}$ eine Verteilung über Schaltkreise der
           Tiefe $d$ und Größe $s$ ist und $\mathcal{C}$ Signalstärke
           $\delta$ hat, dann gilt:
@@ -850,8 +841,8 @@
       </div>
       <div class="well highlight">
         <p>
-          <b>Beweis.</b>
-          Wir betrachten ein festes $\x \in \cube^n$ mit
+          <span class="nowrap"><b>Beweis.</b>Wir</span>
+          betrachten ein festes $\x \in \cube^n$ mit
           <span class="nowrap">$\maj_n(\x) = 1$;</span>
           der Fall $\maj_n(\x) = 0$ ist analog. Wir
           definieren nun
@@ -951,16 +942,16 @@
       </p>
       <div class="well remark">
         <p>
-          <b>Behauptung</b>
-          Wenn $\mathcal{C}$ Fehlerwahrscheinlichkeit $\epsilon$ hat,
+          <span class="nowrap"><b>Behauptung</b>Wenn</span>
+          $\mathcal{C}$ Fehlerwahrscheinlichkeit $\epsilon$ hat,
           dann hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit
           $3 \epsilon^2$
         </p>
       </div>
       <div class="well highlight">
         <p>
-          <b>Beweis.</b>
-          Wie im Beweis vom Lemma setzen wir
+          <span class="nowrap"><b>Beweis.</b>Wie</span>
+          im Beweis vom Lemma setzen wir
           $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
         </p>
         <div class="math-block">
