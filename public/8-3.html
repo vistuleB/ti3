@@ -557,7 +557,7 @@ carry1, 0, 1, 0,&lt;,&lt;,&lt;
     <div class="main-column">
 <pre>
 q, x, _
-r, _, x, &gt;, &gt; 
+r, _, x, &gt;, &gt;
 </pre>
     </div>
     <p class="main-column">
@@ -967,17 +967,17 @@ r,   c, y, -, &gt;  <span class="actual-orange-comment">// für jedes Zeichen c<
       Programmiersprache: er probiert alle Möglichkeiten durch.
     </p>
     <div class="main-column">
-<pre class="listing">
-<span class="listing-bol"></span>module SubsetSum exposing (..)
-<span class="listing-bol"></span>subsetSum : List Int -&gt;; Int -&gt;; Bool
-<span class="listing-bol"></span>subsetSum prices amount =
-<span class="listing-bol"></span>    case ( prices, amount ) of
-<span class="listing-bol"></span>    ( [], 0 ) -&gt;;
-<span class="listing-bol"></span>        True
-<span class="listing-bol"></span>    ( x :: rest, _ ) -&gt;;
-<span class="listing-bol"></span>        subsetSum rest amount || subsetSum rest (amount - x)
-<span class="listing-bol"></span>    ( [], _ ) -&gt;;
-<span class="listing-bol"></span>        False
+<pre>
+module SubsetSum exposing (..)
+subsetSum : List Int -&gt;; Int -&gt;; Bool
+subsetSum prices amount =
+    case ( prices, amount ) of
+    ( [], 0 ) -&gt;;
+        True
+    ( x :: rest, _ ) -&gt;;
+        subsetSum rest amount || subsetSum rest (amount - x)
+    ( [], _ ) -&gt;;
+        False
 </pre>
     </div>
     <p class="main-column">

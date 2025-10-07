@@ -180,15 +180,16 @@
     einen neuen Kombinator zu definieren, anstatt diese Konstruktion
     jedes Mal "von Hand" durchzuführen:
 
-    |> pre
-        def LargestLessThan(upperBound, predicate):
-        \        def new_function(*x):
-        \                temp = 0
-        \                for i in range(upperBound(*x)):
-        \                        if (predicate(i,*x)):
-        \                                temp = i
-        \                return temp
-        \        return new_function
+    ```
+    def LargestLessThan(upperBound, predicate):
+            def new_function(*x):
+                    temp = 0
+                    for i in range(upperBound(*x)):
+                            if (predicate(i,*x)):
+                                    temp = i
+                    return temp
+            return new_function
+    ```
 
     und somit können wir sqrt schreiben als
 
@@ -205,23 +206,24 @@
     Funktionen scheinen inhärent mindestens zwei zu benötigen.
     Betrachten wir den Fall der Fibonacci-Zahlen:
 
-    |> pre
-        def fibIterative(t):
-        \    a = 0
-        \    b = 1
-        \    for i in range(t):
-        \        c = a+b
-        \        a = b
-        \        b = c
-        \    return a
+    ```
+    def fibIterative(t):
+        a = 0
+        b = 1
+        for i in range(t):
+            c = a+b
+            a = b
+            b = c
+        return a
+    ```
 
     Wir führen hier zwei lokale Variable, $a$ und $b$. Das $c$ könnten
     wir mit diesem schönen Trick eliminieren:
 
-    |> pre
-
-        b = a+b
-        a = b-a 
+    ```
+    b = a+b
+    a = b-a
+    ```
 
     Doch selbst dann hätten wir immer noch zwei lokale Variable. Die
     Fibonacci-Zahlen rekursiv per `return F(n-1)+F(n-2)` scheint noch

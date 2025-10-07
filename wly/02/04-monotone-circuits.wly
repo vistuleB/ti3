@@ -252,14 +252,14 @@
                 Funktionen mit null Variablen tun zu haben. Allerdings:
                 warum? In Java hätten Sie bestimmt kein Problem mit
 
-                |> pre
-                    class=listing
-                    public boolean constantFalse() {
-                    \    return false;
-                    }
-                    public boolean constantTrue() {
-                    \    return true;
-                    }
+                ```listing
+                public boolean constantFalse() {
+                    return false;
+                }
+                public boolean constantTrue() {
+                    return true;
+                }
+                ```
 
                 und dies sind ja offensichtlich Boolesche Funktionen mit
                 null Input-Variablen. Ich nehme Ihre Ängste aber ernst, und
@@ -280,11 +280,11 @@
                 Programmiererfahrung: weder Sie noch der Java-Compiler werden
                 Probleme mit der Funktion
 
-                |> pre
-                    class=listing
-                    public boolean constantFalse(boolean x) {
-                    \    return false;
-                    }
+                ```listing
+                public boolean constantFalse(boolean x) {
+                    return false;
+                }
+                ```
 
                 haben. Ja in der Tat, Java toleriert es, dass Sie
                 `constantFalse` zweimal deklariert haben, einmal als Funktion

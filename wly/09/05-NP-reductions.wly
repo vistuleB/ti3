@@ -242,11 +242,11 @@
     `is_in_L2` gibt, dann können wir mit folgendem Code auch $L_1$
     effizient entscheiden:
 
-    |> pre
-        class=listing
-        def is_in_L1(x):
-        \    y = convert_from_L1_instance_to_L2_instance(x)
-        \    return is_in_L2(y)
+    ```listing
+    def is_in_L1(x):
+        y = convert_from_L1_instance_to_L2_instance(x)
+        return is_in_L2(y)
+    ```
 
     Dies ist eine _Reduktion_, wie wir sie schon in Definition
     >>definition-reduction kennengelernt haben, nun aber mit einer
@@ -466,13 +466,13 @@
     Fachbegriff für das, was unsere obige Funktion `has_hamilton_cycle`
     tut, nennt sich _Cook-Reduktion_, nach Stephen Cook, einem der
     Väter der Klasse NP. Eine Reduktion, die dem strengen
-    Reduktionsbegriff folgt, also Definition >>definition-polynomial-reduction,
-    nennt man in Abgrenzung dazu _Karp-Reduktion_ nach Richard Karp,
-    ein weiterer NP-Vater.
+    Reduktionsbegriff folgt, also Definition
+    >>definition-polynomial-reduction, nennt man in Abgrenzung dazu
+    _Karp-Reduktion_ nach Richard Karp, ein weiterer NP-Vater.
 
     |> Exercise
-        Geben Sie einen "richtigen" Beweis für Theorem >>theorem-ham-cycle-to-path,
-        also eine Karp-Reduktion.
+        Geben Sie einen "richtigen" Beweis für Theorem
+        >>theorem-ham-cycle-to-path, also eine Karp-Reduktion.
 
     |> Exercise
         Zeigen Sie `Hamilton Path $\leq_p$ Hamilton Cycle`{sc}. Wenn es

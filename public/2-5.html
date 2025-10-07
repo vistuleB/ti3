@@ -345,12 +345,12 @@
       <span class="nowrap">${n \choose k}$,</span>
     </p>
     <div class="main-column">
-<pre class="listing">
-<span class="listing-bol"></span>def binomial(n,k):
-<span class="listing-bol"></span>    if k == 0 or k == n:
-<span class="listing-bol"></span>        return 1
-<span class="listing-bol"></span>    else:
-<span class="listing-bol"></span>        return binomial(n-1,k-1) + binomial(n-1,k)
+<pre>
+def binomial(n,k):
+    if k == 0 or k == n:
+        return 1
+    else:
+        return binomial(n-1,k-1) + binomial(n-1,k)
 </pre>
     </div>
     <p class="main-column">

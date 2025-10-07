@@ -267,9 +267,10 @@
 
     wird dann
 
-    |> pre
-        q, x, _
-        r, _, x, >, > 
+    ```
+    q, x, _
+    r, _, x, >, >
+    ```
 
     Eine Linksbewegung ist etwas schwieriger zu implementieren. Aus
     $\delta(q,x) = (r,y,\texttt{L})$ wird
@@ -561,18 +562,18 @@
     lösen? Klar! Hier ist mein Code in Elm, einer funktionalen
     Programmiersprache: er probiert alle Möglichkeiten durch.
 
-    |> pre
-        class=listing
-        module SubsetSum exposing (..)
-        subsetSum : List Int ->; Int ->; Bool
-        subsetSum prices amount =
-        \    case ( prices, amount ) of
-        \    ( [], 0 ) ->;
-        \        True
-        \    ( x :: rest, _ ) ->;
-        \        subsetSum rest amount || subsetSum rest (amount - x)
-        \    ( [], _ ) ->;
-        \        False
+    ```
+    module SubsetSum exposing (..)
+    subsetSum : List Int ->; Int ->; Bool
+    subsetSum prices amount =
+        case ( prices, amount ) of
+        ( [], 0 ) ->;
+            True
+        ( x :: rest, _ ) ->;
+            subsetSum rest amount || subsetSum rest (amount - x)
+        ( [], _ ) ->;
+            False
+    ```
 
     Auf einer deterministischen Turingmaschine wäre das deutlich
     anstrengender, aber irgendwie auch möglich. Können wir jede
