@@ -37,8 +37,7 @@
         polynomieller Zeit reduzieren lässt. $L$ ist NP-_vollständig_,
         wenn zusätzlich $L$ selbst in NP ist.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Cook-Levin-Theorem).* 3-SAT ist NP-vollständig. In anderen
         Worten: Sei $L$ ein beliebiges Entscheidgungsproblem aus NP.
         Dann gilt ` $L \leq_p$ 3-SAT`{sc}.

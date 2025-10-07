@@ -27,8 +27,7 @@
     zu können. Leider sind viele solche Probleme unentscheidbar. Als
     einfaches Beispiel:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Wir wollen bestimmen, ob aus einer gegebenen kontextfreien
         Grammatik $G$ ein Palindromwort ableitbar ist, also ein $\gamma$,
         das von rechts nach links gelesen gleich ist, sprich
@@ -254,8 +253,7 @@
 
     Üben wir also Reduktionen:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Schnittproblem kontextfreier Sprachen)* Gegeben zwei
         kontextfreie Grammatiken $G_1, G_2$. Es ist unentscheidbar, ob
         $L(G_1) \cap L(G_2)$ nichtleer ist, ob es also ein Wort $x$ mit
@@ -286,8 +284,7 @@
         dass das Schnittproblem unentscheidbar ist.
         |> QED
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Mehrdeutigkeitsproblem kontextfreier Sprachen)* Gegeben eine
         kontextfreie Grammatik $G$. Es ist unentscheidbar, ob $G$
         mehrdeutig ist, d.h., ob es ein Wort $x \in \Sigma^*$ gibt, für

@@ -11,8 +11,7 @@
     der Menge $\Q$ aber liegen ja nicht säuberlich getrennt, sondern
     ganz dicht nebeneinander. Aber eins nach dem anderen.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         handle=theorem-N-N^2
         Die Mengen $\N$ und $\N^2$ sind gleichmächtig. Mit $\N^2$ (oder
         auch $\N \times \N$) bezeichnen wir hier das cartesische Produkt
@@ -155,8 +154,7 @@
         ...
     \ beweisen. Vorerst behelfen wir uns mit ad-hoc-Methoden.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Es gilt $\Q \approx \N$.
 
     |> Highlight
@@ -204,8 +202,7 @@
     Beispiel $1, 11, 111, 1111, \dots$ enthält. Ist sie _abzählbar_
     unendlich?
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Es gilt $\{0,1\}^* \approx \N$.
 
     |> Highlight

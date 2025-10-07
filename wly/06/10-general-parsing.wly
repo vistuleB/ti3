@@ -78,8 +78,7 @@
     zu, verbieten dann aber, dass das Startsymbol $S$ auf der rechten
     Seite einer Produktion vorkommen kann.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Zu jeder kontextfreien Grammatik gibt es eine äquivalente
         Grammatik in Chomsky-Normalform.
 

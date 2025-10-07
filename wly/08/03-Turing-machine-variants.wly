@@ -122,8 +122,7 @@
     was eine Mehrband-Turingmaschine schafft, schafft eine
     Einband-Turingmaschine auch.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Einband-Turingmaschine simuliert Mehrband-Turingmaschine)*.
         Sei $M$ eine Turingmaschine mit $k$ Bändern, wovon eines ein
         designiertes Ausgabeband ist. Dann gibt es eine
@@ -585,8 +584,7 @@
     nichtdeterministische Turingmaschine deterministisch simulieren,
     indem wir "alles ausprobieren"? Ja, in der Tat!
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Nichtdeterministische Turingmaschinen
         deterministischsimulieren)* Sei $M$ eine nichtdeterministische
         Turingmaschine. Dann gibt es eine deterministische Maschine $M'$

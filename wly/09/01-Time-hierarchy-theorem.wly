@@ -34,8 +34,7 @@
     $\enc(M) \in \Sigma^*$, solange $\Sigma$ mindestens zwei Zeichen
     enthält.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Für jedes Alphabet $\Sigma$ mit mindestens zwei Zeichen und
         jedes $k \geq 1$ gibt es eine Turingmaschine $U$ mit $k+2$
         Bändern, die folgendes kann: sei $M$ eine beliebige $k$
@@ -258,8 +257,7 @@
     Zusammenfassend erhalten wir die "Rohversion" des
     Zeithierarchiesatzes:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Zeithierarchiesatz, Rohversion).* Seien
         $s, t: \N \rightarrow \N$ zeitkonstruierbare Funktionen mit
         $s(n) \geq n$ und $s \in o(t)$ (also
@@ -284,8 +282,7 @@
 
     oder, alternativ ausgedrückt:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Zeithierarchiesatz).* Seien $s, t: \N \rightarrow \N$ mit
         $s(n) \geq n$ und $s \log s \in o(t)$. Dann gilt
         $\TIME(s) \subsetneq \TIME(t)$.

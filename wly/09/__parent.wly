@@ -85,8 +85,7 @@
     wobei $c$ eine Konstante ist, die von $M$ abhängt. Mit unser neuen
     Notation können wir das sehr konzis schreiben:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *($k$-Band zu $1$-Band).* Sei $t: \N \rightarrow \N$. Dann gilt
         $\TIME_k(t) \subseteq \TIME_1(t^2)$.
 
@@ -96,8 +95,7 @@
     exakt) und die Konstruktion ist deutlich komplizierter. Daher
     vorerst ohne Beweis:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *($k$-Band zu $2$-Band; ohne Beweis).* Sei
         $t: \N \rightarrow \N$. Dann gilt
         $\TIME_k(t) \subseteq \TIME_2(t \log t)$.

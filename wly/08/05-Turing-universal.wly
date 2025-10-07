@@ -48,8 +48,7 @@
     Das zentrale Ergebnis dieses Teilkapitels ist, dass wir diese
     Simulation selbst mit einer Turingmaschine implementieren können.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         handle=theorem-universal
         *(Universelle Turingmaschine).* Zu jedem endlichen
         Eingabealphabet $\Sigma$ sei $\Lambda := \writelambda$ das

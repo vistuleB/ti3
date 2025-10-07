@@ -96,8 +96,7 @@
     der Umkehrschluss: zu einer regulären Grammatik gibt es einen
     nichtdeterministischen endlichen Automaten:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Sei $G = (\Sigma, N, P, S)$ eine reguläre Grammatik. Dann gibt
         es einen nichtdeterministischen endlichen Automaten $M$ mit
         $L(G) = L(M)$.
@@ -294,9 +293,8 @@
     leere Menge $\emptyset$ und die "volle Menge" $Q$ selbst
     miteinschließt. Wir haben also folgendes Theorem:
 
-    |> Statement
+    |> Theorem
         handle=nfsm-to-fsm
-        title=*Theorem*
         *(Einen nichtdeterministischen endlichen Automaten
         deterministisch machen).* Sei
         $M = (\Sigma, Q, \qstart, F, \delta)$ ein nichtdeterministischer
@@ -321,9 +319,8 @@
 
     Wir folgern also
 
-    |> Statement
+    |> Theorem
         handle=regular-grammar-to-fsm
-        title=*Theorem*
         Zu jeder regulären Sprache $L$ gibt es einen deterministischen
         endlichen Automaten $M$ mit $L(M) = L$.
 

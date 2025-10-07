@@ -239,8 +239,7 @@
     jedem Schritt von grauem Kasten zu dem nächsttieferen der Wert von
     $m$ abnimmt. Insgesamt also haben wir gezeigt:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Die Funktion $\maj_n (x_1,\dots,x_n)$ kann mit einem Schaltkreis
         der Größe $O(n^2)$, Tiefe $O(n)$ und Fan-in 2 berechnet werden.
 
@@ -343,8 +342,7 @@
     )-stellige Zahlen addieren müssen; wir haben insgesamt also
     $O (n \log n)$ viele Gates.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Die Konstruktion mit 2-for-3-Addierern gibt uns einen
         Schaltkreis für Majority mit Fan-in 2, Tiefe $O(\log n)$ und
         Größe $O (n \log n)$
@@ -419,8 +417,7 @@
         Monoton und logarithmische Tiefe: Valiants probabilitische
         Konstruktion
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe
         $O(\log n)$ und Größe $\poly(n)$, der $\maj_n$ berechnet.
 

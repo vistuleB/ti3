@@ -306,8 +306,7 @@
     sie _vollständig_ ist: wenn eine Sprache $L$ endlichen Index hat,
     dann ist sie auch regulär.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Eine Sprache $L \subseteq \Sigma^*$ ist genau dann regulär, wenn
         sie endlichen Index hat.
 

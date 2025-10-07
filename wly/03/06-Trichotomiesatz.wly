@@ -28,8 +28,7 @@
     offensichtlich, ist es aber nicht. Aber wahr ist es, wenn auch
     nicht ganz einfach zu beweisen.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Trichotomiesatz der Mengenlehre).* Seien $A$ und $B$ zwei
         Mengen. Dann gibt es eine injektive Funktion
         $f : A \rightarrow B$ oder eine injektive Funktion

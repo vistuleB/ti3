@@ -38,8 +38,7 @@
     bijektiven Funktion $h: A \rightarrow B$ kombinieren. Geht das
     immer?
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Schröder-Bernstein-Theorem).* Seien $A$ und $B$ zwei Mengen.
         Wenn $A \leq B$ und $B \leq A$ gilt, dann gilt $A \approx B$. In
         Worten: wenn es injektive Funktionen $f: A \rightarrow B$ und

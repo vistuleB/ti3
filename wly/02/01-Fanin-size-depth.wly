@@ -40,8 +40,7 @@
     betrachten, so sehen wir, dass der linke Schaltkreis Tiefe $n - 1$
     hat, der rechte jedoch nur $\ceil{\log_2(n)}$.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Sei $C$ ein Schaltkreis Maximum-Fan-in $k$ Größe $s$ und Tiefe
         $d$. Dann gibt es einen äquivalenten Schaltkreis $C^{\prime}$
         mit Maximum-Fan-in $2$, Größe höchstens $s(k - 1)$ und Tiefe

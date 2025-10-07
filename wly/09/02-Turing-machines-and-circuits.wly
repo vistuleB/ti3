@@ -17,8 +17,7 @@
     falls $M$ die Eingabe ablehnt (falls $L$ und $n$ aus dem Kontext
     hervorgehen, schreiben wir einfach $f$).
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Wenn $L$ in Zeit $t(n)$ entscheidbar ist und $t(n) \geq n$ gilt,
         dann gibt es einen Booleschen Schaltkreis $C$ mit $O(t(n)^2)$
         Gates, der $f_{L,n}$ berechnet.

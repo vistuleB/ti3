@@ -57,8 +57,7 @@
     keine Möglichkeit gibt, das Nichtterminieren einer Maschine $M$
     auf Eingabe $x$ vorauszusehen und abzufangen.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Unentscheidbarkeit des Halteproblems).* Die Sprache $\halt$
         ist unentscheidbar.
 

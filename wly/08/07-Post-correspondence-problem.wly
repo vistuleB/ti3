@@ -149,8 +149,7 @@
     {\rm PCP} := \{ \enc(S) \ | \ S \textnormal{ ist ein PCP-Puzzle und hat eine Lösung} \} \ .
     \end{align*}
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         PCP ist unentscheidbar.
 
     |> Highlight

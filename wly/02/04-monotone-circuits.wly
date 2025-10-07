@@ -79,9 +79,8 @@
     versteckte NOT-Gate), ist aber äquivalent zu der offensichtlich
     monotonen Funktion $x$. Allerdings können wir folgendes beweisen:
 
-    |> Statement
+    |> Theorem
         handle=zu-jeder
-        title=*Theorem*
         Zu jeder monotonen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$
         gibt es einen monotonen Schaltkreis (also ohne NOT-Gates), der
         $f$ berechnet.
@@ -128,8 +127,7 @@
     dieser Stelle auf Beweismethoden wie _Induktion_ und verschiedene
     Beweisstrategien einzugehen.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Zu jeder monotonen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$
         gibt es einen monotonen Schaltkreis (also ohne NOT-Gates), der
         $f$ berechnet.
@@ -182,8 +180,7 @@
         [Top-Down-Methode](index.html#truth-table-top-down), wie wir aus
         einer Wahrheitstabelle einen Schaltkreis bauen:
 
-        |> Statement
-            title=*Theorem*
+        |> Theorem
             Zu jeder Booleschen Funktion $f: \{0,1\}^n \rightarrow \{0,1\}$
             gibt es einen Schaltkreis $C$, der $f$ berechnet.
 

@@ -10,8 +10,7 @@
     bauen und dann auf Fan-in 2 bestehen). Die offensichtliche Frage:
     geht es besser? Die Antwort: Ja, aber nicht viel besser.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Shannon).* Es gibt Boolesche Funktionen $f$, die keine
         Schaltkreise kleiner als $\Omega(2^n / n)$ haben.
 
@@ -176,8 +175,7 @@
     aber immer noch eine Lücke der Größenordnung $n$. Können wir sie
     schließen?
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Lupanov)*. Für jede Boolesche Funktion in $n$ Variablen gibt
         es einen Schaltkreis mit Fan-in 2 und $O(2^n / n)$ Gates.
 

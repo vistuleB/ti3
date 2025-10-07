@@ -66,8 +66,7 @@
     syntaktisch. Es ist allerdings bequemer, sich ein
     $\phi \in \{0,1\}^{\N}$ als unendliche $0/1$-Folge vorzustellen.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         handle=theorem-R-bitstrings
         $\R \approx \{0,1\}^{\N}$.
 
@@ -137,8 +136,7 @@
     schon erstaunlich: der Zahlenstrahl und die zweidimensionale Ebene
     sollen also gleichviele Elemente haben!
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         handle=theorem-square-interval
         Es gilt $\R^2 \approx \R$.
 
@@ -287,8 +285,7 @@
     Menge aller unendlichen Folgen reeller Zahlen:
     $r_1, r_2, r_3, \dots$.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         $\R \approx \R^{\N}$.
 
     |> Highlight
@@ -375,8 +372,7 @@
     b \in B\} \ .
     \end{align*}
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         handle=calculating-with-cardinals
         *(mit Kardinalzahlen rechnen)*. Es gelten die üblichen
         Rechenregeln:
@@ -399,8 +395,7 @@
     "mengentheoretisch-arithmetischen" Ausdruck eine Menge $A$ durch
     eine äquipotente Menge $A'$ ersetzen können:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         handle=replacing-equipotent-cardinals
         Seien $A, A', B$ Mengen und $A \approx A'$. Dann gilt
 

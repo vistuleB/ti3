@@ -311,8 +311,7 @@
         sind; wenn zu diesem Zeitpunkt nur noch $S$ auf dem Stack liegt,
         akzeptiert er, andernfalls lehnt er das Eingabewort ab.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Wenn der $LR(0)$-Parser akzeptiert, dann hat er eine
         Linksreduktion $w \rstep{}^* S$ und somit eine Rechtsableitung
         konstruiert; es gilt also $w \in L(G)$. Wenn umgekehrt

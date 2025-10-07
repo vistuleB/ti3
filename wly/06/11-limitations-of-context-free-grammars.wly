@@ -127,8 +127,7 @@
     Die obige Argumentationslinie ist als _Pumping Lemma für
     kontextfreie Sprachen_ bekannt:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Pumping Lemma für kontextfreie Sprachen)* Für jede
         kontextfreie Grammatik $G$ gibt es eine Zahl $p \in \N$, so dass
         jedes Wort $\gamma \in L(G)$ der Länge $|\gamma| \geq p$ zerlegt
@@ -181,8 +180,7 @@
     Im Kapitel über reguläre Sprachen hatten wir folgende
     Abschlusseigenschaften:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Wenn $L_1, L_2$ reguläre Sprachen sind, dann sind die folgenden
         Sprachen auch regulär:
 

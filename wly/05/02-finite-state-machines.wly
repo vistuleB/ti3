@@ -247,9 +247,8 @@
 
     Dies geht ganz allgemein:
 
-    |> Statement
+    |> Theorem
         handle=theorem-fsm-regular
-        title=*Theorem*
         Sei $M = (\Sigma, Q, \qstart, F, \delta)$ ein endlicher Automat.
         Dann gibt es eine reguläre Grammatik $G = (\Sigma, N, P, S)$ mit
         $L(G) = L(M)$.

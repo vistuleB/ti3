@@ -29,7 +29,7 @@ const p_cannot_be_contained_in = [
 pub fn main_pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
 
-  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "WriterlyBlankLine", "TopicAnnouncement", "SubtopicAnnouncement", "Statement", "Exercise", "Highlight", "Remark", "QED", "CircleX", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
+  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "Theorem", "WriterlyBlankLine", "TopicAnnouncement", "SubtopicAnnouncement", "Statement", "Exercise", "Highlight", "Remark", "QED", "CircleX", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   

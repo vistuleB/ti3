@@ -12,9 +12,8 @@
     entweder sind beide effizient lösbar oder beide nicht. Sie sind
     gewissermaßen gleich schwer.
 
-    |> Statement
+    |> Theorem
         handle=theorem-3-col-to-sat
-        title=*Theorem*
         Falls `CNF-Satisfiability`{sc} in P ist, dann auch
         `3-Colorability`{sc}.
 
@@ -88,9 +87,8 @@
     Beachten Sie, dass die Formel $F$, die wir im Beweis von Theorem
     >>theorem-3-col-to-sat erstellt haben, eine solche 3-CNF ist.
 
-    |> Statement
+    |> Theorem
         handle=theorem-3-sat-to-3-col
-        title=*Theorem*
         Falls `3-Colorability`{sc} in P ist, dann auch`3-SAT`{sc}.
 
     |> Highlight
@@ -155,9 +153,8 @@
     -CNF ist. Wie verhält es sich, wenn $F$ eine allgemeine CNF-Formel
     ist?
 
-    |> Statement
+    |> Theorem
         handle=theorem-sat-to-3-sat
-        title=*Theorem*
         Es gibt einen effizienten Algorithmus, der als Input eine
         CNF-Formel $F$ nimmt und eine 3-CNF-Formel $F'$ ausgibt, so dass
         gilt:
@@ -299,8 +296,7 @@
     und eine Zahl $k$, gibt es eine unabhängige Menge $X \subseteq V$
     mit $|X| \geq k$?
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         `3-SAT $\leq_p$ Independent Set`{sc}.
 
     |> Highlight
@@ -402,8 +398,7 @@
         $G$ einen Pfad der Länge $|V|-1$, der also alle $|V|$ Knoten
         enthält?
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         `Hamilton Cycle $\leq_p$ Hamilton Path`{sc}
 
     |> Highlight

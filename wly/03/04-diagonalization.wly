@@ -7,8 +7,7 @@
     es denn sein, dass jede unendliche Menge $A$ abzählbar ist, also
     $A \approx \N$? Die Antwort ist ein klares _Nein_.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Überabzählbarkeit der reellen Zahlen).* $\N \not \approx \R$ .
 
     |> Highlight

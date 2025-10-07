@@ -102,8 +102,7 @@
     somit zwei äquivalente Sichtweisen auf das gleiche Konzept
     darstellen.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(NDTM simulieren Zertifikatmaschinen).* Sei
         $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$ eine
         Zertifikatmaschine, die die Sprache $L$ in Zeit $t$ entscheidet.
@@ -169,8 +168,7 @@
         ablehnen, weil sie in Phase 2 ja wirklich _genau_ $T$ Zeichen
         schreibt. Flicken Sie diese beiden Fehler!
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         *(Zertifikatmaschinen simulieren NDTM).* Sei
         $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$ eine
         nichtdeterministische Turingmaschine, die die Sprache $L$ in
@@ -267,8 +265,7 @@
     Laufzeit $t$ hat. Somit können wir die Sprache NP wie folgt
     charakterisieren:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Eine Sprache $L$ ist genau dann in NP, wenn es ein $k \in \N$
         und eine Sprache $L' \in \textnormal{P}$ gibt mit
 

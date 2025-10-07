@@ -226,10 +226,7 @@ const endOfPageMainColumnMarginBottomInRem = () => {
 };
 
 const endOfPageWellMarginBottomInRem = () => {
-  return 0.3;
-  // if (screenWidth <= MOBILE_MAX_WIDTH) return 0.8;
-  // if (screenWidth <= TABLET_MAX_WIDTH) return 1.9;
-  // return 2.2;
+  return 0.2;
 };
 
 const endOfPageEltMarginBottomInRem = () => {

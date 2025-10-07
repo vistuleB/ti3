@@ -2,8 +2,7 @@
     title=Kontextfreie Grammatiken und Kellerautomaten
 
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Zu jeder kontextfreien Grammatik $G = (\Sigma, N, S, P)$ gibt es
         einen Kellerautomaten $M = (\Sigma, Q, \Gamma, \qstart, \delta)$,
         der die gleiche Sprache akzeptiert, also $L(G) = L(M)$.
@@ -183,8 +182,7 @@
 
     Die Gegenrichtung ist schwieriger.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Zu jedem Kellerautomaten $M$ gibt es eine kontextfreie Grammatik
         $G$ mit $L(M) = L(G)$.
 

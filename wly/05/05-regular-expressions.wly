@@ -219,8 +219,7 @@
 
     Wir beweisen nun das Gegenstück zu Lemma >>regex-to-grammar:
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Sei $L$ eine reguläre Sprache. Dann gibt es einen regulären
         Ausdruck $R$, der $L$ beschreibt, also $L(R) = R$.
 
@@ -379,8 +378,6 @@
     Hier sehen Sie den ganzen Ablauf an unserer
     `aaaa:a:aaa.aa-aa`-Sprache:
 
-    !! |> div
-    !!     style=padding:1em 0 0.5em;
     |> figure
         style=overflow-x:auto;margin:0 center;
         |> img

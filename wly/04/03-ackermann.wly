@@ -101,8 +101,7 @@
     |> TopicAnnouncement
         Die Péter-Ackermann-Funktion ist berechenbar
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Sei $m \in \N$ gegeben. Die Funktion $A_m$ ist primitiv
         rekursiv.
 
@@ -165,8 +164,7 @@
     |> TopicAnnouncement
         Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Die Ackermann-Péter-Funktion ist nicht primitiv rekursiv.
 
     Mein Beweis paraphrasiert im Wesentlichen den auf

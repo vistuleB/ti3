@@ -184,8 +184,7 @@
         also mehrere terminale Symbole auf der rechten Seite, sofern Sie
         _vor_ dem Nichtterminal vorkommen.
 
-    |> Statement
-        title=*Theorem*
+    |> Theorem
         Sei $G = (\Sigma, N, P, S)$ eine erweitert reguläre Grammatik.
         Dann existiert eine reguläre Grammatik
         $G' = (\Sigma, N', P', S)$, die die gleiche Sprache erzeugt:
@@ -240,9 +239,8 @@
     Wir zeigen nun, dass man auf Produktionen der Form 2 und 3
     verzichten kann.
 
-    |> Statement
+    |> Theorem
         handle=theorem-regular-simplified
-        title=*Theorem*
         Sei $G = (\Sigma, N, P, S)$ eine reguläre Grammatik. Dann gibt
         es eine äquivalente reguläre Grammatik
         $G' = (\Sigma, N', P', S)$, die nur Regeln vom Typ 1 und 4
@@ -578,9 +576,8 @@
     Wir führen ein weiteres Baukastenwerkzeug ein, weil es in der
     Praxis recht häufig vorkommt.
 
-    |> Statement
+    |> Theorem
         handle=operation-L
-        title=*Theorem*
         Sei $L \subseteq \Sigma^*$ eine reguläre Sprache und
         $c \not \in \Sigma$ ein neues Terminalsymbol. Die Sprache aller
         nichtleeren Folgen von $L$ -Wörten, die durch $c$ separiert
