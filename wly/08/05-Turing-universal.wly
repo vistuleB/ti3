@@ -110,8 +110,7 @@
         $\enc(C) \in \Lambda^*$, und $\Lambda$ ist das Eingabealphabet
         von $U$ mit $\Box \not \in \Lambda$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Den Beweis in allen Details zu führen hieße, die Maschine $U$
         konkret als Turingmaschine zu implementieren. Wir tun dies nicht.
         Wir beschränken uns auf eine High-Level-Beschreibung ihrer

@@ -60,9 +60,9 @@
         title=*Lemma*
         Sei $L \in {\rm NP}$. Dann gilt `$L \leq_p$ Circuit-SAT`{sc}.
 
-    |> Highlight
-        *Beweis.* Wir können annehmen, dass $L \subset \{0,1\}^*$, da
-        wir andernfalls eine geeignete Codierung
+    |> Proof
+        Wir können annehmen, dass $L \subset \{0,1\}^*$, da wir
+        andernfalls eine geeignete Codierung
         $\Sigma \rightarrow \{0,1\}^*$ wählen können. Da $L \in {\rm NP}$
         ist, gibt es ein $k \in \N$ und eine Zertifikatmaschine $M$ mit
         Laufzeit $t(n) = n^k$, so dass
@@ -128,12 +128,11 @@
         title=*Lemma*
         `Circuit-SAT`{sc} $\leq_p$ `3-SAT`{sc}.
 
-    |> Highlight
-        *Beweis.* Wir haben also einen Schaltkreis $C$ mit $n$
-        Eingabe-Variablen und $m$ Gates gegeben. Unsere Aufgabe ist es,
-        eine $3$-CNF-Formel $F$ zu bauen, so dass $F$ genau dann
-        erfüllbar ist, wenn $C$ erfüllbar ist. Wir demonstrieren die
-        Umformung an einem Beispiel:
+    |> Proof
+        Wir haben also einen Schaltkreis $C$ mit $n$ Eingabe-Variablen
+        und $m$ Gates gegeben. Unsere Aufgabe ist es, eine $3$-CNF-Formel
+        $F$ zu bauen, so dass $F$ genau dann erfüllbar ist, wenn $C$
+        erfüllbar ist. Wir demonstrieren die Umformung an einem Beispiel:
 
         |> figure
             |> img

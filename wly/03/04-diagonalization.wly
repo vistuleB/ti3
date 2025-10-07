@@ -10,8 +10,7 @@
     |> Theorem
         *(Überabzählbarkeit der reellen Zahlen).* $\N \not \approx \R$ .
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Da wir bereits $\R \approx \{0,1\}^{\N}$ gesehen haben, reicht
         es, $\N \not \approx \{0,1\}^{\N}$ zu zeigen. Wir müssen also
         zeigen, dass es keine Bijektion $f : \N \rightarrow \{0,1\}^{\N}$

@@ -105,8 +105,7 @@
         Sei $m \in \N$ gegeben. Die Funktion $A_m$ ist primitiv
         rekursiv.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wir verwenden Induktion über $m$. Für $m=0$ gilt $A_0(n)= n+1$
         und somit $A_0 = \succ$. Sei nun also $m \geq 1$. Wir sehen,
         dass
@@ -194,8 +193,7 @@
     weil bereits $A_{d+1}$ schneller wächst als jede
     primitiv-rekursive Funktion mit $d$ verschachtelten Schleifen.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wir brauchen eine robuste Definition, was es heißt, dass eine
         Funktion $f: \N \rightarrow \N$ schneller wächst als
         $g: \N^k \rightarrow \N$.
@@ -321,8 +319,7 @@
             $f(t, \vec{x}) \leq A_{q+1} (t+x)$, wobei
             $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Wir verwenden Induktion über $t$. Wenn $t=0$ ist, dann gilt
 
             \begin{align*}

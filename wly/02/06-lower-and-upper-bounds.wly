@@ -14,8 +14,7 @@
         *(Shannon).* Es gibt Boolesche Funktionen $f$, die keine
         Schaltkreise kleiner als $\Omega(2^n / n)$ haben.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Die Beweismethode ist vielleicht neu für Sie, aber in der
         Komplexitätstheorie und Kombinatorik sehr wichtig. Wir stellen
         uns zwei _Zählaufgaben_: (1) wie viele Boolesche Funktion
@@ -39,8 +38,7 @@
             Sei $s \geq n \geq 1$. Dann gibt es höchstens $s^{2s+1}$
             Schaltkreise mit $n$ Input-Variablen, Fan-in 2 und $s$ Gates.
 
-        |> Highlight
-            title=*Beweis.*
+        |> Proof
             Wir bauen den Schaltkreis, indem wir erst einmal $s$ Gates
             unbeschriftet "hinmalen". Um nun zu entscheiden, was für ein
             Schaltkreis das sein soll, müssen wir Entscheidungen treffen:
@@ -179,8 +177,7 @@
         *(Lupanov)*. Für jede Boolesche Funktion in $n$ Variablen gibt
         es einen Schaltkreis mit Fan-in 2 und $O(2^n / n)$ Gates.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Der Beweis fußt auf zwei Kernideen: erstens bauen wir den
         Schaltkreis nicht mit AND- und OR- und NOT-Gates, sondern mit
         AND- und XOR-Gates. Da wir nach vollendeter Konstruktion jedes
@@ -275,8 +272,7 @@
                     style=height:10em
                     src=./img/circuits/all-monomials.svg
 
-        |> Highlight
-            title=*Beweis.*
+        |> Proof
             Die Idee ist: wenn wir $x_1 x_2 x_3 x_4$ berechnen wollen,
             brauchen wir drei AND-Gates. Allerdings müssen wir
             $x_1 x_2 x_3$ eh berechnen, da wir ja _alle_ Monome wollen.

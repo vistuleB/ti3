@@ -141,8 +141,7 @@
 
         In anderen Worten: $M'$ simuliert $M$.
 
-    |> Statement
-        title=*Beweis.*
+    |> Proof
         Der erste Trick ist, dass wir die $k$ Bänder von $M$
         "zusammenkleben" in ein neues Band, in welcher jede Zelle $k$
         Symbole enthalten kann:
@@ -593,8 +592,7 @@
         akzpetiert, sondern entscheidet, dann entscheidet auch $M'$ die
         Sprache (terminiert also auf jedem Eingabewort).
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Als erstes führen wir eine kosmetische Änderung unserer
         nichtdeterministischen Maschine durch: wir wollen, dass es für
         jedes $(q,c)$ genau zwei Möglichkeiten gibt, also

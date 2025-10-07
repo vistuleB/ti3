@@ -101,8 +101,7 @@
             $R^{-1} := \{ (b,a) \ | \ (a,b) \in R\}$ eine injektive
             Funktion $B \rightarrow A$ und es gilt $B \leq A$.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Nehmen wir an, dass es weder $A$ noch $B$ sättigt. Dann gibt
             es also ein $a \in A$, das mit keinem $b' \in B$ "gepaart"
             ist, und auch ein $b \in B$, das mit keinem $a' \in A$ gepaart

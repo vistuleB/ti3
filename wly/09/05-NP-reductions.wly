@@ -17,12 +17,12 @@
         Falls `CNF-Satisfiability`{sc} in P ist, dann auch
         `3-Colorability`{sc}.
 
-    |> Highlight
-        *Beweis.* Wir nehmen an, wir hätten einen effizienten
-        AlgorithmUs `is_satisfiable( $F$)`. Wir verwenden diesen, um
-        einen Algorithmus `is_3_colorable` zu entwerfen. Sei nun
-        $G = (V,E)$ ein Graph und $v_1, \dots, v_n$ seine Knoten. Wir
-        führen $3n$ Boolesche Variable ein:
+    |> Proof
+        Wir nehmen an, wir hätten einen effizienten AlgorithmUs
+        `is_satisfiable( $F$)`. Wir verwenden diesen, um einen
+        Algorithmus `is_3_colorable` zu entwerfen. Sei nun $G = (V,E)$
+        ein Graph und $v_1, \dots, v_n$ seine Knoten. Wir führen $3n$
+        Boolesche Variable ein:
         $r_1, \dots, r_n, g_1, \dots, g_n, b_1, \dots, b_n$. Die
         Intention hierbei ist, dass $r_i$ anzeigt, ob $v_i$ rot ist und
         so weiter. Wir müssen jetzt Klauseln erschaffen, die die Aussage
@@ -91,9 +91,9 @@
         handle=theorem-3-sat-to-3-col
         Falls `3-Colorability`{sc} in P ist, dann auch`3-SAT`{sc}.
 
-    |> Highlight
-        *Beweis.* Wir gehen konzeptuell ähnlich vor wie oben. Uns ist
-        eine 3-CNF-Formel $F$ gegeben. Wir müssen jetzt einen Graphen
+    |> Proof
+        Wir gehen konzeptuell ähnlich vor wie oben. Uns ist eine
+        3-CNF-Formel $F$ gegeben. Wir müssen jetzt einen Graphen
         $G = (V,E)$ bauen, der die Aussage _$F$ ist erfüllbar_ irgendwie
         in seiner 3-Färbbarkeit oder eben Nicht-3-Färbbarkeit codiert.
         Dies ist schwieriger. Als ersten Schritt legen wir fest, dass die
@@ -166,8 +166,8 @@
         Falls es einen effizienten Algorithmus für $3$ -SAT gibt, dann
         also auch einen für CNF-SAT.
 
-    |> Highlight
-        *Beweis.* Wir starten mit $F_0 := F$ und definieren eine Folge
+    |> Proof
+        Wir starten mit $F_0 := F$ und definieren eine Folge
         $F_0, F_1, \dots$ von CNF-Formeln. Sei $F_i$ die derzeit letzte
         erzeugte CNF-Formel. Falls $F_i$ eine Klausel $C$ mit vier oder
         mehr Literalen enthält, führen wir eine Operation durch, die $C$
@@ -299,9 +299,9 @@
     |> Theorem
         `3-SAT $\leq_p$ Independent Set`{sc}.
 
-    |> Highlight
-        *Beweis.* Gegeben sei eine 3-CNF-Formel $F$ mit $n$ Variablen
-        und $m$ Klauseln. Wir bauen folgenden Graphen $G$:
+    |> Proof
+        Gegeben sei eine 3-CNF-Formel $F$ mit $n$ Variablen und $m$
+        Klauseln. Wir bauen folgenden Graphen $G$:
 
         |> figure
             |> img

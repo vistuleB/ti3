@@ -52,7 +52,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 9.3.1</b>
+        <span class="nowrap"><b>Definition 9.3.1</b>&thinsp;&thinsp;</span>
         Sei
         <span class="nowrap">$t: \N \rightarrow \N$.</span>
         Eine nicht-deterministische
@@ -130,7 +130,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 9.3.2</b>
+        <span class="nowrap"><b>Definition 9.3.2</b>&thinsp;&thinsp;</span>
         Wir definieren
       </p>
       <div class="math-block">
@@ -150,8 +150,8 @@
     </h3>
     <div class="well statement out">
       <p>
-        <b>Definition 9.3.3 
-          (Zertifikatmaschine).</b>
+        <span class="nowrap"><b>Definition 9.3.3</b>&thinsp;&thinsp;</span>
+        <b>(Zertifikatmaschine).</b>
         Eine Zertifikatmaschine ist eine
         deterministische Turingmaschine mit $k$ Bändern. Band 1 ist das
         Eingabeband und Band 2 das
@@ -195,8 +195,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem 9.3.4 
-          (NDTM simulieren Zertifikatmaschinen).</b>
+        <span class="nowrap"><b>Theorem 9.3.4</b>&thinsp;&thinsp;</span>
+        <b>(NDTM simulieren Zertifikatmaschinen).</b>
         Sei
         $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$ eine
         Zertifikatmaschine, die die Sprache $L$ in Zeit $t$ entscheidet.
@@ -211,8 +211,8 @@
         <b>Beweis.</b>
         Die Maschine $M'$ hat so viele Bänder wie
         <span class="nowrap">$M$,</span>
-        wobei
-        zu Beginn der Berechnung allerdings das zweite Band leer ist. Die
+        wobei zu Beginn
+        der Berechnung allerdings das zweite Band leer ist. Die
         Funktionsweise von $M'$ ist nun wie folgt: In Phase 1 berechnet
         sie in $O(t(|x|))$ Schritten die Zahl $T:= t(|x|)$ , das heißt,
         sie schreibt das Wort $1^{T}$ auf dem zweiten Band. Dann
@@ -291,7 +291,7 @@
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.3.1</b>
+        <span class="nowrap"><b>Übungsaufgabe 9.3.1</b>&thinsp;&thinsp;</span>
         Der obige Beweis enthält einige kleine Fehler. So tätigt nach
         Annahme die Berechnung von $M(x,z)$ ja maximal $O(t(|x|))$
         Schritte, formal also maximal
@@ -311,8 +311,8 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Theorem 9.3.5 
-          (Zertifikatmaschinen simulieren NDTM).</b>
+        <span class="nowrap"><b>Theorem 9.3.5</b>&thinsp;&thinsp;</span>
+        <b>(Zertifikatmaschinen simulieren NDTM).</b>
         Sei
         $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$ eine
         nichtdeterministische Turingmaschine, die die Sprache $L$ in
@@ -413,7 +413,7 @@
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.3.2</b>
+        <span class="nowrap"><b>Übungsaufgabe 9.3.2</b>&thinsp;&thinsp;</span>
         Sei $M$ eine Zertifikatmaschine und $\Sigma$ ein unäres
         Alphabet, also
         <span class="nowrap">$|\Sigma|=1$.</span>
@@ -459,7 +459,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem 9.3.6</b>
+        <span class="nowrap"><b>Theorem 9.3.6</b>&thinsp;&thinsp;</span>
         Eine Sprache $L$ ist genau dann in NP, wenn es ein $k \in \N$
         und eine Sprache $L' \in \textnormal{P}$ gibt mit
       </p>

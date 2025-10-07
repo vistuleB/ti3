@@ -226,8 +226,7 @@
     Wir paraphrasieren hier den Beweis aus Michael Sipsers
     _Introduction to the Theory of Computation_.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Zunächst skizzieren wir die Beweisidee. Da $L$ regulär ist, gibt
         es einen nichtdeterministischen endlichen Automaten $M$, die $L$
         akzeptiert. Wir werden nun $M$ Schritt für Schritt in einen

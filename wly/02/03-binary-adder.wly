@@ -306,8 +306,7 @@
         $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und Output-Gates
         $p_{I}, g_I$ für jedes Binärinterval $I$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Ein Binärintervall, zum Beispiel $[32,47]$ können wir als
         Vereinigung von zwei kleineren Binärintervallen schreiben, hier
         $[32,47] = [32,39] \cup [40,47]$. In unserer Sternchen-Notation:
@@ -390,8 +389,7 @@
         berechnet für jedes $k=0,\dots,n-1$, also insgesamt $n$
         Output-Gates.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Die Idee ist, dass wir jedes $[0,k]$ als Vereinigung von wenigen
         Binärintervallen schreiben können, zum Beispiel
 

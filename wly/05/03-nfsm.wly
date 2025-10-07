@@ -101,8 +101,7 @@
         es einen nichtdeterministischen endlichen Automaten $M$ mit
         $L(G) = L(M)$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Unser Automat hat als Zustandsmenge $N$, die Menge der
         nichtterminalen Symbole und als Startzustand $S$, das
         Startsymbol der Grammatik $G$. Wir definieren $\delta$, indem

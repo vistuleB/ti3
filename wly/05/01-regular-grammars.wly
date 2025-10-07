@@ -190,8 +190,7 @@
         $G' = (\Sigma, N', P', S)$, die die gleiche Sprache erzeugt:
         $L(G) = L(G')$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wir ersetzen einfach jede Regel der Form
 
         $$
@@ -246,8 +245,7 @@
         $G' = (\Sigma, N', P', S)$, die nur Regeln vom Typ 1 und 4
         enthält.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Produktionen vom Typ 2, also von der Form $X \rightarrow a$
         können wir leicht eliminieren, indem wir ein neues
         Nichtterminalsymbol $E \not \in \Sigma \cup N$ einführen, jedes
@@ -396,8 +394,7 @@
         Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann ist
         $L_1 \cup L_2$ auch regulär.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Unsere Strategie ist, reguläre Grammatiken $G_1$ für $L_1$ und
         $G_2$ für $L_2$ zu betrachten und daraus eine neue reguläre
         Grammatik $G$ für $L_1 \cup L_2$ zu bauen. Aus $G$ sollen also
@@ -449,8 +446,7 @@
         Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann ist
         $L_1 \circ L_2$ auch regulär.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wir im letzten Beweis nehmen wir uns eine reguläre Grammatik
         $G_1 = (\Sigma, N_1, P_1, S_1)$ für $L_1$ und
         $G_2 = (\Sigma, N_2, P_2, S_2)$ für $L_2$. Ob die beiden
@@ -516,8 +512,7 @@
         title=*Lemma*
         Sei $L$ eine reguläre Sprache. Dann ist $L^*$ auch regulär.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Sei $G = (\Sigma, N, P, S)$ eine reguläre Grammatik für $L$. Wir
         könnten ein neues Startsymbol $S'$ einführen und
 
@@ -589,8 +584,7 @@
 
         ist wiederum regulär.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Dies folgt sofort aus den vorherigen Theorem, weil wir nur
         Konkatenation $\circ$ und Kleenesche Hülle $^*$ verwenden.
         Dennoch lohne es sich, explizit für $L'$ eine Grammatik zu

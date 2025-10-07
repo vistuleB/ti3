@@ -218,11 +218,7 @@ const carouselMaxWidthInPx = () => {
 };
 
 const endOfPageMainColumnMarginBottomInRem = () => {
-  return 0.1; // cuz of some optical illusion
-  // if (screenWidth <= MOBILE_MAX_WIDTH) return 1.2;
-  // if (screenWidth <= TABLET_MAX_WIDTH) return 1.5;
-  // if (screenWidth <= LAPTOP_MAX_WIDTH) return 1.8;
-  // return 2.4;
+  return 0.0;
 };
 
 const endOfPageWellMarginBottomInRem = () => {

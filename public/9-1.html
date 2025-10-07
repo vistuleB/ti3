@@ -94,7 +94,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem 9.1.1</b>
+        <span class="nowrap"><b>Theorem 9.1.1</b>&thinsp;&thinsp;</span>
         Für jedes Alphabet $\Sigma$ mit mindestens zwei Zeichen und
         jedes $k \geq 1$ gibt es eine Turingmaschine $U$ mit $k+2$
         Bändern, die folgendes kann: sei $M$ eine beliebige $k$
@@ -202,8 +202,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 9.1.2 
-          (Zeitbudgetiertes Halteproblem).</b>
+        <span class="nowrap"><b>Definition 9.1.2</b>&thinsp;&thinsp;</span>
+        <b>(Zeitbudgetiertes Halteproblem).</b>
         Sei $\Sigma$ ein endliches
         Alphabet. Wir definieren die Sprache
       </p>
@@ -242,7 +242,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Beobachtung 9.1.3</b>
+        <span class="nowrap"><b>Beobachtung 9.1.3</b>&thinsp;&thinsp;</span>
         <span class="nowrap">$\bhalt \in \TIME_{k+3}(n)$.</span>
       </p>
     </div>
@@ -283,8 +283,8 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Behauptung 9.1.4 
-          (nicht ganz korrekt).</b>
+        <span class="nowrap"><b>Behauptung 9.1.4</b>&thinsp;&thinsp;</span>
+        <b>(nicht ganz korrekt).</b>
         <span class="nowrap">$\bnegdiag \in \TIME_{k+3}(t)$.</span>
       </p>
     </div>
@@ -310,7 +310,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 9.1.5</b>
+        <span class="nowrap"><b>Definition 9.1.5</b>&thinsp;&thinsp;</span>
         Eine Funktion $t: \N \rightarrow \N$ heißt
         <span class="nowrap"><i>zeitkonstruierbar</i>,</span>
         wenn es eine Turingmaschine gibt, die aus dem Eingabewort $1^n$
@@ -320,8 +320,8 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Behauptung 9.1.6 
-          (jetzt korrekt).</b>
+        <span class="nowrap"><b>Behauptung 9.1.6</b>&thinsp;&thinsp;</span>
+        <b>(jetzt korrekt).</b>
         Sei $t: \N \rightarrow \N$ zeitkonstruierbar,
         monoton steigend und
         <span class="nowrap">$t(n) \geq n$.</span>
@@ -335,7 +335,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Lemma 9.1.7</b>
+        <span class="nowrap"><b>Lemma 9.1.7</b>&thinsp;&thinsp;</span>
         Sei $s: \N \rightarrow \N$ eine Funktion mit $s(n) \geq n$ und
         <span class="nowrap">$s = o(t)$,</span>
         also
@@ -349,13 +349,13 @@
         <b>Beweis.</b>
         Wir nehmen an, es gäbe eine Turingmaschine
         <span class="nowrap">$M$,</span>
-        die
-        $\bnegdiag$ in Zeit $s$ entscheidet und leiten einen Widerspruch
-        her. Sei
+        die $\bnegdiag$
+        in Zeit $s$ entscheidet und leiten einen Widerspruch her. Sei
         <span class="nowrap">$x := \enc(M)$.</span>
         Wir wählen eine natürliche Zahl
         <span class="nowrap">$m$,</span>
-        deren genauen Wert wir weiter unten diskutieren und setzen
+        deren
+        genauen Wert wir weiter unten diskutieren und setzen
         <span class="nowrap">$b := t(|x| + m)$.</span>
         Wir fragen uns nun: ist
         <span class="nowrap">$x1^m \in \bnegdiag$?</span>
@@ -439,8 +439,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem 9.1.8 
-          (Zeithierarchiesatz, Rohversion).</b>
+        <span class="nowrap"><b>Theorem 9.1.8</b>&thinsp;&thinsp;</span>
+        <b>(Zeithierarchiesatz, Rohversion).</b>
         Seien
         $s, t: \N \rightarrow \N$ zeitkonstruierbare Funktionen mit
         $s(n) \geq n$ und $s \in o(t)$ (also
@@ -481,8 +481,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem 9.1.9 
-          (Zeithierarchiesatz).</b>
+        <span class="nowrap"><b>Theorem 9.1.9</b>&thinsp;&thinsp;</span>
+        <b>(Zeithierarchiesatz).</b>
         Seien $s, t: \N \rightarrow \N$ mit
         $s(n) \geq n$ und
         <span class="nowrap">$s \log s \in o(t)$.</span>
@@ -503,7 +503,7 @@
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.1.1</b>
+        <span class="nowrap"><b>Übungsaufgabe 9.1.1</b>&thinsp;&thinsp;</span>
         Zeigen Sie, dass $n \mapsto n^2$ und $n \mapsto 2^n$
         zeitkonstruierbar sind.
       </p>

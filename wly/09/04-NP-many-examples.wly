@@ -31,13 +31,13 @@
         title=*Beobachtung*
         `3-Colorability`{sc} ist in NP.
 
-    |> Highlight
-        *Beweis.* Wir müssen nun eine Zertifikatmaschine mit
-        polynomieller Laufzeit angeben. Um uns nicht in technischen
-        Details zu verlieren, werden wir einfach einen Algorithmus
-        angeben, der zwei Inputs entgegennimmt: den Graphen $G$ (im
-        Turingmaschinenkontext also das Eingabewort $x$) und ein
-        _Zertifikat_. Hier ist unser Code:
+    |> Proof
+        Wir müssen nun eine Zertifikatmaschine mit polynomieller
+        Laufzeit angeben. Um uns nicht in technischen Details zu
+        verlieren, werden wir einfach einen Algorithmus angeben, der zwei
+        Inputs entgegennimmt: den Graphen $G$ (im Turingmaschinenkontext
+        also das Eingabewort $x$) und ein _Zertifikat_. Hier ist unser
+        Code:
 
         ```listing
         def is_3_coloring(graph, c):

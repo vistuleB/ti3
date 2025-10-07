@@ -17,8 +17,7 @@
         Es gilt $\R \approx (0,1)$, wobei $(0,1)$ das offene
         Einheitsintervall ist.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wir können eine Bijektion explizit hinschreiben:
 
         \begin{align*}
@@ -70,8 +69,7 @@
         handle=theorem-R-bitstrings
         $\R \approx \{0,1\}^{\N}$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Die Beweisidee ist einfach, allerdings gehen erst einmal ein
         paar Dinge schief, die man wieder flicken muss. Da laut
         Übungsaufgabe >>exercise-open-closed-half-open $\R \approx [0,1)$
@@ -140,8 +138,7 @@
         handle=theorem-square-interval
         Es gilt $\R^2 \approx \R$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Mithilfe von Theorem >>theorem-R-bitstrings geht das ganz
         einfach. Da $\R \approx \{0,1\}^\N$ gilt, reicht es nämlich,
         eine Bijektion
@@ -244,8 +241,7 @@
                 $\left[\frac{1}{2},1\right) \times
                 \left[\frac{1}{2},1\right)$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wir zeigen den ersten Punkt. Sei $0 \leq z \lt 1/2$ und
         $(x,y) = f^{-1}(z)$. Dann hat $z$ die Binärdarstellung
         $z = (0.00z_3z_4z_5\dots)$. Die ersten beiden Bits nach dem
@@ -288,8 +284,7 @@
     |> Theorem
         $\R \approx \R^{\N}$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Da $\R \approx \cuben$ gilt, reicht es, zu zeigen, dass
 
         \begin{align*}

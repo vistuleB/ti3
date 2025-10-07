@@ -23,7 +23,8 @@
         Gates, der $f_{L,n}$ berechnet.
 
     |> Highlight
-        *Beweisidee.* Die $k$-Band-Turingmaschine $M$, die $L$
+        title=*Beweisidee.*
+        Die $k$-Band-Turingmaschine $M$, die $L$
         entscheidet, macht auf Eingabe $x$ höchstens $T = t(|x|)$
         Schritte. Es gibt also einen Bereich von insgesamt $2Tk$ Zellen
         ($2t$ pro Band), den sie nie verlässt. Das heißt, jede
@@ -42,8 +43,8 @@
         erreichten Endzustand auslesen und entsprechen 0 oder 1 ausgeben.
         |> QED
 
-    |> Highlight
-        *Beweis.* Wir zeigen den Beweis schematisch anhand von $1$
+    |> Proof
+        Wir zeigen den Beweis schematisch anhand von $1$
         -Band-Turingmaschinen. Für $k$ -Bandmaschinen geht es fast genau
         so. Erinnern Sie sich an die Definition der _Konfiguration_ einer
         Turing-Maschine (

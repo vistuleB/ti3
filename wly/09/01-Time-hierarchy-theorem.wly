@@ -135,8 +135,8 @@
         title=*Beobachtung*
         $\bhalt \in \TIME_{k+3}(n)$.
 
-    |> Highlight
-        *Beweis.* Wir nehmen die universelle Turingmaschine $U$, die
+    |> Proof
+        Wir nehmen die universelle Turingmaschine $U$, die
         $k$-Band-Turingmaschinen simulieren kann, und statten sie mit
         einem Stoppuhrband aus. Sie hat nun also $k+3$ Bänder. Sei
         $n = |\enc(M)| + b + 1 + |x|$ die Länge des Eingabewortes. In
@@ -198,11 +198,11 @@
         $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$. Dann gilt
         $\bnegdiag \not \in \TIME_k(s)$.
 
-    |> Highlight
-        *Beweis.* Wir nehmen an, es gäbe eine Turingmaschine $M$, die
-        $\bnegdiag$ in Zeit $s$ entscheidet und leiten einen Widerspruch
-        her. Sei $x := \enc(M)$. Wir wählen eine natürliche Zahl $m$,
-        deren genauen Wert wir weiter unten diskutieren und setzen
+    |> Proof
+        Wir nehmen an, es gäbe eine Turingmaschine $M$, die $\bnegdiag$
+        in Zeit $s$ entscheidet und leiten einen Widerspruch her. Sei
+        $x := \enc(M)$. Wir wählen eine natürliche Zahl $m$, deren
+        genauen Wert wir weiter unten diskutieren und setzen
         $b := t(|x| + m)$. Wir fragen uns nun: ist $x1^m \in \bnegdiag$?
 
         \begin{align*}

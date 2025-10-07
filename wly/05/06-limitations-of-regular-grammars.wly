@@ -190,8 +190,7 @@
         Wenn $\alpha \equiv_M \beta$ gilt, dann auch
         $\alpha \equiv_L \beta$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Nehmen wir an $\alpha \equiv_M \beta$; es gibt also einen
         Zustand $q$ mit
 
@@ -242,8 +241,7 @@
         Index hat, dann gibt es keinen endlichen Automaten, der $L$
         akzeptiert; $L$ ist demnach nicht regulär.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wenn der Index von $L$ größer wäre als $|Q|$, dann hieße das,
         dass wir $k := |Q|+1$ nicht $L$ -äquivalente
         $\alpha_1, \dots, \alpha_{|Q|+1}$ finden können. Sei
@@ -310,8 +308,7 @@
         Eine Sprache $L \subseteq \Sigma^*$ ist genau dann regulär, wenn
         sie endlichen Index hat.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Eine Richtung haben wir bereits weiter oben gezeigt: wenn es zu
         $L$ einen endlichen Automaten mit Zustandsmenge $Q$ gibt, dann
         ist der Index von $L$ höchstens $|Q|$. Für die andere Richtung
@@ -398,8 +395,7 @@
             Die Sprache $L$ hat Index 16. Alle Wörter in $\{0,1\}^4$ sind
             nicht $L$-äquivalent.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Seien
             $\alpha:= a_1 a_2 a_3 a_4, \beta := b_1 b_2 b_3 b_4 \in
             \{0,1\}^4$

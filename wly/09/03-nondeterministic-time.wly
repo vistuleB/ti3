@@ -109,9 +109,9 @@
         Dann gibt es eine nichtdeterministische Turingmaschine $M'$, die
         $L$ in Zeit $t$ entscheidet.
 
-    |> Highlight
-        *Beweis.* Die Maschine $M'$ hat so viele Bänder wie $M$, wobei
-        zu Beginn der Berechnung allerdings das zweite Band leer ist. Die
+    |> Proof
+        Die Maschine $M'$ hat so viele Bänder wie $M$, wobei zu Beginn
+        der Berechnung allerdings das zweite Band leer ist. Die
         Funktionsweise von $M'$ ist nun wie folgt: In Phase 1 berechnet
         sie in $O(t(|x|))$ Schritten die Zahl $T:= t(|x|)$ , das heißt,
         sie schreibt das Wort $1^{T}$ auf dem zweiten Band. Dann
@@ -175,8 +175,8 @@
         Zeit $t$ entscheidet. Dann gibt es eine Zertifikatmaschine $M'$,
         die $L$ in Zeit $t$ entscheidet.
 
-    |> Highlight
-        *Beweis.* Da $M$ nichtdeterministisch ist, ist
+    |> Proof
+        Da $M$ nichtdeterministisch ist, ist
         $\delta \subseteq (Q \times \Gamma^k) \times (Q \times
         \Gamma^k \times \{L,S,R\}^k)$
         eine Relation, keine Funktion. Wir können es aber als Funktion in

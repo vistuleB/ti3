@@ -256,8 +256,7 @@
     Wir nehmen dies als Anlass, um mal wieder einen Induktionsbeweis
     im Detail durchzuführen.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wir setzen $N = Q$ und $S = \qstart$ und führen für jeden
         Zustandsübergang, der von $\delta$ beschrieben wird, eine
         Ableitungsregel ein:
@@ -295,8 +294,7 @@
         kann. Der Pfeil $\rightarrow$ "lebt" also im Automaten $M$, der
         Pfeil $\Rightarrow^*$ lebt in der Grammatik $G'$.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Wir verwenden Induktion über die Länge des Wortes $\alpha$ .
 
             *Induktionsbasis.* Wenn $\alpha = \epsilon$ gilt, also $\alpha$

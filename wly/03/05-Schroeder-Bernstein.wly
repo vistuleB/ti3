@@ -45,8 +45,7 @@
         $g : B\rightarrow A$ gibt, dann gibt es auch eine bijektive
         Funktion $h: A \rightarrow B$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Wir tun so, als ob $A \cap B = \emptyset$ gälte. Falls dies
         nicht der Fall sein sollte, können wir $A$ durch
         $A \times \{0\} = \{ (a,0) \ | \ a \in A\}$ ersetzen und $B$
@@ -108,8 +107,7 @@
             title=*Behauptung 1.*
             $g^{-1}(a)$ ist definiert für jedes $a \in A'$ .
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Wenn $a \in A'$ gilt, dann gilt $a \in X_{2i+1}$, also für
             einen ungeraden Index. Nach Konstruktion gilt
             $X_{2i+1} = g(X_{2i})$, die Menge aller Bilder von $X_{2i}$
@@ -125,8 +123,7 @@
             title=*Behauptung 2.*
             $h$ ist injektiv.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Seien $a, a' \in A$ zwei verschiedene Elemente. Wir
             unterscheiden drei Fälle: (1) Wenn $a, a' \in A \setminus A'$,
             dann gilt $h(a) = f(a) \ne f(a') = h(a')$, weil $f$ injektiv
@@ -151,8 +148,7 @@
             title=*Behauptung 3.*
             $h$ ist surjektiv.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Wir unterscheiden zwei Fälle. (1) Wenn
             $b \in X_0 \cup X_2 \cup X_4 \cup \dots$ ist, also sagen wir
             $b \in X_{2i}$, dann sei $a := f(b)$. Es gilt $a \in X_{2i+1}$

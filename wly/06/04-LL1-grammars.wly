@@ -85,8 +85,7 @@
 
         ist LL(1).
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Folgen wir der Definition von LL(1): für jedes Paar
             verschiedener Regeln muss etwas gelten. Wir haben hier keine
             Auswahl, denn es gibt ja nur ein Paar. Also müssen wir zeigen,

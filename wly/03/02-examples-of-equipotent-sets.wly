@@ -30,8 +30,7 @@
                 src=./img/infinite-sets/N-times-N.svg
             Die Menge $\N \times \N$ bzw. ein Teil davon.
 
-    |> Highlight
-        title=*Beweis*
+    |> Proof
         Wir skizzieren eine Bijektion $f : \N \times \N \rightarrow \N$,
         indem wir für jeden Punkt $(x,y) \in \N \times \N$ angeben, auf
         welche natürliche Zahl er abgebildet werden soll:
@@ -91,8 +90,7 @@
         title=*Beobachtung*
         Es gibt eine injektive Funktion $f : \Q \rightarrow \N$.
 
-    |> Highlight
-        title=*Beweis*
+    |> Proof
         Falls Sie es vergessen haben: eine Funktion $f: A \rightarrow B$
         heißt injektiv, wenn für alle verschiedenen $a, a' \in A$ auch
         $f(a) \ne f(a')$ gilt. Wenn $f$ also "kollisionsfrei" ist. Sei
@@ -125,8 +123,7 @@
         title=*Beobachtung*
         Es gibt eine injektive Funktion $g: \N \rightarrow \Q$.
 
-    |> Highlight
-        title=*Beweis*
+    |> Proof
         Dies ist ganz einach: da $\N \subseteq \Q$ gilt, können wir
         jedes $n$ einfach bei sich belassen. Die Funktion
 
@@ -157,8 +154,7 @@
     |> Theorem
         Es gilt $\Q \approx \N$.
 
-    |> Highlight
-        title=*Beweis*
+    |> Proof
         Wir definieren eine Bijektion $f: \N \rightarrow \Q$, indem wir
         die Beweisidee von wiederholen. Wir zeichnen $\Z \times \N^+$
         schematisch, löschen aber die Paare $(a,b)$, die nicht einem
@@ -205,8 +201,7 @@
     |> Theorem
         Es gilt $\{0,1\}^* \approx \N$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Hier ist eine Idee: wir interpretieren den Bitstring
         $a_1 a_2 \dots a_n$ als $n$-stellige Binärzahl, also
 

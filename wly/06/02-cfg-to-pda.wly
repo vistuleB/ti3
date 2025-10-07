@@ -7,8 +7,7 @@
         einen Kellerautomaten $M = (\Sigma, Q, \Gamma, \qstart, \delta)$,
         der die gleiche Sprache akzeptiert, also $L(G) = L(M)$.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Der Beweis ist vergleichsweise einfach, weil wir die Grammatik
         eins zu eins in Automatentransitionen übersetzen können. Die Idee
         ist, dass die Symbole auf dem Stack, von unten nach oben gelesen,
@@ -188,8 +187,7 @@
 
     Ich folge hier im Wesentlichen dem Beweis aus Sipsers Kapitel 2.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Sei $M = (\Sigma, Q, \Gamma, \qstart, F, \delta)$ der
         Kellerautomat. Als erstes führen wir drei Schönheitsoperation
         durch:

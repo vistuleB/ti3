@@ -196,8 +196,7 @@
         Beweismethoden interessiert sind, dürfen Sie gerne
         [runterspringen](#after-sub-proof).
 
-        |> Highlight
-            title=*Beweis.*
+        |> Proof
             Als _Beweismethode_ verwenden wir Induktion über $n$, die
             Anzahl der Variablen.
 
@@ -492,8 +491,7 @@
             $f(x_1,\dots,x_n) = (x_1 \wedge f_1(x_2,\dots,x_n)) \vee
             f_0(x_2,\dots,x_n) .$
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Wir machen eine Fallunterscheidung nach dem Wert von $x_1$ .
 
             |> ul
@@ -668,8 +666,7 @@
             Für alle $x_1,\dots,x_n$ gilt
             $T_{\mathbf{a}} \leq T'_{\mathbf{a}}$.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Definieren wir zusätzlich noch
             $T''_{\mathbf{a}} := \bigwedge_{i \in O_{\mathbf{a}}}
             \bar{x}_i$,
@@ -697,8 +694,7 @@
             $F \equiv F'$, d.h. sie berechnen beide dieselbe Funktion,
             nämlich $f$.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Um zu zeigen, dass beide dieselbe Funktion berechnen, müssen
             wir zeigen, dass
 

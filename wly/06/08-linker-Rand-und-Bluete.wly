@@ -318,8 +318,7 @@
         $w \in L(G)$ gilt und $G$ die $LR(0)$-Bedingung erfüllt, dann
         findet der Parser die Rechtsableitung $S \Step{}^* w$,
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Der erste Teil der Bedeutung ist einfach zu sehen. Jeder
         Reduktionsschritt ist ein Linksreduktionsschritt, und wenn man
         Ende $S$ steht, waren es auch alles _korrekte_

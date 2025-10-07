@@ -79,7 +79,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem 8.8.1</b>
+        <span class="nowrap"><b>Theorem 8.8.1</b>&thinsp;&thinsp;</span>
         Wir wollen bestimmen, ob aus einer gegebenen kontextfreien
         Grammatik $G$ ein Palindromwort ableitbar ist, also ein
         <span class="nowrap">$\gamma$,</span>
@@ -101,19 +101,19 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir zeigen: wenn man zu einer gegebenen kontextfreien
-        Grammatik entscheiden könnte, ob sie ein Palindromwort ableiten
-        kann, dann könnten wir auch entscheiden, ob ein gegebenes
-        PCP-Puzzle eine Lösung hat. Da wir bereits Letzteres als
-        unentscheidbar erkannt haben, schließen wir, dass Ersteres auch
-        unentscheidbar ist. Konkret sei uns nun also ein PCP-Puzzle $P$
-        gegeben. Wir bauen daraus eine kontextfreie Grammatik
+        Wir zeigen: wenn man zu einer gegebenen kontextfreien Grammatik
+        entscheiden könnte, ob sie ein Palindromwort ableiten kann, dann
+        könnten wir auch entscheiden, ob ein gegebenes PCP-Puzzle eine
+        Lösung hat. Da wir bereits Letzteres als unentscheidbar erkannt
+        haben, schließen wir, dass Ersteres auch unentscheidbar ist.
+        Konkret sei uns nun also ein PCP-Puzzle $P$ gegeben. Wir bauen
+        daraus eine kontextfreie Grammatik
         <span class="nowrap">$G$,</span>
-        so
-        dass $G$ genau dann ein Palindromwort ableiten kann, wenn $P$
-        eine Lösung hat. Die Konstruktion ist überraschend einfach. Wir
-        erschaffen ein Startsymbol $S$ für unsere Grammatik und
-        erstellen zu jeder Kachel $\alpha : \beta$ die Grammatikregel
+        so dass $G$ genau dann
+        ein Palindromwort ableiten kann, wenn $P$ eine Lösung hat. Die
+        Konstruktion ist überraschend einfach. Wir erschaffen ein
+        Startsymbol $S$ für unsere Grammatik und erstellen zu jeder
+        Kachel $\alpha : \beta$ die Grammatikregel
       </p>
       <div class="math-block">
         $$
@@ -142,16 +142,16 @@
       </p>
       <div class="well statement">
         <p>
-          <b>Behauptung 8.8.2</b>
+          <span class="nowrap"><b>Behauptung 8.8.2</b>&thinsp;&thinsp;</span>
           Wenn die Grammatik $G$ ein Palindromwort ableiten kann, dann
           hat das PCP-Puzzle $P$ eine Lösung.
         </p>
       </div>
-      <div class="well remark">
+      <div class="well highlight">
         <p>
           <b>Beweis.</b>
-          Die letzte angewandte Regel muss \(S \rightarrow \$\)
-          sein, und somit hat das abgeleitete Wort die Form
+          Die letzte angewandte Regel muss \(S \rightarrow \$\) sein,
+          und somit hat das abgeleitete Wort die Form
         </p>
         <div class="math-block">
           $$
@@ -179,12 +179,12 @@
       </div>
       <div class="well statement">
         <p>
-          <b>Behauptung 8.8.3</b>
+          <span class="nowrap"><b>Behauptung 8.8.3</b>&thinsp;&thinsp;</span>
           Wenn das PCP-Puzzle $P$ eine Lösung hat, dann kann die
           Grammatik $G$ ein Palindromwort ableiten.
         </p>
       </div>
-      <div class="well remark">
+      <div class="well highlight">
         <p>
           <b>Beweis.</b>
           Sei
@@ -289,8 +289,8 @@
       class="well statement out"
     >
       <p>
-        <b>Definition 8.8.4 
-          (Reduktion).</b>
+        <span class="nowrap"><b>Definition 8.8.4</b>&thinsp;&thinsp;</span>
+        <b>(Reduktion).</b>
         Seien $L_1 \subseteq \Sigma_1$ und
         $L_2 \subseteq \Sigma_2$ zwei Sprachen. Eine
         <i>Reduktion von $L_1$
@@ -327,7 +327,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Beobachtung 8.8.5</b>
+        <span class="nowrap"><b>Beobachtung 8.8.5</b>&thinsp;&thinsp;</span>
         Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und $L_2$
         entscheidbar ist, dann ist auch $L_1$ entscheidbar.
       </p>
@@ -335,9 +335,9 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Sei $M_2$ eine Turingmaschine, die $L_2$ entscheidet
-        und sei $M_f$ die Turingmaschine, die $f$ berechnet. Wir bauen
-        nun eine neue Turingmaschine
+        Sei $M_2$ eine Turingmaschine, die $L_2$ entscheidet und sei
+        $M_f$ die Turingmaschine, die $f$ berechnet. Wir bauen nun eine
+        neue Turingmaschine
         <span class="nowrap">$M_1$.</span>
         Sie nimmt das Eingabewort
         $x \in \Sigma_1^*$ und lässt die Turingmaschine $M_f$ auf $x$
@@ -377,7 +377,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Beobachtung 8.8.6</b>
+        <span class="nowrap"><b>Beobachtung 8.8.6</b>&thinsp;&thinsp;</span>
         Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und $L_1$
         unentscheidbar ist, dann ist auch $L_2$ unentscheidbar.
       </p>
@@ -385,10 +385,9 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Angenommen, $L_2$ wäre entscheidbar. Dann wäre laut
-        Behauptung 4.6.8 die Sprache $L_1$ ja auch entscheidbar, was sie
-        aber nach Annahme nicht ist. Daher ist $L_2$ eben nicht
-        entscheidbar.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Angenommen, $L_2$ wäre entscheidbar. Dann wäre laut Behauptung
+        4.6.8 die Sprache $L_1$ ja auch entscheidbar, was sie aber nach
+        Annahme nicht ist. Daher ist $L_2$ eben nicht entscheidbar.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
@@ -420,8 +419,8 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Theorem 8.8.7 
-          (Schnittproblem kontextfreier Sprachen)</b>
+        <span class="nowrap"><b>Theorem 8.8.7</b>&thinsp;&thinsp;</span>
+        <b>(Schnittproblem kontextfreier Sprachen)</b>
         Gegeben zwei
         kontextfreie Grammatiken
         <span class="nowrap">$G_1, G_2$.</span>
@@ -435,10 +434,10 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir reduzieren das Palindromwortproblem (bereits
-        bekannt) auf das Schnittproblem (neues Problem). Sei $G$ eine
-        Grammatik und $\Sigma$ die Menge der Terminalsymbole. Sei $G'$
-        die folgende Grammatik:
+        Wir reduzieren das Palindromwortproblem (bereits bekannt) auf
+        das Schnittproblem (neues Problem). Sei $G$ eine Grammatik und
+        $\Sigma$ die Menge der Terminalsymbole. Sei $G'$ die folgende
+        Grammatik:
       </p>
       <div class="math-block">
         $$
@@ -467,8 +466,8 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Theorem 8.8.8 
-          (Mehrdeutigkeitsproblem kontextfreier Sprachen)</b>
+        <span class="nowrap"><b>Theorem 8.8.8</b>&thinsp;&thinsp;</span>
+        <b>(Mehrdeutigkeitsproblem kontextfreier Sprachen)</b>
         Gegeben eine
         kontextfreie Grammatik
         <span class="nowrap">$G$.</span>

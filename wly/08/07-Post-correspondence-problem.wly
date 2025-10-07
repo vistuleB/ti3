@@ -152,10 +152,10 @@
     |> Theorem
         PCP ist unentscheidbar.
 
-    |> Highlight
-        *Beweis.* Wir zeigen: wenn PCP entscheidbar _wäre_, dann _wäre_
-        auch $\halt$ entscheidbar. Da letzteres jedoch unentscheidbar
-        ist, muss auch PCP unentscheidbar sein. Mehr im Detail: für eine
+    |> Proof
+        Wir zeigen: wenn PCP entscheidbar _wäre_, dann _wäre_ auch
+        $\halt$ entscheidbar. Da letzteres jedoch unentscheidbar ist,
+        muss auch PCP unentscheidbar sein. Mehr im Detail: für eine
         Turingmaschine $M$ und ein Eingabewort $x$ konstruieren wir ein
         Puzzle $S$, so dass $S$ genau dann eine Lösung hat, wenn $M(x)$
         akzeptiert. Ein Entscheidungsalgorithmus für das PCP könnte somit
@@ -172,8 +172,8 @@
             PCP-Puzzle $S'$ erstellen, mit der Eigenschaft, dass $S$ eine
             Lösung hat genau dann, wenn $S'$ eine Lösung hat.
 
-        |> Remark
-            *Beweis.* Im MPCP zwingen uns bereits die Spielregeln, mit der
+        |> Proof
+            Im MPCP zwingen uns bereits die Spielregeln, mit der
             markierten Startkachel zu beginnen. Wir müssen nun, von $S$
             ausgehend, ein ähnliches Puzzle bauen, in welchem es zwar keine
             Startkachel gibt, aber dennoch nur eine Kachel überhaupt als

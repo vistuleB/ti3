@@ -398,8 +398,7 @@
         $L(G) = L(M)$. In anderen Worten: formale Grammatiken sind
         mindestens so mächtig wie Turingmaschinen.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Die Idee ist, dass wir eine Grammatik $G$ schreiben, die "in
         umgekehrter Reihenfolge" läuft, also
 

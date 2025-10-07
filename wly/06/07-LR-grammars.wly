@@ -290,8 +290,7 @@
                 $\front(\gamma')$ ist, dann muss in dem überstehenden Teil
                 von $\front(\gamma)$ mindestens ein Nichtterminal vorkommen.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Der Beweis ist leider etwas mechanisch und repetitiv. Aber
         vielleicht ist es eine gute Übung, ihn genau durchzugehen, um die
         Definitionenen Linksreduktion, gültige Wortform etc. zu
@@ -304,8 +303,7 @@
             Wenn $G$ eine LR(0)-Grammatik ist, dann gelten die
             Schlussfolgerungen des Lemmas.
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Um Punkt 1 zu zeigen, nehmen wir an, dass
             $\alpha \beta = \alpha' \beta'$ gilt. Da
             $\alpha \beta w \rstep{} \alpha X w$ korrekt ist,
@@ -347,8 +345,7 @@
             Wenn die Grammatik $G$ die Schlussfolgerungen des Lemmas
             erfüllt und müssen zeigen, dass sie auch LG(0).
 
-        |> Highlight
-            title=*Beweis.*
+        |> Proof
             Als erstes zeigen wir, dass $G$ eindeutig ist; dass es also
             für jede gültige Wortform genau einen korrekten
             Linksreduktionsschritt gibt. Dafür nehmen wir dann, dass es von

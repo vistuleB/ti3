@@ -26,10 +26,12 @@ const p_cannot_be_contained_in = [
   "code", "figure", "p", "pre", "span",
 ]
 
+const post_counter_space = "&thinsp;&thinsp;"
+
 pub fn main_pipeline()  -> List(Pipe) {
   let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
 
-  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "Theorem", "WriterlyBlankLine", "TopicAnnouncement", "SubtopicAnnouncement", "Statement", "Exercise", "Highlight", "Remark", "QED", "CircleX", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
+  let pre_transformation_document_tags = ["Document", "Chapter", "ChapterTitle", "Sub", "SubTitle", "Theorem", "Proof", "WriterlyBlankLine", "TopicAnnouncement", "SubtopicAnnouncement", "Statement", "Exercise", "Highlight", "Remark", "QED", "CircleX", "Carousel", "CarouselItem", "WriterlyCodeBlock", "marker"]
   let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
   let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
   
@@ -73,6 +75,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
       dl.rename(#("WriterlyCodeBlock", "pre")),
       dl.rename_with_attributes(#("Theorem", "Statement", [#("title", "*Theorem*")])),
+      dl.rename_with_attributes(#("Proof", "Highlight", [#("title", "*Beweis.*")])),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),
       dl.append_attribute__batch([
@@ -102,19 +105,19 @@ pub fn main_pipeline()  -> List(Pipe) {
         #(
           "Exercise",
           "Sub",
-          " *Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter* ",
-          " *Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter* "
+          " *Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter*" <> post_counter_space,
+          " *Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter*" <> post_counter_space,
         ),
         #(
           "Statement",
           "Sub",
-          " *::øøChapterCounter.::øøSubCounter.::øøStatementCounter* ",
-          " *::øøChapterCounter.::øøStatementCounter* "
+          " *::øøChapterCounter.::øøSubCounter.::øøStatementCounter*" <> post_counter_space,
+          " *::øøChapterCounter.::øøStatementCounter*" <> post_counter_space,
         ),
       ]),
       dl.insert_attribute_as_text(#("Statement", "title")),
-      dl.insert_attribute_as_text(#("Highlight", "title")),
-      dl.insert_attribute_as_text(#("Remark", "title")),
+      dl.prepend_attribute_as_text(#("Highlight", "title")),
+      dl.prepend_attribute_as_text(#("Remark", "title")),
       dl.counters_substitute_and_assign_handles(),
     ],
     pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),

@@ -93,8 +93,7 @@
         {n \choose {\ceil{n/2}}} \geq \frac{2^n}{n+1} \ .
         $$
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Sei $k \in \{1,\dots,n\}$. Vergleichen wir ${n \choose k}$ mit
         ${n \choose k-1}$:
 
@@ -289,8 +288,7 @@
 
         gilt.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Ich demonstriere das Beweisprinzip erst einmal mit drei Zahlen
         in Basis 10:
 
@@ -421,8 +419,7 @@
         Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe
         $O(\log n)$ und Größe $\poly(n)$, der $\maj_n$ berechnet.
 
-    |> Highlight
-        title=*Beweis.*
+    |> Proof
         Die Beweismethode, die wir verwenden, ist womöglich neu für Sie.
         Wir verwenden bei der Konstruktion des Schaltkreises _Zufall_; am
         Ende werden wir zeigen, dass dieser zufällige Schaltkreis mit
@@ -477,8 +474,7 @@
             \Pr_{C \sim \mathcal{C}_0} [C(\x) = \maj_n(\x)] = \frac{1}{2} + \frac{1}{2n} \ .
             $$
 
-        |> Remark
-            title=*Beweis.*
+        |> Proof
             Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist
             extrem einfach. Wir wählen zufällig einen Index
             $I \in \{1,\dots,n\}$ und geben $x_I$ als unseren Schaltkreis
@@ -555,8 +551,7 @@
                     die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
                     $\frac{3}{2} \delta - \frac{1}{2}\delta^3$ .
 
-        |> Highlight
-            title=*Beweis.*
+        |> Proof
             Wir betrachten ein festes $\x \in \cube^n$ mit
             $\maj_n(\x) = 1$; der Fall $\maj_n(\x) = 0$ ist analog. Wir
             definieren nun $U := C_1(\x)$, $V := C_2(\x)$ und
@@ -627,8 +622,7 @@
             dann hat $\mathcal{C}^{\otimes 3}$ Fehlerwahrscheinlichkeit
             $3 \epsilon^2$
 
-        |> Highlight
-            title=*Beweis.*
+        |> Proof
             Wie im Beweis vom Lemma setzen wir
             $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
 

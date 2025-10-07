@@ -41,18 +41,18 @@
         irgendwie auf Turingmschinen-verträgliche Weise codiert werden
         können, ersparen wir uns diese Formalitäten.
 
-    |> Highlight
-        *Beweis.* Wir zeigen: wenn man zu einer gegebenen kontextfreien
-        Grammatik entscheiden könnte, ob sie ein Palindromwort ableiten
-        kann, dann könnten wir auch entscheiden, ob ein gegebenes
-        PCP-Puzzle eine Lösung hat. Da wir bereits Letzteres als
-        unentscheidbar erkannt haben, schließen wir, dass Ersteres auch
-        unentscheidbar ist. Konkret sei uns nun also ein PCP-Puzzle $P$
-        gegeben. Wir bauen daraus eine kontextfreie Grammatik $G$, so
-        dass $G$ genau dann ein Palindromwort ableiten kann, wenn $P$
-        eine Lösung hat. Die Konstruktion ist überraschend einfach. Wir
-        erschaffen ein Startsymbol $S$ für unsere Grammatik und
-        erstellen zu jeder Kachel $\alpha : \beta$ die Grammatikregel
+    |> Proof
+        Wir zeigen: wenn man zu einer gegebenen kontextfreien Grammatik
+        entscheiden könnte, ob sie ein Palindromwort ableiten kann, dann
+        könnten wir auch entscheiden, ob ein gegebenes PCP-Puzzle eine
+        Lösung hat. Da wir bereits Letzteres als unentscheidbar erkannt
+        haben, schließen wir, dass Ersteres auch unentscheidbar ist.
+        Konkret sei uns nun also ein PCP-Puzzle $P$ gegeben. Wir bauen
+        daraus eine kontextfreie Grammatik $G$, so dass $G$ genau dann
+        ein Palindromwort ableiten kann, wenn $P$ eine Lösung hat. Die
+        Konstruktion ist überraschend einfach. Wir erschaffen ein
+        Startsymbol $S$ für unsere Grammatik und erstellen zu jeder
+        Kachel $\alpha : \beta$ die Grammatikregel
 
         \begin{align*}
         S&\rightarrow \alpha S \beta^R \ ,
@@ -74,9 +74,9 @@
             Wenn die Grammatik $G$ ein Palindromwort ableiten kann, dann
             hat das PCP-Puzzle $P$ eine Lösung.
 
-        |> Remark
-            *Beweis.* Die letzte angewandte Regel muss \(S \rightarrow \$\)
-            sein, und somit hat das abgeleitete Wort die Form
+        |> Proof
+            Die letzte angewandte Regel muss \(S \rightarrow \$\) sein,
+            und somit hat das abgeleitete Wort die Form
 
             \begin{align*}
             \alpha_1 \alpha_2 \dots \alpha_n \$ \beta_n^R \dots \beta_2^R \beta_1^R \ .
@@ -99,8 +99,8 @@
             Wenn das PCP-Puzzle $P$ eine Lösung hat, dann kann die
             Grammatik $G$ ein Palindromwort ableiten.
 
-        |> Remark
-            *Beweis.* Sei
+        |> Proof
+            Sei
 
             \begin{align*}
             (\alpha_1 : \beta_1) (\alpha_2 : \beta_2)\dots (\alpha_n : \beta_n)
@@ -195,10 +195,10 @@
         Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und $L_2$
         entscheidbar ist, dann ist auch $L_1$ entscheidbar.
 
-    |> Highlight
-        *Beweis.* Sei $M_2$ eine Turingmaschine, die $L_2$ entscheidet
-        und sei $M_f$ die Turingmaschine, die $f$ berechnet. Wir bauen
-        nun eine neue Turingmaschine $M_1$. Sie nimmt das Eingabewort
+    |> Proof
+        Sei $M_2$ eine Turingmaschine, die $L_2$ entscheidet und sei
+        $M_f$ die Turingmaschine, die $f$ berechnet. Wir bauen nun eine
+        neue Turingmaschine $M_1$. Sie nimmt das Eingabewort
         $x \in \Sigma_1^*$ und lässt die Turingmaschine $M_f$ auf $x$
         arbeiten; wenn $M_f$ terminiert, steht $f(x)$ auf ihrem
         Ausgabeband. Wir rufen nun die Turing-Maschien $M_2$ mit dem
@@ -229,11 +229,10 @@
         Wenn $f$ eine Reduktion von $L_1$ nach $L_2$ ist und $L_1$
         unentscheidbar ist, dann ist auch $L_2$ unentscheidbar.
 
-    |> Highlight
-        *Beweis.* Angenommen, $L_2$ wäre entscheidbar. Dann wäre laut
-        Behauptung 4.6.8 die Sprache $L_1$ ja auch entscheidbar, was sie
-        aber nach Annahme nicht ist. Daher ist $L_2$ eben nicht
-        entscheidbar.
+    |> Proof
+        Angenommen, $L_2$ wäre entscheidbar. Dann wäre laut Behauptung
+        4.6.8 die Sprache $L_1$ ja auch entscheidbar, was sie aber nach
+        Annahme nicht ist. Daher ist $L_2$ eben nicht entscheidbar.
         |> QED
 
     Beachten Sie nun, dass so etwas wie Behauptung 4.6.9 bereits oben
@@ -260,11 +259,11 @@
         $x \in G_1$ und $x \in G_2$ gibt. Dieses Problem ist als
         _Schnittproblem kontextfreier Sprachen_ bekannt.
 
-    |> Highlight
-        *Beweis.* Wir reduzieren das Palindromwortproblem (bereits
-        bekannt) auf das Schnittproblem (neues Problem). Sei $G$ eine
-        Grammatik und $\Sigma$ die Menge der Terminalsymbole. Sei $G'$
-        die folgende Grammatik:
+    |> Proof
+        Wir reduzieren das Palindromwortproblem (bereits bekannt) auf
+        das Schnittproblem (neues Problem). Sei $G$ eine Grammatik und
+        $\Sigma$ die Menge der Terminalsymbole. Sei $G'$ die folgende
+        Grammatik:
 
         \begin{align*}
         S'&\rightarrow x S' x \tag{ für alle \(x \in \Sigma\) }\\
@@ -349,8 +348,8 @@
     Michael Sipsers Buch _Introduction to the Theory of Computation_,
     third edition.
 
-    |> Highlight
-        *Beweis.* Sei ein PCP-Puzzle
+    |> Proof
+        Sei ein PCP-Puzzle
         $P = \{ (\alpha_1:\beta_1), \dots, (\alpha_n : \beta_n)\}$
         gegeben. Wir erstellen nun eine kontextfreie Gramatik, die es dem
         "User" erlaubt, zu entscheiden, ob er das Wort via die oberen

@@ -86,7 +86,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 9.6.1</b>
+        <span class="nowrap"><b>Definition 9.6.1</b>&thinsp;&thinsp;</span>
         Ein Entscheidungsproblem $L \subseteq \Sigma^*$ heißt
         <span class="nowrap"><i>NP-schwer</i>,</span>
         wenn für jedes Problem $K \in {\rm NP}$ gilt:
@@ -99,8 +99,8 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Theorem 9.6.2 
-          (Cook-Levin-Theorem).</b>
+        <span class="nowrap"><b>Theorem 9.6.2</b>&thinsp;&thinsp;</span>
+        <b>(Cook-Levin-Theorem).</b>
         3-SAT ist NP-vollständig. In anderen
         Worten: Sei $L$ ein beliebiges Entscheidgungsproblem aus NP.
         Dann gilt
@@ -121,7 +121,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Problem 9.6.3</b>
+        <span class="nowrap"><b>Problem 9.6.3</b>&thinsp;&thinsp;</span>
         (<span class="sc">Circuit-SAT</span>). Gegeben ein Boolescher Schaltkreis $C$ mit
         $n$ Eingabevariablen. Gibt es ein $x \in \{0,1\}^n$ mit
         <span class="nowrap">$C(x) = 1$?</span>
@@ -136,7 +136,7 @@
     </p>
     <div class="well statement out">
       <p>
-        <b>Lemma 9.6.4</b>
+        <span class="nowrap"><b>Lemma 9.6.4</b>&thinsp;&thinsp;</span>
         Sei
         <span class="nowrap">$L \in {\rm NP}$.</span>
         Dann gilt
@@ -148,8 +148,8 @@
         <b>Beweis.</b>
         Wir können annehmen, dass
         <span class="nowrap">$L \subset \{0,1\}^*$,</span>
-        da
-        wir andernfalls eine geeignete Codierung
+        da wir
+        andernfalls eine geeignete Codierung
         $\Sigma \rightarrow \{0,1\}^*$ wählen können. Da $L \in {\rm NP}$
         ist, gibt es ein $k \in \N$ und eine Zertifikatmaschine $M$ mit
         Laufzeit
@@ -251,7 +251,7 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Lemma 9.6.5</b>
+        <span class="nowrap"><b>Lemma 9.6.5</b>&thinsp;&thinsp;</span>
         <span class="sc">Circuit-SAT</span>
         $\leq_p$
         <span class="sc">3-SAT</span>.
@@ -260,13 +260,11 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Wir haben also einen Schaltkreis $C$ mit $n$
-        Eingabe-Variablen und $m$ Gates gegeben. Unsere Aufgabe ist es,
-        eine
+        Wir haben also einen Schaltkreis $C$ mit $n$ Eingabe-Variablen
+        und $m$ Gates gegeben. Unsere Aufgabe ist es, eine
         <span class="nowrap">$3$-CNF-Formel</span>
-        $F$ zu bauen, so dass $F$ genau dann
-        erfüllbar ist, wenn $C$ erfüllbar ist. Wir demonstrieren die
-        Umformung an einem Beispiel:
+        $F$ zu bauen, so dass $F$ genau dann erfüllbar ist, wenn $C$
+        erfüllbar ist. Wir demonstrieren die Umformung an einem Beispiel:
       </p>
       <div class="figure__container">
         <figure>

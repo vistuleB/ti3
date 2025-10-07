@@ -290,7 +290,8 @@ p:has(> mjx-container) {
 }
 
 .highlight .highlight .statement,
-.highlight .highlight .remark {
+.highlight .highlight .remark,
+.highlight .highlight .highlight {
   background-color: #d9edf7;
 }
 

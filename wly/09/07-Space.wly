@@ -96,9 +96,9 @@
         Wenn $M$ in Platz $s(n)$ läuft, dann hat $M$ Laufzeit
         $2^{O(s(n))}$.
 
-    |> Highlight
-        *Beweis.* Für gegebenes $n$ sei $S \in O(s(n))$ der maximale
-        Platzbedarf der Turingmaschine. Es gibt maximal
+    |> Proof
+        Für gegebenes $n$ sei $S \in O(s(n))$ der maximale Platzbedarf
+        der Turingmaschine. Es gibt maximal
         $T := |Q| \cdot \left(|\Gamma|+1\right)^{kS}$ Konfigurationen
         (warum?). Da $M$ terminiert, kann die Berechnung nicht mehr $T$
         Schritte dauern.
