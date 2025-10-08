@@ -215,7 +215,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
       dl.delete_if_empty("p"),
-      dl.ti2_process_pre_language_attribute(),
+      dl.ti2_process_pre_listing_classname(),
       dl.ti2_parse_python_prompt_pre(),
       dl.ti2_parse_orange_comments_pre(),
       dl.ti2_parse_arbitrary_prompt_response_pre(),
