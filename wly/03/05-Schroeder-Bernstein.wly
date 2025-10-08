@@ -144,7 +144,7 @@
             |> QED
 
         |> Remark
-            title=*Behauptung 3.*
+            *Behauptung 3.*
             $h$ ist surjektiv.
 
         |> Proof

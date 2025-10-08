@@ -12,6 +12,8 @@ import vxml.{type VXML}
 import desugaring as ds
 import gleam/regexp.{type Regexp}
 
+const title_banner = "TI2—"
+
 pub type FragmentType {
   Chapter(Int)
   Sub(Int, Int)
@@ -115,7 +117,7 @@ fn index_emitter(
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
-        OutputLine(blame, 2, "<title>TI-2 - Index</title>"),
+        OutputLine(blame, 2, "<title>" <> title_banner <> "Inhaltsverzeichnis</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
       ],
@@ -148,7 +150,7 @@ fn chapter_emitter(
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
-        OutputLine(blame, 2, "<title>TI-2 - Chapter " <> string.inspect(n) <> "</title>"),
+        OutputLine(blame, 2, "<title>" <> title_banner <> "Kapitel " <> string.inspect(n) <> "</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
       ],
@@ -181,7 +183,7 @@ fn subchapter_emitter(
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
-        OutputLine(blame, 2, "<title>TI-2 - Chapter " <> string.inspect(chapter_n) <> ", Section " <> string.inspect(sub_n) <> "</title>"),
+        OutputLine(blame, 2, "<title>" <> title_banner <> "Kapitel " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n) <> "</title>"),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
       ],
