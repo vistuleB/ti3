@@ -218,15 +218,15 @@
     |> ul
         |> li
             Wenn `CNF-Satisfiability`{sc} in P, dann auch
-            `3-Colorability`{sc}(Theorem >>theorem-3-col-to-sat).
+            `3-Colorability`{sc} (Theorem >>theorem-3-col-to-sat).
 
         |> li
-            Wenn `3-Colorability`{sc} in P, dann auch `3-SAT`{sc}(Theorem
+            Wenn `3-Colorability`{sc} in P, dann auch `3-SAT`{sc} (Theorem
             >>theorem-3-sat-to-3-col).
 
         |> li
             Wenn `3-SAT`{sc} in P, dann
-            auch`CNF-Satisfiability`{sc}(Theorem >>theorem-sat-to-3-sat).
+            auch`CNF-Satisfiability`{sc} (Theorem >>theorem-sat-to-3-sat).
 
     Beachten Sie, dass alle Beweise eine ähnliche Form haben: um die
     Aussage _wenn $L_1 \in P$, dann auch $L_2 \in P$_ zu zeigen,
