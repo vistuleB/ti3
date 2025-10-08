@@ -13,6 +13,8 @@ import desugaring as ds
 import gleam/regexp.{type Regexp}
 
 const title_banner = "TI2—"
+const favicon_loc = "./img/favicon.svg"
+const mathjax_loc = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 
 pub type FragmentType {
   Chapter(Int)
@@ -147,8 +149,9 @@ fn chapter_emitter(
         OutputLine(blame, 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
         OutputLine(blame, 2, "<meta name=\"description\" content=\"Chapter " <> string.inspect(n) <> " of TI-2 - Theoretische Informatik 2\">"),
         OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />"),
+        OutputLine(blame, 2, "<link rel=\"icon\" type=\"image/x-icon\" href=\"" <> favicon_loc <> "\">"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
-        OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" src=\"" <> mathjax_loc <> "\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         OutputLine(blame, 2, "<title>" <> title_banner <> "Kapitel " <> string.inspect(n) <> "</title>"),
         OutputLine(blame, 0, "</head>"),
@@ -180,8 +183,9 @@ fn subchapter_emitter(
         OutputLine(blame, 2, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">"),
         OutputLine(blame, 2, "<meta name=\"description\" content=\"Section " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n) <> " of TI-2 - Theoretische Informatik 2\">"),
         OutputLine(blame, 2, "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />"),
+        OutputLine(blame, 2, "<link rel=\"icon\" type=\"image/x-icon\" href=\"" <> favicon_loc <> "\">"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>"),
-        OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>"),
+        OutputLine(blame, 2, "<script type=\"text/javascript\" id=\"MathJax-script\" src=\"" <> mathjax_loc <> "\"></script>"),
         OutputLine(blame, 2, "<script type=\"text/javascript\" src=\"./app.js\"></script>"),
         OutputLine(blame, 2, "<title>" <> title_banner <> "Kapitel " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n) <> "</title>"),
         OutputLine(blame, 0, "</head>"),
