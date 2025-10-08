@@ -222,7 +222,7 @@
     durch ein $c$. In der Syntax von
     [turingmachinesimulator.com](https://turingmachinesimulator.com):
 
-    ```listing
+    ```.listing
     name: replace_b_by_c
     init: init
     accept: accept

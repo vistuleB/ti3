@@ -36,7 +36,7 @@
         also das Eingabewort $x$) und ein _Zertifikat_. Hier ist unser
         Code:
 
-        ```listing
+        ```.listing
         def is_3_coloring(graph, c):
             (V,E) = graph
             for (u,v) in E:

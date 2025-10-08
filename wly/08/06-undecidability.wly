@@ -154,7 +154,7 @@
         einmal; in Fall 1 und 2 liefert $H$ zwar eine Antwort, aber die
         falsche. Der Code für $D$ ist sehr einfach:
 
-        ```listing
+        ```.listing
         def D(x):
             if H(xx) == accept then
             reject

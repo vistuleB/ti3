@@ -99,7 +99,7 @@
     Funktion mit einer `for`-Schleife vorstellen, in der nur eine
     lokale Variable erlaubt ist:
 
-    ```listing
+    ```.listing
     def PrimRec(g, h):
         def f(t,*x):
             temp = g(*x)
@@ -172,7 +172,7 @@
         Argumente addiert. Ich darf also nicht einfach python
         programmieren und
 
-        ```redyellow-listing
+        ```redyellow.listing
         def add(x, y)
             return x + y
         ```
@@ -198,7 +198,7 @@
         Rekursion ist mit $g = \pi_0$ und $h = {\comp}(\succ, \pi_0)$,
         also
 
-        ```listing
+        ```.listing
         p0 = Proj(0)
         add = PrimRec (p0, Comp(succ,p0))
         ```

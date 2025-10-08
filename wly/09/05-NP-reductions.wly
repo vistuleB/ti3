@@ -63,7 +63,7 @@
         Es gilt nun: $G$ ist genau dann $3$-färbbar, wenn $F$ erfüllbar
         ist. Und hier ist nun unser Code für `is_3_colorable:`
 
-        ```orange-comments-listing
+        ```orange-comments.listing
         def is_3_colorable(graph):
             F = convert_to_CNF_formula(graph)
             //# F ist die oben beschriebene Formel mit 3n Variablen
@@ -133,7 +133,7 @@
         eine gültige $3$-Färbung in eine erfüllende Belegung übersetzen
         und umgekehrt. Hier ist also der Code:
 
-        ```orange-comments-listing
+        ```orange-comments.listing
         def is_3CNF_satisfiable(the_3_cnf_formula):
             G = cOnvert_to_graph(the_3_cnf_formula)
             //# G ist der oben konstruierte Graph
@@ -242,7 +242,7 @@
     `is_in_L2` gibt, dann können wir mit folgendem Code auch $L_1$
     effizient entscheiden:
 
-    ```listing
+    ```.listing
     def is_in_L1(x):
         y = convert_from_L1_instance_to_L2_instance(x)
         return is_in_L2(y)
@@ -438,7 +438,7 @@
         haben wir unseren Kreis; wenn es überhaupt einen Kreis gibt, dann
         klappt es auch mit einem Nachbarn (in der Tat: sogar mit zweien).
 
-        ```listing
+        ```.listing
         def has_hamilton_cycle(G):
             u = ein beliebiger Knoten
             for v in neighbors[u]:

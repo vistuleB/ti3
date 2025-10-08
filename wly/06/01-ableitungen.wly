@@ -69,7 +69,7 @@
     Zahlenfolge spiegeln also nur zwei verschiedene Weisen wieder, den
     Baum auszugeben.
 
-    ```listing
+    ```.listing
     def treeToLeftDerivation (tree):
         print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
         for child in tree.children (from left ro right):

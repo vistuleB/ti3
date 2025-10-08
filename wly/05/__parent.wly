@@ -18,7 +18,7 @@
     typische hierarchisch-geschachtelte Struktur (sie müssen es nicht
     im Detail lesen):
 
-    ```xml-listing
+    ```xml.listing
     <div class="carousel-inner" style="display:inline-block">
         <div class="item active">
             <p>$110 x + 794$</p><img loading="lazy" src="img/hash/hashfunction_110_794.svg">
@@ -44,7 +44,7 @@
     Hier sehen Sie einen Ausschnitt aus einem Elm-Programm (auch
     diesen müssen Sie nicht im Detail lesen):
 
-    ```listing
+    ```.listing
     `find`{elm-1} `:`{elm-0} `Bst`{elm-2} `->`{elm-6} `String`{elm-2} `->`{elm-6} `Maybe`{elm-2} `String`{elm-2}
     `find`{elm-1} `tree`{elm-3} `key`{elm-3} `=`{elm-0}
         `case`{elm-4} `tree`{elm-3} `of`{elm-4}
@@ -69,7 +69,7 @@
             style=padding:0;margin-bottom:0.5rem;
             src=./img/svg-example.svg
 
-    ```xml-listing
+    ```xml.listing
     <?xml version="1.0" encoding="UTF-8"?>
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +210,7 @@
     |> div
         id=email-context-free-grammar
 
-        ```listing
+        ```.listing
         <EmailAddress>    ->    <User> @ <Domain>
         <Domain>          ->    <Label> . <Label> | <Label> . <Domain>
         <User>            ->    <NameBlock> | <NameBlock> . <User>

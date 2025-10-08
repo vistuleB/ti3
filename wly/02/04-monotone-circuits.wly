@@ -253,7 +253,7 @@
                 Funktionen mit null Variablen tun zu haben. Allerdings:
                 warum? In Java hätten Sie bestimmt kein Problem mit
 
-                ```listing
+                ```.listing&style=counter-set:listing 62
                 public boolean constantFalse() {
                     return false;
                 }
@@ -281,7 +281,7 @@
                 Programmiererfahrung: weder Sie noch der Java-Compiler werden
                 Probleme mit der Funktion
 
-                ```listing
+                ```.listing
                 public boolean constantFalse(boolean x) {
                     return false;
                 }
