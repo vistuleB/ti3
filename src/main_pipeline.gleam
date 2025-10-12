@@ -233,9 +233,12 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.insert_attribute_value_at_first_child_start(#("ChapterTitle", "number-chiron", "&ensp;", infra.GoBack)),
       dl.insert_attribute_value_at_first_child_start(#("SubTitle", "number-chiron", "&ensp;", infra.GoBack)),
     ],
+    [
+      dl.table_marker(),
+    ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     pp.markdown_link_splitting(["MathBlock", "Math"]),
-    pp.barbaric_symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math"]),
+    pp.barbaric_symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math", "pre"]),
     pp.splitting_empty_lines_cleanup(),
     pp.symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math", "pre", "code"]),
     pp.splitting_empty_lines_cleanup(),

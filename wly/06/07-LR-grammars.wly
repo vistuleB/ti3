@@ -1,6 +1,7 @@
 |> Sub
     title=LR-Grammatiken
-
+    !!title=LR-Grammatiken
+    title=LR-Grammatiken
 
     |> TopicAnnouncement
         Motivation und Intuition
