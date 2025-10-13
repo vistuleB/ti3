@@ -128,13 +128,13 @@ pub fn main_pipeline()  -> List(Pipe) {
       our_blame,
       "span",
       [vxml.Attribute(our_blame, "style", "color:#0000;visibility:none;")],
-      [vxml.T(our_blame, [vxml.TextLine(our_blame, "A")])],
+      [vxml.T(our_blame, [vxml.Line(our_blame, "A")])],
     ),
     vxml.V(
       our_blame,
       "span",
       [vxml.Attribute(our_blame, "class", "qed")],
-      [vxml.T(our_blame, [vxml.TextLine(our_blame, "\\(\\square\\)")])],
+      [vxml.T(our_blame, [vxml.Line(our_blame, "\\(\\square\\)")])],
     ),
   ]
 
@@ -143,8 +143,10 @@ pub fn main_pipeline()  -> List(Pipe) {
   let assert Ok(end_of_page_element) = infra.expand_selector_shorthand("EndOfPageElt#end-of-page-elt")
   let assert Ok(body_wrapper) = infra.expand_selector_shorthand("BodyWrapper#body-wrapper")
 
-  // use 'dl.table_marker()' desugarer to mark a line 
-  // in the table; (with '--table' printout)
+  // ****************************************************
+  // * use 'dl.table_marker()' desugarer to mark a line *
+  // * in the table; (with '--table' printout)          *
+  // ****************************************************
 
   [
     [

@@ -7,7 +7,6 @@
  * - TABLET: edge of outer well (the well itself) *
  *   is flush with edge of main column of text,   *
  *                                                *
- *   main column of text;                         *
  * - LAPTOP: outer well is inset compared to      *
  *   see const LAPTOP_OUTER_WELL_INSET            *
  *                                                *
