@@ -3,7 +3,6 @@ import infrastructure.{type Pipe} as infra
 import gleam/list
 import prefabricated_pipelines as pp
 import group_replacement_splitting as grs
-import selector_library as sl
 import blame as bl
 import vxml
 
@@ -127,13 +126,13 @@ pub fn main_pipeline()  -> List(Pipe) {
     vxml.V(
       our_blame,
       "span",
-      [vxml.Attribute(our_blame, "style", "color:#0000;visibility:none;")],
+      [vxml.Attr(our_blame, "style", "color:#0000;visibility:none;")],
       [vxml.T(our_blame, [vxml.Line(our_blame, "A")])],
     ),
     vxml.V(
       our_blame,
       "span",
-      [vxml.Attribute(our_blame, "class", "qed")],
+      [vxml.Attr(our_blame, "class", "qed")],
       [vxml.T(our_blame, [vxml.Line(our_blame, "\\(\\square\\)")])],
     ),
   ]
@@ -340,15 +339,5 @@ pub fn main_pipeline()  -> List(Pipe) {
     ]
   ]
   |> list.flatten
-  |> infra.desugarers_2_pipeline(
-    sl.verbatim("ächstes wollen wir zeig")
-    |> infra.extend_selector_up(4)
-    |> infra.extend_selector_down(16)
-    |> infra.extend_selector_to_ancestors(
-      with_elder_siblings: True,
-      with_ancestor_attributes: False,
-      with_elder_sibling_attributes: False,
-    ),
-    infra.TrackingOff,
-  )
+  |> infra.desugarers_2_pipeline
 }

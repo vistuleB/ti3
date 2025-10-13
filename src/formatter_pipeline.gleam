@@ -3,7 +3,6 @@ import desugarer_library as dl
 import infrastructure.{type Pipe} as infra
 import gleam/list
 import prefabricated_pipelines as pp
-import selector_library as sl
 
 const minimum_line_wrap_length = 40
 
@@ -208,10 +207,5 @@ pub fn formatter_pipeline(
     ]
   ]
   |> list.flatten
-  |> infra.desugarers_2_pipeline(
-    sl.verbatim("<> marker")
-    |> infra.extend_selector_up(4)
-    |> infra.extend_selector_down(4),
-    infra.TrackingOff,
-  )
+  |> infra.desugarers_2_pipeline
 }
