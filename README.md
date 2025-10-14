@@ -1,4 +1,4 @@
-# INSTALLATION INSTRUCTIONS
+# TI2 MARKUP
 
 ## 1. Install Gleam
 
