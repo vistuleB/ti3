@@ -1,4 +1,4 @@
-# ti2
+# INSTALLATION INSTRUCTIONS
 
 ## 1. Install Gleam
 
