@@ -2,11 +2,11 @@
 
 ## 1. Gleam Install
 
-[see site](https://gleam.run/getting-started/installing)
+[here](https://gleam.run/getting-started/installing)
 
 ## 2. Clone repos
 
-Git clone the `vistuleB/wly` and `vistuleB/ti2` in same folder.
+Git clone `github.com/vistuleB/wly` and `github.com/vistuleB/ti2` next to each other in the same folder.
 
 *SSH*
 
