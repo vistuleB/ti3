@@ -53,5 +53,5 @@ In VSCode, download the [Writerly](https://marketplace.visualstudio.com/items?it
 
 ## 6. Formatter
 
-Run `gleam run -- --fmt` in `ti2` repo for default 55 to reformat at char per line formatting or `gleam run -- --fmt 65` to format line length to 65 chars per line.
+Run `gleam run -- --fmt` in `ti2` repo for default 55 to reformat at char per line formatting or `gleam run -- --fmt <X>` to format line length to X chars per line.
 
