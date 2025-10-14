@@ -1,8 +1,8 @@
-# TI2
+# TI2 (user instructions)
 
 ## 1. Gleam Install
 
-[here](https://gleam.run/getting-started/installing)
+[official site](https://gleam.run/getting-started/installing)
 
 ## 2. Clone repos
 
