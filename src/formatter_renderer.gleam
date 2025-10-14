@@ -10,8 +10,8 @@ import vxml.{type VXML, V}
 import blame.{Src}
 import formatter_pipeline.{formatter_pipeline}
 
-const default_line_length = 70
-const default_indentation_penalty = 2
+const default_line_length = 55
+const default_indentation_penalty = 0
 
 type FragmentType {
   Root
