@@ -8,7 +8,7 @@
 
 In your github folder, or other favorite, git clone the `vistuleB/wly` and `vistuleB/ti2` repos.
 
-*SSH:*
+ssh:
 
 ```
 git clone git@github.com:vistuleB/wly.git
@@ -17,7 +17,7 @@ git clone git@github.com:vistuleB/wly.git
 git clone git@github.com:vistuleB/ti2.git
 ```
 
-*HTTPS:*
+https:
 
 ```
 git clone https://github.com/vistuleB/wly.git
