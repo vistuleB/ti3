@@ -49,7 +49,7 @@ To check, open `public/index.html` inside a browser.
 
 Author source is contained in `ti2/wly/` folder.
 
-In VSCode, download ["Writerly"](https://marketplace.visualstudio.com/items?itemName=TabbyNotes.writerly-vscode-extension) for syntax highlighting.
+In VSCode, download the [Writerly](https://marketplace.visualstudio.com/items?itemName=TabbyNotes.writerly-vscode-extension) extension for syntax highlighting.
 
 ## 6. Formatter
 
