@@ -1,53 +1,55 @@
 # ti2
 
-## Installing Gleam
+## 1. Install Gleam
 
 [Official instructions.](https://gleam.run/getting-started/installing)
 
-## Installing the VSCode Writerly extension
+## 2. Git clone wly library & ti2 project
 
-Search for ["Writerly"](https://marketplace.visualstudio.com/items?itemName=TabbyNotes.writerly-vscode-extension) in the extension marketplace.
+In your github folder, or other favorite, git clone the `vistuleB/wly` and `vistuleB/ti2` repos.
 
-## Running the project
+*SSH:*
 
-1. Clone the markup parsing & desugaring library: `git clone github.com/vistuleB/wly`.
-2. Check that works by running `gleam build` and `gleam run -m desugarers` from inside that repo's `desugaring/` folder.
-3. Clone the `ti2` coursenotes repo: `git clone github.com/vistuleB/ti2`.
-4. Try `gleam build` and `gleam run` from inside that repo's root folder. Also try `gleam run -- --help`.
-
-## Running the formatter
-
-Run `gleam run -- --fmt` for default 55 char per line formatting.
-
-Run e.g. `gleam run -- --fmt 65` to format line length to 65 chars per line.
-
-Run e.g. `gleam run -- --fmt 70 4` to subtract 4 chars from the line length at each level of indentation (and achieve uniform right-hand margin at 70 chars per "outermost" line).
-
-## To view local output
-
-Open `file:///PATH/TO/REPO/ti2/public/index.html` in a browser with `PATH/TO/REPO` suitably replaced.
-
-## Serve on local server and mobile
-
-1. Instal npm packages with `npm install`.
-2. `npm run dev` to start the local server.
-
-### To preview on mobile
-
-Run `npm run dev` on local machine.
-
-Visit the shown url on mobile to access the page. Requires the mobile
-device and the local machine to share the same local network.
-
-A sample output
 ```
-Available on:
-  http://127.0.0.1:8080
-  http://192.168.0.105:8080
-Hit CTRL-C to stop the server
-Open: http://127.0.0.1:8080/index.html
+>>> git clone github.com/vistuleB/wly
+>>> git clone github.com/vistuleB/ti2
 ```
 
-## Web version
+*HTTPS:*
 
-https://ti2.netlify.app/
+```
+>>> git clone github.com/vistuleB/wly
+>>> git clone github.com/vistuleB/ti2
+```
+
+## 3. Test the desugaring library
+
+1. `cd wly/desugaring` (⚠️⚠️⚠️⚠️⚠️ it's `wly/desugaring` not `wly`)
+3. `gleam run -m desugarers`
+
+If everything is ok some messages with green squares "✅✅✅" will be output. (No need to read.)
+
+## 4. Test ti2
+
+1. `cd ../ti2` or `cd ti2`, depending on your location
+2. `rm public/*.html` (⚠️⚠️⚠️⚠️⚠️ be careful to type `public/*.html` and not `public/*`, or else you will lose your javascript and CSS files!)
+3. `gleam run`
+
+Various messages from the desugaring engine (situated in `wly` repo) should print out, and the `public/` folder should have its .html repopulated.
+
+Open the `index.html` inside the `public` folder directly inside your browser to check.
+
+## 5. Download the Writerly (.wly) extension for VSCode & browse source
+
+Search for ["Writerly"](https://marketplace.visualstudio.com/items?itemName=TabbyNotes.writerly-vscode-extension) in the VSCode extension marketplace. Install.
+
+The book source is contained inside `ti2/wly/`. Browse that directory and those files to get an idea for the markup structure, and how the source is arranged into a tree.
+
+The `.wly` files should syntax highlight after the extension is installed.
+
+## 6. Running the formatter
+
+Run `gleam run -- --fmt` for default 55 to reformat at char per line formatting.
+
+Run e.g. `gleam run -- --fmt 65` to format line length to 65 chars per line, etc.
+
