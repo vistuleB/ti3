@@ -108,7 +108,8 @@ pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
       input_dir: "./wly",
       output_dir: "./wly",
       prettifier_behavior: ds.PrettifierOff,
-      table: True,
+      table: False,
+      verbose: True,
     )
     |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
   
