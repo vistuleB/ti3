@@ -1,3 +1,16 @@
 [build]
+  # No build step — just serve the contents of /public
   command = ""
   publish = "public"
+
+[context.production]
+  # Use the prod branch for production deploys
+  branch = "prod"
+
+[context.deploy-preview]
+  # Disable deploy previews for all non-prod branches
+  command = "exit 0"
+
+[context.branch-deploy]
+  # Disable branch deploys (other than prod)
+  command = "exit 0"
