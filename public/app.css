@@ -579,8 +579,8 @@ pre.listing.redyellow > span.listing-bol::before {
   width: calc(100vw - 2 * var(--main-column-padding-x));
   margin: 0 auto;
   background-color: inherit;
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
 }
 
 .figure__container {
@@ -760,6 +760,16 @@ figcaption {
 }
 /* end of resuable components for both constrained & unconstrained nav */
 /** end of carousel **/
+
+/** begin of group **/
+.group {
+    width: inherit;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+/** end of group **/
 
 /* the 2nd selector is there b/c of specificity wars: */
 .topic-announcement,

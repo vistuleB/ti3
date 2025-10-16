@@ -225,7 +225,7 @@ const carouselMaxWidthInPx = () => {
   const adjustedScreenWidth = screenWidth * 0.9;
   const computeTabletMaxWidth = Math.min(
     adjustedScreenWidth,
-    DESKTOP_MAIN_COLUMN_WIDTH
+    DESKTOP_MAIN_COLUMN_WIDTH,
   );
   const computeDesktopMaxWidth =
     screenWidth < DESKTOP_MAIN_COLUMN_WIDTH
@@ -386,12 +386,12 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-header-title-line-height",
     indexHeaderTitleLineHeightInRem,
-    "rem"
+    "rem",
   );
   set(
     "--index-header-subtitle-font-size",
     indexHeaderSubtitleFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--index-header-padding-top", indexHeaderPaddingTopInPx, "px");
   set("--index-header-padding-bottom", indexHeaderPaddingBottomInRem, "rem");
@@ -401,18 +401,18 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--index-toc-subchapter-level-margin",
     indexTocSubchapterLevelMarginInEm,
-    "em"
+    "em",
   );
   set("--carousel-max-width", carouselMaxWidthInPx, "px");
   set(
     "--end-of-page-main-column-margin-bottom",
     endOfPageMainColumnMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set(
     "--end-of-page-well-margin-bottom",
     endOfPageWellMarginBottomInRem,
-    "rem"
+    "rem",
   );
   set("--end-of-page-elt-margin-bottom", endOfPageEltMarginBottomInRem, "rem");
   set("--main-column-width", mainColumnWidthInPx, "px");
@@ -425,7 +425,7 @@ const resetScreenWidthDependentVars = () => {
   set(
     "--subtopic-announcement-font-size",
     subtopicAnnouncementFontSizeInRem,
-    "rem"
+    "rem",
   );
   set("--well-margin-y", wellMarginYInRem, "rem");
   set("--last-child-well-margin-bottom", lastChildWellMarginBottomInRem, "rem");
@@ -546,16 +546,14 @@ const setTopMenuVisible = (val) => {
 const onMouseMove = (e) => {
   const inZoneX = (x) => {
     let mX = (screenWidth - mainColumnWidthInPx()) / 2;
-    return (x < mX || x > screenWidth - mX);
+    return x < mX || x > screenWidth - mX;
   };
   let inZone =
     e.screenY < 250 && (screenWidth <= LAPTOP_MAX_WIDTH || inZoneX(e.screenX));
   if (inZone) {
-    if (!topMenuVisible && isPageCentered)
-        setTopMenuVisible(true);
+    if (!topMenuVisible && isPageCentered) setTopMenuVisible(true);
   } else {
-    if (topMenuVisible && lastScrollY > 10)
-      setTopMenuVisible(false);
+    if (topMenuVisible && lastScrollY > 10) setTopMenuVisible(false);
   }
 };
 
@@ -661,7 +659,9 @@ let allFigureImages = new Array();
 let allConstrainableImages = new Array();
 
 const setupImages = () => {
-  let images = document.querySelectorAll("img");
+  let images = Array.from(document.querySelectorAll("img")).filter(
+    (img) => !img.closest(".group"),
+  );
   for (const image of images) {
     if (!image.closest(".carousel") && !image.closest("figure")) continue;
     let s = window.getComputedStyle(image);
@@ -692,7 +692,7 @@ class Carousel {
   constructor(container) {
     if (!container.classList.contains("carousel__container")) {
       console.error(
-        "'Carousel' constructor should be called on carousel__container!"
+        "'Carousel' constructor should be called on carousel__container!",
       );
       return;
     }
@@ -895,7 +895,7 @@ class Carousel {
     let lambda = clamp01(
       (this.containerWidth - CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH) /
         (CAROUSEL_ARROW_MAX_HEIGHT_CONTAINER_WIDTH -
-          CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH)
+          CAROUSEL_ARROW_MIN_HEIGHT_CONTAINER_WIDTH),
     );
 
     return (
@@ -1032,7 +1032,7 @@ class Carousel {
 
   nudgeCarouselItem(direction) {
     this.setItemNumber(
-      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems)
+      1 + ((this.numItems + this.itemNumber + direction - 1) % this.numItems),
     );
   }
 
