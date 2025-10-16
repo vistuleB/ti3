@@ -78,7 +78,11 @@ const p_cannot_be_contained_in = [
 const post_counter_space = " "
 
 pub fn main_pipeline()  -> List(Pipe) {
-  let escape_dollar = grs.for_groups([#("\\\\", grs.Trash), #("\\$", grs.TagWithTextChild("span"))])
+  let escaped_dollar_to_span_rr_splitter = grs.rr_splitter_for_groups([
+    #("\\\\", grs.Trash),
+    #("\\$", grs.TagWithTextChild("span"))
+  ])
+
   let pre_transformation_document_tags = [
     "Carousel",
     "CarouselItem",
@@ -208,7 +212,7 @@ pub fn main_pipeline()  -> List(Pipe) {
     pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
     pp.splitting_empty_lines_cleanup(),
     [
-      dl.regex_split_and_replace__outside(escape_dollar, ["Math", "MathBlock"]),
+      dl.regex_split_and_replace__outside(escaped_dollar_to_span_rr_splitter, ["Math", "MathBlock"]),
     ],
     pp.splitting_empty_lines_cleanup(),
     [
@@ -233,9 +237,6 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.ti2_expand_carousels(),
       dl.insert_attribute_value_at_first_child_start(#("ChapterTitle", "number-chiron", "&ensp;", infra.GoBack)),
       dl.insert_attribute_value_at_first_child_start(#("SubTitle", "number-chiron", "&ensp;", infra.GoBack)),
-    ],
-    [
-      dl.table_marker(),
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     pp.markdown_link_splitting(["MathBlock", "Math"]),
