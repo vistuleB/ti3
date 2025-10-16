@@ -10,21 +10,19 @@
         \begin{align*}
         \forall\ \{u,v\} \in E: \ c(u) \ne c(v) \ ?
         \end{align*}
-
-    |> figure
-        |> div
-            style=display:inline-block;width:49%;justify-content:center;
+    
+    |> Group
+        |> figure
             |> img
                 style=width:100%
                 src=img/09-complexity-theory/np-examples/peterson-3-colorable.svg
             Der Peterson-Graph ist 3-färbbar.
-
-        |> div
-            style=display: inline-block;width:49%;
+        
+        |> figure
             |> img
                 style=width:100%
                 src=img/09-complexity-theory/np-examples/not-3-colorable.svg
-            Dieser Graph ist nicht 3-färbbar
+                Dieser Graph ist nicht 3-färbbar
 
     |> Observation
         `3-Colorability`{sc} ist in NP.
