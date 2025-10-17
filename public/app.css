@@ -1,5 +1,4 @@
 :root {
-  --rem-font-size: 16px;
   --carousel-max-width: 1050px;
   --carousel-indicator-gap: 4px;
   --carousel-indicator-box-size: 14px;
@@ -9,17 +8,18 @@
   --body-background-color: rgba(248, 244, 253, 1);
   --page-title-border-min-width: 40px;
   --line-height: 1.8rem;
-
+  
   /*********************************/
   /* resetScreenWidthDependentVars */
   /*********************************/
-  --centered-screen-scroll-x: 0px;
-  --inhalts-arrow-display: none;
+  --rem-font-size: 16px;
+  --left-right-hot-zone-width: 0px;
+  --inhalts-arrows-display: none;
   --top-menu-padding-x: 2rem;
   --top-menu-padding-y: 1.4rem;
   --top-menu-background-color: #0000;
   --top-menu-element-gap: 0.55rem;
-  --bottom-menu-hr-display: 'none';
+  --bottom-menu-hr-display: "none";
   --bottom-menu-hr-margin-top: 1.6rem;
   --bottom-menu-hr-margin-bottom: 1.4rem;
   --bottom-menu-display: none;
@@ -68,9 +68,9 @@
   --terminal-prompt-content: #073642;
   --arbitrary-prompt: #268bd2;
   --arbitrary-prompt-reponse: #2aa198;
-  --python-prompt-carets: rgb(254, 56, 234); 
+  --python-prompt-carets: rgb(254, 56, 234);
   --python-prompt-content: #657b83;
-  --python-prompt-ok-response: #2aa198; 
+  --python-prompt-ok-response: #2aa198;
   --python-prompt-error-response: rgb(226, 66, 66);
   --listing-numbers: rgb(174, 174, 174);
   --xml-tag-endings: #b58900;
@@ -86,7 +86,7 @@
   --elm-function: #2aa198;
   --elm-relation: #d33682;
   --elm-par: #b58900;
-  
+
   /*******************************/
   /* dark mode code block colors */
   /*******************************/
@@ -154,7 +154,9 @@ body {
 .page-title {
   width: inherit;
   display: grid;
-  grid-template-columns: minmax(var(--page-title-border-min-width), 1fr) auto minmax(var(--page-title-border-min-width), 1fr);
+  grid-template-columns:
+    minmax(var(--page-title-border-min-width), 1fr)
+    auto minmax(var(--page-title-border-min-width), 1fr);
   align-items: center;
   text-align: center;
   gap: 2rem;
@@ -390,6 +392,22 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   padding-right: 0.5em;
 }
 
+.left-right-hot-zone {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: var(--left-right-hot-zone-width);
+  z-index: -1;
+}
+
+#left-hot-zone {
+  left: 0;
+}
+
+#right-hot-zone {
+  right: 0;
+}
+
 #top-menu.menu--hidden {
   top: -100px;
 }
@@ -399,12 +417,13 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100vw;
   transition: top 0.5s ease-in-out;
   will-change: top;
   justify-content: space-between;
-  padding: var(--top-menu-padding-y) var(--top-menu-padding-x) calc(var(--top-menu-padding-y) * 0.8);
+  padding: var(--top-menu-padding-y) var(--top-menu-padding-x)
+    calc(var(--top-menu-padding-y) * 0.8);
   background-color: var(--top-menu-background-color);
 }
 
@@ -420,7 +439,7 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   flex-direction: column;
   gap: var(--top-menu-element-gap);
   overflow: visible;
-}  
+}
 
 #top-menu-right {
   text-align: right;
@@ -454,7 +473,8 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
 }
 
 #bottom-menu-hr {
-  margin: var(--bottom-menu-hr-margin-top) auto var(--bottom-menu-hr-margin-bottom);
+  margin: var(--bottom-menu-hr-margin-top) auto
+    var(--bottom-menu-hr-margin-bottom);
   display: var(--bottom-menu-hr-display);
   border-color: black;
   border-width: 0px;
@@ -558,7 +578,7 @@ pre.redyellow {
   background-color: yellow;
 }
 
-pre.listing.redyellow > span.listing-bol::before{
+pre.listing.redyellow > span.listing-bol::before {
   color: #777;
 }
 
@@ -611,7 +631,7 @@ figure img,
 figure img.constrained,
 .carousel__item img.constrained {
   border-left-width: min(var(--well-padding-x), 16px);
-  border-right-width: min(var(--well-padding-x), 16px);  
+  border-right-width: min(var(--well-padding-x), 16px);
 }
 
 figure img.unconstrained,
@@ -759,7 +779,8 @@ figcaption {
 /** end of carousel **/
 
 /* the 2nd selector is there b/c of specificity wars: */
-.topic-announcement, .well + .topic-announcement.main-column {
+.topic-announcement,
+.well + .topic-announcement.main-column {
   font-size: var(--topic-announcement-font-size);
   margin: 0 auto;
   margin-top: 0.85em;
@@ -768,7 +789,8 @@ figcaption {
 }
 
 /* the 2nd selector is there b/c of specificity wars: */
-.subtopic-announcement, .well + .subtopic-announcement.main-column {
+.subtopic-announcement,
+.well + .subtopic-announcement.main-column {
   font-size: var(--subtopic-announcement-font-size);
   margin: 0 auto;
   margin-top: 0.75em;
@@ -779,7 +801,8 @@ figcaption {
 p + p {
   margin-top: 0.8rem;
 }
-p + h1, p + h2 {
+p + h1,
+p + h2 {
   margin-top: 0.8rem;
 }
 
@@ -865,7 +888,7 @@ button img {
 }
 
 .elm-1 {
-  color: var(--elm-defined-symbol)
+  color: var(--elm-defined-symbol);
 }
 
 .elm-2 {
@@ -910,12 +933,19 @@ button img {
 .checkered {
   /* https://codepen.io/mootari/pen/yLBoqdO */
   --color: #9995;
-  --gradient: linear-gradient(to top left, var(--color) 25.1%, transparent 0, transparent 74.9%, var(--color) 0);
-  --width:  40px;
+  --gradient: linear-gradient(
+    to top left,
+    var(--color) 25.1%,
+    transparent 0,
+    transparent 74.9%,
+    var(--color) 0
+  );
+  --width: 40px;
   --height: 40px;
   background:
     var(--gradient) 0% 0% / var(--width) var(--height),
-    var(--gradient) calc(var(--width) / 2 + 0%) calc(var(--height) / 2 + 0%) / var(--width) var(--height);
+    var(--gradient) calc(var(--width) / 2 + 0%) calc(var(--height) / 2 + 0%) /
+      var(--width) var(--height);
 }
 
 .inhalts_arrows {

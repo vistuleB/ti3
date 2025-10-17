@@ -197,7 +197,7 @@
         $$
 
     |> Definition
-        * (Akzeptierte Sprache). * Sei
+        *(Akzeptierte Sprache).* Sei
         $M = (\Sigma, Q, \qstart, F, \delta)$ ein endlicher
         Automat. Die von $M$ akzeptierte Sprache ist
 

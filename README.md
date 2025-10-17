@@ -8,20 +8,22 @@
 
 Git clone `github.com/vistuleB/wly` and `github.com/vistuleB/ti2` next to each other in the same folder.
 
-*SSH*
+_SSH_
 
 ```
 git clone git@github.com:vistuleB/wly.git
 ```
+
 ```
 git clone git@github.com:vistuleB/ti2.git
 ```
 
-*HTTPS*
+_HTTPS_
 
 ```
 git clone https://github.com/vistuleB/wly.git
 ```
+
 ```
 git clone https://github.com/vistuleB/ti2.git
 ```
@@ -29,7 +31,7 @@ git clone https://github.com/vistuleB/ti2.git
 ## 3. 'wly' test
 
 1. `cd wly/desugaring`
-3. `gleam run -m desugarers`
+2. `gleam run -m desugarers`
 
 Various output should come out like this:
 
@@ -54,4 +56,3 @@ In VSCode, download the [Writerly](https://marketplace.visualstudio.com/items?it
 ## 6. Formatter
 
 Run `gleam run -- --fmt` in `ti2` repo for default 55 to reformat at char per line formatting or `gleam run -- --fmt <X>` to format line length to X chars per line.
-

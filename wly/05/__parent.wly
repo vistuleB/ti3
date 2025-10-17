@@ -518,7 +518,7 @@
         einem Nichtterminal $X$ schreiben können, so dass
         $X \rightarrow \gamma$ eine Produktionsregel in $P$
         ist. Wenn wir $\alpha = \beta$ "vorlesen", dann sagen
-        wir _ $\beta$ kann aus $\alpha$ in einem Schritt
+        wir _$\beta$ kann aus $\alpha$ in einem Schritt
         abgeleitet werden_. Wenn $\beta$ aus $\alpha$ in
         mehreren (im Extremfall null) Schritten abgeleitet
         werden kann, so schreiben wir

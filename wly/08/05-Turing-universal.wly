@@ -97,7 +97,7 @@
     |> div
         class=alert-info well
         *Ein technischer aber letztendlich irrelevanter
-        Punkt: * die Mengen $Q$ und $\Gamma$ der
+        Punkt:* die Mengen $Q$ und $\Gamma$ der
         Turingmaschine $M$ können ja beliebige (endliche)
         Mengen sein, und weder $\Lambda$ noch die
         Turingmaschine $U$ haben "Kenntnis" von ihnen. Wir

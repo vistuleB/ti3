@@ -34,11 +34,15 @@ window.history.scrollRestoration = "manual";
 
 let lastScrollY = 0;
 let lastScrollYMoment = Date.now();
-let topMenu = null;
 let topMenuHidden = false;
-let bottomMenu = null;
 let isPageCentered = true;
 let screenWidth = -1;
+
+let topMenu = null;
+let bottomMenu = null;
+let bodyWrapper = null;
+let leftHotZone = null;
+let rightHotZone = null;
 
 const clamp01 = (x) => {
   return Math.max(Math.min(x, 1), 0);
@@ -57,8 +61,26 @@ const recenter = (behavior) => {
   isPageCentered = true;
 };
 
-const smoothRecenter = () => {
-  recenter("smooth");
+const smoothRecenter = (e) => {
+  if (Math.abs(window.scrollX - marginWidth()) > 1) {
+    recenter("smooth");
+    e.preventDefault();
+    return;
+  }
+
+  if (screenWidth <= TABLET_MAX_WIDTH) {
+    return;
+  }
+
+  let z = (screenWidth - mainColumnWidthInPx()) / 2;
+
+  if (e.clientX < z) {
+    navigateToChapter("prev-page");
+  }
+
+  if (e.clientX > screenWidth - z) {
+    navigateToChapter("next-page");
+  }
 };
 
 const instantRecenter = () => {
@@ -68,6 +90,11 @@ const instantRecenter = () => {
 const remInPx = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 17;
   return 16;
+};
+
+const leftRightHotZoneWidthInPx = () => {
+  if (screenWidth <= LAPTOP_MAX_WIDTH) return 0;
+  return 0.5 * (screenWidth - mainColumnWidthInPx()) / 2;
 };
 
 const inhaltsArrowsDisplay = () => {
@@ -348,6 +375,7 @@ const resetScreenWidthDependentVars = () => {
   };
 
   set("--rem-font-size", remInPx, "px");
+  set("--left-right-hot-zone-width", leftRightHotZoneWidthInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
   set("--top-menu-padding-x", topMenuPaddingXInRem, "rem");
   set("--top-menu-padding-y", topMenuPaddingYInRem, "rem");
@@ -394,11 +422,7 @@ const resetScreenWidthDependentVars = () => {
     endOfPageWellMarginBottomInRem,
     "rem"
   );
-  set(
-    "--end-of-page-elt-margin-bottom",
-    endOfPageEltMarginBottomInRem,
-    "rem"
-  );
+  set("--end-of-page-elt-margin-bottom", endOfPageEltMarginBottomInRem, "rem");
   set("--main-column-width", mainColumnWidthInPx, "px");
   set("--main-column-padding-x", mainColumnPaddingXInRem, "rem");
   set("--main-column-to-well-margin", mainColumnToWellMarginInRem, "rem");
@@ -1005,8 +1029,12 @@ class Carousel {
   }
 
   doOnClickAndOnHold(button, callback) {
-    const startHold = (e) => {
+    const captureAndKill = (e) => {
       e.preventDefault();
+      e.stopPropagation();
+    };
+
+    const startHold = (e) => {
       if (this.isHolding) return;
       this.isHolding = true;
       callback();
@@ -1018,7 +1046,6 @@ class Carousel {
     };
 
     const stopHold = (e) => {
-      e.preventDefault();
       this.isHolding = false;
       if (this.holdTimeout) {
         clearTimeout(this.holdTimeout);
@@ -1030,6 +1057,8 @@ class Carousel {
       }
     };
 
+    button.addEventListener("click", captureAndKill);
+    button.addEventListener("mousedown", captureAndKill);
     button.addEventListener("mousedown", startHold);
     button.addEventListener("touchstart", startHold, { passive: false });
     button.addEventListener("mouseup", stopHold);
@@ -1070,25 +1099,34 @@ const updatePageTitleForScreenWidthChange = () => {
 
 const setBottomMenuVisible = (viz) => {
   if (!bottomMenu) return;
-  bottomMenu.style.visibility = (viz) ? 'visible' : 'hidden';
-}
+  bottomMenu.style.visibility = viz ? "visible" : "hidden";
+};
 
 const onBodyHeightChange = () => {
   let clientHeight = document.body.clientHeight;
   setBottomMenuVisible(clientHeight >= 1000);
-}
+};
 
 const onDOMContentLoaded = () => {
   console.log("onDOMContentLoaded");
+  topMenu = document.getElementById("top-menu");
+  bottomMenu = document.getElementById("bottom-menu");
+  bodyWrapper = document.getElementById("body-wrapper");
   setTopMenuVisible(true);
   setupMenuTooltips();
   onResize();
+  leftHotZone = document.createElement("div");
+  rightHotZone = document.createElement("div");
+  leftHotZone.id = "left-hot-zone";
+  rightHotZone.id = "right-hot-zone";
+  leftHotZone.classList.add("left-right-hot-zone");
+  rightHotZone.classList.add("left-right-hot-zone");
+  document.body.appendChild(leftHotZone);
+  document.body.appendChild(rightHotZone);
 };
 
 const onLoad = () => {
   console.log("onLoad");
-  topMenu = document.getElementById("top-menu");
-  bottomMenu = document.getElementById("bottom-menu");
   setupImages();
   setupCarousels();
   screenWidth = -1; // force onResize though onDOMContentLoaded already called it
@@ -1098,7 +1136,7 @@ const onLoad = () => {
   });
   resizeObserver.observe(document.body);
   onBodyHeightChange();
-  document.body.style.visibility = 'visible';
+  document.body.style.visibility = "visible";
 };
 
 const onResize = () => {
@@ -1130,7 +1168,6 @@ const figureImagesOnResize = () => {
 };
 
 const carouselImagesOnResize = () => {
-  console.log("u made it here");
   if (allCarouselObjects.length === 0) return;
   let totalButtonHeights = 0;
   for (const carousel of allCarouselObjects) {

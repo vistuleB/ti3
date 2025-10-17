@@ -30,8 +30,7 @@ pub fn main() {
         ds.process_command_line_arguments(args, ["--fmt"]),
         fn(error) {
           io.println("")
-          io.println("command line error: " <> ins(error))
-          io.println("")
+          io.println("cli error: " <> ins(error))
           ds.basic_cli_usage()
           cli_usage_supplementary()
         }
