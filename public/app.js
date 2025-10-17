@@ -525,6 +525,8 @@ const toggleFigureImageZoom = (image) => {
 
 const constrainableImgClick = (e) => {
   if (!isPageCentered) return;
+  e.stopPropagation();
+  e.preventDefault();
   const image = e.srcElement;
   const carousel = image.closest(".carousel");
   if (carousel) {
