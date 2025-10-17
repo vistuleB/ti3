@@ -611,6 +611,11 @@ figure img,
   border-color: transparent;
 }
 
+.pseudowell figure img.constrained {
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
 .well figure img.constrained,
 .carousel__item img.constrained {
   border-left-width: min(var(--well-padding-x), 16px);
