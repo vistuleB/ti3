@@ -59,7 +59,7 @@ const recenter = (behavior) => {
   isPageCentered = true;
 };
 
-const smoothRecenter = (e) => {
+const onClick = (e) => {
   if (Math.abs(window.scrollX - marginWidth()) > 1) {
     recenter("smooth");
     e.preventDefault();
@@ -1282,7 +1282,7 @@ const onKeyDown = (e) => {
 window.addEventListener("resize", onResize);
 window.addEventListener("DOMContentLoaded", onDOMContentLoaded);
 window.addEventListener("load", onLoad);
-document.addEventListener("click", smoothRecenter);
+document.addEventListener("click", onClick);
 document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
 document.addEventListener("mousemove", onMouseMove, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
