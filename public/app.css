@@ -13,7 +13,7 @@
   /* resetScreenWidthDependentVars */
   /*********************************/
   --rem-font-size: 16px;
-  --left-right-hot-zone-width: 0px;
+  /* --left-right-hot-zone-width: 0px; */
   --inhalts-arrows-display: none;
   --top-menu-padding-x: 2rem;
   --top-menu-padding-y: 1.4rem;
@@ -392,7 +392,7 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   padding-right: 0.5em;
 }
 
-.left-right-hot-zone {
+/* .left-right-hot-zone {
   position: fixed;
   top: 0;
   height: 100vh;
@@ -406,7 +406,7 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
 
 #right-hot-zone {
   right: 0;
-}
+} */
 
 #top-menu.menu--hidden {
   top: -100px;

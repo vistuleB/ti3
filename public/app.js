@@ -41,8 +41,8 @@ let screenWidth = -1;
 let topMenu = null;
 let bottomMenu = null;
 let bodyWrapper = null;
-let leftHotZone = null;
-let rightHotZone = null;
+// let leftHotZone = null;
+// let rightHotZone = null;
 
 const clamp01 = (x) => {
   return Math.max(Math.min(x, 1), 0);
@@ -92,10 +92,10 @@ const remInPx = () => {
   return 16;
 };
 
-const leftRightHotZoneWidthInPx = () => {
-  if (screenWidth <= LAPTOP_MAX_WIDTH) return 0;
-  return 0.5 * (screenWidth - mainColumnWidthInPx()) / 2;
-};
+// const leftRightHotZoneWidthInPx = () => {
+//   if (screenWidth <= LAPTOP_MAX_WIDTH) return 0;
+//   return 0.5 * (screenWidth - mainColumnWidthInPx()) / 2;
+// };
 
 const inhaltsArrowsDisplay = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
@@ -375,7 +375,7 @@ const resetScreenWidthDependentVars = () => {
   };
 
   set("--rem-font-size", remInPx, "px");
-  set("--left-right-hot-zone-width", leftRightHotZoneWidthInPx, "px");
+  // set("--left-right-hot-zone-width", leftRightHotZoneWidthInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
   set("--top-menu-padding-x", topMenuPaddingXInRem, "rem");
   set("--top-menu-padding-y", topMenuPaddingYInRem, "rem");
@@ -1115,14 +1115,14 @@ const onDOMContentLoaded = () => {
   setTopMenuVisible(true);
   setupMenuTooltips();
   onResize();
-  leftHotZone = document.createElement("div");
-  rightHotZone = document.createElement("div");
-  leftHotZone.id = "left-hot-zone";
-  rightHotZone.id = "right-hot-zone";
-  leftHotZone.classList.add("left-right-hot-zone");
-  rightHotZone.classList.add("left-right-hot-zone");
-  document.body.appendChild(leftHotZone);
-  document.body.appendChild(rightHotZone);
+  // leftHotZone = document.createElement("div");
+  // rightHotZone = document.createElement("div");
+  // leftHotZone.id = "left-hot-zone";
+  // rightHotZone.id = "right-hot-zone";
+  // leftHotZone.classList.add("left-right-hot-zone");
+  // rightHotZone.classList.add("left-right-hot-zone");
+  // document.body.appendChild(leftHotZone);
+  // document.body.appendChild(rightHotZone);
 };
 
 const onLoad = () => {
