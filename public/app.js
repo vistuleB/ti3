@@ -70,7 +70,7 @@ const onClick = (e) => {
     return;
   }
 
-  let z = (screenWidth - mainColumnWidthInPx()) / 2;
+  let z = 0.5 * (screenWidth - mainColumnWidthInPx()) / 2;
 
   if (e.clientX < z) {
     navigateToChapter("prev-page");
