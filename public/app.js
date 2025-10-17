@@ -558,7 +558,7 @@ const onMouseMove = (e) => {
     return (x < mX || x > screenWidth - mX);
   };
   let inZone =
-    e.screenY < 250 && (screenWidth <= TABLET_MAX_WIDTH || inZoneX(e.screenX));
+    e.screenY < 250 && (screenWidth <= LAPTOP_MAX_WIDTH || inZoneX(e.screenX));
   if (inZone) {
     if (!topMenuVisible && isPageCentered)
         setTopMenuVisible(true);
