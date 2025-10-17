@@ -579,8 +579,8 @@ pre.listing.redyellow > span.listing-bol::before {
   width: calc(100vw - 2 * var(--main-column-padding-x));
   margin: 0 auto;
   background-color: inherit;
-  /*display: flex;
-  justify-content: center;*/
+  display: flex;
+  justify-content: center;
 }
 
 .figure__container {
@@ -762,10 +762,23 @@ figcaption {
 /** end of carousel **/
 
 /** begin of group **/
+/* grow = 1, shrink = 1, base size = auto */
+.pseudowell > .group {
+  flex: 1 1 auto; 
+}
+
 .group {
     width: inherit;
     display: flex;
     flex-wrap: nowrap;
+    will-change: width;
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+.group.zoom {
+    width: fit-content;
 }
 
 

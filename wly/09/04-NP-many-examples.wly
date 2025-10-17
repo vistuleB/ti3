@@ -23,7 +23,35 @@
                 style=width:100%
                 src=img/09-complexity-theory/np-examples/not-3-colorable.svg
                 Dieser Graph ist nicht 3-färbbar
+        
+        |> figure
+            |> img
+                style=width:100%
+                src=img/09-complexity-theory/np-examples/not-3-colorable.svg
+                Dieser Graph ist nicht 3-färbbar
 
+        |> figure
+            |> img
+                style=width:100%
+                src=img/09-complexity-theory/np-examples/not-3-colorable.svg
+                Dieser Graph ist nicht 3-färbbar
+        
+        |> figure
+            |> img
+                style=width:100%
+                src=img/09-complexity-theory/np-examples/not-3-colorable.svg
+               
+        |> figure
+            |> img
+                style=width:100%
+                src=img/09-complexity-theory/np-examples/not-3-colorable.svg
+                Dieser Graph ist nicht 3-färbbar         Dieser Graph ist nicht 3-färbbar
+            
+        |> figure
+            |> img
+                style=width:100%
+                src=img/09-complexity-theory/np-examples/not-3-colorable.svg
+                Dieser Graph ist nicht 3-färbbar
     |> Observation
         `3-Colorability`{sc} ist in NP.
 

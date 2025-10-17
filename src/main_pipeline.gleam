@@ -60,7 +60,6 @@ const p_cannot_be_contained_in = [
   "CarouselContainer",
   "CarouselItems",
   "CarouselItem",
-  "Group",
   "HorizontalMenu",
   "Index",
   "Math",
@@ -191,6 +190,7 @@ pub fn main_pipeline()  -> List(Pipe) {
       dl.auto_generate_child_if_missing_from_attribute(#("Sub", "SubTitle", "title")),
       dl.prepend_attribute(#("ChapterTitle", "number-chiron", "::øøChapterCounter.", infra.GoBack)),
       dl.prepend_attribute(#("SubTitle", "number-chiron", "::øøChapterCounter.::øøSubCounter", infra.GoBack)),
+      dl.prepend_attribute(#("Group", "onclick", "toggleGroupZoom(this)", infra.GoBack)),
       dl.prepend_text_node_if_has_ancestor_else__batch([
         #(
           "Exercise",
