@@ -7,7 +7,6 @@
  * - TABLET: edge of outer well (the well itself) *
  *   is flush with edge of main column of text,   *
  *                                                *
- *   main column of text;                         *
  * - LAPTOP: outer well is inset compared to      *
  *   see const LAPTOP_OUTER_WELL_INSET            *
  *                                                *
@@ -42,8 +41,6 @@ let screenHeight = -1;
 let topMenu = null;
 let bottomMenu = null;
 let bodyWrapper = null;
-// let leftHotCorner = null;
-// let rightHotCorner = null;
 
 const clamp01 = (x) => {
   return Math.max(Math.min(x, 1), 0);
@@ -92,11 +89,6 @@ const remInPx = () => {
   if (screenWidth <= MOBILE_MAX_WIDTH) return 17;
   return 16;
 };
-
-// const leftRightHotCornerWidthInPx = () => {
-//   if (screenWidth <= LAPTOP_MAX_WIDTH) return screenWidth / 2;
-//   return (screenWidth - mainColumnWidthInPx()) / 2;
-// };
 
 const inhaltsArrowsDisplay = () => {
   if (screenWidth <= LAPTOP_MAX_WIDTH) return "none";
@@ -376,7 +368,6 @@ const resetScreenWidthDependentVars = () => {
   };
 
   set("--rem-font-size", remInPx, "px");
-  // set("--left-right-hot-corner-width", leftRightHotCornerWidthInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
   set("--top-menu-padding-x", topMenuPaddingXInRem, "rem");
   set("--top-menu-padding-y", topMenuPaddingYInRem, "rem");
@@ -1131,26 +1122,6 @@ const onDOMContentLoaded = () => {
   setTopMenuVisible(true);
   setupMenuTooltips();
   onResize();
-  // leftHotCorner = document.createElement("div");
-  // rightHotCorner = document.createElement("div");
-  // leftHotCorner.id = "left-hot-corner";
-  // rightHotCorner.id = "right-hot-corner";
-  // leftHotCorner.classList.add("left-right-hot-corner");
-  // rightHotCorner.classList.add("left-right-hot-corner");
-  // document.body.appendChild(leftHotCorner);
-  // document.body.appendChild(rightHotCorner);
-  // leftHotCorner.addEventListener("mouseover", () => {
-  //   setTopMenuVisible(true);
-  // });
-  // rightHotCorner.addEventListener("mouseover", () => {
-  //   setTopMenuVisible(true);
-  // });
-  // leftHotCorner.addEventListener("mouseout", () => {
-  //   setTopMenuVisible(false);
-  // });
-  // rightHotCorner.addEventListener("mouseout", () => {
-  //   setTopMenuVisible(false);
-  // });
 };
 
 const onLoad = () => {
