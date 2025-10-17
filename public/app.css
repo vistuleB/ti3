@@ -611,13 +611,13 @@ figure img,
   border-color: transparent;
 }
 
-figure img.constrained,
+.well figure img.constrained,
 .carousel__item img.constrained {
   border-left-width: min(var(--well-padding-x), 16px);
   border-right-width: min(var(--well-padding-x), 16px);
 }
 
-figure img.unconstrained,
+.well figure img.unconstrained,
 .carousel__item img {
   border-left-width: 16px;
   border-right-width: 16px;
