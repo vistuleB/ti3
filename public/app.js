@@ -569,6 +569,7 @@ const onScrollMenuDisplay = (e) => {
 
   if (
     (velocity < -7 ||
+      (velocity < -3.5 && screenWidth <= TABLET_MAX_WIDTH) ||
       currentScrollY <= 10 ||
       (velocity < 0 && currentScrollY <= 200)) &&
     !topMenuVisible
