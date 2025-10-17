@@ -34,15 +34,16 @@ window.history.scrollRestoration = "manual";
 
 let lastScrollY = 0;
 let lastScrollYMoment = Date.now();
-let topMenuHidden = false;
+let topMenuVisible = true;
 let isPageCentered = true;
 let screenWidth = -1;
+let screenHeight = -1;
 
 let topMenu = null;
 let bottomMenu = null;
 let bodyWrapper = null;
-// let leftHotZone = null;
-// let rightHotZone = null;
+// let leftHotCorner = null;
+// let rightHotCorner = null;
 
 const clamp01 = (x) => {
   return Math.max(Math.min(x, 1), 0);
@@ -92,9 +93,9 @@ const remInPx = () => {
   return 16;
 };
 
-// const leftRightHotZoneWidthInPx = () => {
-//   if (screenWidth <= LAPTOP_MAX_WIDTH) return 0;
-//   return 0.5 * (screenWidth - mainColumnWidthInPx()) / 2;
+// const leftRightHotCornerWidthInPx = () => {
+//   if (screenWidth <= LAPTOP_MAX_WIDTH) return screenWidth / 2;
+//   return (screenWidth - mainColumnWidthInPx()) / 2;
 // };
 
 const inhaltsArrowsDisplay = () => {
@@ -375,7 +376,7 @@ const resetScreenWidthDependentVars = () => {
   };
 
   set("--rem-font-size", remInPx, "px");
-  // set("--left-right-hot-zone-width", leftRightHotZoneWidthInPx, "px");
+  // set("--left-right-hot-corner-width", leftRightHotCornerWidthInPx, "px");
   set("--inhalts-arrows-display", inhaltsArrowsDisplay, "");
   set("--top-menu-padding-x", topMenuPaddingXInRem, "rem");
   set("--top-menu-padding-y", topMenuPaddingYInRem, "rem");
@@ -485,7 +486,6 @@ function createCarouselObserver() {
 
 const adjustMathAlignment = () => {
   // we do not apply alignment, unless it is wide screen
-  const screenWidth = window.innerWidth;
   if (screenWidth <= MOBILE_MAX_WIDTH) return;
 
   document.querySelectorAll(".math-block").forEach((math_block) => {
@@ -543,13 +543,29 @@ const constrainableImgClick = (e) => {
   toggleFigureImageZoom(image);
 };
 
-const topMenuVisible = () => {
-  return !topMenuHidden;
+const setTopMenuVisible = (val) => {
+  if (val) {
+    topMenu?.classList.remove("menu--hidden");
+  } else {
+    topMenu?.classList.add("menu--hidden");
+  }
+  topMenuVisible = val;
 };
 
-const setTopMenuVisible = (val) => {
-  topMenu?.classList.toggle("menu--hidden", !val);
-  topMenuHidden = !val;
+const onMouseMove = (e) => {
+  const inZoneX = (x) => {
+    let mX = (screenWidth - mainColumnWidthInPx()) / 2;
+    return (x < mX || x > screenWidth - mX);
+  };
+  let inZone =
+    e.screenY < 250 && (screenWidth <= TABLET_MAX_WIDTH || inZoneX(e.screenX));
+  if (inZone) {
+    if (!topMenuVisible && isPageCentered)
+        setTopMenuVisible(true);
+  } else {
+    if (topMenuVisible && lastScrollY > 10)
+      setTopMenuVisible(false);
+  }
 };
 
 const onScrollMenuDisplay = (e) => {
@@ -562,13 +578,14 @@ const onScrollMenuDisplay = (e) => {
     (velocity < -7 ||
       currentScrollY <= 10 ||
       (velocity < 0 && currentScrollY <= 200)) &&
-    !topMenuVisible()
+    !topMenuVisible
   ) {
     setTopMenuVisible(true);
   } else if (
     currentScrollY > lastScrollY &&
     currentScrollY > 10 &&
-    topMenuVisible()
+    topMenuVisible &&
+    Math.abs(velocity) > 1
   ) {
     setTopMenuVisible(false);
   }
@@ -1079,12 +1096,11 @@ const setupCarousels = () => {
 };
 
 const updatePageTitleForScreenWidthChange = () => {
-  const onMobile = screenWidth <= MOBILE_MAX_WIDTH;
   const pageTitle = document.querySelector(".page-title");
   if (!pageTitle) return;
 
-  let borders = onMobile;
-  let template = onMobile
+  let borders = screenWidth <= MOBILE_MAX_WIDTH;
+  let template = borders
     ? "1fr"
     : (() => {
         const minWidth = getComputedStyle(root)
@@ -1115,14 +1131,26 @@ const onDOMContentLoaded = () => {
   setTopMenuVisible(true);
   setupMenuTooltips();
   onResize();
-  // leftHotZone = document.createElement("div");
-  // rightHotZone = document.createElement("div");
-  // leftHotZone.id = "left-hot-zone";
-  // rightHotZone.id = "right-hot-zone";
-  // leftHotZone.classList.add("left-right-hot-zone");
-  // rightHotZone.classList.add("left-right-hot-zone");
-  // document.body.appendChild(leftHotZone);
-  // document.body.appendChild(rightHotZone);
+  // leftHotCorner = document.createElement("div");
+  // rightHotCorner = document.createElement("div");
+  // leftHotCorner.id = "left-hot-corner";
+  // rightHotCorner.id = "right-hot-corner";
+  // leftHotCorner.classList.add("left-right-hot-corner");
+  // rightHotCorner.classList.add("left-right-hot-corner");
+  // document.body.appendChild(leftHotCorner);
+  // document.body.appendChild(rightHotCorner);
+  // leftHotCorner.addEventListener("mouseover", () => {
+  //   setTopMenuVisible(true);
+  // });
+  // rightHotCorner.addEventListener("mouseover", () => {
+  //   setTopMenuVisible(true);
+  // });
+  // leftHotCorner.addEventListener("mouseout", () => {
+  //   setTopMenuVisible(false);
+  // });
+  // rightHotCorner.addEventListener("mouseout", () => {
+  //   setTopMenuVisible(false);
+  // });
 };
 
 const onLoad = () => {
@@ -1142,6 +1170,7 @@ const onLoad = () => {
 const onResize = () => {
   if (window.innerWidth == screenWidth) return;
   screenWidth = window.innerWidth;
+  screenHeight = window.innerHeight;
   instantRecenter();
   resetScreenWidthDependentVars();
   updatePageTitleForScreenWidthChange();
@@ -1284,6 +1313,7 @@ window.addEventListener("DOMContentLoaded", onDOMContentLoaded);
 window.addEventListener("load", onLoad);
 document.addEventListener("click", smoothRecenter);
 document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
+document.addEventListener("mousemove", onMouseMove, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd, { passive: true });
 document.addEventListener("keydown", onKeyDown, { capture: true });

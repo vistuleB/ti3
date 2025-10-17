@@ -13,7 +13,7 @@
   /* resetScreenWidthDependentVars */
   /*********************************/
   --rem-font-size: 16px;
-  /* --left-right-hot-zone-width: 0px; */
+  /* --left-right-hot-corner-width: 0px; */
   --inhalts-arrows-display: none;
   --top-menu-padding-x: 2rem;
   --top-menu-padding-y: 1.4rem;
@@ -392,19 +392,20 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   padding-right: 0.5em;
 }
 
-/* .left-right-hot-zone {
+/* .left-right-hot-corner {
   position: fixed;
   top: 0;
-  height: 100vh;
-  width: var(--left-right-hot-zone-width);
-  z-index: -1;
+  height: 25vh;
+  width: var(--left-right-hot-corner-width);
+  z-index: 3;
+  cursor: pointer;
 }
 
-#left-hot-zone {
+#left-hot-corner {
   left: 0;
 }
 
-#right-hot-zone {
+#right-hot-corner {
   right: 0;
 } */
 
